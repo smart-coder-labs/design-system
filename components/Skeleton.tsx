@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 
 function Skeleton({
@@ -8,9 +9,23 @@ function Skeleton({
 }: React.HTMLAttributes<HTMLDivElement>) {
     return (
         <div
-            className={cn("animate-pulse rounded-md bg-surface-secondary/50", className)}
+            className={cn(
+                "relative overflow-hidden rounded-md bg-surface-secondary",
+                className
+            )}
             {...props}
-        />
+        >
+            <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-surface-primary/50 to-transparent"
+                initial={{ translateX: "-100%" }}
+                animate={{ translateX: "100%" }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 1.5,
+                    ease: "linear",
+                }}
+            />
+        </div>
     );
 }
 

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 
 interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -17,9 +18,9 @@ const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
         };
 
         const colorClasses = {
-            default: "text-text-secondary",
-            white: "text-white",
-            blue: "text-accent-blue",
+            default: "bg-text-secondary",
+            white: "bg-white",
+            blue: "bg-accent-blue",
         };
 
         return (
@@ -30,21 +31,27 @@ const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
                 role="status"
                 aria-label="Loading"
             >
-                {Array.from({ length: 8 }).map((_, i) => (
-                    <span
+                {Array.from({ length: 12 }).map((_, i) => (
+                    <div
                         key={i}
-                        className={cn(
-                            "absolute left-1/2 top-0 h-full w-[12%] -translate-x-1/2 rounded-full",
-                            colorClasses[color]
-                        )}
-                        style={{
-                            transform: `rotate(${i * 45}deg)`,
-                            opacity: 0.2 + i * 0.1, // Static gradient for visual, but we animate opacity
-                            animation: `spinner-fade 0.8s linear infinite`,
-                            animationDelay: `${i * 0.1}s`,
-                            backgroundColor: "currentColor",
-                        }}
-                    />
+                        className="absolute inset-0"
+                        style={{ transform: `rotate(${i * 30}deg)` }}
+                    >
+                        <motion.span
+                            className={cn(
+                                "absolute left-1/2 top-0 h-[25%] w-[8%] -translate-x-1/2 rounded-full",
+                                colorClasses[color]
+                            )}
+                            initial={{ opacity: 0.2 }}
+                            animate={{ opacity: [1, 0.2] }}
+                            transition={{
+                                duration: 1.2,
+                                repeat: Infinity,
+                                delay: i * 0.1,
+                                ease: "linear",
+                            }}
+                        />
+                    </div>
                 ))}
             </div>
         );
