@@ -1,364 +1,211 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 
-import Github from "./assets/github.svg";
-import Discord from "./assets/discord.svg";
-import Youtube from "./assets/youtube.svg";
-import Tutorials from "./assets/tutorials.svg";
-import Styling from "./assets/styling.png";
-import Context from "./assets/context.png";
-import Assets from "./assets/assets.png";
-import Docs from "./assets/docs.png";
-import Share from "./assets/share.png";
-import FigmaPlugin from "./assets/figma-plugin.png";
-import Testing from "./assets/testing.png";
-import Accessibility from "./assets/accessibility.png";
-import Theming from "./assets/theming.png";
-import AddonLibrary from "./assets/addon-library.png";
+<Meta title="Design System Overview" />
 
-export const RightArrow = () => <svg 
-    viewBox="0 0 14 14" 
-    width="8px" 
-    height="14px" 
-    style={{ 
-      marginLeft: '4px',
-      display: 'inline-block',
-      shapeRendering: 'inherit',
-      verticalAlign: 'middle',
-      fill: 'currentColor',
-      'path fill': 'currentColor'
-    }}
+<div
+  className="ds-hero"
+  style={{
+    textAlign: "left",
+    borderRadius: "24px",
+    color: "white",
+    display: "flex",
+    alignItems: "center",
+    gap: "48px",
+  }}
 >
-  <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
-</svg>
+  {/* Columna izquierda: título + texto */}
+  <div style={{ flex: "0 0 40%", minWidth: 0 }}>
 
-<Meta title="Configure your project" />
+    <h1
+      style={{
+        margin: "16px 0 8px",
+        fontSize: "2.4rem",
+        lineHeight: 1.1,
+        fontFamily: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+        fontWeight: 700,
+      }}
+    >
+      SmartCoder Design System
+    </h1>
 
-<div className="sb-container">
-  <div className='sb-section-title'>
-    # Configure your project
+    <p
+      style={{
+        margin: 0,
+        marginBottom: "20px",
+        fontSize: "1.02rem",
+        lineHeight: 1.6,
+        color: "white",
+        maxWidth: "34rem",
+      }}
+    >
+      A catalog of reusable frontend components for high‑quality interfaces.
+    </p>
 
-    Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
+    <p
+      style={{
+        margin: 0,
+        fontSize: "0.9rem",
+        color: "white",
+      }}
+    >
+      Tokens, components, and utilities for building consistent React
+      applications — fully documented in Storybook.
+    </p>
   </div>
-  <div className="sb-section">
-    <div className="sb-section-item">
+
+  {/* Columna derecha: imagen del catálogo de componentes */}
+  <div
+    style={{
+      flex: "1",
+      display: "flex",
+      justifyContent: "center",
+    }}
+  >
+    <div
+      style={{
+        background:
+          "linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 64, 175, 0.9))",
+        padding: "18px 24px",
+        borderRadius: "24px",
+        boxShadow:
+          "0 24px 70px rgba(15, 23, 42, 0.7), 0 0 0 1px rgba(148, 163, 184, 0.35)",
+      }}
+    >
       <img
-        src={Styling}
-        alt="A wall of logos representing different styling technologies"
+        src="hero.png"
+        alt="SmartCoder Design System - Frontend Components"
+        style={{
+          maxWidth: "420px",
+          display: "block",
+          borderRadius: "18px",
+        }}
       />
-      <h4 className="sb-section-item-heading">Add styling and CSS</h4>
-      <p className="sb-section-item-paragraph">Like with web applications, there are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</p>
-      <a
-        href="https://storybook.js.org/docs/configure/styling-and-css/?renderer=react&ref=configure"
-        target="_blank"
-      >Learn more<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img
-        src={Context}
-        alt="An abstraction representing the composition of data for a component"
-      />
-      <h4 className="sb-section-item-heading">Provide context and mocking</h4>
-      <p className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</p>
-      <a
-        href="https://storybook.js.org/docs/writing-stories/decorators/?renderer=react&ref=configure#context-for-mocking"
-        target="_blank"
-      >Learn more<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
-      <div>
-        <h4 className="sb-section-item-heading">Load assets and resources</h4>
-        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
-        `staticDirs` configuration option to specify folders to load when
-        starting Storybook.</p>
-        <a
-          href="https://storybook.js.org/docs/configure/images-and-assets/?renderer=react&ref=configure"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
     </div>
   </div>
 </div>
-<div className="sb-container">
-  <div className='sb-section-title'>
-    # Do more with Storybook
+<br />
 
-    Now that you know the basics, let's explore other parts of Storybook that will improve your experience. This list is just to get you started. You can customise Storybook in many ways to fit your needs.
-  </div>
 
-  <div className="sb-section">
-    <div className="sb-features-grid">
-      <div className="sb-grid-item">
-        <img src={Docs} alt="A screenshot showing the autodocs tag being set, pointing a docs page being generated" />
-        <h4 className="sb-section-item-heading">Autodocs</h4>
-        <p className="sb-section-item-paragraph">Auto-generate living,
-          interactive reference documentation from your components and stories.</p>
-        <a
-          href="https://storybook.js.org/docs/writing-docs/autodocs/?renderer=react&ref=configure"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Share} alt="A browser window showing a Storybook being published to a chromatic.com URL" />
-        <h4 className="sb-section-item-heading">Publish to Chromatic</h4>
-        <p className="sb-section-item-paragraph">Publish your Storybook to review and collaborate with your entire team.</p>
-        <a
-          href="https://storybook.js.org/docs/sharing/publish-storybook/?renderer=react&ref=configure#publish-storybook-with-chromatic"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={FigmaPlugin} alt="Windows showing the Storybook plugin in Figma" />
-        <h4 className="sb-section-item-heading">Figma Plugin</h4>
-        <p className="sb-section-item-paragraph">Embed your stories into Figma to cross-reference the design and live
-          implementation in one place.</p>
-        <a
-          href="https://storybook.js.org/docs/sharing/design-integrations/?renderer=react&ref=configure#embed-storybook-in-figma-with-the-plugin"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Testing} alt="Screenshot of tests passing and failing" />
-        <h4 className="sb-section-item-heading">Testing</h4>
-        <p className="sb-section-item-paragraph">Use stories to test a component in all its variations, no matter how
-          complex.</p>
-        <a
-          href="https://storybook.js.org/docs/writing-tests/?renderer=react&ref=configure"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Accessibility} alt="Screenshot of accessibility tests passing and failing" />
-        <h4 className="sb-section-item-heading">Accessibility</h4>
-        <p className="sb-section-item-paragraph">Automatically test your components for a11y issues as you develop.</p>
-        <a
-          href="https://storybook.js.org/docs/writing-tests/accessibility-testing/?renderer=react&ref=configure"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Theming} alt="Screenshot of Storybook in light and dark mode" />
-        <h4 className="sb-section-item-heading">Theming</h4>
-        <p className="sb-section-item-paragraph">Theme Storybook's UI to personalize it to your project.</p>
-        <a
-          href="https://storybook.js.org/docs/configure/theming/?renderer=react&ref=configure"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-    </div>
-  </div>
-</div>
-<div className='sb-addon'>
-  <div className='sb-addon-text'>
-    <h4>Addons</h4>
-    <p className="sb-section-item-paragraph">Integrate your tools with Storybook to connect workflows.</p>
-    <a
-        href="https://storybook.js.org/addons/?ref=configure"
-        target="_blank"
-      >Discover all addons<RightArrow /></a>
-  </div>
-  <div className='sb-addon-img'>
-    <img src={AddonLibrary} alt="Integrate your tools with Storybook to connect workflows." />
-  </div>
-</div>
+## 🎨 Foundations
 
-<div className="sb-section sb-socials">
-    <div className="sb-section-item">
-      <img src={Github} alt="Github logo" className="sb-explore-image"/>
-      Join our contributors building the future of UI development.
+### Colors
+The system ships with a **dark‑mode ready** palette built on HSL values for easy theming. Primary, secondary, neutrals, and semantic colors are defined as CSS variables in `src/tokens/colors.css`.
 
-      <a
-        href="https://github.com/storybookjs/storybook"
-        target="_blank"
-      >Star on GitHub<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img src={Discord} alt="Discord logo" className="sb-explore-image"/>
-      <div>
-        Get support and chat with frontend developers.
+```css
+:root {
+  --ds-color-primary: hsl(220, 90%, 55%);
+  --ds-color-primary-dark: hsl(220, 90%, 45%);
+  --ds-color-background: hsl(210, 10%, 98%);
+  --ds-color-background-dark: hsl(210, 10%, 10%);
+}
+```
 
-        <a
-          href="https://discord.gg/storybook"
-          target="_blank"
-        >Join Discord server<RightArrow /></a>
-      </div>
-    </div>
-    <div className="sb-section-item">
-      <img src={Youtube} alt="Youtube logo" className="sb-explore-image"/>
-      <div>
-        Watch tutorials, feature previews and interviews.
+### Typography
+We use **Inter** as the primary typeface, loaded via Google Fonts. The token file `src/tokens/typography.css` defines a clear hierarchy:
 
-        <a
-          href="https://www.youtube.com/@chromaticui"
-          target="_blank"
-        >Watch on YouTube<RightArrow /></a>
-      </div>
-    </div>
-    <div className="sb-section-item">
-      <img src={Tutorials} alt="A book" className="sb-explore-image"/>
-      <p>Follow guided walkthroughs on for key workflows.</p>
+| Token | Font‑size | Line‑height | Weight |
+|-------|-----------|-------------|--------|
+| --ds-font‑h1 | 2.5rem | 1.2 | 700 |
+| --ds-font‑h2 | 2rem | 1.3 | 600 |
+| --ds-font‑body | 1rem | 1.5 | 400 |
 
-      <a
-          href="https://storybook.js.org/tutorials/?ref=configure"
-          target="_blank"
-        >Discover tutorials<RightArrow /></a>
-    </div>
-</div>
+### Spacing & Layout
+A **8‑point grid** powers all margins, paddings, and component gaps. Tokens are exposed as `--ds-space‑1` … `--ds-space‑8`.
+
+---
+
+## 🧩 Components
+
+The design system includes a curated set of **React components** that are fully Storybook‑documented:
+
+- **Button** – variants: primary, secondary, ghost, with smooth hover micro‑animations.
+- **Input** – text, number (with min/max validation), password, with focus ring.
+- **Card** – elevation, glass‑morphism background, responsive layout.
+- **Modal** – accessible focus trap, dark‑mode aware.
+- **Grid** – flexible 12‑column layout with auto‑responsive breakpoints.
+- **Icon** – SVG sprite system, color‑aware.
+
+Each component lives under `src/components/` and follows the **Atomic Design** methodology (atoms → molecules → organisms).
+
+---
+
+## 📦 Tokens & Utilities
+
+All design decisions are exposed as **CSS‑in‑JS tokens** for easy consumption:
+
+```js
+export const colors = {
+  primary: "var(--ds-color-primary)",
+  background: "var(--ds-color-background)",
+  // …
+};
+
+export const typography = {
+  h1: "var(--ds-font-h1)",
+  body: "var(--ds-font-body)",
+};
+```
+
+Utility classes (e.g., `.ds-flex`, `.ds-center`) are generated via a tiny PostCSS plugin, keeping the HTML markup clean while preserving performance.
+
+---
+
+## 🚀 Usage
+
+1. **Install** the package:
+   ```bash
+   npm i @smartcoder/design-system
+   ```
+2. **Import the CSS baseline** in your entry point:
+   ```js
+   import "@smartcoder/design-system/dist/base.css";
+   ```
+3. **Start using components**:
+   ```jsx
+   import { Button, Card } from "@smartcoder/design-system";
+
+   <Card>
+     <h2>Welcome</h2>
+     <Button variant="primary">Get started</Button>
+   </Card>
+   ```
+
+The Storybook docs (this page) provide live examples, accessibility checks, and a **theming playground** where you can toggle dark/light mode.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Follow these steps:
+
+1. **Fork** the repo and create a feature branch.
+2. Run `npm install && npm run storybook` to see your changes in real time.
+3. Follow the **component checklist** (tests, a11y, docs).
+4. Submit a PR with a clear description and screenshots.
+
+All contributions are automatically linted with **ESLint**, **Prettier**, and **Stylelint** to keep the codebase consistent.
+
+---
+
+## 📞 Community & Support
+
+- **GitHub** – https://github.com/smartcoder/design-system
+- **Discord** – https://discord.gg/storybook
+- **Twitter** – @SmartCoderDS
+
+Feel free to open an issue, join the Discord channel, or contribute a new component.
+
+---
 
 <style>
-  {`
-  .sb-container {
-    margin-bottom: 48px;
+{`
+  .ds-hero h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
   }
-
-  .sb-section {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+  .ds-hero p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
   }
-
-  img {
-    object-fit: cover;
-  }
-
-  .sb-section-title {
-    margin-bottom: 32px;
-  }
-
-  .sb-section a:not(h1 a, h2 a, h3 a) {
-    font-size: 14px;
-  }
-
-  .sb-section-item, .sb-grid-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .sb-section-item-heading {
-    padding-top: 20px !important;
-    padding-bottom: 5px !important;
-    margin: 0 !important;
-  }
-  .sb-section-item-paragraph {
-    margin: 0;
-    padding-bottom: 10px;
-  }
-
-  .sb-chevron {
-    margin-left: 5px;
-  }
-
-  .sb-features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 32px 20px;
-  }
-
-  .sb-socials {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .sb-socials p {
-    margin-bottom: 10px;
-  }
-
-  .sb-explore-image {
-    max-height: 32px;
-    align-self: flex-start;
-  }
-
-  .sb-addon {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background-color: #EEF3F8;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background: #EEF3F8;
-    height: 180px;
-    margin-bottom: 48px;
-    overflow: hidden;
-  }
-
-  .sb-addon-text {
-    padding-left: 48px;
-    max-width: 240px;
-  }
-
-  .sb-addon-text h4 {
-    padding-top: 0px;
-  }
-
-  .sb-addon-img {
-    position: absolute;
-    left: 345px;
-    top: 0;
-    height: 100%;
-    width: 200%;
-    overflow: hidden;
-  }
-
-  .sb-addon-img img {
-    width: 650px;
-    transform: rotate(-15deg);
-    margin-left: 40px;
-    margin-top: -72px;
-    box-shadow: 0 0 1px rgba(255, 255, 255, 0);
-    backface-visibility: hidden;
-  }
-
-  @media screen and (max-width: 800px) {
-    .sb-addon-img {
-      left: 300px;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .sb-section {
-      flex-direction: column;
-    }
-
-    .sb-features-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
-
-    .sb-socials {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sb-addon {
-      height: 280px;
-      align-items: flex-start;
-      padding-top: 32px;
-      overflow: hidden;
-    }
-
-    .sb-addon-text {
-      padding-left: 24px;
-    }
-
-    .sb-addon-img {
-      right: 0;
-      left: 0;
-      top: 130px;
-      bottom: 0;
-      overflow: hidden;
-      height: auto;
-      width: 124%;
-    }
-
-    .sb-addon-img img {
-      width: 1200px;
-      transform: rotate(-12deg);
-      margin-left: 0;
-      margin-top: 48px;
-      margin-bottom: -40px;
-      margin-left: -24px;
-    }
-  }
-  `}
+`}
 </style>
