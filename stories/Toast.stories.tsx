@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Toast, ToastAction, ToastProvider, ToastViewport, ToastTitle, ToastDescription, ToastClose } from '../components/Toast';
 import { Button } from '../components/Button';
-import { useToast } from '../hooks/use-toast'; // Assuming a hook exists or we simulate usage
 import { useState } from 'react';
 
 // Since Toast usually requires a Provider and state management, we'll create a wrapper for the story

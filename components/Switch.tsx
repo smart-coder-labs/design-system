@@ -82,15 +82,12 @@ export const Switch: React.FC<SwitchProps> = ({
             bg-white
             rounded-full
             shadow-sm
+            transition-transform
+            duration-200
+            will-change-transform
+            translate-x-0.5
             data-[state=checked]:${sizes.translate}
           `}
-                    layout
-                    transition={{
-                        type: 'spring',
-                        stiffness: 500,
-                        damping: 35,
-                        mass: 0.5,
-                    }}
                 />
             </SwitchPrimitive.Thumb>
         </SwitchPrimitive.Root>

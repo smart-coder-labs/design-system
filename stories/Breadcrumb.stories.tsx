@@ -11,8 +11,6 @@ import {
 import {
     Dropdown,
     DropdownItem,
-    DropdownTrigger,
-    DropdownContent
 } from '../components/Dropdown';
 import { ChevronDown } from 'lucide-react';
 
@@ -54,16 +52,18 @@ export const WithDropdown: Story = {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                    <Dropdown>
-                        <DropdownTrigger className="flex items-center gap-1">
-                            <BreadcrumbEllipsis className="h-4 w-4" />
-                            <span className="sr-only">Toggle menu</span>
-                        </DropdownTrigger>
-                        <DropdownContent align="start">
-                            <DropdownItem>Documentation</DropdownItem>
-                            <DropdownItem>Themes</DropdownItem>
-                            <DropdownItem>GitHub</DropdownItem>
-                        </DropdownContent>
+                    <Dropdown
+                        trigger={
+                            <button className="flex items-center gap-1">
+                                <BreadcrumbEllipsis className="h-4 w-4" />
+                                <span className="sr-only">Toggle menu</span>
+                            </button>
+                        }
+                        align="start"
+                    >
+                        <DropdownItem>Documentation</DropdownItem>
+                        <DropdownItem>Themes</DropdownItem>
+                        <DropdownItem>GitHub</DropdownItem>
                     </Dropdown>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
