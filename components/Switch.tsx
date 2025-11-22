@@ -59,19 +59,7 @@ export const Switch: React.FC<SwitchProps> = ({
             onCheckedChange={onCheckedChange}
             disabled={disabled}
             className={`
-        ${sizes.root}
-        relative
-        rounded-full
-        transition-apple
-        focus:outline-none
-        focus-visible:ring-2
-        focus-visible:ring-accent-blue
-        focus-visible:ring-offset-2
-        disabled:opacity-40
-        disabled:cursor-not-allowed
-        data-[state=checked]:bg-accent-blue
-        data-[state=unchecked]:bg-surface-secondary
-        ${className}
+        ${sizes.root} relative rounded-full transition-apple focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed data-[state=checked]:bg-accent-blue data-[state=unchecked]:bg-surface-secondary ${className} group
       `}
         >
             <SwitchPrimitive.Thumb asChild>
@@ -82,12 +70,12 @@ export const Switch: React.FC<SwitchProps> = ({
             bg-white
             rounded-full
             shadow-sm
-            transition-transform
-            duration-200
-            will-change-transform
-            translate-x-0.5
-            data-[state=checked]:${sizes.translate}
-          `}
+            transform
+            `}
+                    animate={{
+                        x: checked ? (size === 'sm' ? 16 : size === 'md' ? 20 : 24) : 0,
+                    }}
+                    transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                 />
             </SwitchPrimitive.Thumb>
         </SwitchPrimitive.Root>
