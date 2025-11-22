@@ -8,6 +8,9 @@
 export { tokens } from './tokens';
 export type { Tokens } from './tokens';
 
+// Utils
+export { cn } from './lib/utils';
+
 // Componentes
 export { Button } from './components/Button';
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
@@ -15,8 +18,11 @@ export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
 
-export { Input, Textarea } from './components/Input';
-export type { InputProps, TextareaProps } from './components/Input';
+export { Input } from './components/Input';
+export type { InputProps } from './components/Input';
+
+export { Textarea } from './components/Textarea';
+export type { TextareaProps } from './components/Textarea';
 
 export { Modal, ModalHeader, ModalTitle, ModalDescription, ModalContent, ModalFooter, ModalClose, ModalCloseButton } from './components/Modal';
 export type { ModalProps } from './components/Modal';
@@ -46,3 +52,25 @@ export type { BadgeProps, BadgeVariant, BadgeSize, NotificationBadgeProps } from
 
 export { NavBar, NavBarBrand, NavBarContent, NavBarItem, NavBarSeparator } from './components/NavBar';
 export type { NavBarProps, NavBarBrandProps, NavBarContentProps, NavBarItemProps } from './components/NavBar';
+
+// New Components
+export { Avatar, AvatarImage, AvatarFallback } from './components/Avatar';
+export { Progress } from './components/Progress';
+export { Skeleton } from './components/Skeleton';
+export { Spinner } from './components/Spinner';
+export { Toast, ToastProvider, ToastViewport, ToastTitle, ToastDescription, ToastClose, ToastAction } from './components/Toast';
+export { Alert, AlertTitle, AlertDescription } from './components/Alert';
+export { Label } from './components/Label';
+export { Checkbox } from './components/Checkbox';
+export { RadioGroup, RadioGroupItem } from './components/RadioGroup';
+export { Slider } from './components/Slider';
+export { Select, SelectGroup, SelectValue, SelectTrigger, SelectContent, SelectLabel, SelectItem, SelectSeparator } from './components/Select';
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './components/Accordion';
+export { Collapsible, CollapsibleTrigger, CollapsibleContent } from './components/Collapsible';
+export { Popover, PopoverTrigger, PopoverContent } from './components/Popover';
+export { ScrollArea, ScrollBar } from './components/ScrollArea';
+export { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetFooter, SheetTitle, SheetDescription, SheetClose } from './components/Sheet';
+export { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem, ContextMenuCheckboxItem, ContextMenuRadioItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuShortcut, ContextMenuGroup, ContextMenuPortal, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuRadioGroup } from './components/ContextMenu';
+export { Stack, HStack, VStack, Grid } from './components/Layout';
+export { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis } from './components/Breadcrumb';
+

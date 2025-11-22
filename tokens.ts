@@ -108,15 +108,15 @@ export const tokens = {
             '6xl': '3.75rem',   // 60px
         },
         fontWeight: {
-            regular: 400,
-            medium: 500,
-            semibold: 600,
-            bold: 700,
+            regular: '400',
+            medium: '500',
+            semibold: '600',
+            bold: '700',
         },
         lineHeight: {
-            tight: 1.2,
-            normal: 1.5,
-            relaxed: 1.75,
+            tight: '1.2',
+            normal: '1.5',
+            relaxed: '1.75',
         },
         letterSpacing: {
             tight: '-0.02em',
@@ -168,10 +168,10 @@ export const tokens = {
 
     // 🎭 OPACITY
     opacity: {
-        disabled: 0.4,
-        hover: 0.8,
-        glass: 0.72,
-        glassDark: 0.85,
+        disabled: '0.4',
+        hover: '0.8',
+        glass: '0.72',
+        glassDark: '0.85',
     },
 
     // 📏 SPACING
@@ -269,12 +269,12 @@ export const tokens = {
 
     // 🎯 Z-INDEX
     zIndex: {
-        base: 0,
-        dropdown: 1000,
-        sticky: 1100,
-        modal: 1200,
-        popover: 1300,
-        tooltip: 1400,
+        base: '0',
+        dropdown: '1000',
+        sticky: '1100',
+        modal: '1200',
+        popover: '1300',
+        tooltip: '1400',
     },
 } as const;
 

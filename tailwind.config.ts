@@ -28,7 +28,12 @@ const config: Config = {
             letterSpacing: tokens.typography.letterSpacing,
             borderRadius: tokens.radius,
             boxShadow: {
-                ...tokens.shadows,
+                none: tokens.shadows.none,
+                xs: tokens.shadows.xs,
+                sm: tokens.shadows.sm,
+                md: tokens.shadows.md,
+                lg: tokens.shadows.lg,
+                xl: tokens.shadows.xl,
                 'dark-xs': tokens.shadows.dark.xs,
                 'dark-sm': tokens.shadows.dark.sm,
                 'dark-md': tokens.shadows.dark.md,
@@ -43,6 +48,25 @@ const config: Config = {
                 'apple': tokens.motion.easing.standard,
                 'apple-entrance': tokens.motion.easing.entrance,
                 'apple-exit': tokens.motion.easing.exit,
+            },
+            keyframes: {
+                "spinner-fade": {
+                    "0%": { opacity: "1" },
+                    "100%": { opacity: "0.2" },
+                },
+                "accordion-down": {
+                    from: { height: "0" },
+                    to: { height: "var(--radix-accordion-content-height)" },
+                },
+                "accordion-up": {
+                    from: { height: "var(--radix-accordion-content-height)" },
+                    to: { height: "0" },
+                },
+            },
+            animation: {
+                "spinner-fade": "spinner-fade 0.8s linear infinite",
+                "accordion-down": "accordion-down 0.2s ease-out",
+                "accordion-up": "accordion-up 0.2s ease-out",
             },
             zIndex: tokens.zIndex,
             backdropBlur: tokens.blur,
