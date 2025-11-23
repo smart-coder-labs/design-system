@@ -10,7 +10,7 @@ import {
 } from '../components/Select';
 
 const meta: Meta<typeof Select> = {
-    title: 'Inputs/Select',
+    title: 'Forms/Select',
     component: Select,
     tags: ['autodocs'],
 };

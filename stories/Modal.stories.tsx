@@ -4,7 +4,7 @@ import { Button } from '../components/Button';
 import React, { useState } from 'react';
 
 const meta: Meta<typeof Modal> = {
-    title: 'Components/Modal',
+    title: 'Overlays/Modal',
     component: Modal,
     tags: ['autodocs'],
     argTypes: {

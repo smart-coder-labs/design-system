@@ -3,7 +3,7 @@ import { NotificationBadge } from '../components/Badge';
 import { Button } from '../components/Button';
 
 const meta: Meta<typeof NotificationBadge> = {
-    title: 'Components/NotificationBadge',
+    title: 'Feedback/NotificationBadge',
     component: NotificationBadge,
     tags: ['autodocs'],
     argTypes: {

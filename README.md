@@ -5,6 +5,8 @@
 **Un design system completo inspirado en macOS, iOS y VisionOS**
 
 *Construido con Framer Motion + Radix UI + Tailwind CSS*
+<br>
+*✨ Creado con Inteligencia Artificial ✨*
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18+-61dafb)](https://reactjs.org/)
@@ -353,7 +355,7 @@ Construido con:
 
 <div align="center">
 
-**Hecho con ❤️ inspirado en Apple**
+**Hecho con ❤️ e IA inspirado en Apple**
 
 [⬆ Volver arriba](#-apple-creative-design-system)
 
