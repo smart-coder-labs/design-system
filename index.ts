@@ -32,6 +32,7 @@ export { MultiFileUpload } from './components/MultiFileUpload';
 export { PasswordInput } from './components/PasswordInput';
 export { OTPInput } from './components/OTPInput';
 export { SearchInput } from './components/SearchInput';
+export { TagsInput } from './components/TagsInput';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -52,6 +53,7 @@ export type { MultiFileUploadProps } from './components/MultiFileUpload';
 export type { PasswordInputProps } from './components/PasswordInput';
 export type { OTPInputProps } from './components/OTPInput';
 export type { SearchInputProps } from './components/SearchInput';
+export type { TagsInputProps } from './components/TagsInput';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

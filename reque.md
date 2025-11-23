@@ -22,7 +22,7 @@
 - [x] 19 Password Input with strength meter
 - [x] 20 OTP / Verification Code Input
 - [x] 21 Search Input (stand‑alone component)
-22 Tags Input
+- [x] 22 Tags Input
 23 Rich Text Editor
 24 Markdown Editor
 25 Rating Stars Input
