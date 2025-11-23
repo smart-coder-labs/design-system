@@ -20,7 +20,7 @@
 - [x] 17 Multi‑file Upload
 - 18 Color Picker
 - [x] 19 Password Input with strength meter
-20 OTP / Verification Code Input
+- [x] 20 OTP / Verification Code Input
 21 Search Input (stand‑alone component)
 22 Tags Input
 23 Rich Text Editor
