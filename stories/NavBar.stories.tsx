@@ -3,7 +3,7 @@ import { NavBar, NavBarBrand, NavBarContent, NavBarItem, NavBarSeparator } from 
 import { Button } from '../components/Button';
 
 const meta: Meta<typeof NavBar> = {
-    title: 'Components/NavBar',
+    title: 'Navigation/NavBar',
     component: NavBar,
     tags: ['autodocs'],
     argTypes: {
