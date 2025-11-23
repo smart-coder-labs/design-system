@@ -43,7 +43,7 @@
 - [x] 37 Avatar Group
 - [x] 38 Chip / Pill
 - [x] 39 Tag
-40 Table (and all its variants: sorting, pagination, selection)
+- [x] 40 Table (and all its variants: sorting, pagination, selection)
 41 Data Grid (advanced)
 42 Definition List (DL)
 43 Key‑Value Info
