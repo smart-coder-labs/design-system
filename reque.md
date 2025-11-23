@@ -34,7 +34,7 @@
 - [x] 30 Button with Dropdown
 4️⃣ Superficies (Surfaces)
 - [x] 31 Panel
-32 Snackbar (separate from Toast)
+- [x] 32 Snackbar (separate from Toast)
 33 Coachmark / Highlight Walkthrough
 34 Callout
 35 Window Frame (macOS window style)
