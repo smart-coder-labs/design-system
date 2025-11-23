@@ -13,6 +13,7 @@ export { cn } from './lib/utils';
 
 // Componentes
 export { Button } from './components/Button';
+export { Sidebar } from './components/Sidebar';
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
