@@ -17,10 +17,12 @@ export { Sidebar } from './components/Sidebar';
 export { Pagination } from './components/Pagination';
 export { NavigationDrawer } from './components/NavigationDrawer';
 export { TopActionBar, TopActionBarButton, TopActionBarIconButton } from './components/TopActionBar';
+export { CommandMenu } from './components/CommandMenu';
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
 export type { NavigationDrawerProps, NavigationDrawerItem, NavigationDrawerSection } from './components/NavigationDrawer';
 export type { TopActionBarProps, TopActionBarButtonProps, TopActionBarIconButtonProps } from './components/TopActionBar';
+export type { CommandMenuProps, CommandMenuItem, CommandMenuGroup } from './components/CommandMenu';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
