@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Bold, Italic, Underline, List, ListOrdered, AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
+import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { motion } from 'framer-motion';
 
@@ -97,9 +97,6 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
                     <ToolbarButton icon={AlignLeft} command="justifyLeft" title="Align Left" />
                     <ToolbarButton icon={AlignCenter} command="justifyCenter" title="Align Center" />
                     <ToolbarButton icon={AlignRight} command="justifyRight" title="Align Right" />
-                    <div className="w-px h-4 bg-border-primary mx-1" />
-                    <ToolbarButton icon={List} command="insertUnorderedList" title="Bullet List" />
-                    <ToolbarButton icon={ListOrdered} command="insertOrderedList" title="Numbered List" />
                 </div>
 
                 {/* Content Area */}
@@ -112,9 +109,6 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
                     className={cn(
                         "w-full p-4 outline-none text-text-primary max-w-none",
                         // Manual rich text styling since @tailwindcss/typography might not be present
-                        "[&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-2",
-                        "[&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-2",
-                        "[&_li]:my-1",
                         "[&_b]:font-bold [&_strong]:font-bold",
                         "[&_i]:italic [&_em]:italic",
                         "[&_u]:underline",
