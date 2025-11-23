@@ -12,9 +12,9 @@
 2️⃣ Formularios & Inputs (Forms & Inputs)
 10 Combobox ✅
 11 Date Picker ✅
-12 Date Range Picker
+- [x] 12 Date Range Picker
 13 Time Picker
-14 Range Slider (separate from the simple Slider)
+14 Range Slider (separate from the simple Slider) ✅
 15 Segmented Input
 16 File Upload
 17 Multi‑file Upload

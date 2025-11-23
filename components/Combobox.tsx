@@ -6,14 +6,14 @@ import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { cn } from "../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
-export interface ComboboxItem {
+export interface ComboboxOption {
     value: string;
     label: string;
     disabled?: boolean;
 }
 
 export interface ComboboxProps {
-    items: ComboboxItem[];
+    items: ComboboxOption[];
     value?: string;
     onChange?: (value: string) => void;
     placeholder?: string;

@@ -24,6 +24,7 @@ export { DockBar } from './components/DockBar';
 export { RotarySelector } from './components/RotarySelector';
 export { DatePicker } from './components/DatePicker';
 export { Combobox } from './components/Combobox';
+export { DateRangePicker } from './components/DateRangePicker';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -35,7 +36,8 @@ export type { HamburgerMenuIconProps } from './components/HamburgerMenuIcon';
 export type { DockBarProps, DockBarItem } from './components/DockBar';
 export type { RotarySelectorProps, RotarySelectorOption } from './components/RotarySelector';
 export type { DatePickerProps } from './components/DatePicker';
-export type { ComboboxProps, ComboboxOption } from './components/Combobox';
+export type { ComboboxProps } from './components/Combobox';
+export type { DateRangePickerProps, DateRange } from './components/DateRangePicker';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

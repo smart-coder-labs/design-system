@@ -18,10 +18,4 @@ export const Default: Story = {
     ),
 };
 
-export const Range: Story = {
-    render: () => (
-        <div className="w-[60%]">
-            <Slider defaultValue={[25, 75]} max={100} step={1} />
-        </div>
-    ),
-};
+

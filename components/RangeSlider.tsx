@@ -4,7 +4,7 @@ import * as React from "react";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { cn } from "../lib/utils";
 
-const Slider = React.forwardRef<
+const RangeSlider = React.forwardRef<
     React.ElementRef<typeof SliderPrimitive.Root>,
     React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
 >(({ className, ...props }, ref) => (
@@ -20,8 +20,9 @@ const Slider = React.forwardRef<
             <SliderPrimitive.Range className="absolute h-full bg-accent-blue" />
         </SliderPrimitive.Track>
         <SliderPrimitive.Thumb className="block h-6 w-6 rounded-full border border-border-primary/10 bg-white shadow-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 transition-transform duration-200" />
+        <SliderPrimitive.Thumb className="block h-6 w-6 rounded-full border border-border-primary/10 bg-white shadow-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 transition-transform duration-200" />
     </SliderPrimitive.Root>
 ));
-Slider.displayName = SliderPrimitive.Root.displayName;
+RangeSlider.displayName = SliderPrimitive.Root.displayName;
 
-export { Slider };
+export { RangeSlider };
