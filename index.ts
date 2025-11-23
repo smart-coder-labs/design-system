@@ -48,6 +48,7 @@ export { WindowFrame } from './components/WindowFrame';
 export { InspectorPanel, InspectorField } from './components/InspectorPanel';
 export { AvatarGroup } from './components/AvatarGroup';
 export { Chip } from './components/Chip';
+export { Tag } from './components/Tag';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -84,6 +85,7 @@ export type { WindowFrameProps } from './components/WindowFrame';
 export type { InspectorPanelProps, InspectorSection, InspectorFieldProps } from './components/InspectorPanel';
 export type { AvatarGroupProps, AvatarGroupItem, AvatarGroupSize } from './components/AvatarGroup';
 export type { ChipProps, ChipVariant, ChipSize } from './components/Chip';
+export type { TagProps, TagVariant, TagSize } from './components/Tag';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

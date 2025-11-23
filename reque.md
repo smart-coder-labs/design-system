@@ -42,7 +42,7 @@
 5️⃣ Data Display (Datos)
 - [x] 37 Avatar Group
 - [x] 38 Chip / Pill
-39 Tag
+- [x] 39 Tag
 40 Table (and all its variants: sorting, pagination, selection)
 41 Data Grid (advanced)
 42 Definition List (DL)
