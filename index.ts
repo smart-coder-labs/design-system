@@ -54,6 +54,7 @@ export { DataGrid } from './components/DataGrid';
 export { DefinitionList, CompactDefinitionList } from './components/DefinitionList';
 export { KeyValueInfo, CompactKeyValueInfo, InlineKeyValueInfo } from './components/KeyValueInfo';
 export { PropertyList, CompactPropertyList } from './components/PropertyList';
+export { KPIBlock, KPIGroup } from './components/KPIBlock';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -96,6 +97,7 @@ export type { DataGridProps, DataGridColumn } from './components/DataGrid';
 export type { DefinitionListProps, DefinitionItem, DefinitionListVariant, DefinitionListOrientation, CompactDefinitionListProps } from './components/DefinitionList';
 export type { KeyValueInfoProps, KeyValueItem, KeyValueInfoVariant, KeyValueInfoSize, CompactKeyValueInfoProps, InlineKeyValueInfoProps } from './components/KeyValueInfo';
 export type { PropertyListProps, PropertyItem, PropertySection, PropertyListVariant, PropertyListSize, CompactPropertyListProps } from './components/PropertyList';
+export type { KPIBlockProps, KPIGroupProps, KPITrend, KPIVariant, KPISize } from './components/KPIBlock';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

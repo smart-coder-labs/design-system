@@ -1524,5 +1524,421 @@ function DocumentInfo() {
 
 ---
 
+## 📊 KPIBlock
+
+### Ejemplo básico
+
+```tsx
+import { KPIBlock } from './index';
+
+function DashboardKPI() {
+  return (
+    <KPIBlock
+      label="Total Revenue"
+      value="$124,500"
+      trend="up"
+      change="+15.7%"
+      variant="elevated"
+    />
+  );
+}
+```
+
+### Con ícono
+
+```tsx
+import { KPIBlock } from './index';
+import { DollarSign, Users, ShoppingCart } from 'lucide-react';
+
+function MetricsWithIcons() {
+  return (
+    <>
+      <KPIBlock
+        label="Revenue"
+        value="$324,500"
+        icon={<DollarSign className="w-5 h-5" />}
+        trend="up"
+        change="+15.7%"
+        variant="elevated"
+      />
+      
+      <KPIBlock
+        label="Active Users"
+        value="8,234"
+        icon={<Users className="w-5 h-5" />}
+        trend="up"
+        change="+12.5%"
+        variant="elevated"
+      />
+      
+      <KPIBlock
+        label="Total Orders"
+        value="1,249"
+        icon={<ShoppingCart className="w-5 h-5" />}
+        trend="up"
+        change="+18.3%"
+        variant="elevated"
+      />
+    </>
+  );
+}
+```
+
+### Variantes
+
+```tsx
+// Default (sin fondo)
+<KPIBlock
+  label="Revenue"
+  value="$124,500"
+  variant="default"
+  trend="up"
+  change="+15.7%"
+/>
+
+// Elevated (con sombra)
+<KPIBlock
+  label="Revenue"
+  value="$124,500"
+  variant="elevated"
+  trend="up"
+  change="+15.7%"
+/>
+
+// Bordered (con borde)
+<KPIBlock
+  label="Revenue"
+  value="$124,500"
+  variant="bordered"
+  trend="up"
+  change="+15.7%"
+/>
+
+// Minimal (sin adornos)
+<KPIBlock
+  label="Revenue"
+  value="$124,500"
+  variant="minimal"
+  trend="up"
+  change="+15.7%"
+/>
+```
+
+### Tendencias
+
+```tsx
+// Tendencia positiva (verde)
+<KPIBlock
+  label="Revenue"
+  value="$124,500"
+  trend="up"
+  change="+15.7%"
+/>
+
+// Tendencia negativa (roja)
+<KPIBlock
+  label="Bounce Rate"
+  value="32.4%"
+  trend="down"
+  change="-8.2%"
+/>
+
+// Tendencia neutral (gris)
+<KPIBlock
+  label="Conversion Rate"
+  value="3.45%"
+  trend="neutral"
+  change="0.0%"
+/>
+```
+
+### Tamaños
+
+```tsx
+// Pequeño
+<KPIBlock
+  label="Page Views"
+  value="15,234"
+  size="sm"
+  trend="up"
+  change="+23.1%"
+/>
+
+// Mediano (default)
+<KPIBlock
+  label="Total Orders"
+  value="1,249"
+  size="md"
+  trend="up"
+  change="+18.3%"
+/>
+
+// Grande
+<KPIBlock
+  label="Revenue"
+  value="$324,500"
+  size="lg"
+  trend="up"
+  change="+15.7%"
+/>
+```
+
+### Con descripción
+
+```tsx
+<KPIBlock
+  label="Monthly Revenue"
+  value="$324,500"
+  description="vs last month"
+  trend="up"
+  change="+15.7%"
+  variant="elevated"
+/>
+```
+
+### Estado de carga
+
+```tsx
+<KPIBlock
+  label="Loading Data"
+  value="$0"
+  loading={true}
+  variant="elevated"
+/>
+```
+
+### KPI Groups (Grid)
+
+```tsx
+import { KPIGroup, KPIBlock } from './index';
+import { DollarSign, Users, ShoppingCart, Target } from 'lucide-react';
+
+function DashboardMetrics() {
+  return (
+    <KPIGroup columns={4}>
+      <KPIBlock
+        label="Total Revenue"
+        value="$324,500"
+        icon={<DollarSign className="w-5 h-5" />}
+        trend="up"
+        change="+15.7%"
+        variant="elevated"
+      />
+      <KPIBlock
+        label="Total Orders"
+        value="1,249"
+        icon={<ShoppingCart className="w-5 h-5" />}
+        trend="up"
+        change="+18.3%"
+        variant="elevated"
+      />
+      <KPIBlock
+        label="Active Users"
+        value="8,234"
+        icon={<Users className="w-5 h-5" />}
+        trend="up"
+        change="+12.5%"
+        variant="elevated"
+      />
+      <KPIBlock
+        label="Conversion Rate"
+        value="3.8%"
+        icon={<Target className="w-5 h-5" />}
+        trend="up"
+        change="+0.3%"
+        variant="elevated"
+      />
+    </KPIGroup>
+  );
+}
+```
+
+### Grid de 2 columnas
+
+```tsx
+<KPIGroup columns={2}>
+  <KPIBlock
+    label="Total Revenue"
+    value="$324,500"
+    icon={<DollarSign className="w-5 h-5" />}
+    trend="up"
+    change="+15.7%"
+    variant="elevated"
+  />
+  <KPIBlock
+    label="Active Users"
+    value="8,234"
+    icon={<Users className="w-5 h-5" />}
+    trend="up"
+    change="+12.5%"
+    variant="elevated"
+  />
+</KPIGroup>
+```
+
+### Grid de 3 columnas
+
+```tsx
+<KPIGroup columns={3}>
+  <KPIBlock
+    label="Revenue"
+    value="$124,500"
+    icon={<DollarSign className="w-5 h-5" />}
+    trend="up"
+    change="+15.7%"
+    variant="elevated"
+  />
+  <KPIBlock
+    label="Orders"
+    value="1,249"
+    icon={<ShoppingCart className="w-5 h-5" />}
+    trend="up"
+    change="+18.3%"
+    variant="elevated"
+  />
+  <KPIBlock
+    label="Users"
+    value="2,543"
+    icon={<Users className="w-5 h-5" />}
+    trend="up"
+    change="+5.2%"
+    variant="elevated"
+  />
+</KPIGroup>
+```
+
+### Caso de uso: Dashboard completo
+
+```tsx
+import { KPIGroup, KPIBlock } from './index';
+import { DollarSign, TrendingUp, Users, Activity } from 'lucide-react';
+
+function AnalyticsDashboard() {
+  return (
+    <div className="space-y-6">
+      <h2 className="text-2xl font-semibold text-text-primary">Dashboard Overview</h2>
+      
+      <KPIGroup columns={4}>
+        <KPIBlock
+          label="Total Revenue"
+          value="$324,500"
+          description="This month"
+          icon={<DollarSign className="w-5 h-5" />}
+          trend="up"
+          change="+15.7%"
+          variant="elevated"
+        />
+        <KPIBlock
+          label="Growth Rate"
+          value="23.5%"
+          description="vs last quarter"
+          icon={<TrendingUp className="w-5 h-5" />}
+          trend="up"
+          change="+3.2%"
+          variant="elevated"
+        />
+        <KPIBlock
+          label="Active Users"
+          value="8,234"
+          description="Online now"
+          icon={<Users className="w-5 h-5" />}
+          trend="up"
+          change="+12.5%"
+          variant="elevated"
+        />
+        <KPIBlock
+          label="Conversion Rate"
+          value="3.8%"
+          description="Average"
+          icon={<Activity className="w-5 h-5" />}
+          trend="up"
+          change="+0.3%"
+          variant="elevated"
+        />
+      </KPIGroup>
+    </div>
+  );
+}
+```
+
+### Caso de uso: Sidebar de estadísticas rápidas
+
+```tsx
+import { KPIBlock } from './index';
+
+function QuickStatsSidebar() {
+  return (
+    <div className="max-w-xs space-y-4">
+      <h3 className="text-sm font-semibold text-text-secondary uppercase tracking-wide">
+        Quick Stats
+      </h3>
+      <div className="space-y-3">
+        <KPIBlock
+          label="Today's Revenue"
+          value="$12,450"
+          trend="up"
+          change="+8.2%"
+          size="sm"
+        />
+        <KPIBlock
+          label="New Orders"
+          value="34"
+          trend="up"
+          change="+12.0%"
+          size="sm"
+        />
+        <KPIBlock
+          label="Active Now"
+          value="156"
+          trend="neutral"
+          change="0.0%"
+          size="sm"
+        />
+      </div>
+    </div>
+  );
+}
+```
+
+### Caso de uso: Métricas con tendencias mixtas
+
+```tsx
+import { KPIGroup, KPIBlock } from './index';
+import { DollarSign, Activity, Target } from 'lucide-react';
+
+function MixedMetrics() {
+  return (
+    <KPIGroup columns={3}>
+      <KPIBlock
+        label="Revenue"
+        value="$124,500"
+        icon={<DollarSign className="w-5 h-5" />}
+        trend="up"
+        change="+15.7%"
+        variant="elevated"
+      />
+      <KPIBlock
+        label="Bounce Rate"
+        value="32.4%"
+        icon={<Activity className="w-5 h-5" />}
+        trend="down"
+        change="-8.2%"
+        variant="elevated"
+      />
+      <KPIBlock
+        label="Conversion"
+        value="3.45%"
+        icon={<Target className="w-5 h-5" />}
+        trend="neutral"
+        change="0.0%"
+        variant="elevated"
+      />
+    </KPIGroup>
+  );
+}
+```
+
+---
+
 **¡Todos los ejemplos están listos para copiar y usar!** 🚀
 
