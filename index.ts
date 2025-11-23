@@ -37,6 +37,7 @@ export { RichTextEditor } from './components/RichTextEditor';
 export { MarkdownEditor } from './components/MarkdownEditor';
 export { RatingInput } from './components/RatingInput';
 export { IconButton } from './components/IconButton';
+export { FAB } from './components/FAB';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -62,6 +63,7 @@ export type { RichTextEditorProps } from './components/RichTextEditor';
 export type { MarkdownEditorProps } from './components/MarkdownEditor';
 export type { RatingInputProps } from './components/RatingInput';
 export type { IconButtonProps, IconButtonVariant, IconButtonSize } from './components/IconButton';
+export type { FABProps, FABVariant, FABSize, FABPosition } from './components/FAB';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

@@ -28,7 +28,7 @@
 - [x] 25 Rating Stars Input
 3️⃣ Botones (Buttons)
 - [x] 26 Icon Button (distinct component, not just a Button variant)
-27 Floating Action Button (FAB)
+- [x] 27 Floating Action Button (FAB)
 28 Split Button
 29 FAB Group
 30 Button with Dropdown
