@@ -884,6 +884,290 @@ function Dashboard() {
 
 ---
 
+## 📋 PropertyList
+
+### Ejemplo básico
+
+```tsx
+import { PropertyList } from './index';
+
+function FileInfo() {
+  const sections = [
+    {
+      id: 'general',
+      title: 'General',
+      items: [
+        { label: 'Kind', value: 'JPEG Image' },
+        { label: 'Size', value: '2.4 MB' },
+        { label: 'Created', value: 'Nov 15, 2025' },
+      ],
+      defaultExpanded: true,
+    },
+  ];
+
+  return (
+    <PropertyList 
+      sections={sections}
+      variant="bordered"
+    />
+  );
+}
+```
+
+### Variantes
+
+```tsx
+// Default
+<PropertyList 
+  sections={sections}
+  variant="default"
+/>
+
+// Bordered (con borde y sombra)
+<PropertyList 
+  sections={sections}
+  variant="bordered"
+/>
+
+// Inset (fondo secundario)
+<PropertyList 
+  sections={sections}
+  variant="inset"
+/>
+```
+
+### Secciones colapsables
+
+```tsx
+import { PropertyList } from './index';
+
+function SystemInfo() {
+  const sections = [
+    {
+      id: 'hardware',
+      title: 'Hardware',
+      items: [
+        { label: 'Model', value: 'MacBook Pro 16"' },
+        { label: 'Chip', value: 'Apple M3 Max' },
+        { label: 'Memory', value: '64 GB' },
+      ],
+      defaultExpanded: true, // Expandida por defecto
+    },
+    {
+      id: 'software',
+      title: 'Software',
+      items: [
+        { label: 'System', value: 'macOS Sonoma 14.1' },
+        { label: 'Kernel', value: 'Darwin 23.1.0' },
+      ],
+      defaultExpanded: false, // Colapsada por defecto
+    },
+  ];
+
+  return (
+    <PropertyList 
+      sections={sections}
+      variant="bordered"
+      collapsible={true}
+    />
+  );
+}
+```
+
+### Con iconos
+
+```tsx
+import { PropertyList } from './index';
+import { File, HardDrive, Calendar, User } from 'lucide-react';
+
+function FileInspector() {
+  const sections = [
+    {
+      id: 'general',
+      title: 'General',
+      items: [
+        { 
+          label: 'Kind', 
+          value: 'Folder',
+          icon: <File className="w-3.5 h-3.5" />
+        },
+        { 
+          label: 'Size', 
+          value: '1.2 GB',
+          icon: <HardDrive className="w-3.5 h-3.5" />
+        },
+        { 
+          label: 'Created', 
+          value: 'Nov 15, 2025',
+          icon: <Calendar className="w-3.5 h-3.5" />
+        },
+      ],
+      defaultExpanded: true,
+    },
+  ];
+
+  return (
+    <PropertyList 
+      sections={sections}
+      variant="bordered"
+    />
+  );
+}
+```
+
+### Propiedades editables
+
+```tsx
+import { PropertyList } from './index';
+import { useState } from 'react';
+
+function AppSettings() {
+  const [theme, setTheme] = useState('Auto');
+  const [fontSize, setFontSize] = useState('14px');
+
+  const sections = [
+    {
+      id: 'display',
+      title: 'Display',
+      items: [
+        { 
+          label: 'Theme', 
+          value: theme,
+          editable: true,
+          onChange: (val) => setTheme(val)
+        },
+        { 
+          label: 'Font Size', 
+          value: fontSize,
+          editable: true,
+          onChange: (val) => setFontSize(val)
+        },
+      ],
+      defaultExpanded: true,
+    },
+  ];
+
+  return (
+    <PropertyList 
+      sections={sections}
+      variant="bordered"
+      collapsible={false}
+    />
+  );
+}
+```
+
+### Tamaños
+
+```tsx
+// Pequeño
+<PropertyList 
+  sections={sections}
+  size="sm"
+/>
+
+// Mediano (default)
+<PropertyList 
+  sections={sections}
+  size="md"
+/>
+
+// Grande
+<PropertyList 
+  sections={sections}
+  size="lg"
+/>
+```
+
+### Sin divisores
+
+```tsx
+<PropertyList 
+  sections={sections}
+  variant="bordered"
+  dividers={false}
+/>
+```
+
+### Caso de uso: Inspector de archivo macOS
+
+```tsx
+import { PropertyList } from './index';
+import { File, HardDrive, Calendar, User } from 'lucide-react';
+
+function MacOSFileInspector() {
+  const sections = [
+    {
+      id: 'general',
+      title: 'General',
+      items: [
+        { 
+          label: 'Kind', 
+          value: 'JPEG Image',
+          icon: <File className="w-3.5 h-3.5" />
+        },
+        { 
+          label: 'Size', 
+          value: '2.4 MB (2,456,789 bytes)',
+          icon: <HardDrive className="w-3.5 h-3.5" />
+        },
+        { 
+          label: 'Where', 
+          value: '/Users/ana/Pictures',
+          icon: <File className="w-3.5 h-3.5" />
+        },
+        { 
+          label: 'Created', 
+          value: 'November 15, 2025 at 10:30 AM',
+          icon: <Calendar className="w-3.5 h-3.5" />
+        },
+        { 
+          label: 'Modified', 
+          value: 'November 23, 2025 at 2:45 PM',
+          icon: <Calendar className="w-3.5 h-3.5" />
+        },
+      ],
+      defaultExpanded: true,
+    },
+    {
+      id: 'more',
+      title: 'More Info',
+      items: [
+        { label: 'Dimensions', value: '4032 × 3024' },
+        { label: 'Color space', value: 'Display P3' },
+        { label: 'Alpha channel', value: 'No' },
+      ],
+      defaultExpanded: false,
+    },
+    {
+      id: 'permissions',
+      title: 'Sharing & Permissions',
+      items: [
+        { 
+          label: 'Owner', 
+          value: 'Ana García',
+          icon: <User className="w-3.5 h-3.5" />
+        },
+        { label: 'Access', value: 'Read & Write' },
+        { label: 'Group', value: 'staff' },
+      ],
+      defaultExpanded: false,
+    },
+  ];
+
+  return (
+    <PropertyList 
+      sections={sections}
+      variant="bordered"
+      collapsible={true}
+      dividers={true}
+    />
+  );
+}
+```
+
+---
+
 ## 🔑 KeyValueInfo
 
 ### Ejemplo básico
