@@ -33,6 +33,9 @@ export { PasswordInput } from './components/PasswordInput';
 export { OTPInput } from './components/OTPInput';
 export { SearchInput } from './components/SearchInput';
 export { TagsInput } from './components/TagsInput';
+export { RichTextEditor } from './components/RichTextEditor';
+export { MarkdownEditor } from './components/MarkdownEditor';
+export { RatingInput } from './components/RatingInput';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -54,6 +57,9 @@ export type { PasswordInputProps } from './components/PasswordInput';
 export type { OTPInputProps } from './components/OTPInput';
 export type { SearchInputProps } from './components/SearchInput';
 export type { TagsInputProps } from './components/TagsInput';
+export type { RichTextEditorProps } from './components/RichTextEditor';
+export type { MarkdownEditorProps } from './components/MarkdownEditor';
+export type { RatingInputProps } from './components/RatingInput';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

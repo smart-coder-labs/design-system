@@ -23,9 +23,9 @@
 - [x] 20 OTP / Verification Code Input
 - [x] 21 Search Input (stand‑alone component)
 - [x] 22 Tags Input
-23 Rich Text Editor
-24 Markdown Editor
-25 Rating Stars Input
+- [x] 23 Rich Text Editor
+- [x] 24 Markdown Editor
+- [x] 25 Rating Stars Input
 3️⃣ Botones (Buttons)
 26 Icon Button (distinct component, not just a Button variant)
 27 Floating Action Button (FAB)
