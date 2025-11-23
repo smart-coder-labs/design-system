@@ -38,6 +38,8 @@ export { MarkdownEditor } from './components/MarkdownEditor';
 export { RatingInput } from './components/RatingInput';
 export { IconButton } from './components/IconButton';
 export { FAB } from './components/FAB';
+export { SplitButton } from './components/SplitButton';
+export { FABGroup } from './components/FABGroup';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -64,6 +66,8 @@ export type { MarkdownEditorProps } from './components/MarkdownEditor';
 export type { RatingInputProps } from './components/RatingInput';
 export type { IconButtonProps, IconButtonVariant, IconButtonSize } from './components/IconButton';
 export type { FABProps, FABVariant, FABSize, FABPosition } from './components/FAB';
+export type { SplitButtonProps, SplitButtonAction, SplitButtonVariant, SplitButtonSize } from './components/SplitButton';
+export type { FABGroupProps, FABGroupAction, FABGroupPosition } from './components/FABGroup';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

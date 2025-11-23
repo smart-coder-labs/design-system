@@ -29,8 +29,8 @@
 3️⃣ Botones (Buttons)
 - [x] 26 Icon Button (distinct component, not just a Button variant)
 - [x] 27 Floating Action Button (FAB)
-28 Split Button
-29 FAB Group
+- [x] 28 Split Button
+- [x] 29 FAB Group
 30 Button with Dropdown
 4️⃣ Superficies (Surfaces)
 31 Panel
