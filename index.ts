@@ -29,6 +29,7 @@ export { TimePicker } from './components/TimePicker';
 export { SegmentedInput } from './components/SegmentedInput';
 export { FileUpload } from './components/FileUpload';
 export { MultiFileUpload } from './components/MultiFileUpload';
+export { PasswordInput } from './components/PasswordInput';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -46,6 +47,7 @@ export type { TimePickerProps } from './components/TimePicker';
 export type { SegmentedInputProps } from './components/SegmentedInput';
 export type { FileUploadProps } from './components/FileUpload';
 export type { MultiFileUploadProps } from './components/MultiFileUpload';
+export type { PasswordInputProps } from './components/PasswordInput';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

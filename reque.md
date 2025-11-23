@@ -19,7 +19,7 @@
 - [x] 16 File Upload
 - [x] 17 Multi‑file Upload
 - 18 Color Picker
-19 Password Input with strength meter
+- [x] 19 Password Input with strength meter
 20 OTP / Verification Code Input
 21 Search Input (stand‑alone component)
 22 Tags Input
