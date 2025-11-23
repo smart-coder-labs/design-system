@@ -46,6 +46,8 @@ export { Snackbar } from './components/Snackbar';
 export { Callout } from './components/Callout';
 export { WindowFrame } from './components/WindowFrame';
 export { InspectorPanel, InspectorField } from './components/InspectorPanel';
+export { AvatarGroup } from './components/AvatarGroup';
+export { Chip } from './components/Chip';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -80,6 +82,8 @@ export type { SnackbarProps, SnackbarAction, SnackbarVariant } from './component
 export type { CalloutProps, CalloutVariant } from './components/Callout';
 export type { WindowFrameProps } from './components/WindowFrame';
 export type { InspectorPanelProps, InspectorSection, InspectorFieldProps } from './components/InspectorPanel';
+export type { AvatarGroupProps, AvatarGroupItem, AvatarGroupSize } from './components/AvatarGroup';
+export type { ChipProps, ChipVariant, ChipSize } from './components/Chip';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

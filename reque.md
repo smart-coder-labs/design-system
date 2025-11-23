@@ -40,8 +40,8 @@
 - [x] 35 Window Frame (macOS window style)
 - [x] 36 Inspector Panel (like Xcode)
 5️⃣ Data Display (Datos)
-37 Avatar Group
-38 Chip / Pill
+- [x] 37 Avatar Group
+- [x] 38 Chip / Pill
 39 Tag
 40 Table (and all its variants: sorting, pagination, selection)
 41 Data Grid (advanced)
