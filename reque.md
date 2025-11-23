@@ -16,7 +16,7 @@
 13 Time Picker ✅
 14 Range Slider (separate from the simple Slider) ✅
 - [x] 15 Segmented Input
-16 File Upload
+- [x] 16 File Upload
 17 Multi‑file Upload
 18 Color Picker
 19 Password Input with strength meter
