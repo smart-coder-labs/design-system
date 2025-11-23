@@ -884,4 +884,150 @@ function Dashboard() {
 
 ---
 
+## 📋 DefinitionList
+
+### Ejemplo básico
+
+```tsx
+import { DefinitionList } from './index';
+
+function UserProfile() {
+  const userInfo = [
+    { term: 'Nombre', description: 'Juan Pérez' },
+    { term: 'Email', description: 'juan.perez@example.com' },
+    { term: 'Teléfono', description: '+52 55 1234 5678' },
+    { term: 'Ciudad', description: 'Ciudad de México' },
+  ];
+
+  return (
+    <DefinitionList 
+      items={userInfo}
+      variant="bordered"
+      orientation="horizontal"
+    />
+  );
+}
+```
+
+### Variantes
+
+```tsx
+// Default
+<DefinitionList 
+  items={items}
+  variant="default"
+/>
+
+// Bordered (con borde y sombra)
+<DefinitionList 
+  items={items}
+  variant="bordered"
+/>
+
+// Striped (filas alternadas)
+<DefinitionList 
+  items={items}
+  variant="striped"
+/>
+
+// Con divisores
+<DefinitionList 
+  items={items}
+  divider={true}
+/>
+
+// Hoverable
+<DefinitionList 
+  items={items}
+  hoverable={true}
+/>
+```
+
+### Orientaciones
+
+```tsx
+// Horizontal (término y descripción lado a lado)
+<DefinitionList 
+  items={items}
+  orientation="horizontal"
+/>
+
+// Vertical (término arriba, descripción abajo)
+<DefinitionList 
+  items={items}
+  orientation="vertical"
+/>
+```
+
+### Densidad
+
+```tsx
+// Comfortable (espaciado amplio)
+<DefinitionList 
+  items={items}
+  density="comfortable"
+/>
+
+// Compact (espaciado reducido)
+<DefinitionList 
+  items={items}
+  density="compact"
+/>
+```
+
+### Caso de uso: Especificaciones de producto
+
+```tsx
+import { DefinitionList } from './index';
+
+function ProductDetails() {
+  const specs = [
+    { term: 'Modelo', description: 'MacBook Pro 16"' },
+    { term: 'Procesador', description: 'Apple M3 Max con CPU de 16 núcleos' },
+    { term: 'Memoria', description: '64 GB de memoria unificada' },
+    { term: 'Almacenamiento', description: '1 TB SSD' },
+    { term: 'Pantalla', description: 'Liquid Retina XDR de 16.2 pulgadas' },
+    { term: 'Peso', description: '2.15 kg' },
+  ];
+
+  return (
+    <DefinitionList 
+      items={specs}
+      variant="bordered"
+      orientation="horizontal"
+      hoverable={true}
+    />
+  );
+}
+```
+
+### Caso de uso: Metadatos de documento
+
+```tsx
+import { DefinitionList } from './index';
+
+function DocumentInfo() {
+  const metadata = [
+    { term: 'Título', description: 'Propuesta de Proyecto Q4 2025' },
+    { term: 'Autor', description: 'Carlos Ramírez' },
+    { term: 'Fecha de creación', description: '1 de noviembre de 2025' },
+    { term: 'Última modificación', description: '23 de noviembre de 2025' },
+    { term: 'Versión', description: '3.2' },
+    { term: 'Estado', description: 'En revisión' },
+  ];
+
+  return (
+    <DefinitionList 
+      items={metadata}
+      variant="default"
+      orientation="vertical"
+      divider={true}
+    />
+  );
+}
+```
+
+---
+
 **¡Todos los ejemplos están listos para copiar y usar!** 🚀
+
