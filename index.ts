@@ -52,6 +52,7 @@ export { Tag } from './components/Tag';
 export { Table } from './components/Table';
 export { DataGrid } from './components/DataGrid';
 export { DefinitionList, CompactDefinitionList } from './components/DefinitionList';
+export { KeyValueInfo, CompactKeyValueInfo, InlineKeyValueInfo } from './components/KeyValueInfo';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -92,6 +93,7 @@ export type { TagProps, TagVariant, TagSize } from './components/Tag';
 export type { TableProps, Column } from './components/Table';
 export type { DataGridProps, DataGridColumn } from './components/DataGrid';
 export type { DefinitionListProps, DefinitionItem, DefinitionListVariant, DefinitionListOrientation, CompactDefinitionListProps } from './components/DefinitionList';
+export type { KeyValueInfoProps, KeyValueItem, KeyValueInfoVariant, KeyValueInfoSize, CompactKeyValueInfoProps, InlineKeyValueInfoProps } from './components/KeyValueInfo';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

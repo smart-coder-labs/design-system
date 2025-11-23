@@ -46,7 +46,7 @@
 - [x] 40 Table (and all its variants: sorting, pagination, selection)
 - [x] 41 Data Grid (advanced)
 - [x] 42 Definition List (DL)
-43 Key‑Value Info
+- [x] 43 Key‑Value Info
 44 Property List (macOS style)
 45 KPI Block
 46 Statistic Display
