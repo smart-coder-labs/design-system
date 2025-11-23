@@ -20,6 +20,11 @@ export { TopActionBar, TopActionBarButton, TopActionBarIconButton } from './comp
 export { CommandMenu } from './components/CommandMenu';
 export { MenuBar } from './components/MenuBar';
 export { HamburgerMenuIcon } from './components/HamburgerMenuIcon';
+export { DockBar } from './components/DockBar';
+export { RotarySelector } from './components/RotarySelector';
+export { DatePicker } from './components/DatePicker';
+export { Combobox } from './components/Combobox';
+
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
 export type { NavigationDrawerProps, NavigationDrawerItem, NavigationDrawerSection } from './components/NavigationDrawer';
@@ -27,6 +32,10 @@ export type { TopActionBarProps, TopActionBarButtonProps, TopActionBarIconButton
 export type { CommandMenuProps, CommandMenuItem, CommandMenuGroup } from './components/CommandMenu';
 export type { MenuBarProps, MenuBarMenu, MenuBarItem } from './components/MenuBar';
 export type { HamburgerMenuIconProps } from './components/HamburgerMenuIcon';
+export type { DockBarProps, DockBarItem } from './components/DockBar';
+export type { RotarySelectorProps, RotarySelectorOption } from './components/RotarySelector';
+export type { DatePickerProps } from './components/DatePicker';
+export type { ComboboxProps, ComboboxOption } from './components/Combobox';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
@@ -86,4 +95,3 @@ export { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetFooter, SheetTitle
 export { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem, ContextMenuCheckboxItem, ContextMenuRadioItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuShortcut, ContextMenuGroup, ContextMenuPortal, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuRadioGroup } from './components/ContextMenu';
 export { Stack, HStack, VStack, Grid } from './components/Layout';
 export { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis } from './components/Breadcrumb';
-

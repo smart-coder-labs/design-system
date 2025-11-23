@@ -7,10 +7,10 @@
 6 Menu Bar (macOS‑style) ✅
 7 Hamburger Menu Icon ✅
 8 Dock Bar (macOS‑style)
-9 Rotary Selector (VisionOS‑style)
+9 Rotary Selector (VisionOS‑style) ✅
 2️⃣ Formularios & Inputs (Forms & Inputs)
-10 Combobox
-11 Date Picker
+10 Combobox ✅
+11 Date Picker ✅
 12 Date Range Picker
 13 Time Picker
 14 Range Slider (separate from the simple Slider)
