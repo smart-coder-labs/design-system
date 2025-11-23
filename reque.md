@@ -17,8 +17,8 @@
 14 Range Slider (separate from the simple Slider) ✅
 - [x] 15 Segmented Input
 - [x] 16 File Upload
-17 Multi‑file Upload
-18 Color Picker
+- [x] 17 Multi‑file Upload
+- 18 Color Picker
 19 Password Input with strength meter
 20 OTP / Verification Code Input
 21 Search Input (stand‑alone component)
