@@ -55,6 +55,7 @@ export { DefinitionList, CompactDefinitionList } from './components/DefinitionLi
 export { KeyValueInfo, CompactKeyValueInfo, InlineKeyValueInfo } from './components/KeyValueInfo';
 export { PropertyList, CompactPropertyList } from './components/PropertyList';
 export { KPIBlock, KPIGroup } from './components/KPIBlock';
+export { StatisticDisplay, StatisticHighlight } from './components/StatisticDisplay';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -98,6 +99,7 @@ export type { DefinitionListProps, DefinitionItem, DefinitionListVariant, Defini
 export type { KeyValueInfoProps, KeyValueItem, KeyValueInfoVariant, KeyValueInfoSize, CompactKeyValueInfoProps, InlineKeyValueInfoProps } from './components/KeyValueInfo';
 export type { PropertyListProps, PropertyItem, PropertySection, PropertyListVariant, PropertyListSize, CompactPropertyListProps } from './components/PropertyList';
 export type { KPIBlockProps, KPIGroupProps, KPITrend, KPIVariant, KPISize } from './components/KPIBlock';
+export type { StatisticDisplayProps, StatisticMetric, StatisticVariant, StatisticTrend, StatisticSize, StatisticHighlightProps } from './components/StatisticDisplay';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

@@ -1940,5 +1940,148 @@ function MixedMetrics() {
 
 ---
 
+## 📈 StatisticDisplay
+
+### Grid básico
+
+```tsx
+import { StatisticDisplay } from './index';
+import type { StatisticMetric } from './index';
+import { DollarSign, ShoppingCart, Users } from 'lucide-react';
+
+const metrics: StatisticMetric[] = [
+  {
+    id: 'revenue',
+    label: 'Revenue',
+    value: '$248K',
+    description: 'Últimos 30 días',
+    change: '+12.4%',
+    trend: 'up',
+    icon: <DollarSign className="w-5 h-5" />,
+    sparkline: [180, 190, 205, 214, 230, 248],
+    goal: { label: 'Meta', value: '$260K', progress: 0.82 },
+  },
+  {
+    id: 'orders',
+    label: 'Orders',
+    value: '1,982',
+    description: 'Pedidos completados',
+    change: '+6.1%',
+    trend: 'up',
+    icon: <ShoppingCart className="w-5 h-5" />,
+    sparkline: [1200, 1300, 1400, 1500, 1700, 1982],
+  },
+  {
+    id: 'users',
+    label: 'Active Users',
+    value: '28,430',
+    description: 'Usuarios activos mensuales',
+    change: '+3.4%',
+    trend: 'up',
+    icon: <Users className="w-5 h-5" />,
+    sparkline: [22000, 23000, 24000, 25000, 28430],
+  },
+];
+
+export function DashboardStats() {
+  return (
+    <StatisticDisplay
+      metrics={metrics}
+      columns={3}
+      variant="card"
+      size="md"
+    />
+  );
+}
+```
+
+### Variante compacta
+
+```tsx
+<StatisticDisplay
+  metrics={metrics}
+  columns={2}
+  variant="bordered"
+  size="sm"
+  gap="sm"
+/>
+```
+
+### Modo minimal (lista vertical)
+
+```tsx
+<StatisticDisplay
+  metrics={metrics}
+  columns={1}
+  variant="minimal"
+  size="lg"
+/>
+```
+
+### Highlight hero + grid
+
+```tsx
+import { StatisticHighlight, StatisticDisplay } from './index';
+
+function RevenueHero() {
+  return (
+    <div className="space-y-8">
+      <StatisticHighlight
+        label="Net Revenue"
+        value="$428,500"
+        description="Vs. last quarter"
+        change="+18.2%"
+        trend="up"
+        sparkline={[320, 340, 360, 380, 420, 428]}
+        progress={0.86}
+        badge={<span className="px-2 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-semibold">Live</span>}
+      />
+      <StatisticDisplay metrics={metrics} columns={3} variant="soft" />
+    </div>
+  );
+}
+```
+
+### Uso regional
+
+```tsx
+<StatisticDisplay
+  metrics={[
+    {
+      id: 'emea',
+      label: 'EMEA',
+      value: '$124K',
+      change: '+9.1%',
+      trend: 'up',
+      description: 'Ingresos región',
+      sparkline: [80, 90, 102, 124],
+    },
+    {
+      id: 'latam',
+      label: 'LATAM',
+      value: '$64K',
+      change: '+21.4%',
+      trend: 'up',
+      description: 'Beta Program',
+      sparkline: [28, 40, 54, 64],
+    },
+    {
+      id: 'apac',
+      label: 'APAC',
+      value: '$102K',
+      change: '+4.2%',
+      trend: 'up',
+      description: 'Mercados consolidados',
+      sparkline: [70, 80, 95, 102],
+    },
+  ]}
+  columns={3}
+  variant="glass"
+  size="md"
+/>
+```
+
+---
+
 **¡Todos los ejemplos están listos para copiar y usar!** 🚀
 

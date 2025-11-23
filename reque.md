@@ -49,7 +49,7 @@
 - [x] 43 Key‑Value Info
 - [x] 44 Property List (macOS style)
 - [x] 45 KPI Block
-46 Statistic Display
+- [x] 46 Statistic Display
 47 Description Block
 48 Timeline
 49 Activity Feed
