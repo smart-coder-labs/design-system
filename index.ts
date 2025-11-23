@@ -41,6 +41,7 @@ export { FAB } from './components/FAB';
 export { SplitButton } from './components/SplitButton';
 export { FABGroup } from './components/FABGroup';
 export { ButtonWithDropdown } from './components/ButtonWithDropdown';
+export { Panel } from './components/Panel';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -70,6 +71,7 @@ export type { FABProps, FABVariant, FABSize, FABPosition } from './components/FA
 export type { SplitButtonProps, SplitButtonAction, SplitButtonVariant, SplitButtonSize } from './components/SplitButton';
 export type { FABGroupProps, FABGroupAction, FABGroupPosition } from './components/FABGroup';
 export type { ButtonWithDropdownProps, ButtonWithDropdownAction, ButtonWithDropdownVariant, ButtonWithDropdownSize } from './components/ButtonWithDropdown';
+export type { PanelProps, PanelVariant } from './components/Panel';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

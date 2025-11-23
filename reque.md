@@ -33,7 +33,7 @@
 - [x] 29 FAB Group
 - [x] 30 Button with Dropdown
 4️⃣ Superficies (Surfaces)
-31 Panel
+- [x] 31 Panel
 32 Snackbar (separate from Toast)
 33 Coachmark / Highlight Walkthrough
 34 Callout
