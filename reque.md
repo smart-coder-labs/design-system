@@ -13,9 +13,9 @@
 10 Combobox ✅
 11 Date Picker ✅
 12 Date Range Picker ✅
-- [x] 13 Time Picker
+13 Time Picker ✅
 14 Range Slider (separate from the simple Slider) ✅
-15 Segmented Input
+- [x] 15 Segmented Input
 16 File Upload
 17 Multi‑file Upload
 18 Color Picker

@@ -26,6 +26,7 @@ export { DatePicker } from './components/DatePicker';
 export { Combobox } from './components/Combobox';
 export { DateRangePicker } from './components/DateRangePicker';
 export { TimePicker } from './components/TimePicker';
+export { SegmentedInput } from './components/SegmentedInput';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -40,6 +41,7 @@ export type { DatePickerProps } from './components/DatePicker';
 export type { ComboboxProps } from './components/Combobox';
 export type { DateRangePickerProps, DateRange } from './components/DateRangePicker';
 export type { TimePickerProps } from './components/TimePicker';
+export type { SegmentedInputProps } from './components/SegmentedInput';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
