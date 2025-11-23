@@ -25,6 +25,7 @@ export { RotarySelector } from './components/RotarySelector';
 export { DatePicker } from './components/DatePicker';
 export { Combobox } from './components/Combobox';
 export { DateRangePicker } from './components/DateRangePicker';
+export { TimePicker } from './components/TimePicker';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -38,6 +39,7 @@ export type { RotarySelectorProps, RotarySelectorOption } from './components/Rot
 export type { DatePickerProps } from './components/DatePicker';
 export type { ComboboxProps } from './components/Combobox';
 export type { DateRangePickerProps, DateRange } from './components/DateRangePicker';
+export type { TimePickerProps } from './components/TimePicker';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
