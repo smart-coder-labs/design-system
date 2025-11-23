@@ -27,7 +27,7 @@
 - [x] 24 Markdown Editor
 - [x] 25 Rating Stars Input
 3️⃣ Botones (Buttons)
-26 Icon Button (distinct component, not just a Button variant)
+- [x] 26 Icon Button (distinct component, not just a Button variant)
 27 Floating Action Button (FAB)
 28 Split Button
 29 FAB Group
