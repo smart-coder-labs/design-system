@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { KPIBlock, KPIGroup } from '../components/KPIBlock';
-import { Users, DollarSign, ShoppingCart, Eye, Target, Activity } from 'lucide-react';
+import { Users, DollarSign, ShoppingCart, Eye, Target, Activity, Server, Shield, TrendingUp } from 'lucide-react';
 
 const meta = {
     title: 'Data Display/KPIBlock',
@@ -447,4 +447,168 @@ export const SidebarMetrics: Story = {
             </div>
         </div>
     ),
+};
+
+// ========================================
+// STORIES - USE CASES
+// ========================================
+
+export const ExecutiveRevenuePanel: Story = {
+    name: '💼 Caso de Uso: Panel Ejecutivo de Revenue',
+    args: {
+        label: 'Metric',
+        value: '-',
+    },
+    render: () => (
+        <div className="space-y-6">
+            <div className="space-y-1">
+                <p className="text-sm uppercase tracking-[0.25em] text-text-tertiary">Weekly Review</p>
+                <h3 className="text-2xl font-semibold text-text-primary">Revenue Pulse</h3>
+            </div>
+            <KPIGroup columns={3}>
+                <KPIBlock
+                    label="Monthly Recurring Revenue"
+                    value="$1.4M"
+                    change="+6.3%"
+                    trend="up"
+                    icon={<DollarSign className="w-5 h-5" />}
+                    variant="elevated"
+                    size="lg"
+                />
+                <KPIBlock
+                    label="Enterprise Pipeline"
+                    value="$4.9M"
+                    change="+18.0%"
+                    trend="up"
+                    icon={<TrendingUp className="w-5 h-5" />}
+                    variant="elevated"
+                />
+                <KPIBlock
+                    label="Net Revenue Retention"
+                    value="134%"
+                    change="+2.4 pts"
+                    trend="up"
+                    icon={<Users className="w-5 h-5" />}
+                    variant="bordered"
+                />
+            </KPIGroup>
+        </div>
+    ),
+    decorators: [
+        (StoryComponent) => (
+            <div className="w-full max-w-5xl mx-auto">
+                <StoryComponent />
+            </div>
+        ),
+    ],
+};
+
+export const GrowthMarketingPulse: Story = {
+    name: '📈 Caso de Uso: Tablero de Growth y Marketing',
+    args: {
+        label: 'Metric',
+        value: '-',
+    },
+    render: () => (
+        <div className="space-y-4">
+            <div className="space-y-1">
+                <h3 className="text-lg font-semibold text-text-primary">Acquisition Overview</h3>
+                <p className="text-sm text-text-secondary">Blend de campañas orgánicas, paid y referidos durante la última semana.</p>
+            </div>
+            <KPIGroup columns={4}>
+                <KPIBlock
+                    label="New Leads"
+                    value="8,932"
+                    change="+21.6%"
+                    trend="up"
+                    icon={<Activity className="w-5 h-5" />}
+                    size="md"
+                    variant="default"
+                />
+                <KPIBlock
+                    label="Paid CAC"
+                    value="$184"
+                    change="-7.2%"
+                    trend="down"
+                    icon={<DollarSign className="w-5 h-5" />}
+                    size="md"
+                    variant="bordered"
+                />
+                <KPIBlock
+                    label="Signup to Trial"
+                    value="42%"
+                    change="+3.1%"
+                    trend="up"
+                    icon={<Target className="w-5 h-5" />}
+                    size="md"
+                    variant="elevated"
+                />
+                <KPIBlock
+                    label="Active Campaigns"
+                    value="18"
+                    change="+2"
+                    trend="neutral"
+                    icon={<ShoppingCart className="w-5 h-5" />}
+                    size="md"
+                    variant="bordered"
+                />
+            </KPIGroup>
+        </div>
+    ),
+    decorators: [
+        (StoryComponent) => (
+            <div className="w-full max-w-6xl mx-auto">
+                <StoryComponent />
+            </div>
+        ),
+    ],
+};
+
+export const OperationsBridge: Story = {
+    name: '🛡️ Caso de Uso: Operations Bridge',
+    args: {
+        label: 'Metric',
+        value: '-',
+    },
+    render: () => (
+        <div className="space-y-6 bg-surface-elevated/40 p-6 rounded-2xl">
+            <div className="space-y-1">
+                <p className="text-sm font-medium text-text-secondary">Live SRE Feed</p>
+                <h3 className="text-xl font-semibold text-text-primary">Infra Critical Signals</h3>
+            </div>
+            <KPIGroup columns={3}>
+                <KPIBlock
+                    label="Global Uptime"
+                    value="99.985%"
+                    change="+0.003%"
+                    trend="up"
+                    icon={<Server className="w-5 h-5" />}
+                    variant="elevated"
+                />
+                <KPIBlock
+                    label="Active Incidents"
+                    value="2"
+                    change="-1"
+                    trend="down"
+                    icon={<Shield className="w-5 h-5" />}
+                    variant="bordered"
+                />
+                <KPIBlock
+                    label="Avg. Response Time"
+                    value="142 ms"
+                    change="-12 ms"
+                    trend="up"
+                    icon={<Eye className="w-5 h-5" />}
+                    variant="elevated"
+                />
+            </KPIGroup>
+        </div>
+    ),
+    decorators: [
+        (StoryComponent) => (
+            <div className="w-full max-w-4xl mx-auto">
+                <StoryComponent />
+            </div>
+        ),
+    ],
 };
