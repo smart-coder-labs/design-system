@@ -43,7 +43,6 @@ export { FABGroup } from './components/FABGroup';
 export { ButtonWithDropdown } from './components/ButtonWithDropdown';
 export { Panel } from './components/Panel';
 export { Snackbar } from './components/Snackbar';
-export { Coachmark } from './components/Coachmark';
 export { Callout } from './components/Callout';
 export { WindowFrame } from './components/WindowFrame';
 export { InspectorPanel, InspectorField } from './components/InspectorPanel';
@@ -78,7 +77,6 @@ export type { FABGroupProps, FABGroupAction, FABGroupPosition } from './componen
 export type { ButtonWithDropdownProps, ButtonWithDropdownAction, ButtonWithDropdownVariant, ButtonWithDropdownSize } from './components/ButtonWithDropdown';
 export type { PanelProps, PanelVariant } from './components/Panel';
 export type { SnackbarProps, SnackbarAction, SnackbarVariant } from './components/Snackbar';
-export type { CoachmarkProps, CoachmarkStep } from './components/Coachmark';
 export type { CalloutProps, CalloutVariant } from './components/Callout';
 export type { WindowFrameProps } from './components/WindowFrame';
 export type { InspectorPanelProps, InspectorSection, InspectorFieldProps } from './components/InspectorPanel';

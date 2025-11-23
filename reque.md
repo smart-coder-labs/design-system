@@ -35,7 +35,7 @@
 4️⃣ Superficies (Surfaces)
 - [x] 31 Panel
 - [x] 32 Snackbar (separate from Toast)
-- [x] 33 Coachmark / Highlight Walkthrough
+33 Coachmark / Highlight Walkthrough
 - [x] 34 Callout
 - [x] 35 Window Frame (macOS window style)
 - [x] 36 Inspector Panel (like Xcode)
