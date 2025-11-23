@@ -14,7 +14,11 @@ export { cn } from './lib/utils';
 // Componentes
 export { Button } from './components/Button';
 export { Sidebar } from './components/Sidebar';
+export { Pagination } from './components/Pagination';
+export { NavigationDrawer } from './components/NavigationDrawer';
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
+export type { PaginationProps } from './components/Pagination';
+export type { NavigationDrawerProps, NavigationDrawerItem, NavigationDrawerSection } from './components/NavigationDrawer';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
