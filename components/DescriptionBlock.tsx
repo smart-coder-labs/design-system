@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
-import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { Badge } from './Badge';
 
 /* ========================================
@@ -37,7 +36,6 @@ export interface DescriptionBlockProps extends Omit<React.HTMLAttributes<HTMLDiv
     badges?: React.ReactNode[];
     metadata?: DescriptionMetadataItem[];
     metadataColumns?: 1 | 2 | 3;
-    highlights?: DescriptionHighlightProps[];
     media?: React.ReactNode;
     actions?: React.ReactNode;
     footer?: React.ReactNode;
@@ -45,106 +43,6 @@ export interface DescriptionBlockProps extends Omit<React.HTMLAttributes<HTMLDiv
     variant?: 'default' | 'soft' | 'panel' | 'glass';
     align?: 'start' | 'center';
 }
-
-/* ========================================
-   DESCRIPTION HIGHLIGHT
-   ======================================== */
-
-export const DescriptionHighlight = forwardRef<HTMLDivElement, DescriptionHighlightProps>(
-    (
-        {
-            label,
-            value,
-            change,
-            trend,
-            icon,
-            badge,
-            helper,
-            emphasis = 'default',
-            compact = false,
-            className,
-            ...props
-        },
-        ref
-    ) => {
-        const trendMap = {
-            up: {
-                icon: TrendingUp,
-                color: 'text-status-success',
-                bg: 'bg-status-success/10',
-            },
-            down: {
-                icon: TrendingDown,
-                color: 'text-status-error',
-                bg: 'bg-status-error/10',
-            },
-            neutral: {
-                icon: Minus,
-                color: 'text-text-tertiary',
-                bg: 'bg-surface-secondary',
-            },
-        } as const;
-
-        const TrendIcon = trend ? trendMap[trend].icon : null;
-
-        const MotionDiv = motion.div as any;
-
-        return (
-            <MotionDiv
-                ref={ref}
-                className={cn(
-                    'rounded-2xl border border-border-primary/60 backdrop-blur-sm',
-                    emphasis === 'soft' && 'bg-surface-secondary/50',
-                    emphasis === 'default' && 'bg-surface-primary',
-                    compact ? 'p-4' : 'p-5',
-                    className
-                )}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                {...props}
-            >
-                <div className="flex items-start justify-between gap-3">
-                    <div className="space-y-2 min-w-0">
-                        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-text-tertiary">
-                            {icon && <span className="text-text-tertiary">{icon}</span>}
-                            <span className="truncate">{label}</span>
-                            {badge && <span className="text-[10px] font-semibold text-accent-blue bg-accent-blue/10 px-2 py-0.5 rounded-full">{badge}</span>}
-                        </div>
-                        <div className={cn(
-                            'flex items-baseline gap-3 flex-wrap text-text-primary',
-                            compact ? 'text-2xl font-semibold' : 'text-4xl font-bold tracking-tight'
-                        )}>
-                            <span className="truncate">{value}</span>
-                            {change && (
-                                <span className="text-sm font-semibold text-text-secondary whitespace-nowrap">
-                                    {change}
-                                </span>
-                            )}
-                        </div>
-                        {helper && (
-                            <div className="text-sm text-text-tertiary leading-relaxed">
-                                {helper}
-                            </div>
-                        )}
-                    </div>
-                    {trend && TrendIcon && (
-                        <div className={cn(
-                            'flex items-center gap-1 px-2 py-1 rounded-xl text-xs font-semibold',
-                            trendMap[trend].bg,
-                            trendMap[trend].color
-                        )}>
-                            <TrendIcon className="w-3.5 h-3.5" />
-                            <span>{trend === 'neutral' ? 'Stable' : trend === 'up' ? 'Up' : 'Down'}</span>
-                        </div>
-                    )}
-                </div>
-            </MotionDiv>
-        );
-    }
-);
-
-DescriptionHighlight.displayName = 'DescriptionHighlight';
 
 /* ========================================
    DESCRIPTION BLOCK
@@ -160,7 +58,6 @@ export const DescriptionBlock = forwardRef<HTMLDivElement, DescriptionBlockProps
             badges,
             metadata,
             metadataColumns = 2,
-            highlights,
             media,
             actions,
             footer,
@@ -274,37 +171,15 @@ export const DescriptionBlock = forwardRef<HTMLDivElement, DescriptionBlockProps
                             </div>
                         )}
                     </div>
-
-                    {layout === 'split' && (highlights?.length || footer) && (
-                        <div className="space-y-6">
-                            {highlights && highlights.length > 0 && (
-                                <div className="space-y-6">
-                                    {highlights.map((highlight, index) => (
-                                        <DescriptionHighlight key={index} {...highlight} />
-                                    ))}
-                                </div>
-                            )}
-                            {footer && (
-                                <div className="rounded-2xl border border-dashed border-border-primary/60 p-4 text-sm text-text-secondary">
-                                    {footer}
-                                </div>
-                            )}
-                        </div>
-                    )}
                 </div>
 
-                {layout === 'stacked' && highlights && highlights.length > 0 && (
-                    <div className="mt-8 grid gap-8 md:grid-cols-2">
-                        {highlights.map((highlight, index) => (
-                            <DescriptionHighlight key={index} {...highlight} />
-                        ))}
-                    </div>
-                )}
-
                 {layout === 'stacked' && footer && (
-                    <div className="rounded-2xl border border-dashed border-border-primary/60 p-4 text-sm text-text-secondary">
+                    <>
+                        <br />
+                        <div className="rounded-2xl border border-dashed border-border-primary/60 p-4 text-sm text-text-secondary">
                         {footer}
                     </div>
+                    </>
                 )}
             </MotionSection>
         );
