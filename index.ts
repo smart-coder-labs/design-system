@@ -67,6 +67,7 @@ export { DiffViewer } from './components/DiffViewer';
 export { EmptyState } from './components/EmptyState';
 export { MaintenanceMode } from './components/MaintenanceMode';
 export { OfflineState } from './components/OfflineState';
+export { LoadingOverlay } from './components/LoadingOverlay';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -121,7 +122,6 @@ export type { TreeViewProps, TreeNode } from './components/TreeView';
 export type { DiffViewerProps, DiffViewMode } from './components/DiffViewer';
 export type { EmptyStateProps } from './components/EmptyState';
 export type { MaintenanceModeProps } from './components/MaintenanceMode';
-export type { OfflineStateProps } from './components/OfflineState';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
