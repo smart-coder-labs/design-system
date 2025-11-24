@@ -56,6 +56,7 @@ export { KeyValueInfo, CompactKeyValueInfo, InlineKeyValueInfo } from './compone
 export { PropertyList, CompactPropertyList } from './components/PropertyList';
 export { KPIBlock, KPIGroup } from './components/KPIBlock';
 export { StatisticDisplay, StatisticHighlight } from './components/StatisticDisplay';
+export { DescriptionBlock, DescriptionHighlight } from './components/DescriptionBlock';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -100,6 +101,7 @@ export type { KeyValueInfoProps, KeyValueItem, KeyValueInfoVariant, KeyValueInfo
 export type { PropertyListProps, PropertyItem, PropertySection, PropertyListVariant, PropertyListSize, CompactPropertyListProps } from './components/PropertyList';
 export type { KPIBlockProps, KPIGroupProps, KPITrend, KPIVariant, KPISize } from './components/KPIBlock';
 export type { StatisticDisplayProps, StatisticMetric, StatisticVariant, StatisticTrend, StatisticSize, StatisticHighlightProps } from './components/StatisticDisplay';
+export type { DescriptionBlockProps, DescriptionMetadataItem, DescriptionHighlightProps, DescriptionHighlightTrend } from './components/DescriptionBlock';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

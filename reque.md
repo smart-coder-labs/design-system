@@ -50,7 +50,7 @@
 - [x] 44 Property List (macOS style)
 - [x] 45 KPI Block
 - [x] 46 Statistic Display
-47 Description Block
+- [x] 47 Description Block
 48 Timeline
 49 Activity Feed
 50 Comment Thread
