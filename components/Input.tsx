@@ -118,6 +118,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                 ${iconSizeMap[inputSize]}
                 text-text-tertiary
                 pointer-events-none
+                flex items-center justify-center
               `}
                         >
                             {leftIcon}
@@ -147,6 +148,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                 ${iconSizeMap[inputSize]}
                 text-text-tertiary
                 pointer-events-none
+                flex items-center justify-center
               `}
                         >
                             {rightIcon}

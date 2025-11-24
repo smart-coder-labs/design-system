@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { X, Plus, Minus, Trash2, ShoppingBag, ArrowRight, Tag } from 'lucide-react';
+import { Input } from './Input';
+import { Button } from './Button';
 
 export interface CartItem {
     id: string;
@@ -236,24 +238,23 @@ export const CartPreview: React.FC<CartPreviewProps> = ({
                     {/* Promo Code */}
                     {items.length > 0 && (
                         <div className="p-4 border-t border-border-primary">
-                            <div className="flex gap-2">
-                                <div className="flex-1 relative">
-                                    <Tag className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-tertiary" />
-                                    <input
+                            <div className="flex gap-2 items-end">
+                                <div className="flex-1">
+                                    <Input
                                         type="text"
                                         value={promoCode}
                                         onChange={(e) => setPromoCode(e.target.value)}
                                         placeholder="Promo code"
-                                        className="w-full pl-10 pr-4 py-2.5 bg-background-secondary border border-border-primary rounded-xl text-sm text-text-primary placeholder:text-text-quaternary focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent transition-all"
+                                        leftIcon={<Tag className="w-4 h-4" />}
                                     />
                                 </div>
-                                <button
+                                <Button
                                     onClick={handleApplyPromo}
                                     disabled={!promoCode || isApplyingPromo}
-                                    className="px-4 py-2.5 bg-background-tertiary hover:bg-background-tertiary/70 text-text-primary font-medium text-sm rounded-xl disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                                    variant="subtle"
                                 >
                                     {isApplyingPromo ? 'Applying...' : 'Apply'}
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     )}
@@ -306,13 +307,15 @@ export const CartPreview: React.FC<CartPreviewProps> = ({
                                 </span>
                             </div>
 
-                            <button
+                            <Button
                                 onClick={onCheckout}
-                                className="w-full py-3.5 bg-accent-blue hover:bg-accent-blue-hover text-white font-semibold rounded-xl transition-all duration-200 active:scale-95 flex items-center justify-center gap-2"
+                                variant="primary"
+                                size="lg"
+                                fullWidth
+                                rightIcon={<ArrowRight className="w-5 h-5" />}
                             >
-                                <span>Proceed to Checkout</span>
-                                <ArrowRight className="w-5 h-5" />
-                            </button>
+                                Proceed to Checkout
+                            </Button>
                         </div>
                     )}
                 </div>
