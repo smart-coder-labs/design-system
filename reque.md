@@ -84,7 +84,7 @@
 - [x] 78 Divider
 - [x] 79 Section Header
 - [x] 80 Footer
-81 Resizable Panels
+- [x] 81 Resizable Panels
 82 Split View (macOS Finder style)
 83 Sticky Container
 84 Masonry Layout
