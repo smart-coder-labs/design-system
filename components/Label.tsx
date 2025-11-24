@@ -1,25 +1,33 @@
-"use client";
+import React from 'react';
+import { Text, TextProps } from './Text';
 
-import * as React from "react";
-import * as LabelPrimitive from "@radix-ui/react-label";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../lib/utils";
+export interface LabelProps extends Omit<TextProps, 'as'> {
+    htmlFor?: string;
+    required?: boolean;
+}
 
-const labelVariants = cva(
-    "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-);
+export const Label: React.FC<LabelProps> = ({
+    children,
+    className = '',
+    htmlFor,
+    required,
+    ...props
+}) => {
+    return (
+        <Text
+            as="label"
+            variant="small"
+            weight="medium"
+            color="primary"
+            className={`block mb-1.5 select-none ${className}`}
+            {...props}
+            // @ts-ignore - htmlFor is valid for label element
+            htmlFor={htmlFor}
+        >
+            {children}
+            {required && <span className="text-status-error ml-1">*</span>}
+        </Text>
+    );
+};
 
-const Label = React.forwardRef<
-    React.ElementRef<typeof LabelPrimitive.Root>,
-    React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
-    VariantProps<typeof labelVariants>
->(({ className, ...props }, ref) => (
-    <LabelPrimitive.Root
-        ref={ref}
-        className={cn(labelVariants(), className)}
-        {...props}
-    />
-));
-Label.displayName = LabelPrimitive.Root.displayName;
-
-export { Label };
+Label.displayName = 'Label';

@@ -145,12 +145,12 @@
 Typography
 - [x] 138 Text
 - [x] 139 Title
-140 Heading
-141 Paragraph
-142 Label
-143 Caption
-144 Code Block
-145 Blockquote
+- [x] 140 Heading
+- [x] 141 Paragraph
+- [x] 142 Label
+- [x] 143 Caption
+- [x] 144 Code Block
+- [x] 145 Blockquote
 
 Data Visualization
 146 KPI Cards

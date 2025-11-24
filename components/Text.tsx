@@ -14,7 +14,7 @@ export interface TextProps {
     underline?: boolean;
     truncate?: boolean;
     lineClamp?: number;
-    as?: 'p' | 'span' | 'div';
+    as?: 'p' | 'span' | 'div' | 'label';
     className?: string;
     children?: React.ReactNode;
 }
