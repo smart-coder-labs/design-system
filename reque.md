@@ -61,7 +61,7 @@
 - [x] 55 Image Cropper
 - [x] 56 Image Carousel
 - [x] 57 Lightbox / Gallery
-58 Video Player
+- [x] 58 Video Player
 59 Audio Player
 60 Lottie Animation Player
 61 Map Preview
