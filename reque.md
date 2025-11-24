@@ -63,14 +63,14 @@
 - [x] 57 Lightbox / Gallery
 - [x] 58 Video Player
 - [x] 59 Audio Player
-60 Lottie Animation Player
-61 Map Preview
-62 QR Code Generator
+<!-- 60 Lottie Animation Player -->
+<!-- 61 Map Preview -->
+- [x] 62 QR Code Generator
 63 Barcode Generator
 64 Signature Pad
 65 Camera Capture Component
-66 Alerts
-67 Banner Alert
+<!-- 66 Alerts
+67 Banner Alert -->
 68 Confirm Dialog (distinct from generic Modal)
 69 Error Boundary UI
 70 Stepper / Steps
