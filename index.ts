@@ -61,6 +61,7 @@ export { Timeline, TimelineItem } from './components/Timeline';
 export { ActivityFeed, ActivityItem } from './components/ActivityFeed';
 export { CommentThread } from './components/CommentThread';
 export { CodeBlock } from './components/CodeBlock';
+export { JsonViewer } from './components/JsonViewer';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -110,6 +111,7 @@ export type { TimelineProps, TimelineItemProps, TimelineLayout, TimelineStatus }
 export type { ActivityFeedProps, ActivityItemProps, ActivityType, ActivityActor } from './components/ActivityFeed';
 export type { CommentThreadProps, CommentData, CommentUser } from './components/CommentThread';
 export type { CodeBlockProps } from './components/CodeBlock';
+export type { JsonViewerProps } from './components/JsonViewer';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

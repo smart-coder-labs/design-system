@@ -55,7 +55,7 @@
 - [x] 49 Activity Feed
 - [x] 50 Comment Thread
 - [x] 51 Code Block
-52 JSON Viewer
+- [x] 52 JSON Viewer
 53 Tree View / File Explorer
 54 Diff Viewer
 55 Image Cropper
