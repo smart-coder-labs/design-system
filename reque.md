@@ -51,7 +51,7 @@
 - [x] 45 KPI Block
 - [x] 46 Statistic Display
 - [x] 47 Description Block
-48 Timeline
+- [x] 48 Timeline
 49 Activity Feed
 50 Comment Thread
 51 Code Block
