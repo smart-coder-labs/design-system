@@ -67,7 +67,7 @@
 <!-- 61 Map Preview -->
 - [x] 62 QR Code Generator
 - [x] 63 Barcode Generator
-64 Signature Pad
+- [x] 64 Signature Pad
 65 Camera Capture Component
 <!-- 66 Alerts
 67 Banner Alert -->
