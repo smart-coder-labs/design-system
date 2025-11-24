@@ -93,7 +93,7 @@
 - [x] 87 Floating Toolbar
 - [x] 88 Product Card (customised for e‑commerce)
 89 Product Gallery
-90 Cart Preview
+- [x] 90 Cart Preview
 91 Quantity Selector (stand‑alone component)
 92 Price Display
 93 Reviews & Ratings

@@ -87,7 +87,7 @@ export const FloatingToolbar: React.FC<FloatingToolbarProps> = ({
     isActive?: boolean
   ) => {
     if (isActive) {
-      return 'bg-accent-blue text-white';
+      return 'text-accent-blue border-b-2 border-accent-blue';
     }
     switch (actionVariant) {
       case 'primary':

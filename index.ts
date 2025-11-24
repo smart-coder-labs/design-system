@@ -196,3 +196,5 @@ export { FloatingToolbar } from './components/FloatingToolbar';
 export type { FloatingToolbarProps, FloatingToolbarAction } from './components/FloatingToolbar';
 export { ProductCard } from './components/ProductCard';
 export type { ProductCardProps } from './components/ProductCard';
+export { CartPreview } from './components/CartPreview';
+export type { CartPreviewProps, CartItem } from './components/CartPreview';
