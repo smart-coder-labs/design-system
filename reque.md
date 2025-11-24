@@ -71,7 +71,7 @@
 65 Camera Capture Component
 <!-- 66 Alerts
 67 Banner Alert -->
-68 Confirm Dialog (distinct from generic Modal)
+- [x] 68 Confirm Dialog (distinct from generic Modal)
 69 Error Boundary UI
 70 Stepper / Steps
 71 Empty State
