@@ -192,3 +192,5 @@ export { Stack, HStack, VStack, Grid } from './components/Layout';
 export { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis } from './components/Breadcrumb';
 export { BreadcrumbTabsHybrid } from './components/BreadcrumbTabsHybrid';
 export type { BreadcrumbTabsHybridProps, BreadcrumbItem as BreadcrumbTabsItem, TabItem } from './components/BreadcrumbTabsHybrid';
+export { FloatingToolbar } from './components/FloatingToolbar';
+export type { FloatingToolbarProps, FloatingToolbarAction } from './components/FloatingToolbar';

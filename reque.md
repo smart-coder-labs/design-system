@@ -90,7 +90,7 @@
 - [x] 84 Masonry Layout
 - [x] NO85 Modal Stack Manager
 - [x] 86 Breadcrumb + Tabs Hybrid
-87 Floating Toolbar
+- [x] 87 Floating Toolbar
 88 Product Card (customised for e‑commerce)
 89 Product Gallery
 90 Cart Preview
