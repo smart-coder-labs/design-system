@@ -52,7 +52,7 @@
 - [x] 46 Statistic Display
 - [x] 47 Description Block
 - [x] 48 Timeline
-49 Activity Feed
+- [x] 49 Activity Feed
 50 Comment Thread
 51 Code Block
 52 JSON Viewer
