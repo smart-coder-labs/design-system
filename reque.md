@@ -82,7 +82,7 @@
 - [x] 76 Grid System
 - [x] 77 Spacer
 - [x] 78 Divider
-79 Section Header
+- [x] 79 Section Header
 80 Footer
 81 Resizable Panels
 82 Split View (macOS Finder style)
