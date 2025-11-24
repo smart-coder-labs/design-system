@@ -72,7 +72,7 @@
 <!-- 66 Alerts
 67 Banner Alert -->
 - [x] 68 Confirm Dialog (distinct from generic Modal)
-69 Error Boundary UI
+- [x] 69 Error Boundary UI
 70 Stepper / Steps
 71 Empty State
 72 Maintenance Mode UI
