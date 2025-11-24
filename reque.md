@@ -60,7 +60,7 @@
 - [x] 54 Diff Viewer
 - [x] 55 Image Cropper
 - [x] 56 Image Carousel
-57 Lightbox / Gallery
+- [x] 57 Lightbox / Gallery
 58 Video Player
 59 Audio Player
 60 Lottie Animation Player

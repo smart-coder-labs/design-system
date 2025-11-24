@@ -5,7 +5,7 @@ const meta: Meta<typeof ImageCarousel> = {
     title: 'Data Display/ImageCarousel',
     component: ImageCarousel,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
     tags: ['autodocs'],
 };
