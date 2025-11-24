@@ -11,6 +11,7 @@ export interface ModalProps {
     onOpenChange: (open: boolean) => void;
     children: React.ReactNode;
     size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+    position?: 'center' | 'right' | 'left' | 'bottom' | 'fullscreen';
 }
 
 /* ========================================
@@ -25,6 +26,15 @@ const sizeStyles = {
     full: 'max-w-full mx-4',
 };
 
+const positionStyles: Record<string, string> = {
+    center: 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
+    right: 'top-0 right-0 h-full rounded-l-2xl',
+    left: 'top-0 left-0 h-full rounded-r-2xl',
+    bottom: 'left-1/2 bottom-0 transform -translate-x-1/2 rounded-t-2xl',
+    bottomFull: 'left-0 bottom-0 w-full rounded-t-2xl',
+    fullscreen: 'inset-0 w-full h-full rounded-none',
+};
+
 /* ========================================
    COMPONENT
    ======================================== */
@@ -34,7 +44,39 @@ export const Modal: React.FC<ModalProps> = ({
     onOpenChange,
     children,
     size = 'md',
+    position = 'center',
 }) => {
+    // Animation variants for different positions
+    const variants: Record<string, any> = {
+        center: {
+            initial: { opacity: 0, scale: 0.96, x: '-50%', y: '-48%' },
+            animate: { opacity: 1, scale: 1, x: '-50%', y: '-50%' },
+            exit: { opacity: 0, scale: 0.96, x: '-50%', y: '-48%' },
+        },
+        right: {
+            initial: { opacity: 0, x: '100%' },
+            animate: { opacity: 1, x: '0%' },
+            exit: { opacity: 0, x: '100%' },
+        },
+        left: {
+            initial: { opacity: 0, x: '-100%' },
+            animate: { opacity: 1, x: '0%' },
+            exit: { opacity: 0, x: '-100%' },
+        },
+        bottom: {
+            initial: { opacity: 0, y: '100%' },
+            animate: { opacity: 1, y: '0%' },
+            exit: { opacity: 0, y: '100%' },
+        },
+        fullscreen: {
+            initial: { opacity: 0 },
+            animate: { opacity: 1 },
+            exit: { opacity: 0 },
+        },
+    };
+
+    // Determine correct position style for bottom+full
+    const positionKey = position === 'bottom' && size === 'full' ? 'bottomFull' : position;
     return (
         <Dialog.Root open={open} onOpenChange={onOpenChange}>
             <Dialog.Portal>
@@ -58,34 +100,10 @@ export const Modal: React.FC<ModalProps> = ({
                             {/* Content */}
                             <Dialog.Content asChild>
                                 <motion.div
-                                    className={`
-                    fixed top-1/2 left-1/2
-                    w-full ${sizeStyles[size]}
-                    bg-surface-primary
-                    rounded-2xl
-                    shadow-xl
-                    p-6
-                    z-modal
-                    focus:outline-none
-                  `}
-                                    initial={{
-                                        opacity: 0,
-                                        scale: 0.96,
-                                        x: '-50%',
-                                        y: '-48%',
-                                    }}
-                                    animate={{
-                                        opacity: 1,
-                                        scale: 1,
-                                        x: '-50%',
-                                        y: '-50%',
-                                    }}
-                                    exit={{
-                                        opacity: 0,
-                                        scale: 0.96,
-                                        x: '-50%',
-                                        y: '-48%',
-                                    }}
+                                    className={`fixed w-full ${sizeStyles[size]} bg-surface-primary shadow-xl p-6 z-modal focus:outline-none ${positionStyles[positionKey]}`}
+                                    initial={variants[position].initial}
+                                    animate={variants[position].animate}
+                                    exit={variants[position].exit}
                                     transition={{
                                         type: 'spring',
                                         stiffness: 300,

@@ -49,3 +49,153 @@ export const Default: Story = {
         size: 'md',
     },
 };
+
+export const Center: Story = {
+    render: (args) => {
+        const [open, setOpen] = useState(false);
+        return (
+            <>
+                <Button onClick={() => setOpen(true)}>Abrir modal centrado</Button>
+                <Modal {...args} open={open} onOpenChange={setOpen} position="center" size="md">
+                    <ModalCloseButton />
+                    <ModalHeader>
+                        <ModalTitle>Modal centrado</ModalTitle>
+                        <ModalDescription>Modal en el centro de la pantalla.</ModalDescription>
+                    </ModalHeader>
+                    <ModalContent>
+                        <p>Contenido del modal centrado.</p>
+                    </ModalContent>
+                    <ModalFooter>
+                        <ModalClose>
+                            <Button variant="ghost">Cerrar</Button>
+                        </ModalClose>
+                        <Button variant="primary">Acción</Button>
+                    </ModalFooter>
+                </Modal>
+            </>
+        );
+    },
+    args: {
+        size: 'md',
+    },
+};
+
+export const Right: Story = {
+    render: (args) => {
+        const [open, setOpen] = useState(false);
+        return (
+            <>
+                <Button onClick={() => setOpen(true)}>Abrir modal derecha</Button>
+                <Modal {...args} open={open} onOpenChange={setOpen} position="right" size="md">
+                    <ModalCloseButton />
+                    <ModalHeader>
+                        <ModalTitle>Modal derecha</ModalTitle>
+                        <ModalDescription>Modal alineado a la derecha.</ModalDescription>
+                    </ModalHeader>
+                    <ModalContent>
+                        <p>Contenido del modal derecha.</p>
+                    </ModalContent>
+                    <ModalFooter>
+                        <ModalClose>
+                            <Button variant="ghost">Cerrar</Button>
+                        </ModalClose>
+                        <Button variant="primary">Acción</Button>
+                    </ModalFooter>
+                </Modal>
+            </>
+        );
+    },
+    args: {
+        size: 'md',
+    },
+};
+
+export const Left: Story = {
+    render: (args) => {
+        const [open, setOpen] = useState(false);
+        return (
+            <>
+                <Button onClick={() => setOpen(true)}>Abrir modal izquierda</Button>
+                <Modal {...args} open={open} onOpenChange={setOpen} position="left" size="md">
+                    <ModalCloseButton />
+                    <ModalHeader>
+                        <ModalTitle>Modal izquierda</ModalTitle>
+                        <ModalDescription>Modal alineado a la izquierda.</ModalDescription>
+                    </ModalHeader>
+                    <ModalContent>
+                        <p>Contenido del modal izquierda.</p>
+                    </ModalContent>
+                    <ModalFooter>
+                        <ModalClose>
+                            <Button variant="ghost">Cerrar</Button>
+                        </ModalClose>
+                        <Button variant="primary">Acción</Button>
+                    </ModalFooter>
+                </Modal>
+            </>
+        );
+    },
+    args: {
+        size: 'md',
+    },
+};
+
+export const Bottom: Story = {
+    render: (args) => {
+        const [open, setOpen] = useState(false);
+        return (
+            <>
+                <Button onClick={() => setOpen(true)}>Abrir modal abajo</Button>
+                <Modal {...args} open={open} onOpenChange={setOpen} position="bottom" size="full">
+                    <ModalCloseButton />
+                    <ModalHeader>
+                        <ModalTitle>Modal abajo</ModalTitle>
+                        <ModalDescription>Modal alineado abajo.</ModalDescription>
+                    </ModalHeader>
+                    <ModalContent>
+                        <p>Contenido del modal abajo.</p>
+                    </ModalContent>
+                    <ModalFooter>
+                        <ModalClose>
+                            <Button variant="ghost">Cerrar</Button>
+                        </ModalClose>
+                        <Button variant="primary">Acción</Button>
+                    </ModalFooter>
+                </Modal>
+            </>
+        );
+    },
+    args: {
+        size: 'md',
+    },
+};
+
+export const Fullscreen: Story = {
+    render: (args) => {
+        const [open, setOpen] = useState(false);
+        return (
+            <>
+                <Button onClick={() => setOpen(true)}>Abrir modal pantalla completa</Button>
+                <Modal {...args} open={open} onOpenChange={setOpen} position="fullscreen" size="full">
+                    <ModalCloseButton />
+                    <ModalHeader>
+                        <ModalTitle>Modal pantalla completa</ModalTitle>
+                        <ModalDescription>Modal ocupa toda la pantalla.</ModalDescription>
+                    </ModalHeader>
+                    <ModalContent>
+                        <p>Contenido del modal fullscreen.</p>
+                    </ModalContent>
+                    <ModalFooter>
+                        <ModalClose>
+                            <Button variant="ghost">Cerrar</Button>
+                        </ModalClose>
+                        <Button variant="primary">Acción</Button>
+                    </ModalFooter>
+                </Modal>
+            </>
+        );
+    },
+    args: {
+        size: 'full',
+    },
+};
