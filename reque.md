@@ -57,7 +57,7 @@
 - [x] 51 Code Block
 - [x] 52 JSON Viewer
 - [x] 53 Tree View / File Explorer
-54 Diff Viewer
+- [x] 54 Diff Viewer
 55 Image Cropper
 56 Image Carousel
 57 Lightbox / Gallery

@@ -63,6 +63,7 @@ export { CommentThread } from './components/CommentThread';
 export { CodeBlock } from './components/CodeBlock';
 export { JsonViewer } from './components/JsonViewer';
 export { TreeView } from './components/TreeView';
+export { DiffViewer } from './components/DiffViewer';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -114,6 +115,7 @@ export type { CommentThreadProps, CommentData, CommentUser } from './components/
 export type { CodeBlockProps } from './components/CodeBlock';
 export type { JsonViewerProps } from './components/JsonViewer';
 export type { TreeViewProps, TreeNode } from './components/TreeView';
+export type { DiffViewerProps, DiffViewMode } from './components/DiffViewer';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
