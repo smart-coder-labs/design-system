@@ -66,7 +66,7 @@
 <!-- 60 Lottie Animation Player -->
 <!-- 61 Map Preview -->
 - [x] 62 QR Code Generator
-63 Barcode Generator
+- [x] 63 Barcode Generator
 64 Signature Pad
 65 Camera Capture Component
 <!-- 66 Alerts

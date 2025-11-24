@@ -6,7 +6,7 @@ import { tokens } from '../tokens';
    TYPES
    ======================================== */
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'subtle';
+export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'subtle' | 'outline';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'size'> {
@@ -53,6 +53,12 @@ const variantStyles: Record<ButtonVariant, string> = {
     bg-surface-secondary text-text-primary
     hover:bg-surface-primary
     active:bg-surface-secondary
+  `,
+    outline: `
+    bg-transparent text-text-primary
+    border border-border-primary
+    hover:bg-surface-secondary hover:border-border-secondary
+    active:bg-surface-tertiary
   `,
 };
 

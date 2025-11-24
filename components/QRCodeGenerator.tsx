@@ -116,13 +116,13 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({
 
             <div className="flex items-center gap-2 w-full">
                 <Button 
-                    variant="subtle" 
+                    variant="outline" 
                     className="flex-1" 
                     onClick={handleCopyUrl}
                     title="Copy content to clipboard"
                 >
                     {isCopied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
-                    {isCopied ? "Copied" : "Copy Text"}
+                    {isCopied ? "Copied" : "Copy"}
                 </Button>
                 <Button 
                     variant="primary" 
