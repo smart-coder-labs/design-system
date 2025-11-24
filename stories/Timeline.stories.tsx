@@ -3,7 +3,7 @@ import { Timeline, TimelineItem } from '../components/Timeline';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { Badge } from '../components/Badge';
-import { Mail, GitCommit, Package, CheckCircle2, AlertTriangle, Truck } from 'lucide-react';
+import { Mail, GitCommit, Package, CheckCircle2, AlertTriangle, Truck, Rocket, AlertOctagon, CheckCircle, Globe, Shield } from 'lucide-react';
 
 const meta = {
     title: 'Data Display/Timeline',
@@ -203,4 +203,86 @@ export const WithCards: Story = {
             </Timeline>
         </div>
     ),
+};
+
+// ------- USE CASES ------- //
+
+
+export const ProductRoadmap: Story = {
+    name: '🚀 Use Case: Product Roadmap',
+    args: {
+        layout: 'alternate',
+    },
+    render: (args) => (
+        <Timeline {...args}>
+            <TimelineItem
+                date="Q1 2024"
+                title="Foundation"
+                description="Core infrastructure setup and design system initialization."
+                status="success"
+                icon={<CheckCircle className="w-4 h-4" />}
+            />
+            <TimelineItem
+                date="Q2 2024"
+                title="MVP Beta"
+                description="Release of the first playable version to internal stakeholders."
+                status="success"
+                icon={<Rocket className="w-4 h-4" />}
+            />
+            <TimelineItem
+                date="Q3 2024"
+                title="Public Launch"
+                description="Global rollout with marketing campaign support."
+                status="info"
+                isActive
+                icon={<Globe className="w-4 h-4" />}
+            />
+            <TimelineItem
+                date="Q4 2024"
+                title="Enterprise Features"
+                description="SSO, Audit Logs, and Advanced Analytics."
+                status="default"
+            />
+        </Timeline>
+    )
+};
+
+export const IncidentPostMortem: Story = {
+    name: '🔥 Use Case: Incident Post-Mortem',
+    render: () => (
+        <Timeline>
+            <TimelineItem
+                date="10:42 AM"
+                title="Alert Triggered"
+                description="Monitoring system detected high latency in region us-east-1."
+                status="error"
+                icon={<AlertOctagon className="w-4 h-4" />}
+            />
+            <TimelineItem
+                date="10:45 AM"
+                title="On-Call Paged"
+                description="Automated paging system notified the SRE team."
+                status="warning"
+            />
+            <TimelineItem
+                date="10:52 AM"
+                title="Investigation Started"
+                description="Engineer acknowledged the incident and began analyzing logs."
+                status="info"
+            />
+            <TimelineItem
+                date="11:15 AM"
+                title="Fix Deployed"
+                description="Rolled back the recent database migration which caused the lock contention."
+                status="success"
+            />
+            <TimelineItem
+                date="11:30 AM"
+                title="Resolved"
+                description="System metrics returned to normal levels. Incident closed."
+                status="success"
+                isActive
+            />
+        </Timeline>
+    )
 };

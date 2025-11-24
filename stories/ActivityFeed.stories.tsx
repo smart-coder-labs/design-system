@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ActivityFeed, ActivityItem } from '../components/ActivityFeed';
 import { Button } from '../components/Button';
 import { Badge } from '../components/Badge';
-import { FileCode, MessageSquare, GitMerge, ThumbsUp } from 'lucide-react';
+import { FileCode, MessageSquare, GitMerge, ThumbsUp, ShieldAlert, Lock, Calendar } from 'lucide-react';
 
 const meta = {
     title: 'Data Display/ActivityFeed',
@@ -144,4 +144,78 @@ export const DataDriven: Story = {
             <ActivityFeed {...args} />
         </div>
     ),
+};
+
+// --------- USE CASES --------- //
+
+
+export const SecurityAuditLog: Story = {
+    name: '🛡️ Use Case: Security Audit Log',
+    render: () => (
+        <div className="max-w-2xl mx-auto">
+            <ActivityFeed>
+                <ActivityItem
+                    actor={{ name: 'Admin User', initials: 'AU' }}
+                    action="changed organization settings"
+                    date="2 hours ago"
+                    type="alert"
+                    icon={ShieldAlert}
+                >
+                    <p>Enforced 2FA for all members of the "Engineering" group.</p>
+                </ActivityItem>
+                <ActivityItem
+                    actor={{ name: 'System', initials: 'SYS' }}
+                    action="blocked suspicious login attempt"
+                    target="IP 192.168.1.1"
+                    date="4 hours ago"
+                    type="alert"
+                />
+                <ActivityItem
+                    actor={{ name: 'Sarah Connor', initials: 'SC' }}
+                    action="updated password"
+                    date="Yesterday"
+                    type="default"
+                    icon={Lock}
+                />
+            </ActivityFeed>
+        </div>
+    )
+};
+
+export const ProjectUpdates: Story = {
+    name: '📊 Use Case: Project Management',
+    render: () => (
+        <div className="max-w-2xl mx-auto">
+            <ActivityFeed>
+                <ActivityItem
+                    actor={{ name: 'Product Manager', initials: 'PM' }}
+                    action="moved ticket"
+                    target="PROJ-123"
+                    date="10m ago"
+                    type="default"
+                >
+                    <div className="flex items-center gap-2 text-xs">
+                        <span className="bg-surface-secondary px-2 py-1 rounded">In Progress</span>
+                        <span>→</span>
+                        <span className="bg-accent-blue/10 text-accent-blue px-2 py-1 rounded font-medium">QA Review</span>
+                    </div>
+                </ActivityItem>
+                <ActivityItem
+                    actor={{ name: 'Lead Dev', initials: 'LD' }}
+                    action="attached file"
+                    target="architecture_diagram.pdf"
+                    date="1h ago"
+                    type="file"
+                />
+                <ActivityItem
+                    actor={{ name: 'QA Engineer', initials: 'QA' }}
+                    action="added due date"
+                    target="Nov 24, 2025"
+                    date="2h ago"
+                    type="default"
+                    icon={Calendar}
+                />
+            </ActivityFeed>
+        </div>
+    )
 };
