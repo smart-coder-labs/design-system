@@ -143,14 +143,20 @@
 137 Quick Look Preview (macOS)
 
 Typography
-138 Text
-139 Tittle
-Aquí tienes solo los nombres de los 7 componentes:
+- [x] 138 Text
+- [x] 139 Title
+140 Heading
+141 Paragraph
+142 Label
+143 Caption
+144 Code Block
+145 Blockquote
 
-140. **KPI Cards**
-141. **Counters**
-142. **Data Summary Widgets**
-143. **Charts**
-144. **Segmented Counters**
-145. **Progress Indicators**
-146. **Data Tables**
+Data Visualization
+146 KPI Cards
+147 Counters
+148 Data Summary Widgets
+149 Charts
+150 Segmented Counters
+151 Progress Indicators
+152 Data Tables

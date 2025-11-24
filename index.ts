@@ -198,3 +198,7 @@ export { ProductCard } from './components/ProductCard';
 export type { ProductCardProps } from './components/ProductCard';
 export { CartPreview } from './components/CartPreview';
 export type { CartPreviewProps, CartItem } from './components/CartPreview';
+export { Text } from './components/Text';
+export type { TextProps } from './components/Text';
+export { Title } from './components/Title';
+export type { TitleProps } from './components/Title';
