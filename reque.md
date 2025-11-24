@@ -58,7 +58,7 @@
 - [x] 52 JSON Viewer
 - [x] 53 Tree View / File Explorer
 - [x] 54 Diff Viewer
-55 Image Cropper
+- [x] 55 Image Cropper
 56 Image Carousel
 57 Lightbox / Gallery
 58 Video Player
@@ -141,3 +141,7 @@
 135 Command Palette
 136 Apple Spotlight UI
 137 Quick Look Preview (macOS)
+
+Typography
+138 Text
+139 Tittle
