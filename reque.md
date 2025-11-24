@@ -74,7 +74,7 @@
 - [x] 68 Confirm Dialog (distinct from generic Modal)
 - [x] 69 Error Boundary UI
 - [x] 70 Stepper / Steps
-71 Empty State
+- [x] 71 Empty State
 72 Maintenance Mode UI
 73 Offline State UI
 74 Loading Overlay

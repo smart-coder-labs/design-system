@@ -64,6 +64,7 @@ export { CodeBlock } from './components/CodeBlock';
 export { JsonViewer } from './components/JsonViewer';
 export { TreeView } from './components/TreeView';
 export { DiffViewer } from './components/DiffViewer';
+export { EmptyState } from './components/EmptyState';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -116,6 +117,7 @@ export type { CodeBlockProps } from './components/CodeBlock';
 export type { JsonViewerProps } from './components/JsonViewer';
 export type { TreeViewProps, TreeNode } from './components/TreeView';
 export type { DiffViewerProps, DiffViewMode } from './components/DiffViewer';
+export type { EmptyStateProps } from './components/EmptyState';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
