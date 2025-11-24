@@ -124,6 +124,7 @@ export type { EmptyStateProps } from './components/EmptyState';
 export type { MaintenanceModeProps } from './components/MaintenanceMode';
 export type { GridContainerProps, RowProps, ColProps } from './components/GridSystem';
 export type { SpacerProps } from './components/Spacer';
+export type { DividerProps } from './components/Divider';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
@@ -167,6 +168,7 @@ export type { NavBarProps, NavBarBrandProps, NavBarContentProps, NavBarItemProps
 export { Avatar, AvatarImage, AvatarFallback } from './components/Avatar';
 export { GridContainer, Row, Col } from './components/GridSystem';
 export { Spacer } from './components/Spacer';
+export { Divider } from './components/Divider';
 export { Progress } from './components/Progress';
 export { Skeleton } from './components/Skeleton';
 export { Spinner } from './components/Spinner';

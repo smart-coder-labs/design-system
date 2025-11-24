@@ -80,8 +80,8 @@
 - [x] 74 Loading Overlay
 75 Apple‑style Pull‑to‑Refresh Indicator
 - [x] 76 Grid System
-77 Spacer
-78 Divider
+- [x] 77 Spacer
+- [x] 78 Divider
 79 Section Header
 80 Footer
 81 Resizable Panels
