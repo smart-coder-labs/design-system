@@ -59,6 +59,7 @@ export { StatisticDisplay, StatisticHighlight } from './components/StatisticDisp
 export { DescriptionBlock } from './components/DescriptionBlock';
 export { Timeline, TimelineItem } from './components/Timeline';
 export { ActivityFeed, ActivityItem } from './components/ActivityFeed';
+export { CommentThread } from './components/CommentThread';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -106,6 +107,7 @@ export type { StatisticDisplayProps, StatisticMetric, StatisticVariant, Statisti
 export type { DescriptionBlockProps, DescriptionMetadataItem, DescriptionHighlightProps, DescriptionHighlightTrend } from './components/DescriptionBlock';
 export type { TimelineProps, TimelineItemProps, TimelineLayout, TimelineStatus } from './components/Timeline';
 export type { ActivityFeedProps, ActivityItemProps, ActivityType, ActivityActor } from './components/ActivityFeed';
+export type { CommentThreadProps, CommentData, CommentUser } from './components/CommentThread';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';

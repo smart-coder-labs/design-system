@@ -53,7 +53,7 @@
 - [x] 47 Description Block
 - [x] 48 Timeline
 - [x] 49 Activity Feed
-50 Comment Thread
+- [x] 50 Comment Thread
 51 Code Block
 52 JSON Viewer
 53 Tree View / File Explorer
