@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Highlight, themes, type Language } from 'prism-react-renderer';
 import { Check, Copy, FileCode, Terminal } from 'lucide-react';
 import { cn } from '../lib/utils';
-import { Button } from './Button';
 
 export interface CodeBlockProps {
     /** The code to display */
@@ -70,18 +69,17 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
                             {language}
                         </span>
                         {showCopyButton && (
-                            <Button
-                                variant="ghost"
-                                size="sm"
+                            <button
                                 onClick={copyToClipboard}
-                                className="h-6 w-6 p-0 text-gray-400 hover:text-white hover:bg-white/10"
+                                className="flex items-center justify-center h-6 w-6 p-0 text-gray-400 hover:text-white hover:bg-white/10 rounded transition-colors focus:outline-none focus:ring-1 focus:ring-white/20"
+                                title="Copy code"
                             >
                                 {isCopied ? (
                                     <Check className="w-3.5 h-3.5 text-green-400" />
                                 ) : (
                                     <Copy className="w-3.5 h-3.5" />
                                 )}
-                            </Button>
+                            </button>
                         )}
                     </div>
                 </div>
