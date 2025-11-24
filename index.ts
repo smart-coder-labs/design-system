@@ -56,7 +56,7 @@ export { KeyValueInfo, CompactKeyValueInfo, InlineKeyValueInfo } from './compone
 export { PropertyList, CompactPropertyList } from './components/PropertyList';
 export { KPIBlock, KPIGroup } from './components/KPIBlock';
 export { StatisticDisplay, StatisticHighlight } from './components/StatisticDisplay';
-export { DescriptionBlock, DescriptionHighlight } from './components/DescriptionBlock';
+export { DescriptionBlock } from './components/DescriptionBlock';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
