@@ -76,7 +76,7 @@
 - [x] 70 Stepper / Steps
 - [x] 71 Empty State
 - [x] 72 Maintenance Mode UI
-73 Offline State UI
+- [x] 73 Offline State UI
 74 Loading Overlay
 75 Apple‑style Pull‑to‑Refresh Indicator
 76 Grid System
