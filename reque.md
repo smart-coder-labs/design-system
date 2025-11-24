@@ -59,7 +59,7 @@
 - [x] 53 Tree View / File Explorer
 - [x] 54 Diff Viewer
 - [x] 55 Image Cropper
-56 Image Carousel
+- [x] 56 Image Carousel
 57 Lightbox / Gallery
 58 Video Player
 59 Audio Player
