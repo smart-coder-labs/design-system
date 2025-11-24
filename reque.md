@@ -62,7 +62,7 @@
 - [x] 56 Image Carousel
 - [x] 57 Lightbox / Gallery
 - [x] 58 Video Player
-59 Audio Player
+- [x] 59 Audio Player
 60 Lottie Animation Player
 61 Map Preview
 62 QR Code Generator
