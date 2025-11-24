@@ -109,30 +109,35 @@ export const DiffViewer: React.FC<DiffViewerProps> = ({
                     key={idx} 
                     className={cn(
                         "flex",
-                        line.type === 'added' && "bg-green-500/10 dark:bg-green-500/20",
-                        line.type === 'removed' && "bg-red-500/10 dark:bg-red-500/20",
+                        line.type === 'added' && "bg-green-100/50 dark:bg-green-900/20",
+                        line.type === 'removed' && "bg-red-100/50 dark:bg-red-900/20",
                         line.type === 'unchanged' && "hover:bg-black/5 dark:hover:bg-white/5"
                     )}
                 >
                     {/* Line Numbers */}
-                    <div className="flex-none w-12 text-right pr-3 py-0.5 select-none text-text-tertiary border-r border-border-primary/30 bg-surface-secondary/30">
+                    <div className="flex-none w-12 text-right pr-4 py-0.5 select-none text-text-tertiary border-r border-border-primary/30 opacity-50">
                         {line.oldLineNumber || ''}
                     </div>
-                    <div className="flex-none w-12 text-right pr-3 py-0.5 select-none text-text-tertiary border-r border-border-primary/30 bg-surface-secondary/30">
+                    <div className="flex-none w-12 text-right pr-4 py-0.5 select-none text-text-tertiary border-r border-border-primary/30 opacity-50">
                         {line.newLineNumber || ''}
                     </div>
                     
                     {/* Marker */}
-                    <div className="flex-none w-6 text-center py-0.5 select-none text-text-secondary">
+                    <div className={cn(
+                        "flex-none w-8 text-center py-0.5 select-none font-bold",
+                        line.type === 'added' && "text-green-600 dark:text-green-400",
+                        line.type === 'removed' && "text-red-600 dark:text-red-400",
+                        line.type === 'unchanged' && "text-text-secondary"
+                    )}>
                         {line.type === 'added' && '+'}
                         {line.type === 'removed' && '-'}
                     </div>
                     
                     {/* Content */}
                     <div className={cn(
-                        "flex-1 py-0.5 px-2 whitespace-pre-wrap break-all",
-                        line.type === 'added' && "text-green-700 dark:text-green-400",
-                        line.type === 'removed' && "text-red-700 dark:text-red-400 line-through opacity-70",
+                        "flex-1 py-0.5 px-4 whitespace-pre-wrap break-all",
+                        line.type === 'added' && "text-green-900 dark:text-green-100",
+                        line.type === 'removed' && "text-red-900 dark:text-red-100 line-through opacity-70",
                         line.type === 'unchanged' && "text-text-secondary"
                     )}>
                         {line.content}
@@ -173,16 +178,16 @@ export const DiffViewer: React.FC<DiffViewerProps> = ({
                             key={idx} 
                             className={cn(
                                 "flex",
-                                line.type === 'removed' && "bg-red-500/10 dark:bg-red-500/20",
-                                !line.oldLineNumber && line.content === '' && "bg-black/5 dark:bg-white/5 diagonal-stripes" // Placeholder styling
+                                line.type === 'removed' && "bg-red-100/50 dark:bg-red-900/20",
+                                !line.oldLineNumber && line.content === '' && "bg-black/5 dark:bg-white/5" // Placeholder styling
                             )}
                         >
-                            <div className="flex-none w-10 text-right pr-2 py-0.5 select-none text-text-tertiary border-r border-border-primary/30 bg-surface-secondary/30">
+                            <div className="flex-none w-12 text-right pr-4 py-0.5 select-none text-text-tertiary border-r border-border-primary/30 opacity-50">
                                 {line.oldLineNumber || ''}
                             </div>
                             <div className={cn(
-                                "flex-1 py-0.5 px-2 whitespace-pre-wrap break-all",
-                                line.type === 'removed' ? "text-red-700 dark:text-red-400" : "text-text-secondary",
+                                "flex-1 py-0.5 px-4 whitespace-pre-wrap break-all",
+                                line.type === 'removed' ? "text-red-900 dark:text-red-100" : "text-text-secondary",
                                 !line.oldLineNumber && "select-none"
                             )}>
                                 {line.content}
@@ -198,16 +203,16 @@ export const DiffViewer: React.FC<DiffViewerProps> = ({
                             key={idx} 
                             className={cn(
                                 "flex",
-                                line.type === 'added' && "bg-green-500/10 dark:bg-green-500/20",
-                                !line.newLineNumber && line.content === '' && "bg-black/5 dark:bg-white/5 diagonal-stripes"
+                                line.type === 'added' && "bg-green-100/50 dark:bg-green-900/20",
+                                !line.newLineNumber && line.content === '' && "bg-black/5 dark:bg-white/5"
                             )}
                         >
-                            <div className="flex-none w-10 text-right pr-2 py-0.5 select-none text-text-tertiary border-r border-border-primary/30 bg-surface-secondary/30">
+                            <div className="flex-none w-12 text-right pr-4 py-0.5 select-none text-text-tertiary border-r border-border-primary/30 opacity-50">
                                 {line.newLineNumber || ''}
                             </div>
                             <div className={cn(
-                                "flex-1 py-0.5 px-2 whitespace-pre-wrap break-all",
-                                line.type === 'added' ? "text-green-700 dark:text-green-400" : "text-text-secondary",
+                                "flex-1 py-0.5 px-4 whitespace-pre-wrap break-all",
+                                line.type === 'added' ? "text-green-900 dark:text-green-100" : "text-text-secondary",
                                 !line.newLineNumber && "select-none"
                             )}>
                                 {line.content}
