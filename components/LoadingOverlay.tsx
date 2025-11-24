@@ -57,7 +57,10 @@ export const LoadingOverlay: React.FC<LoadingOverlayProps> = ({
                         className
                     )}
                 >
-                    <div className="flex flex-col items-center gap-4 p-4">
+                    <div className={cn(
+                        "flex flex-col items-center gap-4",
+                        !blur ? "p-6 bg-surface-elevated rounded-xl shadow-lg border border-border-primary" : "p-4"
+                    )}>
                         <Spinner size={spinnerSize} />
                         {message && (
                             <motion.p
