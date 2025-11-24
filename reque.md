@@ -86,7 +86,7 @@
 - [x] 80 Footer
 - [x] 81 Resizable Panels
 - [x] 82 Split View (macOS Finder style)
-83 Sticky Container
+- [x] 83 Sticky Container
 84 Masonry Layout
 85 Modal Stack Manager
 86 Breadcrumb + Tabs Hybrid
