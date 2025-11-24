@@ -153,7 +153,7 @@ const StepItem: React.FC<StepItemProps> = ({
     // Text styles
     const getTextContainerStyles = () => {
         if (isVertical) return 'ml-4 pt-1 pb-8';
-        return 'ml-5';
+        return 'pl-4';
     };
 
     const titleColor = status === 'pending' ? 'text-text-secondary' : 'text-text-primary';
@@ -226,7 +226,7 @@ const StepConnector: React.FC<StepConnectorProps> = ({ status, orientation, vari
     const classes = variant === 'bullets' ? bulletClasses : containerClasses;
 
     return (
-        <div className={`${classes} relative`}>
+        <div className={`${classes} relative m-2`}>
              {/* Background Line */}
             <div className="absolute inset-0 bg-border-secondary" />
             
