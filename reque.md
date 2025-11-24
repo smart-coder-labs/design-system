@@ -79,7 +79,7 @@
 - [x] 73 Offline State UI
 - [x] 74 Loading Overlay
 75 Apple‑style Pull‑to‑Refresh Indicator
-76 Grid System
+- [x] 76 Grid System
 77 Spacer
 78 Divider
 79 Section Header
