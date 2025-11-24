@@ -122,7 +122,8 @@ export type { TreeViewProps, TreeNode } from './components/TreeView';
 export type { DiffViewerProps, DiffViewMode } from './components/DiffViewer';
 export type { EmptyStateProps } from './components/EmptyState';
 export type { MaintenanceModeProps } from './components/MaintenanceMode';
-export type { ContainerProps, RowProps, ColProps } from './components/GridSystem';
+export type { GridContainerProps, RowProps, ColProps } from './components/GridSystem';
+export type { SpacerProps } from './components/Spacer';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
@@ -164,7 +165,8 @@ export type { NavBarProps, NavBarBrandProps, NavBarContentProps, NavBarItemProps
 
 // New Components
 export { Avatar, AvatarImage, AvatarFallback } from './components/Avatar';
-export { Container, Row, Col } from './components/GridSystem';
+export { GridContainer, Row, Col } from './components/GridSystem';
+export { Spacer } from './components/Spacer';
 export { Progress } from './components/Progress';
 export { Skeleton } from './components/Skeleton';
 export { Spinner } from './components/Spinner';
