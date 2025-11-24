@@ -150,6 +150,7 @@ export const WithCards: Story = {
                     date="Just now"
                     status="warning"
                     icon={<AlertTriangle className="w-4 h-4" />}
+                    className='mb-4'
                 >
                     <Card className="p-4">
                         <div className="flex justify-between items-start mb-2">
@@ -170,6 +171,7 @@ export const WithCards: Story = {
                     date="2 hours ago"
                     status="info"
                     icon={<Mail className="w-4 h-4" />}
+                    className='mb-4'
                 >
                     <Card className="p-4">
                         <div className="flex justify-between items-start mb-2">
@@ -186,6 +188,7 @@ export const WithCards: Story = {
                     date="Yesterday"
                     status="success"
                     icon={<GitCommit className="w-4 h-4" />}
+                    className='mb-4'
                 >
                     <Card className="p-4">
                         <div className="flex justify-between items-start mb-2">
