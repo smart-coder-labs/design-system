@@ -194,3 +194,5 @@ export { BreadcrumbTabsHybrid } from './components/BreadcrumbTabsHybrid';
 export type { BreadcrumbTabsHybridProps, BreadcrumbItem as BreadcrumbTabsItem, TabItem } from './components/BreadcrumbTabsHybrid';
 export { FloatingToolbar } from './components/FloatingToolbar';
 export type { FloatingToolbarProps, FloatingToolbarAction } from './components/FloatingToolbar';
+export { ProductCard } from './components/ProductCard';
+export type { ProductCardProps } from './components/ProductCard';

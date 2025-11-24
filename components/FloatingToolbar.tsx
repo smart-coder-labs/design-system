@@ -149,9 +149,9 @@ export const FloatingToolbar: React.FC<FloatingToolbarProps> = ({
                 aria-label={action.label || action.tooltip}
                 aria-pressed={isActive}
               >
-                <span className="flex-shrink-0 w-5 h-5 relative z-10">{action.icon}</span>
+                <span className="flex-shrink-0 w-5 h-5">{action.icon}</span>
                 {showLabels && action.label && (
-                  <span className="whitespace-nowrap relative z-10">{action.label}</span>
+                  <span className="whitespace-nowrap">{action.label}</span>
                 )}
 
                 {/* Tooltip */}

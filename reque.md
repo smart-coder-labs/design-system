@@ -91,7 +91,7 @@
 - [x] NO85 Modal Stack Manager
 - [x] 86 Breadcrumb + Tabs Hybrid
 - [x] 87 Floating Toolbar
-88 Product Card (customised for e‑commerce)
+- [x] 88 Product Card (customised for e‑commerce)
 89 Product Gallery
 90 Cart Preview
 91 Quantity Selector (stand‑alone component)
@@ -145,3 +145,12 @@
 Typography
 138 Text
 139 Tittle
+Aquí tienes solo los nombres de los 7 componentes:
+
+140. **KPI Cards**
+141. **Counters**
+142. **Data Summary Widgets**
+143. **Charts**
+144. **Segmented Counters**
+145. **Progress Indicators**
+146. **Data Tables**
