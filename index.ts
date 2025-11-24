@@ -62,6 +62,7 @@ export { ActivityFeed, ActivityItem } from './components/ActivityFeed';
 export { CommentThread } from './components/CommentThread';
 export { CodeBlock } from './components/CodeBlock';
 export { JsonViewer } from './components/JsonViewer';
+export { TreeView } from './components/TreeView';
 
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
 export type { PaginationProps } from './components/Pagination';
@@ -112,6 +113,7 @@ export type { ActivityFeedProps, ActivityItemProps, ActivityType, ActivityActor 
 export type { CommentThreadProps, CommentData, CommentUser } from './components/CommentThread';
 export type { CodeBlockProps } from './components/CodeBlock';
 export type { JsonViewerProps } from './components/JsonViewer';
+export type { TreeViewProps, TreeNode } from './components/TreeView';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card';
 export type { CardProps, CardVariant } from './components/Card';
