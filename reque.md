@@ -89,7 +89,7 @@
 - [x] 83 Sticky Container
 - [x] 84 Masonry Layout
 - [x] NO85 Modal Stack Manager
-86 Breadcrumb + Tabs Hybrid
+- [x] 86 Breadcrumb + Tabs Hybrid
 87 Floating Toolbar
 88 Product Card (customised for e‑commerce)
 89 Product Gallery

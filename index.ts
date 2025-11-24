@@ -190,3 +190,5 @@ export { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetFooter, SheetTitle
 export { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem, ContextMenuCheckboxItem, ContextMenuRadioItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuShortcut, ContextMenuGroup, ContextMenuPortal, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuRadioGroup } from './components/ContextMenu';
 export { Stack, HStack, VStack, Grid } from './components/Layout';
 export { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis } from './components/Breadcrumb';
+export { BreadcrumbTabsHybrid } from './components/BreadcrumbTabsHybrid';
+export type { BreadcrumbTabsHybridProps, BreadcrumbItem as BreadcrumbTabsItem, TabItem } from './components/BreadcrumbTabsHybrid';
