@@ -219,3 +219,6 @@ export type { InvoicePreviewProps, InvoiceItem, InvoiceParty } from './component
 
 export { Sparkline } from './components/Sparkline';
 export type { SparklineProps } from './components/Sparkline';
+
+export { FilterBar } from './components/FilterBar';
+export type { FilterBarProps, FilterGroup, FilterOption, ActiveFilter } from './components/FilterBar';
