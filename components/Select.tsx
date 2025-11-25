@@ -108,6 +108,150 @@ const SelectSeparator = React.forwardRef<
 ));
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
 
+/* ========================================
+   FILTER SELECT VARIANT
+   ======================================== */
+
+export interface FilterSelectOption {
+    id: string;
+    label: string;
+    value: string;
+    count?: number;
+}
+
+export interface FilterSelectProps {
+    label: string;
+    options: FilterSelectOption[];
+    value?: string | string[];
+    onChange?: (value: string | string[]) => void;
+    icon?: React.ReactNode;
+    multiselect?: boolean;
+    className?: string;
+}
+
+export const FilterSelect: React.FC<FilterSelectProps> = ({
+    label,
+    options,
+    value,
+    onChange,
+    icon,
+    multiselect = false,
+    className = '',
+}) => {
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    const handleOptionClick = (option: FilterSelectOption) => {
+        if (multiselect) {
+            const currentValues = Array.isArray(value) ? value : [];
+            const newValues = currentValues.includes(option.value)
+                ? currentValues.filter(v => v !== option.value)
+                : [...currentValues, option.value];
+            onChange?.(newValues);
+        } else {
+            onChange?.(option.value);
+            setIsOpen(false);
+        }
+    };
+
+    const isOptionActive = (optionValue: string) => {
+        if (Array.isArray(value)) {
+            return value.includes(optionValue);
+        }
+        return value === optionValue;
+    };
+
+    const getActiveLabel = () => {
+        if (!value) return null;
+
+        if (Array.isArray(value)) {
+            if (value.length === 0) return null;
+            if (value.length === 1) {
+                const option = options.find(o => o.value === value[0]);
+                return option?.label;
+            }
+            return `${value.length} selected`;
+        }
+
+        const option = options.find(o => o.value === value);
+        return option?.label;
+    };
+
+    const activeLabel = getActiveLabel();
+
+    return (
+        <div className={cn("relative", className)}>
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className={cn(
+                    "inline-flex items-center gap-2 px-4 py-2 rounded-lg",
+                    "border transition-all",
+                    activeLabel
+                        ? "bg-accent-blue/10 border-accent-blue/30 text-accent-blue"
+                        : "bg-surface-secondary border-border-primary text-text-primary hover:bg-surface-tertiary"
+                )}
+            >
+                {icon || <ChevronDown className="w-4 h-4" />}
+                <span className="text-sm font-medium">
+                    {activeLabel || label}
+                </span>
+                <ChevronDown className={cn(
+                    "w-4 h-4 transition-transform",
+                    isOpen && "rotate-180"
+                )} />
+            </button>
+
+            {isOpen && (
+                <>
+                    <div
+                        className="fixed inset-0 z-10"
+                        onClick={() => setIsOpen(false)}
+                    />
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-surface-primary border border-border-primary rounded-xl shadow-lg z-20 overflow-hidden">
+                        <div className="max-h-80 overflow-y-auto p-2">
+                            {options.map((option) => {
+                                const isActive = isOptionActive(option.value);
+
+                                return (
+                                    <button
+                                        key={option.id}
+                                        onClick={() => handleOptionClick(option)}
+                                        className={cn(
+                                            "w-full flex items-center justify-between px-3 py-2 rounded-lg",
+                                            "text-sm transition-colors",
+                                            isActive
+                                                ? "bg-accent-blue/10 text-accent-blue"
+                                                : "text-text-primary hover:bg-surface-secondary"
+                                        )}
+                                    >
+                                        <div className="flex items-center gap-2">
+                                            {multiselect && (
+                                                <div className={cn(
+                                                    "w-4 h-4 rounded border flex items-center justify-center",
+                                                    isActive
+                                                        ? "bg-accent-blue border-accent-blue"
+                                                        : "border-border-primary"
+                                                )}>
+                                                    {isActive && <Check className="w-3 h-3 text-white" />}
+                                                </div>
+                                            )}
+                                            <span>{option.label}</span>
+                                        </div>
+                                        {option.count !== undefined && (
+                                            <span className="text-xs text-text-tertiary">
+                                                {option.count}
+                                            </span>
+                                        )}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </>
+            )}
+        </div>
+    );
+};
+
 export {
     Select,
     SelectGroup,

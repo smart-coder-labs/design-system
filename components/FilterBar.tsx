@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { X, Search, Filter, ChevronDown, Check } from 'lucide-react';
+import { X, Filter } from 'lucide-react';
 import { Button } from './Button';
-import { Input } from './Input';
+import { SearchInput } from './SearchInput';
+import { FilterSelect, FilterSelectOption } from './Select';
 
 export interface FilterOption {
     id: string;
@@ -49,22 +50,35 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     className = '',
 }) => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-    const handleFilterToggle = (groupId: string, option: FilterOption) => {
+    const handleFilterChange = (groupId: string, value: string | string[]) => {
         const group = groups.find(g => g.id === groupId);
-        if (!group) return;
+        if (!group || !group.options) return;
 
         let newFilters = [...activeFilters];
 
         if (group.type === 'multiselect') {
-            const existingIndex = newFilters.findIndex(
-                f => f.groupId === groupId && f.optionId === option.id
-            );
+            // Remove all existing filters for this group
+            newFilters = newFilters.filter(f => f.groupId !== groupId);
 
-            if (existingIndex >= 0) {
-                newFilters.splice(existingIndex, 1);
-            } else {
+            // Add new filters for selected values
+            const values = Array.isArray(value) ? value : [value];
+            values.forEach(val => {
+                const option = group.options?.find(o => o.value === val);
+                if (option) {
+                    newFilters.push({
+                        groupId,
+                        optionId: option.id,
+                        label: option.label,
+                        value: option.value,
+                    });
+                }
+            });
+        } else {
+            // For single select, remove existing filter for this group and add new one
+            newFilters = newFilters.filter(f => f.groupId !== groupId);
+            const option = group.options?.find(o => o.value === value);
+            if (option) {
                 newFilters.push({
                     groupId,
                     optionId: option.id,
@@ -72,16 +86,6 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                     value: option.value,
                 });
             }
-        } else {
-            // For single select, remove existing filter for this group and add new one
-            newFilters = newFilters.filter(f => f.groupId !== groupId);
-            newFilters.push({
-                groupId,
-                optionId: option.id,
-                label: option.label,
-                value: option.value,
-            });
-            setOpenDropdown(null);
         }
 
         onFilterChange?.(newFilters);
@@ -100,15 +104,17 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         setSearchQuery('');
     };
 
-    const isOptionActive = (groupId: string, optionId: string) => {
-        return activeFilters.some(f => f.groupId === groupId && f.optionId === optionId);
-    };
-
-    const getActiveLabel = (groupId: string) => {
+    const getGroupValue = (groupId: string): string | string[] | undefined => {
+        const group = groups.find(g => g.id === groupId);
         const groupFilters = activeFilters.filter(f => f.groupId === groupId);
-        if (groupFilters.length === 0) return null;
-        if (groupFilters.length === 1) return groupFilters[0].label;
-        return `${groupFilters.length} selected`;
+
+        if (!group || groupFilters.length === 0) return undefined;
+
+        if (group.type === 'multiselect') {
+            return groupFilters.map(f => f.value);
+        }
+
+        return groupFilters[0]?.value;
     };
 
     return (
@@ -117,98 +123,41 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 {/* Search Input */}
                 {showSearch && (
                     <div className="flex-1 min-w-[200px]">
-                        <Input
-                            type="text"
+                        <SearchInput
                             value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onChange={setSearchQuery}
                             placeholder={searchPlaceholder}
-                            leftIcon={<Search className="w-4 h-4" />}
                         />
                     </div>
                 )}
 
                 {/* Filter Dropdowns */}
                 {groups.map((group) => {
-                    const activeLabel = getActiveLabel(group.id);
-                    const isOpen = openDropdown === group.id;
+                    if (group.type === 'custom') {
+                        return (
+                            <div key={group.id}>
+                                {group.customContent}
+                            </div>
+                        );
+                    }
+
+                    const filterOptions: FilterSelectOption[] = group.options?.map(opt => ({
+                        id: opt.id,
+                        label: opt.label,
+                        value: opt.value,
+                        count: opt.count,
+                    })) || [];
 
                     return (
-                        <div key={group.id} className="relative">
-                            <button
-                                onClick={() => setOpenDropdown(isOpen ? null : group.id)}
-                                className={`
-                                    inline-flex items-center gap-2 px-4 py-2 rounded-lg
-                                    border transition-all
-                                    ${activeLabel
-                                        ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue'
-                                        : 'bg-surface-secondary border-border-primary text-text-primary hover:bg-surface-tertiary'
-                                    }
-                                `}
-                            >
-                                {group.icon || <Filter className="w-4 h-4" />}
-                                <span className="text-sm font-medium">
-                                    {activeLabel || group.label}
-                                </span>
-                                <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-                            </button>
-
-                            {/* Dropdown Menu */}
-                            {isOpen && (
-                                <>
-                                    <div
-                                        className="fixed inset-0 z-10"
-                                        onClick={() => setOpenDropdown(null)}
-                                    />
-                                    <div className="absolute top-full left-0 mt-2 w-64 bg-surface-primary border border-border-primary rounded-xl shadow-lg z-20 overflow-hidden">
-                                        <div className="max-h-80 overflow-y-auto p-2">
-                                            {group.type === 'custom' ? (
-                                                group.customContent
-                                            ) : (
-                                                group.options?.map((option) => {
-                                                    const isActive = isOptionActive(group.id, option.id);
-                                                    const isMulti = group.type === 'multiselect';
-
-                                                    return (
-                                                        <button
-                                                            key={option.id}
-                                                            onClick={() => handleFilterToggle(group.id, option)}
-                                                            className={`
-                                                                w-full flex items-center justify-between px-3 py-2 rounded-lg
-                                                                text-sm transition-colors
-                                                                ${isActive
-                                                                    ? 'bg-accent-blue/10 text-accent-blue'
-                                                                    : 'text-text-primary hover:bg-surface-secondary'
-                                                                }
-                                                            `}
-                                                        >
-                                                            <div className="flex items-center gap-2">
-                                                                {isMulti && (
-                                                                    <div className={`
-                                                                        w-4 h-4 rounded border flex items-center justify-center
-                                                                        ${isActive
-                                                                            ? 'bg-accent-blue border-accent-blue'
-                                                                            : 'border-border-primary'
-                                                                        }
-                                                                    `}>
-                                                                        {isActive && <Check className="w-3 h-3 text-white" />}
-                                                                    </div>
-                                                                )}
-                                                                <span>{option.label}</span>
-                                                            </div>
-                                                            {option.count !== undefined && (
-                                                                <span className="text-xs text-text-tertiary">
-                                                                    {option.count}
-                                                                </span>
-                                                            )}
-                                                        </button>
-                                                    );
-                                                })
-                                            )}
-                                        </div>
-                                    </div>
-                                </>
-                            )}
-                        </div>
+                        <FilterSelect
+                            key={group.id}
+                            label={group.label}
+                            options={filterOptions}
+                            value={getGroupValue(group.id)}
+                            onChange={(value) => handleFilterChange(group.id, value)}
+                            icon={group.icon || <Filter className="w-4 h-4" />}
+                            multiselect={group.type === 'multiselect'}
+                        />
                     );
                 })}
 
