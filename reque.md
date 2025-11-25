@@ -97,8 +97,8 @@
 - [x] 91 Quantity Selector (stand‑alone component)
 - [x] 92 Price Display
 - [x] 93 Reviews & Ratings
-94 Checkout Steps
-95 Payment Method Selector
+<!-- 94 Checkout Steps -->
+- [x] 95 Payment Method Selector
 96 Address Selector
 97 Order Summary
 98 Invoice Preview
