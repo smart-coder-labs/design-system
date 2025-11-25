@@ -100,7 +100,7 @@
 <!-- 94 Checkout Steps -->
 - [x] 95 Payment Method Selector
 - [x] 96 Address Selector
-97 Order Summary
+- [x] 97 Order Summary
 98 Invoice Preview
 99 Charts (line, bar, pie, donut, radial)
 100 Mini Sparkline
