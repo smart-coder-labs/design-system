@@ -154,7 +154,7 @@ Typography
 
 Data Visualization
 146 KPI Cards
-147 Counters
+147 Counters - Counters Lists with Chart
 148 Data Summary Widgets
 149 Charts
 150 Segmented Counters
