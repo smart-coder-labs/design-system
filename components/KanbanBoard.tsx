@@ -527,10 +527,10 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
             <Modal open={!!selectedCard} onOpenChange={(open) => !open && setSelectedCard(null)} size="lg">
                 <ModalCloseButton />
                 <ModalHeader>
-                    {selectedCard?.priority && (
-                        <div style={{ width: '100%', height: '4px', backgroundColor: getPriorityColor(selectedCard.priority), borderRadius: tokens.radius.full, marginBottom: tokens.spacing[4] }} />
-                    )}
                     <ModalTitle>{selectedCard?.title}</ModalTitle>
+                    {selectedCard?.priority && (
+                        <div style={{ marginTop: tokens.spacing[4], width: '100%', height: '4px', backgroundColor: getPriorityColor(selectedCard.priority), borderRadius: tokens.radius.full, marginBottom: tokens.spacing[6] }} />
+                    )}
                 </ModalHeader>
                 <ModalContent>
                     {selectedCard?.description && (
