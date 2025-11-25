@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
+import { Sparkline as SparklineComponent } from './Sparkline';
 
 /* ========================================
    TYPES
@@ -62,7 +63,7 @@ export interface StatisticHighlightProps extends React.HTMLAttributes<HTMLDivEle
 
 const MotionDiv = motion.div as any;
 
-const sizeClasses: Record<StatisticSize, { label: string; value: string; meta: string; padding: string; gap: string; icon: string; } > = {
+const sizeClasses: Record<StatisticSize, { label: string; value: string; meta: string; padding: string; gap: string; icon: string; sparkline: { width: number; height: number }; }> = {
     sm: {
         label: "text-[11px]",
         value: "text-2xl",
@@ -70,6 +71,7 @@ const sizeClasses: Record<StatisticSize, { label: string; value: string; meta: s
         padding: "p-4",
         gap: "space-y-3",
         icon: "w-8 h-8",
+        sparkline: { width: 100, height: 32 },
     },
     md: {
         label: "text-xs",
@@ -78,6 +80,7 @@ const sizeClasses: Record<StatisticSize, { label: string; value: string; meta: s
         padding: "p-5",
         gap: "space-y-4",
         icon: "w-10 h-10",
+        sparkline: { width: 120, height: 38 },
     },
     lg: {
         label: "text-sm",
@@ -86,6 +89,7 @@ const sizeClasses: Record<StatisticSize, { label: string; value: string; meta: s
         padding: "p-6",
         gap: "space-y-5",
         icon: "w-12 h-12",
+        sparkline: { width: 140, height: 44 },
     },
 };
 
@@ -97,97 +101,58 @@ const variantClasses: Record<StatisticVariant, string> = {
     glass: "bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl",
 };
 
-const accentTokens: Record<StatisticAccent, { stroke: string; fill: string; text: string; chip: string; } > = {
+const accentTokens: Record<StatisticAccent, { color: string; fillColor: string; text: string; chip: string; }> = {
     blue: {
-        stroke: '#2563eb',
-        fill: 'rgba(37,99,235,0.12)',
+        color: '#2563eb',
+        fillColor: 'rgba(37,99,235,0.12)',
         text: 'text-accent-blue',
         chip: 'bg-accent-blue/10 text-accent-blue',
     },
     green: {
-        stroke: '#16a34a',
-        fill: 'rgba(22,163,74,0.12)',
+        color: '#16a34a',
+        fillColor: 'rgba(22,163,74,0.12)',
         text: 'text-status-success',
         chip: 'bg-status-success/10 text-status-success',
     },
     purple: {
-        stroke: '#7c3aed',
-        fill: 'rgba(124,58,237,0.12)',
+        color: '#7c3aed',
+        fillColor: 'rgba(124,58,237,0.12)',
         text: 'text-accent-purple',
         chip: 'bg-accent-purple/10 text-accent-purple',
     },
     orange: {
-        stroke: '#ea580c',
-        fill: 'rgba(234,88,12,0.12)',
+        color: '#ea580c',
+        fillColor: 'rgba(234,88,12,0.12)',
         text: 'text-status-warning',
         chip: 'bg-status-warning/15 text-status-warning',
     },
     pink: {
-        stroke: '#db2777',
-        fill: 'rgba(219,39,119,0.12)',
+        color: '#db2777',
+        fillColor: 'rgba(219,39,119,0.12)',
         text: 'text-accent-pink',
         chip: 'bg-accent-pink/15 text-accent-pink',
     },
 };
 
-const trendTokens: Record<StatisticTrend, { icon: React.ComponentType<{ className?: string }>; text: string; bg: string; }> = {
+const trendTokens: Record<StatisticTrend, { icon: React.ComponentType<{ className?: string }>; text: string; bg: string; trend: 'up' | 'down' | 'neutral'; }> = {
     up: {
         icon: TrendingUp,
         text: 'text-status-success',
         bg: 'bg-status-success/10',
+        trend: 'up',
     },
     down: {
         icon: TrendingDown,
         text: 'text-status-error',
         bg: 'bg-status-error/10',
+        trend: 'down',
     },
     neutral: {
         icon: Minus,
         text: 'text-text-tertiary',
         bg: 'bg-surface-secondary/80',
+        trend: 'neutral',
     },
-};
-
-/* ========================================
-   HELPERS
-   ======================================== */
-
-const Sparkline: React.FC<{ data?: number[]; accent?: StatisticAccent; className?: string }> = ({ data, accent = 'blue', className }) => {
-    if (!data || data.length === 0) return null;
-
-    const width = 120;
-    const height = 38;
-    const min = Math.min(...data);
-    const max = Math.max(...data);
-    const range = max - min || 1;
-    const step = width / Math.max(data.length - 1, 1);
-
-    const points = data.map((value, index) => {
-        const x = index * step;
-        const y = height - ((value - min) / range) * height;
-        return { x, y };
-    });
-
-    const path = points.reduce((acc, point, index) => {
-        return index === 0
-            ? `M ${point.x} ${point.y}`
-            : `${acc} L ${point.x} ${point.y}`;
-    }, '');
-
-    const areaPath = `${path} L ${width} ${height} L 0 ${height} Z`;
-
-    const tokens = accentTokens[accent];
-
-    return (
-        <svg
-            className={cn('w-full', className)}
-            viewBox={`0 0 ${width} ${height}`}
-            preserveAspectRatio="none"
-        >
-            <path d={areaPath} fill={tokens.fill} stroke="none" />
-            <path d={path} fill="none" stroke={tokens.stroke} strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-    );
 };
 
 const GoalMeter: React.FC<{ goal?: StatisticGoal }> = ({ goal }) => {
@@ -327,11 +292,17 @@ export const StatisticDisplay = forwardRef<HTMLDivElement, StatisticDisplayProps
                             )}
 
                             {metric.sparkline && (
-                                <Sparkline
-                                    data={metric.sparkline}
-                                    accent={accent}
-                                    className="mt-3"
-                                />
+                                <div className="mt-3">
+                                    <SparklineComponent
+                                        data={metric.sparkline}
+                                        width={sizeClasses[size].sparkline.width}
+                                        height={sizeClasses[size].sparkline.height}
+                                        color={accentTokens[accent].color}
+                                        fillColor={accentTokens[accent].fillColor}
+                                        showArea={true}
+                                        trend={trendTokens[trend]?.trend}
+                                    />
+                                </div>
                             )}
 
                             <GoalMeter goal={metric.goal} />
@@ -418,7 +389,16 @@ export const StatisticHighlight = forwardRef<HTMLDivElement, StatisticHighlightP
                     </div>
 
                     {sparkline && (
-                        <Sparkline data={sparkline} accent={sparklineAccent} className="h-16" />
+                        <div className="mt-2">
+                            <SparklineComponent
+                                data={sparkline}
+                                width={160}
+                                height={64}
+                                color={accentTokens[sparklineAccent].color}
+                                fillColor={accentTokens[sparklineAccent].fillColor}
+                                showArea={true}
+                            />
+                        </div>
                     )}
 
                     {typeof progress === 'number' && (
