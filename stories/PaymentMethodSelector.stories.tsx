@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
-import PaymentMethodSelector from '../components/PaymentMethodSelector';
+import PaymentMethodSelector, { PaymentMethod } from '../components/PaymentMethodSelector';
 
 const meta: Meta<typeof PaymentMethodSelector> = {
   title: 'Payments/Payment Method Selector',
@@ -11,7 +11,7 @@ const meta: Meta<typeof PaymentMethodSelector> = {
 export default meta;
 type Story = StoryObj<typeof PaymentMethodSelector>;
 
-const methods = [
+const methods: PaymentMethod[] = [
   { id: 'card-1', type: 'card', label: 'Visa •••• 4242', details: 'Expires 12/26' },
   { id: 'apple', type: 'applepay', label: 'Apple Pay' },
   { id: 'paypal', type: 'paypal', label: 'PayPal' },
@@ -24,7 +24,6 @@ export const Default: Story = {
     return (
       <div className="p-6 max-w-md">
         <PaymentMethodSelector methods={methods} value={value} onChange={setValue} onAdd={() => alert('Add method')} />
-        <div className="mt-4">Selected: {value}</div>
       </div>
     );
   },
