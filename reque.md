@@ -94,8 +94,8 @@
 - [x] 88 Product Card (customised for e‑commerce)
 89 Product Gallery
 - [x] 90 Cart Preview
-91 Quantity Selector (stand‑alone component)
-92 Price Display
+- [x] 91 Quantity Selector (stand‑alone component)
+- [x] 92 Price Display
 93 Reviews & Ratings
 94 Checkout Steps
 95 Payment Method Selector
@@ -154,7 +154,7 @@ Typography
 
 Data Visualization
 146 KPI Cards
-147 Counters - Counters Lists with Chart
+- [x] 147 Counters - Counters Lists with Chart
 148 Data Summary Widgets
 149 Charts
 150 Segmented Counters
