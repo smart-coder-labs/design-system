@@ -216,3 +216,6 @@ export type { BlockquoteProps } from './components/Blockquote';
 
 export { InvoicePreview } from './components/InvoicePreview';
 export type { InvoicePreviewProps, InvoiceItem, InvoiceParty } from './components/InvoicePreview';
+
+export { Sparkline } from './components/Sparkline';
+export type { SparklineProps } from './components/Sparkline';

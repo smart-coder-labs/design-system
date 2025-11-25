@@ -103,7 +103,7 @@
 - [x] 97 Order Summary
 - [x] 98 Invoice Preview
 99 Charts (line, bar, pie, donut, radial)
-100 Mini Sparkline
+- [x] 100 Mini Sparkline
 101 Filter Bar
 102 Kanban Board
 103 Calendar Full
