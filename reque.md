@@ -96,7 +96,7 @@
 - [x] 90 Cart Preview
 - [x] 91 Quantity Selector (stand‑alone component)
 - [x] 92 Price Display
-93 Reviews & Ratings
+- [x] 93 Reviews & Ratings
 94 Checkout Steps
 95 Payment Method Selector
 96 Address Selector
