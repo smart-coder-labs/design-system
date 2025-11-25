@@ -213,3 +213,6 @@ export { Caption } from './components/Caption';
 export type { CaptionProps } from './components/Caption';
 export { Blockquote } from './components/Blockquote';
 export type { BlockquoteProps } from './components/Blockquote';
+
+export { InvoicePreview } from './components/InvoicePreview';
+export type { InvoicePreviewProps, InvoiceItem, InvoiceParty } from './components/InvoicePreview';

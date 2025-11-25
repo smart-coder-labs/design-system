@@ -101,7 +101,7 @@
 - [x] 95 Payment Method Selector
 - [x] 96 Address Selector
 - [x] 97 Order Summary
-98 Invoice Preview
+- [x] 98 Invoice Preview
 99 Charts (line, bar, pie, donut, radial)
 100 Mini Sparkline
 101 Filter Bar
