@@ -15,7 +15,17 @@ const config: StorybookConfig = {
         options: {},
     },
     docs: {
-        autodocs: "tag",
+        // autodocs: "tag",
+    },
+    async viteFinal(config) {
+        if (config.optimizeDeps) {
+            config.optimizeDeps.include = [
+                ...(config.optimizeDeps.include || []),
+                'html2canvas',
+                'jspdf'
+            ];
+        }
+        return config;
     },
 };
 export default config;

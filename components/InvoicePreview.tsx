@@ -1,5 +1,5 @@
-import React from 'react';
-import { FileText, Download, Printer, Share2, CheckCircle, Clock, AlertCircle } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { FileText, Download, Printer, Share2, CheckCircle, Clock, AlertCircle, Loader2 } from 'lucide-react';
 import { Button } from './Button';
 
 export interface InvoiceItem {
@@ -64,6 +64,9 @@ export const InvoicePreview: React.FC<InvoicePreviewProps> = ({
     onShare,
     className = '',
 }) => {
+    const invoiceRef = useRef<HTMLDivElement>(null);
+    const [isDownloading, setIsDownloading] = useState(false);
+
     const getStatusColor = (status: string) => {
         switch (status) {
             case 'paid':
@@ -90,10 +93,86 @@ export const InvoicePreview: React.FC<InvoicePreviewProps> = ({
         }
     };
 
+    const handlePrint = () => {
+        if (onPrint) {
+            onPrint();
+            return;
+        }
+        window.print();
+    };
+
+    const handleShare = async () => {
+        if (onShare) {
+            onShare();
+            return;
+        }
+
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: `Invoice ${invoiceNumber}`,
+                    text: `Invoice ${invoiceNumber} from ${from.name}`,
+                    url: window.location.href,
+                });
+            } catch (error) {
+                console.error('Error sharing:', error);
+            }
+        } else {
+            // Fallback: Copy URL to clipboard
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                // In a real app, we would show a toast here
+                alert('Link copied to clipboard!');
+            } catch (err) {
+                console.error('Failed to copy:', err);
+            }
+        }
+    };
+
+    const handleDownload = async () => {
+        if (onDownload) {
+            onDownload();
+            return;
+        }
+
+        if (!invoiceRef.current) return;
+
+        try {
+            setIsDownloading(true);
+            const html2canvas = (await import('html2canvas')).default;
+            const jsPDF = (await import('jspdf')).default;
+
+            const canvas = await html2canvas(invoiceRef.current, {
+                scale: 2, // Higher scale for better quality
+                useCORS: true, // Enable CORS for images
+                logging: false,
+                backgroundColor: '#ffffff'
+            } as any);
+
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4'
+            });
+
+            const imgWidth = 210; // A4 width in mm
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+            pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+            pdf.save(`invoice-${invoiceNumber}.pdf`);
+        } catch (error) {
+            console.error('Error generating PDF:', error);
+            alert('Failed to generate PDF. Please try again.');
+        } finally {
+            setIsDownloading(false);
+        }
+    };
+
     return (
         <div className={`bg-surface-primary rounded-2xl shadow-sm border border-border-primary overflow-hidden ${className}`}>
             {/* Toolbar */}
-            <div className="flex items-center justify-between p-4 border-b border-border-primary bg-background-secondary/30">
+            <div className="flex items-center justify-between p-4 border-b border-border-primary bg-background-secondary/30 print:hidden">
                 <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-lg bg-accent-blue/10 flex items-center justify-center">
                         <FileText className="w-4 h-4 text-accent-blue" />
@@ -101,20 +180,26 @@ export const InvoicePreview: React.FC<InvoicePreviewProps> = ({
                     <span className="font-semibold text-text-primary">Invoice Preview</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="sm" onClick={onShare} leftIcon={<Share2 className="w-4 h-4" />}>
+                    <Button variant="ghost" size="sm" onClick={handleShare} leftIcon={<Share2 className="w-4 h-4" />}>
                         Share
                     </Button>
-                    <Button variant="ghost" size="sm" onClick={onPrint} leftIcon={<Printer className="w-4 h-4" />}>
+                    <Button variant="ghost" size="sm" onClick={handlePrint} leftIcon={<Printer className="w-4 h-4" />}>
                         Print
                     </Button>
-                    <Button variant="outline" size="sm" onClick={onDownload} leftIcon={<Download className="w-4 h-4" />}>
-                        Download
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleDownload}
+                        disabled={isDownloading}
+                        leftIcon={isDownloading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
+                    >
+                        {isDownloading ? 'Generating...' : 'Download'}
                     </Button>
                 </div>
             </div>
 
             {/* Invoice Content */}
-            <div className="p-8 md:p-12">
+            <div ref={invoiceRef} className="p-8 md:p-12 bg-white">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
                     <div>
