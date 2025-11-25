@@ -223,3 +223,6 @@ export type { SparklineProps } from './components/Sparkline';
 
 export { FilterBar } from './components/FilterBar';
 export type { FilterBarProps, FilterGroup, FilterOption, ActiveFilter } from './components/FilterBar';
+
+export { KanbanBoard } from './components/KanbanBoard';
+export type { KanbanBoardProps, KanbanColumn, KanbanCard } from './components/KanbanBoard';

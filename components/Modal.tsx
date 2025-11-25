@@ -100,7 +100,7 @@ export const Modal: React.FC<ModalProps> = ({
                             {/* Content */}
                             <Dialog.Content asChild>
                                 <motion.div
-                                    className={`fixed w-full ${sizeStyles[size]} bg-surface-primary shadow-xl p-6 z-modal focus:outline-none ${positionStyles[positionKey]}`}
+                                    className={`fixed w-full ${sizeStyles[size]} bg-surface-primary shadow-xl p-6 z-modal focus:outline-none rounded-2xl ${positionStyles[positionKey]}`}
                                     initial={variants[position].initial}
                                     animate={variants[position].animate}
                                     exit={variants[position].exit}

@@ -105,7 +105,7 @@
 99 Charts (line, bar, pie, donut, radial)
 - [x] 100 Mini Sparkline
 - [x] 101 Filter Bar
-102 Kanban Board
+- [x] 102 Kanban Board
 103 Calendar Full
 104 Agenda View
 105 Scheduler Timeline
