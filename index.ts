@@ -232,3 +232,5 @@ export type { CalendarProps, CalendarEvent } from './components/Calendar';
 export { AgendaView } from './components/AgendaView';
 export { SchedulerTimeline } from './components/SchedulerTimeline';
 export type { SchedulerResource, SchedulerEvent, SchedulerTimelineProps } from './components/SchedulerTimeline';
+export { QueryBuilder } from './components/QueryBuilder';
+export type { QueryBuilderProps, RuleGroup, Rule, Field, Operator } from './components/QueryBuilder';

@@ -109,7 +109,7 @@
 - [x] 103 Calendar Full
 - [x] 104 Agenda View
 - [x] 105 Scheduler Timeline
-106 Query Builder
+- [x] 106 Query Builder
 107 Permissions Matrix
 108 User Management Table UI
 109 Activity Monitor (macOS style)
