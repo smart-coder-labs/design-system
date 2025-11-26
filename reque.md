@@ -118,29 +118,29 @@
 112 Swipeable List
 - [x] 113 Slide to Delete
 - [x] 114 Haptic‑enabled Buttons
-115 Gesture Cards (VisionOS‑like)
-116 iOS‑style Action Sheet
-117 Chat Bubble
-118 Chat Input + Attachments
-119 Message Reactions
-120 AI Thinking Indicator
-121 File Intelligence Preview
-122 Prompt Suggestion Chips
-123 Code Interpreter Result Block
-124 Voice Recorder
-125 Login Form
-126 Signup Form
-127 2FA Component
-128 Recovery Code Display
-129 Device List
-130 Security Activity Log
-131 Notification Center Panel
-132 Control Center Toggles
-133 Dock Icons
-134 Window Controls (● ● ● macOS)
-135 Command Palette
-136 Apple Spotlight UI
-137 Quick Look Preview (macOS)
+- [x] 115 Gesture Cards (VisionOS‑like)
+- [x] 116 iOS‑style Action Sheet
+- [x] 117 Chat Bubble
+- [x] 118 Chat Input + Attachments
+- [x] 119 Message Reactions
+- [x] 120 AI Thinking Indicator
+- [x] 121 File Intelligence Preview
+- [x] 122 Prompt Suggestion Chips
+- [x] 123 Code Interpreter Result Block
+- [x] 124 Voice Recorder
+- [x] 125 Login Form
+- [x] 126 Signup Form
+- [x] 127 2FA Component
+- [x] 128 Recovery Code Display
+- [x] 129 Device List
+- [x] 130 Security Activity Log
+- [x] 131 Notification Center Panel
+- [x] 132 Control Center Toggles
+- [x] 133 Dock Icons (DockBar exists)
+- [x] 134 Window Controls (● ● ● macOS)
+- [x] 135 Command Palette (CommandMenu exists)
+- [x] 136 Apple Spotlight UI
+- [x] 137 Quick Look Preview (macOS)
 
 Typography
 - [x] 138 Text

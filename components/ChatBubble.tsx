@@ -2,14 +2,14 @@
 
 import React from 'react';
 import { cn } from '../lib/utils';
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from './Avatar';
 
 /* ========================================
    TYPES
    ======================================== */
 
-export interface ChatBubbleProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ChatBubbleBaseProps {
     message: string;
     sender?: string;
     avatar?: string;
@@ -20,7 +20,10 @@ export interface ChatBubbleProps extends React.HTMLAttributes<HTMLDivElement> {
     showAvatar?: boolean;
     showTimestamp?: boolean;
     className?: string;
+    children?: React.ReactNode;
 }
+
+type ChatBubbleProps = ChatBubbleBaseProps & Omit<HTMLMotionProps<'div'>, keyof ChatBubbleBaseProps>;
 
 /* ========================================
    COMPONENT
@@ -39,6 +42,7 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
             showAvatar = true,
             showTimestamp = true,
             className,
+            children,
             ...props
         },
         ref
@@ -115,23 +119,35 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
                     </div>
 
                     {/* Timestamp & Status */}
-                    {(showTimestamp || status) && (
-                        <div className={cn(
-                            "flex items-center gap-1.5 mt-1 px-1",
-                            isOwn ? "flex-row-reverse" : "flex-row"
-                        )}>
-                            {timestamp && showTimestamp && (
-                                <span className="text-xs text-text-tertiary">
-                                    {timestamp}
-                                </span>
-                            )}
-                            {status && isOwn && (
-                                <span className="text-xs text-text-tertiary">
-                                    {statusIcons[status]}
-                                </span>
-                            )}
-                        </div>
-                    )}
+                    <div className={cn(
+                        "flex flex-col gap-1 w-full"
+                    )}>
+                        {/* Children (MessageReactions) */}
+                        {children && (
+                            <div className="w-full">
+                                {children}
+                            </div>
+                        )}
+                        
+                        {/* Timestamp & Status */}
+                        {(showTimestamp || status) && (
+                            <div className={cn(
+                                "flex items-center gap-1.5 mt-1 px-1",
+                                isOwn ? "flex-row-reverse" : "flex-row"
+                            )}>
+                                {timestamp && showTimestamp && (
+                                    <span className="text-xs text-text-tertiary">
+                                        {timestamp}
+                                    </span>
+                                )}
+                                {status && isOwn && (
+                                    <span className="text-xs text-text-tertiary">
+                                        {statusIcons[status]}
+                                    </span>
+                                )}
+                            </div>
+                        )}
+                    </div>
                 </div>
             </motion.div>
         );
