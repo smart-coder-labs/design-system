@@ -112,7 +112,7 @@
 - [x] 106 Query Builder
 - [x] 107 Permissions Matrix
 108 User Management Table UI
-109 Activity Monitor (macOS style)
+- [x] 109 Activity Monitor (macOS style)
 110 Bottom Navigation
 111 Pull‑to‑Refresh (mobile‑only)
 112 Swipeable List

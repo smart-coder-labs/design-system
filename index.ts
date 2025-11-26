@@ -236,3 +236,5 @@ export { QueryBuilder } from './components/QueryBuilder';
 export type { QueryBuilderProps, RuleGroup, Rule, Field, Operator } from './components/QueryBuilder';
 export { PermissionsMatrix } from './components/PermissionsMatrix';
 export type { PermissionsMatrixProps, Role, Permission } from './components/PermissionsMatrix';
+export { ActivityMonitor } from './components/ActivityMonitor';
+export type { ActivityMonitorProps, MonitorTab, ProcessData, MetricData } from './components/ActivityMonitor';
