@@ -242,5 +242,6 @@ export { BottomNavigation } from './components/BottomNavigation';
 export type { BottomNavigationProps, BottomNavigationItem } from './components/BottomNavigation';
 export { SlideToDelete, SlideToDeleteItem } from './components/SlideToDelete';
 export type { SlideToDeleteProps, SlideToDeleteItemProps } from './components/SlideToDelete';
-export { SwipeableList } from './components/SwipeableList';
-export type { SwipeableListProps, SwipeableListItem, SwipeableAction } from './components/SwipeableList';
+export { HapticButton } from './components/HapticButton';
+export type { HapticButtonProps, HapticFeedbackType } from './components/HapticButton';
+export { isHapticSupported, triggerHaptic, getVibrationPattern } from './components/HapticButton';

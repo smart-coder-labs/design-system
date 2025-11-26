@@ -117,7 +117,7 @@
 111 Pull‑to‑Refresh (mobile‑only)
 112 Swipeable List
 - [x] 113 Slide to Delete
-114 Haptic‑enabled Buttons
+- [x] 114 Haptic‑enabled Buttons
 115 Gesture Cards (VisionOS‑like)
 116 iOS‑style Action Sheet
 117 Chat Bubble
