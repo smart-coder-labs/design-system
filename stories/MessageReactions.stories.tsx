@@ -74,6 +74,9 @@ export const WithoutCount: Story = {
 };
 
 export const OnChatBubble: Story = {
+    args: {
+        reactions: sampleReactions,
+    },
     name: 'En Chat Bubble',
     render: () => (
         <div className="max-w-md mx-auto space-y-4">
@@ -108,6 +111,9 @@ export const OnChatBubble: Story = {
 };
 
 export const ReactionPickerStory: Story = {
+    args: {
+        reactions: sampleReactions,
+    },
     name: 'Reaction Picker',
     render: () => {
         const [selected, setSelected] = useState<string | null>(null);
@@ -131,6 +137,9 @@ export const ReactionPickerStory: Story = {
 };
 
 export const Interactive: Story = {
+    args: {
+        reactions: sampleReactions,
+    },
     name: 'Interactivo',
     render: () => {
         const [reactions, setReactions] = useState<Reaction[]>([
