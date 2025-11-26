@@ -240,3 +240,7 @@ export { ActivityMonitor } from './components/ActivityMonitor';
 export type { ActivityMonitorProps, MonitorTab, ProcessData, MetricData } from './components/ActivityMonitor';
 export { BottomNavigation } from './components/BottomNavigation';
 export type { BottomNavigationProps, BottomNavigationItem } from './components/BottomNavigation';
+export { SlideToDelete, SlideToDeleteItem } from './components/SlideToDelete';
+export type { SlideToDeleteProps, SlideToDeleteItemProps } from './components/SlideToDelete';
+export { SwipeableList } from './components/SwipeableList';
+export type { SwipeableListProps, SwipeableListItem, SwipeableAction } from './components/SwipeableList';

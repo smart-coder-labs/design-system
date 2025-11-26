@@ -113,10 +113,10 @@
 - [x] 107 Permissions Matrix
 108 User Management Table UI
 - [x] 109 Activity Monitor (macOS style)
-110 Bottom Navigation
+-[X] 110 Bottom Navigation
 111 Pull‑to‑Refresh (mobile‑only)
 112 Swipeable List
-113 Slide to Delete
+- [x] 113 Slide to Delete
 114 Haptic‑enabled Buttons
 115 Gesture Cards (VisionOS‑like)
 116 iOS‑style Action Sheet
