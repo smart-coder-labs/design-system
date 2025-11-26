@@ -107,7 +107,7 @@
 - [x] 101 Filter Bar
 - [x] 102 Kanban Board
 - [x] 103 Calendar Full
-104 Agenda View
+- [x] 104 Agenda View
 105 Scheduler Timeline
 106 Query Builder
 107 Permissions Matrix

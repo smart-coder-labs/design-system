@@ -229,3 +229,4 @@ export type { KanbanBoardProps, KanbanColumn, KanbanCard } from './components/Ka
 
 export { Calendar } from './components/Calendar';
 export type { CalendarProps, CalendarEvent } from './components/Calendar';
+export { AgendaView } from './components/AgendaView';

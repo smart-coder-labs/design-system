@@ -4,6 +4,7 @@ import { Button } from './Button';
 import { Modal, ModalHeader, ModalTitle, ModalContent, ModalFooter, ModalCloseButton } from './Modal';
 import { Input, Textarea } from './Input';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from './Select';
+import { AgendaView } from './AgendaView';
 
 export interface CalendarEvent {
     id: string;
@@ -67,6 +68,7 @@ export const Calendar: React.FC<CalendarProps> = ({
     const [view, setView] = useState<CalendarView>(defaultView);
     const [showEventModal, setShowEventModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
+    const [agendaPeriod, setAgendaPeriod] = useState<7 | 14 | 30>(30);
     const [eventFormData, setEventFormData] = useState({
         title: '',
         description: '',
@@ -470,81 +472,6 @@ export const Calendar: React.FC<CalendarProps> = ({
         );
     };
 
-    const renderAgendaView = () => {
-        const sortedEvents = [...events].sort((a, b) => a.date.getTime() - b.date.getTime());
-        const groupedEvents: { [key: string]: CalendarEvent[] } = {};
-
-        sortedEvents.forEach(event => {
-            const dateKey = event.date.toDateString();
-            if (!groupedEvents[dateKey]) {
-                groupedEvents[dateKey] = [];
-            }
-            groupedEvents[dateKey].push(event);
-        });
-
-        return (
-            <div style={{ maxHeight: '600px', overflowY: 'auto' }}>
-                {Object.keys(groupedEvents).length === 0 ? (
-                    <div style={{ textAlign: 'center', padding: tokens.spacing[8], color: 'var(--color-text-tertiary)' }}>
-                        No events scheduled
-                    </div>
-                ) : (
-                    Object.keys(groupedEvents).map(dateKey => {
-                        const date = new Date(dateKey);
-                        const dayEvents = groupedEvents[dateKey];
-
-                        return (
-                            <div key={dateKey} style={{ marginBottom: tokens.spacing[4] }}>
-                                <div style={{ fontSize: tokens.typography.fontSize.lg, fontWeight: tokens.typography.fontWeight.semibold, color: 'var(--color-text-primary)', marginBottom: tokens.spacing[2], paddingBottom: tokens.spacing[2], borderBottom: `1px solid var(--color-border-primary)` }}>
-                                    {DAYS_FULL[date.getDay()]}, {MONTHS[date.getMonth()]} {date.getDate()}, {date.getFullYear()}
-                                </div>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: tokens.spacing[4] }}>
-                                    {dayEvents.map(event => (
-                                        <div
-                                            key={event.id}
-                                            onClick={() => handleEditEvent(event)}
-                                            style={{
-                                                padding: tokens.spacing[4],
-                                                backgroundColor: 'var(--color-background-secondary)',
-                                                borderLeft: `4px solid ${event.color || 'var(--color-accent-blue)'}`,
-                                                borderRadius: tokens.radius.md,
-                                                cursor: 'pointer',
-                                                transition: `all ${tokens.motion.duration.fast} ${tokens.motion.easing.standard}`,
-                                            }}
-                                            onMouseEnter={(e) => {
-                                                e.currentTarget.style.backgroundColor = 'var(--color-background-tertiary)';
-                                            }}
-                                            onMouseLeave={(e) => {
-                                                e.currentTarget.style.backgroundColor = 'var(--color-background-secondary)';
-                                            }}
-                                        >
-                                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
-                                                <div style={{ flex: 1 }}>
-                                                    <div style={{ fontSize: tokens.typography.fontSize.base, fontWeight: tokens.typography.fontWeight.semibold, color: 'var(--color-text-primary)', marginBottom: tokens.spacing[2] }}>
-                                                        {event.title}
-                                                    </div>
-                                                    {event.description && (
-                                                        <div style={{ fontSize: tokens.typography.fontSize.sm, color: 'var(--color-text-secondary)', marginBottom: tokens.spacing[2] }}>
-                                                            {event.description}
-                                                        </div>
-                                                    )}
-                                                    <div style={{ fontSize: tokens.typography.fontSize.sm, color: 'var(--color-text-tertiary)' }}>
-                                                        {event.startTime && `${event.startTime} - ${event.endTime}`}
-                                                        {event.location && ` • 📍 ${event.location}`}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        );
-                    })
-                )}
-            </div>
-        );
-    };
-
     const getViewTitle = () => {
         if (view === 'month') {
             return `${MONTHS[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
@@ -555,6 +482,11 @@ export const Calendar: React.FC<CalendarProps> = ({
             return `${MONTHS[start.getMonth()]} ${start.getDate()} - ${MONTHS[end.getMonth()]} ${end.getDate()}, ${end.getFullYear()}`;
         } else if (view === 'day') {
             return `${DAYS_FULL[currentDate.getDay()]}, ${MONTHS[currentDate.getMonth()]} ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
+        } else if (view === 'agenda') {
+            // Agenda view - show date range
+            const endDate = new Date(currentDate);
+            endDate.setDate(endDate.getDate() + agendaPeriod - 1); // Subtract 1 because agendaPeriod is a count of days including the start day
+            return `${MONTHS[currentDate.getMonth()]} ${currentDate.getDate()} - ${MONTHS[endDate.getMonth()]} ${endDate.getDate()}, ${endDate.getFullYear()}`;
         } else {
             return 'Agenda';
         }
@@ -684,7 +616,14 @@ export const Calendar: React.FC<CalendarProps> = ({
                 )}
                 {view === 'week' && renderWeekView()}
                 {view === 'day' && renderDayView()}
-                {view === 'agenda' && renderAgendaView()}
+                {view === 'agenda' && (
+                    <AgendaView
+                        events={events}
+                        currentDate={currentDate}
+                        days={agendaPeriod}
+                        onEventClick={handleEditEvent}
+                    />
+                )}
             </div>
 
             {/* Event Modal */}
