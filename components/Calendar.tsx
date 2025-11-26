@@ -384,7 +384,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                                             style={{
                                                 position: 'absolute',
                                                 top: `${top}px`,
-                                                height: `${height}px`,
+                                                height: `${Math.max(height - 2, 20)}px`, // Subtract 2px for gap, min height 20px
                                                 left: '4px',
                                                 right: '4px',
                                                 backgroundColor: event.color || 'var(--color-accent-blue)',
@@ -394,6 +394,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                                                 fontSize: tokens.typography.fontSize.xs,
                                                 overflow: 'hidden',
                                                 cursor: 'pointer',
+                                                zIndex: 10,
                                             }}
                                         >
                                             <div style={{ fontWeight: tokens.typography.fontWeight.semibold }}>{event.title}</div>
@@ -444,7 +445,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                                 style={{
                                     position: 'absolute',
                                     top: `${top}px`,
-                                    height: `${height}px`,
+                                    height: `${Math.max(height - 2, 30)}px`, // Subtract 2px for gap, min height 30px
                                     left: '8px',
                                     right: '8px',
                                     backgroundColor: event.color || 'var(--color-accent-blue)',
@@ -455,6 +456,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                                     overflow: 'hidden',
                                     cursor: 'pointer',
                                     boxShadow: tokens.shadows.sm,
+                                    zIndex: 10,
                                 }}
                             >
                                 <div style={{ fontWeight: tokens.typography.fontWeight.bold, marginBottom: tokens.spacing[1] }}>{event.title}</div>
@@ -496,13 +498,13 @@ export const Calendar: React.FC<CalendarProps> = ({
                                 <div style={{ fontSize: tokens.typography.fontSize.lg, fontWeight: tokens.typography.fontWeight.semibold, color: 'var(--color-text-primary)', marginBottom: tokens.spacing[2], paddingBottom: tokens.spacing[2], borderBottom: `1px solid var(--color-border-primary)` }}>
                                     {DAYS_FULL[date.getDay()]}, {MONTHS[date.getMonth()]} {date.getDate()}, {date.getFullYear()}
                                 </div>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: tokens.spacing[2] }}>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: tokens.spacing[4] }}>
                                     {dayEvents.map(event => (
                                         <div
                                             key={event.id}
                                             onClick={() => handleEditEvent(event)}
                                             style={{
-                                                padding: tokens.spacing[3],
+                                                padding: tokens.spacing[4],
                                                 backgroundColor: 'var(--color-background-secondary)',
                                                 borderLeft: `4px solid ${event.color || 'var(--color-accent-blue)'}`,
                                                 borderRadius: tokens.radius.md,
@@ -518,11 +520,11 @@ export const Calendar: React.FC<CalendarProps> = ({
                                         >
                                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
                                                 <div style={{ flex: 1 }}>
-                                                    <div style={{ fontSize: tokens.typography.fontSize.base, fontWeight: tokens.typography.fontWeight.semibold, color: 'var(--color-text-primary)', marginBottom: tokens.spacing[1] }}>
+                                                    <div style={{ fontSize: tokens.typography.fontSize.base, fontWeight: tokens.typography.fontWeight.semibold, color: 'var(--color-text-primary)', marginBottom: tokens.spacing[2] }}>
                                                         {event.title}
                                                     </div>
                                                     {event.description && (
-                                                        <div style={{ fontSize: tokens.typography.fontSize.sm, color: 'var(--color-text-secondary)', marginBottom: tokens.spacing[1] }}>
+                                                        <div style={{ fontSize: tokens.typography.fontSize.sm, color: 'var(--color-text-secondary)', marginBottom: tokens.spacing[2] }}>
                                                             {event.description}
                                                         </div>
                                                     )}
@@ -588,14 +590,14 @@ export const Calendar: React.FC<CalendarProps> = ({
                             <Button variant="ghost" size="sm" onClick={handlePrevPeriod}>
                                 ←
                             </Button>
+                            <Button variant="ghost" size="sm" onClick={handleToday}>
+                                Today
+                            </Button>
                             <Button variant="ghost" size="sm" onClick={handleNextPeriod}>
                                 →
                             </Button>
                         </>
                     )}
-                    <Button variant="ghost" size="sm" onClick={handleToday}>
-                        Today
-                    </Button>
                     <h3
                         style={{
                             margin: 0,
