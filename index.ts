@@ -238,3 +238,5 @@ export { PermissionsMatrix } from './components/PermissionsMatrix';
 export type { PermissionsMatrixProps, Role, Permission } from './components/PermissionsMatrix';
 export { ActivityMonitor } from './components/ActivityMonitor';
 export type { ActivityMonitorProps, MonitorTab, ProcessData, MetricData } from './components/ActivityMonitor';
+export { BottomNavigation } from './components/BottomNavigation';
+export type { BottomNavigationProps, BottomNavigationItem } from './components/BottomNavigation';
