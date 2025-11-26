@@ -106,7 +106,7 @@
 - [x] 100 Mini Sparkline
 - [x] 101 Filter Bar
 - [x] 102 Kanban Board
-103 Calendar Full
+- [x] 103 Calendar Full
 104 Agenda View
 105 Scheduler Timeline
 106 Query Builder

@@ -226,3 +226,6 @@ export type { FilterBarProps, FilterGroup, FilterOption, ActiveFilter } from './
 
 export { KanbanBoard } from './components/KanbanBoard';
 export type { KanbanBoardProps, KanbanColumn, KanbanCard } from './components/KanbanBoard';
+
+export { Calendar } from './components/Calendar';
+export type { CalendarProps, CalendarEvent } from './components/Calendar';
