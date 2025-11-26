@@ -108,7 +108,7 @@
 - [x] 102 Kanban Board
 - [x] 103 Calendar Full
 - [x] 104 Agenda View
-105 Scheduler Timeline
+- [x] 105 Scheduler Timeline
 106 Query Builder
 107 Permissions Matrix
 108 User Management Table UI
