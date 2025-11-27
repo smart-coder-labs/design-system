@@ -48,6 +48,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
+        children: <div>Sample content</div>,
         onDelete: () => {
             console.log('Item deleted');
             alert('Item deleted!');
@@ -72,17 +73,12 @@ export const Default: Story = {
 export const WithCancel: Story = {
     name: 'Con Cancelación',
     args: {
-        onDelete: () => {
-            console.log('Item deleted');
-            alert('Item deleted!');
-        },
-        onCancel: () => {
-            console.log('Action cancelled');
-            alert('Action cancelled!');
-        },
+        children: <div>Sample content</div>,
+        onDelete: () => console.log('Delete clicked'),
+        onCancel: () => console.log('Cancel clicked'),
         deleteLabel: 'Delete',
         cancelLabel: 'Cancel',
-        threshold: 80,
+        threshold: 100,
     },
     render: (args) => (
         <div className="max-w-md mx-auto">
@@ -101,14 +97,12 @@ export const WithCancel: Story = {
 export const WithConfirmation: Story = {
     name: 'Con Confirmación',
     args: {
-        onDelete: () => {
-            console.log('Item deleted');
-            alert('Item deleted!');
-        },
+        children: <div>Sample content</div>,
+        onDelete: () => console.log('Delete confirmed'),
         deleteLabel: 'Delete',
         confirmDelete: true,
-        confirmMessage: 'Are you sure?',
-        threshold: 80,
+        confirmMessage: 'Are you sure you want to delete this item?',
+        threshold: 100,
     },
     render: (args) => (
         <div className="max-w-md mx-auto">
@@ -127,13 +121,11 @@ export const WithConfirmation: Story = {
 export const DangerVariant: Story = {
     name: 'Variante Danger',
     args: {
-        onDelete: () => {
-            console.log('Item deleted');
-            alert('Item deleted!');
-        },
+        children: <div>Sample content</div>,
+        onDelete: () => console.log('Delete clicked'),
         deleteLabel: 'Delete',
         variant: 'danger',
-        threshold: 80,
+        threshold: 100,
     },
     render: (args) => (
         <div className="max-w-md mx-auto">
@@ -152,13 +144,11 @@ export const DangerVariant: Story = {
 export const WarningVariant: Story = {
     name: 'Variante Warning',
     args: {
-        onDelete: () => {
-            console.log('Item deleted');
-            alert('Item deleted!');
-        },
+        children: <div>Sample content</div>,
+        onDelete: () => console.log('Archive clicked'),
         deleteLabel: 'Archive',
         variant: 'warning',
-        threshold: 80,
+        threshold: 100,
     },
     render: (args) => (
         <div className="max-w-md mx-auto">
@@ -177,12 +167,11 @@ export const WarningVariant: Story = {
 export const Disabled: Story = {
     name: 'Deshabilitado',
     args: {
-        onDelete: () => {
-            console.log('Item deleted');
-        },
+        children: <div>Sample content</div>,
+        onDelete: () => console.log('Delete clicked'),
         deleteLabel: 'Delete',
         disabled: true,
-        threshold: 80,
+        threshold: 100,
     },
     render: (args) => (
         <div className="max-w-md mx-auto">
@@ -204,6 +193,11 @@ export const Disabled: Story = {
 
 export const ListItem: Story = {
     name: '📋 Variante List Item',
+    args: {
+        children: <div>Sample content</div>,
+        onDelete: async () => { },
+        deleteLabel: 'Delete'
+    },
     render: () => {
         const [items, setItems] = useState([
             { id: 1, name: 'John Doe', email: 'john@example.com', role: 'Admin' },
@@ -224,12 +218,14 @@ export const ListItem: Story = {
                                 <AvatarFallback>{item.name.charAt(0)}</AvatarFallback>
                             </Avatar>
                         }
-                        actions={<Badge variant="secondary" size="sm">{item.role}</Badge>}
+                        actions={<Badge variant="default" size="sm">{item.role}</Badge>}
                         onDelete={async () => {
                             setItems(items.filter(i => i.id !== item.id));
                         }}
                         deleteLabel="Delete"
-                    />
+                    >
+                        <></>
+                    </SlideToDeleteItem>
                 ))}
             </div>
         );
@@ -237,7 +233,13 @@ export const ListItem: Story = {
 };
 
 export const ListItemWithConfirmation: Story = {
-    name: '📋 List Item con Confirmación',
+    name: '✅ Caso de Uso: Lista con Confirmación',
+    args: {
+        children: <div>Sample content</div>,
+        onDelete: async () => { },
+        deleteLabel: 'Delete',
+        confirmDelete: true
+    },
     render: () => {
         const [items, setItems] = useState([
             { id: 1, name: 'Important Task', status: 'Active', priority: 'High' },
@@ -254,7 +256,7 @@ export const ListItemWithConfirmation: Story = {
                         subtitle={`Status: ${item.status} • Priority: ${item.priority}`}
                         actions={
                             <Badge
-                                variant={item.priority === 'High' ? 'error' : item.priority === 'Medium' ? 'warning' : 'secondary'}
+                                variant={item.priority === 'High' ? 'error' : item.priority === 'Medium' ? 'warning' : 'default'}
                                 size="sm"
                             >
                                 {item.priority}
@@ -266,7 +268,9 @@ export const ListItemWithConfirmation: Story = {
                         deleteLabel="Delete"
                         confirmDelete={true}
                         confirmMessage="Delete this task?"
-                    />
+                    >
+                        <></>
+                    </SlideToDeleteItem>
                 ))}
             </div>
         );
@@ -274,7 +278,14 @@ export const ListItemWithConfirmation: Story = {
 };
 
 export const ListItemWithCancel: Story = {
-    name: '📋 List Item con Cancelación',
+    name: '↩️ Caso de Uso: Lista con Cancelación',
+    args: {
+        children: <div>Sample content</div>,
+        onDelete: async () => { },
+        onCancel: () => { },
+        deleteLabel: 'Delete',
+        cancelLabel: 'Cancel'
+    },
     render: () => {
         const [items, setItems] = useState([
             { id: 1, name: 'Email Notification', type: 'Email' },
@@ -297,7 +308,9 @@ export const ListItemWithCancel: Story = {
                         }}
                         deleteLabel="Delete"
                         cancelLabel="Cancel"
-                    />
+                    >
+                        <></>
+                    </SlideToDeleteItem>
                 ))}
             </div>
         );
@@ -348,7 +361,7 @@ export const TodoList: Story = {
         );
     },
     args: {
-        children: null,
+        children: <div>Sample content</div>,
         onDelete: async () => { },
         deleteLabel: 'Delete'
     }
@@ -402,7 +415,7 @@ export const MessageList: Story = {
         );
     },
     args: {
-        children: null,
+        children: <div>Sample content</div>,
         onDelete: async () => { },
         deleteLabel: 'Delete'
     }
@@ -443,8 +456,8 @@ export const NotificationList: Story = {
                                 </div>
                                 <Badge
                                     variant={
-                                        notification.type === 'message' ? 'default' :
-                                            notification.type === 'alert' ? 'error' : 'warning'
+                                        notification.type === 'message' ? 'info' :
+                                            notification.type === 'alert' ? 'error' : 'default'
                                     }
                                     size="sm"
                                 >
@@ -458,7 +471,7 @@ export const NotificationList: Story = {
         );
     },
     args: {
-        children: null,
+        children: <div>Sample content</div>,
         onDelete: async () => { },
         deleteLabel: 'Clear'
     }
@@ -503,7 +516,7 @@ export const FileList: Story = {
         );
     },
     args: {
-        children: null,
+        children: <div>Sample content</div>,
         onDelete: async () => { },
         deleteLabel: 'Delete'
     }
@@ -516,13 +529,8 @@ export const FileList: Story = {
 export const Playground: Story = {
     name: '🎨 Playground',
     args: {
-        children: (
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-medium">Swipe me left</h3>
-                <p className="text-sm text-gray-500">This item has a danger action</p>
-            </div>
-        ),
-        onDelete: () => console.log('Deleted'),
+        children: <div>Sample content</div>,
+        onDelete: () => console.log('Delete clicked'),
         deleteLabel: 'Delete',
         threshold: 100,
         variant: 'danger',

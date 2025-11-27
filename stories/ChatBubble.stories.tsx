@@ -230,7 +230,13 @@ export const Conversation: Story = {
 };
 
 export const StatusStates: Story = {
-    name: 'Estados de Entrega',
+    args: {
+        message: 'Message with different statuses',
+        timestamp: '10:30 AM',
+        isOwn: true,
+        status: 'read'
+    },
+    name: 'Estados de Mensaje',
     render: () => (
         <div className="max-w-md mx-auto space-y-4">
             <ChatBubble

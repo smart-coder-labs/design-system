@@ -9,7 +9,7 @@ import { Avatar, AvatarImage, AvatarFallback } from './Avatar';
    TYPES
    ======================================== */
 
-interface ChatBubbleBaseProps {
+export interface ChatBubbleBaseProps {
     message: string;
     sender?: string;
     avatar?: string;
@@ -128,7 +128,7 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
                                 {children}
                             </div>
                         )}
-                        
+
                         {/* Timestamp & Status */}
                         {(showTimestamp || status) && (
                             <div className={cn(
