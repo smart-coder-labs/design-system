@@ -62,7 +62,7 @@ const getStatusBadge = (status: DeviceStatus, isCurrent?: boolean) => {
         case 'active':
             return <Badge variant="success" size="sm">Active</Badge>;
         case 'inactive':
-            return <Badge variant="secondary" size="sm">Inactive</Badge>;
+            return <Badge variant="default" size="sm">Inactive</Badge>;
         case 'suspended':
             return <Badge variant="error" size="sm">Suspended</Badge>;
     }

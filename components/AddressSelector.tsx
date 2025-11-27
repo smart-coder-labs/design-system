@@ -97,7 +97,7 @@ export const AddressSelector: React.FC<AddressSelectorProps> = ({ onSelect, apiK
     }
 
     let cancelled = false;
-    svcRef.current.getPlacePredictions({ input: query }, (res) => {
+    svcRef.current.getPlacePredictions({ input: query }, (res: google.maps.places.AutocompletePrediction[] | null, status: google.maps.places.PlacesServiceStatus) => {
       if (cancelled) return;
       setPredictions(res ?? []);
       setActive(-1);
@@ -110,7 +110,7 @@ export const AddressSelector: React.FC<AddressSelectorProps> = ({ onSelect, apiK
 
   const choose = (p: Prediction) => {
     if (!placesSvcRef.current) return;
-    placesSvcRef.current.getDetails({ placeId: p.place_id }, (place, status) => {
+    placesSvcRef.current.getDetails({ placeId: p.place_id }, (place: google.maps.places.PlaceResult | null, status: google.maps.places.PlacesServiceStatus) => {
       if (status !== (window as any).google.maps.places.PlacesServiceStatus.OK) {
         console.warn('PlacesService getDetails failed', status);
         onSelect?.({ id: p.place_id, placeId: p.place_id, description: p.description, raw: p });

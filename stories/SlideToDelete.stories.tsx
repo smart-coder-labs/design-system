@@ -253,8 +253,8 @@ export const ListItemWithConfirmation: Story = {
                         title={item.name}
                         subtitle={`Status: ${item.status} • Priority: ${item.priority}`}
                         actions={
-                            <Badge 
-                                variant={item.priority === 'High' ? 'error' : item.priority === 'Medium' ? 'warning' : 'secondary'} 
+                            <Badge
+                                variant={item.priority === 'High' ? 'error' : item.priority === 'Medium' ? 'warning' : 'secondary'}
                                 size="sm"
                             >
                                 {item.priority}
@@ -309,177 +309,204 @@ export const ListItemWithCancel: Story = {
    ======================================== */
 
 export const TodoList: Story = {
-    name: '✅ Caso de Uso: Lista de Tareas',
+    name: '📝 Caso de Uso: Lista de Tareas',
     render: () => {
         const [todos, setTodos] = useState([
-            { id: 1, text: 'Complete project proposal', completed: false },
-            { id: 2, text: 'Review code changes', completed: true },
-            { id: 3, text: 'Update documentation', completed: false },
-            { id: 4, text: 'Schedule team meeting', completed: false },
+            { id: 1, text: 'Buy groceries', completed: false },
+            { id: 2, text: 'Walk the dog', completed: true },
+            { id: 3, text: 'Read a book', completed: false },
         ]);
 
         return (
-            <div className="max-w-md mx-auto">
-                <div className="mb-6">
-                    <h1 className="text-2xl font-bold text-text-primary mb-2">Todo List</h1>
-                    <p className="text-sm text-text-secondary">
-                        Desliza hacia la derecha para eliminar tareas
-                    </p>
-                </div>
-                <div className="space-y-2">
+            <div className="max-w-md mx-auto bg-gray-50 p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-4">Todo List</h3>
+                <div className="space-y-3">
                     {todos.map((todo) => (
                         <SlideToDeleteItem
                             key={todo.id}
-                            title={todo.text}
-                            subtitle={todo.completed ? 'Completed' : 'Pending'}
-                            actions={
-                                <Badge variant={todo.completed ? 'success' : 'secondary'} size="sm">
-                                    {todo.completed ? 'Done' : 'Todo'}
-                                </Badge>
-                            }
                             onDelete={async () => {
                                 setTodos(todos.filter(t => t.id !== todo.id));
                             }}
                             deleteLabel="Delete"
-                        />
+                            variant="danger"
+                        >
+                            <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+                                <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${todo.completed ? 'bg-green-500 border-green-500' : 'border-gray-300'}`}>
+                                    {todo.completed && <span className="text-white text-xs">✓</span>}
+                                </div>
+                                <span className={`flex-1 ${todo.completed ? 'line-through text-gray-400' : 'text-gray-700'}`}>
+                                    {todo.text}
+                                </span>
+                                <Badge variant={todo.completed ? 'success' : 'default'} size="sm">
+                                    {todo.completed ? 'Done' : 'Pending'}
+                                </Badge>
+                            </div>
+                        </SlideToDeleteItem>
                     ))}
                 </div>
             </div>
         );
     },
+    args: {
+        children: null,
+        onDelete: async () => { },
+        deleteLabel: 'Delete'
+    }
 };
 
 export const MessageList: Story = {
-    name: '💬 Caso de Uso: Lista de Mensajes',
+    name: '💬 Caso de Uso: Mensajes',
     render: () => {
         const [messages, setMessages] = useState([
             { id: 1, sender: 'Alice', text: 'Hey, how are you?', time: '10:30 AM', unread: true },
-            { id: 2, sender: 'Bob', text: 'Can we meet tomorrow?', time: '9:15 AM', unread: false },
-            { id: 3, sender: 'Charlie', text: 'Thanks for the help!', time: 'Yesterday', unread: true },
+            { id: 2, sender: 'Bob', text: 'Can we meet later?', time: '09:15 AM', unread: false },
+            { id: 3, sender: 'Charlie', text: 'Project update attached', time: 'Yesterday', unread: true },
         ]);
 
         return (
-            <div className="max-w-md mx-auto">
-                <div className="mb-6">
-                    <h1 className="text-2xl font-bold text-text-primary mb-2">Messages</h1>
-                    <p className="text-sm text-text-secondary">
-                        Desliza para eliminar conversaciones
-                    </p>
-                </div>
-                <div className="space-y-2">
+            <div className="max-w-md mx-auto bg-gray-50 p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-4">Messages</h3>
+                <div className="space-y-3">
                     {messages.map((message) => (
                         <SlideToDeleteItem
                             key={message.id}
-                            title={message.sender}
-                            subtitle={message.text}
-                            avatar={
-                                <Avatar>
-                                    <AvatarFallback>{message.sender.charAt(0)}</AvatarFallback>
-                                </Avatar>
-                            }
-                            actions={
-                                <div className="flex flex-col items-end gap-1">
-                                    <span className="text-xs text-text-tertiary">{message.time}</span>
-                                    {message.unread && (
-                                        <div className="w-2 h-2 bg-accent-blue rounded-full" />
-                                    )}
-                                </div>
-                            }
                             onDelete={async () => {
                                 setMessages(messages.filter(m => m.id !== message.id));
                             }}
                             deleteLabel="Delete"
-                            confirmDelete={true}
-                        />
+                            variant="danger"
+                        >
+                            <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
+                                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-semibold">
+                                    {message.sender[0]}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex justify-between items-baseline">
+                                        <h4 className={`text-sm font-medium ${message.unread ? 'text-gray-900' : 'text-gray-600'}`}>
+                                            {message.sender}
+                                        </h4>
+                                        <span className="text-xs text-gray-400">{message.time}</span>
+                                    </div>
+                                    <p className={`text-sm truncate ${message.unread ? 'text-gray-900 font-medium' : 'text-gray-500'}`}>
+                                        {message.text}
+                                    </p>
+                                </div>
+                                {message.unread && (
+                                    <div className="w-2.5 h-2.5 bg-blue-500 rounded-full mt-2"></div>
+                                )}
+                            </div>
+                        </SlideToDeleteItem>
                     ))}
                 </div>
             </div>
         );
     },
+    args: {
+        children: null,
+        onDelete: async () => { },
+        deleteLabel: 'Delete'
+    }
 };
 
 export const NotificationList: Story = {
-    name: '🔔 Caso de Uso: Lista de Notificaciones',
+    name: '🔔 Caso de Uso: Notificaciones',
     render: () => {
         const [notifications, setNotifications] = useState([
-            { id: 1, title: 'New message', description: 'You have a new message from Alice', type: 'message' },
-            { id: 2, title: 'Task completed', description: 'Your task has been marked as complete', type: 'success' },
-            { id: 3, title: 'Reminder', description: 'Don\'t forget about the meeting at 3 PM', type: 'warning' },
+            { id: 1, title: 'New Message', subtitle: 'You have a new message from Alice', time: '2m ago', type: 'message' },
+            { id: 2, title: 'System Update', subtitle: 'System update completed successfully', time: '1h ago', type: 'system' },
+            { id: 3, title: 'Payment Failed', subtitle: 'Your payment was declined', time: '3h ago', type: 'alert' },
         ]);
 
         return (
-            <div className="max-w-md mx-auto">
-                <div className="mb-6">
-                    <h1 className="text-2xl font-bold text-text-primary mb-2">Notifications</h1>
-                    <p className="text-sm text-text-secondary">
-                        Desliza para eliminar notificaciones
-                    </p>
-                </div>
-                <div className="space-y-2">
+            <div className="max-w-md mx-auto bg-gray-50 p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-4">Notifications</h3>
+                <div className="space-y-3">
                     {notifications.map((notification) => (
                         <SlideToDeleteItem
                             key={notification.id}
-                            title={notification.title}
-                            subtitle={notification.description}
-                            actions={
-                                <Badge 
+                            onDelete={async () => {
+                                setNotifications(notifications.filter(n => n.id !== notification.id));
+                            }}
+                            deleteLabel="Clear"
+                            variant="default"
+                        >
+                            <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
+                                <div className="p-2 bg-blue-50 rounded-full text-blue-500">
+                                    <span className="text-xl">🔔</span>
+                                </div>
+                                <div className="flex-1">
+                                    <div className="flex justify-between items-start">
+                                        <h4 className="font-medium text-sm">{notification.title}</h4>
+                                        <span className="text-xs text-gray-400">{notification.time}</span>
+                                    </div>
+                                    <p className="text-sm text-gray-500 mt-1">{notification.subtitle}</p>
+                                </div>
+                                <Badge
                                     variant={
                                         notification.type === 'message' ? 'default' :
-                                        notification.type === 'success' ? 'success' : 'warning'
-                                    } 
+                                            notification.type === 'alert' ? 'error' : 'warning'
+                                    }
                                     size="sm"
                                 >
                                     {notification.type}
                                 </Badge>
-                            }
-                            onDelete={async () => {
-                                setNotifications(notifications.filter(n => n.id !== notification.id));
-                            }}
-                            deleteLabel="Dismiss"
-                            variant="default"
-                        />
+                            </div>
+                        </SlideToDeleteItem>
                     ))}
                 </div>
             </div>
         );
     },
+    args: {
+        children: null,
+        onDelete: async () => { },
+        deleteLabel: 'Clear'
+    }
 };
 
 export const FileList: Story = {
     name: '📁 Caso de Uso: Lista de Archivos',
     render: () => {
         const [files, setFiles] = useState([
-            { id: 1, name: 'document.pdf', size: '2.4 MB', modified: '2 hours ago' },
-            { id: 2, name: 'presentation.pptx', size: '5.8 MB', modified: '1 day ago' },
-            { id: 3, name: 'spreadsheet.xlsx', size: '1.2 MB', modified: '3 days ago' },
+            { id: 1, name: 'Project Proposal.pdf', size: '2.4 MB', modified: '2 hours ago' },
+            { id: 2, name: 'Design Assets.zip', size: '156 MB', modified: 'Yesterday' },
+            { id: 3, name: 'Meeting Notes.docx', size: '14 KB', modified: '3 days ago' },
         ]);
 
         return (
-            <div className="max-w-md mx-auto">
-                <div className="mb-6">
-                    <h1 className="text-2xl font-bold text-text-primary mb-2">Files</h1>
-                    <p className="text-sm text-text-secondary">
-                        Desliza para eliminar archivos
-                    </p>
-                </div>
-                <div className="space-y-2">
+            <div className="max-w-md mx-auto bg-gray-50 p-6 rounded-xl">
+                <h3 className="text-lg font-semibold mb-4">Files</h3>
+                <div className="space-y-3">
                     {files.map((file) => (
                         <SlideToDeleteItem
                             key={file.id}
-                            title={file.name}
-                            subtitle={`${file.size} • Modified ${file.modified}`}
                             onDelete={async () => {
                                 setFiles(files.filter(f => f.id !== file.id));
                             }}
                             deleteLabel="Delete"
-                            confirmDelete={true}
-                            confirmMessage="Delete this file?"
-                        />
+                            confirmDelete
+                            confirmMessage="Are you sure you want to delete this file?"
+                        >
+                            <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+                                <div className="p-2 bg-gray-100 rounded-lg">
+                                    <span className="text-xl">📄</span>
+                                </div>
+                                <div className="flex-1">
+                                    <h4 className="font-medium">{file.name}</h4>
+                                    <p className="text-sm text-gray-500">{file.size}</p>
+                                </div>
+                            </div>
+                        </SlideToDeleteItem>
                     ))}
                 </div>
             </div>
         );
     },
+    args: {
+        children: null,
+        onDelete: async () => { },
+        deleteLabel: 'Delete'
+    }
 };
 
 /* ========================================
@@ -489,12 +516,15 @@ export const FileList: Story = {
 export const Playground: Story = {
     name: '🎨 Playground',
     args: {
-        onDelete: () => {
-            console.log('Item deleted');
-            alert('Item deleted!');
-        },
+        children: (
+            <div className="bg-white p-4 rounded-lg shadow-sm">
+                <h3 className="font-medium">Swipe me left</h3>
+                <p className="text-sm text-gray-500">This item has a danger action</p>
+            </div>
+        ),
+        onDelete: () => console.log('Deleted'),
         deleteLabel: 'Delete',
-        threshold: 80,
+        threshold: 100,
         variant: 'danger',
         confirmDelete: false,
         disabled: false,

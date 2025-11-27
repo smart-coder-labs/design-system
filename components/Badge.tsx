@@ -12,6 +12,7 @@ export interface BadgeProps extends Omit<HTMLMotionProps<'span'>, 'size'> {
   variant?: BadgeVariant;
   size?: BadgeSize;
   dot?: boolean;
+  children?: React.ReactNode;
 }
 
 /* ========================================

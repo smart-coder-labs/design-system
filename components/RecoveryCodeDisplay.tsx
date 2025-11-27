@@ -10,7 +10,7 @@ import { Button } from './Button';
    TYPES
    ======================================== */
 
-export interface RecoveryCodeDisplayProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface RecoveryCodeDisplayProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onCopy'> {
     codes: string[];
     onCopy?: (code: string) => void;
     onDownload?: () => void;

@@ -104,8 +104,8 @@ export const BreadcrumbTabsHybrid: React.FC<BreadcrumbTabsHybridProps> = ({
                 <button
                   onClick={() => handleBreadcrumbClick(actualIndex, crumb.href)}
                   className={`breadcrumb-item flex items-center gap-2 px-2.5 py-1.5 rounded-lg transition-all duration-200 ${isLast
-                      ? 'text-text-primary font-medium cursor-default'
-                      : 'text-text-secondary hover:text-text-primary hover:bg-background-tertiary/50'
+                    ? 'text-text-primary font-medium cursor-default'
+                    : 'text-text-secondary hover:text-text-primary hover:bg-background-tertiary/50'
                     }`}
                   aria-current={isLast ? 'page' : undefined}
                   disabled={isLast}
@@ -137,8 +137,8 @@ export const BreadcrumbTabsHybrid: React.FC<BreadcrumbTabsHybridProps> = ({
                 ref={(el) => (tabRefs.current[tab.id] = el)}
                 onClick={() => handleTabClick(tab.id)}
                 className={`tab-item relative flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all duration-200 ${isActive
-                    ? 'text-accent-blue'
-                    : 'text-text-secondary hover:text-text-primary'
+                  ? 'text-accent-blue'
+                  : 'text-text-secondary hover:text-text-primary'
                   }`}
                 role="tab"
                 aria-selected={isActive}
@@ -151,8 +151,8 @@ export const BreadcrumbTabsHybrid: React.FC<BreadcrumbTabsHybridProps> = ({
                 {tab.badge !== undefined && tab.badge > 0 && (
                   <span
                     className={`badge inline-flex items-center justify-center min-w-[18px] h-[18px] px-1.5 rounded-full text-xs font-semibold transition-colors duration-200 ${isActive
-                        ? 'bg-accent-blue text-white'
-                        : 'bg-background-tertiary text-text-secondary'
+                      ? 'bg-accent-blue text-white'
+                      : 'bg-background-tertiary text-text-secondary'
                       }`}
                   >
                     {tab.badge > 99 ? '99+' : tab.badge}
@@ -177,91 +177,6 @@ export const BreadcrumbTabsHybrid: React.FC<BreadcrumbTabsHybridProps> = ({
           <div className="absolute bottom-0 left-0 right-0 h-px bg-border-primary" />
         )}
       </div>
-
-      <style jsx>{`
-        .breadcrumb-tabs-hybrid {
-          position: relative;
-          overflow: hidden;
-        }
-
-        .breadcrumb-item:disabled {
-          cursor: default;
-          pointer-events: none;
-        }
-
-        .tab-item {
-          position: relative;
-          user-select: none;
-          -webkit-tap-highlight-color: transparent;
-        }
-
-        .tab-item::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          border-radius: 8px;
-          background: var(--color-background-tertiary);
-          opacity: 0;
-          transition: opacity 200ms cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .tab-item:hover::before {
-          opacity: 0.5;
-        }
-
-        .tab-item:active::before {
-          opacity: 0.7;
-        }
-
-        .tab-item[aria-selected='true']::before {
-          opacity: 0;
-        }
-
-        .tab-indicator {
-          border-radius: 1px 1px 0 0;
-        }
-
-        /* Smooth badge animation */
-        .badge {
-          animation: scaleIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes scaleIn {
-          from {
-            opacity: 0;
-            transform: scale(0.8);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 640px) {
-          .breadcrumb-section {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-
-          .tabs-section {
-            padding-left: 1rem;
-            padding-right: 1rem;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-          }
-
-          .tabs-section::-webkit-scrollbar {
-            display: none;
-          }
-
-          .tab-item {
-            padding-left: 0.75rem;
-            padding-right: 0.75rem;
-            white-space: nowrap;
-          }
-        }
-      `}</style>
     </div>
   );
 };

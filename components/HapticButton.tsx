@@ -8,13 +8,13 @@ import { motion, HTMLMotionProps } from 'framer-motion';
    TYPES
    ======================================== */
 
-export type HapticFeedbackType = 
-    | 'light' 
-    | 'medium' 
-    | 'heavy' 
-    | 'success' 
-    | 'warning' 
-    | 'error' 
+export type HapticFeedbackType =
+    | 'light'
+    | 'medium'
+    | 'heavy'
+    | 'success'
+    | 'warning'
+    | 'error'
     | 'selection'
     | 'impact'
     | 'notification';
@@ -34,15 +34,15 @@ export interface HapticButtonProps extends ButtonProps {
  */
 const isHapticSupported = (): boolean => {
     if (typeof window === 'undefined') return false;
-    
+
     // Check for Vibration API (most browsers)
     if ('vibrate' in navigator) return true;
-    
+
     // Check for iOS Haptic Feedback (via WebKit)
     if (typeof (window as any).DeviceMotionEvent !== 'undefined') {
         return true;
     }
-    
+
     return false;
 };
 
@@ -77,25 +77,25 @@ const getVibrationPattern = (type: HapticFeedbackType): number | number[] => {
  */
 const triggerHaptic = (type: HapticFeedbackType | boolean): void => {
     if (typeof window === 'undefined') return;
-    
+
     if (type === false) return;
-    
+
     const feedbackType = type === true ? 'medium' : type;
-    
+
     // Use Vibration API if available
     if ('vibrate' in navigator) {
         const pattern = getVibrationPattern(feedbackType);
         navigator.vibrate(pattern);
         return;
     }
-    
+
     // Fallback: Try to use iOS Haptic Feedback via WebKit
     // This is a workaround for iOS devices
     if (typeof (window as any).DeviceMotionEvent !== 'undefined') {
         // iOS doesn't expose haptic API directly, but we can use vibration as fallback
         // For a more native iOS experience, you'd need a native app wrapper
-        if ('vibrate' in navigator) {
-            navigator.vibrate(getVibrationPattern(feedbackType));
+        if (typeof navigator !== 'undefined' && (navigator as any).vibrate) {
+            (navigator as any).vibrate(getVibrationPattern(feedbackType));
         }
     }
 };

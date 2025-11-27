@@ -394,6 +394,14 @@ export const MediaApp: Story = {
    ======================================== */
 
 export const Interactive: Story = {
+    args: {
+        items: [
+            { id: 'home', label: 'Home', icon: Home, active: true },
+            { id: 'search', label: 'Search', icon: Search, active: false },
+            { id: 'notifications', label: 'Notifications', icon: Bell, badge: 5, active: false },
+            { id: 'profile', label: 'Profile', icon: User, active: false },
+        ],
+    },
     name: '🔄 Interactivo',
     render: () => {
         const [activeId, setActiveId] = useState('home');

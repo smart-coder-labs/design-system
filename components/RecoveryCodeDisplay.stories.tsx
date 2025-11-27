@@ -78,6 +78,9 @@ export const ManyCodes: Story = {
 };
 
 export const Interactive: Story = {
+    args: {
+        codes: sampleCodes,
+    },
     render: () => {
         const handleCopy = (code: string) => {
             alert(`Copied: ${code}`);

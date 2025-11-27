@@ -12,7 +12,7 @@ import { Mail, Lock, User, AlertCircle } from 'lucide-react';
    TYPES
    ======================================== */
 
-export interface SignupFormProps extends React.HTMLAttributes<HTMLFormElement> {
+export interface SignupFormProps extends Omit<React.HTMLAttributes<HTMLFormElement>, 'onSubmit'> {
     onSubmit?: (data: { name: string; email: string; password: string; confirmPassword: string; acceptTerms: boolean }) => void | Promise<void>;
     isLoading?: boolean;
     error?: string;
@@ -125,8 +125,7 @@ export const SignupForm = React.forwardRef<HTMLFormElement, SignupFormProps>(
                         label="Password"
                         placeholder="Create a password"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        leftIcon={<Lock className="w-4 h-4" />}
+                        onChange={(value) => setPassword(value)}
                         required
                         disabled={isLoading}
                     />
@@ -135,8 +134,7 @@ export const SignupForm = React.forwardRef<HTMLFormElement, SignupFormProps>(
                         label="Confirm Password"
                         placeholder="Confirm your password"
                         value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        leftIcon={<Lock className="w-4 h-4" />}
+                        onChange={(value) => setConfirmPassword(value)}
                         required
                         disabled={isLoading}
                     />

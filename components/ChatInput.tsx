@@ -17,7 +17,7 @@ export interface ChatAttachment {
     type: 'image' | 'file' | 'audio' | 'video';
 }
 
-export interface ChatInputProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ChatInputProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
     value?: string;
     onChange?: (value: string) => void;
     onSend?: (message: string, attachments?: ChatAttachment[]) => void;
@@ -109,8 +109,8 @@ export const ChatInput = React.forwardRef<HTMLDivElement, ChatInputProps>(
             filesToAdd.forEach((file) => {
                 const type = file.type.startsWith('image/') ? 'image' as const
                     : file.type.startsWith('video/') ? 'video' as const
-                    : file.type.startsWith('audio/') ? 'audio' as const
-                    : 'file' as const;
+                        : file.type.startsWith('audio/') ? 'audio' as const
+                            : 'file' as const;
 
                 const attachment: ChatAttachment = {
                     id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,

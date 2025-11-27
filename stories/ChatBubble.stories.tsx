@@ -102,7 +102,41 @@ export const ErrorMessage: Story = {
     ],
 };
 
+export const WithImage: Story = {
+    name: 'Con Imagen',
+    render: () => (
+        <div className="space-y-4 max-w-md">
+            <ChatBubble
+                message="Check out this design!"
+                timestamp="10:30 AM"
+                isOwn={false}
+                status="read"
+            >
+                <div className="mt-2 rounded-lg overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=400&q=80"
+                        alt="Design preview"
+                        className="w-full h-48 object-cover"
+                    />
+                </div>
+            </ChatBubble>
+        </div>
+    ),
+    args: {
+        message: 'Check out this design!',
+        timestamp: '10:30 AM',
+        isOwn: false,
+        status: 'read'
+    }
+};
+
 export const WithReactions: Story = {
+    args: {
+        message: 'Check out this new feature!',
+        timestamp: '10:30 AM',
+        isOwn: true,
+        status: 'read'
+    },
     name: 'Con Reacciones',
     render: () => (
         <div className="max-w-md mx-auto space-y-4">
@@ -154,6 +188,12 @@ export const LongMessage: Story = {
 };
 
 export const Conversation: Story = {
+    args: {
+        message: 'Check out this new feature!',
+        timestamp: '10:30 AM',
+        isOwn: true,
+        status: 'read'
+    },
     name: 'Conversación Completa',
     render: () => (
         <div className="max-w-md mx-auto space-y-1">

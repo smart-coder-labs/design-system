@@ -211,22 +211,21 @@ export const BottomNavigation = React.forwardRef<HTMLDivElement, BottomNavigatio
             <motion.nav
                 ref={ref}
                 className={cn(
-                    "fixed bottom-0 left-0 right-0 z-sticky",
-                    "flex items-center justify-around",
+                    `fixed bottom-0 left-0 right-0 z-50 pb-safe`,
+                    "flex items-center justify-around", // Keep flex properties
                     variantStyles[variant],
-                    container,
+                    container, // Keep container height
                     className
                 )}
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: 100, opacity: 0 }}
+                initial={{ y: '100%' }}
+                animate={{ y: 0 }}
+                exit={{ y: '100%' }}
                 transition={{
                     type: 'spring',
                     stiffness: 300,
                     damping: 30,
-                    mass: 0.8,
                 }}
-                {...props}
+                {...(props as any)}
             >
                 {items.map((item) => (
                     <NavigationItem

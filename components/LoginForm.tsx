@@ -12,7 +12,7 @@ import { Mail, Lock, AlertCircle } from 'lucide-react';
    TYPES
    ======================================== */
 
-export interface LoginFormProps extends React.HTMLAttributes<HTMLFormElement> {
+export interface LoginFormProps extends Omit<React.HTMLAttributes<HTMLFormElement>, 'onSubmit'> {
     onSubmit?: (data: { email: string; password: string; rememberMe: boolean }) => void | Promise<void>;
     onForgotPassword?: () => void;
     isLoading?: boolean;
@@ -99,8 +99,7 @@ export const LoginForm = React.forwardRef<HTMLFormElement, LoginFormProps>(
                         label="Password"
                         placeholder="Enter your password"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        leftIcon={<Lock className="w-4 h-4" />}
+                        onChange={(value) => setPassword(value)}
                         required
                         disabled={isLoading}
                     />

@@ -137,7 +137,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                             stiffness: 300,
                             damping: 30,
                         }}
-                        {...props}
+                        {...(props as any)}
                     />
 
                     {rightIcon && (
@@ -221,7 +221,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
                 )}
 
                 <motion.textarea
-                    ref={ref}
+                    ref={ref as any}
                     className={textareaClassName}
                     disabled={disabled}
                     whileFocus={{
@@ -232,7 +232,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
                         stiffness: 300,
                         damping: 30,
                     }}
-                    {...props}
+                    {...(props as any)}
                 />
 
                 {(error || helperText) && (

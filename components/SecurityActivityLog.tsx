@@ -11,12 +11,12 @@ import type { ActivityType } from './ActivityFeed';
    TYPES
    ======================================== */
 
-export type SecurityEventType = 
-    | 'login' 
-    | 'logout' 
-    | 'password_change' 
-    | 'password_reset' 
-    | '2fa_enabled' 
+export type SecurityEventType =
+    | 'login'
+    | 'logout'
+    | 'password_change'
+    | 'password_reset'
+    | '2fa_enabled'
     | '2fa_disabled'
     | 'device_added'
     | 'device_removed'
@@ -113,7 +113,7 @@ export const SecurityActivityLog = React.forwardRef<HTMLDivElement, SecurityActi
                                 action={event.description}
                                 date={event.timestamp}
                                 type={activityType}
-                                icon={Icon}
+                                icon={Icon as any}
                                 isLast={index === events.length - 1}
                             >
                                 <div className="space-y-2 text-xs">

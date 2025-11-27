@@ -36,24 +36,21 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+    name: 'Default',
     args: {
-        intensity: 15,
+        intensity: 20,
         perspective: 1000,
         glowEffect: true,
+        children: (
+            <div className="p-6">
+                <h3 className="text-lg font-semibold mb-2">Gesture Card</h3>
+                <p className="text-text-secondary">Hover and tilt me!</p>
+            </div>
+        ),
     },
     render: (args) => (
         <div className="w-80">
-            <GestureCard {...args}>
-                <CardContent>
-                    <CardTitle>Gesture Card</CardTitle>
-                    <CardDescription>
-                        Mueve el mouse sobre el card para ver el efecto 3D
-                    </CardDescription>
-                    <p className="text-sm text-text-secondary mt-4">
-                        Este card responde a los movimientos del cursor con una rotación 3D suave.
-                    </p>
-                </CardContent>
-            </GestureCard>
+            <GestureCard {...args} />
         </div>
     ),
 };
@@ -61,41 +58,60 @@ export const Default: Story = {
 export const HighIntensity: Story = {
     name: 'Alta Intensidad',
     args: {
-        intensity: 25,
-        perspective: 1000,
+        intensity: 40,
+        perspective: 800,
         glowEffect: true,
+        children: (
+            <div className="p-6">
+                <h3 className="text-lg font-semibold mb-2">High Intensity</h3>
+                <p className="text-text-secondary">Stronger tilt effect</p>
+            </div>
+        ),
     },
     render: (args) => (
         <div className="w-80">
-            <GestureCard {...args}>
-                <CardContent>
-                    <CardTitle>High Intensity</CardTitle>
-                    <CardDescription>
-                        Mayor rotación 3D
-                    </CardDescription>
-                </CardContent>
-            </GestureCard>
+            <GestureCard {...args} />
         </div>
     ),
 };
 
-export const WithoutGlow: Story = {
-    name: 'Sin Efecto de Brillo',
+export const NoGlow: Story = {
+    name: 'Sin Resplandor',
     args: {
-        intensity: 15,
+        intensity: 20,
         perspective: 1000,
         glowEffect: false,
+        children: (
+            <div className="p-6">
+                <h3 className="text-lg font-semibold mb-2">No Glow</h3>
+                <p className="text-text-secondary">Just tilt, no shine</p>
+            </div>
+        ),
     },
     render: (args) => (
         <div className="w-80">
-            <GestureCard {...args}>
-                <CardContent>
-                    <CardTitle>No Glow</CardTitle>
-                    <CardDescription>
-                        Sin efecto de brillo
-                    </CardDescription>
-                </CardContent>
-            </GestureCard>
+            <GestureCard {...args} />
+        </div>
+    ),
+};
+
+export const CustomColor: Story = {
+    name: 'Color Personalizado',
+    args: {
+        intensity: 20,
+        perspective: 1000,
+        glowEffect: true,
+        glowColor: 'rgba(59, 130, 246, 0.5)', // Blue glow
+        children: (
+            <div className="p-6">
+                <h3 className="text-lg font-semibold mb-2">Blue Glow</h3>
+                <p className="text-text-secondary">Custom glow color</p>
+            </div>
+        ),
+    },
+    render: (args) => (
+        <div className="w-80">
+            <GestureCard {...args} />
         </div>
     ),
 };
@@ -106,6 +122,7 @@ export const WithContent: Story = {
         intensity: 15,
         perspective: 1000,
         glowEffect: true,
+        children: <></>
     },
     render: (args) => (
         <div className="w-96">
@@ -147,5 +164,7 @@ export const MultipleCards: Story = {
             ))}
         </div>
     ),
+    args: {
+        children: null, // Dummy args to satisfy type if needed, but render overrides
+    }
 };
-
