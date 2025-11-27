@@ -1,15 +1,20 @@
 {
-  "name": "@apple-design-system/core",
+  "name": "@smart-coder-labs/design-system",
   "version": "1.0.0",
   "description": "Design system completo estilo Apple (macOS/iOS/VisionOS) con Framer Motion + Radix UI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smart-coder-labs/design-system.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "index.ts",
   "types": "index.ts",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
+    "build": "npm run type-check",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
