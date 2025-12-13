@@ -13,13 +13,24 @@
 [![Framer Motion](https://img.shields.io/badge/Framer%20Motion-10+-ff69b4)](https://www.framer.com/motion/)
 [![Radix UI](https://img.shields.io/badge/Radix%20UI-Latest-purple)](https://www.radix-ui.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-38bdf8)](https://tailwindcss.com/)
+[![npm](https://img.shields.io/badge/npm-@smart--coder--labs/design--system-red)](https://github.com/smart-coder-labs/design-system/packages)
 
+[📦 Instalación](#-inicio-rápido) •
 [📖 Documentación](#-documentación) •
-[🚀 Inicio Rápido](#-inicio-rápido) •
 [🧩 Componentes](#-componentes) •
 [🎨 Demo](#-demo)
 
 </div>
+
+---
+
+## 📦 Instalación
+
+```bash
+npm install @smart-coder-labs/design-system
+```
+
+El paquete está publicado en **GitHub Package Registry**. Para configurar la autenticación, consulta la [guía de inicio rápido](./QUICKSTART.md).
 
 ---
 
@@ -76,18 +87,36 @@
 
 ## 🚀 Inicio Rápido
 
-### 1. Instalar dependencias
+### 1. Instalar el paquete
 
 ```bash
-cd apple-design-system
-npm install
+npm install @smart-coder-labs/design-system
 ```
 
-### 2. Usar en tu proyecto
+> **Nota:** Este paquete está publicado en GitHub Package Registry. Necesitarás configurar la autenticación en tu archivo `.npmrc`:
+> ```bash
+> @smart-coder-labs:registry=https://npm.pkg.github.com
+> //npm.pkg.github.com/:_authToken=TU_GITHUB_TOKEN
+> ```
+> [Ver guía completa de instalación →](./QUICKSTART.md)
+
+### 2. Configurar Tailwind
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+  ],
+}
+```
+
+### 3. Usar en tu proyecto
 
 ```tsx
-import { Button, Card, Input } from './apple-design-system';
-import './apple-design-system/globals.css';
+import { Button, Card, Input } from '@smart-coder-labs/design-system';
+import '@smart-coder-labs/design-system/globals.css';
 
 function App() {
   return (
@@ -97,14 +126,6 @@ function App() {
     </Card>
   );
 }
-```
-
-### 3. Ver la demo
-
-```tsx
-import DemoPage from './apple-design-system/DemoPage';
-
-<DemoPage />
 ```
 
 **[📖 Ver guía completa de inicio →](./QUICKSTART.md)**
@@ -201,7 +222,7 @@ import DemoPage from './apple-design-system/DemoPage';
 ## 🌓 Dark Mode
 
 ```tsx
-import { Switch } from './apple-design-system';
+import { Switch } from '@smart-coder-labs/design-system';
 
 const [darkMode, setDarkMode] = useState(false);
 
@@ -223,7 +244,7 @@ useEffect(() => {
 ### Modificar colores
 
 ```typescript
-import { tokens } from './apple-design-system';
+import { tokens } from '@smart-coder-labs/design-system';
 
 const customTokens = {
   ...tokens,

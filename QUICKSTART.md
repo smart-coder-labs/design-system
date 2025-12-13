@@ -1,58 +1,54 @@
 # 🚀 Quick Start Guide - Apple Design System
 
-## ⚡ Instalación Rápida
+## ⚡ Instalación
 
-### 1. Navegar al directorio
+### Opción 1: Instalar desde npm (Recomendado)
+
+#### 1. Configurar autenticación con GitHub Package Registry
+
+Crea o edita el archivo `.npmrc` en la raíz de tu proyecto:
+
 ```bash
-cd /Volumes/Realtek/work-environment/personal/smartcoder/apple-design-system
+@smart-coder-labs:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=TU_GITHUB_TOKEN
 ```
 
-### 2. Instalar dependencias
+> **Nota:** Reemplaza `TU_GITHUB_TOKEN` con un Personal Access Token de GitHub que tenga permisos de `read:packages`.
+> [Cómo crear un token →](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+#### 2. Instalar el paquete
+
 ```bash
-npm install
+npm install @smart-coder-labs/design-system
 ```
 
-### 3. Dependencias que se instalarán:
+#### 3. Configurar Tailwind CSS
 
-#### Core
-- `react` ^18.0.0
-- `react-dom` ^18.0.0
-- `typescript` ^5.3.3
+Agrega el contenido del design system a tu configuración de Tailwind:
 
-#### Animaciones
-- `framer-motion` ^10.16.16
-
-#### Componentes Headless (Radix UI)
-- `@radix-ui/react-dialog` ^1.0.5
-- `@radix-ui/react-dropdown-menu` ^2.0.6
-- `@radix-ui/react-switch` ^1.0.3
-- `@radix-ui/react-tabs` ^1.0.4
-- `@radix-ui/react-tooltip` ^1.0.7
-
-#### Estilos
-- `tailwindcss` ^3.4.0
-- `autoprefixer` ^10.4.16
-- `postcss` ^8.4.32
-
----
-
-## 📝 Uso Básico
-
-### Opción 1: Usar en un proyecto Next.js
-
-1. **Copiar el directorio completo** a tu proyecto:
-```bash
-cp -r apple-design-system /path/to/your/nextjs-project/src/
+```javascript
+// tailwind.config.js
+module.exports = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+  ],
+  // ... resto de tu configuración
+}
 ```
 
-2. **Importar los estilos globales** en `app/layout.tsx` o `pages/_app.tsx`:
+#### 4. Importar los estilos globales
+
+En tu archivo principal (`app/layout.tsx`, `pages/_app.tsx`, o `main.tsx`):
+
 ```tsx
-import '@/apple-design-system/globals.css';
+import '@smart-coder-labs/design-system/globals.css';
 ```
 
-3. **Usar los componentes**:
+#### 5. Usar los componentes
+
 ```tsx
-import { Button, Card, Input } from '@/apple-design-system';
+import { Button, Card, Input } from '@smart-coder-labs/design-system';
 
 export default function Page() {
   return (
@@ -64,34 +60,22 @@ export default function Page() {
 }
 ```
 
-### Opción 2: Usar en un proyecto Vite
+---
 
-1. **Copiar el directorio** a tu proyecto:
+### Opción 2: Desarrollo Local
+
+#### 1. Navegar al directorio
 ```bash
-cp -r apple-design-system /path/to/your/vite-project/src/
+cd /Volumes/Realtek/work-environment/personal/smartcoder/design-system
 ```
 
-2. **Importar los estilos** en `main.tsx`:
-```tsx
-import './apple-design-system/globals.css';
+#### 2. Instalar dependencias
+```bash
+npm install
 ```
 
-3. **Usar los componentes**:
-```tsx
-import { Button, Card } from './apple-design-system';
+#### 3. Ver la demo
 
-function App() {
-  return (
-    <Card>
-      <Button variant="primary">Click me</Button>
-    </Card>
-  );
-}
-```
-
-### Opción 3: Ver la Demo
-
-1. **Crear un archivo de prueba** `test.tsx`:
 ```tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -105,44 +89,56 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );
 ```
 
-2. **Ejecutar con Vite**:
+#### 4. Ejecutar con Vite
 ```bash
 npx vite
 ```
 
 ---
 
-## 🎨 Configurar Tailwind
+## 📝 Uso en Diferentes Frameworks
 
-Si tu proyecto ya tiene Tailwind, **extiende** la configuración:
+### Next.js
 
-```typescript
-// tailwind.config.ts
-import appleConfig from './apple-design-system/tailwind.config';
+```tsx
+// app/layout.tsx
+import '@smart-coder-labs/design-system/globals.css';
+import { Button, Card } from '@smart-coder-labs/design-system';
 
-export default {
-  ...appleConfig,
-  content: [
-    ...appleConfig.content,
-    './src/**/*.{js,ts,jsx,tsx}', // Tu contenido
-  ],
-  theme: {
-    extend: {
-      ...appleConfig.theme.extend,
-      // Tus extensiones personalizadas
-    },
-  },
-};
+export default function RootLayout({ children }) {
+  return (
+    <html lang="es">
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+### Vite + React
+
+```tsx
+// main.tsx
+import '@smart-coder-labs/design-system/globals.css';
+import { Button, Card } from '@smart-coder-labs/design-system';
+```
+
+### Remix
+
+```tsx
+// app/root.tsx
+import styles from '@smart-coder-labs/design-system/globals.css';
+
+export const links = () => [{ rel: 'stylesheet', href: styles }];
 ```
 
 ---
 
 ## 🌓 Activar Dark Mode
 
-### Opción 1: Toggle manual
+### Toggle manual
 
 ```tsx
-import { Switch } from './apple-design-system';
+import { Switch } from '@smart-coder-labs/design-system';
 import { useState, useEffect } from 'react';
 
 function DarkModeToggle() {
@@ -166,7 +162,7 @@ function DarkModeToggle() {
 }
 ```
 
-### Opción 2: Detectar preferencia del sistema
+### Detectar preferencia del sistema
 
 ```tsx
 useEffect(() => {
@@ -185,7 +181,7 @@ useEffect(() => {
 import {
   // Botones
   Button,
-  
+
   // Tarjetas
   Card,
   CardHeader,
@@ -193,12 +189,12 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-  
+
   // Formularios
   Input,
   Textarea,
   Switch,
-  
+
   // Overlays
   Modal,
   ModalHeader,
@@ -208,7 +204,7 @@ import {
   ModalFooter,
   ModalClose,
   ModalCloseButton,
-  
+
   // Menús
   Dropdown,
   DropdownItem,
@@ -217,11 +213,11 @@ import {
   DropdownCheckboxItem,
   DropdownRadioGroup,
   DropdownRadioItem,
-  
+
   // Tooltips
   Tooltip,
   TooltipProvider,
-  
+
   // Navegación
   Tabs,
   TabsList,
@@ -232,14 +228,14 @@ import {
   NavBarContent,
   NavBarItem,
   NavBarSeparator,
-  
+
   // Indicadores
   Badge,
   NotificationBadge,
-  
+
   // Tokens
   tokens,
-} from './apple-design-system';
+} from '@smart-coder-labs/design-system';
 ```
 
 ---
@@ -263,8 +259,8 @@ import {
   Button,
   Switch,
   TooltipProvider,
-} from './apple-design-system';
-import './apple-design-system/globals.css';
+} from '@smart-coder-labs/design-system';
+import '@smart-coder-labs/design-system/globals.css';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -335,7 +331,7 @@ export default App;
 
 ```typescript
 // En tu proyecto
-import { tokens } from './apple-design-system';
+import { tokens } from '@smart-coder-labs/design-system';
 
 const customTokens = {
   ...tokens,
@@ -357,7 +353,7 @@ export { customTokens as tokens };
 ### Extender componentes
 
 ```tsx
-import { Button as BaseButton } from './apple-design-system';
+import { Button as BaseButton } from '@smart-coder-labs/design-system';
 
 export function CustomButton(props) {
   return (
@@ -383,19 +379,31 @@ export function CustomButton(props) {
 ## ⚠️ Troubleshooting
 
 ### Error: "Cannot find module"
-Asegúrate de que las rutas de importación sean correctas:
-```tsx
-// ✅ Correcto
-import { Button } from './apple-design-system';
-
-// ❌ Incorrecto
-import { Button } from 'apple-design-system';
+Asegúrate de que instalaste el paquete correctamente:
+```bash
+npm install @smart-coder-labs/design-system
 ```
 
+Si estás usando GitHub Package Registry, verifica tu archivo `.npmrc`.
+
 ### Estilos no se aplican
-1. Verifica que importaste `globals.css`
-2. Verifica que Tailwind está configurado
-3. Verifica que PostCSS está configurado
+1. Verifica que importaste los estilos globales:
+   ```tsx
+   import '@smart-coder-labs/design-system/globals.css';
+   ```
+2. Verifica que tu Tailwind config incluye el contenido del design system:
+   ```javascript
+   content: [
+     './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+   ]
+   ```
+3. Asegúrate de que Tailwind y PostCSS están configurados en tu proyecto
+
+### Error de autenticación con GitHub Packages
+Si recibes un error 401 o 403:
+1. Verifica que tu token de GitHub tiene permisos `read:packages`
+2. Asegúrate de que el archivo `.npmrc` está configurado correctamente
+3. El token debe estar activo y no haber expirado
 
 ### Dark mode no funciona
 Asegúrate de agregar la clase `dark` al elemento `<html>`:

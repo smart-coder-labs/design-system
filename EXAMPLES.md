@@ -9,7 +9,7 @@ Esta guía contiene ejemplos de código listos para copiar y pegar.
 ### Ejemplo básico
 
 ```tsx
-import { Button } from './index';
+import { Button } from '@smart-coder-labs/design-system';
 
 // Primary button
 <Button variant="primary">
@@ -94,7 +94,7 @@ import { Button } from './index';
 ### Card básica
 
 ```tsx
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './index';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@smart-coder-labs/design-system';
 
 <Card>
   <CardHeader>
@@ -165,7 +165,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 ### Input básico
 
 ```tsx
-import { Input } from './index';
+import { Input } from '@smart-coder-labs/design-system';
 
 <Input
   label="Email"
@@ -231,7 +231,7 @@ import { Input } from './index';
 ### Textarea
 
 ```tsx
-import { Textarea } from './index';
+import { Textarea } from '@smart-coder-labs/design-system';
 
 <Textarea
   label="Message"
@@ -258,7 +258,7 @@ import {
   ModalClose,
   ModalCloseButton,
   Button 
-} from './index';
+} from '@smart-coder-labs/design-system';
 
 function MyComponent() {
   const [open, setOpen] = useState(false);
@@ -318,7 +318,7 @@ import {
   DropdownSeparator,
   DropdownLabel,
   Button 
-} from './index';
+} from '@smart-coder-labs/design-system';
 
 <Dropdown
   trigger={
@@ -367,7 +367,7 @@ import {
 ### Con checkbox
 
 ```tsx
-import { DropdownCheckboxItem } from './index';
+import { DropdownCheckboxItem } from '@smart-coder-labs/design-system';
 
 const [showPanel, setShowPanel] = useState(false);
 
@@ -384,7 +384,7 @@ const [showPanel, setShowPanel] = useState(false);
 ### Con radio group
 
 ```tsx
-import { DropdownRadioGroup, DropdownRadioItem } from './index';
+import { DropdownRadioGroup, DropdownRadioItem } from '@smart-coder-labs/design-system';
 
 const [sortBy, setSortBy] = useState('name');
 
@@ -404,7 +404,7 @@ const [sortBy, setSortBy] = useState('name');
 ### Tooltip básico
 
 ```tsx
-import { TooltipProvider, Tooltip, Button } from './index';
+import { TooltipProvider, Tooltip, Button } from '@smart-coder-labs/design-system';
 
 // Wrap your app with TooltipProvider
 <TooltipProvider>
@@ -458,7 +458,7 @@ import { TooltipProvider, Tooltip, Button } from './index';
 ### Tabs default
 
 ```tsx
-import { Tabs, TabsList, TabsTrigger, TabsContent } from './index';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@smart-coder-labs/design-system';
 
 <Tabs defaultValue="tab1">
   <TabsList>
@@ -528,7 +528,7 @@ const [activeTab, setActiveTab] = useState('tab1');
 ### Switch básico
 
 ```tsx
-import { Switch } from './index';
+import { Switch } from '@smart-coder-labs/design-system';
 
 const [enabled, setEnabled] = useState(false);
 
@@ -574,7 +574,7 @@ const [enabled, setEnabled] = useState(false);
 ### Badges básicos
 
 ```tsx
-import { Badge } from './index';
+import { Badge } from '@smart-coder-labs/design-system';
 
 <Badge>Default</Badge>
 <Badge variant="primary">Primary</Badge>
@@ -602,7 +602,7 @@ import { Badge } from './index';
 ### Notification Badge
 
 ```tsx
-import { NotificationBadge } from './index';
+import { NotificationBadge } from '@smart-coder-labs/design-system';
 
 <NotificationBadge count={5}>
   <Button>Messages</Button>
@@ -633,7 +633,7 @@ import {
   NavBarItem,
   NavBarSeparator,
   Button 
-} from './index';
+} from '@smart-coder-labs/design-system';
 
 <NavBar>
   <NavBarBrand href="/">
@@ -705,7 +705,7 @@ import {
   Textarea,
   Switch,
   Button 
-} from './index';
+} from '@smart-coder-labs/design-system';
 
 function ContactForm() {
   const [subscribe, setSubscribe] = useState(false);
@@ -767,7 +767,7 @@ function ContactForm() {
 ## 🌓 Dark Mode Toggle
 
 ```tsx
-import { Switch } from './index';
+import { Switch } from '@smart-coder-labs/design-system';
 import { useState, useEffect } from 'react';
 
 function DarkModeToggle() {
@@ -812,7 +812,7 @@ import {
   Badge,
   Button,
   NotificationBadge,
-} from './index';
+} from '@smart-coder-labs/design-system';
 
 function Dashboard() {
   return (
@@ -889,7 +889,7 @@ function Dashboard() {
 ### Ejemplo básico
 
 ```tsx
-import { PropertyList } from './index';
+import { PropertyList } from '@smart-coder-labs/design-system';
 
 function FileInfo() {
   const sections = [
@@ -939,7 +939,7 @@ function FileInfo() {
 ### Secciones colapsables
 
 ```tsx
-import { PropertyList } from './index';
+import { PropertyList } from '@smart-coder-labs/design-system';
 
 function SystemInfo() {
   const sections = [
@@ -977,7 +977,7 @@ function SystemInfo() {
 ### Con iconos
 
 ```tsx
-import { PropertyList } from './index';
+import { PropertyList } from '@smart-coder-labs/design-system';
 import { File, HardDrive, Calendar, User } from 'lucide-react';
 
 function FileInspector() {
@@ -1018,7 +1018,7 @@ function FileInspector() {
 ### Propiedades editables
 
 ```tsx
-import { PropertyList } from './index';
+import { PropertyList } from '@smart-coder-labs/design-system';
 import { useState } from 'react';
 
 function AppSettings() {
@@ -1092,7 +1092,7 @@ function AppSettings() {
 ### Caso de uso: Inspector de archivo macOS
 
 ```tsx
-import { PropertyList } from './index';
+import { PropertyList } from '@smart-coder-labs/design-system';
 import { File, HardDrive, Calendar, User } from 'lucide-react';
 
 function MacOSFileInspector() {
@@ -1173,7 +1173,7 @@ function MacOSFileInspector() {
 ### Ejemplo básico
 
 ```tsx
-import { KeyValueInfo } from './index';
+import { KeyValueInfo } from '@smart-coder-labs/design-system';
 
 function UserInfo() {
   const userInfo = [
@@ -1224,7 +1224,7 @@ function UserInfo() {
 ### Con iconos
 
 ```tsx
-import { KeyValueInfo } from './index';
+import { KeyValueInfo } from '@smart-coder-labs/design-system';
 import { User, Mail, Phone, MapPin } from 'lucide-react';
 
 function ProfileInfo() {
@@ -1267,8 +1267,8 @@ function ProfileInfo() {
 ### Con badges
 
 ```tsx
-import { KeyValueInfo } from './index';
-import { Badge } from './index';
+import { KeyValueInfo } from '@smart-coder-labs/design-system';
+import { Badge } from '@smart-coder-labs/design-system';
 
 function OrderStatus() {
   const orderInfo = [
@@ -1316,7 +1316,7 @@ function OrderStatus() {
 ### Grid con múltiples columnas
 
 ```tsx
-import { KeyValueInfo } from './index';
+import { KeyValueInfo } from '@smart-coder-labs/design-system';
 import { Server, Hash, Package } from 'lucide-react';
 
 function SystemSpecs() {
@@ -1342,8 +1342,8 @@ function SystemSpecs() {
 ### Caso de uso: Credenciales API
 
 ```tsx
-import { KeyValueInfo } from './index';
-import { Badge } from './index';
+import { KeyValueInfo } from '@smart-coder-labs/design-system';
+import { Badge } from '@smart-coder-labs/design-system';
 
 function APICredentials() {
   const credentials = [
@@ -1384,7 +1384,7 @@ function APICredentials() {
 ### Ejemplo básico
 
 ```tsx
-import { DefinitionList } from './index';
+import { DefinitionList } from '@smart-coder-labs/design-system';
 
 function UserProfile() {
   const userInfo = [
@@ -1473,7 +1473,7 @@ function UserProfile() {
 ### Caso de uso: Especificaciones de producto
 
 ```tsx
-import { DefinitionList } from './index';
+import { DefinitionList } from '@smart-coder-labs/design-system';
 
 function ProductDetails() {
   const specs = [
@@ -1499,7 +1499,7 @@ function ProductDetails() {
 ### Caso de uso: Metadatos de documento
 
 ```tsx
-import { DefinitionList } from './index';
+import { DefinitionList } from '@smart-coder-labs/design-system';
 
 function DocumentInfo() {
   const metadata = [
@@ -1529,7 +1529,7 @@ function DocumentInfo() {
 ### Ejemplo básico
 
 ```tsx
-import { KPIBlock } from './index';
+import { KPIBlock } from '@smart-coder-labs/design-system';
 
 function DashboardKPI() {
   return (
@@ -1547,7 +1547,7 @@ function DashboardKPI() {
 ### Con ícono
 
 ```tsx
-import { KPIBlock } from './index';
+import { KPIBlock } from '@smart-coder-labs/design-system';
 import { DollarSign, Users, ShoppingCart } from 'lucide-react';
 
 function MetricsWithIcons() {
@@ -1710,7 +1710,7 @@ function MetricsWithIcons() {
 ### KPI Groups (Grid)
 
 ```tsx
-import { KPIGroup, KPIBlock } from './index';
+import { KPIGroup, KPIBlock } from '@smart-coder-labs/design-system';
 import { DollarSign, Users, ShoppingCart, Target } from 'lucide-react';
 
 function DashboardMetrics() {
@@ -1810,7 +1810,7 @@ function DashboardMetrics() {
 ### Caso de uso: Dashboard completo
 
 ```tsx
-import { KPIGroup, KPIBlock } from './index';
+import { KPIGroup, KPIBlock } from '@smart-coder-labs/design-system';
 import { DollarSign, TrendingUp, Users, Activity } from 'lucide-react';
 
 function AnalyticsDashboard() {
@@ -1864,7 +1864,7 @@ function AnalyticsDashboard() {
 ### Caso de uso: Sidebar de estadísticas rápidas
 
 ```tsx
-import { KPIBlock } from './index';
+import { KPIBlock } from '@smart-coder-labs/design-system';
 
 function QuickStatsSidebar() {
   return (
@@ -1903,7 +1903,7 @@ function QuickStatsSidebar() {
 ### Caso de uso: Métricas con tendencias mixtas
 
 ```tsx
-import { KPIGroup, KPIBlock } from './index';
+import { KPIGroup, KPIBlock } from '@smart-coder-labs/design-system';
 import { DollarSign, Activity, Target } from 'lucide-react';
 
 function MixedMetrics() {
@@ -1945,8 +1945,8 @@ function MixedMetrics() {
 ### Grid básico
 
 ```tsx
-import { StatisticDisplay } from './index';
-import type { StatisticMetric } from './index';
+import { StatisticDisplay } from '@smart-coder-labs/design-system';
+import type { StatisticMetric } from '@smart-coder-labs/design-system';
 import { DollarSign, ShoppingCart, Users } from 'lucide-react';
 
 const metrics: StatisticMetric[] = [
@@ -2021,7 +2021,7 @@ export function DashboardStats() {
 ### Highlight hero + grid
 
 ```tsx
-import { StatisticHighlight, StatisticDisplay } from './index';
+import { StatisticHighlight, StatisticDisplay } from '@smart-coder-labs/design-system';
 
 function RevenueHero() {
   return (
