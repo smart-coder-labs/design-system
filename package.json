@@ -1,6 +1,6 @@
 {
   "name": "@smart-coder-labs/design-system",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Design system completo estilo Apple (macOS/iOS/VisionOS) con Framer Motion + Radix UI",
   "repository": {
     "type": "git",
@@ -15,6 +15,7 @@
     ".": "./index.ts",
     "./globals.css": "./globals.css",
     "./tailwind.preset": "./tailwind.preset.ts",
+    "./tailwind.config": "./tailwind.config.ts",
     "./tokens": "./tokens.ts"
   },
   "scripts": {
@@ -85,8 +86,6 @@
     "@types/node": "^20.10.6",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "storybook": "^10.0.8",
