@@ -24,17 +24,33 @@ npm install @smart-coder-labs/design-system
 
 #### 3. Configurar Tailwind CSS
 
-Agrega el contenido del design system a tu configuración de Tailwind:
+**IMPORTANTE:** Debes usar el preset de Tailwind del design system para que las clases personalizadas funcionen correctamente.
 
 ```javascript
 // tailwind.config.js
-module.exports = {
+import preset from '@smart-coder-labs/design-system/tailwind.preset';
+
+export default {
+  presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
     './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
   ],
   // ... resto de tu configuración
-}
+};
+```
+
+**Nota:** Si estás usando CommonJS (`.cjs`), usa:
+```javascript
+const preset = require('@smart-coder-labs/design-system/tailwind.preset').default;
+
+module.exports = {
+  presets: [preset],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+  ],
+};
 ```
 
 #### 4. Importar los estilos globales
@@ -386,16 +402,47 @@ npm install @smart-coder-labs/design-system
 
 Si estás usando GitHub Package Registry, verifica tu archivo `.npmrc`.
 
+### Error: "Cannot apply unknown utility class"
+Si recibes un error como `Cannot apply unknown utility class 'border-border-primary'`:
+
+**Causa:** Tu configuración de Tailwind no incluye el preset del design system.
+
+**Solución:**
+1. Importa el preset en tu `tailwind.config.js`:
+   ```javascript
+   import preset from '@smart-coder-labs/design-system/tailwind.preset';
+
+   export default {
+     presets: [preset],
+     content: ['./src/**/*.{js,ts,jsx,tsx}'],
+   };
+   ```
+2. Si usas CommonJS (`.cjs`):
+   ```javascript
+   const preset = require('@smart-coder-labs/design-system/tailwind.preset').default;
+
+   module.exports = {
+     presets: [preset],
+     content: ['./src/**/*.{js,ts,jsx,tsx}'],
+   };
+   ```
+
 ### Estilos no se aplican
 1. Verifica que importaste los estilos globales:
    ```tsx
    import '@smart-coder-labs/design-system/globals.css';
    ```
-2. Verifica que tu Tailwind config incluye el contenido del design system:
+2. Verifica que tu Tailwind config usa el preset:
    ```javascript
-   content: [
-     './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
-   ]
+   import preset from '@smart-coder-labs/design-system/tailwind.preset';
+
+   export default {
+     presets: [preset],
+     content: [
+       './src/**/*.{js,ts,jsx,tsx}',
+       './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+     ],
+   };
    ```
 3. Asegúrate de que Tailwind y PostCSS están configurados en tu proyecto
 

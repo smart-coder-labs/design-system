@@ -102,14 +102,19 @@ npm install @smart-coder-labs/design-system
 
 ### 2. Configurar Tailwind
 
+**IMPORTANTE:** Usa el preset de Tailwind para acceder a todas las clases personalizadas:
+
 ```javascript
 // tailwind.config.js
-module.exports = {
+import preset from '@smart-coder-labs/design-system/tailwind.preset';
+
+export default {
+  presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
     './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
   ],
-}
+};
 ```
 
 ### 3. Usar en tu proyecto
@@ -355,6 +360,34 @@ Este design system está inspirado en:
 - **iOS** Settings
 - **VisionOS** Cards y UI
 - **Apple Human Interface Guidelines**
+
+---
+
+## 🔄 Migración
+
+### Actualizando desde v1.0.2 o anterior
+
+A partir de **v1.0.3**, es necesario usar el preset de Tailwind:
+
+```bash
+npm install @smart-coder-labs/design-system@latest
+```
+
+Actualiza tu `tailwind.config.js`:
+
+```javascript
+import preset from '@smart-coder-labs/design-system/tailwind.preset';
+
+export default {
+  presets: [preset],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+  ],
+};
+```
+
+**[📖 Ver guía completa de migración →](./MIGRATION.md)**
 
 ---
 
