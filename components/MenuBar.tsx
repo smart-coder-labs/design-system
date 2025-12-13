@@ -114,7 +114,7 @@ export const MenuBar = React.forwardRef<HTMLDivElement, MenuBarProps>(
                     {menus.map((menu) => (
                         <div key={menu.id} className="relative">
                             <button
-                                ref={(el) => (menuRefs.current[menu.id] = el)}
+                                ref={(el) => { menuRefs.current[menu.id] = el }}
                                 onClick={() => handleMenuClick(menu.id)}
                                 onMouseEnter={() => handleMenuHover(menu.id)}
                                 className={cn(

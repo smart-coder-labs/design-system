@@ -77,7 +77,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
             ? {
                 whileHover: { y: -4, scale: 1.01 },
                 transition: {
-                    type: 'spring',
+                    type: 'spring' as const,
                     stiffness: 300,
                     damping: 30,
                     mass: 0.8,
@@ -93,7 +93,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                     duration: 0.22,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
                 }}
                 {...hoverAnimation}
                 {...props}

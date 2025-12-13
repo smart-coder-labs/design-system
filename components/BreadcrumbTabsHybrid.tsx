@@ -134,7 +134,7 @@ export const BreadcrumbTabsHybrid: React.FC<BreadcrumbTabsHybridProps> = ({
             return (
               <button
                 key={tab.id}
-                ref={(el) => (tabRefs.current[tab.id] = el)}
+                ref={(el) => { tabRefs.current[tab.id] = el }}
                 onClick={() => handleTabClick(tab.id)}
                 className={`tab-item relative flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all duration-200 ${isActive
                   ? 'text-accent-blue'
