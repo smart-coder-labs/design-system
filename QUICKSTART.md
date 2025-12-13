@@ -34,7 +34,8 @@ export default {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+    // No necesitas agregar node_modules/@smart-coder-labs/design-system
+    // ya que el preset lo incluye automáticamente
   ],
   // ... resto de tu configuración
 };
@@ -48,7 +49,6 @@ module.exports = {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
   ],
 };
 ```
@@ -415,6 +415,7 @@ Si recibes un error como `Cannot apply unknown utility class 'border-border-prim
    export default {
      presets: [preset],
      content: ['./src/**/*.{js,ts,jsx,tsx}'],
+     // El preset ya incluye automáticamente las rutas del design system
    };
    ```
 2. Si usas CommonJS (`.cjs`):
@@ -438,13 +439,11 @@ Si recibes un error como `Cannot apply unknown utility class 'border-border-prim
 
    export default {
      presets: [preset],
-     content: [
-       './src/**/*.{js,ts,jsx,tsx}',
-       './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
-     ],
+     content: ['./src/**/*.{js,ts,jsx,tsx}'],
+     // El preset ya incluye las rutas del design system automáticamente
    };
    ```
-3. Asegúrate de que Tailwind y PostCSS están configurados en tu proyecto
+3. Asegúrate de que Tailwind está instalado en tu proyecto (PostCSS ya no es necesario con Vite)
 
 ### Error de autenticación con GitHub Packages
 Si recibes un error 401 o 403:

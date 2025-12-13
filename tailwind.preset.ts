@@ -15,12 +15,17 @@ import { tokens } from './tokens';
  *
  * export default {
  *   presets: [preset],
- *   content: ['./src/**\/*.{js,ts,jsx,tsx}'],
- *   // ... resto de tu configuración
+ *   content: [
+ *     './src/**\/*.{js,ts,jsx,tsx}',
+ *     // Las rutas del design system ya están incluidas en el preset
+ *   ],
  * };
  * ```
  */
 const preset: Partial<Config> = {
+    content: [
+        './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+    ],
     darkMode: 'class',
     theme: {
         extend: {
