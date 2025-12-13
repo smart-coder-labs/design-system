@@ -1,6 +1,6 @@
 {
   "name": "@smart-coder-labs/design-system",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Design system completo estilo Apple (macOS/iOS/VisionOS) con Framer Motion + Radix UI",
   "repository": {
     "type": "git",
@@ -9,18 +9,38 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "main": "index.ts",
-  "types": "index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./index.ts",
-    "./globals.css": "./globals.css",
-    "./tailwind.preset": "./tailwind.preset.ts",
-    "./tokens": "./tokens.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./globals.css": "./dist/globals.css",
+    "./tailwind.preset": {
+      "types": "./dist/tailwind.preset.d.ts",
+      "import": "./dist/tailwind.preset.js",
+      "require": "./dist/tailwind.preset.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js",
+      "require": "./dist/tokens.js"
+    }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
+    "clean": "rm -rf dist",
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
-    "build": "npm run type-check",
+    "build": "npm run clean && tsc -p tsconfig.build.json && npm run copy-css",
+    "copy-css": "cp globals.css dist/globals.css",
+    "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

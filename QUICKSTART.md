@@ -34,7 +34,8 @@ export default {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+    // IMPORTANTE: Incluye los componentes compilados del design system
+    './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
   ],
   // ... resto de tu configuración
 };
@@ -48,7 +49,8 @@ module.exports = {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+    // IMPORTANTE: Incluye los componentes compilados del design system
+    './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
   ],
 };
 ```
@@ -414,7 +416,10 @@ Si recibes un error como `Cannot apply unknown utility class 'border-border-prim
 
    export default {
      presets: [preset],
-     content: ['./src/**/*.{js,ts,jsx,tsx}'],
+     content: [
+       './src/**/*.{js,ts,jsx,tsx}',
+       './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
+     ],
    };
    ```
 2. Si usas CommonJS (`.cjs`):
@@ -423,7 +428,10 @@ Si recibes un error como `Cannot apply unknown utility class 'border-border-prim
 
    module.exports = {
      presets: [preset],
-     content: ['./src/**/*.{js,ts,jsx,tsx}'],
+     content: [
+       './src/**/*.{js,ts,jsx,tsx}',
+       './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
+     ],
    };
    ```
 
@@ -440,7 +448,7 @@ Si recibes un error como `Cannot apply unknown utility class 'border-border-prim
      presets: [preset],
      content: [
        './src/**/*.{js,ts,jsx,tsx}',
-       './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+       './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
      ],
    };
    ```
