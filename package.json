@@ -1,6 +1,6 @@
 {
   "name": "@smart-coder-labs/design-system",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Design system completo estilo Apple (macOS/iOS/VisionOS) con Framer Motion + Radix UI",
   "repository": {
     "type": "git",
