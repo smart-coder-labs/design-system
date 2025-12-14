@@ -7,7 +7,7 @@ const meta: Meta<typeof BarcodeGenerator> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         format: {
             control: 'select',

@@ -25,7 +25,7 @@ A resource-based horizontal timeline component for scheduling and visualizing ev
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

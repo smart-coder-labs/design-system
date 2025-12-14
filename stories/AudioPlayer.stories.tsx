@@ -7,7 +7,7 @@ const meta: Meta<typeof AudioPlayer> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

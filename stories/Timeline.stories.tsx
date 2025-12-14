@@ -11,7 +11,7 @@ const meta = {
     parameters: {
         layout: 'padded',
     },
-    tags: ['autodocs'],
+    tags: [],
 } satisfies Meta<typeof Timeline>;
 
 export default meta;

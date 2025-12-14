@@ -1,4 +1,4 @@
-# Configuración para Vite + React
+# Configuración para Vite + React (Tailwind CSS 4.1)
 
 ## 1. Crear proyecto Vite (si es nuevo)
 
@@ -7,61 +7,21 @@ npm create vite@latest my-app -- --template react-ts
 cd my-app
 ```
 
-## 2. Instalar el paquete
+## 2. Instalar el paquete y Tailwind CSS 4.1
 
 ```bash
-npm install @smart-coder-labs/design-system
+npm install @smart-coder-labs/design-system tailwindcss@^4.1.0
 ```
 
-## 3. Instalar dependencias
+## 3. Instalar React 19 (peer dependency)
 
 ```bash
-npm install react@^19.2.0 react-dom@^19.2.0 tailwindcss@^3.4.0 autoprefixer postcss
+npm install react@^19.2.0 react-dom@^19.2.0
 ```
 
-## 4. Inicializar Tailwind CSS
+## 4. Importar estilos globales
 
-```bash
-npx tailwindcss init -p
-```
-
-## 5. Configurar Tailwind CSS
-
-Actualiza `tailwind.config.js`:
-
-```javascript
-import preset from '@smart-coder-labs/design-system/tailwind.preset';
-
-/** @type {import('tailwindcss').Config} */
-export default {
-  // Usa el preset del design system
-  presets: [preset],
-
-  // Define dónde buscar clases de Tailwind
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-
-    // IMPORTANTE: Incluye los componentes del design system
-    './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
-  ],
-};
-```
-
-## 6. Configurar PostCSS
-
-El archivo `postcss.config.js` ya debería estar creado. Verifica que contenga:
-
-```javascript
-export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};
-```
-
-## 7. Importar estilos globales
+**¡Nueva sintaxis con Tailwind CSS 4.1!** Ya no necesitas configuración de Tailwind.
 
 En tu `src/main.tsx`:
 
@@ -79,7 +39,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );
 ```
 
-## 8. Limpiar CSS por defecto
+## 5. Limpiar CSS por defecto
 
 En `src/index.css`, puedes eliminar todo el contenido ya que los estilos vienen del design system:
 
@@ -87,7 +47,18 @@ En `src/index.css`, puedes eliminar todo el contenido ya que los estilos vienen 
 /* Tu archivo puede estar vacío o tener solo estilos personalizados adicionales */
 ```
 
-## 9. Usar componentes
+## 6. Eliminar archivos de configuración antiguos (si existen)
+
+Si migraste desde Tailwind CSS 3.x, puedes **eliminar** estos archivos:
+
+```bash
+rm tailwind.config.js
+rm postcss.config.js  # Ya no es necesario
+```
+
+**Con Tailwind CSS 4.1, toda la configuración está en CSS. No necesitas archivos de configuración.**
+
+## 7. Usar componentes
 
 Actualiza `src/App.tsx`:
 

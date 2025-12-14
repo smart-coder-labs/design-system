@@ -14,7 +14,7 @@ const meta: Meta<typeof ProductCard> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

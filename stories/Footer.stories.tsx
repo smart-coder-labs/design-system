@@ -7,7 +7,7 @@ import { Button } from '../components/Button';
 const meta: Meta<typeof Footer> = {
     title: 'Layout/Footer',
     component: Footer,
-    tags: ['autodocs'],
+    tags: [],
     parameters: {
         layout: 'fullscreen',
     },

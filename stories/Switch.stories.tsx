@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 const meta: Meta<typeof Switch> = {
     title: 'Forms/Switch',
     component: Switch,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         size: {
             control: 'radio',

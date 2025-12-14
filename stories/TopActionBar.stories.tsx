@@ -14,7 +14,7 @@ const PlusIcon = () => <span>➕</span>;
 const meta: Meta<typeof TopActionBar> = {
     title: 'Navigation/TopActionBar',
     component: TopActionBar,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         glass: {
             control: 'boolean',

@@ -4,7 +4,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/Tabs';
 const meta: Meta<typeof Tabs> = {
     title: 'Navigation/Tabs',
     component: Tabs,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         defaultValue: {
             control: 'text',

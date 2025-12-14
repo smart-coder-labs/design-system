@@ -20,7 +20,7 @@ const ShareIcon = () => <span>🔗</span>;
 const meta: Meta<typeof CommandMenu> = {
     title: 'Navigation/CommandMenu',
     component: CommandMenu,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         isOpen: {
             control: 'boolean',

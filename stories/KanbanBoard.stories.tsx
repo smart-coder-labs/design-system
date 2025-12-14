@@ -57,7 +57,7 @@ const columns = [
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

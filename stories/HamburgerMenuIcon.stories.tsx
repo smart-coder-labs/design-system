@@ -5,7 +5,7 @@ import { HamburgerMenuIcon } from '../components/HamburgerMenuIcon';
 const meta: Meta<typeof HamburgerMenuIcon> = {
     title: 'Navigation/HamburgerMenuIcon',
     component: HamburgerMenuIcon,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         isOpen: {
             control: 'boolean',

@@ -14,7 +14,7 @@ const meta: Meta<typeof Label> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

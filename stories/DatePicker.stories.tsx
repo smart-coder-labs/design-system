@@ -5,7 +5,7 @@ import { DatePicker } from '../components/DatePicker';
 const meta: Meta<typeof DatePicker> = {
     title: 'Forms/DatePicker',
     component: DatePicker,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         value: { control: 'date' },
         minDate: { control: 'date' },

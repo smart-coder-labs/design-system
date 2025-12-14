@@ -7,7 +7,7 @@ const meta: Meta<typeof Gallery> = {
     parameters: {
         layout: 'padded',
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

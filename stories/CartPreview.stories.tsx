@@ -14,7 +14,7 @@ const meta: Meta<typeof CartPreview> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

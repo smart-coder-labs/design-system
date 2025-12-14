@@ -5,7 +5,7 @@ import { Download, FileText, Image, Video } from 'lucide-react';
 const meta: Meta<typeof ButtonWithDropdown> = {
     title: 'Buttons/ButtonWithDropdown',
     component: ButtonWithDropdown,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

@@ -5,7 +5,7 @@ import { Tag, Star, CheckCircle } from 'lucide-react';
 const meta: Meta<typeof Chip> = {
     title: 'Data Display/Chip',
     component: Chip,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

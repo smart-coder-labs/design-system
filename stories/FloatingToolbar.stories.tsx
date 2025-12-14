@@ -40,7 +40,7 @@ const meta: Meta<typeof FloatingToolbar> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

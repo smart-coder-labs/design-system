@@ -14,7 +14,7 @@ type User = {
 const meta = {
     title: 'Data Display/Table',
     component: Table<User>,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         striped: {
             control: 'boolean',

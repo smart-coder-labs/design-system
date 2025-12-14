@@ -4,7 +4,7 @@ import { MasonryLayout } from '../components/MasonryLayout';
 const meta: Meta<typeof MasonryLayout> = {
   title: 'Layout/MasonryLayout',
   component: MasonryLayout,
-  tags: ['autodocs'],
+  tags: [],
   parameters: {
     layout: 'fullscreen',
   },

@@ -6,7 +6,7 @@ import { Settings } from 'lucide-react';
 const meta: Meta<typeof Panel> = {
     title: 'Surfaces/Panel',
     component: Panel,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

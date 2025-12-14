@@ -5,7 +5,7 @@ import PaymentMethodSelector, { PaymentMethod } from '../components/PaymentMetho
 const meta: Meta<typeof PaymentMethodSelector> = {
   title: 'Payments/Payment Method Selector',
   component: PaymentMethodSelector,
-  tags: ['autodocs'],
+  tags: [],
 };
 
 export default meta;

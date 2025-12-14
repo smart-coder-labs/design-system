@@ -9,7 +9,7 @@ const meta: Meta<typeof ConfirmDialog> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

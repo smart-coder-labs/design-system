@@ -16,7 +16,7 @@ import { Input } from '../components/Input';
 const meta: Meta<typeof Sheet> = {
     title: 'Overlays/Sheet',
     component: Sheet,
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

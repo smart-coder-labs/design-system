@@ -24,7 +24,7 @@ A component that displays a list of events grouped by date, useful for showing a
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         onEventClick: { action: 'event clicked' },
     },

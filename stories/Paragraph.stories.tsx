@@ -13,7 +13,7 @@ const meta: Meta<typeof Paragraph> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

@@ -6,7 +6,7 @@ import { Plus, Download, Filter } from 'lucide-react';
 const meta: Meta<typeof SectionHeader> = {
     title: 'Layout/SectionHeader',
     component: SectionHeader,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         size: {
             control: 'radio',

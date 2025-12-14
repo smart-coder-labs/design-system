@@ -9,7 +9,7 @@ const meta = {
     parameters: {
         layout: 'padded',
     },
-    tags: ['autodocs'],
+    tags: [],
 } satisfies Meta<typeof TreeView>;
 
 export default meta;

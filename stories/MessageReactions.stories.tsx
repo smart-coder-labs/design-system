@@ -15,7 +15,7 @@ const meta = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 } satisfies Meta<typeof MessageReactions>;
 
 export default meta;

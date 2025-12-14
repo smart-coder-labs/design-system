@@ -5,7 +5,7 @@ import QuantitySelector from '../components/QuantitySelector';
 const meta: Meta<typeof QuantitySelector> = {
   title: 'Forms/Quantity Selector',
   component: QuantitySelector,
-  tags: ['autodocs'],
+  tags: [],
 };
 
 export default meta;

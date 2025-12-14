@@ -16,7 +16,7 @@ const LogoutIcon = () => <span>🚪</span>;
 const meta: Meta<typeof NavigationDrawer> = {
     title: 'Navigation/NavigationDrawer',
     component: NavigationDrawer,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         isOpen: {
             control: 'boolean',

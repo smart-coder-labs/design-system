@@ -5,7 +5,7 @@ import { Button } from '../components/Button';
 const meta: Meta<typeof NavBar> = {
     title: 'Navigation/NavBar',
     component: NavBar,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

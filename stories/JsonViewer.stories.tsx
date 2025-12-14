@@ -7,7 +7,7 @@ const meta = {
     parameters: {
         layout: 'padded',
     },
-    tags: ['autodocs'],
+    tags: [],
 } satisfies Meta<typeof JsonViewer>;
 
 export default meta;

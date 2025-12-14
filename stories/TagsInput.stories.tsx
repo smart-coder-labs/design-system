@@ -5,7 +5,7 @@ import { useState } from 'react';
 const meta: Meta<typeof TagsInput> = {
     title: 'Forms/TagsInput',
     component: TagsInput,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         disabled: {
             control: 'boolean',

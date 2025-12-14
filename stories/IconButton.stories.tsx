@@ -5,7 +5,7 @@ import { Plus, Trash2, Settings, Bell, Search } from 'lucide-react';
 const meta: Meta<typeof IconButton> = {
     title: 'Buttons/IconButton',
     component: IconButton,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

@@ -6,7 +6,7 @@ import { Button } from '../components/Button';
 const meta: Meta<typeof Snackbar> = {
     title: 'Surfaces/Snackbar',
     component: Snackbar,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

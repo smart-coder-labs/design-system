@@ -4,7 +4,7 @@ import { AvatarGroup } from '../components/AvatarGroup';
 const meta: Meta<typeof AvatarGroup> = {
     title: 'Data Display/AvatarGroup',
     component: AvatarGroup,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         size: {
             control: 'select',

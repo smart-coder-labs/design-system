@@ -5,7 +5,7 @@ import Counters, { CountersItem } from '../components/Counters';
 const meta: Meta<typeof Counters> = {
   title: 'Data/Counters',
   component: Counters,
-  tags: ['autodocs'],
+  tags: [],
 };
 
 export default meta;

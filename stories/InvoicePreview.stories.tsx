@@ -7,7 +7,7 @@ const meta: Meta<typeof InvoicePreview> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         status: {
             control: 'select',

@@ -4,7 +4,7 @@ import { SplitView } from '../components/SplitView';
 const meta: Meta<typeof SplitView> = {
   title: 'Layout/SplitView',
   component: SplitView,
-  tags: ['autodocs'],
+  tags: [],
   parameters: {
     layout: 'fullscreen',
   },

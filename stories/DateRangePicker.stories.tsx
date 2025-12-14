@@ -5,7 +5,7 @@ import { useState } from 'react';
 const meta: Meta<typeof DateRangePicker> = {
     title: 'Forms/DateRangePicker',
     component: DateRangePicker,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         dateFormat: {
             control: 'select',

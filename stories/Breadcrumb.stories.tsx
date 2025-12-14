@@ -17,7 +17,7 @@ import { ChevronDown } from 'lucide-react';
 const meta: Meta<typeof Breadcrumb> = {
     title: 'Navigation/Breadcrumb',
     component: Breadcrumb,
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

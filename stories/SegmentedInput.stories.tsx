@@ -5,7 +5,7 @@ import { useState } from 'react';
 const meta: Meta<typeof SegmentedInput> = {
     title: 'Forms/SegmentedInput',
     component: SegmentedInput,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         length: {
             control: { type: 'number', min: 3, max: 8 },

@@ -11,7 +11,7 @@ import { useState } from 'react';
 const meta: Meta<typeof Collapsible> = {
     title: 'Data Display/Collapsible',
     component: Collapsible,
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

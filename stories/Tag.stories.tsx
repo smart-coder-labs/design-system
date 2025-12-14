@@ -5,7 +5,7 @@ import { Hash, Star, Zap, Code } from 'lucide-react';
 const meta: Meta<typeof Tag> = {
     title: 'Data Display/Tag',
     component: Tag,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

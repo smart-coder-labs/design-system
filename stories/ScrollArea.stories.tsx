@@ -4,7 +4,7 @@ import { ScrollArea } from '../components/ScrollArea';
 const meta: Meta<typeof ScrollArea> = {
     title: 'Layout/ScrollArea',
     component: ScrollArea,
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

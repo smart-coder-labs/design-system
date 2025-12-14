@@ -5,7 +5,7 @@ import { Button } from '../components/Button';
 const meta: Meta<typeof Tooltip> = {
     title: 'Overlays/Tooltip',
     component: Tooltip,
-    tags: ['autodocs'],
+    tags: [],
     decorators: [
         (Story) => (
             <TooltipProvider>

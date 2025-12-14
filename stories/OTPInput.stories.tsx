@@ -5,7 +5,7 @@ import { useState } from 'react';
 const meta: Meta<typeof OTPInput> = {
     title: 'Forms/OTPInput',
     component: OTPInput,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         length: {
             control: { type: 'number', min: 4, max: 8 },

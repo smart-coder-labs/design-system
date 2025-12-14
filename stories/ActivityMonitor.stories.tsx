@@ -13,7 +13,7 @@ const meta = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         defaultTab: {
             control: 'select',

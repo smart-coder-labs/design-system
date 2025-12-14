@@ -5,7 +5,7 @@ import { useState } from 'react';
 const meta: Meta<typeof RichTextEditor> = {
     title: 'Forms/RichTextEditor',
     component: RichTextEditor,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         disabled: {
             control: 'boolean',

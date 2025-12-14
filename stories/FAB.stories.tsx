@@ -5,7 +5,7 @@ import { Plus, MessageCircle, Edit3, Share2 } from 'lucide-react';
 const meta: Meta<typeof FAB> = {
     title: 'Buttons/FAB',
     component: FAB,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

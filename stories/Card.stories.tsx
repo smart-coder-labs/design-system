@@ -5,7 +5,7 @@ import { Button } from '../components/Button';
 const meta: Meta<typeof Card> = {
     title: 'Data Display/Card',
     component: Card,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

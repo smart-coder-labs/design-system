@@ -4,7 +4,7 @@ import { StickyContainer } from '../components/StickyContainer';
 const meta: Meta<typeof StickyContainer> = {
   title: 'Layout/StickyContainer',
   component: StickyContainer,
-  tags: ['autodocs'],
+  tags: [],
   parameters: {
     layout: 'fullscreen',
   },

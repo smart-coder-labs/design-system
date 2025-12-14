@@ -7,7 +7,7 @@ const meta: Meta<typeof SignaturePad> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         penColor: { control: 'color' },
         backgroundColor: { control: 'color' },

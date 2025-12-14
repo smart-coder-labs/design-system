@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 const meta: Meta<typeof Modal> = {
     title: 'Overlays/Modal',
     component: Modal,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         size: {
             control: 'select',

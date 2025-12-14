@@ -6,7 +6,7 @@ import React from 'react';
 const meta: Meta<typeof Dropdown> = {
     title: 'Overlays/Dropdown',
     component: Dropdown,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         align: {
             control: 'select',

@@ -4,7 +4,7 @@ import { Stack, HStack, VStack, Grid } from '../components/Layout';
 const meta: Meta<typeof Stack> = {
     title: 'Layout/Layout',
     component: Stack,
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

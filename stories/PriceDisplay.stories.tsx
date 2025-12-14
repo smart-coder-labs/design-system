@@ -5,7 +5,7 @@ import PriceDisplay from '../components/PriceDisplay';
 const meta: Meta<typeof PriceDisplay> = {
   title: 'Data Display/Price Display',
   component: PriceDisplay,
-  tags: ['autodocs'],
+  tags: [],
 };
 
 export default meta;

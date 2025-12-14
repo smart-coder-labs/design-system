@@ -4,7 +4,7 @@ import { Textarea } from '../components/Input';
 const meta: Meta<typeof Textarea> = {
     title: 'Forms/Textarea',
     component: Textarea,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         resize: {
             control: 'select',

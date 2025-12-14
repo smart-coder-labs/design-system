@@ -4,7 +4,7 @@ import { Spinner } from '../components/Spinner';
 const meta: Meta<typeof Spinner> = {
     title: 'Feedback/Spinner',
     component: Spinner,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         size: {
             control: 'select',

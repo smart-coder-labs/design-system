@@ -7,7 +7,7 @@ const meta: Meta<typeof Sparkline> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         trend: {
             control: 'select',

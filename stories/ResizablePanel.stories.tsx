@@ -4,7 +4,7 @@ import { ResizablePanel } from '../components/ResizablePanel';
 const meta: Meta<typeof ResizablePanel> = {
   title: 'Layout/ResizablePanel',
   component: ResizablePanel,
-  tags: ['autodocs'],
+  tags: [],
   parameters: {
     layout: 'fullscreen',
   },

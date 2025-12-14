@@ -5,7 +5,7 @@ import React from 'react';
 const meta: Meta<typeof Combobox> = {
     title: 'Forms/Combobox',
     component: Combobox,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         onChange: { action: 'changed' },
     },

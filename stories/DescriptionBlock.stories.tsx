@@ -39,7 +39,7 @@ const meta = {
             default: 'light',
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 } satisfies Meta<typeof DescriptionBlock>;
 
 export default meta;

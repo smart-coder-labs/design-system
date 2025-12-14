@@ -24,7 +24,7 @@ A matrix component for managing permissions across different roles.
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

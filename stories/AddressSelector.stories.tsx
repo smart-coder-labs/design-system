@@ -5,7 +5,7 @@ import AddressSelector from '../components/AddressSelector';
 const meta: Meta<typeof AddressSelector> = {
   title: 'Forms/Address Selector',
   component: AddressSelector,
-  tags: ['autodocs'],
+  tags: [],
 };
 
 export default meta;

@@ -5,7 +5,7 @@ import { Button } from '../components/Button';
 const meta: Meta<typeof NotificationBadge> = {
     title: 'Feedback/NotificationBadge',
     component: NotificationBadge,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         count: { control: 'number' },
         max: { control: 'number' },

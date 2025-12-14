@@ -4,7 +4,7 @@ import { Avatar, AvatarImage, AvatarFallback } from '../components/Avatar';
 const meta: Meta<typeof Avatar> = {
     title: 'Data Display/Avatar',
     component: Avatar,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         size: {
             control: 'select',

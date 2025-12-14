@@ -5,7 +5,7 @@ import { CloudOff } from 'lucide-react';
 const meta: Meta<typeof OfflineState> = {
     title: 'Surfaces/OfflineState',
     component: OfflineState,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         title: { control: 'text' },
         description: { control: 'text' },

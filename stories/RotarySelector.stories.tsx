@@ -12,7 +12,7 @@ const LightIcon = () => <span>💡</span>;
 const meta: Meta<typeof RotarySelector> = {
     title: 'Forms/RotarySelector',
     component: RotarySelector,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         value: { control: 'text' },
         size: {

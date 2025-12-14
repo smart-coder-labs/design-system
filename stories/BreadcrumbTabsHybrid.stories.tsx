@@ -29,7 +29,7 @@ const meta: Meta<typeof BreadcrumbTabsHybrid> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

@@ -11,7 +11,7 @@ import { Input } from '../components/Input';
 const meta: Meta<typeof Popover> = {
     title: 'Overlays/Popover',
     component: Popover,
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

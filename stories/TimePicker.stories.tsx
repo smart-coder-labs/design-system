@@ -5,7 +5,7 @@ import { useState } from 'react';
 const meta: Meta<typeof TimePicker> = {
     title: 'Forms/TimePicker',
     component: TimePicker,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         format: {
             control: 'radio',

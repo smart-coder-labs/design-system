@@ -5,7 +5,7 @@ import { Save, Download, Share2, Copy } from 'lucide-react';
 const meta: Meta<typeof SplitButton> = {
     title: 'Buttons/SplitButton',
     component: SplitButton,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

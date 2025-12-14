@@ -5,7 +5,7 @@ import { Terminal } from 'lucide-react';
 const meta: Meta<typeof Alert> = {
     title: 'Feedback/Alert',
     component: Alert,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

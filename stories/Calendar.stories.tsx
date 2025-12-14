@@ -49,7 +49,7 @@ const [events, setEvents] = useState<CalendarEvent[]>([]);
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

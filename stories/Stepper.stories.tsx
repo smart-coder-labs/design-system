@@ -9,7 +9,7 @@ const meta: Meta<typeof Stepper> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         orientation: {
             control: 'radio',

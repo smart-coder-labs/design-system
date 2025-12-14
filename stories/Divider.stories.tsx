@@ -5,7 +5,7 @@ import { Card } from '../components/Card';
 const meta: Meta<typeof Divider> = {
     title: 'Layout/Divider',
     component: Divider,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         orientation: {
             control: 'radio',

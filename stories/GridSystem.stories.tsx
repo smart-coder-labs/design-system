@@ -4,7 +4,7 @@ import { GridContainer, Row, Col } from '../components/GridSystem';
 const meta: Meta<typeof GridContainer> = {
     title: 'Layout/GridSystem',
     component: GridContainer,
-    tags: ['autodocs'],
+    tags: [],
     parameters: {
         layout: 'fullscreen',
     },

@@ -13,7 +13,7 @@ const meta: Meta<typeof Caption> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

@@ -4,7 +4,7 @@ import { WindowFrame } from '../components/WindowFrame';
 const meta: Meta<typeof WindowFrame> = {
     title: 'Surfaces/WindowFrame',
     component: WindowFrame,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

@@ -7,7 +7,7 @@ import { AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
 const meta: Meta<typeof ReviewsList> = {
     title: 'Data Display/Reviews & Ratings',
     component: ReviewsList,
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

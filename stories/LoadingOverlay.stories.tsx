@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 const meta: Meta<typeof LoadingOverlay> = {
     title: 'Surfaces/LoadingOverlay',
     component: LoadingOverlay,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         isLoading: { control: 'boolean' },
         message: { control: 'text' },

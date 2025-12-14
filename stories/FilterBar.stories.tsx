@@ -10,7 +10,7 @@ const meta: Meta<typeof FilterBar> = {
     parameters: {
         layout: 'padded',
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

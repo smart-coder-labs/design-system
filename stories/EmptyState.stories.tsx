@@ -6,7 +6,7 @@ import { FolderOpen, Search, Inbox, FileQuestion, Plus } from 'lucide-react';
 const meta: Meta<typeof EmptyState> = {
     title: 'Surfaces/EmptyState',
     component: EmptyState,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         title: { control: 'text' },
         description: { control: 'text' },

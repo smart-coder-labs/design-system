@@ -5,7 +5,7 @@ import { Mail, Phone, MessageCircle, Video, Calendar } from 'lucide-react';
 const meta: Meta<typeof FABGroup> = {
     title: 'Buttons/FABGroup',
     component: FABGroup,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         position: {
             control: 'select',

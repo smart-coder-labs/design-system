@@ -9,7 +9,7 @@ const meta: Meta<typeof ErrorBoundary> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

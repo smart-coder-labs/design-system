@@ -5,7 +5,7 @@ import { useState } from 'react';
 const meta: Meta<typeof RatingInput> = {
     title: 'Forms/RatingInput',
     component: RatingInput,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         size: {
             control: 'select',

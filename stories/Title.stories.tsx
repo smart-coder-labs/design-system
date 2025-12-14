@@ -14,7 +14,7 @@ const meta: Meta<typeof Title> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

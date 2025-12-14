@@ -8,7 +8,7 @@ const meta = {
     parameters: {
         layout: 'padded',
     },
-    tags: ['autodocs'],
+    tags: [],
 } satisfies Meta<typeof KPIBlock>;
 
 export default meta;

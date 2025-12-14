@@ -13,7 +13,7 @@ const meta: Meta<typeof OrderSummary> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

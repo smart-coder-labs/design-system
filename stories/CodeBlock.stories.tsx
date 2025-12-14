@@ -13,7 +13,7 @@ const meta: Meta<typeof CodeBlock> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

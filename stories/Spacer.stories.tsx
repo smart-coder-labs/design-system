@@ -6,7 +6,7 @@ import { Card } from '../components/Card';
 const meta: Meta<typeof Spacer> = {
     title: 'Layout/Spacer',
     component: Spacer,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         size: {
             control: 'select',

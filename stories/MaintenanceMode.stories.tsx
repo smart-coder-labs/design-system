@@ -6,7 +6,7 @@ import { RefreshCw } from 'lucide-react';
 const meta: Meta<typeof MaintenanceMode> = {
     title: 'Surfaces/MaintenanceMode',
     component: MaintenanceMode,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         title: { control: 'text' },
         description: { control: 'text' },

@@ -7,7 +7,7 @@ const meta: Meta<typeof ImageCarousel> = {
     parameters: {
         layout: 'fullscreen',
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

@@ -26,7 +26,7 @@ const ToastDemo = (args: any) => {
 const meta: Meta<typeof Toast> = {
     title: 'Feedback/Toast',
     component: Toast,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

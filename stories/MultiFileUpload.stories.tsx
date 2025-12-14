@@ -5,7 +5,7 @@ import { useState } from 'react';
 const meta: Meta<typeof MultiFileUpload> = {
     title: 'Forms/MultiFileUpload',
     component: MultiFileUpload,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         accept: {
             control: 'text',

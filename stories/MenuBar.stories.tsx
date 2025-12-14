@@ -20,7 +20,7 @@ const UserIcon = () => <span>👤</span>;
 const meta: Meta<typeof MenuBar> = {
     title: 'Navigation/MenuBar',
     component: MenuBar,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         className: { control: false },
     },

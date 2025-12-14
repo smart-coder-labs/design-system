@@ -6,7 +6,7 @@ import { Select } from '../components/Select';
 const meta: Meta<typeof InspectorPanel> = {
     title: 'Surfaces/InspectorPanel',
     component: InspectorPanel,
-    tags: ['autodocs'],
+    tags: [],
     parameters: {
         layout: 'fullscreen',
     },

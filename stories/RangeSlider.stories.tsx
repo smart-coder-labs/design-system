@@ -4,7 +4,7 @@ import { RangeSlider } from '../components/RangeSlider';
 const meta: Meta<typeof RangeSlider> = {
     title: 'Forms/RangeSlider',
     component: RangeSlider,
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

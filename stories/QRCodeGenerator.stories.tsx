@@ -7,7 +7,7 @@ const meta: Meta<typeof QRCodeGenerator> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         color: { control: 'color' },
         backgroundColor: { control: 'color' },

@@ -7,7 +7,7 @@ const meta: Meta<typeof VideoPlayer> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

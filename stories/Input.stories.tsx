@@ -4,7 +4,7 @@ import { Input } from '../components/Input';
 const meta: Meta<typeof Input> = {
     title: 'Forms/Input',
     component: Input,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         inputSize: {
             control: 'radio',

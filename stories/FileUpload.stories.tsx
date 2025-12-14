@@ -5,7 +5,7 @@ import { useState } from 'react';
 const meta: Meta<typeof FileUpload> = {
     title: 'Forms/FileUpload',
     component: FileUpload,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         accept: {
             control: 'text',

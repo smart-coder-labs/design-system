@@ -19,7 +19,7 @@ const TerminalIcon = () => <span>⌨️</span>;
 const meta: Meta<typeof DockBar> = {
     title: 'Navigation/DockBar',
     component: DockBar,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         position: {
             control: 'select',

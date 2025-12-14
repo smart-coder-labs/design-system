@@ -24,7 +24,7 @@ A component for constructing complex filtering logic with nested groups and vari
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

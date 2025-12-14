@@ -9,7 +9,7 @@ const SettingsIcon = () => <span>⚙️</span>;
 const meta: Meta<typeof Sidebar> = {
     title: 'Navigation/Sidebar',
     component: Sidebar,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         className: { control: false },
     },

@@ -13,7 +13,7 @@ const meta: Meta<typeof Heading> = {
             },
         },
     },
-    tags: ['autodocs'],
+    tags: [],
 };
 
 export default meta;

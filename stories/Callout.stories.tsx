@@ -5,7 +5,7 @@ import { Lightbulb } from 'lucide-react';
 const meta: Meta<typeof Callout> = {
     title: 'Surfaces/Callout',
     component: Callout,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         variant: {
             control: 'select',

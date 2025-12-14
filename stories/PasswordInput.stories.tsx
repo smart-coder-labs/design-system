@@ -5,7 +5,7 @@ import { useState } from 'react';
 const meta: Meta<typeof PasswordInput> = {
     title: 'Forms/PasswordInput',
     component: PasswordInput,
-    tags: ['autodocs'],
+    tags: [],
     argTypes: {
         showStrengthMeter: {
             control: 'boolean',
