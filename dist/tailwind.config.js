@@ -1,21 +1,75 @@
 import { tokens } from './tokens';
 const config = {
-    content: [
-        './src/**/*.{js,ts,jsx,tsx,mdx}',
-        './components/**/*.{js,ts,jsx,tsx,mdx}',
-    ],
     darkMode: 'class',
     theme: {
         extend: {
             colors: {
-                // Light mode
-                background: tokens.colors.light.background,
-                surface: tokens.colors.light.surface,
-                text: tokens.colors.light.text,
-                border: tokens.colors.light.border,
-                accent: tokens.colors.light.accent,
-                status: tokens.colors.light.status,
+                /* =========================
+                   LIGHT MODE
+                   ========================= */
+                background: {
+                    primary: '#ffffff',
+                    secondary: '#f5f5f7',
+                    tertiary: '#e8e8ed',
+                    elevated: '#ffffff',
+                },
+                surface: {
+                    primary: '#ffffff',
+                    secondary: '#f5f5f7',
+                    glass: 'rgba(255, 255, 255, 0.72)',
+                    'glass-dark': 'rgba(255, 255, 255, 0.85)',
+                },
+                text: {
+                    primary: '#1d1d1f',
+                    secondary: '#6e6e73',
+                    tertiary: '#86868b',
+                    quaternary: '#a1a1a6',
+                    inverse: '#ffffff',
+                },
+                border: {
+                    primary: 'rgba(0, 0, 0, 0.08)',
+                    secondary: 'rgba(0, 0, 0, 0.04)',
+                    focus: 'rgba(0, 125, 250, 0.4)',
+                },
+                accent: {
+                    blue: '#007aff',
+                    'blue-hover': '#0051d5',
+                    'blue-active': '#004fc4',
+                    'blue-tint': 'rgba(0, 122, 255, 0.1)',
+                },
+                status: {
+                    success: '#34c759',
+                    warning: '#ff9500',
+                    error: '#ff3b30',
+                    info: '#5ac8fa',
+                },
+                /* Alias común (shadcn / radix / iconos) */
+                foreground: '#1d1d1f',
             },
+            /* =========================
+               DARK MODE (via `dark:`)
+               ========================= */
+            textColor: {
+                primary: '#ffffff',
+                secondary: '#98989d',
+                tertiary: '#6e6e73',
+                quaternary: '#48484a',
+                inverse: '#000000',
+            },
+            backgroundColor: {
+                primary: '#000000',
+                secondary: '#1c1c1e',
+                tertiary: '#2c2c2e',
+                elevated: '#1c1c1e',
+            },
+            borderColor: {
+                primary: 'rgba(255, 255, 255, 0.12)',
+                secondary: 'rgba(255, 255, 255, 0.06)',
+                focus: 'rgba(10, 132, 255, 0.6)',
+            },
+            /* =========================
+               TYPOGRAPHY & TOKENS
+               ========================= */
             fontFamily: {
                 sans: tokens.typography.fontFamily.base.split(', '),
                 mono: tokens.typography.fontFamily.mono.split(', '),
@@ -24,7 +78,12 @@ const config = {
             fontWeight: tokens.typography.fontWeight,
             lineHeight: tokens.typography.lineHeight,
             letterSpacing: tokens.typography.letterSpacing,
+            spacing: tokens.spacing,
             borderRadius: tokens.radius,
+            zIndex: tokens.zIndex,
+            blur: tokens.blur,
+            backdropBlur: tokens.blur,
+            opacity: tokens.opacity,
             boxShadow: {
                 none: tokens.shadows.none,
                 xs: tokens.shadows.xs,
@@ -38,36 +97,31 @@ const config = {
                 'dark-lg': tokens.shadows.dark.lg,
                 'dark-xl': tokens.shadows.dark.xl,
             },
-            blur: tokens.blur,
-            opacity: tokens.opacity,
-            spacing: tokens.spacing,
             transitionDuration: tokens.motion.duration,
             transitionTimingFunction: {
-                'apple': tokens.motion.easing.standard,
+                apple: tokens.motion.easing.standard,
                 'apple-entrance': tokens.motion.easing.entrance,
                 'apple-exit': tokens.motion.easing.exit,
             },
             keyframes: {
-                "spinner-fade": {
-                    "0%": { opacity: "1" },
-                    "100%": { opacity: "0.2" },
+                'spinner-fade': {
+                    '0%': { opacity: '1' },
+                    '100%': { opacity: '0.2' },
                 },
-                "accordion-down": {
-                    from: { height: "0" },
-                    to: { height: "var(--radix-accordion-content-height)" },
+                'accordion-down': {
+                    from: { height: '0' },
+                    to: { height: 'var(--radix-accordion-content-height)' },
                 },
-                "accordion-up": {
-                    from: { height: "var(--radix-accordion-content-height)" },
-                    to: { height: "0" },
+                'accordion-up': {
+                    from: { height: 'var(--radix-accordion-content-height)' },
+                    to: { height: '0' },
                 },
             },
             animation: {
-                "spinner-fade": "spinner-fade 0.8s linear infinite",
-                "accordion-down": "accordion-down 0.2s ease-out",
-                "accordion-up": "accordion-up 0.2s ease-out",
+                'spinner-fade': 'spinner-fade 0.8s linear infinite',
+                'accordion-down': 'accordion-down 0.2s ease-out',
+                'accordion-up': 'accordion-up 0.2s ease-out',
             },
-            zIndex: tokens.zIndex,
-            backdropBlur: tokens.blur,
         },
     },
     plugins: [],

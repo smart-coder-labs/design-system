@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 /* ========================================
    COMPONENT
    ======================================== */
-export const AIThinkingIndicator = React.forwardRef(({ variant = 'dots', size = 'md', color = 'rgb(0, 122, 255)', message = 'Thinking...', className, ...props }, ref) => {
+export const AIThinkingIndicator = React.forwardRef(({ variant = 'dots', size = 'md', color = 'rgb(0, 122, 255)', message = '', className, ...props }, ref) => {
     const sizeStyles = {
         sm: { dot: 'w-1.5 h-1.5', gap: 'gap-1', text: 'text-xs' },
         md: { dot: 'w-2 h-2', gap: 'gap-1.5', text: 'text-sm' },

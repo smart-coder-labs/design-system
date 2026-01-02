@@ -5,9 +5,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
 
 /* ========================================
    CSS VARIABLES
@@ -99,7 +98,7 @@
 
 @layer base {
   * {
-    @apply border-border-primary;
+    border-color: var(--color-border-primary);
   }
 
   html {
@@ -109,7 +108,8 @@
   }
 
   body {
-    @apply bg-background-primary text-text-primary;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
     font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
     font-size: 15px;
     line-height: 1.5;
@@ -180,7 +180,10 @@
 
   /* Focus visible */
   .focus-ring {
-    @apply outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2;
+    outline: none;
+    --tw-ring-width: 2px;
+    --tw-ring-color: var(--color-accent-blue);
+    --tw-ring-offset-width: 2px;
   }
 
   /* Smooth transitions */

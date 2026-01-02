@@ -12,7 +12,7 @@ const alertVariants = cva(
             variant: {
                 default: "bg-surface-secondary text-text-primary border-border-primary",
                 destructive:
-                    "border-status-error/50 text-status-error dark:border-status-error [&>svg]:text-status-error bg-status-error/10",
+                    "border-status-error/50 text-status-error dark:border-status-error [&>svg]:text-status-error bg-red-600/10",
                 success:
                     "border-status-success/50 text-status-success dark:border-status-success [&>svg]:text-status-success bg-status-success/10",
                 warning:

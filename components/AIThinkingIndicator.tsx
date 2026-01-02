@@ -26,7 +26,7 @@ export const AIThinkingIndicator = React.forwardRef<HTMLDivElement, AIThinkingIn
             variant = 'dots',
             size = 'md',
             color = 'rgb(0, 122, 255)',
-            message = 'Thinking...',
+            message = '',
             className,
             ...props
         },

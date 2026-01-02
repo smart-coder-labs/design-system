@@ -7,7 +7,7 @@ import { tokens } from './tokens';
  * Preset de Tailwind para el Apple Design System
  *
  * Uso en tu proyecto:
- * ```javascript
+ * javascript
  * import preset from '@smart-coder-labs/design-system/tailwind.preset';
  *
  * export default {
@@ -15,20 +15,38 @@ import { tokens } from './tokens';
  *   content: ['./src/**\/*.{js,ts,jsx,tsx}'],
  *   // ... resto de tu configuración
  * };
- * ```
+ *
  */
 const preset = {
     darkMode: 'class',
     theme: {
         extend: {
             colors: {
-                // Light mode colors
-                background: tokens.colors.light.background,
-                surface: tokens.colors.light.surface,
-                text: tokens.colors.light.text,
-                border: tokens.colors.light.border,
-                accent: tokens.colors.light.accent,
-                status: tokens.colors.light.status,
+                // Using CSS variables for automatic dark mode support
+                'background-primary': 'var(--color-bg-primary)',
+                'background-secondary': 'var(--color-bg-secondary)',
+                'background-tertiary': 'var(--color-bg-tertiary)',
+                'background-elevated': 'var(--color-bg-elevated)',
+                'surface-primary': 'var(--color-surface-primary)',
+                'surface-secondary': 'var(--color-surface-secondary)',
+                'surface-glass': 'var(--color-surface-glass)',
+                'surface-glass-dark': 'var(--color-surface-glass-dark)',
+                'text-primary': 'var(--color-text-primary)',
+                'text-secondary': 'var(--color-text-secondary)',
+                'text-tertiary': 'var(--color-text-tertiary)',
+                'text-quaternary': 'var(--color-text-quaternary)',
+                'text-inverse': 'var(--color-text-inverse)',
+                'border-primary': 'var(--color-border-primary)',
+                'border-secondary': 'var(--color-border-secondary)',
+                'border-focus': 'var(--color-border-focus)',
+                'accent-blue': 'var(--color-accent-blue)',
+                'accent-blue-hover': 'var(--color-accent-blue-hover)',
+                'accent-blue-active': 'var(--color-accent-blue-active)',
+                'accent-blue-tint': 'var(--color-accent-blue-tint)',
+                'status-success': 'var(--color-status-success)',
+                'status-warning': 'var(--color-status-warning)',
+                'status-error': 'var(--color-status-error)',
+                'status-info': 'var(--color-status-info)',
             },
             fontFamily: {
                 sans: tokens.typography.fontFamily.base.split(', '),

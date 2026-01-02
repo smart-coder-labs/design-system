@@ -24,6 +24,7 @@
     "**/*.test.ts",
     "**/*.test.tsx",
     ".storybook",
-    "stories"
+    "stories",
+    "vite.config.ts"
   ]
 }

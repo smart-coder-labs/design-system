@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import tailwindcss from '@tailwindcss/postcss';
 
 const config: StorybookConfig = {
     stories: [
@@ -15,9 +16,17 @@ const config: StorybookConfig = {
         options: {},
     },
     docs: {
-        autodocs: "tag",
     },
     async viteFinal(config) {
+        // Ensure PostCSS is configured for Tailwind 4
+        config.css = {
+            postcss: {
+                plugins: [
+                    tailwindcss
+                ]
+            }
+        };
+
         if (config.optimizeDeps) {
             config.optimizeDeps.include = [
                 ...(config.optimizeDeps.include || []),
