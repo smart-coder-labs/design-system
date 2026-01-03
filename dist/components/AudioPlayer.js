@@ -1,10 +1,9 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState, useRef, useEffect } from 'react';
-import { Play, Pause, Volume2, VolumeX, SkipBack, SkipForward, MoreHorizontal, Download } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, SkipBack, SkipForward } from 'lucide-react';
 import { Slider } from './Slider';
-import { Button } from './Button';
 import { cn } from '../lib/utils';
-import { Dropdown, DropdownItem } from './Dropdown';
+import { Combobox } from './Combobox';
 export const AudioPlayer = ({ src, title, artist, coverArt, autoPlay = false, className, }) => {
     const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -38,6 +37,13 @@ export const AudioPlayer = ({ src, title, artist, coverArt, autoPlay = false, cl
             audio.removeEventListener('ended', handleEnded);
         };
     }, [autoPlay]);
+    const playbackOptions = [
+        { value: "0.5", label: "Speed: 0.5x" },
+        { value: "1", label: "Speed: 1.0x" },
+        { value: "1.5", label: "Speed: 1.5x" },
+        { value: "2", label: "Speed: 2.0x" },
+        { value: "download", label: "Download" },
+    ];
     const togglePlay = () => {
         if (audioRef.current) {
             if (isPlaying) {
@@ -50,12 +56,12 @@ export const AudioPlayer = ({ src, title, artist, coverArt, autoPlay = false, cl
     };
     const handleSeek = (value) => {
         if (audioRef.current) {
-            audioRef.current.currentTime = value[0];
-            setCurrentTime(value[0]);
+            audioRef.current.currentTime = value;
+            setCurrentTime(value);
         }
     };
     const handleVolumeChange = (value) => {
-        const newVolume = value[0];
+        const newVolume = value;
         if (audioRef.current) {
             audioRef.current.volume = newVolume;
             setVolume(newVolume);
@@ -94,6 +100,17 @@ export const AudioPlayer = ({ src, title, artist, coverArt, autoPlay = false, cl
         return `${minutes}:${seconds.toString().padStart(2, '0')}`;
     };
     return (_jsxs("div", { className: cn("flex flex-col gap-4 p-4 rounded-2xl bg-surface-primary border border-border-primary shadow-sm w-full max-w-md", className), children: [_jsx("audio", { ref: audioRef, src: src }), _jsxs("div", { className: "flex items-center gap-4", children: [coverArt ? (_jsx("div", { className: cn("w-16 h-16 rounded-xl overflow-hidden bg-surface-secondary flex-shrink-0 shadow-inner", isPlaying && "animate-pulse-slow" // Optional subtle animation
-                        ), children: _jsx("img", { src: coverArt, alt: title, className: "w-full h-full object-cover" }) })) : (_jsx("div", { className: "w-16 h-16 rounded-xl bg-gradient-to-br from-accent-blue to-purple-500 flex-shrink-0 flex items-center justify-center text-black font-bold text-xl shadow-inner", children: title ? title[0] : _jsx(Volume2, { className: "text-white" }) })), _jsxs("div", { className: "flex-1 min-w-0", children: [_jsx("h3", { className: "font-semibold text-text-primary truncate", children: title || "Unknown Track" }), _jsx("p", { className: "text-sm text-text-secondary truncate", children: artist || "Unknown Artist" })] }), _jsxs(Dropdown, { trigger: _jsx(Button, { variant: "ghost", size: "sm", className: "h-8 w-8 p-0", children: _jsx(MoreHorizontal, { className: "w-4 h-4" }) }), children: [_jsx(DropdownItem, { onSelect: () => changePlaybackRate(0.5), children: "Speed: 0.5x" }), _jsxs(DropdownItem, { onSelect: () => changePlaybackRate(1), children: ["Speed: 1.0x ", playbackRate === 1 && '✓'] }), _jsxs(DropdownItem, { onSelect: () => changePlaybackRate(1.5), children: ["Speed: 1.5x ", playbackRate === 1.5 && '✓'] }), _jsxs(DropdownItem, { onSelect: () => changePlaybackRate(2), children: ["Speed: 2.0x ", playbackRate === 2 && '✓'] }), _jsx("div", { className: "h-px bg-border-primary my-1" }), _jsxs(DropdownItem, { onSelect: () => window.open(src, '_blank'), children: [_jsx(Download, { className: "w-3 h-3 mr-2" }), " Download"] })] })] }), _jsxs("div", { className: "flex flex-col gap-1", children: [_jsx(Slider, { value: [currentTime], min: 0, max: duration || 100, step: 0.1, onValueChange: handleSeek, className: "py-2" }), _jsxs("div", { className: "flex justify-between text-xs font-mono text-text-tertiary", children: [_jsx("span", { children: formatTime(currentTime) }), _jsx("span", { children: formatTime(duration) })] })] }), _jsxs("div", { className: "flex items-center justify-between", children: [_jsxs("div", { className: "flex items-center gap-2 group w-24", children: [_jsx("button", { onClick: toggleMute, className: "text-text-secondary hover:text-text-primary transition-colors", children: isMuted || volume === 0 ? _jsx(VolumeX, { className: "w-4 h-4" }) : _jsx(Volume2, { className: "w-4 h-4" }) }), _jsx(Slider, { value: [isMuted ? 0 : volume], min: 0, max: 1, step: 0.01, onValueChange: handleVolumeChange, className: "w-full" })] }), _jsxs("div", { className: "flex items-center gap-4", children: [_jsx("button", { onClick: () => skip(-10), className: "text-text-secondary hover:text-text-primary transition-colors p-1", children: _jsx(SkipBack, { className: "w-5 h-5" }) }), _jsx("button", { onClick: togglePlay, className: "w-12 h-12 rounded-full bg-text-primary text-surface-primary flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-md", children: isPlaying ? (_jsx(Pause, { className: "w-5 h-5" })) : (_jsx(Play, { className: "w-5 h-5 ml-0.5" })) }), _jsx("button", { onClick: () => skip(10), className: "text-text-secondary hover:text-text-primary transition-colors p-1", children: _jsx(SkipForward, { className: "w-5 h-5" }) })] }), _jsx("div", { className: "w-24 flex justify-end", children: _jsxs("span", { className: "text-xs font-medium text-accent-blue bg-accent-blue/10 px-2 py-1 rounded-md", children: [playbackRate, "x"] }) })] })] }));
+                        ), children: _jsx("img", { src: coverArt, alt: title, className: "w-full h-full object-cover" }) })) : (_jsx("div", { className: "w-16 h-16 rounded-xl bg-gradient-to-br from-accent-blue to-purple-500 flex-shrink-0 flex items-center justify-center text-black font-bold text-xl shadow-inner", children: title ? title[0] : _jsx(Volume2, { className: "text-white" }) })), _jsxs("div", { className: "flex-1 min-w-0", children: [_jsx("h3", { className: "font-semibold text-text-primary truncate", children: title || "Unknown Track" }), _jsx("p", { className: "text-sm text-text-secondary truncate", children: artist || "Unknown Artist" })] }), _jsx("div", { className: "w-36", children: _jsx(Combobox, { items: playbackOptions.map((option) => ({
+                                ...option,
+                                label: option.value !== "download"
+                                    ? `${option.label}${playbackRate === Number(option.value) ? " ✓" : ""}`
+                                    : option.label,
+                            })), value: String(playbackRate), onChange: (val) => {
+                                if (val === "download") {
+                                    window.open(src, "_blank");
+                                    return;
+                                }
+                                changePlaybackRate(Number(val));
+                            }, placeholder: "Options" }) })] }), _jsxs("div", { className: "flex flex-col gap-1", children: [_jsx(Slider, { value: currentTime, min: 0, max: duration || 100, step: 0.1, onValueChange: handleSeek, className: "py-2" }), _jsxs("div", { className: "flex justify-between text-xs font-mono text-text-tertiary", children: [_jsx("span", { children: formatTime(currentTime) }), _jsx("span", { children: formatTime(duration) })] })] }), _jsxs("div", { className: "flex items-center justify-between", children: [_jsxs("div", { className: "flex items-center gap-2 group w-24", children: [_jsx("button", { onClick: toggleMute, className: "text-text-secondary hover:text-text-primary transition-colors", children: isMuted || volume === 0 ? _jsx(VolumeX, { className: "w-4 h-4" }) : _jsx(Volume2, { className: "w-4 h-4" }) }), _jsx(Slider, { value: isMuted ? 0 : volume, min: 0, max: 1, step: 0.01, onValueChange: handleVolumeChange, className: "w-full" })] }), _jsxs("div", { className: "flex items-center gap-4", children: [_jsx("button", { onClick: () => skip(-10), className: "text-text-secondary hover:text-text-primary transition-colors p-1", children: _jsx(SkipBack, { className: "w-5 h-5" }) }), _jsx("button", { onClick: togglePlay, className: "w-12 h-12 rounded-full bg-text-primary text-surface-primary flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-md", children: isPlaying ? (_jsx(Pause, { className: "w-5 h-5" })) : (_jsx(Play, { className: "w-5 h-5 ml-0.5" })) }), _jsx("button", { onClick: () => skip(10), className: "text-text-secondary hover:text-text-primary transition-colors p-1", children: _jsx(SkipForward, { className: "w-5 h-5" }) })] }), _jsx("div", { className: "w-24 flex justify-end", children: _jsxs("span", { className: "text-xs font-medium text-accent-blue bg-accent-blue/10 px-2 py-1 rounded-md", children: [playbackRate, "x"] }) })] })] }));
 };
 //# sourceMappingURL=AudioPlayer.js.map

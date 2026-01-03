@@ -81,7 +81,7 @@ const PopoverTrigger = React.forwardRef<HTMLElement, PopoverTriggerProps>(
         };
 
         if (asChild && React.isValidElement(children)) {
-            return React.cloneElement(children, {
+            return React.cloneElement(children as React.ReactElement, {
                 ref: mergeRefs((children as any).ref, mergedRef),
                 onClick: (event: React.MouseEvent<HTMLElement>) => {
                     (children as any).props?.onClick?.(event);
@@ -91,7 +91,7 @@ const PopoverTrigger = React.forwardRef<HTMLElement, PopoverTriggerProps>(
                 "aria-haspopup": "dialog",
                 "aria-expanded": open,
                 ...props,
-            });
+            } as any);
         }
 
         return (

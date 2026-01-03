@@ -3,10 +3,10 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import * as React from "react";
 import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
-import { Filter, Settings2, Pin, PinOff, Download, Check, } from "lucide-react";
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
+import { Download, Filter, Pin, PinOff, Settings2 } from "lucide-react";
 import { Table } from "./Table";
+import { Checkbox } from "./Checkbox";
+import { Combobox } from "./Combobox";
 /* -------------------------------------------------------------------------- */
 /*                               ROOT COMPONENT                               */
 /* -------------------------------------------------------------------------- */
@@ -197,30 +197,51 @@ function DataGridRow({ row, index, columns, columnStates, selectable, selected, 
 function PaginationButton({ disabled, children, onClick, }) {
     return (_jsx("button", { disabled: disabled, onClick: onClick, className: cn("p-2 rounded-lg border border-border-primary text-text-secondary transition-all", "hover:bg-surface-secondary hover:text-text-primary", "disabled:opacity-40 disabled:cursor-not-allowed"), children: children }));
 }
-function Checkbox({ checked, onCheckedChange, }) {
-    return (_jsx(CheckboxPrimitive.Root, { checked: checked, onCheckedChange: onCheckedChange, className: cn("h-4 w-4 rounded-md border border-border-primary bg-surface-primary flex items-center justify-center", "data-[state=checked]:bg-accent-blue data-[state=checked]:border-accent-blue", "transition-colors"), children: _jsx(CheckboxPrimitive.Indicator, { children: _jsx(Check, { className: "h-3 w-3 text-white" }) }) }));
-}
 function FilterButton({ column, value, onChange, }) {
     const [open, setOpen] = React.useState(false);
     const [localValue, setLocalValue] = React.useState(value);
-    return (_jsxs(DropdownMenuPrimitive.Root, { open: open, onOpenChange: setOpen, children: [_jsx(DropdownMenuPrimitive.Trigger, { asChild: true, children: _jsx("button", { className: cn("p-1 rounded-md transition-colors", value
-                        ? "text-accent-blue bg-accent-blue/10"
-                        : "text-text-tertiary hover:text-text-secondary"), children: _jsx(Filter, { className: "w-3.5 h-3.5" }) }) }), _jsx(DropdownMenuPrimitive.Portal, { children: _jsx(DropdownMenuPrimitive.Content, { align: "end", className: "z-50 min-w-[200px] p-2 bg-surface-elevated border border-border-primary rounded-xl shadow-lg", children: _jsxs("div", { className: "flex flex-col gap-2", children: [_jsx("input", { type: "text", placeholder: `Filter ${column.header}...`, value: localValue, onChange: (e) => setLocalValue(e.target.value), className: "px-3 py-2 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-blue" }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx("button", { onClick: () => {
-                                            onChange(localValue);
-                                            setOpen(false);
-                                        }, className: "flex-1 px-3 py-1.5 text-sm bg-accent-blue text-white rounded-lg hover:bg-accent-blue/90 transition-colors", children: "Apply" }), _jsx("button", { onClick: () => {
-                                            setLocalValue("");
-                                            onChange("");
-                                            setOpen(false);
-                                        }, className: "px-3 py-1.5 text-sm bg-surface-secondary text-text-secondary rounded-lg hover:text-text-primary transition-colors", children: "Clear" })] })] }) }) })] }));
+    const containerRef = React.useRef(null);
+    const isSelect = column.filterType === "select" && column.filterOptions?.length;
+    React.useEffect(() => {
+        if (!open)
+            return;
+        const handleClick = (event) => {
+            if (containerRef.current && !containerRef.current.contains(event.target)) {
+                setOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClick);
+        return () => document.removeEventListener("mousedown", handleClick);
+    }, [open]);
+    return (_jsxs("div", { className: "relative", ref: containerRef, children: [_jsx("button", { className: cn("p-1 rounded-md transition-colors", value ? "text-accent-blue bg-accent-blue/10" : "text-text-tertiary hover:text-text-secondary"), onClick: () => setOpen((prev) => !prev), type: "button", children: _jsx(Filter, { className: "w-3.5 h-3.5" }) }), open && (_jsxs("div", { className: "absolute right-0 mt-2 z-50 min-w-[220px] p-3 bg-surface-elevated border border-border-primary rounded-xl shadow-lg space-y-2", children: [isSelect ? (_jsx(Combobox, { items: column.filterOptions.map((opt) => ({ value: String(opt.value), label: opt.label })), value: localValue || undefined, onChange: (val) => setLocalValue(val), placeholder: `Filter ${column.header}...`, searchPlaceholder: "Search...", emptyMessage: "No options" })) : (_jsx("input", { type: "text", placeholder: `Filter ${column.header}...`, value: localValue, onChange: (e) => setLocalValue(e.target.value), className: "w-full px-3 py-2 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-blue" })), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx("button", { onClick: () => {
+                                    onChange(localValue);
+                                    setOpen(false);
+                                }, className: "flex-1 px-3 py-1.5 text-sm bg-accent-blue text-white rounded-lg hover:bg-accent-blue/90 transition-colors", children: "Apply" }), _jsx("button", { onClick: () => {
+                                    setLocalValue("");
+                                    onChange("");
+                                    setOpen(false);
+                                }, className: "px-3 py-1.5 text-sm bg-surface-secondary text-text-secondary rounded-lg hover:text-text-primary transition-colors", children: "Clear" })] })] }))] }));
 }
 function ColumnVisibilityMenu({ columns, columnStates, onToggleVisibility, onTogglePin, }) {
-    return (_jsxs(DropdownMenuPrimitive.Root, { children: [_jsx(DropdownMenuPrimitive.Trigger, { asChild: true, children: _jsxs("button", { className: "flex items-center gap-1.5 px-3 py-1.5 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-secondary/70 transition-all", children: [_jsx(Settings2, { className: "w-4 h-4" }), "Columns"] }) }), _jsx(DropdownMenuPrimitive.Portal, { children: _jsx(DropdownMenuPrimitive.Content, { align: "end", className: "z-50 min-w-[220px] p-2 bg-surface-elevated border border-border-primary rounded-xl shadow-lg max-h-[400px] overflow-auto", children: columns.map((col) => {
-                        const state = columnStates.get(col.key);
-                        return (_jsxs("div", { className: "flex items-center justify-between px-3 py-2 text-sm text-text-primary hover:bg-surface-secondary rounded-lg transition-colors", children: [_jsxs("label", { className: "flex items-center gap-2 flex-1 cursor-pointer", children: [_jsx(Checkbox, { checked: state.visible, onCheckedChange: () => onToggleVisibility(col.key) }), _jsx("span", { children: col.header })] }), col.pinnable && (_jsx("button", { onClick: () => onTogglePin(col.key), className: cn("p-1 rounded-md transition-colors", state.pinned
-                                        ? "text-accent-blue bg-accent-blue/10"
-                                        : "text-text-tertiary hover:text-text-secondary"), children: state.pinned ? (_jsx(Pin, { className: "w-3.5 h-3.5" })) : (_jsx(PinOff, { className: "w-3.5 h-3.5" })) }))] }, String(col.key)));
-                    }) }) })] }));
+    const [open, setOpen] = React.useState(false);
+    const [selectedKey, setSelectedKey] = React.useState(columns[0] ? String(columns[0].key) : "");
+    const containerRef = React.useRef(null);
+    const selectedColumn = columns.find((col) => String(col.key) === selectedKey) ?? columns[0];
+    const selectedState = selectedColumn ? columnStates.get(selectedColumn.key) : undefined;
+    React.useEffect(() => {
+        if (!open)
+            return;
+        const handleClick = (event) => {
+            if (containerRef.current && !containerRef.current.contains(event.target)) {
+                setOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClick);
+        return () => document.removeEventListener("mousedown", handleClick);
+    }, [open]);
+    return (_jsxs("div", { className: "relative", ref: containerRef, children: [_jsxs("button", { className: "flex items-center gap-1.5 px-3 py-1.5 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-secondary/70 transition-all", onClick: () => setOpen((prev) => !prev), type: "button", children: [_jsx(Settings2, { className: "w-4 h-4" }), "Columns"] }), open && (_jsxs("div", { className: "absolute right-0 mt-2 z-50 w-[260px] p-3 bg-surface-elevated border border-border-primary rounded-xl shadow-lg space-y-3", children: [_jsx(Combobox, { items: columns.map((col) => ({ value: String(col.key), label: col.header })), value: selectedKey || undefined, onChange: (val) => setSelectedKey(val), placeholder: "Select column", searchPlaceholder: "Search columns..." }), selectedColumn && selectedState && (_jsxs("div", { className: "flex items-center justify-between gap-2 text-sm text-text-primary", children: [_jsxs("label", { className: "flex items-center gap-2 cursor-pointer", children: [_jsx(Checkbox, { checked: selectedState.visible, onCheckedChange: () => onToggleVisibility(selectedColumn.key) }), _jsx("span", { children: selectedColumn.header })] }), selectedColumn.pinnable && (_jsx("button", { onClick: () => onTogglePin(selectedColumn.key), className: cn("p-1 rounded-md transition-colors", selectedState.pinned
+                                    ? "text-accent-blue bg-accent-blue/10"
+                                    : "text-text-tertiary hover:text-text-secondary"), children: selectedState.pinned ? _jsx(Pin, { className: "w-3.5 h-3.5" }) : _jsx(PinOff, { className: "w-3.5 h-3.5" }) }))] }))] }))] }));
 }
 function ColumnResizeHandle({ columnKey, onResize, }) {
     const [isDragging, setIsDragging] = React.useState(false);

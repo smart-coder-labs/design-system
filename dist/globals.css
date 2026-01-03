@@ -13,32 +13,37 @@
    ======================================== */
 
 :root {
-  /* Colors - Light Mode */
+  /* Background */
   --color-bg-primary: #ffffff;
   --color-bg-secondary: #f5f5f7;
   --color-bg-tertiary: #e8e8ed;
   --color-bg-elevated: #ffffff;
 
+  /* Surface */
   --color-surface-primary: #ffffff;
   --color-surface-secondary: #f5f5f7;
   --color-surface-glass: rgba(255, 255, 255, 0.72);
   --color-surface-glass-dark: rgba(255, 255, 255, 0.85);
 
+  /* Text */
   --color-text-primary: #1d1d1f;
   --color-text-secondary: #6e6e73;
   --color-text-tertiary: #86868b;
   --color-text-quaternary: #a1a1a6;
   --color-text-inverse: #ffffff;
 
+  /* Border */
   --color-border-primary: rgba(0, 0, 0, 0.08);
   --color-border-secondary: rgba(0, 0, 0, 0.04);
   --color-border-focus: rgba(0, 125, 250, 0.4);
 
+  /* Accent */
   --color-accent-blue: #007aff;
   --color-accent-blue-hover: #0051d5;
   --color-accent-blue-active: #004fc4;
   --color-accent-blue-tint: rgba(0, 122, 255, 0.1);
 
+  /* Status */
   --color-status-success: #34c759;
   --color-status-warning: #ff9500;
   --color-status-error: #ff3b30;
@@ -52,8 +57,8 @@
   --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16), 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+
 .dark {
-  /* Colors - Dark Mode */
   --color-bg-primary: #000000;
   --color-bg-secondary: #1c1c1e;
   --color-bg-tertiary: #2c2c2e;
@@ -84,13 +89,65 @@
   --color-status-error: #ff453a;
   --color-status-info: #64d2ff;
 
-  /* Shadows - Dark Mode */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.24);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.32), 0 1px 4px rgba(0, 0, 0, 0.24);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.40), 0 2px 8px rgba(0, 0, 0, 0.32);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.48), 0 4px 16px rgba(0, 0, 0, 0.40);
   --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.56), 0 8px 24px rgba(0, 0, 0, 0.48);
 }
+
+@theme {
+  /* Background */
+  --color-background-primary: var(--color-bg-primary);
+  --color-background-secondary: var(--color-bg-secondary);
+  --color-background-tertiary: var(--color-bg-tertiary);
+  --color-background-elevated: var(--color-bg-elevated);
+
+  /* Surface */
+  --color-surface-primary: var(--color-surface-primary);
+  --color-surface-secondary: var(--color-surface-secondary);
+  --color-surface-glass: var(--color-surface-glass);
+  --color-surface-glass-dark: var(--color-surface-glass-dark);
+
+  /* Text */
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-text-quaternary: var(--color-text-quaternary);
+  --color-text-inverse: var(--color-text-inverse);
+
+  /* Border */
+  --color-border-primary: var(--color-border-primary);
+  --color-border-secondary: var(--color-border-secondary);
+  --color-border-focus: var(--color-border-focus);
+
+  /* Accent */
+  --color-accent-blue: var(--color-accent-blue);
+  --color-accent-blue-hover: var(--color-accent-blue-hover);
+  --color-accent-blue-active: var(--color-accent-blue-active);
+  --color-accent-blue-tint: var(--color-accent-blue-tint);
+
+  /* Status */
+  --color-status-success: var(--color-status-success);
+  --color-status-warning: var(--color-status-warning);
+  --color-status-error: var(--color-status-error);
+  --color-status-info: var(--color-status-info);
+
+  /* Shadows */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Cascadia Code", monospace;
+
+  /* Motion */
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 
 /* ========================================
    BASE STYLES

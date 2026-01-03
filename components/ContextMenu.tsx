@@ -111,7 +111,7 @@ const ContextMenuTrigger = React.forwardRef<HTMLElement, ContextMenuTriggerProps
                 ref,
                 onContextMenu: handleContextMenu,
                 ...props,
-            });
+            } as any);
         }
 
         return (

@@ -1,24 +1,228 @@
 "use client";
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import * as React from "react";
-import * as SelectPrimitive from "@radix-ui/react-select";
+import { createPortal } from "react-dom";
 import { Check, ChevronDown } from "lucide-react";
 import { cn } from "../lib/utils";
-const Select = SelectPrimitive.Root;
-const SelectGroup = SelectPrimitive.Group;
-const SelectValue = SelectPrimitive.Value;
-const SelectTrigger = React.forwardRef(({ className, children, ...props }, ref) => (_jsxs(SelectPrimitive.Trigger, { ref: ref, className: cn("group flex h-10 w-full items-center justify-between rounded-lg border border-border-primary bg-surface-primary px-3 py-2 text-sm ring-offset-background placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 shadow-sm hover:bg-surface-secondary/50 transition-colors", className), ...props, children: [children, _jsx(SelectPrimitive.Icon, { asChild: true, children: _jsx(ChevronDown, { className: "h-4 w-4 opacity-50 group-data-[state=open]:rotate-180 transition-transform duration-200" }) })] })));
-SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
-const SelectContent = React.forwardRef(({ className, children, position = "popper", ...props }, ref) => (_jsx(SelectPrimitive.Portal, { children: _jsx(SelectPrimitive.Content, { ref: ref, className: cn("relative z-50 min-w-[8rem] overflow-hidden rounded-xl border border-border-primary bg-surface-glass backdrop-blur-xl text-text-primary shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", position === "popper" &&
-            "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1", className), position: position, ...props, children: _jsx(SelectPrimitive.Viewport, { className: cn("p-1", position === "popper" &&
-                "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"), children: children }) }) })));
-SelectContent.displayName = SelectPrimitive.Content.displayName;
-const SelectLabel = React.forwardRef(({ className, ...props }, ref) => (_jsx(SelectPrimitive.Label, { ref: ref, className: cn("py-1.5 pl-8 pr-2 text-sm font-semibold", className), ...props })));
-SelectLabel.displayName = SelectPrimitive.Label.displayName;
-const SelectItem = React.forwardRef(({ className, children, ...props }, ref) => (_jsxs(SelectPrimitive.Item, { ref: ref, className: cn("relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent-blue focus:text-white data-[disabled]:pointer-events-none data-[disabled]:opacity-50 transition-colors", className), ...props, children: [_jsx("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center", children: _jsx(SelectPrimitive.ItemIndicator, { children: _jsx(Check, { className: "h-4 w-4" }) }) }), _jsx(SelectPrimitive.ItemText, { children: children })] })));
-SelectItem.displayName = SelectPrimitive.Item.displayName;
-const SelectSeparator = React.forwardRef(({ className, ...props }, ref) => (_jsx(SelectPrimitive.Separator, { ref: ref, className: cn("-mx-1 my-1 h-px bg-border-primary", className), ...props })));
-SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
+const SelectContext = React.createContext(null);
+function useSelectContext() {
+    const context = React.useContext(SelectContext);
+    if (!context) {
+        throw new Error("Select components must be used within Select");
+    }
+    return context;
+}
+const Select = ({ value: controlledValue, defaultValue, onValueChange, children, disabled = false }) => {
+    const [open, setOpen] = React.useState(false);
+    const [uncontrolledValue, setUncontrolledValue] = React.useState(defaultValue);
+    const [items, setItems] = React.useState(new Map());
+    const [highlightedValue, setHighlightedValue] = React.useState();
+    const triggerRef = React.useRef(null);
+    const currentValue = controlledValue ?? uncontrolledValue;
+    const setValue = React.useCallback((next) => {
+        if (controlledValue === undefined) {
+            setUncontrolledValue(next);
+        }
+        onValueChange?.(next);
+        setOpen(false);
+    }, [controlledValue, onValueChange]);
+    const registerItem = React.useCallback((value, label, disabledItem) => {
+        setItems((prev) => {
+            const next = new Map(prev);
+            next.set(value, { value, label, disabled: disabledItem });
+            return next;
+        });
+    }, []);
+    const unregisterItem = React.useCallback((value) => {
+        setItems((prev) => {
+            const next = new Map(prev);
+            next.delete(value);
+            return next;
+        });
+    }, []);
+    const getLabel = React.useCallback((val) => {
+        if (!val)
+            return undefined;
+        return items.get(val)?.label;
+    }, [items]);
+    React.useEffect(() => {
+        if (open) {
+            const enabledValues = Array.from(items.values())
+                .filter((item) => !item.disabled)
+                .map((item) => item.value);
+            setHighlightedValue(currentValue ?? enabledValues[0]);
+        }
+    }, [open, currentValue, items]);
+    const contextValue = React.useMemo(() => ({
+        open,
+        setOpen,
+        value: currentValue,
+        setValue,
+        registerItem,
+        unregisterItem,
+        getLabel,
+        triggerRef,
+        highlightedValue,
+        setHighlightedValue,
+        disabled,
+    }), [open, currentValue, setValue, registerItem, unregisterItem, getLabel, highlightedValue, disabled]);
+    return _jsx(SelectContext.Provider, { value: contextValue, children: children });
+};
+const SelectTrigger = React.forwardRef(({ className, children, asChild = false, disabled, ...props }, ref) => {
+    const { open, setOpen, triggerRef, disabled: groupDisabled } = useSelectContext();
+    const mergedDisabled = disabled || groupDisabled;
+    const mergedRef = (node) => {
+        triggerRef.current = node;
+        if (typeof ref === "function")
+            ref(node);
+        else if (ref)
+            ref.current = node;
+    };
+    const handleClick = (e) => {
+        if (mergedDisabled)
+            return;
+        props.onClick?.(e);
+        if (!e.defaultPrevented)
+            setOpen(!open);
+    };
+    if (asChild && React.isValidElement(children)) {
+        return React.cloneElement(children, {
+            ref: mergedRef,
+            onClick: handleClick,
+            className: cn(children.props?.className, className),
+            "aria-haspopup": "listbox",
+            "aria-expanded": open,
+            "aria-disabled": mergedDisabled || undefined,
+        });
+    }
+    return (_jsxs("button", { type: "button", ref: mergedRef, onClick: (e) => handleClick(e), "aria-haspopup": "listbox", "aria-expanded": open, "aria-disabled": mergedDisabled || undefined, disabled: mergedDisabled, className: cn("group flex h-10 w-full items-center justify-between rounded-lg border border-border-primary bg-surface-primary px-3 py-2 text-sm ring-offset-background placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 shadow-sm hover:bg-surface-secondary/50 transition-colors", className), ...props, children: [children, _jsx(ChevronDown, { className: "h-4 w-4 opacity-50 group-data-[state=open]:rotate-180 transition-transform duration-200" })] }));
+});
+SelectTrigger.displayName = "SelectTrigger";
+const SelectValue = ({ placeholder = "Select an option", className, children }) => {
+    const { value, getLabel } = useSelectContext();
+    const label = getLabel(value);
+    return _jsx("span", { className: cn("truncate", className), children: label ?? children ?? placeholder });
+};
+const SelectContent = React.forwardRef(({ className, children }, ref) => {
+    const { open, setOpen, triggerRef, highlightedValue, setHighlightedValue, value } = useSelectContext();
+    const contentRef = React.useRef(null);
+    const mergedRef = (node) => {
+        contentRef.current = node;
+        if (typeof ref === "function")
+            ref(node);
+        else if (ref)
+            ref.current = node;
+    };
+    const [position, setPosition] = React.useState({ top: 0, left: 0, width: 0 });
+    const updatePosition = React.useCallback(() => {
+        const trigger = triggerRef.current;
+        const content = contentRef.current;
+        if (!trigger || !content)
+            return;
+        const rect = trigger.getBoundingClientRect();
+        const width = rect.width;
+        let left = rect.left;
+        let top = rect.bottom + 4;
+        const contentRect = content.getBoundingClientRect();
+        if (left + contentRect.width > window.innerWidth - 8) {
+            left = window.innerWidth - contentRect.width - 8;
+        }
+        if (left < 8)
+            left = 8;
+        if (top + contentRect.height > window.innerHeight - 8) {
+            top = rect.top - contentRect.height - 4;
+        }
+        setPosition({ top, left, width });
+    }, [triggerRef]);
+    React.useLayoutEffect(() => {
+        if (open)
+            updatePosition();
+    }, [open, updatePosition]);
+    React.useEffect(() => {
+        if (!open)
+            return;
+        const handleClick = (event) => {
+            const target = event.target;
+            if (contentRef.current?.contains(target) || triggerRef.current?.contains(target))
+                return;
+            setOpen(false);
+        };
+        const handleKeyDown = (event) => {
+            if (!open)
+                return;
+            const items = contentRef.current?.querySelectorAll("[data-select-item]:not([data-disabled=true])") ?? [];
+            const enabledValues = Array.from(items).map((el) => el.dataset.value).filter(Boolean);
+            if (event.key === "Escape") {
+                setOpen(false);
+            }
+            if (enabledValues.length === 0)
+                return;
+            const currentIndex = highlightedValue ? enabledValues.indexOf(highlightedValue) : -1;
+            if (event.key === "ArrowDown") {
+                event.preventDefault();
+                const next = enabledValues[(currentIndex + 1) % enabledValues.length];
+                setHighlightedValue(next);
+            }
+            if (event.key === "ArrowUp") {
+                event.preventDefault();
+                const prev = enabledValues[(currentIndex - 1 + enabledValues.length) % enabledValues.length];
+                setHighlightedValue(prev);
+            }
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                const targetValue = highlightedValue ?? enabledValues[0];
+                if (targetValue) {
+                    const el = contentRef.current?.querySelector(`[data-select-item="${targetValue}"]`);
+                    el?.click();
+                }
+            }
+        };
+        const handleResize = () => updatePosition();
+        document.addEventListener("mousedown", handleClick);
+        document.addEventListener("keydown", handleKeyDown);
+        window.addEventListener("resize", handleResize);
+        window.addEventListener("scroll", handleResize, true);
+        return () => {
+            document.removeEventListener("mousedown", handleClick);
+            document.removeEventListener("keydown", handleKeyDown);
+            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("scroll", handleResize, true);
+        };
+    }, [open, setOpen, highlightedValue, setHighlightedValue, updatePosition]);
+    if (!open)
+        return null;
+    return createPortal(_jsx("div", { ref: mergedRef, role: "listbox", "aria-activedescendant": highlightedValue ? `select-item-${highlightedValue}` : undefined, className: cn("relative z-50 min-w-[8rem] overflow-hidden rounded-xl border border-border-primary bg-surface-glass backdrop-blur-xl text-text-primary shadow-lg p-1", className), style: { position: "fixed", top: position.top, left: position.left, minWidth: position.width }, "data-state": open ? "open" : "closed", children: children }), document.body);
+});
+SelectContent.displayName = "SelectContent";
+const SelectLabel = React.forwardRef(({ className, ...props }, ref) => (_jsx("div", { ref: ref, className: cn("py-1.5 pl-8 pr-2 text-sm font-semibold", className), ...props })));
+SelectLabel.displayName = "SelectLabel";
+const SelectItem = React.forwardRef(({ value, disabled = false, children, className, ...props }, ref) => {
+    const { value: selectedValue, setValue, registerItem, unregisterItem, highlightedValue, setHighlightedValue } = useSelectContext();
+    const label = React.useMemo(() => {
+        if (typeof children === "string")
+            return children;
+        if (React.isValidElement(children)) {
+            const element = children;
+            return element.props?.children ?? value;
+        }
+        return value;
+    }, [children, value]);
+    React.useEffect(() => {
+        registerItem(value, String(label), disabled);
+        return () => unregisterItem(value);
+    }, [value, label, disabled, registerItem, unregisterItem]);
+    const isSelected = selectedValue === value;
+    const isHighlighted = highlightedValue === value;
+    return (_jsxs("button", { ref: ref, id: `select-item-${value}`, role: "option", type: "button", "data-select-item": value, "data-value": value, "data-disabled": disabled ? "true" : undefined, "aria-selected": isSelected, disabled: disabled, onMouseEnter: () => setHighlightedValue(value), onFocus: () => setHighlightedValue(value), onClick: () => !disabled && setValue(value), className: cn("relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none transition-colors", isSelected
+            ? "bg-accent-blue text-white"
+            : isHighlighted
+                ? "bg-surface-secondary text-text-primary"
+                : "text-text-primary", disabled && "pointer-events-none opacity-50", className), ...props, children: [_jsx("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center", children: isSelected && _jsx(Check, { className: "h-4 w-4" }) }), _jsx("span", { className: "truncate", children: children })] }));
+});
+SelectItem.displayName = "SelectItem";
+const SelectSeparator = React.forwardRef(({ className, ...props }, ref) => (_jsx("div", { ref: ref, className: cn("-mx-1 my-1 h-px bg-border-primary", className), ...props })));
+SelectSeparator.displayName = "SelectSeparator";
+const SelectGroup = ({ className, children }) => (_jsx("div", { className: cn("py-1", className), children: children }));
 export const FilterSelect = ({ label, options, value, onChange, icon, multiselect = false, className = '', }) => {
     const [isOpen, setIsOpen] = React.useState(false);
     const handleOptionClick = (option) => {

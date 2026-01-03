@@ -12,7 +12,7 @@ import {
 import { Slider } from './Slider';
 import { Button } from './Button';
 import { cn } from '../lib/utils';
-import { Dropdown, DropdownItem } from './Dropdown';
+import { Combobox } from './Combobox';
 
 export interface AudioPlayerProps {
     src: string;
@@ -68,6 +68,14 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
         };
     }, [autoPlay]);
 
+    const playbackOptions = [
+        { value: "0.5", label: "Speed: 0.5x" },
+        { value: "1", label: "Speed: 1.0x" },
+        { value: "1.5", label: "Speed: 1.5x" },
+        { value: "2", label: "Speed: 2.0x" },
+        { value: "download", label: "Download" },
+    ];
+
     const togglePlay = () => {
         if (audioRef.current) {
             if (isPlaying) {
@@ -78,15 +86,15 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
         }
     };
 
-    const handleSeek = (value: number[]) => {
+    const handleSeek = (value: number) => {
         if (audioRef.current) {
-            audioRef.current.currentTime = value[0];
-            setCurrentTime(value[0]);
+            audioRef.current.currentTime = value;
+            setCurrentTime(value);
         }
     };
 
-    const handleVolumeChange = (value: number[]) => {
-        const newVolume = value[0];
+    const handleVolumeChange = (value: number) => {
+        const newVolume = value;
         if (audioRef.current) {
             audioRef.current.volume = newVolume;
             setVolume(newVolume);
@@ -154,26 +162,32 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
                     <p className="text-sm text-text-secondary truncate">{artist || "Unknown Artist"}</p>
                 </div>
 
-                <Dropdown trigger={
-                    <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                        <MoreHorizontal className="w-4 h-4" />
-                    </Button>
-                }>
-                    <DropdownItem onSelect={() => changePlaybackRate(0.5)}>Speed: 0.5x</DropdownItem>
-                    <DropdownItem onSelect={() => changePlaybackRate(1)}>Speed: 1.0x {playbackRate === 1 && '✓'}</DropdownItem>
-                    <DropdownItem onSelect={() => changePlaybackRate(1.5)}>Speed: 1.5x {playbackRate === 1.5 && '✓'}</DropdownItem>
-                    <DropdownItem onSelect={() => changePlaybackRate(2)}>Speed: 2.0x {playbackRate === 2 && '✓'}</DropdownItem>
-                    <div className="h-px bg-border-primary my-1" />
-                    <DropdownItem onSelect={() => window.open(src, '_blank')}>
-                        <Download className="w-3 h-3 mr-2" /> Download
-                    </DropdownItem>
-                </Dropdown>
+                <div className="w-36">
+                    <Combobox
+                        items={playbackOptions.map((option) => ({
+                            ...option,
+                            label:
+                                option.value !== "download"
+                                    ? `${option.label}${playbackRate === Number(option.value) ? " ✓" : ""}`
+                                    : option.label,
+                        }))}
+                        value={String(playbackRate)}
+                        onChange={(val) => {
+                            if (val === "download") {
+                                window.open(src, "_blank");
+                                return;
+                            }
+                            changePlaybackRate(Number(val));
+                        }}
+                        placeholder="Options"
+                    />
+                </div>
             </div>
 
             {/* Progress */}
             <div className="flex flex-col gap-1">
                 <Slider
-                    value={[currentTime]}
+                    value={currentTime}
                     min={0}
                     max={duration || 100}
                     step={0.1}
@@ -194,7 +208,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
                         {isMuted || volume === 0 ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                     </button>
                     <Slider
-                        value={[isMuted ? 0 : volume]}
+                        value={isMuted ? 0 : volume}
                         min={0}
                         max={1}
                         step={0.01}

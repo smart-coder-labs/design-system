@@ -139,17 +139,6 @@ export type { TextareaProps } from './components/Textarea';
 export { Modal, ModalHeader, ModalTitle, ModalDescription, ModalContent, ModalFooter, ModalClose, ModalCloseButton } from './components/Modal';
 export type { ModalProps } from './components/Modal';
 
-export {
-    Dropdown,
-    DropdownItem,
-    DropdownSeparator,
-    DropdownLabel,
-    DropdownCheckboxItem,
-    DropdownRadioGroup,
-    DropdownRadioItem,
-} from './components/Dropdown';
-export type { DropdownProps } from './components/Dropdown';
-
 export { Tooltip, TooltipProvider } from './components/Tooltip';
 export type { TooltipProps } from './components/Tooltip';
 

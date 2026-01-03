@@ -8,7 +8,7 @@ const alertVariants = cva("relative w-full rounded-xl border p-4 [&>svg~*]:pl-7 
     variants: {
         variant: {
             default: "bg-surface-secondary text-text-primary border-border-primary",
-            destructive: "border-status-error/50 text-status-error dark:border-status-error [&>svg]:text-status-error bg-status-error/10",
+            destructive: "border-status-error/50 text-status-error dark:border-status-error [&>svg]:text-status-error bg-red-600/10",
             success: "border-status-success/50 text-status-success dark:border-status-success [&>svg]:text-status-success bg-status-success/10",
             warning: "border-status-warning/50 text-status-warning dark:border-status-warning [&>svg]:text-status-warning bg-status-warning/10",
             info: "border-status-info/50 text-status-info dark:border-status-info [&>svg]:text-status-info bg-status-info/10",

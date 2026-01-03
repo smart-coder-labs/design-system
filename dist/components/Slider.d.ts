@@ -1,5 +1,18 @@
 import * as React from "react";
-import * as SliderPrimitive from "@radix-ui/react-slider";
-declare const Slider: React.ForwardRefExoticComponent<Omit<SliderPrimitive.SliderProps & React.RefAttributes<HTMLSpanElement>, "ref"> & React.RefAttributes<HTMLSpanElement>>;
+type SliderProps = {
+    value?: number;
+    defaultValue?: number;
+    min?: number;
+    max?: number;
+    step?: number;
+    disabled?: boolean;
+    onValueChange?: (value: number) => void;
+    onValueCommit?: (value: number) => void;
+    className?: string;
+    trackClassName?: string;
+    rangeClassName?: string;
+    thumbClassName?: string;
+};
+declare const Slider: React.ForwardRefExoticComponent<SliderProps & React.RefAttributes<HTMLDivElement>>;
 export { Slider };
 //# sourceMappingURL=Slider.d.ts.map

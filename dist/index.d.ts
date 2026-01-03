@@ -127,8 +127,6 @@ export { Textarea } from './components/Textarea';
 export type { TextareaProps } from './components/Textarea';
 export { Modal, ModalHeader, ModalTitle, ModalDescription, ModalContent, ModalFooter, ModalClose, ModalCloseButton } from './components/Modal';
 export type { ModalProps } from './components/Modal';
-export { Dropdown, DropdownItem, DropdownSeparator, DropdownLabel, DropdownCheckboxItem, DropdownRadioGroup, DropdownRadioItem, } from './components/Dropdown';
-export type { DropdownProps } from './components/Dropdown';
 export { Tooltip, TooltipProvider } from './components/Tooltip';
 export type { TooltipProps } from './components/Tooltip';
 export { Tabs, TabsList, TabsTrigger, TabsContent } from './components/Tabs';
@@ -246,4 +244,6 @@ export { ControlCenterToggles } from './components/ControlCenterToggles';
 export type { ControlCenterTogglesProps, ToggleControl } from './components/ControlCenterToggles';
 export { WindowControls } from './components/WindowControls';
 export type { WindowControlsProps } from './components/WindowControls';
+export { ThemeToggle } from './components/ThemeToggle';
+export type { ThemeToggleProps, ThemeMode } from './components/ThemeToggle';
 //# sourceMappingURL=index.d.ts.map

@@ -9,7 +9,6 @@ import {
     ChevronRight,
     Check,
 } from "lucide-react";
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 
 /* -------------------------------------------------------------------------- */
 /*                                   TYPES                                    */
@@ -255,23 +254,38 @@ function PaginationButton({
 function Checkbox({
     checked,
     onCheckedChange,
+    disabled,
 }: {
     checked: boolean;
     onCheckedChange?: () => void;
+    disabled?: boolean;
 }) {
     return (
-        <CheckboxPrimitive.Root
-            checked={checked}
-            onCheckedChange={onCheckedChange}
+        <button
+            type="button"
+            role="checkbox"
+            aria-checked={checked}
+            aria-disabled={disabled || undefined}
+            data-state={checked ? "checked" : "unchecked"}
+            onClick={() => {
+                if (disabled) return;
+                onCheckedChange?.();
+            }}
+            onKeyDown={(event) => {
+                if (disabled) return;
+                if (event.key === " " || event.key === "Enter") {
+                    event.preventDefault();
+                    onCheckedChange?.();
+                }
+            }}
             className={cn(
                 "h-4 w-4 rounded-md border border-border-primary bg-surface-primary flex items-center justify-center",
                 "data-[state=checked]:bg-accent-blue data-[state=checked]:border-accent-blue",
-                "transition-colors"
+                "transition-colors",
+                disabled && "opacity-50 cursor-not-allowed"
             )}
         >
-            <CheckboxPrimitive.Indicator>
-                <Check className="h-3 w-3 text-white" />
-            </CheckboxPrimitive.Indicator>
-        </CheckboxPrimitive.Root>
+            {checked && <Check className="h-3 w-3 text-white" />}
+        </button>
     );
 }

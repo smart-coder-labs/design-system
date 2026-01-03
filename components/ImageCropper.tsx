@@ -244,11 +244,11 @@ export const ImageCropper: React.FC<ImageCropperProps> = ({
                 <div className="flex items-center gap-4">
                     <ZoomIn className="w-4 h-4 text-text-secondary" />
                     <Slider 
-                        value={[scale]} 
+                        value={scale} 
                         min={0.1} 
                         max={3} 
                         step={0.01} 
-                        onValueChange={([v]) => setScale(v)}
+                        onValueChange={(v) => setScale(v)}
                         className="flex-1"
                     />
                     <span className="text-xs font-mono w-12 text-right text-text-secondary">
@@ -260,11 +260,11 @@ export const ImageCropper: React.FC<ImageCropperProps> = ({
                 <div className="flex items-center gap-4">
                     <RotateCw className="w-4 h-4 text-text-secondary" />
                     <Slider 
-                        value={[rotation]} 
+                        value={rotation} 
                         min={-180} 
                         max={180} 
                         step={1} 
-                        onValueChange={([v]) => setRotation(v)}
+                        onValueChange={(v) => setRotation(v)}
                         className="flex-1"
                     />
                     <span className="text-xs font-mono w-12 text-right text-text-secondary">

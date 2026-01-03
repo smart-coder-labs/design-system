@@ -133,8 +133,8 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
         }
     }, [isMuted]);
 
-    const handleVolumeChange = (value: number[]) => {
-        const newVolume = value[0];
+    const handleVolumeChange = (value: number) => {
+        const newVolume = value;
         if (videoRef.current) {
             videoRef.current.volume = newVolume;
             setVolume(newVolume);
@@ -142,8 +142,8 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
         }
     };
 
-    const handleSeek = (value: number[]) => {
-        const newTime = value[0];
+    const handleSeek = (value: number) => {
+        const newTime = value;
         if (videoRef.current) {
             videoRef.current.currentTime = newTime;
             setCurrentTime(newTime);
@@ -219,7 +219,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
                         {/* Progress Bar */}
                         <div className="mb-4 group/slider">
                             <Slider
-                                value={[currentTime]}
+                                value={currentTime}
                                 min={0}
                                 max={duration || 100}
                                 step={0.1}
@@ -254,7 +254,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
                                     </button>
                                     <div className="w-0 overflow-hidden group-hover/volume:w-24 transition-all duration-300">
                                         <Slider
-                                            value={[isMuted ? 0 : volume]}
+                                            value={isMuted ? 0 : volume}
                                             min={0}
                                             max={1}
                                             step={0.01}

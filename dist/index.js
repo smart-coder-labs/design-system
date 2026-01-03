@@ -68,7 +68,6 @@ export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 export { Input } from './components/Input';
 export { Textarea } from './components/Textarea';
 export { Modal, ModalHeader, ModalTitle, ModalDescription, ModalContent, ModalFooter, ModalClose, ModalCloseButton } from './components/Modal';
-export { Dropdown, DropdownItem, DropdownSeparator, DropdownLabel, DropdownCheckboxItem, DropdownRadioGroup, DropdownRadioItem, } from './components/Dropdown';
 export { Tooltip, TooltipProvider } from './components/Tooltip';
 export { Tabs, TabsList, TabsTrigger, TabsContent } from './components/Tabs';
 export { Switch } from './components/Switch';
@@ -141,4 +140,5 @@ export { SecurityActivityLog } from './components/SecurityActivityLog';
 export { NotificationCenterPanel } from './components/NotificationCenterPanel';
 export { ControlCenterToggles } from './components/ControlCenterToggles';
 export { WindowControls } from './components/WindowControls';
+export { ThemeToggle } from './components/ThemeToggle';
 //# sourceMappingURL=index.js.map

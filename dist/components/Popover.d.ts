@@ -1,7 +1,19 @@
 import * as React from "react";
-import * as PopoverPrimitive from "@radix-ui/react-popover";
-declare const Popover: React.FC<PopoverPrimitive.PopoverProps>;
-declare const PopoverTrigger: React.ForwardRefExoticComponent<PopoverPrimitive.PopoverTriggerProps & React.RefAttributes<HTMLButtonElement>>;
-declare const PopoverContent: React.ForwardRefExoticComponent<Omit<PopoverPrimitive.PopoverContentProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+type PopoverProps = {
+    open?: boolean;
+    defaultOpen?: boolean;
+    onOpenChange?: (open: boolean) => void;
+    children: React.ReactNode;
+};
+declare function Popover({ open: controlledOpen, defaultOpen, onOpenChange, children }: PopoverProps): import("react/jsx-runtime").JSX.Element;
+declare const PopoverTrigger: React.ForwardRefExoticComponent<React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    asChild?: boolean;
+    children: React.ReactNode;
+} & React.RefAttributes<HTMLElement>>;
+declare const PopoverContent: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLDivElement> & {
+    align?: "start" | "center" | "end";
+    side?: "top" | "bottom" | "left" | "right";
+    sideOffset?: number;
+} & React.RefAttributes<HTMLDivElement>>;
 export { Popover, PopoverTrigger, PopoverContent };
 //# sourceMappingURL=Popover.d.ts.map

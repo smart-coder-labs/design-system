@@ -1,5 +1,18 @@
 import * as React from "react";
-import * as SliderPrimitive from "@radix-ui/react-slider";
-declare const RangeSlider: React.ForwardRefExoticComponent<Omit<SliderPrimitive.SliderProps & React.RefAttributes<HTMLSpanElement>, "ref"> & React.RefAttributes<HTMLSpanElement>>;
+type RangeSliderProps = {
+    value?: [number, number];
+    defaultValue?: [number, number];
+    min?: number;
+    max?: number;
+    step?: number;
+    disabled?: boolean;
+    onValueChange?: (value: [number, number]) => void;
+    onValueCommit?: (value: [number, number]) => void;
+    className?: string;
+    trackClassName?: string;
+    rangeClassName?: string;
+    thumbClassName?: string;
+};
+declare const RangeSlider: React.ForwardRefExoticComponent<RangeSliderProps & React.RefAttributes<HTMLDivElement>>;
 export { RangeSlider };
 //# sourceMappingURL=RangeSlider.d.ts.map

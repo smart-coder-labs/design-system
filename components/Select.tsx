@@ -127,9 +127,9 @@ const SelectTrigger = React.forwardRef<HTMLElement, SelectTriggerProps>(
             else if (ref) (ref as React.MutableRefObject<HTMLElement | null>).current = node;
         };
 
-        const handleClick = (e: React.MouseEvent) => {
+        const handleClick = (e: React.MouseEvent<HTMLElement>) => {
             if (mergedDisabled) return;
-            props.onClick?.(e);
+            props.onClick?.(e as React.MouseEvent<HTMLButtonElement>);
             if (!e.defaultPrevented) setOpen(!open);
         };
 
@@ -148,7 +148,7 @@ const SelectTrigger = React.forwardRef<HTMLElement, SelectTriggerProps>(
             <button
                 type="button"
                 ref={mergedRef as React.Ref<HTMLButtonElement>}
-                onClick={handleClick}
+                onClick={(e) => handleClick(e)}
                 aria-haspopup="listbox"
                 aria-expanded={open}
                 aria-disabled={mergedDisabled || undefined}
@@ -302,7 +302,14 @@ type SelectItemProps = {
 const SelectItem = React.forwardRef<HTMLButtonElement, SelectItemProps>(
     ({ value, disabled = false, children, className, ...props }, ref) => {
         const { value: selectedValue, setValue, registerItem, unregisterItem, highlightedValue, setHighlightedValue } = useSelectContext();
-        const label = React.useMemo(() => (typeof children === "string" ? children : React.isValidElement(children) ? (children.props?.children ?? value) : value), [children, value]);
+        const label = React.useMemo(() => {
+            if (typeof children === "string") return children;
+            if (React.isValidElement(children)) {
+                const element = children as React.ReactElement;
+                return (element.props as any)?.children ?? value;
+            }
+            return value;
+        }, [children, value]);
 
         React.useEffect(() => {
             registerItem(value, String(label), disabled);

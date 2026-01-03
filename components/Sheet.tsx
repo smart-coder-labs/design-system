@@ -68,7 +68,7 @@ const SheetTrigger = React.forwardRef<HTMLElement, SheetTriggerProps>(({ asChild
     };
 
     if (asChild && React.isValidElement(children)) {
-        return React.cloneElement(children, {
+        return React.cloneElement(children as React.ReactElement, {
             ref: mergedRef,
             onClick: (event: React.MouseEvent<HTMLElement>) => {
                 (children as any).props?.onClick?.(event);
@@ -77,7 +77,7 @@ const SheetTrigger = React.forwardRef<HTMLElement, SheetTriggerProps>(({ asChild
             className: cn((children as any).props?.className, className),
             "aria-haspopup": "dialog",
             "aria-expanded": open,
-        });
+        } as any);
     }
 
     return (

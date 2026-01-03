@@ -12,11 +12,7 @@ import {
     Edit2,
     CornerDownRight
 } from 'lucide-react';
-import {
-    Dropdown,
-    DropdownItem,
-    DropdownSeparator
-} from './Dropdown';
+import { Combobox } from './Combobox';
 
 /* ========================================
    TYPES
@@ -122,42 +118,29 @@ const CommentItem: React.FC<CommentItemProps> = ({
 
                         {/* Actions Dropdown */}
                         {(isAuthor || onReply) && (
-                            <Dropdown trigger={
-                                <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    className="h-6 w-6 p-0 opacity-0 group-hover:opacity-100 transition-opacity data-[state=open]:opacity-100"
-                                >
-                                    <MoreHorizontal className="w-4 h-4 text-text-tertiary" />
-                                </Button>
-                            }>
-                                <div>
-                                    {onReply && (
-                                        <DropdownItem onSelect={() => setIsReplying(!isReplying)}>
-                                            <Reply className="w-4 h-4 mr-2" />
-                                            Reply
-                                        </DropdownItem>
-                                    )}
-                                    {isAuthor && onEdit && (
-                                        <DropdownItem onSelect={() => setIsEditing(true)}>
-                                            <Edit2 className="w-4 h-4 mr-2" />
-                                            Edit
-                                        </DropdownItem>
-                                    )}
-                                    {isAuthor && onDelete && (
-                                        <>
-                                            <DropdownSeparator />
-                                            <DropdownItem
-                                                className="text-status-error focus:text-status-error"
-                                                onSelect={() => onDelete(comment.id)}
-                                            >
-                                                <Trash2 className="w-4 h-4 mr-2" />
-                                                Delete
-                                            </DropdownItem>
-                                        </>
-                                    )}
-                                </div>
-                            </Dropdown>
+                            <div className="w-32">
+                                <Combobox
+                                    items={[
+                                        ...(onReply
+                                            ? [{ value: "reply", label: "Reply" }]
+                                            : []),
+                                        ...(isAuthor && onEdit
+                                            ? [{ value: "edit", label: "Edit" }]
+                                            : []),
+                                        ...(isAuthor && onDelete
+                                            ? [{ value: "delete", label: "Delete" }]
+                                            : []),
+                                    ]}
+                                    value={undefined}
+                                    onChange={(val) => {
+                                        if (val === "reply" && onReply) setIsReplying(!isReplying);
+                                        if (val === "edit" && onEdit) setIsEditing(true);
+                                        if (val === "delete" && onDelete) onDelete(comment.id);
+                                    }}
+                                    placeholder="Actions"
+                                    className="h-6 text-xs"
+                                />
+                            </div>
                         )}
                     </div>
 

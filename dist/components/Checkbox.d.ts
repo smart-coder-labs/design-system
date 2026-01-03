@@ -1,5 +1,10 @@
 import * as React from "react";
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-declare const Checkbox: React.ForwardRefExoticComponent<Omit<CheckboxPrimitive.CheckboxProps & React.RefAttributes<HTMLButtonElement>, "ref"> & React.RefAttributes<HTMLButtonElement>>;
+type CheckedState = boolean | "indeterminate";
+export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type" | "checked" | "defaultChecked" | "onChange"> {
+    checked?: CheckedState;
+    defaultChecked?: CheckedState;
+    onCheckedChange?: (checked: CheckedState) => void;
+}
+declare const Checkbox: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLInputElement>>;
 export { Checkbox };
 //# sourceMappingURL=Checkbox.d.ts.map

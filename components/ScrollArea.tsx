@@ -3,11 +3,6 @@
 import * as React from "react";
 import { cn } from "../lib/utils";
 
-type ScrollState = {
-    scrollTop: number;
-import * as React from "react";
-import { cn } from "../lib/utils";
-
 type ScrollAreaContextValue = {
     viewportRef: React.MutableRefObject<HTMLDivElement | null>;
 };
@@ -106,7 +101,6 @@ const ScrollBar = React.forwardRef<HTMLDivElement, ScrollBarProps>(
         }, [syncThumb, viewportRef]);
 
         React.useEffect(() => {
-            // Initial sync once mounted
             syncThumb();
         }, [syncThumb]);
 
@@ -201,156 +195,6 @@ const ScrollBar = React.forwardRef<HTMLDivElement, ScrollBarProps>(
                         }
                     />
                 </div>
-            </div>
-        );
-    }
-);
-ScrollBar.displayName = "ScrollBar";
-
-export { ScrollArea, ScrollBar };
-
-            const update = () => {
-                setScrollState({
-                    scrollTop: viewport.scrollTop,
-                    scrollHeight: viewport.scrollHeight,
-                    clientHeight: viewport.clientHeight,
-                    scrollLeft: viewport.scrollLeft,
-                    scrollWidth: viewport.scrollWidth,
-                    clientWidth: viewport.clientWidth,
-                });
-            };
-
-            update();
-            viewport.addEventListener("scroll", update);
-
-            const resizeObserver = new ResizeObserver(update);
-            resizeObserver.observe(viewport);
-            if (contentRef.current) resizeObserver.observe(contentRef.current);
-
-            return () => {
-                viewport.removeEventListener("scroll", update);
-                resizeObserver.disconnect();
-            };
-        }, []);
-
-        const contextValue = React.useMemo(
-            () => ({ viewportRef, contentRef, scrollState }),
-            [scrollState]
-        );
-
-        return (
-            <ScrollAreaContext.Provider value={contextValue}>
-                <div ref={ref} className={cn("relative overflow-hidden", className)} {...props}>
-                    <div ref={viewportRef} className="h-full w-full overflow-auto">
-                        <div ref={contentRef} className="min-w-full">{children}</div>
-                    </div>
-                    <ScrollBar orientation="vertical" />
-                    <ScrollBar orientation="horizontal" />
-                </div>
-            </ScrollAreaContext.Provider>
-        );
-    }
-);
-ScrollArea.displayName = "ScrollArea";
-
-type ScrollBarProps = React.HTMLAttributes<HTMLDivElement> & {
-    orientation?: "vertical" | "horizontal";
-};
-
-const ScrollBar = React.forwardRef<HTMLDivElement, ScrollBarProps>(
-    ({ className, orientation = "vertical", ...props }, ref) => {
-        const { viewportRef, scrollState } = useScrollAreaContext();
-        const trackRef = React.useRef<HTMLDivElement | null>(null);
-        const thumbRef = React.useRef<HTMLDivElement | null>(null);
-        const isVertical = orientation === "vertical";
-
-        const size = isVertical ? scrollState.clientHeight : scrollState.clientWidth;
-        const contentSize = isVertical ? scrollState.scrollHeight : scrollState.scrollWidth;
-        const scrollPos = isVertical ? scrollState.scrollTop : scrollState.scrollLeft;
-
-        const showScrollbar = contentSize > size + 1;
-
-        React.useLayoutEffect(() => {
-            if (!showScrollbar) return;
-            const trackSize = isVertical
-                ? trackRef.current?.clientHeight ?? size
-                : trackRef.current?.clientWidth ?? size;
-            const thumbSize = trackSize * (size / contentSize);
-            const minThumb = 20;
-            const finalThumb = clamp(thumbSize, minThumb, trackSize);
-            const maxOffset = trackSize - finalThumb;
-            const offset = maxOffset <= 0 ? 0 : (scrollPos / (contentSize - size)) * maxOffset;
-
-            if (thumbRef.current) {
-                if (isVertical) {
-                    thumbRef.current.style.height = `${finalThumb}px`;
-                    thumbRef.current.style.transform = `translateY(${offset}px)`;
-                } else {
-                    thumbRef.current.style.width = `${finalThumb}px`;
-                    thumbRef.current.style.transform = `translateX(${offset}px)`;
-                }
-            }
-        }, [showScrollbar, size, contentSize, scrollPos, isVertical]);
-
-        const startDrag = (event: React.MouseEvent) => {
-            if (!showScrollbar) return;
-            event.preventDefault();
-            const startPos = isVertical ? event.clientY : event.clientX;
-            const startScroll = scrollPos;
-            const trackSize = isVertical
-                ? trackRef.current?.clientHeight ?? size
-                : trackRef.current?.clientWidth ?? size;
-            const thumbSize = isVertical
-                ? thumbRef.current?.clientHeight ?? 0
-                : thumbRef.current?.clientWidth ?? 0;
-            const maxScroll = contentSize - size;
-            const maxOffset = trackSize - thumbSize;
-            const scrollPerPixel = maxOffset > 0 ? maxScroll / maxOffset : 0;
-
-            const handleMove = (moveEvent: MouseEvent) => {
-                const currentPos = isVertical ? moveEvent.clientY : moveEvent.clientX;
-                const delta = currentPos - startPos;
-                const nextScroll = clamp(startScroll + delta * scrollPerPixel, 0, maxScroll);
-                const viewport = viewportRef.current;
-                if (viewport) {
-                    if (isVertical) {
-                        viewport.scrollTop = nextScroll;
-                    } else {
-                        viewport.scrollLeft = nextScroll;
-                    }
-                }
-            };
-
-            const handleUp = () => {
-                document.removeEventListener("mousemove", handleMove);
-                document.removeEventListener("mouseup", handleUp);
-            };
-
-            document.addEventListener("mousemove", handleMove);
-            document.addEventListener("mouseup", handleUp);
-        };
-
-        if (!showScrollbar) return null;
-
-        return (
-            <div
-                ref={trackRef}
-                role="presentation"
-                className={cn(
-                    "absolute select-none transition-colors",
-                    isVertical
-                        ? "right-0 top-0 h-full w-2.5 border-l border-l-transparent p-[1px]"
-                        : "left-0 bottom-0 w-full h-2.5 border-t border-t-transparent p-[1px]",
-                    className
-                )}
-                {...props}
-            >
-                <div
-                    ref={thumbRef}
-                    onMouseDown={startDrag}
-                    className="relative flex-1 rounded-full bg-border-primary hover:bg-text-tertiary transition-colors"
-                    style={{ height: isVertical ? undefined : "100%", width: isVertical ? "100%" : undefined }}
-                />
             </div>
         );
     }

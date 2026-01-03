@@ -1,13 +1,42 @@
 import * as React from "react";
-import * as SelectPrimitive from "@radix-ui/react-select";
-declare const Select: React.FC<SelectPrimitive.SelectProps>;
-declare const SelectGroup: React.ForwardRefExoticComponent<SelectPrimitive.SelectGroupProps & React.RefAttributes<HTMLDivElement>>;
-declare const SelectValue: React.ForwardRefExoticComponent<SelectPrimitive.SelectValueProps & React.RefAttributes<HTMLSpanElement>>;
-declare const SelectTrigger: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectTriggerProps & React.RefAttributes<HTMLButtonElement>, "ref"> & React.RefAttributes<HTMLButtonElement>>;
-declare const SelectContent: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectContentProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
-declare const SelectLabel: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectLabelProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
-declare const SelectItem: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectItemProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
-declare const SelectSeparator: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectSeparatorProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+type SelectProps = {
+    value?: string;
+    defaultValue?: string;
+    onValueChange?: (value: string) => void;
+    children: React.ReactNode;
+    disabled?: boolean;
+};
+declare const Select: ({ value: controlledValue, defaultValue, onValueChange, children, disabled }: SelectProps) => import("react/jsx-runtime").JSX.Element;
+declare const SelectTrigger: React.ForwardRefExoticComponent<React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    asChild?: boolean;
+    children: React.ReactNode;
+} & React.RefAttributes<HTMLElement>>;
+type SelectValueProps = {
+    placeholder?: string;
+    className?: string;
+    children?: React.ReactNode;
+};
+declare const SelectValue: React.FC<SelectValueProps>;
+type SelectContentProps = {
+    className?: string;
+    children: React.ReactNode;
+};
+declare const SelectContent: React.ForwardRefExoticComponent<SelectContentProps & React.RefAttributes<HTMLDivElement>>;
+type SelectLabelProps = React.HTMLAttributes<HTMLDivElement>;
+declare const SelectLabel: React.ForwardRefExoticComponent<SelectLabelProps & React.RefAttributes<HTMLDivElement>>;
+type SelectItemProps = {
+    value: string;
+    disabled?: boolean;
+    children: React.ReactNode;
+    className?: string;
+};
+declare const SelectItem: React.ForwardRefExoticComponent<SelectItemProps & React.RefAttributes<HTMLButtonElement>>;
+type SelectSeparatorProps = React.HTMLAttributes<HTMLDivElement>;
+declare const SelectSeparator: React.ForwardRefExoticComponent<SelectSeparatorProps & React.RefAttributes<HTMLDivElement>>;
+declare const SelectGroup: React.FC<{
+    className?: string;
+    children: React.ReactNode;
+}>;
 export interface FilterSelectOption {
     id: string;
     label: string;
