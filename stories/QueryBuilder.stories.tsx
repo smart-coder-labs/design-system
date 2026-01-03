@@ -67,7 +67,7 @@ const QueryBuilderWithState = (args: any) => {
                 value={query}
                 onChange={setQuery}
             />
-            <div style={{ padding: '10px', background: '#f5f5f5', borderRadius: '4px' }}>
+            <div style={{ padding: '10px', background: 'var(--color-background-secondary)', borderRadius: '12px' }}>
                 <strong>Current Query:</strong>
                 <pre style={{ fontSize: '12px', marginTop: '10px' }}>
                     {JSON.stringify(query, null, 2)}

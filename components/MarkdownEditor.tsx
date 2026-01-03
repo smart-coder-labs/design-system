@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
+import MarkdownIt from 'markdown-it';
 import { Bold, Italic, Link, List, ListOrdered, Code, Eye, Edit3, Image as ImageIcon } from 'lucide-react';
 import { cn } from '../lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Textarea } from './Input'; // Reusing existing Textarea styled component if possible, or just standard textarea
+import { motion } from 'framer-motion';
 import { Label } from './Label';
 
 /* ========================================
@@ -38,6 +38,17 @@ export const MarkdownEditor: React.FC<MarkdownEditorProps> = ({
 }) => {
     const [activeTab, setActiveTab] = useState<'write' | 'preview'>('write');
     const textareaRef = useRef<HTMLTextAreaElement>(null);
+    const mdParserRef = useRef<MarkdownIt>(null);
+
+    if (!mdParserRef.current) {
+        // Keep parser instance stable across renders
+        mdParserRef.current = new MarkdownIt({
+            html: false,
+            linkify: true,
+            breaks: true,
+            typographer: true,
+        });
+    }
 
     const insertSyntax = (prefix: string, suffix: string = '') => {
         if (!textareaRef.current || disabled) return;
@@ -77,6 +88,10 @@ export const MarkdownEditor: React.FC<MarkdownEditorProps> = ({
             <Icon className="w-4 h-4" />
         </button>
     );
+
+    const renderedPreview = useMemo(() => {
+        return mdParserRef.current?.render(value || '') ?? '';
+    }, [value]);
 
     return (
         <div className={cn("w-full space-y-2", className)}>
@@ -151,15 +166,10 @@ export const MarkdownEditor: React.FC<MarkdownEditorProps> = ({
                         />
                     ) : (
                         <div className="w-full h-full p-4 prose prose-sm max-w-none overflow-y-auto min-h-[inherit] bg-surface-secondary/20">
-                            {/* Simple Preview: In a real app, use react-markdown here */}
                             {value ? (
-                                <div className="whitespace-pre-wrap font-sans">
-                                    {value.split('\n').map((line, i) => (
-                                        <p key={i} className={line.startsWith('#') ? 'font-bold text-lg' : ''}>
-                                            {line}
-                                        </p>
-                                    ))}
-                                </div>
+                                <div className="prose-headings:mb-2 prose-p:mb-2 prose-ul:mb-2 prose-ol:mb-2"
+                                    dangerouslySetInnerHTML={{ __html: renderedPreview }}
+                                />
                             ) : (
                                 <p className="text-text-tertiary italic">Nothing to preview</p>
                             )}

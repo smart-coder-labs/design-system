@@ -278,3 +278,5 @@ export { ControlCenterToggles } from './components/ControlCenterToggles';
 export type { ControlCenterTogglesProps, ToggleControl } from './components/ControlCenterToggles';
 export { WindowControls } from './components/WindowControls';
 export type { WindowControlsProps } from './components/WindowControls';
+export { ThemeToggle } from './components/ThemeToggle';
+export type { ThemeToggleProps, ThemeMode } from './components/ThemeToggle';

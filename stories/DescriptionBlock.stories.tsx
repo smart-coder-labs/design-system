@@ -113,7 +113,7 @@ export const WithMedia: Story = {
         metadata: baseMetadata,
         media: (
             <div className="aspect-video bg-gradient-to-br from-accent-blue/20 via-transparent to-accent-purple/30 p-6 flex items-end">
-                <div className="text-white/90">
+                <div className="text-black/90">
                     <p className="text-sm uppercase tracking-[0.4em]">VisionOS</p>
                     <p className="text-2xl font-semibold">Immersive Playbook</p>
                 </div>
