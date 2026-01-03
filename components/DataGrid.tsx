@@ -3,17 +3,10 @@
 import * as React from "react";
 import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
-import {
-    Filter,
-    Settings2,
-    Pin,
-    PinOff,
-    Download,
-    Check,
-} from "lucide-react";
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
+import { Download, Filter, Pin, PinOff, Settings2 } from "lucide-react";
 import { Table } from "./Table";
+import { Checkbox } from "./Checkbox";
+import { Combobox } from "./Combobox";
 
 /* -------------------------------------------------------------------------- */
 /*                                   TYPES                                    */
@@ -455,30 +448,6 @@ function PaginationButton({
     );
 }
 
-function Checkbox({
-    checked,
-    onCheckedChange,
-}: {
-    checked: boolean;
-    onCheckedChange?: () => void;
-}) {
-    return (
-        <CheckboxPrimitive.Root
-            checked={checked}
-            onCheckedChange={onCheckedChange}
-            className={cn(
-                "h-4 w-4 rounded-md border border-border-primary bg-surface-primary flex items-center justify-center",
-                "data-[state=checked]:bg-accent-blue data-[state=checked]:border-accent-blue",
-                "transition-colors"
-            )}
-        >
-            <CheckboxPrimitive.Indicator>
-                <Check className="h-3 w-3 text-white" />
-            </CheckboxPrimitive.Indicator>
-        </CheckboxPrimitive.Root>
-    );
-}
-
 function FilterButton<T>({
     column,
     value,
@@ -490,60 +459,77 @@ function FilterButton<T>({
 }) {
     const [open, setOpen] = React.useState(false);
     const [localValue, setLocalValue] = React.useState(value);
+    const containerRef = React.useRef<HTMLDivElement>(null);
+    const isSelect = column.filterType === "select" && column.filterOptions?.length;
+
+    React.useEffect(() => {
+        if (!open) return;
+        const handleClick = (event: MouseEvent) => {
+            if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+                setOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClick);
+        return () => document.removeEventListener("mousedown", handleClick);
+    }, [open]);
 
     return (
-        <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
-            <DropdownMenuPrimitive.Trigger asChild>
-                <button
-                    className={cn(
-                        "p-1 rounded-md transition-colors",
-                        value
-                            ? "text-accent-blue bg-accent-blue/10"
-                            : "text-text-tertiary hover:text-text-secondary"
-                    )}
-                >
-                    <Filter className="w-3.5 h-3.5" />
-                </button>
-            </DropdownMenuPrimitive.Trigger>
+        <div className="relative" ref={containerRef}>
+            <button
+                className={cn(
+                    "p-1 rounded-md transition-colors",
+                    value ? "text-accent-blue bg-accent-blue/10" : "text-text-tertiary hover:text-text-secondary"
+                )}
+                onClick={() => setOpen((prev) => !prev)}
+                type="button"
+            >
+                <Filter className="w-3.5 h-3.5" />
+            </button>
 
-            <DropdownMenuPrimitive.Portal>
-                <DropdownMenuPrimitive.Content
-                    align="end"
-                    className="z-50 min-w-[200px] p-2 bg-surface-elevated border border-border-primary rounded-xl shadow-lg"
-                >
-                    <div className="flex flex-col gap-2">
+            {open && (
+                <div className="absolute right-0 mt-2 z-50 min-w-[220px] p-3 bg-surface-elevated border border-border-primary rounded-xl shadow-lg space-y-2">
+                    {isSelect ? (
+                        <Combobox
+                            items={column.filterOptions!.map((opt) => ({ value: String(opt.value), label: opt.label }))}
+                            value={localValue || undefined}
+                            onChange={(val) => setLocalValue(val)}
+                            placeholder={`Filter ${column.header}...`}
+                            searchPlaceholder="Search..."
+                            emptyMessage="No options"
+                        />
+                    ) : (
                         <input
                             type="text"
                             placeholder={`Filter ${column.header}...`}
                             value={localValue}
                             onChange={(e) => setLocalValue(e.target.value)}
-                            className="px-3 py-2 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-blue"
+                            className="w-full px-3 py-2 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-blue"
                         />
-                        <div className="flex items-center gap-2">
-                            <button
-                                onClick={() => {
-                                    onChange(localValue);
-                                    setOpen(false);
-                                }}
-                                className="flex-1 px-3 py-1.5 text-sm bg-accent-blue text-white rounded-lg hover:bg-accent-blue/90 transition-colors"
-                            >
-                                Apply
-                            </button>
-                            <button
-                                onClick={() => {
-                                    setLocalValue("");
-                                    onChange("");
-                                    setOpen(false);
-                                }}
-                                className="px-3 py-1.5 text-sm bg-surface-secondary text-text-secondary rounded-lg hover:text-text-primary transition-colors"
-                            >
-                                Clear
-                            </button>
-                        </div>
+                    )}
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={() => {
+                                onChange(localValue);
+                                setOpen(false);
+                            }}
+                            className="flex-1 px-3 py-1.5 text-sm bg-accent-blue text-white rounded-lg hover:bg-accent-blue/90 transition-colors"
+                        >
+                            Apply
+                        </button>
+                        <button
+                            onClick={() => {
+                                setLocalValue("");
+                                onChange("");
+                                setOpen(false);
+                            }}
+                            className="px-3 py-1.5 text-sm bg-surface-secondary text-text-secondary rounded-lg hover:text-text-primary transition-colors"
+                        >
+                            Clear
+                        </button>
                     </div>
-                </DropdownMenuPrimitive.Content>
-            </DropdownMenuPrimitive.Portal>
-        </DropdownMenuPrimitive.Root>
+                </div>
+            )}
+        </div>
     );
 }
 
@@ -558,58 +544,72 @@ function ColumnVisibilityMenu<T>({
     onToggleVisibility: (key: keyof T) => void;
     onTogglePin: (key: keyof T) => void;
 }) {
+    const [open, setOpen] = React.useState(false);
+    const [selectedKey, setSelectedKey] = React.useState<string>(columns[0] ? String(columns[0].key) : "");
+    const containerRef = React.useRef<HTMLDivElement>(null);
+    const selectedColumn = columns.find((col) => String(col.key) === selectedKey) ?? columns[0];
+    const selectedState = selectedColumn ? columnStates.get(selectedColumn.key)! : undefined;
+
+    React.useEffect(() => {
+        if (!open) return;
+        const handleClick = (event: MouseEvent) => {
+            if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+                setOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClick);
+        return () => document.removeEventListener("mousedown", handleClick);
+    }, [open]);
+
     return (
-        <DropdownMenuPrimitive.Root>
-            <DropdownMenuPrimitive.Trigger asChild>
-                <button className="flex items-center gap-1.5 px-3 py-1.5 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-secondary/70 transition-all">
-                    <Settings2 className="w-4 h-4" />
-                    Columns
-                </button>
-            </DropdownMenuPrimitive.Trigger>
+        <div className="relative" ref={containerRef}>
+            <button
+                className="flex items-center gap-1.5 px-3 py-1.5 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-secondary/70 transition-all"
+                onClick={() => setOpen((prev) => !prev)}
+                type="button"
+            >
+                <Settings2 className="w-4 h-4" />
+                Columns
+            </button>
 
-            <DropdownMenuPrimitive.Portal>
-                <DropdownMenuPrimitive.Content
-                    align="end"
-                    className="z-50 min-w-[220px] p-2 bg-surface-elevated border border-border-primary rounded-xl shadow-lg max-h-[400px] overflow-auto"
-                >
-                    {columns.map((col) => {
-                        const state = columnStates.get(col.key)!;
-                        return (
-                            <div
-                                key={String(col.key)}
-                                className="flex items-center justify-between px-3 py-2 text-sm text-text-primary hover:bg-surface-secondary rounded-lg transition-colors"
-                            >
-                                <label className="flex items-center gap-2 flex-1 cursor-pointer">
-                                    <Checkbox
-                                        checked={state.visible}
-                                        onCheckedChange={() => onToggleVisibility(col.key)}
-                                    />
-                                    <span>{col.header}</span>
-                                </label>
+            {open && (
+                <div className="absolute right-0 mt-2 z-50 w-[260px] p-3 bg-surface-elevated border border-border-primary rounded-xl shadow-lg space-y-3">
+                    <Combobox
+                        items={columns.map((col) => ({ value: String(col.key), label: col.header }))}
+                        value={selectedKey || undefined}
+                        onChange={(val) => setSelectedKey(val)}
+                        placeholder="Select column"
+                        searchPlaceholder="Search columns..."
+                    />
 
-                                {col.pinnable && (
-                                    <button
-                                        onClick={() => onTogglePin(col.key)}
-                                        className={cn(
-                                            "p-1 rounded-md transition-colors",
-                                            state.pinned
-                                                ? "text-accent-blue bg-accent-blue/10"
-                                                : "text-text-tertiary hover:text-text-secondary"
-                                        )}
-                                    >
-                                        {state.pinned ? (
-                                            <Pin className="w-3.5 h-3.5" />
-                                        ) : (
-                                            <PinOff className="w-3.5 h-3.5" />
-                                        )}
-                                    </button>
-                                )}
-                            </div>
-                        );
-                    })}
-                </DropdownMenuPrimitive.Content>
-            </DropdownMenuPrimitive.Portal>
-        </DropdownMenuPrimitive.Root>
+                    {selectedColumn && selectedState && (
+                        <div className="flex items-center justify-between gap-2 text-sm text-text-primary">
+                            <label className="flex items-center gap-2 cursor-pointer">
+                                <Checkbox
+                                    checked={selectedState.visible}
+                                    onCheckedChange={() => onToggleVisibility(selectedColumn.key)}
+                                />
+                                <span>{selectedColumn.header}</span>
+                            </label>
+
+                            {selectedColumn.pinnable && (
+                                <button
+                                    onClick={() => onTogglePin(selectedColumn.key)}
+                                    className={cn(
+                                        "p-1 rounded-md transition-colors",
+                                        selectedState.pinned
+                                            ? "text-accent-blue bg-accent-blue/10"
+                                            : "text-text-tertiary hover:text-text-secondary"
+                                    )}
+                                >
+                                    {selectedState.pinned ? <Pin className="w-3.5 h-3.5" /> : <PinOff className="w-3.5 h-3.5" />}
+                                </button>
+                            )}
+                        </div>
+                    )}
+                </div>
+            )}
+        </div>
     );
 }
 
