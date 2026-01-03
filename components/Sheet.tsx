@@ -1,45 +1,153 @@
 "use client";
 
 import * as React from "react";
-import * as SheetPrimitive from "@radix-ui/react-dialog";
+import { createPortal } from "react-dom";
 import { cva, type VariantProps } from "class-variance-authority";
 import { X } from "lucide-react";
 import { cn } from "../lib/utils";
 
-const Sheet = SheetPrimitive.Root;
+type SheetContextValue = {
+    open: boolean;
+    setOpen: (open: boolean) => void;
+    triggerRef: React.MutableRefObject<HTMLElement | null>;
+};
 
-const SheetTrigger = SheetPrimitive.Trigger;
+const SheetContext = React.createContext<SheetContextValue | null>(null);
 
-const SheetClose = SheetPrimitive.Close;
+function useSheetContext() {
+    const context = React.useContext(SheetContext);
+    if (!context) {
+        throw new Error("Sheet components must be used within Sheet");
+    }
+    return context;
+}
 
-const SheetPortal = SheetPrimitive.Portal;
+type SheetProps = {
+    open?: boolean;
+    defaultOpen?: boolean;
+    onOpenChange?: (open: boolean) => void;
+    children: React.ReactNode;
+};
 
-const SheetOverlay = React.forwardRef<
-    React.ElementRef<typeof SheetPrimitive.Overlay>,
-    React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-    <SheetPrimitive.Overlay
-        className={cn(
-            "fixed inset-0 z-50 bg-black/20 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-            className
-        )}
-        {...props}
-        ref={ref}
-    />
-));
-SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
+const Sheet = ({ open: controlledOpen, defaultOpen = false, onOpenChange, children }: SheetProps) => {
+    const [uncontrolledOpen, setUncontrolledOpen] = React.useState(defaultOpen);
+    const open = controlledOpen ?? uncontrolledOpen;
+    const triggerRef = React.useRef<HTMLElement | null>(null);
+
+    const setOpen = React.useCallback(
+        (next: boolean) => {
+            if (controlledOpen === undefined) {
+                setUncontrolledOpen(next);
+            }
+            onOpenChange?.(next);
+        },
+        [controlledOpen, onOpenChange]
+    );
+
+    const value = React.useMemo(() => ({ open, setOpen, triggerRef }), [open, setOpen]);
+
+    return <SheetContext.Provider value={value}>{children}</SheetContext.Provider>;
+};
+
+type SheetTriggerProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    asChild?: boolean;
+};
+
+const SheetTrigger = React.forwardRef<HTMLElement, SheetTriggerProps>(({ asChild = false, children, className, onClick, ...props }, ref) => {
+    const { open, setOpen, triggerRef } = useSheetContext();
+    const mergedRef = (node: HTMLElement | null) => {
+        triggerRef.current = node;
+        if (typeof ref === "function") ref(node as any);
+        else if (ref) (ref as React.MutableRefObject<HTMLElement | null>).current = node;
+    };
+
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        onClick?.(event as any);
+        if (event.defaultPrevented) return;
+        setOpen(!open);
+    };
+
+    if (asChild && React.isValidElement(children)) {
+        return React.cloneElement(children, {
+            ref: mergedRef,
+            onClick: (event: React.MouseEvent<HTMLElement>) => {
+                (children as any).props?.onClick?.(event);
+                handleClick(event);
+            },
+            className: cn((children as any).props?.className, className),
+            "aria-haspopup": "dialog",
+            "aria-expanded": open,
+        });
+    }
+
+    return (
+        <button
+            type="button"
+            ref={mergedRef as React.Ref<HTMLButtonElement>}
+            onClick={handleClick}
+            aria-haspopup="dialog"
+            aria-expanded={open}
+            className={className}
+            {...props}
+        >
+            {children}
+        </button>
+    );
+});
+SheetTrigger.displayName = "SheetTrigger";
+
+const SheetClose = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>(
+    ({ children, onClick, className, ...props }, ref) => {
+        const { setOpen } = useSheetContext();
+        return (
+            <button
+                type="button"
+                ref={ref}
+                onClick={(event) => {
+                    onClick?.(event);
+                    if (!event.defaultPrevented) setOpen(false);
+                }}
+                className={className}
+                {...props}
+            >
+                {children}
+            </button>
+        );
+    }
+);
+SheetClose.displayName = "SheetClose";
+
+const SheetPortal: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    if (typeof document === "undefined") return null;
+    return createPortal(children, document.body);
+};
+
+const SheetOverlay = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => {
+    const { open, setOpen } = useSheetContext();
+    return (
+        <div
+            ref={ref}
+            data-state={open ? "open" : "closed"}
+            className={cn(
+                "fixed inset-0 z-50 bg-black/20 backdrop-blur-sm",
+                className
+            )}
+            onClick={() => setOpen(false)}
+            {...props}
+        />
+    );
+});
+SheetOverlay.displayName = "SheetOverlay";
 
 const sheetVariants = cva(
-    "fixed z-50 gap-4 bg-surface-primary p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+    "fixed z-50 gap-4 bg-surface-primary p-6 shadow-lg transition ease-in-out",
     {
         variants: {
             side: {
-                top: "inset-x-0 top-0 border-b border-border-primary data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
-                bottom:
-                    "inset-x-0 bottom-0 border-t border-border-primary data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
-                left: "inset-y-0 left-0 h-full w-3/4 border-r border-border-primary data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
-                right:
-                    "inset-y-0 right-0 h-full w-3/4 border-l border-border-primary data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+                top: "inset-x-0 top-0 border-b border-border-primary",
+                bottom: "inset-x-0 bottom-0 border-t border-border-primary",
+                left: "inset-y-0 left-0 h-full w-3/4 border-r border-border-primary sm:max-w-sm",
+                right: "inset-y-0 right-0 h-full w-3/4 border-l border-border-primary sm:max-w-sm",
             },
         },
         defaultVariants: {
@@ -48,30 +156,43 @@ const sheetVariants = cva(
     }
 );
 
-interface SheetContentProps
-    extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-    VariantProps<typeof sheetVariants> { }
+interface SheetContentProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof sheetVariants> {}
 
-const SheetContent = React.forwardRef<
-    React.ElementRef<typeof SheetPrimitive.Content>,
-    SheetContentProps
->(({ side = "right", className, children, ...props }, ref) => (
-    <SheetPortal>
-        <SheetOverlay />
-        <SheetPrimitive.Content
-            ref={ref}
-            className={cn(sheetVariants({ side }), className)}
-            {...props}
-        >
-            <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-                <X className="h-4 w-4" />
-                <span className="sr-only">Close</span>
-            </SheetPrimitive.Close>
-            {children}
-        </SheetPrimitive.Content>
-    </SheetPortal>
-));
-SheetContent.displayName = SheetPrimitive.Content.displayName;
+const SheetContent = React.forwardRef<HTMLDivElement, SheetContentProps>(({ side = "right", className, children, ...props }, ref) => {
+    const { open, setOpen } = useSheetContext();
+
+    React.useEffect(() => {
+        if (!open) return;
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") setOpen(false);
+        };
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    }, [open, setOpen]);
+
+    if (!open) return null;
+
+    return (
+        <SheetPortal>
+            <SheetOverlay />
+            <div
+                ref={ref}
+                role="dialog"
+                aria-modal="true"
+                data-state={open ? "open" : "closed"}
+                className={cn(sheetVariants({ side }), className)}
+                {...props}
+            >
+                <SheetClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+                    <X className="h-4 w-4" />
+                    <span className="sr-only">Close</span>
+                </SheetClose>
+                {children}
+            </div>
+        </SheetPortal>
+    );
+});
+SheetContent.displayName = "SheetContent";
 
 const SheetHeader = ({
     className,
@@ -101,29 +222,27 @@ const SheetFooter = ({
 );
 SheetFooter.displayName = "SheetFooter";
 
-const SheetTitle = React.forwardRef<
-    React.ElementRef<typeof SheetPrimitive.Title>,
-    React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
->(({ className, ...props }, ref) => (
-    <SheetPrimitive.Title
-        ref={ref}
-        className={cn("text-lg font-semibold text-text-primary", className)}
-        {...props}
-    />
-));
-SheetTitle.displayName = SheetPrimitive.Title.displayName;
+const SheetTitle = React.forwardRef<HTMLHeadingElement, React.HTMLAttributes<HTMLHeadingElement>>(
+    ({ className, ...props }, ref) => (
+        <h2
+            ref={ref}
+            className={cn("text-lg font-semibold text-text-primary", className)}
+            {...props}
+        />
+    )
+);
+SheetTitle.displayName = "SheetTitle";
 
-const SheetDescription = React.forwardRef<
-    React.ElementRef<typeof SheetPrimitive.Description>,
-    React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>
->(({ className, ...props }, ref) => (
-    <SheetPrimitive.Description
-        ref={ref}
-        className={cn("text-sm text-text-secondary", className)}
-        {...props}
-    />
-));
-SheetDescription.displayName = SheetPrimitive.Description.displayName;
+const SheetDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
+    ({ className, ...props }, ref) => (
+        <p
+            ref={ref}
+            className={cn("text-sm text-text-secondary", className)}
+            {...props}
+        />
+    )
+);
+SheetDescription.displayName = "SheetDescription";
 
 export {
     Sheet,
