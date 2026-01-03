@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { Check, ChevronsUpDown, Search } from "lucide-react";
-import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { cn } from "../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -38,6 +37,9 @@ export function Combobox({
     const [highlightedIndex, setHighlightedIndex] = React.useState(0);
     const inputRef = React.useRef<HTMLInputElement>(null);
     const listRef = React.useRef<HTMLDivElement>(null);
+    const triggerRef = React.useRef<HTMLButtonElement>(null);
+    const containerRef = React.useRef<HTMLDivElement>(null);
+    const [triggerWidth, setTriggerWidth] = React.useState<number | null>(null);
 
     const filteredItems = React.useMemo(() => {
         if (!search) return items;
@@ -116,82 +118,115 @@ export function Combobox({
         }
     }, [highlightedIndex, open]);
 
-    return (
-        <PopoverPrimitive.Root open={open} onOpenChange={setOpen}>
-            <PopoverPrimitive.Trigger asChild>
-                <button
-                    role="combobox"
-                    aria-expanded={open}
-                    disabled={disabled}
-                    className={cn(
-                        "group flex h-10 w-full items-center justify-between rounded-lg border border-border-primary bg-surface-primary px-3 py-2 text-sm ring-offset-background placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 shadow-sm hover:bg-surface-secondary/50 transition-colors",
-                        className
-                    )}
-                    onKeyDown={handleKeyDown}
-                >
-                    <span className={cn("truncate", !selectedItem && "text-text-tertiary")}>
-                        {selectedItem ? selectedItem.label : placeholder}
-                    </span>
-                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                </button>
-            </PopoverPrimitive.Trigger>
-            <PopoverPrimitive.Portal>
-                <PopoverPrimitive.Content
-                    className={cn(
-                        "relative z-50 min-w-[var(--radix-popover-trigger-width)] overflow-hidden rounded-xl border border-border-primary bg-surface-glass backdrop-blur-xl text-text-primary shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-                        "p-0"
-                    )}
-                    align="start"
-                    sideOffset={4}
-                >
-                    <div className="flex items-center border-b border-border-primary px-3">
-                        <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
-                        <input
-                            ref={inputRef}
-                            className="flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-text-tertiary disabled:cursor-not-allowed disabled:opacity-50"
-                            placeholder={searchPlaceholder}
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            onKeyDown={handleKeyDown}
-                        />
-                    </div>
-                    <div
-                        ref={listRef}
-                        className="max-h-[200px] overflow-y-auto overflow-x-hidden py-1"
-                        onMouseLeave={() => setHighlightedIndex(-1)}
-                    >
-                        {filteredItems.length === 0 ? (
-                            <div className="p-2 text-center text-sm text-text-tertiary">
-                                {emptyMessage}
-                            </div>
-                        ) : (
-                            filteredItems.map((item, index) => {
-                                const isSelected = item.value === value;
-                                const isHighlighted = index === highlightedIndex;
+    // Measure trigger width for popover sizing
+    React.useLayoutEffect(() => {
+        if (triggerRef.current) {
+            setTriggerWidth(triggerRef.current.offsetWidth);
+        }
+    }, [className]);
 
-                                return (
-                                    <div
-                                        key={item.value}
-                                        className={cn(
-                                            "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors mx-1",
-                                            isSelected
-                                                ? "bg-accent-blue text-white"
-                                                : isHighlighted
-                                                    ? "bg-surface-secondary text-text-primary"
-                                                    : "text-text-primary",
-                                            item.disabled && "pointer-events-none opacity-50"
-                                        )}
-                                        onClick={() => !item.disabled && handleSelect(item.value)}
-                                        onMouseEnter={() => setHighlightedIndex(index)}
-                                    >
-                                        <span className="truncate">{item.label}</span>
-                                    </div>
-                                );
-                            })
+    // Close on outside click when open
+    React.useEffect(() => {
+        if (!open) return;
+
+        const handleClickOutside = (event: MouseEvent) => {
+            if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+                setOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [open]);
+
+    return (
+        <div className="relative w-full" ref={containerRef}>
+            <button
+                ref={triggerRef}
+                role="combobox"
+                aria-expanded={open}
+                disabled={disabled}
+                className={cn(
+                    "group flex h-10 w-full items-center justify-between rounded-lg border border-border-primary bg-surface-primary px-3 py-2 text-sm ring-offset-background placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 shadow-sm hover:bg-surface-secondary/50 transition-colors",
+                    className
+                )}
+                onKeyDown={handleKeyDown}
+                onClick={() => !disabled && setOpen((prev) => !prev)}
+            >
+                <span className={cn("truncate", !selectedItem && "text-text-tertiary")}>
+                    {selectedItem ? selectedItem.label : placeholder}
+                </span>
+                <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            </button>
+
+            <AnimatePresence>
+                {open && (
+                    <motion.div
+                        key="combobox-popover"
+                        initial={{ opacity: 0, scale: 0.95, y: -6 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.95, y: -6 }}
+                        transition={{ duration: 0.12, ease: "easeOut" }}
+                        data-state={open ? "open" : "closed"}
+                        className={cn(
+                            "absolute z-50 overflow-hidden rounded-xl border border-border-primary bg-surface-glass backdrop-blur-xl text-text-primary shadow-lg",
+                            "p-0"
                         )}
-                    </div>
-                </PopoverPrimitive.Content>
-            </PopoverPrimitive.Portal>
-        </PopoverPrimitive.Root>
+                        style={{
+                            minWidth: triggerWidth ? `${triggerWidth}px` : undefined,
+                            top: "calc(100% + 4px)",
+                            left: 0,
+                        }}
+                    >
+                        <div className="flex items-center border-b border-border-primary px-3">
+                            <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+                            <input
+                                ref={inputRef}
+                                className="flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-text-tertiary disabled:cursor-not-allowed disabled:opacity-50"
+                                placeholder={searchPlaceholder}
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                onKeyDown={handleKeyDown}
+                            />
+                        </div>
+                        <div
+                            ref={listRef}
+                            className="max-h-[200px] overflow-y-auto overflow-x-hidden py-1"
+                            onMouseLeave={() => setHighlightedIndex(-1)}
+                        >
+                            {filteredItems.length === 0 ? (
+                                <div className="p-2 text-center text-sm text-text-tertiary">
+                                    {emptyMessage}
+                                </div>
+                            ) : (
+                                filteredItems.map((item, index) => {
+                                    const isSelected = item.value === value;
+                                    const isHighlighted = index === highlightedIndex;
+
+                                    return (
+                                        <div
+                                            key={item.value}
+                                            className={cn(
+                                                "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors mx-1",
+                                                isSelected
+                                                    ? "bg-accent-blue text-white"
+                                                    : isHighlighted
+                                                        ? "bg-surface-secondary text-text-primary"
+                                                        : "text-text-primary",
+                                                item.disabled && "pointer-events-none opacity-50"
+                                            )}
+                                            onClick={() => !item.disabled && handleSelect(item.value)}
+                                            onMouseEnter={() => setHighlightedIndex(index)}
+                                        >
+                                            <span className="truncate">{item.label}</span>
+                                        </div>
+                                    );
+                                })
+                            )}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     );
 }

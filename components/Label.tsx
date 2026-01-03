@@ -19,7 +19,7 @@ export const Label: React.FC<LabelProps> = ({
             variant="small"
             weight="medium"
             color="primary"
-            className={`block mb-1.5 select-none ${className}`}
+            className={`block select-none ${className}`}
             {...props}
             // @ts-ignore - htmlFor is valid for label element
             htmlFor={htmlFor}

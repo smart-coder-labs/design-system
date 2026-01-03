@@ -25,9 +25,9 @@ export const Default: Story = {
             <Collapsible
                 open={isOpen}
                 onOpenChange={setIsOpen}
-                className="w-[350px] space-y-2 border border-border-primary rounded-xl p-4 bg-surface-primary shadow-sm"
+                className="w-[280px] space-y-2 border border-border-primary rounded-lg p-3 bg-surface-primary shadow-sm"
             >
-                <CollapsibleTrigger asChild>
+                <CollapsibleTrigger>
                     <div className="flex items-center justify-between cursor-pointer select-none group">
                         <h4 className="text-sm font-semibold text-text-primary">
                             @peduarte starred 3 repositories
@@ -46,13 +46,13 @@ export const Default: Story = {
                 */}
 
                 <CollapsibleContent className="space-y-2 mt-2">
-                    <div className="rounded-md border border-border-secondary px-4 py-3 font-mono text-sm text-text-secondary">
+                    <div className="rounded-md border border-border-secondary px-3 py-2 text-sm text-text-secondary">
                         @radix-ui/primitives
                     </div>
-                    <div className="rounded-md border border-border-secondary px-4 py-3 font-mono text-sm text-text-secondary">
+                    <div className="rounded-md border border-border-secondary px-3 py-2 text-sm text-text-secondary">
                         @radix-ui/colors
                     </div>
-                    <div className="rounded-md border border-border-secondary px-4 py-3 font-mono text-sm text-text-secondary">
+                    <div className="rounded-md border border-border-secondary px-3 py-2 text-sm text-text-secondary">
                         @stitches/react
                     </div>
                 </CollapsibleContent>
