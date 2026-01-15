@@ -22,7 +22,7 @@ Esto ocurría porque tu configuración de Tailwind no tenía acceso a las defini
 ### 1. Actualiza el paquete
 
 ```bash
-npm install @smart-coder-labs/design-system@latest
+npm install @smart-coder-labs/apple-design-system@latest
 ```
 
 ### 2. Actualiza tu `tailwind.config.js`
@@ -33,7 +33,7 @@ npm install @smart-coder-labs/design-system@latest
 module.exports = {
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smart-coder-labs/apple-design-system/**/*.{js,ts,jsx,tsx}',
   ],
   // ... resto de configuración
 }
@@ -44,13 +44,13 @@ module.exports = {
 **Para proyectos con ESM (Vite, Next.js con `type: "module"`):**
 ```javascript
 // tailwind.config.js
-import preset from '@smart-coder-labs/design-system/tailwind.preset';
+import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
 
 export default {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smart-coder-labs/apple-design-system/**/*.{js,ts,jsx,tsx}',
   ],
   // ... resto de configuración
 };
@@ -59,13 +59,13 @@ export default {
 **Para proyectos con CommonJS:**
 ```javascript
 // tailwind.config.cjs
-const preset = require('@smart-coder-labs/design-system/tailwind.preset').default;
+const preset = require('@smart-coder-labs/apple-design-system/tailwind.preset').default;
 
 module.exports = {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smart-coder-labs/apple-design-system/**/*.{js,ts,jsx,tsx}',
   ],
 };
 ```
@@ -102,7 +102,7 @@ El preset de Tailwind incluye automáticamente:
 Si necesitas extender o sobrescribir valores del preset, puedes hacerlo en tu configuración:
 
 ```javascript
-import preset from '@smart-coder-labs/design-system/tailwind.preset';
+import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
 
 export default {
   presets: [preset],

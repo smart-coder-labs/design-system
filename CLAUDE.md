@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is the **Apple Creative Design System** (`@smart-coder-labs/design-system`), a comprehensive React component library inspired by macOS, iOS, and VisionOS design patterns. The system combines Radix UI primitives with Framer Motion animations and Tailwind CSS styling to deliver accessible, animated, and minimalist components.
+This is the **Apple Creative Design System** (`@smart-coder-labs/apple-design-system`), a comprehensive React component library inspired by macOS, iOS, and VisionOS design patterns. The system combines Radix UI primitives with Framer Motion animations and Tailwind CSS styling to deliver accessible, animated, and minimalist components.
 
 **Key technologies:**
 - React 19+ with TypeScript 5+
@@ -48,7 +48,7 @@ Since this is a component library, testing is primarily done through Storybook. 
 
 ### Package Structure
 
-This is a **library package** designed to be consumed by other projects. It's published to GitHub Package Registry at `@smart-coder-labs/design-system`.
+This is a **library package** designed to be consumed by other projects. It's published to GitHub Package Registry at `@smart-coder-labs/apple-design-system`.
 
 **Key source files:**
 - `index.ts` - Main export file for all components (source)
@@ -102,14 +102,14 @@ The `tokens.ts` file defines the complete design language:
 Consumers configure it in `tailwind.config.js`:
 
 ```javascript
-import preset from '@smart-coder-labs/design-system/tailwind.preset';
+import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
 
 export default {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
     // IMPORTANT: Include the compiled components from dist/
-    './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
+    './node_modules/@smart-coder-labs/apple-design-system/dist/**/*.js',
   ],
 };
 ```

@@ -1,19 +1,33 @@
 {
-  "name": "@smart-coder-labs/design-system",
-  "version": "1.0.8",
-  "description": "Design system completo estilo Apple (macOS/iOS/VisionOS) con Framer Motion + Radix UI",
+  "name": "@smart-coder-labs/apple-design-system",
+  "version": "1.0.1",
+  "description": "Design system completo estilo Apple (macOS/iOS/VisionOS) con Framer Motion",
+  "keywords": [
+    "apple-design-system",
+    "apple",
+    "macos",
+    "ios",
+    "visionos",
+    "framer-motion",
+    "radix-ui",
+    "react",
+    "typescript",
+    "tailwindcss"
+  ],
+  "homepage": "https://github.com/smart-coder-labs/apple-design-system#readme",
+  "bugs": {
+    "url": "https://github.com/smart-coder-labs/apple-design-system/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smart-coder-labs/design-system.git"
+    "url": "git+https://github.com/smart-coder-labs/apple-design-system.git"
   },
+  "license": "MIT",
+  "author": "Your Name",
+  "type": "commonjs",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
-  "bin": {
-    "design-system": "./dist/cli/index.js"
-  },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -32,6 +46,16 @@
       "require": "./dist/tokens.js"
     }
   },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "apple-design-system": "dist/cli/index.js"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "lib": "lib"
+  },
   "files": [
     "dist",
     "README.md",
@@ -47,24 +71,6 @@
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
-  },
-  "keywords": [
-    "design-system",
-    "apple",
-    "macos",
-    "ios",
-    "visionos",
-    "framer-motion",
-    "radix-ui",
-    "react",
-    "typescript",
-    "tailwindcss"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
-  "peerDependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
   },
   "dependencies": {
     "chalk": "^4.1.2",
@@ -107,5 +113,9 @@
     "tailwindcss": "^4.1.18",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   }
 }

@@ -10,7 +10,7 @@ cd my-app
 ## 2. Instalar el paquete y Tailwind CSS 4.1
 
 ```bash
-npm install @smart-coder-labs/design-system tailwindcss@^4.1.0
+npm install @smart-coder-labs/apple-design-system tailwindcss@^4.1.0
 ```
 
 ## 3. Instalar React 19 (peer dependency)
@@ -28,7 +28,7 @@ En tu `src/main.tsx`:
 ```tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '@smart-coder-labs/design-system/globals.css';
+import '@smart-coder-labs/apple-design-system/globals.css';
 import './index.css'; // Si tienes estilos adicionales
 import App from './App';
 
@@ -71,7 +71,7 @@ import {
   CardTitle,
   CardContent,
   Switch,
-} from '@smart-coder-labs/design-system';
+} from '@smart-coder-labs/apple-design-system';
 
 function App() {
   const [isDark, setIsDark] = useState(false);

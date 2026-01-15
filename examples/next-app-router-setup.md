@@ -3,11 +3,11 @@
 ## 1. Instalar el paquete
 
 ```bash
-npm install @smart-coder-labs/design-system
+npm install @smart-coder-labs/apple-design-system
 # o
-yarn add @smart-coder-labs/design-system
+yarn add @smart-coder-labs/apple-design-system
 # o
-pnpm add @smart-coder-labs/design-system
+pnpm add @smart-coder-labs/apple-design-system
 ```
 
 ## 2. Instalar dependencias peer
@@ -21,7 +21,7 @@ npm install react@^19.2.0 react-dom@^19.2.0 tailwindcss@^3.4.0
 Crea o actualiza `tailwind.config.js` en la raíz de tu proyecto:
 
 ```javascript
-import preset from '@smart-coder-labs/design-system/tailwind.preset';
+import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -36,7 +36,7 @@ export default {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
 
     // IMPORTANTE: Incluye los componentes del design system
-    './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
+    './node_modules/@smart-coder-labs/apple-design-system/dist/**/*.js',
   ],
 };
 ```
@@ -46,7 +46,7 @@ export default {
 En tu `app/layout.tsx`:
 
 ```tsx
-import '@smart-coder-labs/design-system/globals.css';
+import '@smart-coder-labs/apple-design-system/globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -72,7 +72,7 @@ export default function RootLayout({
 ```tsx
 'use client';
 
-import { Button, Card, CardHeader, CardTitle, CardContent } from '@smart-coder-labs/design-system';
+import { Button, Card, CardHeader, CardTitle, CardContent } from '@smart-coder-labs/apple-design-system';
 
 export default function HomePage() {
   return (
@@ -101,7 +101,7 @@ Agrega un toggle de tema en tu layout o componente:
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Switch } from '@smart-coder-labs/design-system';
+import { Switch } from '@smart-coder-labs/apple-design-system';
 
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);

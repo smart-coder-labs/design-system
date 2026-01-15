@@ -8,8 +8,8 @@
     "sourceMap": true,
     "noEmit": false,
     "emitDeclarationOnly": false,
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     "target": "ES2020",
     "skipLibCheck": true
   },
@@ -25,6 +25,7 @@
     "**/*.test.tsx",
     ".storybook",
     "stories",
-    "vite.config.ts"
+    "vite.config.ts",
+    "components"
   ]
 }

@@ -27,7 +27,7 @@
 ## 📦 Instalación
 
 ```bash
-npm install @smart-coder-labs/design-system
+npm install @smart-coder-labs/apple-design-system
 ```
 
 El paquete está publicado en **GitHub Package Registry**. Para configurar la autenticación, consulta la [guía de inicio rápido](./QUICKSTART.md).
@@ -43,7 +43,7 @@ El Design System ahora incluye una CLI integrada para facilitar la instalación 
 Configura tu proyecto automáticamente instalando dependencias y configurando Tailwind CSS.
 
 ```bash
-npx @smart-coder-labs/design-system init
+npx @smart-coder-labs/apple-design-system init
 ```
 
 ### `add`
@@ -51,7 +51,7 @@ npx @smart-coder-labs/design-system init
 Añade componentes individuales a tu proyecto. La CLI descargará el código fuente más reciente directamente desde el repositorio.
 
 ```bash
-npx @smart-coder-labs/design-system add Button Card
+npx @smart-coder-labs/apple-design-system add Button Card
 ```
 
 Esto:
@@ -116,7 +116,7 @@ Esto:
 ### 1. Instalar el paquete
 
 ```bash
-npm install @smart-coder-labs/design-system
+npm install @smart-coder-labs/apple-design-system
 ```
 
 > **Nota:** Este paquete está publicado en GitHub Package Registry. Necesitarás configurar la autenticación en tu archivo `.npmrc`:
@@ -132,13 +132,13 @@ npm install @smart-coder-labs/design-system
 
 ```javascript
 // tailwind.config.js
-import preset from '@smart-coder-labs/design-system/tailwind.preset';
+import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
 
 export default {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smart-coder-labs/apple-design-system/**/*.{js,ts,jsx,tsx}',
   ],
 };
 ```
@@ -146,8 +146,8 @@ export default {
 ### 3. Usar en tu proyecto
 
 ```tsx
-import { Button, Card, Input } from '@smart-coder-labs/design-system';
-import '@smart-coder-labs/design-system/globals.css';
+import { Button, Card, Input } from '@smart-coder-labs/apple-design-system';
+import '@smart-coder-labs/apple-design-system/globals.css';
 
 function App() {
   return (
@@ -253,7 +253,7 @@ function App() {
 ## 🌓 Dark Mode
 
 ```tsx
-import { Switch } from '@smart-coder-labs/design-system';
+import { Switch } from '@smart-coder-labs/apple-design-system';
 
 const [darkMode, setDarkMode] = useState(false);
 
@@ -275,7 +275,7 @@ useEffect(() => {
 ### Modificar colores
 
 ```typescript
-import { tokens } from '@smart-coder-labs/design-system';
+import { tokens } from '@smart-coder-labs/apple-design-system';
 
 const customTokens = {
   ...tokens,
@@ -396,19 +396,19 @@ Este design system está inspirado en:
 A partir de **v1.0.3**, es necesario usar el preset de Tailwind:
 
 ```bash
-npm install @smart-coder-labs/design-system@latest
+npm install @smart-coder-labs/apple-design-system@latest
 ```
 
 Actualiza tu `tailwind.config.js`:
 
 ```javascript
-import preset from '@smart-coder-labs/design-system/tailwind.preset';
+import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
 
 export default {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smart-coder-labs/apple-design-system/**/*.{js,ts,jsx,tsx}',
   ],
 };
 ```

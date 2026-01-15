@@ -68,6 +68,6 @@ export function cn(...inputs: ClassValue[]) {
         }
     }
     console.log(chalk.bold.green("\nSuccess! Project initialized."));
-    console.log(`You can now run ${chalk.cyan("npx design-system add [component]")} to add components.`);
+    console.log(`You can now run ${chalk.cyan("npx apple-design-system add [component]")} to add components.`);
 };
 //# sourceMappingURL=init.js.map

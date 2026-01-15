@@ -1,475 +1,155 @@
 # 🚀 Quick Start Guide - Apple Design System
 
+El Design System ahora funciona bajo un modelo de "Components as Code" (similar a shadcn/ui), donde tú eres dueño del código de los componentes.
+
 ## ⚡ Instalación
 
-### Opción 1: Instalar desde npm (Recomendado)
+### 1. Inicializar el proyecto
 
-#### 1. Configurar autenticación con GitHub Package Registry
-
-Crea o edita el archivo `.npmrc` en la raíz de tu proyecto:
+Ejecuta el comando `init` para configurar tu proyecto. Esto creará el archivo de configuración `design-system.json` y preparará utilidades base.
 
 ```bash
-@smart-coder-labs:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=TU_GITHUB_TOKEN
+npx @smart-coder-labs/apple-design-system init
 ```
 
-> **Nota:** Reemplaza `TU_GITHUB_TOKEN` con un Personal Access Token de GitHub que tenga permisos de `read:packages`.
-> [Cómo crear un token →](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+El asistente te preguntará:
+- Dónde guardar los componentes (ej. `./components/ui`).
+- Dónde está tu CSS global.
+- Si deseas instalar las dependencias base (`tailwindcss`, `framer-motion`, etc.).
 
-#### 2. Instalar el paquete
+### 2. Configurar Tailwind CSS
 
-```bash
-npm install @smart-coder-labs/design-system
-```
-
-#### 3. Configurar Tailwind CSS
-
-**IMPORTANTE:** Debes usar el preset de Tailwind del design system para que las clases personalizadas funcionen correctamente.
+Asegúrate de que tu `tailwind.config.js` (o `.ts`) tenga configuradas las rutas de contenido para los nuevos componentes.
 
 ```javascript
 // tailwind.config.js
-import preset from '@smart-coder-labs/design-system/tailwind.preset';
+import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
 
 export default {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    // IMPORTANTE: Incluye los componentes compilados del design system
-    './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}', // Asegúrate de incluir la carpeta de componentes
   ],
   // ... resto de tu configuración
 };
 ```
 
-**Nota:** Si estás usando CommonJS (`.cjs`), usa:
-```javascript
-const preset = require('@smart-coder-labs/design-system/tailwind.preset').default;
+### 3. Añadir componentes
 
-module.exports = {
-  presets: [preset],
-  content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-    // IMPORTANTE: Incluye los componentes compilados del design system
-    './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
-  ],
-};
+Usa el comando `add` para descargar componentes individuales a tu proyecto.
+
+```bash
+npx @smart-coder-labs/apple-design-system add Button Card Input
 ```
 
-#### 4. Importar los estilos globales
-
-En tu archivo principal (`app/layout.tsx`, `pages/_app.tsx`, o `main.tsx`):
-
-```tsx
-import '@smart-coder-labs/design-system/globals.css';
-```
-
-#### 5. Usar los componentes
-
-```tsx
-import { Button, Card, Input } from '@smart-coder-labs/design-system';
-
-export default function Page() {
-  return (
-    <Card>
-      <Input label="Email" placeholder="your@email.com" />
-      <Button variant="primary">Submit</Button>
-    </Card>
-  );
-}
-```
+Esto:
+1. Descargará el código fuente a `./components/ui/button.tsx`, etc.
+2. Instalará automáticamente las dependencias necesarias para esos componentes.
 
 ---
 
-### Opción 2: Desarrollo Local
+## 💻 Uso de Componentes
 
-#### 1. Navegar al directorio
-```bash
-cd /Volumes/Realtek/work-environment/personal/smartcoder/design-system
-```
-
-#### 2. Instalar dependencias
-```bash
-npm install
-```
-
-#### 3. Ver la demo
+Ahora importas los componentes directamente desde tu carpeta local, no desde el paquete npm.
 
 ```tsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import DemoPage from './DemoPage';
-import './globals.css';
+// Ejemplo: src/app/page.tsx
+import { Button } from "@/components/ui/button"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <DemoPage />
-  </React.StrictMode>
-);
-```
-
-#### 4. Ejecutar con Vite
-```bash
-npx vite
-```
-
----
-
-## 📝 Uso en Diferentes Frameworks
-
-### Next.js
-
-```tsx
-// app/layout.tsx
-import '@smart-coder-labs/design-system/globals.css';
-import { Button, Card } from '@smart-coder-labs/design-system';
-
-export default function RootLayout({ children }) {
+export default function LoginPage() {
   return (
-    <html lang="es">
-      <body>{children}</body>
-    </html>
-  );
+    <div className="flex items-center justify-center min-h-screen bg-background-primary">
+      <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle>Iniciar Sesión</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <Input placeholder="nombre@ejemplo.com" type="email" />
+          <Input placeholder="Contraseña" type="password" />
+          <Button className="w-full">Entrar</Button>
+        </CardContent>
+      </Card>
+    </div>
+  )
 }
-```
-
-### Vite + React
-
-```tsx
-// main.tsx
-import '@smart-coder-labs/design-system/globals.css';
-import { Button, Card } from '@smart-coder-labs/design-system';
-```
-
-### Remix
-
-```tsx
-// app/root.tsx
-import styles from '@smart-coder-labs/design-system/globals.css';
-
-export const links = () => [{ rel: 'stylesheet', href: styles }];
 ```
 
 ---
 
 ## 🌓 Activar Dark Mode
 
-### Toggle manual
+El sistema utiliza la clase `dark` en el elemento HTML.
+
+### Toggle manual (Ejemplo)
 
 ```tsx
-import { Switch } from '@smart-coder-labs/design-system';
-import { useState, useEffect } from 'react';
+"use client"
 
-function DarkModeToggle() {
-  const [darkMode, setDarkMode] = useState(false);
+import * as React from "react"
+import { Moon, Sun } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
+export function ModeToggle() {
+  const [theme, setTheme] = React.useState("light")
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light"
+    setTheme(newTheme)
+    document.documentElement.classList.toggle("dark", newTheme === "dark")
+  }
 
   return (
-    <Switch
-      checked={darkMode}
-      onCheckedChange={setDarkMode}
-      label="Dark Mode"
-    />
-  );
+    <Button variant="ghost" size="icon" onClick={toggleTheme}>
+      <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  )
 }
-```
-
-### Detectar preferencia del sistema
-
-```tsx
-useEffect(() => {
-  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (isDark) {
-    document.documentElement.classList.add('dark');
-  }
-}, []);
 ```
 
 ---
 
 ## 📦 Componentes Disponibles
 
-```tsx
-import {
-  // Botones
-  Button,
+Puedes ver la lista completa de componentes disponibles en el repositorio o autocompletando con el comando `add`.
 
-  // Tarjetas
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-
-  // Formularios
-  Input,
-  Textarea,
-  Switch,
-
-  // Overlays
-  Modal,
-  ModalHeader,
-  ModalTitle,
-  ModalDescription,
-  ModalContent,
-  ModalFooter,
-  ModalClose,
-  ModalCloseButton,
-
-  // Menús
-  Dropdown,
-  DropdownItem,
-  DropdownSeparator,
-  DropdownLabel,
-  DropdownCheckboxItem,
-  DropdownRadioGroup,
-  DropdownRadioItem,
-
-  // Tooltips
-  Tooltip,
-  TooltipProvider,
-
-  // Navegación
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-  NavBar,
-  NavBarBrand,
-  NavBarContent,
-  NavBarItem,
-  NavBarSeparator,
-
-  // Indicadores
-  Badge,
-  NotificationBadge,
-
-  // Tokens
-  tokens,
-} from '@smart-coder-labs/design-system';
+```bash
+npx @smart-coder-labs/apple-design-system add --help
 ```
-
----
-
-## 🎯 Ejemplo Completo
-
-```tsx
-import React, { useState } from 'react';
-import {
-  NavBar,
-  NavBarBrand,
-  NavBarContent,
-  NavBarItem,
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-  Input,
-  Button,
-  Switch,
-  TooltipProvider,
-} from '@smart-coder-labs/design-system';
-import '@smart-coder-labs/design-system/globals.css';
-
-function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  React.useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode);
-  }, [darkMode]);
-
-  return (
-    <TooltipProvider>
-      <div className="min-h-screen bg-background-primary">
-        <NavBar variant="glass">
-          <NavBarBrand>My App</NavBarBrand>
-          <NavBarContent align="center">
-            <NavBarItem active>Home</NavBarItem>
-            <NavBarItem>About</NavBarItem>
-          </NavBarContent>
-          <NavBarContent align="right">
-            <Switch
-              checked={darkMode}
-              onCheckedChange={setDarkMode}
-              size="sm"
-            />
-          </NavBarContent>
-        </NavBar>
-
-        <main className="max-w-4xl mx-auto px-4 py-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>Welcome</CardTitle>
-              <CardDescription>
-                This is an example using the Apple Design System
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <Input
-                  label="Email"
-                  type="email"
-                  placeholder="your@email.com"
-                />
-                <Input
-                  label="Password"
-                  type="password"
-                  placeholder="••••••••"
-                />
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button variant="ghost">Cancel</Button>
-              <Button variant="primary">Sign In</Button>
-            </CardFooter>
-          </Card>
-        </main>
-      </div>
-    </TooltipProvider>
-  );
-}
-
-export default App;
-```
-
----
-
-## 🔧 Personalización
-
-### Modificar colores
-
-```typescript
-// En tu proyecto
-import { tokens } from '@smart-coder-labs/design-system';
-
-const customTokens = {
-  ...tokens,
-  colors: {
-    ...tokens.colors,
-    light: {
-      ...tokens.colors.light,
-      accent: {
-        ...tokens.colors.light.accent,
-        blue: '#0066CC', // Tu color personalizado
-      },
-    },
-  },
-};
-
-export { customTokens as tokens };
-```
-
-### Extender componentes
-
-```tsx
-import { Button as BaseButton } from '@smart-coder-labs/design-system';
-
-export function CustomButton(props) {
-  return (
-    <BaseButton
-      {...props}
-      className={`custom-class ${props.className || ''}`}
-    />
-  );
-}
-```
-
----
-
-## 📚 Recursos
-
-- **README.md** - Documentación completa
-- **EXAMPLES.md** - Ejemplos de código
-- **DESIGN_DECISIONS.md** - Decisiones de diseño
-- **DemoPage.tsx** - Demo funcional
 
 ---
 
 ## ⚠️ Troubleshooting
 
-### Error: "Cannot find module"
-Asegúrate de que instalaste el paquete correctamente:
-```bash
-npm install @smart-coder-labs/design-system
+### Error: "Module not found"
+Si no puedes importar `@/components/ui/...`, asegúrate de tener configurado el alias `@` en tu `tsconfig.json`.
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
 ```
-
-Si estás usando GitHub Package Registry, verifica tu archivo `.npmrc`.
-
-### Error: "Cannot apply unknown utility class"
-Si recibes un error como `Cannot apply unknown utility class 'border-border-primary'`:
-
-**Causa:** Tu configuración de Tailwind no incluye el preset del design system.
-
-**Solución:**
-1. Importa el preset en tu `tailwind.config.js`:
-   ```javascript
-   import preset from '@smart-coder-labs/design-system/tailwind.preset';
-
-   export default {
-     presets: [preset],
-     content: [
-       './src/**/*.{js,ts,jsx,tsx}',
-       './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
-     ],
-   };
-   ```
-2. Si usas CommonJS (`.cjs`):
-   ```javascript
-   const preset = require('@smart-coder-labs/design-system/tailwind.preset').default;
-
-   module.exports = {
-     presets: [preset],
-     content: [
-       './src/**/*.{js,ts,jsx,tsx}',
-       './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
-     ],
-   };
-   ```
 
 ### Estilos no se aplican
-1. Verifica que importaste los estilos globales:
-   ```tsx
-   import '@smart-coder-labs/design-system/globals.css';
-   ```
-2. Verifica que tu Tailwind config usa el preset:
-   ```javascript
-   import preset from '@smart-coder-labs/design-system/tailwind.preset';
+Verifica que las rutas en `tailwind.config.js` (`content`) apunten correctamente a donde se descargaron los componentes (ej. `./components/ui/**/*.{ts,tsx}`).
 
-   export default {
-     presets: [preset],
-     content: [
-       './src/**/*.{js,ts,jsx,tsx}',
-       './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
-     ],
-   };
-   ```
-3. Asegúrate de que Tailwind y PostCSS están configurados en tu proyecto
-
-### Error de autenticación con GitHub Packages
-Si recibes un error 401 o 403:
-1. Verifica que tu token de GitHub tiene permisos `read:packages`
-2. Asegúrate de que el archivo `.npmrc` está configurado correctamente
-3. El token debe estar activo y no haber expirado
-
-### Dark mode no funciona
-Asegúrate de agregar la clase `dark` al elemento `<html>`:
-```tsx
-document.documentElement.classList.add('dark');
-```
+### Error de autenticación
+Si el repositorio es privado, asegúrate de tener acceso. Nota: La CLI actual asume acceso público o autenticado vía entorno para `git` / `fetch`.
 
 ---
 
 ## 🎉 ¡Listo!
 
-Tu Apple Design System está listo para usar. Consulta los archivos de documentación para más detalles.
+Tú tienes el control total del código. Puedes abrir `./components/ui/button.tsx` y modificarlo según tus necesidades.
 
 **Happy coding!** 🚀

@@ -4,9 +4,9 @@ import { init } from "./commands/init";
 import { add } from "./commands/add";
 const program = new Command();
 program
-    .name("design-system")
+    .name("apple-design-system")
     .description("CLI for adding components and initializing the design system")
-    .version("1.0.6");
+    .version("1.0.0");
 program
     .command("init")
     .description("Initialize the design system configuration")

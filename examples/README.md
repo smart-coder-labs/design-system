@@ -20,19 +20,19 @@ Todos los frameworks siguen un patrón similar:
 ### 1. Instalar el paquete
 
 ```bash
-npm install @smart-coder-labs/design-system
+npm install @smart-coder-labs/apple-design-system
 ```
 
 ### 2. Configurar Tailwind CSS
 
 ```javascript
-import preset from '@smart-coder-labs/design-system/tailwind.preset';
+import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
 
 export default {
   presets: [preset],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/design-system/dist/**/*.js',
+    './node_modules/@smart-coder-labs/apple-design-system/dist/**/*.js',
   ],
 };
 ```
@@ -40,13 +40,13 @@ export default {
 ### 3. Importar estilos globales
 
 ```tsx
-import '@smart-coder-labs/design-system/globals.css';
+import '@smart-coder-labs/apple-design-system/globals.css';
 ```
 
 ### 4. Usar componentes
 
 ```tsx
-import { Button, Card } from '@smart-coder-labs/design-system';
+import { Button, Card } from '@smart-coder-labs/apple-design-system';
 ```
 
 ## Requisitos
@@ -72,7 +72,7 @@ Para configuraciones más específicas o frameworks no listados, consulta:
 Asegúrate de:
 
 1. Usar el preset en tu `tailwind.config.js`
-2. Incluir `./node_modules/@smart-coder-labs/design-system/dist/**/*.js` en el content
+2. Incluir `./node_modules/@smart-coder-labs/apple-design-system/dist/**/*.js` en el content
 3. Importar los estilos globales en tu archivo principal
 
 ### Los componentes no se importan
@@ -80,7 +80,7 @@ Asegúrate de:
 Verifica que:
 
 1. El paquete esté instalado correctamente
-2. Estés importando desde `@smart-coder-labs/design-system`
+2. Estés importando desde `@smart-coder-labs/apple-design-system`
 3. Tengas React 19+ instalado
 
 ### Dark mode no funciona

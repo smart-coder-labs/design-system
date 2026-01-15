@@ -3,7 +3,7 @@
  * Para usar el Apple Design System en tu proyecto
  */
 
-import preset from '@smart-coder-labs/design-system/tailwind.preset';
+import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
 
 export default {
   // Importa el preset del design system
@@ -18,7 +18,7 @@ export default {
     './components/**/*.{js,ts,jsx,tsx}',
 
     // Componentes del design system
-    './node_modules/@smart-coder-labs/design-system/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smart-coder-labs/apple-design-system/**/*.{js,ts,jsx,tsx}',
   ],
 
   // (Opcional) Extiende o sobrescribe valores del preset

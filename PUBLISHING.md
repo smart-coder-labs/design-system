@@ -117,13 +117,13 @@ Deberías ver tu nueva versión listada.
 En un proyecto de prueba:
 
 ```bash
-npm install @smart-coder-labs/design-system@1.0.x
+npm install @smart-coder-labs/apple-design-system@1.0.x
 ```
 
 ### 3. Verificar archivos instalados
 
 ```bash
-cd node_modules/@smart-coder-labs/design-system
+cd node_modules/@smart-coder-labs/apple-design-system
 ls -la
 ```
 
@@ -147,7 +147,7 @@ npm publish --tag beta
 Instalar versión beta:
 
 ```bash
-npm install @smart-coder-labs/design-system@beta
+npm install @smart-coder-labs/apple-design-system@beta
 ```
 
 ## Checklist Pre-Publicación
@@ -211,7 +211,7 @@ Si necesitas revertir una versión publicada:
 
 ```bash
 # Deprecar una versión (no se puede eliminar)
-npm deprecate @smart-coder-labs/design-system@1.0.x "Versión con bugs críticos, usar 1.0.y"
+npm deprecate @smart-coder-labs/apple-design-system@1.0.x "Versión con bugs críticos, usar 1.0.y"
 ```
 
 **Nota:** GitHub Package Registry no permite eliminar versiones publicadas, solo deprecarlas.
