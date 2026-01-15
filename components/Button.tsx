@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion, HTMLMotionProps } from 'framer-motion';
-import { tokens } from '../tokens';
 
 /* ========================================
    TYPES
