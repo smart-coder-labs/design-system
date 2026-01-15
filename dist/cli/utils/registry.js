@@ -6,7 +6,7 @@ exports.getAvailableComponents = getAvailableComponents;
 exports.getComponentSource = getComponentSource;
 exports.getComponentDependencies = getComponentDependencies;
 // TODO: Make this configurable? For now hardcoded to main branch.
-const REGISTRY_URL = "https://raw.githubusercontent.com/smart-coder-labs/apple-design-system/main/registry.json";
+const REGISTRY_URL = "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/registry.json";
 let cachedRegistry = null;
 async function fetchRegistry() {
     if (cachedRegistry)

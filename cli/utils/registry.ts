@@ -3,7 +3,7 @@
 // It replaces local file system calls with fetch.
 
 // TODO: Make this configurable? For now hardcoded to main branch.
-const REGISTRY_URL = "https://raw.githubusercontent.com/smart-coder-labs/apple-design-system/main/registry.json";
+const REGISTRY_URL = "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/registry.json";
 
 interface RegistryItem {
   name: string;
