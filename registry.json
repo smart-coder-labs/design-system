@@ -8,7 +8,7 @@
     "files": [
       {
         "name": "AIThinkingIndicator.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/AIThinkingIndicator.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiAIThinkingIndicator.tsx"
       }
     ]
   },
@@ -21,7 +21,7 @@
     "files": [
       {
         "name": "Accordion.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Accordion.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiAccordion.tsx"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "files": [
       {
         "name": "ActivityFeed.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ActivityFeed.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiActivityFeed.tsx"
       }
     ]
   },
@@ -49,7 +49,7 @@
     "files": [
       {
         "name": "ActivityMonitor.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ActivityMonitor.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiActivityMonitor.tsx"
       }
     ]
   },
@@ -60,7 +60,7 @@
     "files": [
       {
         "name": "AddressSelector.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/AddressSelector.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiAddressSelector.tsx"
       }
     ]
   },
@@ -71,7 +71,7 @@
     "files": [
       {
         "name": "AgendaView.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/AgendaView.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiAgendaView.tsx"
       }
     ]
   },
@@ -85,7 +85,7 @@
     "files": [
       {
         "name": "Alert.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Alert.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiAlert.tsx"
       }
     ]
   },
@@ -98,7 +98,7 @@
     "files": [
       {
         "name": "AudioPlayer.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/AudioPlayer.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiAudioPlayer.tsx"
       }
     ]
   },
@@ -111,7 +111,7 @@
     "files": [
       {
         "name": "Avatar.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Avatar.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiAvatar.tsx"
       }
     ]
   },
@@ -124,7 +124,7 @@
     "files": [
       {
         "name": "AvatarGroup.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/AvatarGroup.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiAvatarGroup.tsx"
       }
     ]
   },
@@ -137,7 +137,7 @@
     "files": [
       {
         "name": "Badge.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Badge.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiBadge.tsx"
       }
     ]
   },
@@ -150,7 +150,7 @@
     "files": [
       {
         "name": "BarcodeGenerator.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/BarcodeGenerator.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiBarcodeGenerator.tsx"
       }
     ]
   },
@@ -163,7 +163,7 @@
     "files": [
       {
         "name": "Blockquote.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Blockquote.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiBlockquote.tsx"
       }
     ]
   },
@@ -177,7 +177,7 @@
     "files": [
       {
         "name": "BottomNavigation.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/BottomNavigation.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiBottomNavigation.tsx"
       }
     ]
   },
@@ -190,7 +190,7 @@
     "files": [
       {
         "name": "Breadcrumb.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Breadcrumb.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiBreadcrumb.tsx"
       }
     ]
   },
@@ -203,7 +203,7 @@
     "files": [
       {
         "name": "BreadcrumbTabsHybrid.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/BreadcrumbTabsHybrid.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiBreadcrumbTabsHybrid.tsx"
       }
     ]
   },
@@ -216,7 +216,7 @@
     "files": [
       {
         "name": "Button.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Button.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiButton.tsx"
       }
     ]
   },
@@ -231,7 +231,7 @@
     "files": [
       {
         "name": "ButtonWithDropdown.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ButtonWithDropdown.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiButtonWithDropdown.tsx"
       }
     ]
   },
@@ -242,7 +242,7 @@
     "files": [
       {
         "name": "Calendar.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Calendar.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCalendar.tsx"
       }
     ]
   },
@@ -255,7 +255,7 @@
     "files": [
       {
         "name": "Callout.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Callout.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCallout.tsx"
       }
     ]
   },
@@ -266,7 +266,7 @@
     "files": [
       {
         "name": "Caption.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Caption.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCaption.tsx"
       }
     ]
   },
@@ -279,7 +279,7 @@
     "files": [
       {
         "name": "Card.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Card.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCard.tsx"
       }
     ]
   },
@@ -292,7 +292,7 @@
     "files": [
       {
         "name": "CartPreview.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/CartPreview.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCartPreview.tsx"
       }
     ]
   },
@@ -303,7 +303,7 @@
     "files": [
       {
         "name": "Chart.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Chart.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiChart.tsx"
       }
     ]
   },
@@ -316,7 +316,7 @@
     "files": [
       {
         "name": "ChatBubble.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ChatBubble.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiChatBubble.tsx"
       }
     ]
   },
@@ -329,7 +329,7 @@
     "files": [
       {
         "name": "ChatInput.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ChatInput.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiChatInput.tsx"
       }
     ]
   },
@@ -342,7 +342,7 @@
     "files": [
       {
         "name": "Checkbox.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Checkbox.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCheckbox.tsx"
       }
     ]
   },
@@ -356,7 +356,7 @@
     "files": [
       {
         "name": "Chip.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Chip.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiChip.tsx"
       }
     ]
   },
@@ -369,7 +369,7 @@
     "files": [
       {
         "name": "CodeBlock.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/CodeBlock.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCodeBlock.tsx"
       }
     ]
   },
@@ -382,7 +382,7 @@
     "files": [
       {
         "name": "Collapsible.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Collapsible.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCollapsible.tsx"
       }
     ]
   },
@@ -396,7 +396,7 @@
     "files": [
       {
         "name": "Combobox.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Combobox.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCombobox.tsx"
       }
     ]
   },
@@ -409,7 +409,7 @@
     "files": [
       {
         "name": "CommandMenu.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/CommandMenu.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCommandMenu.tsx"
       }
     ]
   },
@@ -422,7 +422,7 @@
     "files": [
       {
         "name": "CommentThread.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/CommentThread.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCommentThread.tsx"
       }
     ]
   },
@@ -435,7 +435,7 @@
     "files": [
       {
         "name": "ConfirmDialog.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ConfirmDialog.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiConfirmDialog.tsx"
       }
     ]
   },
@@ -448,7 +448,7 @@
     "files": [
       {
         "name": "ContextMenu.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ContextMenu.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiContextMenu.tsx"
       }
     ]
   },
@@ -462,7 +462,7 @@
     "files": [
       {
         "name": "ControlCenterToggles.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ControlCenterToggles.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiControlCenterToggles.tsx"
       }
     ]
   },
@@ -473,7 +473,7 @@
     "files": [
       {
         "name": "Counters.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Counters.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCounters.tsx"
       }
     ]
   },
@@ -484,7 +484,7 @@
     "files": [
       {
         "name": "CountersListWithChart.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/CountersListWithChart.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiCountersListWithChart.tsx"
       }
     ]
   },
@@ -498,7 +498,7 @@
     "files": [
       {
         "name": "DataGrid.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/DataGrid.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiDataGrid.tsx"
       }
     ]
   },
@@ -511,7 +511,7 @@
     "files": [
       {
         "name": "DatePicker.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/DatePicker.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiDatePicker.tsx"
       }
     ]
   },
@@ -524,7 +524,7 @@
     "files": [
       {
         "name": "DateRangePicker.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/DateRangePicker.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiDateRangePicker.tsx"
       }
     ]
   },
@@ -537,7 +537,7 @@
     "files": [
       {
         "name": "DefinitionList.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/DefinitionList.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiDefinitionList.tsx"
       }
     ]
   },
@@ -550,7 +550,7 @@
     "files": [
       {
         "name": "DescriptionBlock.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/DescriptionBlock.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiDescriptionBlock.tsx"
       }
     ]
   },
@@ -564,7 +564,7 @@
     "files": [
       {
         "name": "DeviceList.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/DeviceList.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiDeviceList.tsx"
       }
     ]
   },
@@ -577,7 +577,7 @@
     "files": [
       {
         "name": "DiffViewer.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/DiffViewer.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiDiffViewer.tsx"
       }
     ]
   },
@@ -588,7 +588,7 @@
     "files": [
       {
         "name": "Divider.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Divider.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiDivider.tsx"
       }
     ]
   },
@@ -601,7 +601,7 @@
     "files": [
       {
         "name": "DockBar.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/DockBar.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiDockBar.tsx"
       }
     ]
   },
@@ -616,7 +616,7 @@
     "files": [
       {
         "name": "EmptyState.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/EmptyState.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiEmptyState.tsx"
       }
     ]
   },
@@ -629,7 +629,7 @@
     "files": [
       {
         "name": "ErrorBoundary.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ErrorBoundary.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiErrorBoundary.tsx"
       }
     ]
   },
@@ -643,7 +643,7 @@
     "files": [
       {
         "name": "FAB.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/FAB.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiFAB.tsx"
       }
     ]
   },
@@ -657,7 +657,7 @@
     "files": [
       {
         "name": "FABGroup.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/FABGroup.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiFABGroup.tsx"
       }
     ]
   },
@@ -671,7 +671,7 @@
     "files": [
       {
         "name": "FileIntelligencePreview.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/FileIntelligencePreview.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiFileIntelligencePreview.tsx"
       }
     ]
   },
@@ -685,7 +685,7 @@
     "files": [
       {
         "name": "FileUpload.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/FileUpload.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiFileUpload.tsx"
       }
     ]
   },
@@ -698,7 +698,7 @@
     "files": [
       {
         "name": "FilterBar.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/FilterBar.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiFilterBar.tsx"
       }
     ]
   },
@@ -711,7 +711,7 @@
     "files": [
       {
         "name": "FloatingToolbar.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/FloatingToolbar.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiFloatingToolbar.tsx"
       }
     ]
   },
@@ -722,7 +722,7 @@
     "files": [
       {
         "name": "Footer.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Footer.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiFooter.tsx"
       }
     ]
   },
@@ -736,7 +736,7 @@
     "files": [
       {
         "name": "Gallery.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Gallery.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiGallery.tsx"
       }
     ]
   },
@@ -749,7 +749,7 @@
     "files": [
       {
         "name": "GestureCard.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/GestureCard.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiGestureCard.tsx"
       }
     ]
   },
@@ -760,7 +760,7 @@
     "files": [
       {
         "name": "GridSystem.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/GridSystem.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiGridSystem.tsx"
       }
     ]
   },
@@ -773,7 +773,7 @@
     "files": [
       {
         "name": "HamburgerMenuIcon.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/HamburgerMenuIcon.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiHamburgerMenuIcon.tsx"
       }
     ]
   },
@@ -786,7 +786,7 @@
     "files": [
       {
         "name": "HapticButton.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/HapticButton.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiHapticButton.tsx"
       }
     ]
   },
@@ -797,7 +797,7 @@
     "files": [
       {
         "name": "Heading.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Heading.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiHeading.tsx"
       }
     ]
   },
@@ -810,7 +810,7 @@
     "files": [
       {
         "name": "IconButton.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/IconButton.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiIconButton.tsx"
       }
     ]
   },
@@ -824,7 +824,7 @@
     "files": [
       {
         "name": "ImageCarousel.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ImageCarousel.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiImageCarousel.tsx"
       }
     ]
   },
@@ -837,7 +837,7 @@
     "files": [
       {
         "name": "ImageCropper.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ImageCropper.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiImageCropper.tsx"
       }
     ]
   },
@@ -850,7 +850,7 @@
     "files": [
       {
         "name": "Input.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Input.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiInput.tsx"
       }
     ]
   },
@@ -864,7 +864,7 @@
     "files": [
       {
         "name": "InspectorPanel.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/InspectorPanel.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiInspectorPanel.tsx"
       }
     ]
   },
@@ -877,7 +877,7 @@
     "files": [
       {
         "name": "InvoicePreview.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/InvoicePreview.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiInvoicePreview.tsx"
       }
     ]
   },
@@ -890,7 +890,7 @@
     "files": [
       {
         "name": "JsonViewer.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/JsonViewer.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiJsonViewer.tsx"
       }
     ]
   },
@@ -904,7 +904,7 @@
     "files": [
       {
         "name": "KPIBlock.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/KPIBlock.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiKPIBlock.tsx"
       }
     ]
   },
@@ -915,7 +915,7 @@
     "files": [
       {
         "name": "KanbanBoard.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/KanbanBoard.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiKanbanBoard.tsx"
       }
     ]
   },
@@ -928,7 +928,7 @@
     "files": [
       {
         "name": "KeyValueInfo.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/KeyValueInfo.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiKeyValueInfo.tsx"
       }
     ]
   },
@@ -939,7 +939,7 @@
     "files": [
       {
         "name": "Label.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Label.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiLabel.tsx"
       }
     ]
   },
@@ -950,7 +950,7 @@
     "files": [
       {
         "name": "Layout.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Layout.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiLayout.tsx"
       }
     ]
   },
@@ -964,7 +964,7 @@
     "files": [
       {
         "name": "Lightbox.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Lightbox.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiLightbox.tsx"
       }
     ]
   },
@@ -977,7 +977,7 @@
     "files": [
       {
         "name": "LoadingOverlay.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/LoadingOverlay.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiLoadingOverlay.tsx"
       }
     ]
   },
@@ -990,7 +990,7 @@
     "files": [
       {
         "name": "LoginForm.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/LoginForm.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiLoginForm.tsx"
       }
     ]
   },
@@ -1004,7 +1004,7 @@
     "files": [
       {
         "name": "MaintenanceMode.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/MaintenanceMode.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiMaintenanceMode.tsx"
       }
     ]
   },
@@ -1018,7 +1018,7 @@
     "files": [
       {
         "name": "MarkdownEditor.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/MarkdownEditor.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiMarkdownEditor.tsx"
       }
     ]
   },
@@ -1029,7 +1029,7 @@
     "files": [
       {
         "name": "MasonryLayout.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/MasonryLayout.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiMasonryLayout.tsx"
       }
     ]
   },
@@ -1042,7 +1042,7 @@
     "files": [
       {
         "name": "MenuBar.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/MenuBar.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiMenuBar.tsx"
       }
     ]
   },
@@ -1056,7 +1056,7 @@
     "files": [
       {
         "name": "MessageReactions.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/MessageReactions.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiMessageReactions.tsx"
       }
     ]
   },
@@ -1070,7 +1070,7 @@
     "files": [
       {
         "name": "Modal.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Modal.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiModal.tsx"
       }
     ]
   },
@@ -1081,7 +1081,7 @@
     "files": [
       {
         "name": "ModalStackManager.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ModalStackManager.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiModalStackManager.tsx"
       }
     ]
   },
@@ -1095,7 +1095,7 @@
     "files": [
       {
         "name": "MultiFileUpload.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/MultiFileUpload.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiMultiFileUpload.tsx"
       }
     ]
   },
@@ -1108,7 +1108,7 @@
     "files": [
       {
         "name": "NavBar.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/NavBar.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiNavBar.tsx"
       }
     ]
   },
@@ -1121,7 +1121,7 @@
     "files": [
       {
         "name": "NavigationDrawer.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/NavigationDrawer.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiNavigationDrawer.tsx"
       }
     ]
   },
@@ -1135,7 +1135,7 @@
     "files": [
       {
         "name": "NotificationCenterPanel.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/NotificationCenterPanel.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiNotificationCenterPanel.tsx"
       }
     ]
   },
@@ -1148,7 +1148,7 @@
     "files": [
       {
         "name": "OTPInput.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/OTPInput.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiOTPInput.tsx"
       }
     ]
   },
@@ -1162,7 +1162,7 @@
     "files": [
       {
         "name": "OfflineState.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/OfflineState.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiOfflineState.tsx"
       }
     ]
   },
@@ -1175,7 +1175,7 @@
     "files": [
       {
         "name": "OrderSummary.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/OrderSummary.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiOrderSummary.tsx"
       }
     ]
   },
@@ -1188,7 +1188,7 @@
     "files": [
       {
         "name": "Pagination.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Pagination.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiPagination.tsx"
       }
     ]
   },
@@ -1202,7 +1202,7 @@
     "files": [
       {
         "name": "Panel.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Panel.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiPanel.tsx"
       }
     ]
   },
@@ -1213,7 +1213,7 @@
     "files": [
       {
         "name": "Paragraph.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Paragraph.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiParagraph.tsx"
       }
     ]
   },
@@ -1227,7 +1227,7 @@
     "files": [
       {
         "name": "PasswordInput.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/PasswordInput.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiPasswordInput.tsx"
       }
     ]
   },
@@ -1238,7 +1238,7 @@
     "files": [
       {
         "name": "PaymentMethodSelector.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/PaymentMethodSelector.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiPaymentMethodSelector.tsx"
       }
     ]
   },
@@ -1249,7 +1249,7 @@
     "files": [
       {
         "name": "PermissionsMatrix.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/PermissionsMatrix.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiPermissionsMatrix.tsx"
       }
     ]
   },
@@ -1260,7 +1260,7 @@
     "files": [
       {
         "name": "Popover.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Popover.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiPopover.tsx"
       }
     ]
   },
@@ -1271,7 +1271,7 @@
     "files": [
       {
         "name": "PriceDisplay.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/PriceDisplay.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiPriceDisplay.tsx"
       }
     ]
   },
@@ -1284,7 +1284,7 @@
     "files": [
       {
         "name": "ProductCard.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ProductCard.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiProductCard.tsx"
       }
     ]
   },
@@ -1297,7 +1297,7 @@
     "files": [
       {
         "name": "Progress.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Progress.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiProgress.tsx"
       }
     ]
   },
@@ -1311,7 +1311,7 @@
     "files": [
       {
         "name": "PromptSuggestionChips.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/PromptSuggestionChips.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiPromptSuggestionChips.tsx"
       }
     ]
   },
@@ -1325,7 +1325,7 @@
     "files": [
       {
         "name": "PropertyList.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/PropertyList.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiPropertyList.tsx"
       }
     ]
   },
@@ -1338,7 +1338,7 @@
     "files": [
       {
         "name": "QRCodeGenerator.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/QRCodeGenerator.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiQRCodeGenerator.tsx"
       }
     ]
   },
@@ -1349,7 +1349,7 @@
     "files": [
       {
         "name": "QuantitySelector.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/QuantitySelector.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiQuantitySelector.tsx"
       }
     ]
   },
@@ -1360,7 +1360,7 @@
     "files": [
       {
         "name": "QueryBuilder.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/QueryBuilder.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiQueryBuilder.tsx"
       }
     ]
   },
@@ -1373,7 +1373,7 @@
     "files": [
       {
         "name": "RadioGroup.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/RadioGroup.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiRadioGroup.tsx"
       }
     ]
   },
@@ -1384,7 +1384,7 @@
     "files": [
       {
         "name": "RangeSlider.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/RangeSlider.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiRangeSlider.tsx"
       }
     ]
   },
@@ -1398,7 +1398,7 @@
     "files": [
       {
         "name": "RatingInput.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/RatingInput.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiRatingInput.tsx"
       }
     ]
   },
@@ -1412,7 +1412,7 @@
     "files": [
       {
         "name": "RecoveryCodeDisplay.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/RecoveryCodeDisplay.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiRecoveryCodeDisplay.tsx"
       }
     ]
   },
@@ -1423,7 +1423,7 @@
     "files": [
       {
         "name": "ResizablePanel.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ResizablePanel.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiResizablePanel.tsx"
       }
     ]
   },
@@ -1434,7 +1434,7 @@
     "files": [
       {
         "name": "Reviews.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Reviews.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiReviews.tsx"
       }
     ]
   },
@@ -1448,7 +1448,7 @@
     "files": [
       {
         "name": "RichTextEditor.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/RichTextEditor.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiRichTextEditor.tsx"
       }
     ]
   },
@@ -1461,7 +1461,7 @@
     "files": [
       {
         "name": "RotarySelector.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/RotarySelector.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiRotarySelector.tsx"
       }
     ]
   },
@@ -1472,7 +1472,7 @@
     "files": [
       {
         "name": "SchedulerTimeline.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/SchedulerTimeline.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSchedulerTimeline.tsx"
       }
     ]
   },
@@ -1483,7 +1483,7 @@
     "files": [
       {
         "name": "ScrollArea.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ScrollArea.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiScrollArea.tsx"
       }
     ]
   },
@@ -1497,7 +1497,7 @@
     "files": [
       {
         "name": "SearchInput.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/SearchInput.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSearchInput.tsx"
       }
     ]
   },
@@ -1508,7 +1508,7 @@
     "files": [
       {
         "name": "SectionHeader.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/SectionHeader.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSectionHeader.tsx"
       }
     ]
   },
@@ -1522,7 +1522,7 @@
     "files": [
       {
         "name": "SecurityActivityLog.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/SecurityActivityLog.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSecurityActivityLog.tsx"
       }
     ]
   },
@@ -1535,7 +1535,7 @@
     "files": [
       {
         "name": "SegmentedInput.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/SegmentedInput.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSegmentedInput.tsx"
       }
     ]
   },
@@ -1548,7 +1548,7 @@
     "files": [
       {
         "name": "Select.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Select.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSelect.tsx"
       }
     ]
   },
@@ -1562,7 +1562,7 @@
     "files": [
       {
         "name": "Sheet.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Sheet.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSheet.tsx"
       }
     ]
   },
@@ -1575,7 +1575,7 @@
     "files": [
       {
         "name": "Sidebar.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Sidebar.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSidebar.tsx"
       }
     ]
   },
@@ -1588,7 +1588,7 @@
     "files": [
       {
         "name": "SignaturePad.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/SignaturePad.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSignaturePad.tsx"
       }
     ]
   },
@@ -1601,7 +1601,7 @@
     "files": [
       {
         "name": "SignupForm.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/SignupForm.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSignupForm.tsx"
       }
     ]
   },
@@ -1614,7 +1614,7 @@
     "files": [
       {
         "name": "Skeleton.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Skeleton.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSkeleton.tsx"
       }
     ]
   },
@@ -1628,7 +1628,7 @@
     "files": [
       {
         "name": "SlideToDelete.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/SlideToDelete.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSlideToDelete.tsx"
       }
     ]
   },
@@ -1639,7 +1639,7 @@
     "files": [
       {
         "name": "Slider.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Slider.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSlider.tsx"
       }
     ]
   },
@@ -1653,7 +1653,7 @@
     "files": [
       {
         "name": "Snackbar.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Snackbar.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSnackbar.tsx"
       }
     ]
   },
@@ -1664,7 +1664,7 @@
     "files": [
       {
         "name": "Spacer.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Spacer.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSpacer.tsx"
       }
     ]
   },
@@ -1675,7 +1675,7 @@
     "files": [
       {
         "name": "Sparkline.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Sparkline.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSparkline.tsx"
       }
     ]
   },
@@ -1688,7 +1688,7 @@
     "files": [
       {
         "name": "Spinner.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Spinner.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSpinner.tsx"
       }
     ]
   },
@@ -1703,7 +1703,7 @@
     "files": [
       {
         "name": "SplitButton.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/SplitButton.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSplitButton.tsx"
       }
     ]
   },
@@ -1714,7 +1714,7 @@
     "files": [
       {
         "name": "SplitView.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/SplitView.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSplitView.tsx"
       }
     ]
   },
@@ -1728,7 +1728,7 @@
     "files": [
       {
         "name": "StatisticDisplay.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/StatisticDisplay.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiStatisticDisplay.tsx"
       }
     ]
   },
@@ -1741,7 +1741,7 @@
     "files": [
       {
         "name": "Stepper.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Stepper.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiStepper.tsx"
       }
     ]
   },
@@ -1752,7 +1752,7 @@
     "files": [
       {
         "name": "StickyContainer.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/StickyContainer.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiStickyContainer.tsx"
       }
     ]
   },
@@ -1766,7 +1766,7 @@
     "files": [
       {
         "name": "Switch.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Switch.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiSwitch.tsx"
       }
     ]
   },
@@ -1780,7 +1780,7 @@
     "files": [
       {
         "name": "Table.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Table.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTable.tsx"
       }
     ]
   },
@@ -1794,7 +1794,7 @@
     "files": [
       {
         "name": "Tabs.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Tabs.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTabs.tsx"
       }
     ]
   },
@@ -1808,7 +1808,7 @@
     "files": [
       {
         "name": "Tag.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Tag.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTag.tsx"
       }
     ]
   },
@@ -1822,7 +1822,7 @@
     "files": [
       {
         "name": "TagsInput.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/TagsInput.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTagsInput.tsx"
       }
     ]
   },
@@ -1833,7 +1833,7 @@
     "files": [
       {
         "name": "Text.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Text.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiText.tsx"
       }
     ]
   },
@@ -1844,7 +1844,7 @@
     "files": [
       {
         "name": "Textarea.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Textarea.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTextarea.tsx"
       }
     ]
   },
@@ -1858,7 +1858,7 @@
     "files": [
       {
         "name": "ThemeToggle.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ThemeToggle.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiThemeToggle.tsx"
       }
     ]
   },
@@ -1872,7 +1872,7 @@
     "files": [
       {
         "name": "TimePicker.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/TimePicker.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTimePicker.tsx"
       }
     ]
   },
@@ -1886,7 +1886,7 @@
     "files": [
       {
         "name": "Timeline.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Timeline.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTimeline.tsx"
       }
     ]
   },
@@ -1897,7 +1897,7 @@
     "files": [
       {
         "name": "Title.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Title.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTitle.tsx"
       }
     ]
   },
@@ -1911,7 +1911,7 @@
     "files": [
       {
         "name": "Toast.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Toast.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiToast.tsx"
       }
     ]
   },
@@ -1925,7 +1925,7 @@
     "files": [
       {
         "name": "Tooltip.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/Tooltip.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTooltip.tsx"
       }
     ]
   },
@@ -1938,7 +1938,7 @@
     "files": [
       {
         "name": "TopActionBar.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/TopActionBar.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTopActionBar.tsx"
       }
     ]
   },
@@ -1951,7 +1951,7 @@
     "files": [
       {
         "name": "TreeView.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/TreeView.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTreeView.tsx"
       }
     ]
   },
@@ -1964,7 +1964,7 @@
     "files": [
       {
         "name": "TwoFactorAuth.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/TwoFactorAuth.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiTwoFactorAuth.tsx"
       }
     ]
   },
@@ -1978,7 +1978,7 @@
     "files": [
       {
         "name": "VideoPlayer.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/VideoPlayer.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiVideoPlayer.tsx"
       }
     ]
   },
@@ -1992,7 +1992,7 @@
     "files": [
       {
         "name": "VoiceRecorder.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/VoiceRecorder.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiVoiceRecorder.tsx"
       }
     ]
   },
@@ -2006,7 +2006,7 @@
     "files": [
       {
         "name": "WindowControls.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/WindowControls.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiWindowControls.tsx"
       }
     ]
   },
@@ -2020,7 +2020,7 @@
     "files": [
       {
         "name": "WindowFrame.tsx",
-        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/WindowFrame.tsx"
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/uiWindowFrame.tsx"
       }
     ]
   }
