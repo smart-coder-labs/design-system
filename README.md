@@ -34,6 +34,30 @@ El paquete está publicado en **GitHub Package Registry**. Para configurar la au
 
 ---
 
+## 💻 CLI (Nuevo)
+
+El Design System ahora incluye una CLI integrada para facilitar la instalación y gestión de componentes.
+
+### `init`
+
+Configura tu proyecto automáticamente instalando dependencias y configurando Tailwind CSS.
+
+```bash
+npx @smart-coder-labs/design-system init
+```
+
+### `add`
+
+Añade componentes individuales a tu proyecto (copia el código fuente a tu carpeta local).
+
+```bash
+npx @smart-coder-labs/design-system add Button Card
+```
+
+Esto descargará el código de los componentes seleccionados directamente a tu carpeta `./components/ui` (o la que hayas configurado).
+
+---
+
 ## ✨ Características
 
 - 🎨 **Estilo Apple Premium** - Minimalista, elegante y aireado
