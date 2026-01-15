@@ -48,13 +48,15 @@ npx @smart-coder-labs/design-system init
 
 ### `add`
 
-Añade componentes individuales a tu proyecto (copia el código fuente a tu carpeta local).
+Añade componentes individuales a tu proyecto. La CLI descargará el código fuente más reciente directamente desde el repositorio.
 
 ```bash
 npx @smart-coder-labs/design-system add Button Card
 ```
 
-Esto descargará el código de los componentes seleccionados directamente a tu carpeta `./components/ui` (o la que hayas configurado).
+Esto:
+1.  Descarga el código del componente a `./components/ui`.
+2.  Instala automáticamente las dependencias necesarias (`framer-motion`, `radix-ui`, etc.) solo para ese componente.
 
 ---
 

@@ -1,48 +1,52 @@
-import path from "path";
-import fs from "fs-extra";
-// Helper to resolve the package root (where package.json is)
-export function getPackageRoot() {
-    // In development (ts-node), we might be in cli/utils
-    // In production (dist/cli/utils), we need to go up to package root
-    // Try to find package.json starting from __dirname and going up
-    let currentDir = __dirname;
-    while (currentDir !== "/") {
-        if (fs.existsSync(path.join(currentDir, "package.json"))) {
-            return currentDir;
+// This registry.ts now fetches from a remote JSON file on GitHub Raw.
+// It replaces local file system calls with fetch.
+// TODO: Make this configurable? For now hardcoded to main branch.
+const REGISTRY_URL = "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/registry.json";
+let cachedRegistry = null;
+async function fetchRegistry() {
+    if (cachedRegistry)
+        return cachedRegistry;
+    try {
+        const res = await fetch(REGISTRY_URL);
+        if (!res.ok) {
+            throw new Error(`Failed to fetch registry from ${REGISTRY_URL}: ${res.statusText}`);
         }
-        currentDir = path.dirname(currentDir);
+        const data = await res.json();
+        cachedRegistry = data;
+        return cachedRegistry;
     }
-    throw new Error("Could not find package root");
-}
-export function getComponentsDirectory() {
-    const root = getPackageRoot();
-    // We assume 'components' exists at root (source) or copied there
-    const candidates = [
-        path.join(root, "components"), // source in running context
-        path.join(root, "../components") // potentially if inside dist
-    ];
-    for (const candidate of candidates) {
-        if (fs.existsSync(candidate))
-            return candidate;
+    catch (error) {
+        console.error("Error fetching registry:", error);
+        return {};
     }
-    return path.join(root, "components");
 }
 export async function getAvailableComponents() {
-    const componentsDir = getComponentsDirectory();
-    if (!fs.existsSync(componentsDir)) {
-        return [];
-    }
-    const files = await fs.readdir(componentsDir);
-    return files
-        .filter((file) => file.endsWith(".tsx") && !file.endsWith(".stories.tsx"))
-        .map((file) => file.replace(/\.tsx$/, ""));
+    const registry = await fetchRegistry();
+    return Object.keys(registry);
 }
 export async function getComponentSource(componentName) {
-    const componentsDir = getComponentsDirectory();
-    const filePath = path.join(componentsDir, `${componentName}.tsx`);
-    if (fs.existsSync(filePath)) {
-        return fs.readFile(filePath, "utf-8");
+    const registry = await fetchRegistry();
+    const component = registry[componentName];
+    if (!component || !component.files || component.files.length === 0) {
+        return null;
     }
-    return null;
+    // We currently only handle single-file components for simplicity
+    const fileUrl = component.files[0].url;
+    try {
+        const res = await fetch(fileUrl);
+        if (!res.ok) {
+            throw new Error(`Failed to fetch component source from ${fileUrl}: ${res.statusText}`);
+        }
+        return await res.text();
+    }
+    catch (error) {
+        console.error(`Error fetching component ${componentName}:`, error);
+        return null;
+    }
+}
+export async function getComponentDependencies(componentName) {
+    const registry = await fetchRegistry();
+    const component = registry[componentName];
+    return component?.dependencies || [];
 }
 //# sourceMappingURL=registry.js.map

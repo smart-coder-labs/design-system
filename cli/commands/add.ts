@@ -62,7 +62,13 @@ export const add = async (components: string[]) => {
     await fs.writeFile(destPath, source);
     spinner.succeed(`Installed ${component}`);
     
-    // Auto-install dependencies found in the file
+    // Auto-install dependencies found in the registry
+    // We can now rely on the registry manifest rather than regex parsing if we want,
+    // but regex parsing on the fetched content is still robust.
+    
+    // However, since we have the registry, let's try to use it if we can.
+    // For now, let's stick to the content analysis as fallback or primary if registry.json dependency list is empty.
+    
     const dependenciesToInstall = new Set<string>();
     
     // Check for Radix UI
@@ -77,6 +83,15 @@ export const add = async (components: string[]) => {
     if (source.includes('clsx')) dependenciesToInstall.add('clsx');
     if (source.includes('tailwind-merge')) dependenciesToInstall.add('tailwind-merge');
     if (source.includes('class-variance-authority')) dependenciesToInstall.add('class-variance-authority');
+    
+    // Also use explicit dependencies from registry if available
+    try {
+        const { getComponentDependencies } = require('../utils/registry');
+        const regDeps = await getComponentDependencies(component);
+        regDeps.forEach((dep: string) => dependenciesToInstall.add(dep));
+    } catch {
+        // failed to get registry deps, fallback to regex above
+    }
     
     if (dependenciesToInstall.size > 0) {
       const deps = Array.from(dependenciesToInstall).join(" ");

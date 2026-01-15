@@ -34,7 +34,6 @@
   },
   "files": [
     "dist",
-    "components",
     "README.md",
     "LICENSE"
   ],
@@ -43,6 +42,7 @@
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
     "build": "npm run clean && tsc -p tsconfig.build.json && npm run copy-css",
+    "build:registry": "ts-node scripts/build-registry.ts",
     "copy-css": "cp globals.css dist/globals.css",
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
@@ -76,6 +76,11 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-tooltip": "^1.0.7",
     "@storybook/addon-docs": "^10.0.8",
     "@storybook/addon-onboarding": "^10.0.8",
     "@storybook/react-vite": "^10.0.8",
@@ -90,21 +95,17 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.5.6",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "storybook": "^10.0.8",
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5.3.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.554.0",
+    "postcss": "^8.5.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "storybook": "^10.0.8",
     "tailwind-merge": "^3.4.0",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-dropdown-menu": "^2.0.6",
-    "@radix-ui/react-switch": "^1.0.3",
-    "@radix-ui/react-tabs": "^1.0.4",
-    "@radix-ui/react-tooltip": "^1.0.7"
+    "tailwindcss": "^4.1.18",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }

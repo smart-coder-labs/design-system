@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs-extra";
 import chalk from "chalk";
 import ora from "ora";
-import { getPackageRoot } from "../utils/registry";
+
 
 export const init = async () => {
   console.log(chalk.bold.green("🍏 Apple Design System Initialization"));
@@ -65,7 +65,7 @@ export function cn(...inputs: ClassValue[]) {
 
   if (response.installDeps) {
       spin.start("Installing dependencies...");
-      const savedPkgRoot = getPackageRoot();
+
       
       // We are just displaying instructions for now or running npm install
       // Actually running npm install might be risky if we don't know the package manager.

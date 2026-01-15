@@ -1,0 +1,2027 @@
+{
+  "AIThinkingIndicator": {
+    "name": "AIThinkingIndicator",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "AIThinkingIndicator.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/AIThinkingIndicator.tsx"
+      }
+    ]
+  },
+  "Accordion": {
+    "name": "Accordion",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Accordion.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Accordion.tsx"
+      }
+    ]
+  },
+  "ActivityFeed": {
+    "name": "ActivityFeed",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ActivityFeed.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ActivityFeed.tsx"
+      }
+    ]
+  },
+  "ActivityMonitor": {
+    "name": "ActivityMonitor",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ActivityMonitor.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ActivityMonitor.tsx"
+      }
+    ]
+  },
+  "AddressSelector": {
+    "name": "AddressSelector",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "AddressSelector.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/AddressSelector.tsx"
+      }
+    ]
+  },
+  "AgendaView": {
+    "name": "AgendaView",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "AgendaView.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/AgendaView.tsx"
+      }
+    ]
+  },
+  "Alert": {
+    "name": "Alert",
+    "dependencies": [
+      "lucide-react",
+      "class-variance-authority"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Alert.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Alert.tsx"
+      }
+    ]
+  },
+  "AudioPlayer": {
+    "name": "AudioPlayer",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "AudioPlayer.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/AudioPlayer.tsx"
+      }
+    ]
+  },
+  "Avatar": {
+    "name": "Avatar",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Avatar.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Avatar.tsx"
+      }
+    ]
+  },
+  "AvatarGroup": {
+    "name": "AvatarGroup",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "AvatarGroup.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/AvatarGroup.tsx"
+      }
+    ]
+  },
+  "Badge": {
+    "name": "Badge",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Badge.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Badge.tsx"
+      }
+    ]
+  },
+  "BarcodeGenerator": {
+    "name": "BarcodeGenerator",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "BarcodeGenerator.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/BarcodeGenerator.tsx"
+      }
+    ]
+  },
+  "Blockquote": {
+    "name": "Blockquote",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Blockquote.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Blockquote.tsx"
+      }
+    ]
+  },
+  "BottomNavigation": {
+    "name": "BottomNavigation",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "BottomNavigation.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/BottomNavigation.tsx"
+      }
+    ]
+  },
+  "Breadcrumb": {
+    "name": "Breadcrumb",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Breadcrumb.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Breadcrumb.tsx"
+      }
+    ]
+  },
+  "BreadcrumbTabsHybrid": {
+    "name": "BreadcrumbTabsHybrid",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "BreadcrumbTabsHybrid.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/BreadcrumbTabsHybrid.tsx"
+      }
+    ]
+  },
+  "Button": {
+    "name": "Button",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Button.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Button.tsx"
+      }
+    ]
+  },
+  "ButtonWithDropdown": {
+    "name": "ButtonWithDropdown",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react",
+      "@radix-ui/react-dropdown-menu"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ButtonWithDropdown.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ButtonWithDropdown.tsx"
+      }
+    ]
+  },
+  "Calendar": {
+    "name": "Calendar",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Calendar.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Calendar.tsx"
+      }
+    ]
+  },
+  "Callout": {
+    "name": "Callout",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Callout.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Callout.tsx"
+      }
+    ]
+  },
+  "Caption": {
+    "name": "Caption",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Caption.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Caption.tsx"
+      }
+    ]
+  },
+  "Card": {
+    "name": "Card",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Card.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Card.tsx"
+      }
+    ]
+  },
+  "CartPreview": {
+    "name": "CartPreview",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "CartPreview.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/CartPreview.tsx"
+      }
+    ]
+  },
+  "Chart": {
+    "name": "Chart",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Chart.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Chart.tsx"
+      }
+    ]
+  },
+  "ChatBubble": {
+    "name": "ChatBubble",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ChatBubble.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ChatBubble.tsx"
+      }
+    ]
+  },
+  "ChatInput": {
+    "name": "ChatInput",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ChatInput.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ChatInput.tsx"
+      }
+    ]
+  },
+  "Checkbox": {
+    "name": "Checkbox",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Checkbox.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Checkbox.tsx"
+      }
+    ]
+  },
+  "Chip": {
+    "name": "Chip",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Chip.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Chip.tsx"
+      }
+    ]
+  },
+  "CodeBlock": {
+    "name": "CodeBlock",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "CodeBlock.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/CodeBlock.tsx"
+      }
+    ]
+  },
+  "Collapsible": {
+    "name": "Collapsible",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Collapsible.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Collapsible.tsx"
+      }
+    ]
+  },
+  "Combobox": {
+    "name": "Combobox",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Combobox.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Combobox.tsx"
+      }
+    ]
+  },
+  "CommandMenu": {
+    "name": "CommandMenu",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "CommandMenu.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/CommandMenu.tsx"
+      }
+    ]
+  },
+  "CommentThread": {
+    "name": "CommentThread",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "CommentThread.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/CommentThread.tsx"
+      }
+    ]
+  },
+  "ConfirmDialog": {
+    "name": "ConfirmDialog",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ConfirmDialog.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ConfirmDialog.tsx"
+      }
+    ]
+  },
+  "ContextMenu": {
+    "name": "ContextMenu",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ContextMenu.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ContextMenu.tsx"
+      }
+    ]
+  },
+  "ControlCenterToggles": {
+    "name": "ControlCenterToggles",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ControlCenterToggles.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ControlCenterToggles.tsx"
+      }
+    ]
+  },
+  "Counters": {
+    "name": "Counters",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Counters.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Counters.tsx"
+      }
+    ]
+  },
+  "CountersListWithChart": {
+    "name": "CountersListWithChart",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "CountersListWithChart.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/CountersListWithChart.tsx"
+      }
+    ]
+  },
+  "DataGrid": {
+    "name": "DataGrid",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "DataGrid.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/DataGrid.tsx"
+      }
+    ]
+  },
+  "DatePicker": {
+    "name": "DatePicker",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "DatePicker.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/DatePicker.tsx"
+      }
+    ]
+  },
+  "DateRangePicker": {
+    "name": "DateRangePicker",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "DateRangePicker.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/DateRangePicker.tsx"
+      }
+    ]
+  },
+  "DefinitionList": {
+    "name": "DefinitionList",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "DefinitionList.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/DefinitionList.tsx"
+      }
+    ]
+  },
+  "DescriptionBlock": {
+    "name": "DescriptionBlock",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "DescriptionBlock.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/DescriptionBlock.tsx"
+      }
+    ]
+  },
+  "DeviceList": {
+    "name": "DeviceList",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "DeviceList.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/DeviceList.tsx"
+      }
+    ]
+  },
+  "DiffViewer": {
+    "name": "DiffViewer",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "DiffViewer.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/DiffViewer.tsx"
+      }
+    ]
+  },
+  "Divider": {
+    "name": "Divider",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Divider.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Divider.tsx"
+      }
+    ]
+  },
+  "DockBar": {
+    "name": "DockBar",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "DockBar.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/DockBar.tsx"
+      }
+    ]
+  },
+  "EmptyState": {
+    "name": "EmptyState",
+    "dependencies": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "EmptyState.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/EmptyState.tsx"
+      }
+    ]
+  },
+  "ErrorBoundary": {
+    "name": "ErrorBoundary",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ErrorBoundary.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ErrorBoundary.tsx"
+      }
+    ]
+  },
+  "FAB": {
+    "name": "FAB",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "FAB.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/FAB.tsx"
+      }
+    ]
+  },
+  "FABGroup": {
+    "name": "FABGroup",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "FABGroup.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/FABGroup.tsx"
+      }
+    ]
+  },
+  "FileIntelligencePreview": {
+    "name": "FileIntelligencePreview",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "FileIntelligencePreview.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/FileIntelligencePreview.tsx"
+      }
+    ]
+  },
+  "FileUpload": {
+    "name": "FileUpload",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "FileUpload.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/FileUpload.tsx"
+      }
+    ]
+  },
+  "FilterBar": {
+    "name": "FilterBar",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "FilterBar.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/FilterBar.tsx"
+      }
+    ]
+  },
+  "FloatingToolbar": {
+    "name": "FloatingToolbar",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "FloatingToolbar.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/FloatingToolbar.tsx"
+      }
+    ]
+  },
+  "Footer": {
+    "name": "Footer",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Footer.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Footer.tsx"
+      }
+    ]
+  },
+  "Gallery": {
+    "name": "Gallery",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Gallery.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Gallery.tsx"
+      }
+    ]
+  },
+  "GestureCard": {
+    "name": "GestureCard",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "GestureCard.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/GestureCard.tsx"
+      }
+    ]
+  },
+  "GridSystem": {
+    "name": "GridSystem",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "GridSystem.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/GridSystem.tsx"
+      }
+    ]
+  },
+  "HamburgerMenuIcon": {
+    "name": "HamburgerMenuIcon",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "HamburgerMenuIcon.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/HamburgerMenuIcon.tsx"
+      }
+    ]
+  },
+  "HapticButton": {
+    "name": "HapticButton",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "HapticButton.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/HapticButton.tsx"
+      }
+    ]
+  },
+  "Heading": {
+    "name": "Heading",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Heading.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Heading.tsx"
+      }
+    ]
+  },
+  "IconButton": {
+    "name": "IconButton",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "IconButton.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/IconButton.tsx"
+      }
+    ]
+  },
+  "ImageCarousel": {
+    "name": "ImageCarousel",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ImageCarousel.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ImageCarousel.tsx"
+      }
+    ]
+  },
+  "ImageCropper": {
+    "name": "ImageCropper",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ImageCropper.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ImageCropper.tsx"
+      }
+    ]
+  },
+  "Input": {
+    "name": "Input",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Input.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Input.tsx"
+      }
+    ]
+  },
+  "InspectorPanel": {
+    "name": "InspectorPanel",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "InspectorPanel.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/InspectorPanel.tsx"
+      }
+    ]
+  },
+  "InvoicePreview": {
+    "name": "InvoicePreview",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "InvoicePreview.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/InvoicePreview.tsx"
+      }
+    ]
+  },
+  "JsonViewer": {
+    "name": "JsonViewer",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "JsonViewer.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/JsonViewer.tsx"
+      }
+    ]
+  },
+  "KPIBlock": {
+    "name": "KPIBlock",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "KPIBlock.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/KPIBlock.tsx"
+      }
+    ]
+  },
+  "KanbanBoard": {
+    "name": "KanbanBoard",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "KanbanBoard.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/KanbanBoard.tsx"
+      }
+    ]
+  },
+  "KeyValueInfo": {
+    "name": "KeyValueInfo",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "KeyValueInfo.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/KeyValueInfo.tsx"
+      }
+    ]
+  },
+  "Label": {
+    "name": "Label",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Label.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Label.tsx"
+      }
+    ]
+  },
+  "Layout": {
+    "name": "Layout",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Layout.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Layout.tsx"
+      }
+    ]
+  },
+  "Lightbox": {
+    "name": "Lightbox",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Lightbox.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Lightbox.tsx"
+      }
+    ]
+  },
+  "LoadingOverlay": {
+    "name": "LoadingOverlay",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "LoadingOverlay.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/LoadingOverlay.tsx"
+      }
+    ]
+  },
+  "LoginForm": {
+    "name": "LoginForm",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "LoginForm.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/LoginForm.tsx"
+      }
+    ]
+  },
+  "MaintenanceMode": {
+    "name": "MaintenanceMode",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "MaintenanceMode.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/MaintenanceMode.tsx"
+      }
+    ]
+  },
+  "MarkdownEditor": {
+    "name": "MarkdownEditor",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "MarkdownEditor.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/MarkdownEditor.tsx"
+      }
+    ]
+  },
+  "MasonryLayout": {
+    "name": "MasonryLayout",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "MasonryLayout.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/MasonryLayout.tsx"
+      }
+    ]
+  },
+  "MenuBar": {
+    "name": "MenuBar",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "MenuBar.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/MenuBar.tsx"
+      }
+    ]
+  },
+  "MessageReactions": {
+    "name": "MessageReactions",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "MessageReactions.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/MessageReactions.tsx"
+      }
+    ]
+  },
+  "Modal": {
+    "name": "Modal",
+    "dependencies": [
+      "framer-motion",
+      "@radix-ui/react-dialog"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Modal.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Modal.tsx"
+      }
+    ]
+  },
+  "ModalStackManager": {
+    "name": "ModalStackManager",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ModalStackManager.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ModalStackManager.tsx"
+      }
+    ]
+  },
+  "MultiFileUpload": {
+    "name": "MultiFileUpload",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "MultiFileUpload.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/MultiFileUpload.tsx"
+      }
+    ]
+  },
+  "NavBar": {
+    "name": "NavBar",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "NavBar.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/NavBar.tsx"
+      }
+    ]
+  },
+  "NavigationDrawer": {
+    "name": "NavigationDrawer",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "NavigationDrawer.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/NavigationDrawer.tsx"
+      }
+    ]
+  },
+  "NotificationCenterPanel": {
+    "name": "NotificationCenterPanel",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "NotificationCenterPanel.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/NotificationCenterPanel.tsx"
+      }
+    ]
+  },
+  "OTPInput": {
+    "name": "OTPInput",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "OTPInput.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/OTPInput.tsx"
+      }
+    ]
+  },
+  "OfflineState": {
+    "name": "OfflineState",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "OfflineState.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/OfflineState.tsx"
+      }
+    ]
+  },
+  "OrderSummary": {
+    "name": "OrderSummary",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "OrderSummary.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/OrderSummary.tsx"
+      }
+    ]
+  },
+  "Pagination": {
+    "name": "Pagination",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Pagination.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Pagination.tsx"
+      }
+    ]
+  },
+  "Panel": {
+    "name": "Panel",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Panel.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Panel.tsx"
+      }
+    ]
+  },
+  "Paragraph": {
+    "name": "Paragraph",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Paragraph.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Paragraph.tsx"
+      }
+    ]
+  },
+  "PasswordInput": {
+    "name": "PasswordInput",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "PasswordInput.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/PasswordInput.tsx"
+      }
+    ]
+  },
+  "PaymentMethodSelector": {
+    "name": "PaymentMethodSelector",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "PaymentMethodSelector.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/PaymentMethodSelector.tsx"
+      }
+    ]
+  },
+  "PermissionsMatrix": {
+    "name": "PermissionsMatrix",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "PermissionsMatrix.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/PermissionsMatrix.tsx"
+      }
+    ]
+  },
+  "Popover": {
+    "name": "Popover",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Popover.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Popover.tsx"
+      }
+    ]
+  },
+  "PriceDisplay": {
+    "name": "PriceDisplay",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "PriceDisplay.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/PriceDisplay.tsx"
+      }
+    ]
+  },
+  "ProductCard": {
+    "name": "ProductCard",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ProductCard.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ProductCard.tsx"
+      }
+    ]
+  },
+  "Progress": {
+    "name": "Progress",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Progress.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Progress.tsx"
+      }
+    ]
+  },
+  "PromptSuggestionChips": {
+    "name": "PromptSuggestionChips",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "PromptSuggestionChips.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/PromptSuggestionChips.tsx"
+      }
+    ]
+  },
+  "PropertyList": {
+    "name": "PropertyList",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "PropertyList.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/PropertyList.tsx"
+      }
+    ]
+  },
+  "QRCodeGenerator": {
+    "name": "QRCodeGenerator",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "QRCodeGenerator.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/QRCodeGenerator.tsx"
+      }
+    ]
+  },
+  "QuantitySelector": {
+    "name": "QuantitySelector",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "QuantitySelector.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/QuantitySelector.tsx"
+      }
+    ]
+  },
+  "QueryBuilder": {
+    "name": "QueryBuilder",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "QueryBuilder.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/QueryBuilder.tsx"
+      }
+    ]
+  },
+  "RadioGroup": {
+    "name": "RadioGroup",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "RadioGroup.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/RadioGroup.tsx"
+      }
+    ]
+  },
+  "RangeSlider": {
+    "name": "RangeSlider",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "RangeSlider.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/RangeSlider.tsx"
+      }
+    ]
+  },
+  "RatingInput": {
+    "name": "RatingInput",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "RatingInput.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/RatingInput.tsx"
+      }
+    ]
+  },
+  "RecoveryCodeDisplay": {
+    "name": "RecoveryCodeDisplay",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "RecoveryCodeDisplay.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/RecoveryCodeDisplay.tsx"
+      }
+    ]
+  },
+  "ResizablePanel": {
+    "name": "ResizablePanel",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ResizablePanel.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ResizablePanel.tsx"
+      }
+    ]
+  },
+  "Reviews": {
+    "name": "Reviews",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Reviews.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Reviews.tsx"
+      }
+    ]
+  },
+  "RichTextEditor": {
+    "name": "RichTextEditor",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "RichTextEditor.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/RichTextEditor.tsx"
+      }
+    ]
+  },
+  "RotarySelector": {
+    "name": "RotarySelector",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "RotarySelector.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/RotarySelector.tsx"
+      }
+    ]
+  },
+  "SchedulerTimeline": {
+    "name": "SchedulerTimeline",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SchedulerTimeline.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/SchedulerTimeline.tsx"
+      }
+    ]
+  },
+  "ScrollArea": {
+    "name": "ScrollArea",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ScrollArea.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ScrollArea.tsx"
+      }
+    ]
+  },
+  "SearchInput": {
+    "name": "SearchInput",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SearchInput.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/SearchInput.tsx"
+      }
+    ]
+  },
+  "SectionHeader": {
+    "name": "SectionHeader",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SectionHeader.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/SectionHeader.tsx"
+      }
+    ]
+  },
+  "SecurityActivityLog": {
+    "name": "SecurityActivityLog",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SecurityActivityLog.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/SecurityActivityLog.tsx"
+      }
+    ]
+  },
+  "SegmentedInput": {
+    "name": "SegmentedInput",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SegmentedInput.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/SegmentedInput.tsx"
+      }
+    ]
+  },
+  "Select": {
+    "name": "Select",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Select.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Select.tsx"
+      }
+    ]
+  },
+  "Sheet": {
+    "name": "Sheet",
+    "dependencies": [
+      "lucide-react",
+      "class-variance-authority"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Sheet.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Sheet.tsx"
+      }
+    ]
+  },
+  "Sidebar": {
+    "name": "Sidebar",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Sidebar.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Sidebar.tsx"
+      }
+    ]
+  },
+  "SignaturePad": {
+    "name": "SignaturePad",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SignaturePad.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/SignaturePad.tsx"
+      }
+    ]
+  },
+  "SignupForm": {
+    "name": "SignupForm",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SignupForm.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/SignupForm.tsx"
+      }
+    ]
+  },
+  "Skeleton": {
+    "name": "Skeleton",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Skeleton.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Skeleton.tsx"
+      }
+    ]
+  },
+  "SlideToDelete": {
+    "name": "SlideToDelete",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SlideToDelete.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/SlideToDelete.tsx"
+      }
+    ]
+  },
+  "Slider": {
+    "name": "Slider",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Slider.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Slider.tsx"
+      }
+    ]
+  },
+  "Snackbar": {
+    "name": "Snackbar",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Snackbar.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Snackbar.tsx"
+      }
+    ]
+  },
+  "Spacer": {
+    "name": "Spacer",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Spacer.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Spacer.tsx"
+      }
+    ]
+  },
+  "Sparkline": {
+    "name": "Sparkline",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Sparkline.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Sparkline.tsx"
+      }
+    ]
+  },
+  "Spinner": {
+    "name": "Spinner",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Spinner.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Spinner.tsx"
+      }
+    ]
+  },
+  "SplitButton": {
+    "name": "SplitButton",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react",
+      "@radix-ui/react-dropdown-menu"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SplitButton.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/SplitButton.tsx"
+      }
+    ]
+  },
+  "SplitView": {
+    "name": "SplitView",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SplitView.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/SplitView.tsx"
+      }
+    ]
+  },
+  "StatisticDisplay": {
+    "name": "StatisticDisplay",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "StatisticDisplay.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/StatisticDisplay.tsx"
+      }
+    ]
+  },
+  "Stepper": {
+    "name": "Stepper",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Stepper.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Stepper.tsx"
+      }
+    ]
+  },
+  "StickyContainer": {
+    "name": "StickyContainer",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "StickyContainer.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/StickyContainer.tsx"
+      }
+    ]
+  },
+  "Switch": {
+    "name": "Switch",
+    "dependencies": [
+      "framer-motion",
+      "@radix-ui/react-switch"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Switch.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Switch.tsx"
+      }
+    ]
+  },
+  "Table": {
+    "name": "Table",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Table.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Table.tsx"
+      }
+    ]
+  },
+  "Tabs": {
+    "name": "Tabs",
+    "dependencies": [
+      "framer-motion",
+      "@radix-ui/react-tabs"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Tabs.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Tabs.tsx"
+      }
+    ]
+  },
+  "Tag": {
+    "name": "Tag",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Tag.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Tag.tsx"
+      }
+    ]
+  },
+  "TagsInput": {
+    "name": "TagsInput",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "TagsInput.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/TagsInput.tsx"
+      }
+    ]
+  },
+  "Text": {
+    "name": "Text",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Text.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Text.tsx"
+      }
+    ]
+  },
+  "Textarea": {
+    "name": "Textarea",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Textarea.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Textarea.tsx"
+      }
+    ]
+  },
+  "ThemeToggle": {
+    "name": "ThemeToggle",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ThemeToggle.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/ThemeToggle.tsx"
+      }
+    ]
+  },
+  "TimePicker": {
+    "name": "TimePicker",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "TimePicker.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/TimePicker.tsx"
+      }
+    ]
+  },
+  "Timeline": {
+    "name": "Timeline",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Timeline.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Timeline.tsx"
+      }
+    ]
+  },
+  "Title": {
+    "name": "Title",
+    "dependencies": [],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Title.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Title.tsx"
+      }
+    ]
+  },
+  "Toast": {
+    "name": "Toast",
+    "dependencies": [
+      "lucide-react",
+      "class-variance-authority"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Toast.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Toast.tsx"
+      }
+    ]
+  },
+  "Tooltip": {
+    "name": "Tooltip",
+    "dependencies": [
+      "framer-motion",
+      "@radix-ui/react-tooltip"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "Tooltip.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/Tooltip.tsx"
+      }
+    ]
+  },
+  "TopActionBar": {
+    "name": "TopActionBar",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "TopActionBar.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/TopActionBar.tsx"
+      }
+    ]
+  },
+  "TreeView": {
+    "name": "TreeView",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "TreeView.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/TreeView.tsx"
+      }
+    ]
+  },
+  "TwoFactorAuth": {
+    "name": "TwoFactorAuth",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "TwoFactorAuth.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/TwoFactorAuth.tsx"
+      }
+    ]
+  },
+  "VideoPlayer": {
+    "name": "VideoPlayer",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "VideoPlayer.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/VideoPlayer.tsx"
+      }
+    ]
+  },
+  "VoiceRecorder": {
+    "name": "VoiceRecorder",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "VoiceRecorder.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/VoiceRecorder.tsx"
+      }
+    ]
+  },
+  "WindowControls": {
+    "name": "WindowControls",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "WindowControls.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/WindowControls.tsx"
+      }
+    ]
+  },
+  "WindowFrame": {
+    "name": "WindowFrame",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "WindowFrame.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/components/WindowFrame.tsx"
+      }
+    ]
+  }
+}
