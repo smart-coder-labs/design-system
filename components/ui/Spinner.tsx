@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 
 interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
     size?: "sm" | "md" | "lg";

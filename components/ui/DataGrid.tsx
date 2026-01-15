@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 import { motion } from "framer-motion";
 import { Download, Filter, Pin, PinOff, Settings2 } from "lucide-react";
 import { Table } from "./Table";

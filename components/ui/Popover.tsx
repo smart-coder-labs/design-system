@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { createPortal } from "react-dom";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 
 type PopoverContextValue = {
     open: boolean;

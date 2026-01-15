@@ -3,7 +3,7 @@
 import * as React from "react";
 import { createPortal } from "react-dom";
 import { Check, ChevronDown } from "lucide-react";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 
 type SelectContextValue = {
     open: boolean;
