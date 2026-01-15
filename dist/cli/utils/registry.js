@@ -1,7 +1,12 @@
+"use strict";
 // This registry.ts now fetches from a remote JSON file on GitHub Raw.
 // It replaces local file system calls with fetch.
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getAvailableComponents = getAvailableComponents;
+exports.getComponentSource = getComponentSource;
+exports.getComponentDependencies = getComponentDependencies;
 // TODO: Make this configurable? For now hardcoded to main branch.
-const REGISTRY_URL = "https://raw.githubusercontent.com/smart-coder-labs/design-system/main/packages/design-system/registry.json";
+const REGISTRY_URL = "https://raw.githubusercontent.com/smart-coder-labs/apple-design-system/main/registry.json";
 let cachedRegistry = null;
 async function fetchRegistry() {
     if (cachedRegistry)
@@ -20,11 +25,11 @@ async function fetchRegistry() {
         return {};
     }
 }
-export async function getAvailableComponents() {
+async function getAvailableComponents() {
     const registry = await fetchRegistry();
     return Object.keys(registry);
 }
-export async function getComponentSource(componentName) {
+async function getComponentSource(componentName) {
     const registry = await fetchRegistry();
     const component = registry[componentName];
     if (!component || !component.files || component.files.length === 0) {
@@ -44,7 +49,7 @@ export async function getComponentSource(componentName) {
         return null;
     }
 }
-export async function getComponentDependencies(componentName) {
+async function getComponentDependencies(componentName) {
     const registry = await fetchRegistry();
     const component = registry[componentName];
     return component?.dependencies || [];

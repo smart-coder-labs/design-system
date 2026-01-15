@@ -1,14 +1,20 @@
-import prompts from "prompts";
-import path from "path";
-import fs from "fs-extra";
-import chalk from "chalk";
-import ora from "ora";
-import { getAvailableComponents, getComponentSource } from "../utils/registry";
-export const add = async (components) => {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.add = void 0;
+const prompts_1 = __importDefault(require("prompts"));
+const path_1 = __importDefault(require("path"));
+const fs_extra_1 = __importDefault(require("fs-extra"));
+const chalk_1 = __importDefault(require("chalk"));
+const ora_1 = __importDefault(require("ora"));
+const registry_1 = require("../utils/registry");
+const add = async (components) => {
     if (!components || components.length === 0) {
         // If no components specified, list available ones
-        const available = await getAvailableComponents();
-        const response = await prompts({
+        const available = await (0, registry_1.getAvailableComponents)();
+        const response = await (0, prompts_1.default)({
             type: "multiselect",
             name: "items",
             message: "Which components would you like to add?",
@@ -18,14 +24,14 @@ export const add = async (components) => {
         components = response.items;
     }
     if (!components || components.length === 0) {
-        console.log(chalk.yellow("No components selected."));
+        console.log(chalk_1.default.yellow("No components selected."));
         return;
     }
     // Load config
     let config = { componentsDir: "./components/ui" };
-    if (fs.existsSync("design-system.json")) {
+    if (fs_extra_1.default.existsSync("design-system.json")) {
         try {
-            config = await fs.readJSON("design-system.json");
+            config = await fs_extra_1.default.readJSON("design-system.json");
         }
         catch (e) {
             console.warn("Could not read design-system.json, using defaults.");
@@ -34,23 +40,23 @@ export const add = async (components) => {
     else {
         console.warn("design-system.json not found. Using default ./components/ui");
     }
-    const spinner = ora("Installing components...").start();
+    const spinner = (0, ora_1.default)("Installing components...").start();
     for (const component of components) {
         spinner.text = `Installing ${component}...`;
-        const source = await getComponentSource(component);
+        const source = await (0, registry_1.getComponentSource)(component);
         if (!source) {
             spinner.warn(`Component '${component}' not found.`);
             continue;
         }
-        const destPath = path.resolve(process.cwd(), config.componentsDir, `${component}.tsx`);
-        await fs.ensureDir(path.dirname(destPath));
+        const destPath = path_1.default.resolve(process.cwd(), config.componentsDir, `${component}.tsx`);
+        await fs_extra_1.default.ensureDir(path_1.default.dirname(destPath));
         // Quick and dirty import fix:
         // Some components might import from "@/lib/utils" or similar.
         // The source code likely has: import { cn } from "@/lib/utils";
         // We should ensure that matches the user's setup or leave it to them to resolve aliases.
         // For now we assume standard Next.js-like alias @/lib/utils is configured or simple relative imports.
         // We can try to detect missing "cn" import or other common utils.
-        await fs.writeFile(destPath, source);
+        await fs_extra_1.default.writeFile(destPath, source);
         spinner.succeed(`Installed ${component}`);
         // Auto-install dependencies found in the registry
         // We can now rely on the registry manifest rather than regex parsing if we want,
@@ -97,6 +103,7 @@ export const add = async (components) => {
         }
     }
     spinner.stop();
-    console.log(chalk.bold.green("\nDone!"));
+    console.log(chalk_1.default.bold.green("\nDone!"));
 };
+exports.add = add;
 //# sourceMappingURL=add.js.map

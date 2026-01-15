@@ -1,10 +1,13 @@
+"use strict";
 /**
  * 🍏 Apple Design System Tokens
  * Inspirado en macOS, iOS y VisionOS
  *
  * Filosofía: Minimalismo, elegancia, espacio negativo amplio
  */
-export const tokens = {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.tokens = void 0;
+exports.tokens = {
     // 🎨 PALETA DE COLORES
     colors: {
         // Neutrales (Light Mode)

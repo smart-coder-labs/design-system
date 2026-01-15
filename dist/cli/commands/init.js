@@ -1,12 +1,18 @@
-import prompts from "prompts";
-import path from "path";
-import fs from "fs-extra";
-import chalk from "chalk";
-import ora from "ora";
-export const init = async () => {
-    console.log(chalk.bold.green("🍏 Apple Design System Initialization"));
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.init = void 0;
+const prompts_1 = __importDefault(require("prompts"));
+const path_1 = __importDefault(require("path"));
+const fs_extra_1 = __importDefault(require("fs-extra"));
+const chalk_1 = __importDefault(require("chalk"));
+const ora_1 = __importDefault(require("ora"));
+const init = async () => {
+    console.log(chalk_1.default.bold.green("🍏 Apple Design System Initialization"));
     console.log("This utility will help you configure your project.");
-    const response = await prompts([
+    const response = await (0, prompts_1.default)([
         {
             type: "text",
             name: "componentsDir",
@@ -26,31 +32,31 @@ export const init = async () => {
             initial: true,
         },
     ]);
-    const spin = ora("Configuring project...").start();
+    const spin = (0, ora_1.default)("Configuring project...").start();
     // Create config file
     const config = {
         componentsDir: response.componentsDir,
         globalCss: response.globalCss,
     };
-    await fs.writeJSON("design-system.json", config, { spaces: 2 });
+    await fs_extra_1.default.writeJSON("design-system.json", config, { spaces: 2 });
     spin.succeed("Configuration file design-system.json created.");
     // Check/Create components directory
-    const resolvedComponentsDir = path.resolve(process.cwd(), response.componentsDir);
-    await fs.ensureDir(resolvedComponentsDir);
+    const resolvedComponentsDir = path_1.default.resolve(process.cwd(), response.componentsDir);
+    await fs_extra_1.default.ensureDir(resolvedComponentsDir);
     // Also create a lib/utils.ts for cn helper if it doesn't exist
     // Many components rely on 'cn'. We should probably include a helper or ask where utils are.
     // For simplicity, we'll try to find or create a lib/utils.ts
-    const utilsPath = path.resolve(process.cwd(), "lib/utils.ts");
-    if (!fs.existsSync(utilsPath)) {
-        await fs.ensureDir(path.resolve(process.cwd(), "lib"));
-        await fs.writeFile(utilsPath, `import { clsx, type ClassValue } from "clsx"
+    const utilsPath = path_1.default.resolve(process.cwd(), "lib/utils.ts");
+    if (!fs_extra_1.default.existsSync(utilsPath)) {
+        await fs_extra_1.default.ensureDir(path_1.default.resolve(process.cwd(), "lib"));
+        await fs_extra_1.default.writeFile(utilsPath, `import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 `);
-        console.log(chalk.green("Created lib/utils.ts for 'cn' utility."));
+        console.log(chalk_1.default.green("Created lib/utils.ts for 'cn' utility."));
     }
     if (response.installDeps) {
         spin.start("Installing dependencies...");
@@ -64,10 +70,11 @@ export function cn(...inputs: ClassValue[]) {
         }
         catch (e) {
             spin.fail("Failed to install dependencies. Please run manually:");
-            console.log(chalk.cyan("npm install clsx tailwind-merge cva framer-motion lucide-react"));
+            console.log(chalk_1.default.cyan("npm install clsx tailwind-merge cva framer-motion lucide-react"));
         }
     }
-    console.log(chalk.bold.green("\nSuccess! Project initialized."));
-    console.log(`You can now run ${chalk.cyan("npx apple-design-system add [component]")} to add components.`);
+    console.log(chalk_1.default.bold.green("\nSuccess! Project initialized."));
+    console.log(`You can now run ${chalk_1.default.cyan("npx apple-design-system add [component]")} to add components.`);
 };
+exports.init = init;
 //# sourceMappingURL=init.js.map
