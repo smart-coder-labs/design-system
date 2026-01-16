@@ -14,13 +14,13 @@
     "typescript",
     "tailwindcss"
   ],
-  "homepage": "https://github.com/smart-coder-labs/apple-design-system#readme",
+  "homepage": "https://github.com/smart-coder-labs/design-system#readme",
   "bugs": {
-    "url": "https://github.com/smart-coder-labs/apple-design-system/issues"
+    "url": "https://github.com/smart-coder-labs/design-system/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smart-coder-labs/apple-design-system.git"
+    "url": "git+https://github.com/smart-coder-labs/design-system.git"
   },
   "license": "MIT",
   "author": "Your Name",
@@ -28,28 +28,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    },
-    "./css": "./dist/globals.css",
-    "./dist/globals.css": "./dist/globals.css",
-    "./globals.css": "./dist/globals.css",
-    "./tailwind.preset": {
-      "types": "./dist/tailwind.preset.d.ts",
-      "import": "./dist/tailwind.preset.js",
-      "require": "./dist/tailwind.preset.js"
-    },
-    "./tokens": {
-      "types": "./dist/tokens.d.ts",
-      "import": "./dist/tokens.js",
-      "require": "./dist/tokens.js"
-    }
-  },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+
+
   "bin": {
     "apple-design-system": "dist/cli/index.js"
   },
@@ -59,7 +39,7 @@
     "lib": "lib"
   },
   "files": [
-    "dist",
+    "dist/cli",
     "README.md",
     "LICENSE"
   ],
@@ -67,9 +47,9 @@
     "clean": "rm -rf dist",
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
-    "build": "npm run clean && tsc -p tsconfig.build.json && npm run copy-css",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
     "build:registry": "ts-node scripts/build-registry.ts",
-    "copy-css": "cp globals.css dist/globals.css",
+
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

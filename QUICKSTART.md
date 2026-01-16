@@ -17,64 +17,19 @@ El asistente te preguntará:
 - Dónde está tu CSS global.
 - Si deseas instalar las dependencias base (`tailwindcss`, `framer-motion`, etc.).
 
-### 2. Configurar Tailwind CSS
-
-Asegúrate de que tu `tailwind.config.js` (o `.ts`) tenga configuradas las rutas de contenido para los nuevos componentes.
-
-```javascript
-// tailwind.config.js
-import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
-
-export default {
-  presets: [preset],
-  content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-    './app/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}', // Asegúrate de incluir la carpeta de componentes
-  ],
-  // ... resto de tu configuración
-};
-```
-
-### 3. Añadir componentes
-
-Usa el comando `add` para descargar componentes individuales a tu proyecto.
+### 2. Usar en tu proyecto
 
 ```bash
-npx @smart-coder-labs/apple-design-system add Button Card Input
+npx @smart-coder-labs/apple-design-system add Button Card Input Modal
 ```
 
-Esto:
-1. Descargará el código fuente a `./components/ui/button.tsx`, etc.
-2. Instalará automáticamente las dependencias necesarias para esos componentes.
-
----
-
-## 💻 Uso de Componentes
-
-Ahora importas los componentes directamente desde tu carpeta local, no desde el paquete npm.
-
 ```tsx
-// Ejemplo: src/app/page.tsx
-import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/Button";
 
-export default function LoginPage() {
+function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-background-primary">
-      <Card className="w-[350px]">
-        <CardHeader>
-          <CardTitle>Iniciar Sesión</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <Input placeholder="nombre@ejemplo.com" type="email" />
-          <Input placeholder="Contraseña" type="password" />
-          <Button className="w-full">Entrar</Button>
-        </CardContent>
-      </Card>
-    </div>
-  )
+    <Button variant="primary">Submit</Button>
+  );
 }
 ```
 

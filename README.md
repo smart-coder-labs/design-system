@@ -13,7 +13,7 @@
 [![Framer Motion](https://img.shields.io/badge/Framer%20Motion-10+-ff69b4)](https://www.framer.com/motion/)
 [![Radix UI](https://img.shields.io/badge/Radix%20UI-Latest-purple)](https://www.radix-ui.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-38bdf8)](https://tailwindcss.com/)
-[![npm](https://img.shields.io/badge/npm-@smart--coder--labs/design--system-red)](https://github.com/smart-coder-labs/design-system/packages)
+[![npm](https://img.shields.io/npm/v/@smart-coder-labs/apple-design-system)](https://www.npmjs.com/package/@smart-coder-labs/apple-design-system)
 
 [📦 Instalación](#-inicio-rápido) •
 [📖 Documentación](#-documentación) •
@@ -27,10 +27,8 @@
 ## 📦 Instalación
 
 ```bash
-npm install @smart-coder-labs/apple-design-system
+npm install -D @smart-coder-labs/apple-design-system
 ```
-
-El paquete está publicado en **GitHub Package Registry**. Para configurar la autenticación, consulta la [guía de inicio rápido](./QUICKSTART.md).
 
 ---
 
@@ -113,48 +111,28 @@ Esto:
 
 ## 🚀 Inicio Rápido
 
-### 1. Instalar el paquete
+### 1. Inicializar el proyecto
+
+Ejecuta el comando `init` para configurar automáticamente tu entorno:
 
 ```bash
-npm install @smart-coder-labs/apple-design-system
+npx @smart-coder-labs/apple-design-system init
 ```
 
-> **Nota:** Este paquete está publicado en GitHub Package Registry. Necesitarás configurar la autenticación en tu archivo `.npmrc`:
-> ```bash
-> @smart-coder-labs:registry=https://npm.pkg.github.com
-> //npm.pkg.github.com/:_authToken=TU_GITHUB_TOKEN
-> ```
-> [Ver guía completa de instalación →](./QUICKSTART.md)
+Esto descargará los estilos base a `styles/apple-ds.css` y configurará las utilidades necesarias.
 
-### 2. Configurar Tailwind
+### 2. Usar en tu proyecto
 
-**IMPORTANTE:** Usa el preset de Tailwind para acceder a todas las clases personalizadas:
-
-```javascript
-// tailwind.config.js
-import preset from '@smart-coder-labs/apple-design-system/tailwind.preset';
-
-export default {
-  presets: [preset],
-  content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@smart-coder-labs/apple-design-system/**/*.{js,ts,jsx,tsx}',
-  ],
-};
+```bash
+npx @smart-coder-labs/apple-design-system add Button
 ```
-
-### 3. Usar en tu proyecto
 
 ```tsx
-import { Button, Card, Input } from '@smart-coder-labs/apple-design-system';
-import '@smart-coder-labs/apple-design-system/globals.css';
+import { Button } from "@/components/ui/Button";
 
 function App() {
   return (
-    <Card>
-      <Input label="Email" placeholder="your@email.com" />
-      <Button variant="primary">Submit</Button>
-    </Card>
+    <Button variant="primary">Submit</Button>
   );
 }
 ```
@@ -396,7 +374,7 @@ Este design system está inspirado en:
 A partir de **v1.0.3**, es necesario usar el preset de Tailwind:
 
 ```bash
-npm install @smart-coder-labs/apple-design-system@latest
+npm install -D @smart-coder-labs/apple-design-system@latest
 ```
 
 Actualiza tu `tailwind.config.js`:

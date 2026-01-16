@@ -14,18 +14,15 @@
     "skipLibCheck": true
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx"
+    "cli/**/*"
   ],
   "exclude": [
     "node_modules",
     "dist",
-    "**/*.stories.tsx",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    ".storybook",
-    "stories",
-    "vite.config.ts",
-    "components"
+    "components",
+    "scripts",
+    "lib",
+    "index.ts",
+    "globals.css"
   ]
 }
