@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Footer, FooterContent, FooterColumn, FooterLink, FooterBottom } from '../components/Footer';
-import { GridContainer as Container } from '../components/GridSystem';
+import { Footer, FooterContent, FooterColumn, FooterLink, FooterBottom } from '../components/ui/Footer';
+import { GridContainer as Container } from '../components/ui/GridSystem';
 import { Github, Twitter, Linkedin } from 'lucide-react';
-import { Button } from '../components/Button';
+import { Button } from '../components/ui/Button';
 
 const meta: Meta<typeof Footer> = {
     title: 'Layout/Footer',

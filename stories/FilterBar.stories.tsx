@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FilterBar } from '../components/FilterBar';
-import type { FilterGroup, ActiveFilter } from '../components/FilterBar';
+import { FilterBar } from '../components/ui/FilterBar';
+import type { FilterGroup, ActiveFilter } from '../components/ui/FilterBar';
 import { useState } from 'react';
 import { Calendar, Tag, Users, MapPin, Star } from 'lucide-react';
 

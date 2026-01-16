@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CommentThread, CommentData, CommentUser } from '../components/CommentThread';
+import { CommentThread, CommentData, CommentUser } from '../components/ui/CommentThread';
 import { useState } from 'react';
 
 const meta = {

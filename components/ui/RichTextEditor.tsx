@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { motion } from 'framer-motion';
 
 /* ========================================

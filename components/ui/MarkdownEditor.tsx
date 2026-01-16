@@ -1,7 +1,7 @@
 import React, { useState, useRef, useMemo } from 'react';
 import MarkdownIt from 'markdown-it';
 import { Bold, Italic, Link, List, ListOrdered, Code, Eye, Edit3, Image as ImageIcon } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { motion } from 'framer-motion';
 import { Label } from './Label';
 

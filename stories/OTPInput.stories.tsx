@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { OTPInput } from '../components/OTPInput';
+import { OTPInput } from '../components/ui/OTPInput';
 import { useState } from 'react';
 
 const meta: Meta<typeof OTPInput> = {

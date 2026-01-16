@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { Sparkline as SparklineComponent } from './Sparkline';
 

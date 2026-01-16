@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { motion } from 'framer-motion';
 import { ActivityFeed, ActivityItem } from './ActivityFeed';
 import { Shield, Lock, Unlock, Key, AlertTriangle, CheckCircle2, XCircle, Globe, MapPin } from 'lucide-react';

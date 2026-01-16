@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { CartPreview } from '../components/CartPreview';
+import { CartPreview } from '../components/ui/CartPreview';
 
 const meta: Meta<typeof CartPreview> = {
     title: 'E-Commerce/CartPreview',

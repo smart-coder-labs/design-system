@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence, HTMLMotionProps } from 'framer-motion';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 
 /**
  * Navigation Drawer component – Slide-in navigation panel.

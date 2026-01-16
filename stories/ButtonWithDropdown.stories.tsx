@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ButtonWithDropdown } from '../components/ButtonWithDropdown';
+import { ButtonWithDropdown } from '../components/ui/ButtonWithDropdown';
 import { Download, FileText, Image, Video } from 'lucide-react';
 
 const meta: Meta<typeof ButtonWithDropdown> = {

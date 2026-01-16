@@ -7,7 +7,7 @@ import {
     SelectLabel,
     SelectTrigger,
     SelectValue,
-} from '../components/Select';
+} from '../components/ui/Select';
 
 const meta: Meta<typeof Select> = {
     title: 'Forms/Select',

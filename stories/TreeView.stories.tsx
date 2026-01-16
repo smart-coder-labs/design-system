@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TreeView, TreeNode } from '../components/TreeView';
+import { TreeView, TreeNode } from '../components/ui/TreeView';
 import { useState } from 'react';
 import { Database, Server, Globe, Lock } from 'lucide-react';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { HapticButton, isHapticSupported } from '../components/HapticButton';
+import { HapticButton, isHapticSupported } from '../components/ui/HapticButton';
 import { CheckCircle2, AlertCircle, XCircle, Bell, Zap } from 'lucide-react';
 
 const meta = {

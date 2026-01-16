@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { HamburgerMenuIcon } from '../components/HamburgerMenuIcon';
+import { HamburgerMenuIcon } from '../components/ui/HamburgerMenuIcon';
 
 const meta: Meta<typeof HamburgerMenuIcon> = {
     title: 'Navigation/HamburgerMenuIcon',

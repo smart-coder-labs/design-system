@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InspectorPanel, InspectorField } from '../components/InspectorPanel';
-import { Input } from '../components/Input';
-import { Select } from '../components/Select';
+import { InspectorPanel, InspectorField } from '../components/ui/InspectorPanel';
+import { Input } from '../components/ui/Input';
+import { Select } from '../components/ui/Select';
 
 const meta: Meta<typeof InspectorPanel> = {
     title: 'Surfaces/InspectorPanel',

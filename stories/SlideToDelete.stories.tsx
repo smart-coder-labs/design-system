@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SlideToDelete, SlideToDeleteItem } from '../components/SlideToDelete';
-import { Avatar, AvatarImage, AvatarFallback } from '../components/Avatar';
-import { Badge } from '../components/Badge';
+import { SlideToDelete, SlideToDeleteItem } from '../components/ui/SlideToDelete';
+import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/Avatar';
+import { Badge } from '../components/ui/Badge';
 import { Trash2, X, Archive, MoreVertical } from 'lucide-react';
-import { Button } from '../components/Button';
+import { Button } from '../components/ui/Button';
 
 const meta = {
     title: 'Interaction/SlideToDelete',

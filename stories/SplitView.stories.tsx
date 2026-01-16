@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SplitView } from '../components/SplitView';
+import { SplitView } from '../components/ui/SplitView';
 
 const meta: Meta<typeof SplitView> = {
   title: 'Layout/SplitView',

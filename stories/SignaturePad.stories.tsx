@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SignaturePad } from '../components/SignaturePad';
+import { SignaturePad } from '../components/ui/SignaturePad';
 
 const meta: Meta<typeof SignaturePad> = {
     title: 'Data Display/SignaturePad',

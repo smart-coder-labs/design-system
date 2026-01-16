@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import PriceDisplay from '../components/PriceDisplay';
+import PriceDisplay from '../components/ui/PriceDisplay';
 
 const meta: Meta<typeof PriceDisplay> = {
   title: 'Data Display/Price Display',

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Timeline, TimelineItem } from '../components/Timeline';
-import { Card } from '../components/Card';
-import { Button } from '../components/Button';
-import { Badge } from '../components/Badge';
+import { Timeline, TimelineItem } from '../components/ui/Timeline';
+import { Card } from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
+import { Badge } from '../components/ui/Badge';
 import { Mail, GitCommit, Package, CheckCircle2, AlertTriangle, Truck, Rocket, AlertOctagon, CheckCircle, Globe, Shield } from 'lucide-react';
 
 const meta = {

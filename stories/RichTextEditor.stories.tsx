@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RichTextEditor } from '../components/RichTextEditor';
+import { RichTextEditor } from '../components/ui/RichTextEditor';
 import { useState } from 'react';
 
 const meta: Meta<typeof RichTextEditor> = {

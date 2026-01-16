@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { TopActionBar, TopActionBarButton, TopActionBarIconButton } from '../components/TopActionBar';
+import { TopActionBar, TopActionBarButton, TopActionBarIconButton } from '../components/ui/TopActionBar';
 
 // Simple placeholder icons using emojis
 const MenuIcon = () => <span>☰</span>;

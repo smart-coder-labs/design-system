@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { GridContainer, Row, Col } from '../components/GridSystem';
+import { GridContainer, Row, Col } from '../components/ui/GridSystem';
 
 const meta: Meta<typeof GridContainer> = {
     title: 'Layout/GridSystem',

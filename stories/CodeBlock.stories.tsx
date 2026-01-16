@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { CodeBlock } from '../components/CodeBlock';
+import { CodeBlock } from '../components/ui/CodeBlock';
 
 const meta: Meta<typeof CodeBlock> = {
     title: 'Typography/CodeBlock',

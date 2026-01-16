@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SectionHeader } from '../components/SectionHeader';
-import { Button } from '../components/Button';
+import { SectionHeader } from '../components/ui/SectionHeader';
+import { Button } from '../components/ui/Button';
 import { Plus, Download, Filter } from 'lucide-react';
 
 const meta: Meta<typeof SectionHeader> = {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ImageCropper } from '../components/ImageCropper';
+import { ImageCropper } from '../components/ui/ImageCropper';
 import { useState } from 'react';
 
 const meta: Meta<typeof ImageCropper> = {

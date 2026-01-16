@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StatisticDisplay, StatisticHighlight } from '../components/StatisticDisplay';
-import type { StatisticMetric } from '../components/StatisticDisplay';
+import { StatisticDisplay, StatisticHighlight } from '../components/ui/StatisticDisplay';
+import type { StatisticMetric } from '../components/ui/StatisticDisplay';
 import { DollarSign, Users, ShoppingCart, Activity, Target, Cpu, Server, Globe, TrendingUp } from 'lucide-react';
 
 const overviewMetrics: StatisticMetric[] = [

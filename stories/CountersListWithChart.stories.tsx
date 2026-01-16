@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountersListWithChart } from '../components/CountersListWithChart';
+import { CountersListWithChart } from '../components/ui/CountersListWithChart';
 
 export default {
   title: 'Data/CountersListWithChart',

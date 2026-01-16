@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ProductCard } from '../components/ProductCard';
+import { ProductCard } from '../components/ui/ProductCard';
 
 const meta: Meta<typeof ProductCard> = {
     title: 'E-Commerce/ProductCard',

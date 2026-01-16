@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Lightbox } from '../components/Lightbox';
-import { Button } from '../components/Button';
+import { Lightbox } from '../components/ui/Lightbox';
+import { Button } from '../components/ui/Button';
 import { useState } from 'react';
 
 const meta: Meta<typeof Lightbox> = {

@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { GestureCard } from '../components/GestureCard';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/Card';
-import { Button } from '../components/Button';
+import { GestureCard } from '../components/ui/GestureCard';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
 
 const meta = {
     title: 'Surfaces/GestureCard',

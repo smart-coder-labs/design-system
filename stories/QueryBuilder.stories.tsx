@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { QueryBuilder, Field, RuleGroup } from '../components/QueryBuilder';
+import { QueryBuilder, Field, RuleGroup } from '../components/ui/QueryBuilder';
 import { useState } from 'react';
 
 const meta: Meta<typeof QueryBuilder> = {

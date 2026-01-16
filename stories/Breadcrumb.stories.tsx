@@ -7,11 +7,11 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
     BreadcrumbEllipsis,
-} from '../components/Breadcrumb';
+} from '../components/ui/Breadcrumb';
 import {
     Dropdown,
     DropdownItem,
-} from '../components/Dropdown';
+} from '../components/ui/Dropdown';
 import { ChevronDown } from 'lucide-react';
 
 const meta: Meta<typeof Breadcrumb> = {

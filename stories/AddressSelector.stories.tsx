@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import AddressSelector from '../components/AddressSelector';
+import AddressSelector from '../components/ui/AddressSelector';
 
 const meta: Meta<typeof AddressSelector> = {
   title: 'Forms/Address Selector',

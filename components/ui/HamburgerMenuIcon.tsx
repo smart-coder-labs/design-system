@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, HTMLMotionProps } from 'framer-motion';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 
 /**
  * Hamburger Menu Icon component – Animated hamburger menu icon.

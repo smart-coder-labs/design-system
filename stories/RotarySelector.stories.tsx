@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { RotarySelector, type RotarySelectorOption } from '../components/RotarySelector';
+import { RotarySelector, type RotarySelectorOption } from '../components/ui/RotarySelector';
 
 // Simple icons
 const VolumeIcon = () => <span>🔊</span>;

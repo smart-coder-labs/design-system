@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SearchInput } from '../components/SearchInput';
+import { SearchInput } from '../components/ui/SearchInput';
 import { useState } from 'react';
 
 const meta: Meta<typeof SearchInput> = {

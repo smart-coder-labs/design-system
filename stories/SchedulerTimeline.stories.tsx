@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SchedulerTimeline, SchedulerResource, SchedulerEvent } from '../components/SchedulerTimeline';
+import { SchedulerTimeline, SchedulerResource, SchedulerEvent } from '../components/ui/SchedulerTimeline';
 import { useState } from 'react';
 
 const meta: Meta<typeof SchedulerTimeline> = {

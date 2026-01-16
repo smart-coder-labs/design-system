@@ -1,6 +1,6 @@
 import React, { useState, forwardRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, X } from 'lucide-react';
 

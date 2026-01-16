@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import QuantitySelector from '../components/QuantitySelector';
+import QuantitySelector from '../components/ui/QuantitySelector';
 
 const meta: Meta<typeof QuantitySelector> = {
   title: 'Forms/Quantity Selector',

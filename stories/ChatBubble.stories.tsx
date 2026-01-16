@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ChatBubble } from '../components/ChatBubble';
-import { MessageReactions } from '../components/MessageReactions';
+import { ChatBubble } from '../components/ui/ChatBubble';
+import { MessageReactions } from '../components/ui/MessageReactions';
 
 const meta = {
     title: 'Data Display/ChatBubble',

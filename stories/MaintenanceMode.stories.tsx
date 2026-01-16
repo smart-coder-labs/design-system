@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MaintenanceMode } from '../components/MaintenanceMode';
-import { Button } from '../components/Button';
+import { MaintenanceMode } from '../components/ui/MaintenanceMode';
+import { Button } from '../components/ui/Button';
 import { RefreshCw } from 'lucide-react';
 
 const meta: Meta<typeof MaintenanceMode> = {

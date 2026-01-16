@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PermissionsMatrix, Role, Permission } from '../components/PermissionsMatrix';
+import { PermissionsMatrix, Role, Permission } from '../components/ui/PermissionsMatrix';
 import { useState } from 'react';
 
 const meta: Meta<typeof PermissionsMatrix> = {

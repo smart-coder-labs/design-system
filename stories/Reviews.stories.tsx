@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
-import ReviewsList, { RatingStars, Review } from '../components/Reviews';
-import { Avatar } from '../components/Avatar';
+import ReviewsList, { RatingStars, Review } from '../components/ui/Reviews';
+import { Avatar } from '../components/ui/Avatar';
 import { AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
 
 const meta: Meta<typeof ReviewsList> = {

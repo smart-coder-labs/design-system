@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import Counters, { CountersItem } from '../components/Counters';
+import Counters, { CountersItem } from '../components/ui/Counters';
 
 const meta: Meta<typeof Counters> = {
   title: 'Data/Counters',

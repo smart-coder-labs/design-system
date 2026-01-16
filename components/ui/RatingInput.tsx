@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Star } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { motion } from 'framer-motion';
 import { Label } from './Label';
 

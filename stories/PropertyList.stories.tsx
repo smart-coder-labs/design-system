@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PropertyList, CompactPropertyList } from '../components/PropertyList';
+import { PropertyList, CompactPropertyList } from '../components/ui/PropertyList';
 import { File, Calendar, User, Hash, Server, HardDrive, Monitor, Cpu } from 'lucide-react';
 import { useState } from 'react';
 

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { LoadingOverlay } from '../components/LoadingOverlay';
-import { Card, CardHeader, CardTitle, CardContent } from '../components/Card';
-import { Button } from '../components/Button';
+import { LoadingOverlay } from '../components/ui/LoadingOverlay';
+import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
 import { useState, useEffect } from 'react';
 
 const meta: Meta<typeof LoadingOverlay> = {

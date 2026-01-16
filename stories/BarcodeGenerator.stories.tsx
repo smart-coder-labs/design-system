@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { BarcodeGenerator } from '../components/BarcodeGenerator';
+import { BarcodeGenerator } from '../components/ui/BarcodeGenerator';
 
 const meta: Meta<typeof BarcodeGenerator> = {
     title: 'Data Display/BarcodeGenerator',

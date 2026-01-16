@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { Avatar, AvatarImage, AvatarFallback } from './Avatar';
 import { Button } from './Button';
 import { Textarea } from './Textarea';

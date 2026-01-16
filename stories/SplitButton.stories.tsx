@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SplitButton } from '../components/SplitButton';
+import { SplitButton } from '../components/ui/SplitButton';
 import { Save, Download, Share2, Copy } from 'lucide-react';
 
 const meta: Meta<typeof SplitButton> = {

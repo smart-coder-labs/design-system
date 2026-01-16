@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AudioPlayer } from '../components/AudioPlayer';
+import { AudioPlayer } from '../components/ui/AudioPlayer';
 
 const meta: Meta<typeof AudioPlayer> = {
     title: 'Data Display/AudioPlayer',

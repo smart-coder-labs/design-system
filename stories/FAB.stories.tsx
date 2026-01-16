@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FAB } from '../components/FAB';
+import { FAB } from '../components/ui/FAB';
 import { Plus, MessageCircle, Edit3, Share2 } from 'lucide-react';
 
 const meta: Meta<typeof FAB> = {

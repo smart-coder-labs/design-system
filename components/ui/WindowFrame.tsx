@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { motion } from 'framer-motion';
 import { Minus, Square, X } from 'lucide-react';
 

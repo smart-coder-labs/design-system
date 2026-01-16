@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IconButton } from '../components/IconButton';
+import { IconButton } from '../components/ui/IconButton';
 import { Plus, Trash2, Settings, Bell, Search } from 'lucide-react';
 
 const meta: Meta<typeof IconButton> = {

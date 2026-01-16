@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ResizablePanel } from '../components/ResizablePanel';
+import { ResizablePanel } from '../components/ui/ResizablePanel';
 
 const meta: Meta<typeof ResizablePanel> = {
   title: 'Layout/ResizablePanel',

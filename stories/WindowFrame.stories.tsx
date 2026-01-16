@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { WindowFrame } from '../components/WindowFrame';
+import { WindowFrame } from '../components/ui/WindowFrame';
 
 const meta: Meta<typeof WindowFrame> = {
     title: 'Surfaces/WindowFrame',

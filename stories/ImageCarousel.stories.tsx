@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ImageCarousel } from '../components/ImageCarousel';
+import { ImageCarousel } from '../components/ui/ImageCarousel';
 
 const meta: Meta<typeof ImageCarousel> = {
     title: 'Data Display/ImageCarousel',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 
 /**
  * Command Menu / Spotlight Search component – macOS-style command palette.

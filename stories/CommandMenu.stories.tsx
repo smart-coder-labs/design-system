@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { CommandMenu, type CommandMenuGroup } from '../components/CommandMenu';
-import { Button } from '../components/Button';
+import { CommandMenu, type CommandMenuGroup } from '../components/ui/CommandMenu';
+import { Button } from '../components/ui/Button';
 
 // Simple placeholder icons using emojis
 const HomeIcon = () => <span>🏠</span>;

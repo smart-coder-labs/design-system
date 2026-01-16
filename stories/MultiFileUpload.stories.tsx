@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MultiFileUpload } from '../components/MultiFileUpload';
+import { MultiFileUpload } from '../components/ui/MultiFileUpload';
 import { useState } from 'react';
 
 const meta: Meta<typeof MultiFileUpload> = {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { BottomNavigation, type BottomNavigationItem } from '../components/BottomNavigation';
+import { BottomNavigation, type BottomNavigationItem } from '../components/ui/BottomNavigation';
 import {
     Home,
     Search,

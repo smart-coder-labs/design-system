@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { KanbanBoard } from '../components/KanbanBoard';
+import { KanbanBoard } from '../components/ui/KanbanBoard';
 
 const meta: Meta<typeof KanbanBoard> = {
     title: 'Data Display/KanbanBoard',

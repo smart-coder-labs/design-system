@@ -1,7 +1,7 @@
 import React, { useRef, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Upload, X, File, AlertCircle, Trash2 } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 
 /* ========================================
    TYPES

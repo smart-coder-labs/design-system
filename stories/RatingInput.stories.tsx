@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RatingInput } from '../components/RatingInput';
+import { RatingInput } from '../components/ui/RatingInput';
 import { useState } from 'react';
 
 const meta: Meta<typeof RatingInput> = {

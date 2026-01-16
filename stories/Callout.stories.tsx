@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Callout } from '../components/Callout';
+import { Callout } from '../components/ui/Callout';
 import { Lightbulb } from 'lucide-react';
 
 const meta: Meta<typeof Callout> = {

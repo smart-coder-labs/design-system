@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, HTMLMotionProps } from 'framer-motion';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 
 /**
  * Pagination component – Apple-style page navigation.

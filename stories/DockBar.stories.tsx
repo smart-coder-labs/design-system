@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { DockBar, type DockBarItem } from '../components/DockBar';
+import { DockBar, type DockBarItem } from '../components/ui/DockBar';
 
 // Simple placeholder icons using emojis
 const HomeIcon = () => <span>🏠</span>;

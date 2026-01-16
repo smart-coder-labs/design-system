@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Stepper } from '../components/Stepper';
-import { Button } from '../components/Button';
+import { Stepper } from '../components/ui/Stepper';
+import { Button } from '../components/ui/Button';
 import { useState } from 'react';
 
 const meta: Meta<typeof Stepper> = {

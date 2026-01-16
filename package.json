@@ -1,6 +1,6 @@
 {
   "name": "@smart-coder-labs/apple-design-system",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Design system completo estilo Apple (macOS/iOS/VisionOS) con Framer Motion",
   "keywords": [
     "apple-design-system",
@@ -34,6 +34,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
+    "./css": "./dist/globals.css",
+    "./dist/globals.css": "./dist/globals.css",
     "./globals.css": "./dist/globals.css",
     "./tailwind.preset": {
       "types": "./dist/tailwind.preset.d.ts",

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mic, Square, Play, Pause, Trash2, Send } from 'lucide-react';
 import { Button } from './Button';

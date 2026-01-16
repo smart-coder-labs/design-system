@@ -11,7 +11,7 @@ import {
     FileJson,
     MoreHorizontal
 } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 
 /* ========================================
    TYPES

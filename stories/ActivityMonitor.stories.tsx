@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ActivityMonitor, type ProcessData, type MetricData } from '../components/ActivityMonitor';
+import { ActivityMonitor, type ProcessData, type MetricData } from '../components/ui/ActivityMonitor';
 import { useState, useEffect } from 'react';
 
 const meta = {

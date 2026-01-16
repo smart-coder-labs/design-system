@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { BreadcrumbTabsHybrid } from '../components/BreadcrumbTabsHybrid';
+import { BreadcrumbTabsHybrid } from '../components/ui/BreadcrumbTabsHybrid';
 import {
     Home,
     Folder,

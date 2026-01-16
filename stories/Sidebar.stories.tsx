@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Sidebar, type SidebarItem } from '../components/Sidebar';
+import { Sidebar, type SidebarItem } from '../components/ui/Sidebar';
 // Simple placeholder icons using emojis
 const HomeIcon = () => <span>🏠</span>;
 const UserIcon = () => <span>👤</span>;

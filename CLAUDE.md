@@ -125,7 +125,7 @@ All components follow a consistent structure:
 
 import { motion } from 'framer-motion';
 import * as RadixComponent from '@radix-ui/react-*'; // If using Radix
-import { cn } from '../lib/utils'; // Utility for className merging
+import { cn } from '../../lib/utils';; // Utility for className merging
 import { tokens } from '../tokens'; // Design tokens
 
 // 1. Type definitions

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Gallery } from '../components/Gallery';
+import { Gallery } from '../components/ui/Gallery';
 
 const meta: Meta<typeof Gallery> = {
     title: 'Data Display/Gallery',

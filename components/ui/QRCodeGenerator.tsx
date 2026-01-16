@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { Button } from './Button';
 import { Input } from './Input';
 import { Download, Copy, Check, RefreshCw, QrCode } from 'lucide-react';

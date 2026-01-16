@@ -4,7 +4,7 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from '../components/Accordion';
+} from '../components/ui/Accordion';
 
 const meta: Meta<typeof Accordion> = {
     title: 'Data Display/Accordion',

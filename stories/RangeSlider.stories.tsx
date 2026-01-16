@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RangeSlider } from '../components/RangeSlider';
+import { RangeSlider } from '../components/ui/RangeSlider';
 
 const meta: Meta<typeof RangeSlider> = {
     title: 'Forms/RangeSlider',

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SegmentedInput } from '../components/SegmentedInput';
+import { SegmentedInput } from '../components/ui/SegmentedInput';
 import { useState } from 'react';
 
 const meta: Meta<typeof SegmentedInput> = {

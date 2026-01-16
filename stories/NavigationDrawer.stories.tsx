@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { NavigationDrawer, type NavigationDrawerSection } from '../components/NavigationDrawer';
-import { Button } from '../components/Button';
+import { NavigationDrawer, type NavigationDrawerSection } from '../components/ui/NavigationDrawer';
+import { Button } from '../components/ui/Button';
 
 // Simple placeholder icons using emojis
 const HomeIcon = () => <span>🏠</span>;

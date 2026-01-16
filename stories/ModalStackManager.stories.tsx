@@ -1,6 +1,6 @@
 import React from 'react';
-import { ModalStackManager, ModalConfig } from '../components/ModalStackManager';
-import { Button } from '../components/Button';
+import { ModalStackManager, ModalConfig } from '../components/ui/ModalStackManager';
+import { Button } from '../components/ui/Button';
 
 export default {
   title: 'Components/ModalStackManager',

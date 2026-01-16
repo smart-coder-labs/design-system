@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DiffViewer } from '../components/DiffViewer';
+import { DiffViewer } from '../components/ui/DiffViewer';
 
 const meta = {
     title: 'Data Display/DiffViewer',

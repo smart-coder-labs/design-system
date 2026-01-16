@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { KeyValueInfo, CompactKeyValueInfo, InlineKeyValueInfo } from '../components/KeyValueInfo';
-import { Badge } from '../components/Badge';
+import { KeyValueInfo, CompactKeyValueInfo, InlineKeyValueInfo } from '../components/ui/KeyValueInfo';
+import { Badge } from '../components/ui/Badge';
 import { User, Mail, Phone, MapPin, Calendar, Clock, Package, CreditCard, Hash, Server } from 'lucide-react';
 
 const meta = {

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { motion } from 'framer-motion';
 import { Smartphone, Monitor, Tablet, Laptop, Trash2, MoreVertical, CheckCircle2, AlertCircle } from 'lucide-react';
 import { Button } from './Button';

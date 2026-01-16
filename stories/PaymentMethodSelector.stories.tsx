@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
-import PaymentMethodSelector, { PaymentMethod } from '../components/PaymentMethodSelector';
+import PaymentMethodSelector, { PaymentMethod } from '../components/ui/PaymentMethodSelector';
 
 const meta: Meta<typeof PaymentMethodSelector> = {
   title: 'Payments/Payment Method Selector',

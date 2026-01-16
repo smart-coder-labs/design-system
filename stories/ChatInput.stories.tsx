@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ChatInput, type ChatAttachment } from '../components/ChatInput';
-import { ChatBubble } from '../components/ChatBubble';
+import { ChatInput, type ChatAttachment } from '../components/ui/ChatInput';
+import { ChatBubble } from '../components/ui/ChatBubble';
 
 const meta = {
     title: 'Forms/ChatInput',

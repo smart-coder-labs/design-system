@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ActivityFeed, ActivityItem } from '../components/ActivityFeed';
-import { Button } from '../components/Button';
-import { Badge } from '../components/Badge';
+import { ActivityFeed, ActivityItem } from '../components/ui/ActivityFeed';
+import { Button } from '../components/ui/Button';
+import { Badge } from '../components/ui/Badge';
 import { FileCode, MessageSquare, GitMerge, ThumbsUp, ShieldAlert, Lock, Calendar } from 'lucide-react';
 
 const meta = {

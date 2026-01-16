@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Search, X } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { motion, AnimatePresence } from 'framer-motion';
 import { Spinner } from './Spinner';
 import { Label } from './Label';

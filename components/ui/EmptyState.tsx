@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '../lib/utils'; // Assuming this exists based on clsx/tailwind-merge usage, or I'll just use clsx/tailwind-merge directly if not.
+import { cn } from '../../lib/utils';; // Assuming this exists based on clsx/tailwind-merge usage, or I'll just use clsx/tailwind-merge directly if not.
 // Actually, I haven't seen lib/utils. I'll check if it exists.
 // If not, I'll just use template literals or simple string concatenation as seen in Button.tsx.
 // Button.tsx uses: `...`.trim().replace(/\s+/g, ' ');

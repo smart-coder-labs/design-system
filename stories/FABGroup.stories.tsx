@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FABGroup } from '../components/FABGroup';
+import { FABGroup } from '../components/ui/FABGroup';
 import { Mail, Phone, MessageCircle, Video, Calendar } from 'lucide-react';
 
 const meta: Meta<typeof FABGroup> = {

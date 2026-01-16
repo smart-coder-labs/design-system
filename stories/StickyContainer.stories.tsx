@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StickyContainer } from '../components/StickyContainer';
+import { StickyContainer } from '../components/ui/StickyContainer';
 
 const meta: Meta<typeof StickyContainer> = {
   title: 'Layout/StickyContainer',

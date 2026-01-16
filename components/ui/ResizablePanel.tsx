@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 
 export interface ResizablePanelProps {
   /** Initial width in px or % (e.g. '400px', '30%') */

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { OrderSummary } from '../components/OrderSummary';
+import { OrderSummary } from '../components/ui/OrderSummary';
 
 const meta: Meta<typeof OrderSummary> = {
     title: 'E-Commerce/OrderSummary',

@@ -45,11 +45,14 @@ export const init = async () => {
   // Check/Create components directory
   const resolvedComponentsDir = path.resolve(process.cwd(), response.componentsDir);
   await fs.ensureDir(resolvedComponentsDir);
+
+  // Write tokens.ts to the parent directory of componentsDir (e.g., components/tokens.ts)
+  // This is because components import it as "../tokens"
+  const tokensPath = path.resolve(resolvedComponentsDir, "..", "tokens.ts");
+  await fs.writeFile(tokensPath, TOKENS_CONTENT);
+  console.log(chalk.green(`Created ${path.relative(process.cwd(), tokensPath)}`));
   
   // Also create a lib/utils.ts for cn helper if it doesn't exist
-  // Many components rely on 'cn'. We should probably include a helper or ask where utils are.
-  // For simplicity, we'll try to find or create a lib/utils.ts
-  
   const utilsPath = path.resolve(process.cwd(), "lib/utils.ts");
   if (!fs.existsSync(utilsPath)) {
       await fs.ensureDir(path.resolve(process.cwd(), "lib"));
@@ -63,14 +66,25 @@ export function cn(...inputs: ClassValue[]) {
       console.log(chalk.green("Created lib/utils.ts for 'cn' utility."));
   }
 
+  // Inject CSS import into global CSS if provided
+  if (response.globalCss) {
+      const globalCssPath = path.resolve(process.cwd(), response.globalCss);
+      if (fs.existsSync(globalCssPath)) {
+          let cssContent = await fs.readFile(globalCssPath, "utf-8");
+          const importStatement = "@import '@smart-coder-labs/apple-design-system/css';";
+          
+          if (!cssContent.includes(importStatement)) {
+              // Prepend to file
+              await fs.writeFile(globalCssPath, `${importStatement}\n${cssContent}`);
+              console.log(chalk.green(`Updated ${response.globalCss} with design system styles.`));
+          }
+      } else {
+          console.log(chalk.yellow(`Global CSS file not found at ${response.globalCss}. Skipping style import.`));
+      }
+  }
+
   if (response.installDeps) {
       spin.start("Installing dependencies...");
-
-      
-      // We are just displaying instructions for now or running npm install
-      // Actually running npm install might be risky if we don't know the package manager.
-      // But we can try to detect or just default to npm.
-      
       try {
         const { execSync } = require('child_process');
         execSync('npm install clsx tailwind-merge cva framer-motion lucide-react', { stdio: 'inherit' });
@@ -84,3 +98,104 @@ export function cn(...inputs: ClassValue[]) {
   console.log(chalk.bold.green("\nSuccess! Project initialized."));
   console.log(`You can now run ${chalk.cyan("npx apple-design-system add [component]")} to add components.`);
 };
+
+const TOKENS_CONTENT = `export const tokens = {
+    // 🎨 PALETA DE COLORES
+    colors: {
+        // Neutrales (Light Mode)
+        light: {
+            background: {
+                primary: '#FFFFFF',
+                secondary: '#F5F5F7',
+                tertiary: '#FFFFFF',
+            },
+            text: {
+                primary: '#1D1D1F',
+                secondary: '#6E6E73',
+                tertiary: '#86868B',
+            },
+            border: {
+                default: 'rgba(0, 0, 0, 0.1)',
+                divider: 'rgba(0, 0, 0, 0.05)',
+            },
+        },
+        // Neutrales (Dark Mode)
+        dark: {
+            background: {
+                primary: '#000000',
+                secondary: '#1C1C1E',
+                tertiary: '#2C2C2E',
+            },
+            text: {
+                primary: '#F5F5F7',
+                secondary: '#98989D',
+                tertiary: '#6E6E73',
+            },
+            border: {
+                default: 'rgba(255, 255, 255, 0.12)',
+                divider: 'rgba(255, 255, 255, 0.08)',
+            },
+        },
+        // Accents
+        accent: {
+            light: {
+                blue: '#007AFF',
+                purple: '#AF52DE',
+                pink: '#FF2D55',
+                red: '#FF3B30',
+                orange: '#FF9500',
+                yellow: '#FFCC00',
+                green: '#34C759',
+                teal: '#5AC8FA',
+                indigo: '#5856D6',
+            },
+            dark: {
+                blue: '#0A84FF',
+                purple: '#BF5AF2',
+                pink: '#FF375F',
+                red: '#FF453A',
+                orange: '#FF9F0A',
+                yellow: '#FFD60A',
+                green: '#30D158',
+                teal: '#64D2FF',
+                indigo: '#5E5CE6',
+            },
+        },
+    },
+    // 🔲 RADIUS
+    radius: {
+        sm: '8px',
+        md: '12px',
+        lg: '16px',
+        xl: '20px',
+        full: '9999px',
+    },
+    // 🌫️ SOMBRAS
+    shadows: {
+        light: {
+            sm: '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)',
+            md: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04)',
+            lg: '0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06)',
+        },
+        dark: {
+            sm: '0 2px 8px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1)',
+            md: '0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)',
+            lg: '0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3)',
+        },
+    },
+    // ⚡ ANIMACIONES
+    animation: {
+        duration: {
+            fast: '0.15s',
+            normal: '0.2s',
+            slow: '0.3s',
+        },
+        easing: {
+            default: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)',
+            spring: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        },
+    },
+} as const;
+
+export type Tokens = typeof tokens;
+`;

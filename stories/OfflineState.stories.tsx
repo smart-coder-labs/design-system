@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { OfflineState } from '../components/OfflineState';
+import { OfflineState } from '../components/ui/OfflineState';
 import { CloudOff } from 'lucide-react';
 
 const meta: Meta<typeof OfflineState> = {

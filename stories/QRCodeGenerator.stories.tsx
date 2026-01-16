@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { QRCodeGenerator } from '../components/QRCodeGenerator';
+import { QRCodeGenerator } from '../components/ui/QRCodeGenerator';
 
 const meta: Meta<typeof QRCodeGenerator> = {
     title: 'Data Display/QRCodeGenerator',

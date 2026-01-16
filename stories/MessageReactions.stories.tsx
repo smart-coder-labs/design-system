@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { MessageReactions, ReactionPicker } from '../components/MessageReactions';
-import { ChatBubble } from '../components/ChatBubble';
-import type { Reaction } from '../components/MessageReactions';
+import { MessageReactions, ReactionPicker } from '../components/ui/MessageReactions';
+import { ChatBubble } from '../components/ui/ChatBubble';
+import type { Reaction } from '../components/ui/MessageReactions';
 
 const meta = {
     title: 'Data Display/MessageReactions',

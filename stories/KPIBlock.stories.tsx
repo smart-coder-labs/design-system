@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { KPIBlock, KPIGroup } from '../components/KPIBlock';
+import { KPIBlock, KPIGroup } from '../components/ui/KPIBlock';
 import { Users, DollarSign, ShoppingCart, Eye, Target, Activity, Server, Shield, TrendingUp } from 'lucide-react';
 
 const meta = {

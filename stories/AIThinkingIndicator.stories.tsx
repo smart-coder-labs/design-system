@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { AIThinkingIndicator } from '../components/AIThinkingIndicator';
-import { ChatBubble } from '../components/ChatBubble';
+import { AIThinkingIndicator } from '../components/ui/AIThinkingIndicator';
+import { ChatBubble } from '../components/ui/ChatBubble';
 
 const meta = {
     title: 'Feedback/AIThinkingIndicator',

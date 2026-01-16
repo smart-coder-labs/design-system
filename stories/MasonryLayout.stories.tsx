@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MasonryLayout } from '../components/MasonryLayout';
+import { MasonryLayout } from '../components/ui/MasonryLayout';
 
 const meta: Meta<typeof MasonryLayout> = {
   title: 'Layout/MasonryLayout',

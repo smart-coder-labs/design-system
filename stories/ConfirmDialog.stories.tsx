@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ConfirmDialog } from '../components/ConfirmDialog';
-import { Button } from '../components/Button';
+import { ConfirmDialog } from '../components/ui/ConfirmDialog';
+import { Button } from '../components/ui/Button';
 import { useState } from 'react';
 
 const meta: Meta<typeof ConfirmDialog> = {

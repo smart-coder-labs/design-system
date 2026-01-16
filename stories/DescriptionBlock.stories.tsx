@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DescriptionBlock } from '../components/DescriptionBlock';
-import type { DescriptionMetadataItem, DescriptionHighlightProps } from '../components/DescriptionBlock';
+import { DescriptionBlock } from '../components/ui/DescriptionBlock';
+import type { DescriptionMetadataItem, DescriptionHighlightProps } from '../components/ui/DescriptionBlock';
 import { Calendar, MapPin, Users, ShieldCheck, Globe, Clock, Activity, Sparkles, BookmarkCheck } from 'lucide-react';
 
 const baseMetadata: DescriptionMetadataItem[] = [

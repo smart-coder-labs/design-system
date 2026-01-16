@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { MenuBar, type MenuBarMenu } from '../components/MenuBar';
+import { MenuBar, type MenuBarMenu } from '../components/ui/MenuBar';
 
 // Simple placeholder icons using emojis
 const AppIcon = () => <span className="text-xl">🎨</span>;

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DefinitionList, CompactDefinitionList } from '../components/DefinitionList';
+import { DefinitionList, CompactDefinitionList } from '../components/ui/DefinitionList';
 
 const meta = {
     title: 'Data Display/DefinitionList',

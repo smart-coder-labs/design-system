@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AgendaView } from '../components/AgendaView';
-import { CalendarEvent } from '../components/Calendar';
+import { AgendaView } from '../components/ui/AgendaView';
+import { CalendarEvent } from '../components/ui/Calendar';
 
 const meta: Meta<typeof AgendaView> = {
     title: 'Data Display/AgendaView',

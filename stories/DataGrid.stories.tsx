@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DataGrid, DataGridColumn } from "../components/DataGrid";
+import { DataGrid, DataGridColumn } from "../components/ui/DataGrid";
 import { useState } from "react";
-import { Badge } from "../components/Badge";
+import { Badge } from "../components/ui/Badge";
 
 const meta: Meta<typeof DataGrid> = {
     title: "Data Display/DataGrid",

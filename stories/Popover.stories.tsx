@@ -3,10 +3,10 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from '../components/Popover';
-import { Button } from '../components/Button';
-import { Label } from '../components/Label';
-import { Input } from '../components/Input';
+} from '../components/ui/Popover';
+import { Button } from '../components/ui/Button';
+import { Label } from '../components/ui/Label';
+import { Input } from '../components/ui/Input';
 
 const meta: Meta<typeof Popover> = {
     title: 'Overlays/Popover',

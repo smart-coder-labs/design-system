@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MarkdownEditor } from '../components/MarkdownEditor';
+import { MarkdownEditor } from '../components/ui/MarkdownEditor';
 import { useState } from 'react';
 
 const meta: Meta<typeof MarkdownEditor> = {

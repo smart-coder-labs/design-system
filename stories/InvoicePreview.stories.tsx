@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InvoicePreview } from '../components/InvoicePreview';
+import { InvoicePreview } from '../components/ui/InvoicePreview';
 
 const meta: Meta<typeof InvoicePreview> = {
     title: 'Components/InvoicePreview',

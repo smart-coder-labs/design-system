@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Panel } from '../components/Panel';
-import { Button } from '../components/Button';
+import { Panel } from '../components/ui/Panel';
+import { Button } from '../components/ui/Button';
 import { Settings } from 'lucide-react';
 
 const meta: Meta<typeof Panel> = {

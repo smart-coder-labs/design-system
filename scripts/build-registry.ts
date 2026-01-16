@@ -7,7 +7,7 @@ const OUTPUT_FILE = path.join(process.cwd(), "registry.json");
 // Base URL for raw content
 // Assuming 'main' branch and standard structure. 
 // Adjust BRANCH or PATH if necessary.
-const GITHUB_RAW_BASE = "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components";
+const GITHUB_RAW_BASE = "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui";
 
 async function buildRegistry() {
   console.log("Building registry...");

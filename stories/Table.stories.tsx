@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Table, Column } from '../components/Table';
-import { Tag } from '../components/Tag';
+import { Table, Column } from '../components/ui/Table';
+import { Tag } from '../components/ui/Tag';
 import { useState } from 'react';
 
 type User = {

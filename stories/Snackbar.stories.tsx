@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Snackbar } from '../components/Snackbar';
+import { Snackbar } from '../components/ui/Snackbar';
 import { useState } from 'react';
-import { Button } from '../components/Button';
+import { Button } from '../components/ui/Button';
 
 const meta: Meta<typeof Snackbar> = {
     title: 'Surfaces/Snackbar',

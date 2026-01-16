@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { Slider } from './Slider';
 import { Button } from './Button';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';;
 import { Combobox } from './Combobox';
 
 export interface AudioPlayerProps {
