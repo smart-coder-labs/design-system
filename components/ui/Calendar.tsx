@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { tokens } from '../tokens';
+
 import { Button } from './Button';
 import { Modal, ModalHeader, ModalTitle, ModalContent, ModalFooter, ModalCloseButton } from './Modal';
 import { Input, Textarea } from './Input';
@@ -235,10 +235,10 @@ export const Calendar: React.FC<CalendarProps> = ({
                     key={`prev-${day}`}
                     className="calendar-day-other"
                     style={{
-                        padding: tokens.spacing[2],
+                        padding: '8px',
                         minHeight: '80px',
                         color: 'var(--color-text-quaternary)',
-                        fontSize: tokens.typography.fontSize.sm,
+                        fontSize: '13px',
                     }}
                 >
                     {day}
@@ -259,14 +259,14 @@ export const Calendar: React.FC<CalendarProps> = ({
                     key={`current-${day}`}
                     onClick={() => !disabled && handleDateClick(date)}
                     style={{
-                        padding: tokens.spacing[2],
+                        padding: '8px',
                         minHeight: '80px',
                         backgroundColor: isSelected ? 'var(--color-accent-blue-tint)' : 'transparent',
                         border: isToday ? '2px solid var(--color-accent-blue)' : '1px solid var(--color-border-secondary)',
-                        borderRadius: tokens.radius.md,
+                        borderRadius: '8px',
                         cursor: disabled ? 'not-allowed' : 'pointer',
                         opacity: disabled ? 0.4 : 1,
-                        transition: `all ${tokens.motion.duration.fast} ${tokens.motion.easing.standard}`,
+                        transition: 'all 0.2s var(--ease-apple)',
                     }}
                     onMouseEnter={(e) => {
                         if (!disabled) {
@@ -279,10 +279,10 @@ export const Calendar: React.FC<CalendarProps> = ({
                         }
                     }}
                 >
-                    <div style={{ fontWeight: isToday ? tokens.typography.fontWeight.semibold : tokens.typography.fontWeight.regular, color: isToday ? 'var(--color-accent-blue)' : 'var(--color-text-primary)', marginBottom: tokens.spacing[1] }}>
+                    <div style={{ fontWeight: isToday ? '600' : '400', color: isToday ? 'var(--color-accent-blue)' : 'var(--color-text-primary)', marginBottom: '4px' }}>
                         {day}
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: tokens.spacing[1] }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                         {dayEvents.slice(0, 3).map((event) => (
                             <div
                                 key={event.id}
@@ -291,11 +291,11 @@ export const Calendar: React.FC<CalendarProps> = ({
                                     handleEditEvent(event);
                                 }}
                                 style={{
-                                    fontSize: tokens.typography.fontSize.xs,
-                                    padding: `2px ${tokens.spacing[1]}`,
+                                    fontSize: '12px',
+                                    padding: `2px ${'4px'}`,
                                     backgroundColor: event.color || 'var(--color-accent-blue)',
                                     color: '#FFFFFF',
-                                    borderRadius: tokens.radius.sm,
+                                    borderRadius: '4px',
                                     overflow: 'hidden',
                                     textOverflow: 'ellipsis',
                                     whiteSpace: 'nowrap',
@@ -306,7 +306,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                             </div>
                         ))}
                         {dayEvents.length > 3 && (
-                            <div style={{ fontSize: tokens.typography.fontSize.xs, color: 'var(--color-text-tertiary)', paddingLeft: tokens.spacing[1] }}>
+                            <div style={{ fontSize: '12px', color: 'var(--color-text-tertiary)', paddingLeft: '4px' }}>
                                 +{dayEvents.length - 3} more
                             </div>
                         )}
@@ -324,10 +324,10 @@ export const Calendar: React.FC<CalendarProps> = ({
                     key={`next-${day}`}
                     className="calendar-day-other"
                     style={{
-                        padding: tokens.spacing[2],
+                        padding: '8px',
                         minHeight: '80px',
                         color: 'var(--color-text-quaternary)',
-                        fontSize: tokens.typography.fontSize.sm,
+                        fontSize: '13px',
                     }}
                 >
                     {day}
@@ -343,12 +343,12 @@ export const Calendar: React.FC<CalendarProps> = ({
         const hours = Array.from({ length: 24 }, (_, i) => i);
 
         return (
-            <div style={{ display: 'flex', gap: tokens.spacing[2] }}>
+            <div style={{ display: 'flex', gap: '8px' }}>
                 {/* Time column */}
                 <div style={{ width: '60px', flexShrink: 0 }}>
                     <div style={{ height: '60px' }}></div>
                     {hours.map(hour => (
-                        <div key={hour} style={{ height: '60px', fontSize: tokens.typography.fontSize.xs, color: 'var(--color-text-tertiary)', paddingTop: tokens.spacing[1] }}>
+                        <div key={hour} style={{ height: '60px', fontSize: '12px', color: 'var(--color-text-tertiary)', paddingTop: '4px' }}>
                             {hour.toString().padStart(2, '0')}:00
                         </div>
                     ))}
@@ -361,9 +361,9 @@ export const Calendar: React.FC<CalendarProps> = ({
 
                     return (
                         <div key={index} style={{ flex: 1, minWidth: '100px' }}>
-                            <div style={{ height: '60px', textAlign: 'center', padding: tokens.spacing[2], backgroundColor: isToday ? 'var(--color-accent-blue-tint)' : 'transparent', borderRadius: tokens.radius.md }}>
-                                <div style={{ fontSize: tokens.typography.fontSize.xs, color: 'var(--color-text-tertiary)' }}>{DAYS[date.getDay()]}</div>
-                                <div style={{ fontSize: tokens.typography.fontSize.lg, fontWeight: isToday ? tokens.typography.fontWeight.bold : tokens.typography.fontWeight.medium, color: isToday ? 'var(--color-accent-blue)' : 'var(--color-text-primary)' }}>
+                            <div style={{ height: '60px', textAlign: 'center', padding: '8px', backgroundColor: isToday ? 'var(--color-accent-blue-tint)' : 'transparent', borderRadius: '8px' }}>
+                                <div style={{ fontSize: '12px', color: 'var(--color-text-tertiary)' }}>{DAYS[date.getDay()]}</div>
+                                <div style={{ fontSize: '17px', fontWeight: isToday ? '700' : '500', color: isToday ? 'var(--color-accent-blue)' : 'var(--color-text-primary)' }}>
                                     {date.getDate()}
                                 </div>
                             </div>
@@ -391,15 +391,15 @@ export const Calendar: React.FC<CalendarProps> = ({
                                                 right: '4px',
                                                 backgroundColor: event.color || 'var(--color-accent-blue)',
                                                 color: '#FFFFFF',
-                                                borderRadius: tokens.radius.sm,
-                                                padding: tokens.spacing[1],
-                                                fontSize: tokens.typography.fontSize.xs,
+                                                borderRadius: '4px',
+                                                padding: '4px',
+                                                fontSize: '12px',
                                                 overflow: 'hidden',
                                                 cursor: 'pointer',
                                                 zIndex: 10,
                                             }}
                                         >
-                                            <div style={{ fontWeight: tokens.typography.fontWeight.semibold }}>{event.title}</div>
+                                            <div style={{ fontWeight: '600' }}>{event.title}</div>
                                             {event.startTime && <div>{event.startTime} - {event.endTime}</div>}
                                         </div>
                                     );
@@ -417,11 +417,11 @@ export const Calendar: React.FC<CalendarProps> = ({
         const dayEvents = getEventsForDate(currentDate);
 
         return (
-            <div style={{ display: 'flex', gap: tokens.spacing[2] }}>
+            <div style={{ display: 'flex', gap: '8px' }}>
                 {/* Time column */}
                 <div style={{ width: '80px', flexShrink: 0 }}>
                     {hours.map(hour => (
-                        <div key={hour} style={{ height: '80px', fontSize: tokens.typography.fontSize.sm, color: 'var(--color-text-tertiary)', paddingTop: tokens.spacing[2] }}>
+                        <div key={hour} style={{ height: '80px', fontSize: '13px', color: 'var(--color-text-tertiary)', paddingTop: '8px' }}>
                             {hour.toString().padStart(2, '0')}:00
                         </div>
                     ))}
@@ -452,18 +452,18 @@ export const Calendar: React.FC<CalendarProps> = ({
                                     right: '8px',
                                     backgroundColor: event.color || 'var(--color-accent-blue)',
                                     color: '#FFFFFF',
-                                    borderRadius: tokens.radius.md,
-                                    padding: tokens.spacing[2],
-                                    fontSize: tokens.typography.fontSize.sm,
+                                    borderRadius: '8px',
+                                    padding: '8px',
+                                    fontSize: '13px',
                                     overflow: 'hidden',
                                     cursor: 'pointer',
-                                    boxShadow: tokens.shadows.sm,
+                                    boxShadow: 'var(--shadow-sm)',
                                     zIndex: 10,
                                 }}
                             >
-                                <div style={{ fontWeight: tokens.typography.fontWeight.bold, marginBottom: tokens.spacing[1] }}>{event.title}</div>
-                                <div style={{ fontSize: tokens.typography.fontSize.xs }}>{event.startTime} - {event.endTime}</div>
-                                {event.location && <div style={{ fontSize: tokens.typography.fontSize.xs, marginTop: tokens.spacing[1] }}>📍 {event.location}</div>}
+                                <div style={{ fontWeight: '700', marginBottom: '4px' }}>{event.title}</div>
+                                <div style={{ fontSize: '12px' }}>{event.startTime} - {event.endTime}</div>
+                                {event.location && <div style={{ fontSize: '12px', marginTop: '4px' }}>📍 {event.location}</div>}
                             </div>
                         );
                     })}
@@ -497,10 +497,10 @@ export const Calendar: React.FC<CalendarProps> = ({
             className={`calendar ${className}`}
             style={{
                 backgroundColor: 'var(--color-background-primary)',
-                borderRadius: tokens.radius.lg,
-                padding: tokens.spacing[4],
+                borderRadius: '12px',
+                padding: '16px',
                 border: `1px solid var(--color-border-primary)`,
-                boxShadow: tokens.shadows.sm,
+                boxShadow: 'var(--shadow-sm)',
                 width: '100%',
                 maxWidth: view === 'month' ? '800px' : '100%',
             }}
@@ -511,12 +511,12 @@ export const Calendar: React.FC<CalendarProps> = ({
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    marginBottom: tokens.spacing[4],
+                    marginBottom: '16px',
                     flexWrap: 'wrap',
-                    gap: tokens.spacing[2],
+                    gap: '8px',
                 }}
             >
-                <div style={{ display: 'flex', alignItems: 'center', gap: tokens.spacing[2] }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     {view !== 'agenda' && (
                         <>
                             <Button variant="ghost" size="sm" onClick={handlePrevPeriod}>
@@ -533,8 +533,8 @@ export const Calendar: React.FC<CalendarProps> = ({
                     <h3
                         style={{
                             margin: 0,
-                            fontSize: tokens.typography.fontSize.lg,
-                            fontWeight: tokens.typography.fontWeight.semibold,
+                            fontSize: '17px',
+                            fontWeight: '600',
                             color: 'var(--color-text-primary)',
                         }}
                     >
@@ -542,23 +542,23 @@ export const Calendar: React.FC<CalendarProps> = ({
                     </h3>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: tokens.spacing[2] }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     {/* View Selector */}
-                    <div style={{ display: 'flex', gap: tokens.spacing[1], backgroundColor: 'var(--color-background-secondary)', borderRadius: tokens.radius.md, padding: '2px' }}>
+                    <div style={{ display: 'flex', gap: '4px', backgroundColor: 'var(--color-background-secondary)', borderRadius: '8px', padding: '2px' }}>
                         {(['month', 'week', 'day', 'agenda'] as CalendarView[]).map((v) => (
                             <button
                                 key={v}
                                 onClick={() => setView(v)}
                                 style={{
-                                    padding: `${tokens.spacing[1]} ${tokens.spacing[3]}`,
-                                    fontSize: tokens.typography.fontSize.sm,
-                                    fontWeight: tokens.typography.fontWeight.medium,
+                                    padding: `${'4px'} ${'12px'}`,
+                                    fontSize: '13px',
+                                    fontWeight: '500',
                                     color: view === v ? '#FFFFFF' : 'var(--color-text-secondary)',
                                     backgroundColor: view === v ? 'var(--color-accent-blue)' : 'transparent',
                                     border: 'none',
-                                    borderRadius: tokens.radius.sm,
+                                    borderRadius: '4px',
                                     cursor: 'pointer',
-                                    transition: `all ${tokens.motion.duration.fast} ${tokens.motion.easing.standard}`,
+                                    transition: 'all 0.2s var(--ease-apple)',
                                     textTransform: 'capitalize',
                                 }}
                             >
@@ -579,18 +579,18 @@ export const Calendar: React.FC<CalendarProps> = ({
                     style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(7, 1fr)',
-                        gap: tokens.spacing[1],
-                        marginBottom: tokens.spacing[2],
+                        gap: '4px',
+                        marginBottom: '8px',
                     }}
                 >
                     {DAYS.map((day) => (
                         <div
                             key={day}
                             style={{
-                                padding: tokens.spacing[2],
+                                padding: '8px',
                                 textAlign: 'center',
-                                fontSize: tokens.typography.fontSize.xs,
-                                fontWeight: tokens.typography.fontWeight.semibold,
+                                fontSize: '12px',
+                                fontWeight: '600',
                                 color: 'var(--color-text-tertiary)',
                                 textTransform: 'uppercase',
                             }}
@@ -608,7 +608,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                         style={{
                             display: 'grid',
                             gridTemplateColumns: 'repeat(7, 1fr)',
-                            gap: tokens.spacing[1],
+                            gap: '4px',
                         }}
                     >
                         {renderMonthView()}
@@ -648,7 +648,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                             onChange={(e) => setEventFormData({ ...eventFormData, description: e.target.value })}
                             rows={3}
                         />
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: tokens.spacing[3] }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                             <Input
                                 label="Start Time"
                                 type="time"
@@ -677,7 +677,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                                 <SelectContent>
                                     {EVENT_COLORS.map(color => (
                                         <SelectItem key={color.value} value={color.value}>
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: tokens.spacing[2] }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                                 <div style={{ width: '16px', height: '16px', borderRadius: '50%', backgroundColor: color.value }} />
                                                 {color.label}
                                             </div>

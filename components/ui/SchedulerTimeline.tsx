@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { tokens } from '../tokens';
+
 import { Button } from './Button';
 
 export interface SchedulerResource {
@@ -115,9 +115,9 @@ export const SchedulerTimeline: React.FC<SchedulerTimelineProps> = ({
             className={`scheduler-timeline ${className}`}
             style={{
                 backgroundColor: 'var(--color-background-primary)',
-                borderRadius: tokens.radius.lg,
+                borderRadius: '12px',
                 border: `1px solid var(--color-border-primary)`,
-                boxShadow: tokens.shadows.sm,
+                boxShadow: 'var(--shadow-sm)',
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
@@ -128,7 +128,7 @@ export const SchedulerTimeline: React.FC<SchedulerTimelineProps> = ({
             {/* Header Controls */}
             <div
                 style={{
-                    padding: tokens.spacing[4],
+                    padding: '16px',
                     borderBottom: `1px solid var(--color-border-primary)`,
                     display: 'flex',
                     alignItems: 'center',
@@ -136,16 +136,16 @@ export const SchedulerTimeline: React.FC<SchedulerTimelineProps> = ({
                     backgroundColor: 'var(--color-background-primary)',
                 }}
             >
-                <div style={{ display: 'flex', alignItems: 'center', gap: tokens.spacing[2] }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <Button variant="ghost" size="sm" onClick={handlePrevDay}>←</Button>
                     <Button variant="ghost" size="sm" onClick={handleToday}>Today</Button>
                     <Button variant="ghost" size="sm" onClick={handleNextDay}>→</Button>
                     <h3
                         style={{
                             margin: 0,
-                            marginLeft: tokens.spacing[2],
-                            fontSize: tokens.typography.fontSize.lg,
-                            fontWeight: tokens.typography.fontWeight.semibold,
+                            marginLeft: '8px',
+                            fontSize: '17px',
+                            fontWeight: '600',
                             color: 'var(--color-text-primary)',
                         }}
                     >
@@ -174,10 +174,10 @@ export const SchedulerTimeline: React.FC<SchedulerTimelineProps> = ({
                             borderBottom: `1px solid var(--color-border-primary)`,
                             display: 'flex',
                             alignItems: 'center',
-                            padding: `0 ${tokens.spacing[4]}`,
-                            fontWeight: tokens.typography.fontWeight.semibold,
+                            padding: `0 ${'16px'}`,
+                            fontWeight: '600',
                             color: 'var(--color-text-secondary)',
-                            fontSize: tokens.typography.fontSize.sm,
+                            fontSize: '13px',
                             backgroundColor: 'var(--color-background-tertiary)',
                         }}
                     >
@@ -190,7 +190,7 @@ export const SchedulerTimeline: React.FC<SchedulerTimelineProps> = ({
                                 key={resource.id}
                                 style={{
                                     height: '80px',
-                                    padding: `0 ${tokens.spacing[4]}`,
+                                    padding: `0 ${'16px'}`,
                                     display: 'flex',
                                     flexDirection: 'column',
                                     justifyContent: 'center',
@@ -198,7 +198,7 @@ export const SchedulerTimeline: React.FC<SchedulerTimelineProps> = ({
                                     backgroundColor: 'var(--color-background-primary)',
                                 }}
                             >
-                                <div style={{ display: 'flex', alignItems: 'center', gap: tokens.spacing[2] }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                     {resource.avatar && (
                                         <div
                                             style={{
@@ -217,12 +217,12 @@ export const SchedulerTimeline: React.FC<SchedulerTimelineProps> = ({
                                             {resource.avatar}
                                         </div>
                                     )}
-                                    <div style={{ fontWeight: tokens.typography.fontWeight.medium, color: 'var(--color-text-primary)' }}>
+                                    <div style={{ fontWeight: '500', color: 'var(--color-text-primary)' }}>
                                         {resource.name}
                                     </div>
                                 </div>
                                 {resource.subtitle && (
-                                    <div style={{ fontSize: tokens.typography.fontSize.xs, color: 'var(--color-text-tertiary)', marginTop: '2px' }}>
+                                    <div style={{ fontSize: '12px', color: 'var(--color-text-tertiary)', marginTop: '2px' }}>
                                         {resource.subtitle}
                                     </div>
                                 )}
@@ -260,8 +260,8 @@ export const SchedulerTimeline: React.FC<SchedulerTimelineProps> = ({
                                     style={{
                                         width: `${hourWidth}px`,
                                         flexShrink: 0,
-                                        padding: `${tokens.spacing[2]}`,
-                                        fontSize: tokens.typography.fontSize.xs,
+                                        padding: `${'8px'}`,
+                                        fontSize: '12px',
                                         color: 'var(--color-text-tertiary)',
                                         borderRight: `1px solid var(--color-border-secondary)`,
                                         display: 'flex',
@@ -340,13 +340,13 @@ export const SchedulerTimeline: React.FC<SchedulerTimelineProps> = ({
                                                         top: '10px',
                                                         bottom: '10px',
                                                         backgroundColor: event.color || resource.color || 'var(--color-accent-blue)',
-                                                        borderRadius: tokens.radius.md,
-                                                        padding: tokens.spacing[2],
+                                                        borderRadius: '8px',
+                                                        padding: '8px',
                                                         color: '#fff',
-                                                        fontSize: tokens.typography.fontSize.xs,
+                                                        fontSize: '12px',
                                                         overflow: 'hidden',
                                                         cursor: 'pointer',
-                                                        boxShadow: tokens.shadows.sm,
+                                                        boxShadow: 'var(--shadow-sm)',
                                                         transition: 'transform 0.2s',
                                                         zIndex: 1,
                                                     }}

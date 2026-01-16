@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { tokens } from '../tokens';
+
 import { Modal, ModalHeader, ModalTitle, ModalContent, ModalFooter, ModalCloseButton } from './Modal';
 import { Input, Textarea } from './Input';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from './Select';
@@ -180,12 +180,12 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
             className={`kanban-board ${className}`}
             style={{
                 display: 'flex',
-                gap: tokens.spacing[4],
+                gap: '16px',
                 overflowX: 'auto',
-                padding: tokens.spacing[4],
+                padding: '16px',
                 minHeight: '600px',
                 backgroundColor: 'var(--color-background-secondary)',
-                borderRadius: tokens.radius.lg,
+                borderRadius: '12px',
             }}
         >
             {columns.map((column) => {
@@ -206,30 +206,30 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                             backgroundColor: isDragOver
                                 ? 'var(--color-accent-blue-tint)'
                                 : 'var(--color-background-primary)',
-                            borderRadius: tokens.radius.md,
+                            borderRadius: '8px',
                             border: `2px solid ${isDragOver ? 'var(--color-accent-blue)' : 'var(--color-border-primary)'}`,
-                            transition: `all ${tokens.motion.duration.normal} ${tokens.motion.easing.standard}`,
+                            transition: `all ${'0.3s'} ${'var(--ease-apple)'}`,
                             maxHeight: '100%',
                         }}
                     >
                         {/* Column Header */}
                         <div
                             style={{
-                                padding: tokens.spacing[4],
+                                padding: '16px',
                                 borderBottom: `1px solid var(--color-border-primary)`,
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
-                                gap: tokens.spacing[2],
+                                gap: '8px',
                             }}
                         >
-                            <div style={{ display: 'flex', alignItems: 'center', gap: tokens.spacing[2] }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 {column.color && (
                                     <div
                                         style={{
                                             width: '8px',
                                             height: '8px',
-                                            borderRadius: tokens.radius.full,
+                                            borderRadius: '9999px',
                                             backgroundColor: column.color,
                                         }}
                                     />
@@ -237,24 +237,24 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                 <h3
                                     style={{
                                         margin: 0,
-                                        fontSize: tokens.typography.fontSize.base,
-                                        fontWeight: tokens.typography.fontWeight.semibold,
+                                        fontSize: '15px',
+                                        fontWeight: '600',
                                         color: 'var(--color-text-primary)',
                                     }}
                                 >
                                     {column.title}
                                 </h3>
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: tokens.spacing[2] }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 {showCardCount && (
                                     <span
                                         style={{
-                                            fontSize: tokens.typography.fontSize.sm,
+                                            fontSize: '13px',
                                             color: 'var(--color-text-tertiary)',
-                                            fontWeight: tokens.typography.fontWeight.medium,
+                                            fontWeight: '500',
                                             backgroundColor: 'var(--color-background-secondary)',
-                                            padding: `${tokens.spacing[1]} ${tokens.spacing[2]}`,
-                                            borderRadius: tokens.radius.full,
+                                            padding: `${'4px'} ${'8px'}`,
+                                            borderRadius: '9999px',
                                         }}
                                     >
                                         {column.cards.length}
@@ -264,9 +264,9 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                 {isOverLimit && (
                                     <span
                                         style={{
-                                            fontSize: tokens.typography.fontSize.xs,
+                                            fontSize: '12px',
                                             color: 'var(--color-status-error)',
-                                            fontWeight: tokens.typography.fontWeight.medium,
+                                            fontWeight: '500',
                                         }}
                                     >
                                         ⚠️
@@ -280,10 +280,10 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                             style={{
                                 flex: 1,
                                 overflowY: 'auto',
-                                padding: tokens.spacing[3],
+                                padding: '12px',
                                 display: 'flex',
                                 flexDirection: 'column',
-                                gap: tokens.spacing[3],
+                                gap: '12px',
                             }}
                         >
                             {column.cards.map((card, index) => (
@@ -295,20 +295,20 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                     className="kanban-card"
                                     style={{
                                         backgroundColor: 'var(--color-surface-primary)',
-                                        borderRadius: tokens.radius.md,
-                                        padding: variant === 'compact' ? tokens.spacing[3] : tokens.spacing[4],
+                                        borderRadius: '8px',
+                                        padding: variant === 'compact' ? '12px' : '16px',
                                         border: `1px solid var(--color-border-primary)`,
                                         cursor: 'pointer',
-                                        transition: `all ${tokens.motion.duration.fast} ${tokens.motion.easing.standard}`,
-                                        boxShadow: tokens.shadows.sm,
+                                        transition: `all ${'0.2s'} ${'var(--ease-apple)'}`,
+                                        boxShadow: 'var(--shadow-sm)',
                                     }}
                                     onMouseEnter={(e) => {
                                         e.currentTarget.style.transform = 'translateY(-2px)';
-                                        e.currentTarget.style.boxShadow = tokens.shadows.md;
+                                        e.currentTarget.style.boxShadow = 'var(--shadow-md)';
                                     }}
                                     onMouseLeave={(e) => {
                                         e.currentTarget.style.transform = 'translateY(0)';
-                                        e.currentTarget.style.boxShadow = tokens.shadows.sm;
+                                        e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
                                     }}
                                 >
                                     {/* Card Priority Indicator */}
@@ -318,8 +318,8 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                                 width: '100%',
                                                 height: '3px',
                                                 backgroundColor: getPriorityColor(card.priority),
-                                                borderRadius: tokens.radius.full,
-                                                marginBottom: tokens.spacing[3],
+                                                borderRadius: '9999px',
+                                                marginBottom: '12px',
                                             }}
                                         />
                                     )}
@@ -328,10 +328,10 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                     <h4
                                         style={{
                                             margin: 0,
-                                            fontSize: variant === 'compact' ? tokens.typography.fontSize.sm : tokens.typography.fontSize.base,
-                                            fontWeight: tokens.typography.fontWeight.semibold,
+                                            fontSize: variant === 'compact' ? '13px' : '15px',
+                                            fontWeight: '600',
                                             color: 'var(--color-text-primary)',
-                                            marginBottom: card.description ? tokens.spacing[2] : 0,
+                                            marginBottom: card.description ? '8px' : 0,
                                         }}
                                     >
                                         {card.title}
@@ -342,10 +342,10 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                         <p
                                             style={{
                                                 margin: 0,
-                                                fontSize: tokens.typography.fontSize.sm,
+                                                fontSize: '13px',
                                                 color: 'var(--color-text-secondary)',
-                                                lineHeight: tokens.typography.lineHeight.normal,
-                                                marginBottom: tokens.spacing[3],
+                                                lineHeight: '1.5',
+                                                marginBottom: '12px',
                                             }}
                                         >
                                             {card.description}
@@ -358,20 +358,20 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                             style={{
                                                 display: 'flex',
                                                 flexWrap: 'wrap',
-                                                gap: tokens.spacing[2],
-                                                marginBottom: tokens.spacing[3],
+                                                gap: '8px',
+                                                marginBottom: '12px',
                                             }}
                                         >
                                             {card.tags.map((tag, tagIndex) => (
                                                 <span
                                                     key={tagIndex}
                                                     style={{
-                                                        fontSize: tokens.typography.fontSize.xs,
+                                                        fontSize: '12px',
                                                         color: 'var(--color-text-secondary)',
                                                         backgroundColor: 'var(--color-background-secondary)',
-                                                        padding: `${tokens.spacing[1]} ${tokens.spacing[2]}`,
-                                                        borderRadius: tokens.radius.sm,
-                                                        fontWeight: tokens.typography.fontWeight.medium,
+                                                        padding: `${'4px'} ${'8px'}`,
+                                                        borderRadius: '4px',
+                                                        fontWeight: '500',
                                                     }}
                                                 >
                                                     {tag}
@@ -386,8 +386,8 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'space-between',
-                                            marginTop: tokens.spacing[3],
-                                            paddingTop: tokens.spacing[3],
+                                            marginTop: '12px',
+                                            paddingTop: '12px',
                                             borderTop: `1px solid var(--color-border-secondary)`,
                                         }}
                                     >
@@ -397,22 +397,22 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                                 style={{
                                                     display: 'flex',
                                                     alignItems: 'center',
-                                                    gap: tokens.spacing[2],
+                                                    gap: '8px',
                                                 }}
                                             >
                                                 <div
                                                     style={{
                                                         width: '24px',
                                                         height: '24px',
-                                                        borderRadius: tokens.radius.full,
+                                                        borderRadius: '9999px',
                                                         backgroundColor: card.assignee.avatar
                                                             ? 'transparent'
                                                             : 'var(--color-accent-blue)',
                                                         display: 'flex',
                                                         alignItems: 'center',
                                                         justifyContent: 'center',
-                                                        fontSize: tokens.typography.fontSize.xs,
-                                                        fontWeight: tokens.typography.fontWeight.semibold,
+                                                        fontSize: '12px',
+                                                        fontWeight: '600',
                                                         color: '#FFFFFF',
                                                         backgroundImage: card.assignee.avatar
                                                             ? `url(${card.assignee.avatar})`
@@ -426,7 +426,7 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                                 {variant === 'detailed' && (
                                                     <span
                                                         style={{
-                                                            fontSize: tokens.typography.fontSize.sm,
+                                                            fontSize: '13px',
                                                             color: 'var(--color-text-secondary)',
                                                         }}
                                                     >
@@ -441,17 +441,17 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                             style={{
                                                 display: 'flex',
                                                 alignItems: 'center',
-                                                gap: tokens.spacing[3],
+                                                gap: '12px',
                                             }}
                                         >
                                             {card.dueDate && (
                                                 <span
                                                     style={{
-                                                        fontSize: tokens.typography.fontSize.xs,
+                                                        fontSize: '12px',
                                                         color: 'var(--color-text-tertiary)',
                                                         display: 'flex',
                                                         alignItems: 'center',
-                                                        gap: tokens.spacing[1],
+                                                        gap: '4px',
                                                     }}
                                                 >
                                                     📅 {card.dueDate}
@@ -460,11 +460,11 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                             {card.attachments && card.attachments > 0 && (
                                                 <span
                                                     style={{
-                                                        fontSize: tokens.typography.fontSize.xs,
+                                                        fontSize: '12px',
                                                         color: 'var(--color-text-tertiary)',
                                                         display: 'flex',
                                                         alignItems: 'center',
-                                                        gap: tokens.spacing[1],
+                                                        gap: '4px',
                                                     }}
                                                 >
                                                     📎 {card.attachments}
@@ -473,11 +473,11 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                                             {card.comments && card.comments > 0 && (
                                                 <span
                                                     style={{
-                                                        fontSize: tokens.typography.fontSize.xs,
+                                                        fontSize: '12px',
                                                         color: 'var(--color-text-tertiary)',
                                                         display: 'flex',
                                                         alignItems: 'center',
-                                                        gap: tokens.spacing[1],
+                                                        gap: '4px',
                                                     }}
                                                 >
                                                     💬 {card.comments}
@@ -494,16 +494,16 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                             <button
                                 onClick={() => handleAddCardClick(column.id)}
                                 style={{
-                                    margin: tokens.spacing[3],
-                                    padding: tokens.spacing[3],
+                                    margin: '12px',
+                                    padding: '12px',
                                     backgroundColor: 'transparent',
                                     border: `2px dashed var(--color-border-primary)`,
-                                    borderRadius: tokens.radius.md,
+                                    borderRadius: '8px',
                                     color: 'var(--color-text-tertiary)',
-                                    fontSize: tokens.typography.fontSize.sm,
-                                    fontWeight: tokens.typography.fontWeight.medium,
+                                    fontSize: '13px',
+                                    fontWeight: '500',
                                     cursor: 'pointer',
-                                    transition: `all ${tokens.motion.duration.fast} ${tokens.motion.easing.standard}`,
+                                    transition: `all ${'0.2s'} ${'var(--ease-apple)'}`,
                                 }}
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.borderColor = 'var(--color-accent-blue)';
@@ -529,7 +529,7 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
                 <ModalHeader>
                     <ModalTitle>{selectedCard?.title}</ModalTitle>
                     {selectedCard?.priority && (
-                        <div style={{ marginTop: tokens.spacing[4], width: '100%', height: '4px', backgroundColor: getPriorityColor(selectedCard.priority), borderRadius: tokens.radius.full, marginBottom: tokens.spacing[6] }} />
+                        <div style={{ marginTop: '16px', width: '100%', height: '4px', backgroundColor: getPriorityColor(selectedCard.priority), borderRadius: '9999px', marginBottom: '24px' }} />
                     )}
                 </ModalHeader>
                 <ModalContent>

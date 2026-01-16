@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { tokens } from '../tokens';
+
 import { Construction, Clock, ArrowRight } from 'lucide-react';
 import { Button } from './Button';
 

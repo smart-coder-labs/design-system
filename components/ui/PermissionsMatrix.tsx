@@ -1,5 +1,5 @@
 import React from 'react';
-import { tokens } from '../tokens';
+
 import { Checkbox } from './Checkbox';
 
 export interface Role {
@@ -67,16 +67,16 @@ export const PermissionsMatrix: React.FC<PermissionsMatrixProps> = ({
     };
 
     return (
-        <div className={className} style={{ overflowX: 'auto', border: `1px solid var(--color-border-primary)`, borderRadius: tokens.radius.md, backgroundColor: 'var(--color-background-primary)' }}>
+        <div className={className} style={{ overflowX: 'auto', border: `1px solid var(--color-border-primary)`, borderRadius: '8px', backgroundColor: 'var(--color-background-primary)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '800px' }}>
                 <thead>
                     <tr style={{ backgroundColor: 'var(--color-background-secondary)', borderBottom: `1px solid var(--color-border-primary)` }}>
-                        <th style={{ padding: tokens.spacing[4], textAlign: 'left', width: '300px', color: 'var(--color-text-primary)' }}>Permission</th>
+                        <th style={{ padding: '16px', textAlign: 'left', width: '300px', color: 'var(--color-text-primary)' }}>Permission</th>
                         {roles.map(role => (
-                            <th key={role.id} style={{ padding: tokens.spacing[4], textAlign: 'center', minWidth: '120px' }}>
-                                <div style={{ fontWeight: tokens.typography.fontWeight.bold, color: 'var(--color-text-primary)' }}>{role.name}</div>
+                            <th key={role.id} style={{ padding: '16px', textAlign: 'center', minWidth: '120px' }}>
+                                <div style={{ fontWeight: '700', color: 'var(--color-text-primary)' }}>{role.name}</div>
                                 {role.description && (
-                                    <div style={{ fontSize: tokens.typography.fontSize.xs, color: 'var(--color-text-tertiary)', fontWeight: 'normal', marginTop: '4px' }}>
+                                    <div style={{ fontSize: '12px', color: 'var(--color-text-tertiary)', fontWeight: 'normal', marginTop: '4px' }}>
                                         {role.description}
                                     </div>
                                 )}
@@ -88,7 +88,7 @@ export const PermissionsMatrix: React.FC<PermissionsMatrixProps> = ({
                     {categories.map(category => (
                         <React.Fragment key={category}>
                             <tr style={{ backgroundColor: 'var(--color-background-tertiary)', borderBottom: `1px solid var(--color-border-secondary)` }}>
-                                <td style={{ padding: `${tokens.spacing[2]} ${tokens.spacing[4]}`, fontWeight: tokens.typography.fontWeight.bold, color: 'var(--color-text-secondary)', fontSize: tokens.typography.fontSize.sm }}>
+                                <td style={{ padding: `${'8px'} ${'16px'}`, fontWeight: '700', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
                                     {category}
                                 </td>
                                 {roles.map(role => {
@@ -97,7 +97,7 @@ export const PermissionsMatrix: React.FC<PermissionsMatrixProps> = ({
                                     const allChecked = categoryPermIds.length > 0 && categoryPermIds.every(id => rolePerms.includes(id));
 
                                     return (
-                                        <td key={role.id} style={{ textAlign: 'center', padding: tokens.spacing[2] }}>
+                                        <td key={role.id} style={{ textAlign: 'center', padding: '8px' }}>
                                             <div style={{ display: 'flex', justifyContent: 'center' }}>
                                                 <Checkbox
                                                     checked={allChecked}
@@ -110,10 +110,10 @@ export const PermissionsMatrix: React.FC<PermissionsMatrixProps> = ({
                             </tr>
                             {groupedPermissions[category].map(permission => (
                                 <tr key={permission.id} style={{ borderBottom: `1px solid var(--color-border-secondary)` }}>
-                                    <td style={{ padding: tokens.spacing[3], paddingLeft: tokens.spacing[8] }}>
-                                        <div style={{ fontWeight: tokens.typography.fontWeight.medium, color: 'var(--color-text-primary)' }}>{permission.name}</div>
+                                    <td style={{ padding: '12px', paddingLeft: '32px' }}>
+                                        <div style={{ fontWeight: '500', color: 'var(--color-text-primary)' }}>{permission.name}</div>
                                         {permission.description && (
-                                            <div style={{ fontSize: tokens.typography.fontSize.xs, color: 'var(--color-text-tertiary)', marginTop: '2px' }}>
+                                            <div style={{ fontSize: '12px', color: 'var(--color-text-tertiary)', marginTop: '2px' }}>
                                                 {permission.description}
                                             </div>
                                         )}
@@ -121,7 +121,7 @@ export const PermissionsMatrix: React.FC<PermissionsMatrixProps> = ({
                                     {roles.map(role => {
                                         const isChecked = (rolePermissions[role.id] || []).includes(permission.id);
                                         return (
-                                            <td key={role.id} style={{ textAlign: 'center', padding: tokens.spacing[3] }}>
+                                            <td key={role.id} style={{ textAlign: 'center', padding: '12px' }}>
                                                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                                                     <Checkbox
                                                         checked={isChecked}

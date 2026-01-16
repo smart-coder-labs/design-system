@@ -6,7 +6,7 @@ import { cn } from '../../lib/utils';; // Assuming this exists based on clsx/tai
 // Button.tsx uses: `...`.trim().replace(/\s+/g, ' ');
 // I'll stick to that pattern or just template literals if simple.
 
-import { tokens } from '../tokens';
+
 
 export interface EmptyStateProps {
   /**

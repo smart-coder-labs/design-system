@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { tokens } from '../tokens';
+
 import { Button } from './Button';
 import { Input } from './Input';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from './Select';
@@ -226,7 +226,7 @@ export const QueryBuilder: React.FC<QueryBuilderProps> = ({
         const availableOperators = OPERATORS_BY_TYPE[field.type] || [];
 
         return (
-            <div key={rule.id} style={{ display: 'flex', gap: tokens.spacing[2], alignItems: 'center', marginBottom: tokens.spacing[2] }}>
+            <div key={rule.id} style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
                 <div style={{ width: '150px' }}>
                     <Select
                         value={rule.fieldId}
@@ -308,18 +308,18 @@ export const QueryBuilder: React.FC<QueryBuilderProps> = ({
             <div
                 key={group.id}
                 style={{
-                    padding: tokens.spacing[4],
+                    padding: '16px',
                     backgroundColor: 'var(--color-background-secondary)',
-                    borderRadius: tokens.radius.md,
+                    borderRadius: '8px',
                     border: `1px solid var(--color-border-primary)`,
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: tokens.spacing[2],
-                    marginBottom: tokens.spacing[2],
+                    gap: '8px',
+                    marginBottom: '8px',
                 }}
             >
-                <div style={{ display: 'flex', alignItems: 'center', gap: tokens.spacing[2], marginBottom: tokens.spacing[2] }}>
-                    <div style={{ display: 'flex', backgroundColor: 'var(--color-background-primary)', borderRadius: tokens.radius.sm, padding: '2px', border: '1px solid var(--color-border-secondary)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                    <div style={{ display: 'flex', backgroundColor: 'var(--color-background-primary)', borderRadius: '4px', padding: '2px', border: '1px solid var(--color-border-secondary)' }}>
                         <button
                             onClick={() => updateCombinator(group.id, 'and')}
                             style={{
@@ -327,9 +327,9 @@ export const QueryBuilder: React.FC<QueryBuilderProps> = ({
                                 border: 'none',
                                 background: group.combinator === 'and' ? 'var(--color-accent-blue)' : 'transparent',
                                 color: group.combinator === 'and' ? '#fff' : 'var(--color-text-secondary)',
-                                borderRadius: tokens.radius.sm,
+                                borderRadius: '4px',
                                 cursor: 'pointer',
-                                fontSize: tokens.typography.fontSize.xs,
+                                fontSize: '12px',
                                 fontWeight: 'bold',
                             }}
                         >
@@ -342,9 +342,9 @@ export const QueryBuilder: React.FC<QueryBuilderProps> = ({
                                 border: 'none',
                                 background: group.combinator === 'or' ? 'var(--color-accent-blue)' : 'transparent',
                                 color: group.combinator === 'or' ? '#fff' : 'var(--color-text-secondary)',
-                                borderRadius: tokens.radius.sm,
+                                borderRadius: '4px',
                                 cursor: 'pointer',
-                                fontSize: tokens.typography.fontSize.xs,
+                                fontSize: '12px',
                                 fontWeight: 'bold',
                             }}
                         >

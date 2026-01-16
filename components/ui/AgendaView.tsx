@@ -1,5 +1,5 @@
 import React from 'react';
-import { tokens } from '../tokens';
+
 import { CalendarEvent } from './Calendar';
 
 interface AgendaViewProps {
@@ -50,7 +50,7 @@ export const AgendaView: React.FC<AgendaViewProps> = ({
     return (
         <div style={{ maxHeight: '600px', overflowY: 'auto' }}>
             {Object.keys(groupedEvents).length === 0 ? (
-                <div style={{ textAlign: 'center', padding: tokens.spacing[8], color: 'var(--color-text-tertiary)' }}>
+                <div style={{ textAlign: 'center', padding: '32px', color: 'var(--color-text-tertiary)' }}>
                     No events scheduled
                 </div>
             ) : (
@@ -59,22 +59,22 @@ export const AgendaView: React.FC<AgendaViewProps> = ({
                     const dayEvents = groupedEvents[dateKey];
 
                     return (
-                        <div key={dateKey} style={{ marginBottom: tokens.spacing[4] }}>
-                            <div style={{ fontSize: tokens.typography.fontSize.lg, fontWeight: tokens.typography.fontWeight.semibold, color: 'var(--color-text-primary)', marginBottom: tokens.spacing[2], paddingBottom: tokens.spacing[2], borderBottom: `1px solid var(--color-border-primary)` }}>
+                        <div key={dateKey} style={{ marginBottom: '16px' }}>
+                            <div style={{ fontSize: '17px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px', paddingBottom: '8px', borderBottom: `1px solid var(--color-border-primary)` }}>
                                 {DAYS_FULL[date.getDay()]}, {MONTHS[date.getMonth()]} {date.getDate()}, {date.getFullYear()}
                             </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: tokens.spacing[4] }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                                 {dayEvents.map(event => (
                                     <div
                                         key={event.id}
                                         onClick={() => onEventClick?.(event)}
                                         style={{
-                                            padding: tokens.spacing[4],
+                                            padding: '16px',
                                             backgroundColor: 'var(--color-background-secondary)',
                                             borderLeft: `4px solid ${event.color || 'var(--color-accent-blue)'}`,
-                                            borderRadius: tokens.radius.md,
+                                            borderRadius: '8px',
                                             cursor: 'pointer',
-                                            transition: `all ${tokens.motion.duration.fast} ${tokens.motion.easing.standard}`,
+                                            transition: 'all 0.2s var(--ease-apple)',
                                         }}
                                         onMouseEnter={(e) => {
                                             e.currentTarget.style.backgroundColor = 'var(--color-background-tertiary)';
@@ -85,15 +85,15 @@ export const AgendaView: React.FC<AgendaViewProps> = ({
                                     >
                                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
                                             <div style={{ flex: 1 }}>
-                                                <div style={{ fontSize: tokens.typography.fontSize.base, fontWeight: tokens.typography.fontWeight.semibold, color: 'var(--color-text-primary)', marginBottom: tokens.spacing[2] }}>
+                                                <div style={{ fontSize: '15px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
                                                     {event.title}
                                                 </div>
                                                 {event.description && (
-                                                    <div style={{ fontSize: tokens.typography.fontSize.sm, color: 'var(--color-text-secondary)', marginBottom: tokens.spacing[2] }}>
+                                                    <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>
                                                         {event.description}
                                                     </div>
                                                 )}
-                                                <div style={{ fontSize: tokens.typography.fontSize.sm, color: 'var(--color-text-tertiary)' }}>
+                                                <div style={{ fontSize: '13px', color: 'var(--color-text-tertiary)' }}>
                                                     {event.startTime && `${event.startTime} - ${event.endTime}`}
                                                     {event.location && ` • 📍 ${event.location}`}
                                                 </div>
