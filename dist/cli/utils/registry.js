@@ -5,8 +5,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAvailableComponents = getAvailableComponents;
 exports.getComponentSource = getComponentSource;
 exports.getComponentDependencies = getComponentDependencies;
+exports.getGlobalCss = getGlobalCss;
 // TODO: Make this configurable? For now hardcoded to main branch.
 const REGISTRY_URL = "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/registry.json";
+const CSS_URL = "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/globals.css";
 let cachedRegistry = null;
 async function fetchRegistry() {
     if (cachedRegistry)
@@ -53,5 +55,18 @@ async function getComponentDependencies(componentName) {
     const registry = await fetchRegistry();
     const component = registry[componentName];
     return component?.dependencies || [];
+}
+async function getGlobalCss() {
+    try {
+        const res = await fetch(CSS_URL);
+        if (!res.ok) {
+            throw new Error(`Failed to fetch global css from ${CSS_URL}: ${res.statusText}`);
+        }
+        return await res.text();
+    }
+    catch (error) {
+        console.error("Error fetching global css:", error);
+        return null;
+    }
 }
 //# sourceMappingURL=registry.js.map

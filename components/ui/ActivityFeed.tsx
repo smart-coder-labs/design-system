@@ -9,7 +9,6 @@ import {
     AlertCircle, 
     CheckCircle2, 
     FileText,
-    MoreHorizontal,
     type LucideIcon
 } from 'lucide-react';
 

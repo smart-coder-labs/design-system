@@ -9,6 +9,7 @@ const path_1 = __importDefault(require("path"));
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const chalk_1 = __importDefault(require("chalk"));
 const ora_1 = __importDefault(require("ora"));
+const registry_1 = require("../utils/registry");
 const init = async () => {
     console.log(chalk_1.default.bold.green("🍏 Apple Design System Initialization"));
     console.log("This utility will help you configure your project.");
@@ -61,21 +62,39 @@ export function cn(...inputs: ClassValue[]) {
 `);
         console.log(chalk_1.default.green("Created lib/utils.ts for 'cn' utility."));
     }
-    // Inject CSS import into global CSS if provided
-    if (response.globalCss) {
-        const globalCssPath = path_1.default.resolve(process.cwd(), response.globalCss);
-        if (fs_extra_1.default.existsSync(globalCssPath)) {
-            let cssContent = await fs_extra_1.default.readFile(globalCssPath, "utf-8");
-            const importStatement = "@import '@smart-coder-labs/apple-design-system/css';";
-            if (!cssContent.includes(importStatement)) {
-                // Prepend to file
-                await fs_extra_1.default.writeFile(globalCssPath, `${importStatement}\n${cssContent}`);
-                console.log(chalk_1.default.green(`Updated ${response.globalCss} with design system styles.`));
+    // Fetch and create styles directory and write apple-ds.css
+    spin.text = "Fetching global styles...";
+    const cssContent = await (0, registry_1.getGlobalCss)();
+    if (cssContent) {
+        const stylesDir = path_1.default.resolve(process.cwd(), "styles");
+        await fs_extra_1.default.ensureDir(stylesDir);
+        const cssPath = path_1.default.resolve(stylesDir, "apple-ds.css");
+        await fs_extra_1.default.writeFile(cssPath, cssContent);
+        console.log(chalk_1.default.green(`Created ${path_1.default.relative(process.cwd(), cssPath)}`));
+        // Inject CSS import into global CSS if provided
+        if (response.globalCss) {
+            const globalCssPath = path_1.default.resolve(process.cwd(), response.globalCss);
+            if (fs_extra_1.default.existsSync(globalCssPath)) {
+                let existingCss = await fs_extra_1.default.readFile(globalCssPath, "utf-8");
+                // Calculate relative path from global CSS to apple-ds.css
+                const globalCssDir = path_1.default.dirname(globalCssPath);
+                const relativePath = path_1.default.relative(globalCssDir, cssPath);
+                // Ensure it starts with ./ or ../
+                const importPath = relativePath.startsWith(".") ? relativePath : `./${relativePath}`;
+                const importStatement = `@import '${importPath}';`;
+                if (!existingCss.includes("apple-ds.css")) {
+                    // Prepend to file
+                    await fs_extra_1.default.writeFile(globalCssPath, `${importStatement}\n${existingCss}`);
+                    console.log(chalk_1.default.green(`Updated ${response.globalCss} with design system styles.`));
+                }
+            }
+            else {
+                console.log(chalk_1.default.yellow(`Global CSS file not found at ${response.globalCss}. Skipping style import.`));
             }
         }
-        else {
-            console.log(chalk_1.default.yellow(`Global CSS file not found at ${response.globalCss}. Skipping style import.`));
-        }
+    }
+    else {
+        spin.warn("Failed to fetch global styles. Please install styles manually.");
     }
     if (response.installDeps) {
         spin.start("Installing dependencies...");
