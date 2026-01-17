@@ -1,6 +1,5 @@
 import React from 'react';
-import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../lib/utils';;
 
 /* ========================================
@@ -40,8 +39,11 @@ export interface TabsContentProps {
 
 const TabsContext = React.createContext<{
     activeValue?: string;
+    setActiveValue: (value: string) => void;
     variant?: 'default' | 'segmented';
-}>({});
+}>({
+    setActiveValue: () => { },
+});
 
 /* ========================================
    COMPONENTS
@@ -55,34 +57,25 @@ export const Tabs: React.FC<TabsProps> = ({
     className = '',
 }) => {
     // Manage state to support animations
-    const [activeValue, setActiveValue] = React.useState<string | undefined>(
-        value || defaultValue
+    const [internalValue, setInternalValue] = React.useState<string | undefined>(
+        defaultValue
     );
 
-    // Sync with controlled value if provided
-    React.useEffect(() => {
-        if (value !== undefined) {
-            setActiveValue(value);
-        }
-    }, [value]);
+    const isControlled = value !== undefined;
+    const activeValue = isControlled ? value : internalValue;
 
-    const handleValueChange = (newValue: string) => {
-        if (value === undefined) {
-            setActiveValue(newValue);
+    const setActiveValue = React.useCallback((newValue: string) => {
+        if (!isControlled) {
+            setInternalValue(newValue);
         }
         onValueChange?.(newValue);
-    };
+    }, [isControlled, onValueChange]);
 
     return (
-        <TabsContext.Provider value={{ activeValue }}>
-            <TabsPrimitive.Root
-                defaultValue={defaultValue}
-                value={value}
-                onValueChange={handleValueChange}
-                className={className}
-            >
+        <TabsContext.Provider value={{ activeValue, setActiveValue }}>
+            <div className={className}>
                 {children}
-            </TabsPrimitive.Root>
+            </div>
         </TabsContext.Provider>
     );
 };
@@ -92,13 +85,7 @@ export const TabsList: React.FC<TabsListProps> = ({
     className = '',
     variant = 'default',
 }) => {
-    // Pass variant to context for Triggers to know what style to use
-    // We need to clone the context provider or just pass it down? 
-    // Actually TabsTrigger needs to know the variant. 
-    // Let's wrap children in another provider or just cloneElement?
-    // Context is cleaner.
-
-    // We need to merge with existing context (activeValue)
+    // We need to merge with existing context (activeValue) but passing variant down
     const context = React.useContext(TabsContext);
 
     const variantStyles = {
@@ -108,9 +95,12 @@ export const TabsList: React.FC<TabsListProps> = ({
 
     return (
         <TabsContext.Provider value={{ ...context, variant }}>
-            <TabsPrimitive.List className={cn(variantStyles[variant], className)}>
+            <div
+                role="tablist"
+                className={cn(variantStyles[variant], className)}
+            >
                 {children}
-            </TabsPrimitive.List>
+            </div>
         </TabsContext.Provider>
     );
 };
@@ -121,15 +111,18 @@ export const TabsTrigger: React.FC<TabsTriggerProps> = ({
     disabled = false,
     className = '',
 }) => {
-    const { activeValue, variant } = React.useContext(TabsContext);
+    const { activeValue, setActiveValue, variant } = React.useContext(TabsContext);
     const isSelected = activeValue === value;
 
     return (
-        <TabsPrimitive.Trigger
-            value={value}
+        <button
+            type="button"
+            role="tab"
+            aria-selected={isSelected}
             disabled={disabled}
+            onClick={() => !disabled && setActiveValue(value)}
             className={cn(
-                "relative px-4 py-2 text-sm font-medium transition-colors outline-none disabled:opacity-40 disabled:cursor-not-allowed z-10",
+                "relative px-4 py-2 text-sm font-medium transition-colors outline-none disabled:opacity-40 disabled:cursor-not-allowed z-10 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:rounded-md",
                 variant === 'default' && "hover:text-text-primary",
                 variant === 'segmented' && "flex-1 text-center",
                 className
@@ -173,7 +166,7 @@ export const TabsTrigger: React.FC<TabsTriggerProps> = ({
                     }}
                 />
             )}
-        </TabsPrimitive.Trigger>
+        </button>
     );
 };
 
@@ -181,27 +174,34 @@ export const TabsContent: React.FC<TabsContentProps> = ({
     value,
     children,
     className = '',
-}) => (
-    <TabsPrimitive.Content
-        value={value}
-        className={cn(
-            "outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 rounded-xl mt-4",
-            className
-        )}
-    >
-        <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{
-                duration: 0.2,
-                ease: "easeOut",
-            }}
+}) => {
+    const { activeValue } = React.useContext(TabsContext);
+    const isSelected = activeValue === value;
+
+    if (!isSelected) return null;
+
+    return (
+        <div
+            role="tabpanel"
+            className={cn(
+                "outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 rounded-xl mt-4",
+                className
+            )}
         >
-            {children}
-        </motion.div>
-    </TabsPrimitive.Content>
-);
+            <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 8 }}
+                transition={{
+                    duration: 0.2,
+                    ease: "easeOut",
+                }}
+            >
+                {children}
+            </motion.div>
+        </div>
+    );
+};
 
 /* ========================================
    USAGE EXAMPLES

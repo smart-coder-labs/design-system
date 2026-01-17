@@ -1,4 +1,3 @@
-import { Command } from "commander";
 import prompts from "prompts";
 import path from "path";
 import fs from "fs-extra";
@@ -14,15 +13,21 @@ export const init = async () => {
   const response = await prompts([
     {
       type: "text",
+      name: "projectRoot",
+      message: "What is your project root directory?",
+      initial: "./src",
+    },
+    {
+      type: "text",
       name: "componentsDir",
       message: "Where would you like to install components?",
-      initial: "./components/ui",
+      initial: (prev) => `${prev}/components/ui`,
     },
     {
       type: "text",
       name: "globalCss",
       message: "Where is your global CSS file?",
-      initial: "./app/globals.css",
+      initial: (prev, values) => `${values.projectRoot}/index.css`,
     },
     {
       type: "confirm",
@@ -48,9 +53,13 @@ export const init = async () => {
   await fs.ensureDir(resolvedComponentsDir);
 
   // Also create a lib/utils.ts for cn helper if it doesn't exist
-  const utilsPath = path.resolve(process.cwd(), "lib/utils.ts");
+  // We try to infer lib location from componentsDir or projectRoot
+  // If components are in src/components/ui, lib should be src/lib
+  const utilsDir = path.resolve(process.cwd(), response.projectRoot, "lib");
+  const utilsPath = path.resolve(utilsDir, "utils.ts");
+
   if (!fs.existsSync(utilsPath)) {
-      await fs.ensureDir(path.resolve(process.cwd(), "lib"));
+      await fs.ensureDir(utilsDir);
       await fs.writeFile(utilsPath, `import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -58,7 +67,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 `);
-      console.log(chalk.green("Created lib/utils.ts for 'cn' utility."));
+      console.log(chalk.green(`Created ${path.relative(process.cwd(), utilsPath)} for 'cn' utility.`));
   }
 
   // Fetch and create styles directory and write apple-ds.css

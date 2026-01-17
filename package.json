@@ -1,6 +1,6 @@
 {
   "name": "@smart-coder-labs/apple-design-system",
-  "version": "1.0.11",
+  "version": "1.0.13",
   "description": "Design system completo estilo Apple (macOS/iOS/VisionOS) con Framer Motion",
   "keywords": [
     "apple-design-system",
@@ -66,9 +66,8 @@
   "devDependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
-    "@radix-ui/react-switch": "^1.0.3",
-    "@radix-ui/react-tabs": "^1.0.4",
-    "@radix-ui/react-tooltip": "^1.0.7",
+
+
     "@storybook/addon-docs": "^10.0.8",
     "@storybook/addon-onboarding": "^10.0.8",
     "@storybook/react-vite": "^10.0.8",
