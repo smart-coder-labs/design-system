@@ -1,8 +1,7 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState, useEffect, useRef } from 'react';
 import { cn } from '../../lib/utils';;
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 /* ========================================
    TYPES
@@ -45,6 +44,20 @@ export const SplitButton = forwardRef<HTMLDivElement, SplitButtonProps>(
         },
         ref
     ) => {
+        const [isOpen, setIsOpen] = useState(false);
+        const containerRef = useRef<HTMLDivElement>(null);
+
+        // Click outside handler
+        useEffect(() => {
+            const handleClickOutside = (event: MouseEvent) => {
+                if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+                    setIsOpen(false);
+                }
+            };
+            document.addEventListener('mousedown', handleClickOutside);
+            return () => document.removeEventListener('mousedown', handleClickOutside);
+        }, []);
+
         const variants = {
             primary: {
                 button: "bg-accent-blue text-white hover:bg-accent-blueHover active:bg-accent-blueActive",
@@ -81,79 +94,88 @@ export const SplitButton = forwardRef<HTMLDivElement, SplitButtonProps>(
             },
         };
 
+        const handleActionClick = (action: SplitButtonAction) => {
+            if (action.disabled) return;
+            action.onClick();
+            setIsOpen(false);
+        };
+
         return (
             <div
                 ref={ref}
                 className={cn(
-                    "inline-flex rounded-xl overflow-hidden shadow-sm",
+                    "inline-flex rounded-xl overflow-visible shadow-sm relative", /* overflow-visible for dropdown */
                     variants[variant].container,
                     className
                 )}
             >
-                {/* Primary Action Button */}
-                <motion.button
-                    whileTap={{ scale: 0.98 }}
-                    onClick={onClick}
-                    disabled={disabled}
-                    className={cn(
-                        "flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
-                        variants[variant].button,
-                        sizes[size].button,
-                        disabled && "opacity-50 cursor-not-allowed"
-                    )}
-                >
-                    {label}
-                </motion.button>
+                <div className="flex rounded-xl overflow-hidden" ref={containerRef}>
+                    {/* Primary Action Button */}
+                    <motion.button
+                        whileTap={{ scale: 0.98 }}
+                        onClick={onClick}
+                        disabled={disabled}
+                        className={cn(
+                            "flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
+                            variants[variant].button,
+                            sizes[size].button,
+                            disabled && "opacity-50 cursor-not-allowed"
+                        )}
+                    >
+                        {label}
+                    </motion.button>
 
-                {/* Divider */}
-                <div className={cn("w-px", variants[variant].divider)} />
+                    {/* Divider */}
+                    <div className={cn("w-px", variants[variant].divider)} />
+
+                    {/* Dropdown Menu Trigger */}
+                    <motion.button
+                        whileTap={{ scale: 0.98 }}
+                        disabled={disabled}
+                        onClick={() => !disabled && setIsOpen(!isOpen)}
+                        className={cn(
+                            "flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
+                            variants[variant].button,
+                            sizes[size].dropdown,
+                            disabled && "opacity-50 cursor-not-allowed"
+                        )}
+                    >
+                        <ChevronDown className={cn(sizes[size].icon, "transition-transform duration-200", isOpen && "rotate-180")} />
+                    </motion.button>
+                </div>
 
                 {/* Dropdown Menu */}
-                <DropdownMenuPrimitive.Root>
-                    <DropdownMenuPrimitive.Trigger asChild>
-                        <motion.button
-                            whileTap={{ scale: 0.98 }}
-                            disabled={disabled}
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: -5 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: -5 }}
+                            transition={{ duration: 0.1 }}
                             className={cn(
-                                "flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
-                                variants[variant].button,
-                                sizes[size].dropdown,
-                                disabled && "opacity-50 cursor-not-allowed"
-                            )}
-                        >
-                            <ChevronDown className={sizes[size].icon} />
-                        </motion.button>
-                    </DropdownMenuPrimitive.Trigger>
-
-                    <DropdownMenuPrimitive.Portal>
-                        <DropdownMenuPrimitive.Content
-                            align="end"
-                            sideOffset={4}
-                            className={cn(
-                                "min-w-[160px] bg-surface-elevated border border-border-primary rounded-xl shadow-lg p-1",
-                                "z-dropdown",
-                                "animate-in fade-in-0 zoom-in-95"
+                                "absolute right-0 top-full mt-2 z-dropdown",
+                                "min-w-[160px] bg-surface-elevated border border-border-primary rounded-xl shadow-lg p-1"
                             )}
                         >
                             {actions.map((action, index) => (
-                                <DropdownMenuPrimitive.Item
+                                <button
                                     key={index}
-                                    onClick={action.onClick}
+                                    onClick={() => handleActionClick(action)}
                                     disabled={action.disabled}
                                     className={cn(
-                                        "flex items-center gap-2 px-3 py-2 text-sm rounded-lg cursor-pointer outline-none transition-colors",
-                                        "text-text-primary hover:bg-surface-secondary",
+                                        "flex w-full items-center gap-2 px-3 py-2 text-sm rounded-lg cursor-pointer outline-none transition-colors",
+                                        "text-text-primary hover:bg-surface-secondary text-left",
                                         "focus:bg-surface-secondary",
                                         action.disabled && "opacity-50 cursor-not-allowed"
                                     )}
                                 >
                                     {action.icon && <action.icon className="w-4 h-4" />}
                                     {action.label}
-                                </DropdownMenuPrimitive.Item>
+                                </button>
                             ))}
-                        </DropdownMenuPrimitive.Content>
-                    </DropdownMenuPrimitive.Portal>
-                </DropdownMenuPrimitive.Root>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         );
     }

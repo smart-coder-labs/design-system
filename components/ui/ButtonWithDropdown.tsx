@@ -1,8 +1,7 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState, useEffect, useRef } from 'react';
 import { cn } from '../../lib/utils';;
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 /* ========================================
    TYPES
@@ -43,6 +42,20 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
         },
         ref
     ) => {
+        const [isOpen, setIsOpen] = useState(false);
+        const containerRef = useRef<HTMLDivElement>(null);
+
+        // Click outside handler
+        useEffect(() => {
+            const handleClickOutside = (event: MouseEvent) => {
+                if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+                    setIsOpen(false);
+                }
+            };
+            document.addEventListener('mousedown', handleClickOutside);
+            return () => document.removeEventListener('mousedown', handleClickOutside);
+        }, []);
+
         const variants = {
             primary: "bg-accent-blue text-white hover:bg-accent-blueHover active:bg-accent-blueActive shadow-sm",
             secondary: "bg-surface-secondary text-text-primary hover:bg-surface-tertiary active:bg-surface-tertiary/80 border border-border-primary",
@@ -64,55 +77,63 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
             },
         };
 
-        return (
-            <DropdownMenuPrimitive.Root>
-                <DropdownMenuPrimitive.Trigger asChild>
-                    <motion.button
-                        ref={ref}
-                        whileTap={{ scale: 0.98 }}
-                        disabled={disabled}
-                        className={cn(
-                            "inline-flex items-center justify-center font-medium rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
-                            variants[variant],
-                            sizes[size].button,
-                            disabled && "opacity-50 cursor-not-allowed",
-                            className
-                        )}
-                    >
-                        {label}
-                        <ChevronDown className={sizes[size].icon} />
-                    </motion.button>
-                </DropdownMenuPrimitive.Trigger>
+        const handleActionClick = (action: ButtonWithDropdownAction) => {
+            if (action.disabled) return;
+            action.onClick();
+            setIsOpen(false);
+        };
 
-                <DropdownMenuPrimitive.Portal>
-                    <DropdownMenuPrimitive.Content
-                        align="start"
-                        sideOffset={4}
-                        className={cn(
-                            "min-w-[160px] bg-surface-elevated border border-border-primary rounded-xl shadow-lg p-1",
-                            "z-dropdown",
-                            "animate-in fade-in-0 zoom-in-95"
-                        )}
-                    >
-                        {actions.map((action, index) => (
-                            <DropdownMenuPrimitive.Item
-                                key={index}
-                                onClick={action.onClick}
-                                disabled={action.disabled}
-                                className={cn(
-                                    "flex items-center gap-2 px-3 py-2 text-sm rounded-lg cursor-pointer outline-none transition-colors",
-                                    "text-text-primary hover:bg-surface-secondary",
-                                    "focus:bg-surface-secondary",
-                                    action.disabled && "opacity-50 cursor-not-allowed"
-                                )}
-                            >
-                                {action.icon && <action.icon className="w-4 h-4" />}
-                                {action.label}
-                            </DropdownMenuPrimitive.Item>
-                        ))}
-                    </DropdownMenuPrimitive.Content>
-                </DropdownMenuPrimitive.Portal>
-            </DropdownMenuPrimitive.Root>
+        return (
+            <div className="relative inline-block text-left" ref={containerRef}>
+                <motion.button
+                    ref={ref}
+                    whileTap={{ scale: 0.98 }}
+                    disabled={disabled}
+                    onClick={() => !disabled && setIsOpen(!isOpen)}
+                    className={cn(
+                        "inline-flex items-center justify-center font-medium rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
+                        variants[variant],
+                        sizes[size].button,
+                        disabled && "opacity-50 cursor-not-allowed",
+                        className
+                    )}
+                >
+                    {label}
+                    <ChevronDown className={cn(sizes[size].icon, "transition-transform duration-200", isOpen && "rotate-180")} />
+                </motion.button>
+
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: -5 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: -5 }}
+                            transition={{ duration: 0.1 }}
+                            className={cn(
+                                "absolute left-0 mt-2 z-dropdown",
+                                "min-w-[160px] bg-surface-elevated border border-border-primary rounded-xl shadow-lg p-1"
+                            )}
+                        >
+                            {actions.map((action, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => handleActionClick(action)}
+                                    disabled={action.disabled}
+                                    className={cn(
+                                        "flex w-full items-center gap-2 px-3 py-2 text-sm rounded-lg cursor-pointer outline-none transition-colors",
+                                        "text-text-primary hover:bg-surface-secondary text-left",
+                                        "focus:bg-surface-secondary",
+                                        action.disabled && "opacity-50 cursor-not-allowed"
+                                    )}
+                                >
+                                    {action.icon && <action.icon className="w-4 h-4" />}
+                                    {action.label}
+                                </button>
+                            ))}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
         );
     }
 );

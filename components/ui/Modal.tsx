@@ -1,5 +1,5 @@
-import React from 'react';
-import * as Dialog from '@radix-ui/react-dialog';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /* ========================================
@@ -46,6 +46,24 @@ export const Modal: React.FC<ModalProps> = ({
     size = 'md',
     position = 'center',
 }) => {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
+
+    // Handle Escape key
+    useEffect(() => {
+        const handleEscape = (e: KeyboardEvent) => {
+            if (open && e.key === 'Escape') {
+                onOpenChange(false);
+            }
+        };
+        document.addEventListener('keydown', handleEscape);
+        return () => document.removeEventListener('keydown', handleEscape);
+    }, [open, onOpenChange]);
+
     // Animation variants for different positions
     const variants: Record<string, any> = {
         center: {
@@ -77,50 +95,68 @@ export const Modal: React.FC<ModalProps> = ({
 
     // Determine correct position style for bottom+full
     const positionKey = position === 'bottom' && size === 'full' ? 'bottomFull' : position;
-    return (
-        <Dialog.Root open={open} onOpenChange={onOpenChange}>
-            <Dialog.Portal>
-                <AnimatePresence>
-                    {open && (
-                        <>
-                            {/* Overlay con blur */}
-                            <Dialog.Overlay asChild>
-                                <motion.div
-                                    className="fixed inset-0 bg-black/40 backdrop-blur-md z-modal"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{
-                                        duration: 0.22,
-                                        ease: [0.16, 1, 0.3, 1],
-                                    }}
-                                />
-                            </Dialog.Overlay>
 
-                            {/* Content */}
-                            <Dialog.Content asChild>
-                                <motion.div
-                                    className={`fixed w-full ${sizeStyles[size]} bg-surface-primary shadow-xl p-6 z-modal focus:outline-none rounded-2xl ${positionStyles[positionKey]}`}
-                                    initial={variants[position].initial}
-                                    animate={variants[position].animate}
-                                    exit={variants[position].exit}
-                                    transition={{
-                                        type: 'spring',
-                                        stiffness: 300,
-                                        damping: 30,
-                                        mass: 0.8,
-                                    }}
-                                >
-                                    {children}
-                                </motion.div>
-                            </Dialog.Content>
-                        </>
-                    )}
-                </AnimatePresence>
-            </Dialog.Portal>
-        </Dialog.Root>
+    // Prevent scrolling behind modal
+    useEffect(() => {
+        if (open) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => { document.body.style.overflow = ''; };
+    }, [open]);
+
+    if (!mounted) return null;
+
+    const modalContent = (
+        <AnimatePresence>
+            {open && (
+                <div className="fixed inset-0 z-modal flex items-center justify-center isolate">
+                    {/* Overlay con blur */}
+                    <motion.div
+                        className="fixed inset-0 bg-black/40 backdrop-blur-md"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{
+                            duration: 0.22,
+                            ease: [0.16, 1, 0.3, 1],
+                        }}
+                        onClick={() => onOpenChange(false)}
+                        aria-hidden="true"
+                    />
+
+                    {/* Content */}
+                    <motion.div
+                        className={`fixed w-full ${sizeStyles[size]} bg-surface-primary shadow-xl p-6 z-modal focus:outline-none rounded-2xl ${positionStyles[positionKey]}`}
+                        initial={variants[position].initial}
+                        animate={variants[position].animate}
+                        exit={variants[position].exit}
+                        transition={{
+                            type: 'spring',
+                            stiffness: 300,
+                            damping: 30,
+                            mass: 0.8,
+                        }}
+                        role="dialog"
+                        aria-modal="true"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                         {/* Close context could be provided here if needed, but we pass onOpenChange generally */}
+                         <ModalContext.Provider value={{ onClose: () => onOpenChange(false) }}>
+                            {children}
+                         </ModalContext.Provider>
+                    </motion.div>
+                </div>
+            )}
+        </AnimatePresence>
     );
+
+    return createPortal(modalContent, document.body);
 };
+
+
+const ModalContext = React.createContext<{ onClose: () => void }>({ onClose: () => { } });
 
 /* ========================================
    SUB-COMPONENTS
@@ -137,22 +173,18 @@ export const ModalTitle: React.FC<{
     children: React.ReactNode;
     className?: string;
 }> = ({ children, className = '' }) => (
-    <Dialog.Title asChild>
-        <h2 className={`text-2xl font-semibold text-text-primary ${className}`}>
-            {children}
-        </h2>
-    </Dialog.Title>
+    <h2 className={`text-2xl font-semibold text-text-primary ${className}`}>
+        {children}
+    </h2>
 );
 
 export const ModalDescription: React.FC<{
     children: React.ReactNode;
     className?: string;
 }> = ({ children, className = '' }) => (
-    <Dialog.Description asChild>
-        <p className={`text-sm text-text-secondary mt-2 ${className}`}>
-            {children}
-        </p>
-    </Dialog.Description>
+    <p className={`text-sm text-text-secondary mt-2 ${className}`}>
+        {children}
+    </p>
 );
 
 export const ModalContent: React.FC<{
@@ -174,11 +206,14 @@ export const ModalFooter: React.FC<{
 export const ModalClose: React.FC<{
     children: React.ReactNode;
     className?: string;
-}> = ({ children, className = '' }) => (
-    <Dialog.Close asChild>
-        <div className={className}>{children}</div>
-    </Dialog.Close>
-);
+}> = ({ children, className = '' }) => {
+    const { onClose } = React.useContext(ModalContext);
+    return (
+        <div className={className} onClick={onClose}>
+            {children}
+        </div>
+    );
+};
 
 /* ========================================
    CLOSE BUTTON ICON
@@ -186,9 +221,11 @@ export const ModalClose: React.FC<{
 
 export const ModalCloseButton: React.FC<{ className?: string }> = ({
     className = '',
-}) => (
-    <Dialog.Close asChild>
+}) => {
+    const { onClose } = React.useContext(ModalContext);
+    return (
         <motion.button
+            onClick={onClose}
             className={`
         absolute top-4 right-4
         w-8 h-8
@@ -223,8 +260,8 @@ export const ModalCloseButton: React.FC<{ className?: string }> = ({
                 />
             </svg>
         </motion.button>
-    </Dialog.Close>
-);
+    );
+};
 
 /* ========================================
    USAGE EXAMPLES
