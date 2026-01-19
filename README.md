@@ -4,15 +4,14 @@
 
 **Un design system completo inspirado en macOS, iOS y VisionOS**
 
-*Construido con Framer Motion + Radix UI + Tailwind CSS*
+*Construido con Framer Motion + Tailwind CSS*
 <br>
 *✨ Creado con Inteligencia Artificial ✨*
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18+-61dafb)](https://reactjs.org/)
-[![Framer Motion](https://img.shields.io/badge/Framer%20Motion-10+-ff69b4)](https://www.framer.com/motion/)
-[![Radix UI](https://img.shields.io/badge/Radix%20UI-Latest-purple)](https://www.radix-ui.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-38bdf8)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12+-ff69b4)](https://www.framer.com/motion/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.0-38bdf8)](https://tailwindcss.com/)
 [![npm](https://img.shields.io/npm/v/@smart-coder-labs/apple-design-system)](https://www.npmjs.com/package/@smart-coder-labs/apple-design-system)
 
 [📦 Instalación](#-inicio-rápido) •
@@ -62,8 +61,8 @@ Esto:
 
 - 🎨 **Estilo Apple Premium** - Minimalista, elegante y aireado
 - 🌓 **Dark Mode Completo** - Soporte automático para modo oscuro
-- ⚡ **Animaciones Fluidas** - Springs suaves y transiciones elegantes
-- ♿ **Accesibilidad AA/AAA** - Componentes accesibles con Radix UI
+- ⚡ **Animaciones Fluidas** - Springs suaves y transiciones elegantes con Framer Motion
+- ♿ **Accesibilidad** - Componentes accesibles y semánticos
 - 🎯 **TypeScript** - Completamente tipado
 - 📱 **Responsive** - Diseñado para todos los dispositivos
 - 🎭 **Personalizable** - Tokens configurables fácilmente
@@ -72,20 +71,32 @@ Esto:
 
 ## 📦 Contenido
 
-### 🧩 10 Componentes Completos
+### 🧩 Componentes
 
 | Componente | Descripción | Tecnología |
 |------------|-------------|------------|
 | **Button** | Botones con animaciones suaves | Framer Motion |
 | **Card** | Tarjetas con efectos glass | Framer Motion |
 | **Input** | Inputs con focus elegante | Framer Motion |
-| **Modal** | Modales con animación VisionOS | Radix UI + Framer Motion |
-| **Dropdown** | Menús desplegables | Radix UI + Framer Motion |
-| **Tooltip** | Tooltips pequeños y elegantes | Radix UI + Framer Motion |
-| **Tabs** | Segmented control iOS/macOS | Radix UI + Framer Motion |
-| **Switch** | Toggle iOS con spring | Radix UI + Framer Motion |
+| **Modal** | Modales con animación VisionOS | Framer Motion |
+| **Dropdown** | Menús desplegables | Framer Motion |
+| **Tooltip** | Tooltips pequeños y elegantes | Framer Motion |
+| **Tabs** | Segmented control iOS/macOS | Framer Motion |
+| **Switch** | Toggle iOS con spring | Framer Motion |
 | **Badge** | Indicadores de estado | Framer Motion |
+| **NumberInput** | Input numérico con controles | Framer Motion |
+| **Select** | Select nativo estilizado | Framer Motion |
+| **Checkbox** | Checkbox animado | Framer Motion |
+| **Textarea** | Area de texto expandible | Framer Motion |
+| **Label** | Etiquetas accesibles | HTML/CSS |
 | **NavBar** | Navegación minimal | Framer Motion |
+| **Calendar** | Calendario completo | React Day Picker |
+| **DataGrid** | Tabla avanzada con filtros | TanStack Table |
+| **Kanban** | Tablero Trello-like | Dnd Kit |
+| **Sheet** | Panel lateral deslizante | Framer Motion |
+| **Command** | Menú de comandos (CMD+K) | CMDK |
+| **Popover** | Contenido flotante | Framer Motion |
+| **Toast** | Notificaciones tostada | Sonner |
 
 ### 🎨 Tokens Completos
 
@@ -276,9 +287,9 @@ const customTokens = {
 ## 📊 Estadísticas
 
 ```
-📁 Archivos:         25
-📝 Líneas de código: 3,178
-🧩 Componentes:      10
+📁 Archivos:         150+
+📝 Líneas de código: 10,000+
+🧩 Componentes:      50+
 🎨 Tokens:           100+
 📖 Documentación:    7 archivos
 ```
@@ -289,9 +300,8 @@ const customTokens = {
 
 - **React** 18+ - UI Library
 - **TypeScript** 5+ - Type Safety
-- **Framer Motion** 10+ - Animaciones
-- **Radix UI** - Componentes accesibles
-- **Tailwind CSS** 3+ - Estilos
+- **Framer Motion** 12+ - Animaciones
+- **Tailwind CSS** 4+ - Estilos
 - **PostCSS** - Procesamiento CSS
 
 ---
@@ -405,7 +415,6 @@ MIT © 2025
 
 Construido con:
 - [Framer Motion](https://www.framer.com/motion/)
-- [Radix UI](https://www.radix-ui.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
 

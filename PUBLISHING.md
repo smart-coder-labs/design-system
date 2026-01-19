@@ -259,6 +259,18 @@ jobs:
 
 5. **Git Tags**: Usa tags para cada versión publicada
 
+## Despliegue de Storybook
+
+Para desplegar Storybook en GitHub Pages de forma automática:
+
+1.  Asegúrate de que el workflow `.github/workflows/deploy-storybook.yml` exista en tu repositorio.
+2.  Haz push a la rama `main` para disparar el workflow.
+3.  Ve a **Settings > Pages** en tu repositorio de GitHub.
+4.  En **Build and deployment > Source**, selecciona **Deploy from a branch**.
+5.  Selecciona la rama `gh-pages` (se creará automáticamente tras el primer deploy exitoso) y guarda.
+
+El Storybook estará disponible en: `https://[org].github.io/[repo]/`
+
 ## Contacto
 
 Si tienes problemas al publicar, contacta al equipo de Smart Coder Labs.
