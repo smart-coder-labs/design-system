@@ -57,6 +57,7 @@
     "fs-extra": "^11.2.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^4.0.0",
+    "markdown-it": "^14.1.0",
     "ora": "^5.4.1",
     "prompts": "^2.4.2",
     "tailwind-merge": "^3.4.0",
