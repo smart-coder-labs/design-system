@@ -58,6 +58,20 @@ Esto:
 
 ---
 
+### `update`
+
+Actualiza los componentes instalados en tu proyecto a la última versión disponible.
+
+```bash
+npx @smart-coder-labs/apple-design-system update [Componente]
+```
+
+Esto:
+1. Comprueba si hay versiones nuevas de los componentes en tu carpeta `components/ui`.
+2. Te pregunta antes de sobrescribir cualquier archivo.
+
+---
+
 ## ✨ Características
 
 - 🎨 **Estilo Apple Premium** - Minimalista, elegante y aireado
