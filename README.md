@@ -199,7 +199,9 @@ function App() {
 
 ## 🎨 Demo
 
-![Apple Design System Demo](https://via.placeholder.com/800x400/007AFF/FFFFFF?text=Apple+Design+System+Demo)
+Explore our interactive Storybook demo featuring a complete Landing Page built with our Design System. Experience the dark mode toggle, responsive layout, and various UI components in action.
+
+![Apple Design System Demo](https://smart-coder-labs.github.io/design-system/?path=/story/pages-landing-page--business-landing)
 
 **[🎬 Ver demo completa →](https://smart-coder-labs.github.io/design-system/?path=/story/pages-landing-page--business-landing)**
 
