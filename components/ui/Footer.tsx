@@ -1,6 +1,8 @@
 import React from 'react';
 import { cn } from '../../lib/utils';;
 import { Col, GridContainer, Row } from './GridSystem';
+import Text from './Text';
+import Title from './Title';
 
 /* ========================================
    FOOTER ROOT
@@ -56,19 +58,17 @@ export const FooterTop = React.forwardRef<HTMLDivElement, FooterTopProps>(
                 {icon ? (
                     icon
                 ) : (
-                    <div className="w-14 h-14 rounded-full bg-text-primary text-background flex items-center justify-center text-lg font-bold">
-                        A
-                    </div>
+                    <></>
                 )}
 
                 {/* Title */}
-                <h2 className="text-xl font-semibold mt-4">{title}</h2>
+                <Title level={5} weight="semibold" className="mt-4">{title}</Title>
 
                 {/* Description */}
                 {description && (
-                    <p className="mt-2 text-sm text-text-secondary max-w-prose">
+                    <Text variant="small" color="secondary" className="mt-2 max-w-prose">
                         {description}
-                    </p>
+                    </Text>
                 )}
 
                 {/* Socials */}
@@ -145,9 +145,9 @@ export const FooterColumn = React.forwardRef<
             {...props}
         >
             {title && (
-                <h3 className="font-semibold text-text-primary text-sm tracking-wide uppercase mb-1">
+                <Title as="h3" level={6} weight="semibold" className="text-sm tracking-wide uppercase mb-1">
                     {title}
-                </h3>
+                </Title>
             )}
             <div className="flex flex-col gap-2">{children}</div>
         </Col>

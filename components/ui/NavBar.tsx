@@ -67,7 +67,7 @@ export const NavBar: React.FC<NavBarProps> = ({
       className={`
         ${sticky ? 'sticky top-0' : ''}
         ${variantStyles[variant]}
-        z-sticky
+        z-50
         transition-apple
         ${className}
       `}
