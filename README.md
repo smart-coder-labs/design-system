@@ -201,7 +201,7 @@ function App() {
 
 ![Apple Design System Demo](https://via.placeholder.com/800x400/007AFF/FFFFFF?text=Apple+Design+System+Demo)
 
-**[🎬 Ver demo completa →](./DemoPage.tsx)**
+**[🎬 Ver demo completa →](https://smart-coder-labs.github.io/design-system/?path=/story/pages-landing-page--business-landing)**
 
 ---
 
