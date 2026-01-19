@@ -1,0 +1,35 @@
+import{j as e}from"./jsx-runtime-u17CrQMm.js";import{r as w}from"./iframe-vYzePaRW.js";import{c as k}from"./utils-CDN07tui.js";import{B as V}from"./Button-Bvw_y_KB.js";import{C as O}from"./check-Bwk7sq60.js";import{C as q}from"./copy-olGZ0BUq.js";import{C as B}from"./chevron-down-BBlmTaJ5.js";import{C as A}from"./chevron-right-C1IyBY8C.js";import"./preload-helper-PPVm8Dsz.js";import"./proxy-DMGrdN83.js";import"./createLucideIcon-Ckxz52bH.js";const F=a=>a===null?"null":Array.isArray(a)?"array":typeof a,C=({name:a,value:t,depth:i,isLast:n,indentSize:c,initiallyExpanded:d})=>{const[l,m]=w.useState(d),s=F(t),o=s==="object"||s==="array",p=o&&Object.keys(t).length===0,v=r=>{r.stopPropagation(),m(!l)},E=(r,j)=>{switch(j){case"string":return e.jsxs("span",{className:"text-[#ce9178]",children:['"',r,'"']});case"number":return e.jsx("span",{className:"text-[#b5cea8]",children:r});case"boolean":return e.jsx("span",{className:"text-[#569cd6]",children:r?"true":"false"});case"null":return e.jsx("span",{className:"text-[#569cd6]",children:"null"});default:return null}},S=()=>s==="array"?e.jsxs("span",{className:"text-gray-400",children:["Array(",t.length,")"]}):e.jsx("span",{className:"text-gray-400",children:"{...}"});return e.jsxs("div",{className:"font-mono text-sm leading-6",style:{paddingLeft:i>0?c:0},children:[e.jsxs("div",{className:"flex items-start",children:[e.jsx("div",{className:"w-5 h-6 flex items-center justify-center flex-none mr-1",children:o&&!p&&e.jsx("button",{onClick:v,className:"text-gray-400 hover:text-gray-200 transition-colors focus:outline-none",children:l?e.jsx(B,{className:"w-3.5 h-3.5"}):e.jsx(A,{className:"w-3.5 h-3.5"})})}),e.jsxs("div",{className:"flex-1 break-all",children:[a&&e.jsxs("span",{className:"text-[#9cdcfe] mr-1",children:['"',a,'":']}),o?e.jsxs(e.Fragment,{children:[e.jsx("span",{className:"text-[#da70d6]",children:s==="array"?"[":"{"}),!l&&!p&&e.jsxs(e.Fragment,{children:[e.jsx("button",{onClick:v,className:"mx-1 hover:bg-white/5 px-1 rounded cursor-pointer",children:S()}),e.jsx("span",{className:"text-[#da70d6]",children:s==="array"?"]":"}"}),!n&&e.jsx("span",{className:"text-gray-400",children:","})]}),p&&e.jsxs(e.Fragment,{children:[e.jsx("span",{className:"text-[#da70d6]",children:s==="array"?"]":"}"}),!n&&e.jsx("span",{className:"text-gray-400",children:","})]})]}):e.jsxs(e.Fragment,{children:[E(t,s),!n&&e.jsx("span",{className:"text-gray-400",children:","})]})]})]}),o&&l&&!p&&e.jsxs("div",{children:[Object.entries(t).map(([r,j],T,J)=>e.jsx(C,{name:s==="array"?void 0:r,value:j,depth:i+1,isLast:T===J.length-1,indentSize:c,initiallyExpanded:d},r)),e.jsxs("div",{className:"pl-6 text-[#da70d6]",children:[s==="array"?"]":"}",!n&&e.jsx("span",{className:"text-gray-400",children:","})]})]})]})},b=({data:a,initiallyExpanded:t=!1,indentSize:i=20,className:n,showCopyButton:c=!0,maxHeight:d})=>{const[l,m]=w.useState(!1),s=async()=>{try{await navigator.clipboard.writeText(JSON.stringify(a,null,2)),m(!0),setTimeout(()=>m(!1),2e3)}catch(o){console.error("Failed to copy JSON:",o)}};return e.jsxs("div",{className:k("relative rounded-xl border border-border-primary/50 bg-[#1e1e1e] text-white shadow-sm overflow-hidden",n),children:[c&&e.jsx("div",{className:"absolute top-2 right-2 z-10",children:e.jsx(V,{variant:"ghost",size:"sm",onClick:s,className:"h-8 w-8 p-0 text-gray-400 hover:text-white hover:bg-white/10 bg-[#1e1e1e]/80 backdrop-blur-sm",children:l?e.jsx(O,{className:"w-4 h-4 text-green-400"}):e.jsx(q,{className:"w-4 h-4"})})}),e.jsx("div",{className:"p-4 overflow-auto scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent",style:{maxHeight:d},children:e.jsx(C,{value:a,depth:0,isLast:!0,indentSize:i,initiallyExpanded:t})})]})};b.__docgenInfo={description:"",methods:[],displayName:"JsonViewer",props:{data:{required:!0,tsType:{name:"any"},description:"The JSON data to display"},initiallyExpanded:{required:!1,tsType:{name:"boolean"},description:"Whether nested objects/arrays should be expanded by default",defaultValue:{value:"false",computed:!1}},indentSize:{required:!1,tsType:{name:"number"},description:"Number of pixels to indent for each level",defaultValue:{value:"20",computed:!1}},className:{required:!1,tsType:{name:"string"},description:"Optional class name for the container"},showCopyButton:{required:!1,tsType:{name:"boolean"},description:"Whether to show the copy button",defaultValue:{value:"true",computed:!1}},maxHeight:{required:!1,tsType:{name:"union",raw:"string | number",elements:[{name:"string"},{name:"number"}]},description:"Maximum height of the container before scrolling"}}};const Q={title:"Data Display/JsonViewer",component:b,parameters:{layout:"padded"},tags:[]},I={id:1,name:"John Doe",email:"john@example.com",isActive:!0,role:"admin",lastLogin:null},N={users:[{id:1,name:"Alice Smith",contact:{email:"alice@example.com",phone:"+1 (555) 123-4567"},preferences:{theme:"dark",notifications:{email:!0,push:!1,sms:!0}},tags:["developer","lead","frontend"]},{id:2,name:"Bob Jones",contact:{email:"bob@example.com",phone:null},preferences:{theme:"light",notifications:{email:!1,push:!0}},tags:["designer","ui/ux"]}],meta:{page:1,perPage:20,total:45,timestamp:"2024-03-20T10:30:00Z"}},D={level1:{level2:{level3:{level4:{level5:{message:"Deeply nested value",value:42}}}}}},u={args:{data:I}},x={args:{data:N,initiallyExpanded:!0}},h={args:{data:N,initiallyExpanded:!1}},g={args:{data:D,initiallyExpanded:!0}},y={args:{data:N,initiallyExpanded:!0,maxHeight:300},render:a=>e.jsx("div",{className:"max-w-xl",children:e.jsx(b,{...a})})},f={args:{data:D,initiallyExpanded:!0,indentSize:40}};u.parameters={...u.parameters,docs:{...u.parameters?.docs,source:{originalSource:`{
+  args: {
+    data: simpleData
+  }
+}`,...u.parameters?.docs?.source}}};x.parameters={...x.parameters,docs:{...x.parameters?.docs,source:{originalSource:`{
+  args: {
+    data: complexData,
+    initiallyExpanded: true
+  }
+}`,...x.parameters?.docs?.source}}};h.parameters={...h.parameters,docs:{...h.parameters?.docs,source:{originalSource:`{
+  args: {
+    data: complexData,
+    initiallyExpanded: false
+  }
+}`,...h.parameters?.docs?.source}}};g.parameters={...g.parameters,docs:{...g.parameters?.docs,source:{originalSource:`{
+  args: {
+    data: deepData,
+    initiallyExpanded: true
+  }
+}`,...g.parameters?.docs?.source}}};y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{
+  args: {
+    data: complexData,
+    initiallyExpanded: true,
+    maxHeight: 300
+  },
+  render: args => <div className="max-w-xl">
+            <JsonViewer {...args} />
+        </div>
+}`,...y.parameters?.docs?.source}}};f.parameters={...f.parameters,docs:{...f.parameters?.docs,source:{originalSource:`{
+  args: {
+    data: deepData,
+    initiallyExpanded: true,
+    indentSize: 40
+  }
+}`,...f.parameters?.docs?.source}}};const U=["Default","Complex","CollapsedByDefault","DeeplyNested","Scrollable","CustomIndentation"];export{h as CollapsedByDefault,x as Complex,f as CustomIndentation,g as DeeplyNested,u as Default,y as Scrollable,U as __namedExportsOrder,Q as default};
