@@ -2,136 +2,163 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Design System Overview" />
 
-<img src="/header.png" alt="SmartCoder Design System" className="w-full block m-0 p-0" />
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # Apple Design System
+    
+    A collection of premium, reusable artifacts for building high-quality digital experiences.
+    Built with **React**, **Tailwind CSS v4**, and **Framer Motion**.
+  </div>
+  
+  <div className="sb-section" style={{marginTop: 32}}>
+    ## 🎨 Foundations
+    
+    The system is built on a robust set of foundations that ensure consistency and accessibility across all applications.
+    
+    ### Colors
+    Our color system uses **HSL variables** for real-time semantic theming (Light/Dark modes).
+    
+    ### Typography
+    We use **Inter** for a clean, modern aesthetic with a carefully tuned type scale.
+    
+    ### Animation
+    Smooth, spring-based animations powered by **Framer Motion** bring interfaces to life.
+  </div>
 
-# SmartCoder Design System
+  <div className="sb-section">
+    ## 🧩 Components
+    
+    A comprehensive suite of components, from atomic elements to complex patterns.
+    
+    <div className="sb-features-grid">
+        <div>
+            **Core**
+            - Button & IconButton
+            - Input & Forms
+            - Text & Title
+            - Card & Containers
+        </div>
+        <div>
+            **Navigation**
+            - NavBar (Composable)
+            - Sidebar
+            - Breadcrumbs
+            - Tabs
+        </div>
+        <div>
+            **Feedback**
+            - Toast
+            - Modal & Dialog
+            - Badge
+            - Progress
+        </div>
+         <div>
+            **Data Display**
+            - DataGrid
+            - Calendar
+            - Kanban Board
+            - Reviews & Ratings
+        </div>
+    </div>
+  </div>
 
-A catalog of reusable frontend components for high‑quality interfaces.
+  <div className="sb-section">
+    ## 📄 Templates & Pages
+    
+    Production-ready page layouts to jumpstart your development.
+    
+    - **Business Landing Page** - A high-conversion landing page with hero, features, pricing, and testimonials.
+    - **Dashboard** *(Coming Soon)*
+    - **Auth Pages** *(Coming Soon)*
+  </div>
 
-Tokens, components, and utilities for building consistent React applications — fully documented in Storybook.
-<br />
-
-
-## 🎨 Foundations
-
-### Colors
-The system ships with a **dark‑mode ready** palette built on HSL values for easy theming. Primary, secondary, neutrals, and semantic colors are defined as CSS variables in `src/tokens/colors.css`.
-
-```css
-:root {
-  --ds-color-primary: hsl(220, 90%, 55%);
-  --ds-color-primary-dark: hsl(220, 90%, 45%);
-  --ds-color-background: hsl(210, 10%, 98%);
-  --ds-color-background-dark: hsl(210, 10%, 10%);
-}
-```
-
-### Typography
-We use **Inter** as the primary typeface, loaded via Google Fonts. The token file `src/tokens/typography.css` defines a clear hierarchy:
-
-| Token | Font‑size | Line‑height | Weight |
-|-------|-----------|-------------|--------|
-| --ds-font‑h1 | 2.5rem | 1.2 | 700 |
-| --ds-font‑h2 | 2rem | 1.3 | 600 |
-| --ds-font‑body | 1rem | 1.5 | 400 |
-
-### Spacing & Layout
-A **8‑point grid** powers all margins, paddings, and component gaps. Tokens are exposed as `--ds-space‑1` … `--ds-space‑8`.
-
----
-
-## 🧩 Components
-
-The design system includes a curated set of **React components** that are fully Storybook‑documented:
-
-- **Button** – variants: primary, secondary, ghost, with smooth hover micro‑animations.
-- **Input** – text, number (with min/max validation), password, with focus ring.
-- **Card** – elevation, glass‑morphism background, responsive layout.
-- **Modal** – accessible focus trap, dark‑mode aware.
-- **Grid** – flexible 12‑column layout with auto‑responsive breakpoints.
-- **Icon** – SVG sprite system, color‑aware.
-
-Each component lives under `src/components/` and follows the **Atomic Design** methodology (atoms → molecules → organisms).
-
----
-
-## 📦 Tokens & Utilities
-
-All design decisions are exposed as **CSS‑in‑JS tokens** for easy consumption:
-
-```js
-export const colors = {
-  primary: "var(--ds-color-primary)",
-  background: "var(--ds-color-background)",
-  // …
-};
-
-export const typography = {
-  h1: "var(--ds-font-h1)",
-  body: "var(--ds-font-body)",
-};
-```
-
-Utility classes (e.g., `.ds-flex`, `.ds-center`) are generated via a tiny PostCSS plugin, keeping the HTML markup clean while preserving performance.
-
----
-
-## 🚀 Usage
-
-1. **Install** the package:
-   ```bash
-   npm i @smartcoder/design-system
-   ```
-2. **Import the CSS baseline** in your entry point:
-   ```js
-   import "@smartcoder/design-system/dist/base.css";
-   ```
-3. **Start using components**:
-   ```jsx
-   import { Button, Card } from "@smartcoder/design-system";
-
-   <Card>
-     <h2>Welcome</h2>
-     <Button variant="primary">Get started</Button>
-   </Card>
-   ```
-
-The Storybook docs (this page) provide live examples, accessibility checks, and a **theming playground** where you can toggle dark/light mode.
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Follow these steps:
-
-1. **Fork** the repo and create a feature branch.
-2. Run `npm install && npm run storybook` to see your changes in real time.
-3. Follow the **component checklist** (tests, a11y, docs).
-4. Submit a PR with a clear description and screenshots.
-
-All contributions are automatically linted with **ESLint**, **Prettier**, and **Stylelint** to keep the codebase consistent.
-
----
-
-## 📞 Community & Support
-
-- **GitHub** – https://github.com/smart-coder-labs/design-system
-- **Gmail** – coder4021@gmail.com
-
-
-Feel free to open an issue, or contribute a new component.
-
----
+  <div className="sb-section">
+    ## 🚀 Getting Started
+    
+    1. **Install the package:**
+       ```bash
+       npm install @smart-coder-labs/apple-design-system
+       ```
+       
+    2. **Import styles in your root entry:**
+       ```tsx
+       import '@smart-coder-labs/apple-design-system/dist/index.css';
+       ```
+       
+    3. **Start building:**
+       ```tsx
+       import { Button, Card } from '@smart-coder-labs/apple-design-system';
+       
+       export default function App() {
+         return (
+           <Card>
+             <Button variant="primary">Hello World</Button>
+           </Card>
+         );
+       }
+       ```
+  </div>
+  
+  <div className="sb-section">
+    ## 🤝 Community
+    - [GitHub Repository](https://github.com/smart-coder-labs/design-system)
+    - [Report an Issue](https://github.com/smart-coder-labs/design-system/issues)
+  </div>
+</div>
 
 <style>
 {`
-  .ds-hero h1 {
+  .sb-container {
+    margin-bottom: 48px;
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    color: #1f2937;
   }
-  .ds-hero p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
+  
+  .sb-section-title {
+    margin-bottom: 32px;
+  }
+  
+  .sb-section {
+    margin-bottom: 48px;
+  }
+  
+  .sb-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 16px;
+  }
+  
+  h1 {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 16px !important;
+    background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  h2 {
+    font-size: 1.8rem !important; 
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 12px;
+    margin-bottom: 24px !important;
+    color: #0f172a;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+    margin-bottom: 8px !important;
+    color: #334155;
+  }
+  
+  code {
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #0f172a;
+    font-size: 0.9em;
   }
 `}
 </style>

@@ -17,7 +17,8 @@
 [📦 Instalación](#-inicio-rápido) •
 [📖 Documentación](#-documentación) •
 [🧩 Componentes](#-componentes) •
-[🎨 Demo](#-demo)
+[🎨 Demo](#-demo) •
+[📚 Storybook](#-storybook)
 
 </div>
 
@@ -201,6 +202,14 @@ function App() {
 ![Apple Design System Demo](https://via.placeholder.com/800x400/007AFF/FFFFFF?text=Apple+Design+System+Demo)
 
 **[🎬 Ver demo completa →](./DemoPage.tsx)**
+
+---
+
+## 📚 Storybook
+
+Explora y prueba nuestros componentes de forma interactiva en nuestro Storybook oficial:
+
+👉 **[https://smart-coder-labs.github.io/design-system/](https://smart-coder-labs.github.io/design-system/)**
 
 ---
 

@@ -269,7 +269,7 @@ Para desplegar Storybook en GitHub Pages de forma automática:
 4.  En **Build and deployment > Source**, selecciona **Deploy from a branch**.
 5.  Selecciona la rama `gh-pages` (se creará automáticamente tras el primer deploy exitoso) y guarda.
 
-El Storybook estará disponible en: `https://[org].github.io/[repo]/`
+El Storybook estará disponible en: `https://smart-coder-labs.github.io/design-system/`
 
 ## Contacto
 

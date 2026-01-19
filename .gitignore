@@ -8,4 +8,4 @@ storybook-static
 
 .npmrc
 
-build.log
+**/*.log
