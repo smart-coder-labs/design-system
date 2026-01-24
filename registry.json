@@ -2023,5 +2023,18 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/WindowFrame.tsx"
       }
     ]
+  },
+  "ResourceMonitor": {
+    "name": "ResourceMonitor",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "ResourceMonitor.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ResourceMonitor.tsx"
+      }
+    ]
   }
 }
