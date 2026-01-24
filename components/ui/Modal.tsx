@@ -18,21 +18,55 @@ export interface ModalProps {
    STYLES
    ======================================== */
 
+/* ========================================
+   STYLES & CONFIG
+   ======================================== */
+
 const sizeStyles = {
     sm: 'max-w-sm',
     md: 'max-w-md',
     lg: 'max-w-lg',
     xl: 'max-w-xl',
-    full: 'max-w-full mx-4',
+    full: 'max-w-full', // Removed mx-4 to allow edge-to-edge
 };
 
-const positionStyles: Record<string, string> = {
-    center: 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
-    right: 'top-0 right-0 h-full rounded-l-2xl',
-    left: 'top-0 left-0 h-full rounded-r-2xl',
-    bottom: 'left-1/2 bottom-0 transform -translate-x-1/2 rounded-t-2xl',
-    bottomFull: 'left-0 bottom-0 w-full rounded-t-2xl',
-    fullscreen: 'inset-0 w-full h-full rounded-none',
+interface ModalConfig {
+    wrapper: string;
+    content: string;
+    variant: string;
+}
+
+const modalConfig: Record<string, ModalConfig> = {
+    center: {
+        wrapper: 'items-center justify-center p-4',
+        content: 'rounded-2xl',
+        variant: 'center',
+    },
+    bottom: {
+        wrapper: 'items-end justify-center',
+        content: 'rounded-t-2xl',
+        variant: 'bottom',
+    },
+    bottomFull: {
+        wrapper: 'items-end justify-center',
+        content: 'w-full rounded-t-2xl',
+        variant: 'bottom',
+    },
+    left: {
+        wrapper: 'items-stretch justify-start',
+        content: 'h-full rounded-r-2xl',
+        variant: 'left',
+    },
+    right: {
+        wrapper: 'items-stretch justify-end',
+        content: 'h-full rounded-l-2xl',
+        variant: 'right',
+    },
+    fullscreen: {
+        wrapper: 'items-center justify-center',
+        content: 'w-full h-full rounded-none',
+        variant: 'fullscreen',
+    },
 };
 
 /* ========================================
@@ -64,27 +98,27 @@ export const Modal: React.FC<ModalProps> = ({
         return () => document.removeEventListener('keydown', handleEscape);
     }, [open, onOpenChange]);
 
-    // Animation variants for different positions
+    // Animation variants
     const variants: Record<string, any> = {
         center: {
-            initial: { opacity: 0, scale: 0.96, x: '-50%', y: '-48%' },
-            animate: { opacity: 1, scale: 1, x: '-50%', y: '-50%' },
-            exit: { opacity: 0, scale: 0.96, x: '-50%', y: '-48%' },
+            initial: { opacity: 0, scale: 0.95, y: 0 },
+            animate: { opacity: 1, scale: 1, y: 0 },
+            exit: { opacity: 0, scale: 0.95, y: 0 },
         },
-        right: {
-            initial: { opacity: 0, x: '100%' },
-            animate: { opacity: 1, x: '0%' },
-            exit: { opacity: 0, x: '100%' },
+        bottom: {
+            initial: { opacity: 0, y: '100%' },
+            animate: { opacity: 1, y: '0%' },
+            exit: { opacity: 0, y: '100%' },
         },
         left: {
             initial: { opacity: 0, x: '-100%' },
             animate: { opacity: 1, x: '0%' },
             exit: { opacity: 0, x: '-100%' },
         },
-        bottom: {
-            initial: { opacity: 0, y: '100%' },
-            animate: { opacity: 1, y: '0%' },
-            exit: { opacity: 0, y: '100%' },
+        right: {
+            initial: { opacity: 0, x: '100%' },
+            animate: { opacity: 1, x: '0%' },
+            exit: { opacity: 0, x: '100%' },
         },
         fullscreen: {
             initial: { opacity: 0 },
@@ -93,8 +127,9 @@ export const Modal: React.FC<ModalProps> = ({
         },
     };
 
-    // Determine correct position style for bottom+full
+    // Determine config based on position
     const positionKey = position === 'bottom' && size === 'full' ? 'bottomFull' : position;
+    const config = modalConfig[positionKey] || modalConfig.center;
 
     // Prevent scrolling behind modal
     useEffect(() => {
@@ -111,7 +146,7 @@ export const Modal: React.FC<ModalProps> = ({
     const modalContent = (
         <AnimatePresence>
             {open && (
-                <div className="fixed inset-0 z-modal flex items-center justify-center isolate">
+                <div className={`fixed inset-0 z-50 flex isolate ${config.wrapper}`}>
                     {/* Overlay con blur */}
                     <motion.div
                         className="fixed inset-0 bg-black/40 backdrop-blur-md"
@@ -128,10 +163,10 @@ export const Modal: React.FC<ModalProps> = ({
 
                     {/* Content */}
                     <motion.div
-                        className={`fixed w-full ${sizeStyles[size]} bg-surface-primary shadow-xl p-6 z-modal focus:outline-none rounded-2xl ${positionStyles[positionKey]}`}
-                        initial={variants[position].initial}
-                        animate={variants[position].animate}
-                        exit={variants[position].exit}
+                        className={`w-full ${sizeStyles[size]} bg-surface-primary shadow-xl p-6 relative z-50 focus:outline-none overflow-y-auto max-h-screen ${config.content}`}
+                        initial={variants[config.variant]?.initial}
+                        animate={variants[config.variant]?.animate}
+                        exit={variants[config.variant]?.exit}
                         transition={{
                             type: 'spring',
                             stiffness: 300,
@@ -262,6 +297,7 @@ export const ModalCloseButton: React.FC<{ className?: string }> = ({
         </motion.button>
     );
 };
+
 
 /* ========================================
    USAGE EXAMPLES
