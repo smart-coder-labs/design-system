@@ -76,3 +76,9 @@ export { CircularPacking } from './CircularPacking';
 export { ChoroplethMap } from './ChoroplethMap';
 export { BubbleMap } from './BubbleMap';
 export { HexBinMap } from './HexBinMap';
+
+// Category 7: Specialized Charts
+export { ConnectionMap } from './ConnectionMap';
+export { Cartogram } from './Cartogram';
+export { GanttChart } from './GanttChart';
+export { WaterfallChart } from './WaterfallChart';
