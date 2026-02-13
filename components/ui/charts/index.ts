@@ -82,3 +82,9 @@ export { ConnectionMap } from './ConnectionMap';
 export { Cartogram } from './Cartogram';
 export { GanttChart } from './GanttChart';
 export { WaterfallChart } from './WaterfallChart';
+
+// Category 8: Financial & Range Charts
+export { CandlestickChart } from './CandlestickChart';
+export { OHLCChart } from './OHLCChart';
+export { SpanChart } from './SpanChart';
+export { DumbbellChart } from './DumbbellChart';
