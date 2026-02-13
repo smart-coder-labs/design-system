@@ -100,3 +100,5 @@ export { PulseRing } from './PulseRing';
 export { GradientWave } from './GradientWave';
 export { OrbitChart } from './OrbitChart';
 export { CrystalCluster } from './CrystalCluster';
+export { DNAHelixChart } from './DNAHelixChart';
+export { BloomChart } from './BloomChart';
