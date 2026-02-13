@@ -161,7 +161,7 @@ export const GradientWave: React.FC<GradientWaveProps> = ({
               fill={`url(#${gradientId})`}
               initial={{ opacity: 0, pathLength: 0 }}
               animate={{ opacity: 1, pathLength: 1 }}
-              transition={{ duration: chartMotion.duration.slow * 3, ease: chartMotion.easing }}
+              transition={{ duration: chartMotion.duration.slow * 2, ease: chartMotion.easing }}
             />
           ) : (
             <path d={wavePath} fill={`url(#${gradientId})`} />
@@ -177,7 +177,7 @@ export const GradientWave: React.FC<GradientWaveProps> = ({
               strokeLinecap="round"
               initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
-              transition={{ duration: chartMotion.duration.slow * 3, ease: chartMotion.easing }}
+              transition={{ duration: chartMotion.duration.slow * 2, ease: chartMotion.easing }}
             />
           ) : (
             <path d={strokePath} fill="none" stroke={palette[0]} strokeWidth={2} strokeLinecap="round" />
