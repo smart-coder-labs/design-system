@@ -94,3 +94,7 @@ export { ParallelCoordinates } from './ParallelCoordinates';
 export { CalendarHeatmap } from './CalendarHeatmap';
 export { MatrixChart } from './MatrixChart';
 export { ErrorBarChart } from './ErrorBarChart';
+
+// Category 10: Innovative Charts
+export { PulseRing } from './PulseRing';
+export { GradientWave } from './GradientWave';
