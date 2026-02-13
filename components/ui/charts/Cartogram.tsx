@@ -65,7 +65,7 @@ export const Cartogram: React.FC<CartogramProps> = ({
   const chartWidth = width - margin.left - margin.right;
   const chartHeight = height - margin.top - margin.bottom;
 
-  // Treemap-like layout: sort by value descending, place in rows
+  // Squarified treemap layout: sorts by value and optimizes row/column splits to minimize aspect ratios
   const rects = useMemo((): LayoutRect[] => {
     if (data.length === 0) return [];
 

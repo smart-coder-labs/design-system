@@ -77,7 +77,7 @@ export { ChoroplethMap } from './ChoroplethMap';
 export { BubbleMap } from './BubbleMap';
 export { HexBinMap } from './HexBinMap';
 
-// Category 7: Specialized Charts
+// Category 7: Specialized & Timeline Charts
 export { ConnectionMap } from './ConnectionMap';
 export { Cartogram } from './Cartogram';
 export { GanttChart } from './GanttChart';
