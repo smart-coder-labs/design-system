@@ -131,15 +131,18 @@ export const BarChart: React.FC<BarChartProps> = ({
     ? { hidden: {}, visible: { transition: { staggerChildren: 0.05 } } }
     : undefined;
 
-  const barVariants = animated
-    ? {
-        hidden: { scaleY: 0 },
-        visible: {
-          scaleY: 1,
-          transition: { type: 'spring', ...chartMotion.spring },
-        },
-      }
-    : undefined;
+  // Animate bar height from 0 (at baseline) to full height
+  const getBarVariants = (barHeight: number, barY: number) =>
+    animated
+      ? {
+          hidden: { y: margin.top + chartHeight, height: 0 },
+          visible: {
+            y: barY,
+            height: Math.max(0, barHeight),
+            transition: { type: 'spring', ...chartMotion.spring },
+          },
+        }
+      : undefined;
 
   const legendItems = useMemo(
     () =>
@@ -233,14 +236,12 @@ export const BarChart: React.FC<BarChartProps> = ({
                 <motion.rect
                   key={i}
                   x={x}
-                  y={y}
                   width={barWidth}
-                  height={Math.max(0, barHeight)}
                   rx={Math.min(4, barWidth / 4)}
                   fill={color}
                   opacity={hoveredIndex !== null && !isHovered ? 0.4 : 1}
-                  style={{ originX: `${x + barWidth / 2}px`, originY: `${margin.top + chartHeight}px` }}
-                  variants={barVariants}
+                  variants={getBarVariants(barHeight, y)}
+                  {...(!animated && { y, height: Math.max(0, barHeight) })}
                   {...(interactive && {
                     onMouseEnter: (e: React.MouseEvent) => handleBarHover(i, e),
                     onMouseMove: (e: React.MouseEvent) => handleBarHover(i, e),
@@ -253,7 +254,7 @@ export const BarChart: React.FC<BarChartProps> = ({
                   })}
                   transition={
                     animated
-                      ? undefined
+                      ? undefined // transition defined in variants
                       : { duration: 0 }
                   }
                 />
