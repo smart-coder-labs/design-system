@@ -59,6 +59,11 @@ export { Heatmap } from './Heatmap';
 export { Correlogram } from './Correlogram';
 export { ConnectedScatter } from './ConnectedScatter';
 export { DensityScatter } from './DensityScatter';
+// Category 5: Flow & Relationship Charts
 export { SankeyDiagram } from './SankeyDiagram';
 export { AlluvialDiagram } from './AlluvialDiagram';
+export { ChordDiagram } from './ChordDiagram';
+export { NetworkGraph } from './NetworkGraph';
+export { ArcDiagram } from './ArcDiagram';
 export { DependencyWheel } from './DependencyWheel';
+export { NodeLinkTree } from './NodeLinkTree';

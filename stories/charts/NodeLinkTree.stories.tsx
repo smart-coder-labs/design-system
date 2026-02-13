@@ -1,0 +1,73 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { NodeLinkTree } from '../../components/ui/charts/NodeLinkTree';
+
+const sampleData = {
+  label: 'CEO',
+  value: 1,
+  children: [
+    {
+      label: 'Engineering',
+      value: 50,
+      children: [
+        { label: 'Frontend', value: 20, children: [{ label: 'React', value: 12 }, { label: 'Vue', value: 8 }] },
+        { label: 'Backend', value: 18, children: [{ label: 'Node', value: 10 }, { label: 'Go', value: 8 }] },
+        { label: 'DevOps', value: 12 },
+      ],
+    },
+    {
+      label: 'Design',
+      value: 25,
+      children: [
+        { label: 'UX', value: 15 },
+        { label: 'Visual', value: 10 },
+      ],
+    },
+    {
+      label: 'Marketing',
+      value: 20,
+      children: [
+        { label: 'Content', value: 10 },
+        { label: 'SEO', value: 10 },
+      ],
+    },
+  ],
+};
+
+const meta: Meta<typeof NodeLinkTree> = {
+  title: 'Charts/NodeLinkTree',
+  component: NodeLinkTree,
+  argTypes: {
+    size: { control: 'radio', options: ['sm', 'md', 'lg'] },
+    variant: { control: 'select', options: ['default', 'glass', 'bordered', 'elevated'] },
+    animated: { control: 'boolean' },
+    interactive: { control: 'boolean' },
+    showTooltip: { control: 'boolean' },
+  },
+  decorators: [(Story) => <div className="w-full max-w-2xl p-6"><Story /></div>],
+};
+export default meta;
+type Story = StoryObj<typeof NodeLinkTree>;
+
+export const Default: Story = { args: { data: sampleData } };
+
+export const Variants: Story = {
+  name: '🎨 Variants',
+  render: () => (
+    <div className="grid grid-cols-2 gap-6">
+      {(['default', 'glass', 'bordered', 'elevated'] as const).map((v) => (
+        <NodeLinkTree key={v} data={sampleData} variant={v} title={v} />
+      ))}
+    </div>
+  ),
+};
+
+export const DarkMode: Story = {
+  name: '🌙 Dark Mode',
+  decorators: [(Story) => <div className="dark bg-[#000] p-6 rounded-2xl w-full max-w-2xl"><Story /></div>],
+  args: { data: sampleData, variant: 'bordered', title: 'Dark Mode' },
+};
+
+export const Playground: Story = {
+  name: '🎮 Playground',
+  args: { data: sampleData, size: 'md', variant: 'default', animated: true, title: 'Playground' },
+};
