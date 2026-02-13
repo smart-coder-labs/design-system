@@ -70,3 +70,9 @@ export { NetworkGraph } from './NetworkGraph';
 export { ArcDiagram } from './ArcDiagram';
 export { DependencyWheel } from './DependencyWheel';
 export { NodeLinkTree } from './NodeLinkTree';
+
+// Category 6: Geo & Spatial Charts
+export { CircularPacking } from './CircularPacking';
+export { ChoroplethMap } from './ChoroplethMap';
+export { BubbleMap } from './BubbleMap';
+export { HexBinMap } from './HexBinMap';
