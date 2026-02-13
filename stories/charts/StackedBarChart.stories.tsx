@@ -1,17 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StackedBarChart } from '../../components/ui/charts/StackedBarChart';
 
-const sampleData = [
-  { label: 'Q1', values: [42000, 18000, 8000] },
-  { label: 'Q2', values: [48000, 21000, 9500] },
-  { label: 'Q3', values: [55000, 24000, 11000] },
-  { label: 'Q4', values: [61000, 28000, 12500] },
+const monthlyRevenueData = [
+  { label: 'Jan', values: [182000, 94500, 61200, 38700] },
+  { label: 'Feb', values: [195400, 101200, 67800, 41300] },
+  { label: 'Mar', values: [214800, 108900, 72400, 44800] },
+  { label: 'Apr', values: [203600, 112400, 68900, 46200] },
+  { label: 'May', values: [228100, 119800, 75600, 49100] },
+  { label: 'Jun', values: [241500, 126300, 81200, 52400] },
+  { label: 'Jul', values: [256200, 131700, 86800, 55900] },
+  { label: 'Aug', values: [247800, 128400, 83100, 53600] },
+  { label: 'Sep', values: [263400, 135200, 89400, 57800] },
+  { label: 'Oct', values: [278900, 142100, 94700, 61200] },
+  { label: 'Nov', values: [295600, 148900, 99200, 64500] },
+  { label: 'Dec', values: [312400, 156800, 105800, 68300] },
 ];
 
-const sampleSeries = [
-  { name: 'Products' },
-  { name: 'Services' },
-  { name: 'Subscriptions' },
+const revenueSeries = [
+  { name: 'Product Sales', color: '#007AFF' },
+  { name: 'Subscriptions', color: '#5856D6' },
+  { name: 'Professional Services', color: '#34C759' },
+  { name: 'Licensing Fees', color: '#FF9500' },
 ];
 
 const meta: Meta<typeof StackedBarChart> = {
@@ -29,7 +38,7 @@ const meta: Meta<typeof StackedBarChart> = {
   },
   decorators: [
     (Story) => (
-      <div className="w-full max-w-2xl p-6">
+      <div className="w-full max-w-3xl p-6">
         <Story />
       </div>
     ),
@@ -40,17 +49,25 @@ export default meta;
 type Story = StoryObj<typeof StackedBarChart>;
 
 export const Default: Story = {
-  args: { data: sampleData, series: sampleSeries },
+  args: {
+    data: monthlyRevenueData,
+    series: revenueSeries,
+    title: 'Monthly Revenue by Stream',
+    subtitle: 'FY 2024 — All Business Units',
+    showGrid: true,
+    showTooltip: true,
+    showLegend: true,
+  },
 };
 
 export const Variants: Story = {
   name: '🎨 Variants',
   render: () => (
     <div className="grid grid-cols-2 gap-6">
-      <StackedBarChart data={sampleData} series={sampleSeries} variant="default" title="Default" />
-      <StackedBarChart data={sampleData} series={sampleSeries} variant="glass" title="Glass" />
-      <StackedBarChart data={sampleData} series={sampleSeries} variant="bordered" title="Bordered" />
-      <StackedBarChart data={sampleData} series={sampleSeries} variant="elevated" title="Elevated" />
+      <StackedBarChart data={monthlyRevenueData} series={revenueSeries} variant="default" title="Default" showLegend />
+      <StackedBarChart data={monthlyRevenueData} series={revenueSeries} variant="glass" title="Glass" showLegend />
+      <StackedBarChart data={monthlyRevenueData} series={revenueSeries} variant="bordered" title="Bordered" showLegend />
+      <StackedBarChart data={monthlyRevenueData} series={revenueSeries} variant="elevated" title="Elevated" showLegend />
     </div>
   ),
 };
@@ -59,73 +76,63 @@ export const Sizes: Story = {
   name: '📐 Sizes',
   render: () => (
     <div className="space-y-6">
-      <StackedBarChart data={sampleData} series={sampleSeries} size="sm" title="Small" variant="bordered" />
-      <StackedBarChart data={sampleData} series={sampleSeries} size="md" title="Medium" variant="bordered" />
-      <StackedBarChart data={sampleData} series={sampleSeries} size="lg" title="Large" variant="bordered" />
+      <StackedBarChart data={monthlyRevenueData} series={revenueSeries} size="sm" title="Small" variant="bordered" showLegend />
+      <StackedBarChart data={monthlyRevenueData} series={revenueSeries} size="md" title="Medium" variant="bordered" showLegend />
+      <StackedBarChart data={monthlyRevenueData} series={revenueSeries} size="lg" title="Large" variant="bordered" showLegend />
     </div>
   ),
-};
-
-export const Interactive: Story = {
-  name: '🖱 Interactive',
-  args: {
-    data: sampleData,
-    series: sampleSeries,
-    interactive: true,
-    showTooltip: true,
-    showLegend: true,
-    variant: 'bordered',
-    title: 'Revenue Breakdown',
-    subtitle: 'Hover segments for details',
-  },
 };
 
 export const DarkMode: Story = {
   name: '🌙 Dark Mode',
   decorators: [
     (Story) => (
-      <div className="dark bg-[#000] p-6 rounded-2xl w-full max-w-2xl">
+      <div className="dark bg-[#000] p-6 rounded-2xl w-full max-w-3xl">
         <Story />
       </div>
     ),
   ],
   args: {
-    data: sampleData,
-    series: sampleSeries,
-    showLegend: true,
+    data: monthlyRevenueData,
+    series: revenueSeries,
     variant: 'bordered',
-    title: 'Revenue Breakdown',
+    title: 'Monthly Revenue by Stream',
+    subtitle: 'Dark Mode Preview',
+    showGrid: true,
+    showLegend: true,
   },
 };
 
-export const RevenueComposition: Story = {
-  name: '💰 Caso de Uso: Revenue Composition',
+export const QuarterlyRevenueByRegion: Story = {
+  name: '📊 Quarterly Revenue by Region',
   args: {
     data: [
-      { label: 'Jan', values: [32000, 15000, 6000] },
-      { label: 'Feb', values: [35000, 17000, 7000] },
-      { label: 'Mar', values: [38000, 19000, 8000] },
-      { label: 'Apr', values: [41000, 21000, 9000] },
-      { label: 'May', values: [44000, 23000, 10000] },
-      { label: 'Jun', values: [48000, 25000, 11000] },
+      { label: 'Q1 2024', values: [4250000, 3180000, 2740000, 1120000, 680000] },
+      { label: 'Q2 2024', values: [4620000, 3410000, 3050000, 1280000, 745000] },
+      { label: 'Q3 2024', values: [4890000, 3590000, 3380000, 1410000, 812000] },
+      { label: 'Q4 2024', values: [5340000, 3820000, 3710000, 1560000, 895000] },
     ],
     series: [
-      { name: 'Products' },
-      { name: 'Services' },
-      { name: 'Subscriptions' },
+      { name: 'North America', color: '#007AFF' },
+      { name: 'Europe', color: '#5856D6' },
+      { name: 'Asia-Pacific', color: '#34C759' },
+      { name: 'Latin America', color: '#FF9500' },
+      { name: 'Middle East & Africa', color: '#FF2D55' },
     ],
-    variant: 'glass',
+    variant: 'elevated',
     size: 'lg',
     animated: true,
-    showLegend: true,
+    interactive: true,
     showGrid: true,
     showTooltip: true,
-    title: 'Revenue Composition',
-    subtitle: 'H1 2024 Breakdown',
+    showLegend: true,
+    showLabels: true,
+    title: 'Quarterly Revenue by Region',
+    subtitle: 'FY 2024 — Global Operations ($)',
   },
   decorators: [
     (Story) => (
-      <div className="w-full max-w-2xl bg-[var(--color-bg-secondary)] p-6 rounded-2xl">
+      <div className="w-full max-w-3xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 p-6 rounded-2xl">
         <Story />
       </div>
     ),
@@ -135,8 +142,8 @@ export const RevenueComposition: Story = {
 export const Playground: Story = {
   name: '🎮 Playground',
   args: {
-    data: sampleData,
-    series: sampleSeries,
+    data: monthlyRevenueData,
+    series: revenueSeries,
     size: 'md',
     variant: 'default',
     animated: true,
