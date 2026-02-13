@@ -47,5 +47,15 @@ export { MarimekkoChart } from './MarimekkoChart';
 export { NestedDonutChart } from './NestedDonutChart';
 
 // Category 4: Distribution & Correlation
+export { BoxPlot } from './BoxPlot';
+export { DensityPlot } from './DensityPlot';
+export { DotPlot } from './DotPlot';
+export { StripPlot } from './StripPlot';
+export { BeeSwarmChart } from './BeeSwarmChart';
+export { RidgelinePlot } from './RidgelinePlot';
+export { ScatterPlot } from './ScatterPlot';
 export { BubbleChart } from './BubbleChart';
 export { Heatmap } from './Heatmap';
+export { Correlogram } from './Correlogram';
+export { ConnectedScatter } from './ConnectedScatter';
+export { DensityScatter } from './DensityScatter';
