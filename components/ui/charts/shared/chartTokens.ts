@@ -1,33 +1,39 @@
 "use client";
 
+/**
+ * Chart color palette — shadcn-inspired blue tonalities.
+ * Uses CSS variables defined in globals.css so that colors
+ * automatically adapt to light / dark mode.
+ */
 export const chartPalette = {
-  primary: 'var(--color-accent-blue)',
-  success: 'var(--color-status-success)',
-  warning: 'var(--color-status-warning)',
-  error: 'var(--color-status-error)',
-  info: 'var(--color-status-info)',
-  purple: '#AF52DE',
-  pink: '#FF2D55',
-  teal: '#5AC8FA',
-  indigo: '#5856D6',
-  mint: '#00C7BE',
-  cyan: '#32ADE6',
-  brown: '#A2845E',
+  chart1: 'var(--chart-1)',
+  chart2: 'var(--chart-2)',
+  chart3: 'var(--chart-3)',
+  chart4: 'var(--chart-4)',
+  chart5: 'var(--chart-5)',
+  /** Extended palette for charts that need more than 5 colours */
+  chart6: 'var(--chart-6)',
+  chart7: 'var(--chart-7)',
+  chart8: 'var(--chart-8)',
+  chart9: 'var(--chart-9)',
+  chart10: 'var(--chart-10)',
+  chart11: 'var(--chart-11)',
+  chart12: 'var(--chart-12)',
 };
 
 export const chartPaletteArray = [
-  chartPalette.primary,
-  chartPalette.success,
-  chartPalette.warning,
-  chartPalette.error,
-  chartPalette.info,
-  chartPalette.purple,
-  chartPalette.pink,
-  chartPalette.teal,
-  chartPalette.indigo,
-  chartPalette.mint,
-  chartPalette.cyan,
-  chartPalette.brown,
+  chartPalette.chart1,
+  chartPalette.chart2,
+  chartPalette.chart3,
+  chartPalette.chart4,
+  chartPalette.chart5,
+  chartPalette.chart6,
+  chartPalette.chart7,
+  chartPalette.chart8,
+  chartPalette.chart9,
+  chartPalette.chart10,
+  chartPalette.chart11,
+  chartPalette.chart12,
 ];
 
 export const chartSizes = {
