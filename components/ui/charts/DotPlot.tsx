@@ -2,7 +2,6 @@
 
 import React, { useState, useCallback, useMemo, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '../../../lib/utils';
 import { chartSizes, chartPaletteArray, chartMotion, type ChartSize, type ChartVariant } from './shared/chartTokens';
 import { linearScale, generateTicks, formatValue } from './shared/chartUtils';
 import { ChartContainer } from './shared/ChartContainer';

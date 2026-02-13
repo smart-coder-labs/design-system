@@ -2,7 +2,6 @@
 
 import React, { useState, useCallback, useMemo, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '../../../lib/utils';
 import { chartSizes, chartPaletteArray, chartMotion, type ChartSize, type ChartVariant } from './shared/chartTokens';
 import { linearScale, generateTicks, formatValue } from './shared/chartUtils';
 import { ChartContainer } from './shared/ChartContainer';
@@ -10,6 +9,8 @@ import { ChartTooltip } from './shared/ChartTooltip';
 import { ChartLegend } from './shared/ChartLegend';
 import { ChartGrid } from './shared/ChartGrid';
 import { ChartAxis } from './shared/ChartAxis';
+
+const EVAL_POINT_COUNT = 60;
 
 export interface DensityPlotDataPoint {
   label: string;
@@ -98,8 +99,8 @@ export const DensityPlot: React.FC<DensityPlotProps> = ({
 
   const evalPoints = useMemo(() => {
     const pts: number[] = [];
-    const step = (evalMax - evalMin) / 59;
-    for (let i = 0; i < 60; i++) {
+    const step = (evalMax - evalMin) / (EVAL_POINT_COUNT - 1);
+    for (let i = 0; i < EVAL_POINT_COUNT; i++) {
       pts.push(evalMin + i * step);
     }
     return pts;
