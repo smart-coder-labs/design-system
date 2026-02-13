@@ -104,3 +104,5 @@ export { DNAHelixChart } from './DNAHelixChart';
 export { BloomChart } from './BloomChart';
 export { TerrainMap } from './TerrainMap';
 export { AuroraChart } from './AuroraChart';
+export { TopographicContour } from './TopographicContour';
+export { RippleImpactChart } from './RippleImpactChart';
