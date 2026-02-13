@@ -45,3 +45,7 @@ export { PyramidChart } from './PyramidChart';
 export { IcicleChart } from './IcicleChart';
 export { MarimekkoChart } from './MarimekkoChart';
 export { NestedDonutChart } from './NestedDonutChart';
+
+// Category 4: Distribution & Correlation
+export { BubbleChart } from './BubbleChart';
+export { Heatmap } from './Heatmap';
