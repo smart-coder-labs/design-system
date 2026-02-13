@@ -68,7 +68,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
                 whileTap={{ scale: 0.92 }}
                 disabled={disabled || isLoading}
                 className={cn(
-                    "relative inline-flex items-center justify-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
+                    "relative inline-flex items-center justify-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                     variants[variant],
                     sizes[size],
                     (disabled || isLoading) && "opacity-50 cursor-not-allowed",

@@ -116,7 +116,7 @@ export const SplitButton = forwardRef<HTMLDivElement, SplitButtonProps>(
                         onClick={onClick}
                         disabled={disabled}
                         className={cn(
-                            "flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
+                            "flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                             variants[variant].button,
                             sizes[size].button,
                             disabled && "opacity-50 cursor-not-allowed"
@@ -134,7 +134,7 @@ export const SplitButton = forwardRef<HTMLDivElement, SplitButtonProps>(
                         disabled={disabled}
                         onClick={() => !disabled && setIsOpen(!isOpen)}
                         className={cn(
-                            "flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
+                            "flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                             variants[variant].button,
                             sizes[size].dropdown,
                             disabled && "opacity-50 cursor-not-allowed"

@@ -99,7 +99,7 @@ export const FABGroup = forwardRef<HTMLDivElement, FABGroupProps>(
                                         setIsOpen(false);
                                     }}
                                     className={cn(
-                                        "w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
+                                        "w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                                         variantStyles[action.variant || 'secondary']
                                     )}
                                 >
@@ -116,7 +116,7 @@ export const FABGroup = forwardRef<HTMLDivElement, FABGroupProps>(
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsOpen(!isOpen)}
                     className={cn(
-                        "w-14 h-14 rounded-full bg-accent-blue text-white flex items-center justify-center shadow-xl transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
+                        "w-14 h-14 rounded-full bg-accent-blue text-white flex items-center justify-center shadow-xl transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                         "hover:bg-accent-blueHover"
                     )}
                 >

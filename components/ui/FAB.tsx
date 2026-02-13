@@ -88,7 +88,7 @@ export const FAB = forwardRef<HTMLButtonElement, FABProps>(
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
                         disabled={disabled}
                         className={cn(
-                            "flex items-center justify-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
+                            "flex items-center justify-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                             variants[variant],
                             sizes[size],
                             positions[position],

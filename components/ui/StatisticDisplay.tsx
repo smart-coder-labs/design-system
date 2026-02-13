@@ -1,3 +1,4 @@
+"use client"
 import React, { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../../lib/utils';;
@@ -219,93 +220,104 @@ export const StatisticDisplay = forwardRef<HTMLDivElement, StatisticDisplayProps
                     const trend = metric.trend ?? 'neutral';
                     const TrendIcon = trendTokens[trend].icon;
                     const accent = metric.sparklineAccent ?? 'blue';
+                    const currentSize = sizeClasses[size];
 
                     return (
                         <MotionDiv
                             key={metric.id ?? index}
                             className={cn(
-                                'relative overflow-hidden group',
+                                'relative overflow-hidden group transition-all duration-300',
                                 variantClasses[variant],
-                                sizeClasses[size].padding,
-                                sizeClasses[size].gap,
-                                metric.subtle && 'bg-surface-secondary/60'
+                                currentSize.padding,
+                                metric.subtle && 'bg-surface-secondary/60',
+                                'flex flex-col'
                             )}
-                            initial={animate ? { opacity: 0, y: 12 } : false}
+                            whileHover={{ y: -4, scale: 1.01 }}
+                            initial={animate ? { opacity: 0, y: 15 } : false}
                             animate={animate ? { opacity: 1, y: 0 } : undefined}
                             transition={{
-                                delay: animate ? index * 0.05 : 0,
-                                duration: 0.22,
-                                ease: [0.16, 1, 0.3, 1],
+                                delay: animate ? index * 0.08 : 0,
+                                duration: 0.4,
+                                ease: [0.23, 1, 0.32, 1],
                             }}
                         >
-                            {metric.badge && (
-                                <div className="absolute top-4 right-4 text-xs font-semibold text-text-secondary">
-                                    {metric.badge}
-                                </div>
-                            )}
-
-                            <div className="flex items-start justify-between gap-3">
-                                <div className="min-w-0">
-                                    <p className={cn('uppercase tracking-[0.18em] text-text-tertiary font-semibold mb-1', sizeClasses[size].label)}>
-                                        {metric.label}
-                                    </p>
-                                    {metric.description && (
-                                        <p className={cn('text-text-secondary leading-relaxed', sizeClasses[size].meta)}>
-                                            {metric.description}
-                                        </p>
-                                    )}
-                                </div>
+                            {/* Top row: Label & Icon */}
+                            <div className="flex items-center justify-between mb-4">
+                                <span className={cn(
+                                    'uppercase tracking-widest text-text-tertiary font-bold',
+                                    currentSize.label
+                                )}>
+                                    {metric.label}
+                                </span>
                                 {metric.icon && (
-                                    <div className={cn('flex items-center justify-center rounded-xl bg-surface-secondary/70 text-text-secondary', sizeClasses[size].icon)}>
+                                    <div className={cn(
+                                        'flex items-center justify-center rounded-xl bg-white/5 border border-white/5 text-text-secondary group-hover:text-text-primary transition-colors',
+                                        currentSize.icon
+                                    )}>
                                         {metric.icon}
                                     </div>
                                 )}
                             </div>
 
-                            <div className="flex items-baseline gap-2 mt-2">
-                                <span className={cn('font-semibold text-text-primary tracking-tight', sizeClasses[size].value)}>
+                            {/* Main Value Area */}
+                            <div className="flex flex-col gap-1 z-10">
+                                <h3 className={cn(
+                                    'font-bold text-text-primary tracking-tight tabular-nums',
+                                    currentSize.value
+                                )}>
                                     {metric.value}
-                                </span>
-                                {metric.target && (
-                                    <span className="text-text-tertiary text-xs font-medium">
-                                        {metric.target}
-                                    </span>
+                                </h3>
+                                
+                                {(metric.change || metric.trend) && (
+                                    <div className="flex items-center gap-2 mt-0.5">
+                                        <div className={cn(
+                                            'inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest transition-colors duration-300',
+                                            trendTokens[trend].bg,
+                                            trendTokens[trend].text
+                                        )}>
+                                            <TrendIcon className="w-3 h-3 stroke-[3]" />
+                                            {metric.change || (trend === 'up' ? 'Increase' : trend === 'down' ? 'Decrease' : 'Stable')}
+                                        </div>
+                                    </div>
                                 )}
                             </div>
 
-                            {(metric.change || metric.trend) && (
-                                <div className="flex items-center gap-2">
-                                    <div className={cn('inline-flex items-center gap-1 px-2 py-1 rounded-full text-[11px] font-semibold', trendTokens[trend].bg)}>
-                                        <TrendIcon className={cn('w-3.5 h-3.5', trendTokens[trend].text)} />
-                                        {metric.change && (
-                                            <span className={cn(trendTokens[trend].text)}>
-                                                {metric.change}
-                                            </span>
-                                        )}
-                                    </div>
-                                    {metric.goal?.value && (
-                                        <span className="text-text-tertiary text-[11px]">
-                                            vs {metric.goal.value}
-                                        </span>
-                                    )}
-                                </div>
+                            {/* Description if any */}
+                            {metric.description && (
+                                <p className={cn(
+                                    'text-text-tertiary mt-3 leading-relaxed max-w-[85%] font-medium opacity-70 group-hover:opacity-100 transition-opacity',
+                                    currentSize.meta
+                                )}>
+                                    {metric.description}
+                                </p>
                             )}
 
+                            {/* Sparkline at the bottom integrated as area chart */}
                             {metric.sparkline && (
-                                <div className="mt-3">
+                                <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none opacity-40 group-hover:opacity-70 transition-all duration-500 scale-105 group-hover:scale-100 origin-bottom">
                                     <SparklineComponent
                                         data={metric.sparkline}
-                                        width={sizeClasses[size].sparkline.width}
-                                        height={sizeClasses[size].sparkline.height}
+                                        width={400}
+                                        height={64}
                                         color={accentTokens[accent].color}
                                         fillColor={accentTokens[accent].fillColor}
                                         showArea={true}
-                                        trend={trendTokens[trend]?.trend}
+                                        showLastDot={false}
+                                        className="w-full h-full"
                                     />
                                 </div>
                             )}
 
-                            <GoalMeter goal={metric.goal} />
+                            {/* Goal integration */}
+                            <div className="mt-auto pt-4">
+                                <GoalMeter goal={metric.goal} />
+                            </div>
+
+                            {/* Decorative Glow */}
+                            <div 
+                                className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 rounded-full blur-[80px] opacity-0 group-hover:opacity-[0.07] transition-opacity duration-700 pointer-events-none"
+                                style={{ backgroundColor: accentTokens[accent].color }}
+                            />
                         </MotionDiv>
                     );
                 })}
