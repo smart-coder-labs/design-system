@@ -105,4 +105,6 @@ export { BloomChart } from './BloomChart';
 export { TerrainMap } from './TerrainMap';
 export { AuroraChart } from './AuroraChart';
 export { TopographicContour } from './TopographicContour';
+export { ConstellationChart } from './ConstellationChart';
+export { VinylRecordChart } from './VinylRecordChart';
 export { RippleImpactChart } from './RippleImpactChart';
