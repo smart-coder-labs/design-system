@@ -98,3 +98,5 @@ export { ErrorBarChart } from './ErrorBarChart';
 // Category 10: Innovative Charts
 export { PulseRing } from './PulseRing';
 export { GradientWave } from './GradientWave';
+export { OrbitChart } from './OrbitChart';
+export { CrystalCluster } from './CrystalCluster';
