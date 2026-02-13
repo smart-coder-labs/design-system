@@ -22,6 +22,7 @@ export interface TreemapProps {
   animated?: boolean;
   interactive?: boolean;
   showLabels?: boolean;
+  showLegend?: boolean;
   showTooltip?: boolean;
   colorScheme?: string[];
   onDataPointClick?: (item: any, index: number) => void;
@@ -193,6 +194,7 @@ export const Treemap: React.FC<TreemapProps> = ({
   animated = true,
   interactive = true,
   showLabels = true,
+  showLegend = false,
   showTooltip = true,
   colorScheme,
   onDataPointClick,
@@ -374,7 +376,7 @@ export const Treemap: React.FC<TreemapProps> = ({
         )}
       </div>
 
-      {showLabels && <ChartLegend items={legendItems} />}
+      {showLegend && <ChartLegend items={legendItems} />}
     </ChartContainer>
   );
 };

@@ -23,6 +23,7 @@ export interface SunburstChartProps {
   interactive?: boolean;
   showTooltip?: boolean;
   showLabels?: boolean;
+  showLegend?: boolean;
   colorScheme?: string[];
   onDataPointClick?: (item: any, index: number) => void;
   onDataPointHover?: (item: any, index: number | null) => void;
@@ -50,6 +51,7 @@ export const SunburstChart: React.FC<SunburstChartProps> = ({
   interactive = true,
   showTooltip = true,
   showLabels = false,
+  showLegend = false,
   colorScheme,
   onDataPointClick,
   onDataPointHover,
@@ -315,7 +317,7 @@ export const SunburstChart: React.FC<SunburstChartProps> = ({
         )}
       </div>
 
-      {showLabels && <ChartLegend items={legendItems} />}
+      {showLegend && <ChartLegend items={legendItems} />}
     </ChartContainer>
   );
 };

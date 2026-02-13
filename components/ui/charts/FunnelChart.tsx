@@ -18,6 +18,7 @@ export interface FunnelChartProps {
   interactive?: boolean;
   showTooltip?: boolean;
   showLabels?: boolean;
+  showLegend?: boolean;
   showPercentage?: boolean;
   colorScheme?: string[];
   onDataPointClick?: (item: any, index: number) => void;
@@ -35,6 +36,7 @@ export const FunnelChart: React.FC<FunnelChartProps> = ({
   interactive = true,
   showTooltip = true,
   showLabels = true,
+  showLegend = false,
   showPercentage = true,
   colorScheme,
   onDataPointClick,
@@ -269,7 +271,7 @@ export const FunnelChart: React.FC<FunnelChartProps> = ({
         )}
       </div>
 
-      {showLabels && <ChartLegend items={legendItems} />}
+      {showLegend && <ChartLegend items={legendItems} />}
     </ChartContainer>
   );
 };
