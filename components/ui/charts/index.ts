@@ -46,6 +46,9 @@ export { IcicleChart } from './IcicleChart';
 export { MarimekkoChart } from './MarimekkoChart';
 export { NestedDonutChart } from './NestedDonutChart';
 
+// Category 3b: Multi-Dimensional
+export { RadarChart } from './RadarChart';
+
 // Category 4: Distribution & Correlation
 export { BoxPlot } from './BoxPlot';
 export { DensityPlot } from './DensityPlot';
