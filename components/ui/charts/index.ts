@@ -88,3 +88,9 @@ export { CandlestickChart } from './CandlestickChart';
 export { OHLCChart } from './OHLCChart';
 export { SpanChart } from './SpanChart';
 export { DumbbellChart } from './DumbbellChart';
+
+// Category 9: Multi-Dimensional & Statistical Charts
+export { ParallelCoordinates } from './ParallelCoordinates';
+export { CalendarHeatmap } from './CalendarHeatmap';
+export { MatrixChart } from './MatrixChart';
+export { ErrorBarChart } from './ErrorBarChart';
