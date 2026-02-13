@@ -102,3 +102,5 @@ export { OrbitChart } from './OrbitChart';
 export { CrystalCluster } from './CrystalCluster';
 export { DNAHelixChart } from './DNAHelixChart';
 export { BloomChart } from './BloomChart';
+export { TerrainMap } from './TerrainMap';
+export { AuroraChart } from './AuroraChart';
