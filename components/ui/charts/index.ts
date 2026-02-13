@@ -18,6 +18,7 @@ export { LollipopChart } from './LollipopChart';
 export { BackToBackBarChart } from './BackToBackBarChart';
 export { DivergingBarChart } from './DivergingBarChart';
 export { ColumnRangeChart } from './ColumnRangeChart';
+export { Histogram } from './Histogram';
 
 // Category 2: Trend & Time Series
 export { LineChart } from './LineChart';
