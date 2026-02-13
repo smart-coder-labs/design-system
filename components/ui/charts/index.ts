@@ -60,3 +60,4 @@ export { Correlogram } from './Correlogram';
 export { ConnectedScatter } from './ConnectedScatter';
 export { DensityScatter } from './DensityScatter';
 export { SankeyDiagram } from './SankeyDiagram';
+export { AlluvialDiagram } from './AlluvialDiagram';
