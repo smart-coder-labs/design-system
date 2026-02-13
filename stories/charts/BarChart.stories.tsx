@@ -1,13 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { BarChart } from '../../components/ui/charts/BarChart';
 
-const sampleData = [
-  { label: 'Jan', value: 4200 },
-  { label: 'Feb', value: 5800 },
-  { label: 'Mar', value: 3900 },
-  { label: 'Apr', value: 7100 },
-  { label: 'May', value: 6300 },
-  { label: 'Jun', value: 8200 },
+const monthlyRevenueData = [
+  { label: 'Jan', value: 124500 },
+  { label: 'Feb', value: 138200 },
+  { label: 'Mar', value: 152800 },
+  { label: 'Apr', value: 147300 },
+  { label: 'May', value: 163900 },
+  { label: 'Jun', value: 178400 },
+  { label: 'Jul', value: 185600 },
+  { label: 'Aug', value: 172100 },
+  { label: 'Sep', value: 191300 },
+  { label: 'Oct', value: 204700 },
+  { label: 'Nov', value: 218500 },
+  { label: 'Dec', value: 235800 },
 ];
 
 const meta: Meta<typeof BarChart> = {
@@ -25,7 +31,7 @@ const meta: Meta<typeof BarChart> = {
   },
   decorators: [
     (Story) => (
-      <div className="w-full max-w-2xl p-6">
+      <div className="w-full max-w-3xl p-6">
         <Story />
       </div>
     ),
@@ -37,7 +43,11 @@ type Story = StoryObj<typeof BarChart>;
 
 export const Default: Story = {
   args: {
-    data: sampleData,
+    data: monthlyRevenueData,
+    title: 'Monthly Revenue',
+    subtitle: 'FY 2024 — All Regions',
+    showGrid: true,
+    showTooltip: true,
   },
 };
 
@@ -45,10 +55,10 @@ export const Variants: Story = {
   name: '🎨 Variants',
   render: () => (
     <div className="grid grid-cols-2 gap-6">
-      <BarChart data={sampleData} variant="default" title="Default" />
-      <BarChart data={sampleData} variant="glass" title="Glass" />
-      <BarChart data={sampleData} variant="bordered" title="Bordered" />
-      <BarChart data={sampleData} variant="elevated" title="Elevated" />
+      <BarChart data={monthlyRevenueData} variant="default" title="Default" />
+      <BarChart data={monthlyRevenueData} variant="glass" title="Glass" />
+      <BarChart data={monthlyRevenueData} variant="bordered" title="Bordered" />
+      <BarChart data={monthlyRevenueData} variant="elevated" title="Elevated" />
     </div>
   ),
 };
@@ -57,63 +67,91 @@ export const Sizes: Story = {
   name: '📐 Sizes',
   render: () => (
     <div className="space-y-6">
-      <BarChart data={sampleData} size="sm" title="Small" variant="bordered" />
-      <BarChart data={sampleData} size="md" title="Medium" variant="bordered" />
-      <BarChart data={sampleData} size="lg" title="Large" variant="bordered" />
+      <BarChart data={monthlyRevenueData} size="sm" title="Small" variant="bordered" />
+      <BarChart data={monthlyRevenueData} size="md" title="Medium" variant="bordered" />
+      <BarChart data={monthlyRevenueData} size="lg" title="Large" variant="bordered" />
     </div>
   ),
-};
-
-export const Interactive: Story = {
-  name: '🖱 Interactive',
-  args: {
-    data: sampleData,
-    interactive: true,
-    showTooltip: true,
-    variant: 'bordered',
-    title: 'Interactive Bar Chart',
-    subtitle: 'Hover over bars to see tooltips',
-  },
 };
 
 export const DarkMode: Story = {
   name: '🌙 Dark Mode',
   decorators: [
     (Story) => (
-      <div className="dark bg-[#000] p-6 rounded-2xl w-full max-w-2xl">
+      <div className="dark bg-[#000] p-6 rounded-2xl w-full max-w-3xl">
         <Story />
       </div>
     ),
   ],
   args: {
-    data: sampleData,
+    data: monthlyRevenueData,
     variant: 'bordered',
-    title: 'Dark Mode Bar Chart',
+    title: 'Monthly Revenue',
+    subtitle: 'Dark Mode Preview',
+    showGrid: true,
   },
 };
 
-export const FinancialDashboard: Story = {
-  name: '💰 Caso de Uso: Dashboard Financiero',
+export const ECommerceDashboard: Story = {
+  name: '📊 E-Commerce Dashboard',
   args: {
     data: [
-      { label: 'Ene', value: 42000 },
-      { label: 'Feb', value: 48000 },
-      { label: 'Mar', value: 35000 },
-      { label: 'Abr', value: 52000 },
-      { label: 'May', value: 61000 },
-      { label: 'Jun', value: 58000 },
+      { label: 'Wireless Earbuds', value: 84200, color: '#007AFF' },
+      { label: 'Phone Cases', value: 72150, color: '#5856D6' },
+      { label: 'USB-C Cables', value: 65800, color: '#34C759' },
+      { label: 'Screen Protectors', value: 58400, color: '#FF9500' },
+      { label: 'Charging Pads', value: 51200, color: '#FF2D55' },
+      { label: 'Laptop Stands', value: 47600, color: '#AF52DE' },
+      { label: 'Webcams', value: 43100, color: '#00C7BE' },
+      { label: 'Keyboards', value: 38900, color: '#FF6482' },
+      { label: 'Mouse Pads', value: 32500, color: '#30B0C7' },
+      { label: 'Headphone Stands', value: 28700, color: '#AC8E68' },
+      { label: 'Cable Organizers', value: 21300, color: '#8E8E93' },
+      { label: 'Monitor Arms', value: 18900, color: '#636366' },
     ],
     variant: 'glass',
     size: 'lg',
     animated: true,
     showGrid: true,
     showTooltip: true,
-    title: 'Monthly Revenue',
-    subtitle: '2024 Q1-Q2',
+    title: 'Top Products by Sales',
+    subtitle: 'Q4 2024 — Units Sold',
   },
   decorators: [
     (Story) => (
-      <div className="w-full max-w-2xl bg-[var(--color-bg-secondary)] p-6 rounded-2xl">
+      <div className="w-full max-w-3xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 p-6 rounded-2xl">
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export const DepartmentBudget: Story = {
+  name: '🏢 Department Budget',
+  args: {
+    data: [
+      { label: 'Engineering', value: 485000, color: '#007AFF' },
+      { label: 'Marketing', value: 320000, color: '#FF9500' },
+      { label: 'Sales', value: 275000, color: '#34C759' },
+      { label: 'Product', value: 210000, color: '#5856D6' },
+      { label: 'Operations', value: 185000, color: '#FF2D55' },
+      { label: 'HR & People', value: 142000, color: '#AF52DE' },
+      { label: 'Finance', value: 98000, color: '#00C7BE' },
+      { label: 'Legal', value: 67000, color: '#8E8E93' },
+    ],
+    variant: 'elevated',
+    size: 'lg',
+    animated: true,
+    interactive: true,
+    showGrid: true,
+    showTooltip: true,
+    showLabels: true,
+    title: 'Annual Department Budget',
+    subtitle: 'FY 2025 Budget Allocation ($)',
+  },
+  decorators: [
+    (Story) => (
+      <div className="w-full max-w-3xl bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg">
         <Story />
       </div>
     ),
@@ -123,7 +161,7 @@ export const FinancialDashboard: Story = {
 export const Playground: Story = {
   name: '🎮 Playground',
   args: {
-    data: sampleData,
+    data: monthlyRevenueData,
     size: 'md',
     variant: 'default',
     animated: true,
