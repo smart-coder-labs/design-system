@@ -17,7 +17,12 @@ const meta: Meta<typeof Stepper> = {
         },
         variant: {
             control: 'select',
-            options: ['default', 'simple', 'bullets', 'panel', 'tabs', 'progress'],
+            options: [
+                'default', 'simple', 'bullets',
+                'panel', 'tabs', 'progress',
+                'accordion', 'timeline', 'chevron',
+                'cards', 'inline', 'radial',
+            ],
         },
     },
 };
@@ -46,18 +51,11 @@ const stepsWithContent: Step[] = [
                 <p className="text-sm text-text-secondary font-medium">Step 1 — Personal Info</p>
                 <div className="space-y-2">
                     <label className="text-xs text-text-tertiary">Full name</label>
-                    <input
-                        className="w-full rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm text-text-primary outline-none focus:border-accent-blue transition-colors"
-                        placeholder="John Doe"
-                    />
+                    <input className="w-full rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm text-text-primary outline-none focus:border-accent-blue transition-colors" placeholder="John Doe" />
                 </div>
                 <div className="space-y-2">
                     <label className="text-xs text-text-tertiary">Email</label>
-                    <input
-                        className="w-full rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm text-text-primary outline-none focus:border-accent-blue transition-colors"
-                        placeholder="john@example.com"
-                        type="email"
-                    />
+                    <input className="w-full rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm text-text-primary outline-none focus:border-accent-blue transition-colors" placeholder="john@example.com" type="email" />
                 </div>
             </div>
         ),
@@ -71,18 +69,11 @@ const stepsWithContent: Step[] = [
                 <p className="text-sm text-text-secondary font-medium">Step 2 — Account Setup</p>
                 <div className="space-y-2">
                     <label className="text-xs text-text-tertiary">Username</label>
-                    <input
-                        className="w-full rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm text-text-primary outline-none focus:border-accent-blue transition-colors"
-                        placeholder="@johndoe"
-                    />
+                    <input className="w-full rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm text-text-primary outline-none focus:border-accent-blue transition-colors" placeholder="@johndoe" />
                 </div>
                 <div className="space-y-2">
                     <label className="text-xs text-text-tertiary">Password</label>
-                    <input
-                        className="w-full rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm text-text-primary outline-none focus:border-accent-blue transition-colors"
-                        placeholder="••••••••"
-                        type="password"
-                    />
+                    <input className="w-full rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm text-text-primary outline-none focus:border-accent-blue transition-colors" placeholder="••••••••" type="password" />
                 </div>
             </div>
         ),
@@ -117,56 +108,63 @@ const stepsWithContent: Step[] = [
 ];
 
 /* ─────────────────────────────────────────────────────────────────────────
-   WRAPPERS
+   NAVIGATION BUTTONS — reusable helper
    ───────────────────────────────────────────────────────────────────────── */
 
-/** Generic wrapper without step content */
-const StepperWrapper = (args: any) => {
-    const [activeStep, setActiveStep] = useState(0);
+const NavButtons = ({
+    activeStep,
+    total,
+    onBack,
+    onNext,
+}: {
+    activeStep: number;
+    total: number;
+    onBack: () => void;
+    onNext: () => void;
+}) => (
+    <div className="flex justify-between pt-4 border-t border-border-secondary">
+        <Button variant="secondary" onClick={onBack} disabled={activeStep === 0}>Back</Button>
+        <Button variant="primary" onClick={onNext} disabled={activeStep === total - 1}>
+            {activeStep === total - 1 ? 'Finish' : 'Next'}
+        </Button>
+    </div>
+);
+
+/* ─────────────────────────────────────────────────────────────────────────
+   GENERIC WRAPPER — works for any variant
+   ───────────────────────────────────────────────────────────────────────── */
+
+const GenericWrapper = ({
+    args,
+    useContent = false,
+    width = 620,
+}: {
+    args: any;
+    useContent?: boolean;
+    width?: number;
+}) => {
+    const [activeStep, setActiveStep] = useState(args.activeStep ?? 0);
+    const data = useContent ? stepsWithContent : steps;
 
     return (
-        <div className="w-[620px] p-6">
+        <div className={`p-6 space-y-6`} style={{ width }}>
             <Stepper
                 {...args}
-                steps={steps}
+                steps={data}
                 activeStep={activeStep}
                 onStepClick={args.onStepClick ? setActiveStep : undefined}
             />
-            <div className="flex justify-between mt-12 pt-6 border-t border-border-secondary">
-                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>
-                    Back
-                </Button>
-                <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, steps.length - 1))} disabled={activeStep === steps.length - 1}>
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                </Button>
-            </div>
-        </div>
-    );
-};
-
-/** Wrapper using step.content inline */
-const WithStepContentWrapper = () => {
-    const [activeStep, setActiveStep] = useState(0);
-
-    return (
-        <div className="w-[600px] p-6 space-y-6">
-            <Stepper
-                steps={stepsWithContent}
+            <NavButtons
                 activeStep={activeStep}
-                onStepClick={setActiveStep}
-                contentClassName="mt-6"
+                total={data.length}
+                onBack={() => setActiveStep((p: number) => Math.max(p - 1, 0))}
+                onNext={() => setActiveStep((p: number) => Math.min(p + 1, data.length - 1))}
             />
-            <div className="flex justify-between pt-4 border-t border-border-secondary">
-                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>Back</Button>
-                <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, stepsWithContent.length - 1))} disabled={activeStep === stepsWithContent.length - 1}>
-                    {activeStep === stepsWithContent.length - 1 ? 'Finish' : 'Next'}
-                </Button>
-            </div>
         </div>
     );
 };
 
-/** Wrapper using children (compound-component pattern) */
+/** Wrapper with children (compound-component) */
 const WithChildrenWrapper = () => {
     const [activeStep, setActiveStep] = useState(0);
     const simpleSteps: Step[] = [
@@ -200,160 +198,175 @@ const WithChildrenWrapper = () => {
                     <p className="text-xs text-text-tertiary">A receipt has been sent to your email.</p>
                 </div>
             </Stepper>
-            <div className="flex justify-between pt-4 border-t border-border-secondary">
-                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>Back</Button>
-                <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, simpleSteps.length - 1))} disabled={activeStep === simpleSteps.length - 1}>
-                    {activeStep === simpleSteps.length - 1 ? 'Finish' : 'Next'}
-                </Button>
-            </div>
-        </div>
-    );
-};
-
-/* ─── Panel variant wrapper ─────────────────────────────────────────────── */
-const PanelWrapper = ({ isError = false }: { isError?: boolean }) => {
-    const [activeStep, setActiveStep] = useState(0);
-
-    return (
-        <div className="w-[620px] p-6 space-y-4">
-            <Stepper
-                steps={stepsWithContent}
+            <NavButtons
                 activeStep={activeStep}
-                onStepClick={setActiveStep}
-                variant="panel"
-                isError={isError}
+                total={simpleSteps.length}
+                onBack={() => setActiveStep((p) => Math.max(p - 1, 0))}
+                onNext={() => setActiveStep((p) => Math.min(p + 1, simpleSteps.length - 1))}
             />
-            <div className="flex justify-between pt-4 border-t border-border-secondary">
-                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>Back</Button>
-                <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, stepsWithContent.length - 1))} disabled={activeStep === stepsWithContent.length - 1}>
-                    {activeStep === stepsWithContent.length - 1 ? 'Finish' : 'Next'}
-                </Button>
-            </div>
-        </div>
-    );
-};
-
-/* ─── Tabs variant wrapper ──────────────────────────────────────────────── */
-const TabsWrapper = ({ isError = false }: { isError?: boolean }) => {
-    const [activeStep, setActiveStep] = useState(0);
-
-    return (
-        <div className="w-[620px] p-6 space-y-2">
-            <Stepper
-                steps={stepsWithContent}
-                activeStep={activeStep}
-                onStepClick={setActiveStep}
-                variant="tabs"
-                isError={isError}
-            />
-            <div className="flex justify-between pt-4 border-t border-border-secondary mt-2">
-                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>Back</Button>
-                <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, stepsWithContent.length - 1))} disabled={activeStep === stepsWithContent.length - 1}>
-                    {activeStep === stepsWithContent.length - 1 ? 'Finish' : 'Next'}
-                </Button>
-            </div>
-        </div>
-    );
-};
-
-/* ─── Progress variant wrapper ──────────────────────────────────────────── */
-const ProgressWrapper = ({ isError = false }: { isError?: boolean }) => {
-    const [activeStep, setActiveStep] = useState(0);
-
-    return (
-        <div className="w-[540px] p-6 space-y-4">
-            <Stepper
-                steps={stepsWithContent}
-                activeStep={activeStep}
-                variant="progress"
-                isError={isError}
-            />
-            <div className="flex justify-between pt-4 border-t border-border-secondary">
-                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>Back</Button>
-                <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, stepsWithContent.length - 1))} disabled={activeStep === stepsWithContent.length - 1}>
-                    {activeStep === stepsWithContent.length - 1 ? 'Finish' : 'Next'}
-                </Button>
-            </div>
         </div>
     );
 };
 
 /* ─────────────────────────────────────────────────────────────────────────
-   EXPORTS
+   EXPORTS: Original variants
    ───────────────────────────────────────────────────────────────────────── */
 
 export const Default: Story = {
-    render: (args) => <StepperWrapper {...args} />,
+    render: (args) => <GenericWrapper args={{ ...args, onStepClick: undefined }} />,
     args: { orientation: 'horizontal', variant: 'default' },
 };
 
 export const Vertical: Story = {
-    render: (args) => <StepperWrapper {...args} />,
+    render: (args) => <GenericWrapper args={{ ...args, onStepClick: undefined }} />,
     args: { orientation: 'vertical', variant: 'default' },
 };
 
 export const Bullets: Story = {
-    render: (args) => <StepperWrapper {...args} />,
+    render: (args) => <GenericWrapper args={{ ...args, onStepClick: undefined }} />,
     args: { orientation: 'horizontal', variant: 'bullets' },
 };
 
 export const Interactive: Story = {
-    render: (args) => <StepperWrapper {...args} />,
+    render: (args) => <GenericWrapper args={args} />,
     args: { orientation: 'horizontal', variant: 'default', onStepClick: () => {} },
 };
 
 export const WithError: Story = {
-    render: (args) => <StepperWrapper {...args} />,
+    render: (args) => <GenericWrapper args={args} />,
     args: { orientation: 'horizontal', variant: 'default', activeStep: 1, isError: true },
 };
 
-/** step.content — each Step carries its own inline content */
 export const WithStepContent: Story = {
-    render: () => <WithStepContentWrapper />,
+    render: () => <GenericWrapper args={{ variant: 'default', onStepClick: () => {}, contentClassName: 'mt-6' }} useContent />,
 };
 
-/** Children — compound-component: one child per step */
 export const WithChildren: Story = {
     render: () => <WithChildrenWrapper />,
 };
 
-/* ── New variants ─────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPORTS: Panel
+   ───────────────────────────────────────────────────────────────────────── */
 
-/**
- * **Panel** — card with left accent border + breadcrumb pills + integrated progress bar.
- * Great for multi-step forms where you want the header and content in a single card.
- */
+/** Card with left accent border + breadcrumb pills + progress bar */
 export const Panel: Story = {
-    render: () => <PanelWrapper />,
+    render: () => <GenericWrapper args={{ variant: 'panel', onStepClick: () => {} }} useContent width={640} />,
 };
 
 export const PanelError: Story = {
     name: 'Panel (Error)',
-    render: () => <PanelWrapper isError />,
+    render: () => <GenericWrapper args={{ variant: 'panel', onStepClick: () => {}, isError: true }} useContent width={640} />,
 };
 
-/**
- * **Tabs** — horizontal tab strip, animated underline indicator.
- * Feels native and works great when users need to freely jump between steps.
- */
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPORTS: Tabs
+   ───────────────────────────────────────────────────────────────────────── */
+
+/** Horizontal tab strip with animated underline indicator */
 export const Tabs: Story = {
-    render: () => <TabsWrapper />,
+    render: () => <GenericWrapper args={{ variant: 'tabs', onStepClick: () => {} }} useContent width={640} />,
 };
 
 export const TabsError: Story = {
     name: 'Tabs (Error)',
-    render: () => <TabsWrapper isError />,
+    render: () => <GenericWrapper args={{ variant: 'tabs', onStepClick: () => {}, isError: true }} useContent width={640} />,
 };
 
-/**
- * **Progress** — linear progress bar with percentage, step dots, and step labels.
- * Ideal when you want to communicate overall completion at a glance.
- */
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPORTS: Progress
+   ───────────────────────────────────────────────────────────────────────── */
+
+/** Linear progress bar with percentage and step markers */
 export const Progress: Story = {
-    render: () => <ProgressWrapper />,
+    render: () => <GenericWrapper args={{ variant: 'progress' }} useContent width={540} />,
 };
 
 export const ProgressError: Story = {
     name: 'Progress (Error)',
-    render: () => <ProgressWrapper isError />,
+    render: () => <GenericWrapper args={{ variant: 'progress', isError: true }} useContent width={540} />,
+};
+
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPORTS: Accordion
+   ───────────────────────────────────────────────────────────────────────── */
+
+/** Collapsible sections — active step expanded, others collapsed */
+export const Accordion: Story = {
+    render: () => <GenericWrapper args={{ variant: 'accordion', onStepClick: () => {} }} useContent width={560} />,
+};
+
+export const AccordionError: Story = {
+    name: 'Accordion (Error)',
+    render: () => <GenericWrapper args={{ variant: 'accordion', onStepClick: () => {}, isError: true }} useContent width={560} />,
+};
+
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPORTS: Timeline
+   ───────────────────────────────────────────────────────────────────────── */
+
+/** Vertical timeline with dot markers and content cards */
+export const Timeline: Story = {
+    render: () => <GenericWrapper args={{ variant: 'timeline', onStepClick: () => {} }} useContent width={520} />,
+};
+
+export const TimelineError: Story = {
+    name: 'Timeline (Error)',
+    render: () => <GenericWrapper args={{ variant: 'timeline', onStepClick: () => {}, isError: true }} useContent width={520} />,
+};
+
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPORTS: Chevron
+   ───────────────────────────────────────────────────────────────────────── */
+
+/** Arrow / pipeline-shaped steps (e-commerce checkout style) */
+export const Chevron: Story = {
+    render: () => <GenericWrapper args={{ variant: 'chevron', onStepClick: () => {} }} useContent width={660} />,
+};
+
+export const ChevronError: Story = {
+    name: 'Chevron (Error)',
+    render: () => <GenericWrapper args={{ variant: 'chevron', onStepClick: () => {}, isError: true }} useContent width={660} />,
+};
+
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPORTS: Cards
+   ───────────────────────────────────────────────────────────────────────── */
+
+/** Grid of cards — active card elevated, completed dimmed */
+export const Cards: Story = {
+    render: () => <GenericWrapper args={{ variant: 'cards', onStepClick: () => {} }} useContent width={700} />,
+};
+
+export const CardsError: Story = {
+    name: 'Cards (Error)',
+    render: () => <GenericWrapper args={{ variant: 'cards', onStepClick: () => {}, isError: true }} useContent width={700} />,
+};
+
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPORTS: Inline
+   ───────────────────────────────────────────────────────────────────────── */
+
+/** Ultra-compact single-line indicator. Perfect for modals / mobile. */
+export const Inline: Story = {
+    render: () => <GenericWrapper args={{ variant: 'inline' }} useContent width={500} />,
+};
+
+export const InlineError: Story = {
+    name: 'Inline (Error)',
+    render: () => <GenericWrapper args={{ variant: 'inline', isError: true }} useContent width={500} />,
+};
+
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPORTS: Radial
+   ───────────────────────────────────────────────────────────────────────── */
+
+/** Circular SVG ring progress with step dots and center info */
+export const Radial: Story = {
+    render: () => <GenericWrapper args={{ variant: 'radial', onStepClick: () => {} }} useContent width={480} />,
+};
+
+export const RadialError: Story = {
+    name: 'Radial (Error)',
+    render: () => <GenericWrapper args={{ variant: 'radial', onStepClick: () => {}, isError: true }} useContent width={480} />,
 };
