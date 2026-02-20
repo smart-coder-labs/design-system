@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 
 /* ========================================
@@ -11,6 +11,8 @@ export interface Step {
     title: string;
     description?: string;
     icon?: React.ReactNode;
+    /** Optional content to render in the step panel when this step is active */
+    content?: React.ReactNode;
 }
 
 export interface StepperProps {
@@ -27,6 +29,24 @@ export interface StepperProps {
     /** Whether to show error state on the current step */
     isError?: boolean;
     className?: string;
+    /**
+     * Content panel className wrapper.
+     * Applied to the animated div that wraps step content.
+     */
+    contentClassName?: string;
+    /**
+     * Children to render as step content (compound-component pattern).
+     * Provide one child per step — only the child at activeStep index is shown.
+     * Takes precedence over step.content if both are provided.
+     *
+     * @example
+     * <Stepper steps={steps} activeStep={activeStep}>
+     *   <div>Content for step 1</div>
+     *   <div>Content for step 2</div>
+     *   <div>Content for step 3</div>
+     * </Stepper>
+     */
+    children?: React.ReactNode;
 }
 
 /* ========================================
@@ -50,50 +70,80 @@ export const Stepper: React.FC<StepperProps> = ({
     variant = 'default',
     isError = false,
     className = '',
+    contentClassName = '',
+    children,
 }) => {
     const isVertical = orientation === 'vertical';
 
+    // Resolve which content to show:
+    // 1. children array (compound-component pattern)
+    // 2. step.content field
+    const childrenArray = React.Children.toArray(children);
+    const hasChildren = childrenArray.length > 0;
+    const activeContent = hasChildren
+        ? childrenArray[activeStep] ?? null
+        : steps[activeStep]?.content ?? null;
+
+    const hasContent = activeContent !== null && activeContent !== undefined;
+
     return (
-        <div className={`flex ${styles[orientation]} ${className}`}>
-            {steps.map((step, index) => {
-                const isCompleted = index < activeStep;
-                const isCurrent = index === activeStep;
-                const isLast = index === steps.length - 1;
-                const isClickable = !!onStepClick;
+        <div className={`flex flex-col w-full`}>
+            {/* ── Step indicators bar ── */}
+            <div className={`flex ${styles[orientation]} ${className}`}>
+                {steps.map((step, index) => {
+                    const isCompleted = index < activeStep;
+                    const isCurrent = index === activeStep;
+                    const isLast = index === steps.length - 1;
+                    const isClickable = !!onStepClick;
 
-                // Status determination
-                let status: 'pending' | 'current' | 'completed' | 'error' = 'pending';
-                if (isCompleted) status = 'completed';
-                else if (isCurrent) status = isError ? 'error' : 'current';
+                    // Status determination
+                    let status: 'pending' | 'current' | 'completed' | 'error' = 'pending';
+                    if (isCompleted) status = 'completed';
+                    else if (isCurrent) status = isError ? 'error' : 'current';
 
-                // Wrapper classes
-                // Horizontal: flex-1 for all except last item to ensure equal spacing
-                // Vertical: flex-col
-                const wrapperClasses = isVertical 
-                    ? 'flex-col' 
-                    : `flex-row items-center ${isLast ? 'flex-none' : 'flex-1'}`;
+                    // Wrapper classes
+                    const wrapperClasses = isVertical
+                        ? 'flex-col'
+                        : `flex-row items-center ${isLast ? 'flex-none' : 'flex-1'}`;
 
-                return (
-                    <div key={step.id} className={`flex ${wrapperClasses} relative`}>
-                        <StepItem
-                            step={step}
-                            index={index}
-                            status={status}
-                            orientation={orientation}
-                            variant={variant}
-                            isLast={isLast}
-                            onClick={isClickable ? () => onStepClick(index) : undefined}
-                        />
-                        {!isLast && (
-                            <StepConnector
-                                status={isCompleted ? 'completed' : 'pending'}
+                    return (
+                        <div key={step.id} className={`flex ${wrapperClasses} relative`}>
+                            <StepItem
+                                step={step}
+                                index={index}
+                                status={status}
                                 orientation={orientation}
                                 variant={variant}
+                                isLast={isLast}
+                                onClick={isClickable ? () => onStepClick(index) : undefined}
                             />
-                        )}
-                    </div>
-                );
-            })}
+                            {!isLast && (
+                                <StepConnector
+                                    status={isCompleted ? 'completed' : 'pending'}
+                                    orientation={orientation}
+                                    variant={variant}
+                                />
+                            )}
+                        </div>
+                    );
+                })}
+            </div>
+
+            {/* ── Active step content panel ── */}
+            <AnimatePresence mode="wait">
+                {hasContent && (
+                    <motion.div
+                        key={activeStep}
+                        className={contentClassName}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.25, ease: 'easeInOut' }}
+                    >
+                        {activeContent}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };
