@@ -17,13 +17,17 @@ const meta: Meta<typeof Stepper> = {
         },
         variant: {
             control: 'select',
-            options: ['default', 'simple', 'bullets'],
+            options: ['default', 'simple', 'bullets', 'panel', 'tabs', 'progress'],
         },
     },
 };
 
 export default meta;
 type Story = StoryObj<typeof Stepper>;
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SHARED DATA
+   ───────────────────────────────────────────────────────────────────────── */
 
 const steps: Step[] = [
     { id: 1, title: 'Personal Info', description: 'Enter your details' },
@@ -32,48 +36,6 @@ const steps: Step[] = [
     { id: 4, title: 'Complete', description: 'Success!' },
 ];
 
-/* ─── Wrapper genérico sin contenido ─────────────────────────── */
-const StepperWrapper = (args: any) => {
-    const [activeStep, setActiveStep] = useState(0);
-
-    const handleNext = () => {
-        setActiveStep((prev) => Math.min(prev + 1, steps.length - 1));
-    };
-
-    const handleBack = () => {
-        setActiveStep((prev) => Math.max(prev - 1, 0));
-    };
-
-    return (
-        <div className="w-[600px] p-6">
-            <Stepper
-                {...args}
-                steps={steps}
-                activeStep={activeStep}
-                onStepClick={args.onStepClick ? setActiveStep : undefined}
-            />
-
-            <div className="flex justify-between mt-12 pt-6 border-t border-border-secondary">
-                <Button
-                    variant="secondary"
-                    onClick={handleBack}
-                    disabled={activeStep === 0}
-                >
-                    Back
-                </Button>
-                <Button
-                    variant="primary"
-                    onClick={handleNext}
-                    disabled={activeStep === steps.length - 1}
-                >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                </Button>
-            </div>
-        </div>
-    );
-};
-
-/* ─── Story: paso con contenido inline (step.content) ────────── */
 const stepsWithContent: Step[] = [
     {
         id: 1,
@@ -154,6 +116,35 @@ const stepsWithContent: Step[] = [
     },
 ];
 
+/* ─────────────────────────────────────────────────────────────────────────
+   WRAPPERS
+   ───────────────────────────────────────────────────────────────────────── */
+
+/** Generic wrapper without step content */
+const StepperWrapper = (args: any) => {
+    const [activeStep, setActiveStep] = useState(0);
+
+    return (
+        <div className="w-[620px] p-6">
+            <Stepper
+                {...args}
+                steps={steps}
+                activeStep={activeStep}
+                onStepClick={args.onStepClick ? setActiveStep : undefined}
+            />
+            <div className="flex justify-between mt-12 pt-6 border-t border-border-secondary">
+                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>
+                    Back
+                </Button>
+                <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, steps.length - 1))} disabled={activeStep === steps.length - 1}>
+                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                </Button>
+            </div>
+        </div>
+    );
+};
+
+/** Wrapper using step.content inline */
 const WithStepContentWrapper = () => {
     const [activeStep, setActiveStep] = useState(0);
 
@@ -166,9 +157,7 @@ const WithStepContentWrapper = () => {
                 contentClassName="mt-6"
             />
             <div className="flex justify-between pt-4 border-t border-border-secondary">
-                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>
-                    Back
-                </Button>
+                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>Back</Button>
                 <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, stepsWithContent.length - 1))} disabled={activeStep === stepsWithContent.length - 1}>
                     {activeStep === stepsWithContent.length - 1 ? 'Finish' : 'Next'}
                 </Button>
@@ -177,7 +166,7 @@ const WithStepContentWrapper = () => {
     );
 };
 
-/* ─── Story: compound-component con children ──────────────────── */
+/** Wrapper using children (compound-component pattern) */
 const WithChildrenWrapper = () => {
     const [activeStep, setActiveStep] = useState(0);
     const simpleSteps: Step[] = [
@@ -188,13 +177,7 @@ const WithChildrenWrapper = () => {
 
     return (
         <div className="w-[560px] p-6 space-y-6">
-            <Stepper
-                steps={simpleSteps}
-                activeStep={activeStep}
-                onStepClick={setActiveStep}
-                contentClassName="mt-6"
-            >
-                {/* child index 0 → step 0 */}
+            <Stepper steps={simpleSteps} activeStep={activeStep} onStepClick={setActiveStep} contentClassName="mt-6">
                 <div className="rounded-lg border border-border-secondary p-5 space-y-3">
                     <h3 className="text-sm font-semibold text-text-primary">Shipping Address</h3>
                     <input className="w-full rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm" placeholder="Street address" />
@@ -203,8 +186,6 @@ const WithChildrenWrapper = () => {
                         <input className="w-24 rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm" placeholder="ZIP" />
                     </div>
                 </div>
-
-                {/* child index 1 → step 1 */}
                 <div className="rounded-lg border border-border-secondary p-5 space-y-3">
                     <h3 className="text-sm font-semibold text-text-primary">Payment Details</h3>
                     <input className="w-full rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm" placeholder="Card number" />
@@ -213,19 +194,14 @@ const WithChildrenWrapper = () => {
                         <input className="w-24 rounded-md border border-border-secondary bg-surface-secondary px-3 py-2 text-sm" placeholder="CVV" />
                     </div>
                 </div>
-
-                {/* child index 2 → step 2 */}
                 <div className="rounded-lg border border-accent-blue/30 bg-accent-blue/5 p-5 text-center space-y-2">
                     <p className="text-2xl">✅</p>
                     <p className="text-sm font-medium text-text-primary">Order confirmed!</p>
                     <p className="text-xs text-text-tertiary">A receipt has been sent to your email.</p>
                 </div>
             </Stepper>
-
             <div className="flex justify-between pt-4 border-t border-border-secondary">
-                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>
-                    Back
-                </Button>
+                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>Back</Button>
                 <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, simpleSteps.length - 1))} disabled={activeStep === simpleSteps.length - 1}>
                     {activeStep === simpleSteps.length - 1 ? 'Finish' : 'Next'}
                 </Button>
@@ -234,57 +210,150 @@ const WithChildrenWrapper = () => {
     );
 };
 
-/* ─── Exports ─────────────────────────────────────────────────── */
+/* ─── Panel variant wrapper ─────────────────────────────────────────────── */
+const PanelWrapper = ({ isError = false }: { isError?: boolean }) => {
+    const [activeStep, setActiveStep] = useState(0);
+
+    return (
+        <div className="w-[620px] p-6 space-y-4">
+            <Stepper
+                steps={stepsWithContent}
+                activeStep={activeStep}
+                onStepClick={setActiveStep}
+                variant="panel"
+                isError={isError}
+            />
+            <div className="flex justify-between pt-4 border-t border-border-secondary">
+                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>Back</Button>
+                <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, stepsWithContent.length - 1))} disabled={activeStep === stepsWithContent.length - 1}>
+                    {activeStep === stepsWithContent.length - 1 ? 'Finish' : 'Next'}
+                </Button>
+            </div>
+        </div>
+    );
+};
+
+/* ─── Tabs variant wrapper ──────────────────────────────────────────────── */
+const TabsWrapper = ({ isError = false }: { isError?: boolean }) => {
+    const [activeStep, setActiveStep] = useState(0);
+
+    return (
+        <div className="w-[620px] p-6 space-y-2">
+            <Stepper
+                steps={stepsWithContent}
+                activeStep={activeStep}
+                onStepClick={setActiveStep}
+                variant="tabs"
+                isError={isError}
+            />
+            <div className="flex justify-between pt-4 border-t border-border-secondary mt-2">
+                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>Back</Button>
+                <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, stepsWithContent.length - 1))} disabled={activeStep === stepsWithContent.length - 1}>
+                    {activeStep === stepsWithContent.length - 1 ? 'Finish' : 'Next'}
+                </Button>
+            </div>
+        </div>
+    );
+};
+
+/* ─── Progress variant wrapper ──────────────────────────────────────────── */
+const ProgressWrapper = ({ isError = false }: { isError?: boolean }) => {
+    const [activeStep, setActiveStep] = useState(0);
+
+    return (
+        <div className="w-[540px] p-6 space-y-4">
+            <Stepper
+                steps={stepsWithContent}
+                activeStep={activeStep}
+                variant="progress"
+                isError={isError}
+            />
+            <div className="flex justify-between pt-4 border-t border-border-secondary">
+                <Button variant="secondary" onClick={() => setActiveStep((p) => Math.max(p - 1, 0))} disabled={activeStep === 0}>Back</Button>
+                <Button variant="primary" onClick={() => setActiveStep((p) => Math.min(p + 1, stepsWithContent.length - 1))} disabled={activeStep === stepsWithContent.length - 1}>
+                    {activeStep === stepsWithContent.length - 1 ? 'Finish' : 'Next'}
+                </Button>
+            </div>
+        </div>
+    );
+};
+
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPORTS
+   ───────────────────────────────────────────────────────────────────────── */
 
 export const Default: Story = {
     render: (args) => <StepperWrapper {...args} />,
-    args: {
-        orientation: 'horizontal',
-        variant: 'default',
-    },
+    args: { orientation: 'horizontal', variant: 'default' },
 };
 
 export const Vertical: Story = {
     render: (args) => <StepperWrapper {...args} />,
-    args: {
-        orientation: 'vertical',
-        variant: 'default',
-    },
+    args: { orientation: 'vertical', variant: 'default' },
 };
 
 export const Bullets: Story = {
     render: (args) => <StepperWrapper {...args} />,
-    args: {
-        orientation: 'horizontal',
-        variant: 'bullets',
-    },
+    args: { orientation: 'horizontal', variant: 'bullets' },
 };
 
 export const Interactive: Story = {
     render: (args) => <StepperWrapper {...args} />,
-    args: {
-        orientation: 'horizontal',
-        variant: 'default',
-        onStepClick: () => {}, // Enables interactivity
-    },
+    args: { orientation: 'horizontal', variant: 'default', onStepClick: () => {} },
 };
 
 export const WithError: Story = {
     render: (args) => <StepperWrapper {...args} />,
-    args: {
-        orientation: 'horizontal',
-        variant: 'default',
-        activeStep: 1,
-        isError: true,
-    },
+    args: { orientation: 'horizontal', variant: 'default', activeStep: 1, isError: true },
 };
 
-/** Usando step.content — cada Step lleva su propio contenido inline */
+/** step.content — each Step carries its own inline content */
 export const WithStepContent: Story = {
     render: () => <WithStepContentWrapper />,
 };
 
-/** Usando children — patron compound-component, un hijo por paso */
+/** Children — compound-component: one child per step */
 export const WithChildren: Story = {
     render: () => <WithChildrenWrapper />,
-}
+};
+
+/* ── New variants ─────────────────────────────────────────────────────── */
+
+/**
+ * **Panel** — card with left accent border + breadcrumb pills + integrated progress bar.
+ * Great for multi-step forms where you want the header and content in a single card.
+ */
+export const Panel: Story = {
+    render: () => <PanelWrapper />,
+};
+
+export const PanelError: Story = {
+    name: 'Panel (Error)',
+    render: () => <PanelWrapper isError />,
+};
+
+/**
+ * **Tabs** — horizontal tab strip, animated underline indicator.
+ * Feels native and works great when users need to freely jump between steps.
+ */
+export const Tabs: Story = {
+    render: () => <TabsWrapper />,
+};
+
+export const TabsError: Story = {
+    name: 'Tabs (Error)',
+    render: () => <TabsWrapper isError />,
+};
+
+/**
+ * **Progress** — linear progress bar with percentage, step dots, and step labels.
+ * Ideal when you want to communicate overall completion at a glance.
+ */
+export const Progress: Story = {
+    render: () => <ProgressWrapper />,
+};
+
+export const ProgressError: Story = {
+    name: 'Progress (Error)',
+    render: () => <ProgressWrapper isError />,
+};
