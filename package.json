@@ -52,17 +52,16 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "chalk": "^4.1.2",
     "commander": "^11.1.0",
     "fs-extra": "^11.2.0",
     "ora": "^5.4.1",
-    "prompts": "^2.4.2"
+    "prompts": "^2.4.2",
+    "three": "^0.183.1"
   },
   "devDependencies": {
-    "html2canvas": "^1.4.1",
-    "jspdf": "^4.0.0",
-    "markdown-it": "^14.1.0",
-    "zod": "^3.22.4",
     "@storybook/addon-docs": "^10.0.8",
     "@storybook/addon-onboarding": "^10.0.8",
     "@storybook/react-vite": "^10.0.8",
@@ -76,11 +75,15 @@
     "@types/prompts": "^2.4.9",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.183.1",
     "autoprefixer": "^10.4.16",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.0.0",
     "lucide-react": "^0.554.0",
+    "markdown-it": "^14.1.0",
     "postcss": "^8.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -88,7 +91,8 @@
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "zod": "^3.22.4"
   },
   "peerDependencies": {
     "react": "^19.2.0",
