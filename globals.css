@@ -4,6 +4,7 @@
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 @import "tailwindcss";
 
@@ -143,6 +144,13 @@
   /* Typography */
   --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", "Segoe UI", Roboto, sans-serif;
   --font-mono: "SF Mono", "Monaco", "Cascadia Code", monospace;
+  --font-vt323: "VT323", monospace;
+
+  /* Cyberpunk Colors */
+  --color-void-black: #050505;
+  --color-electric-orange: #ff5100;
+  --color-acid-green: #ccff00;
+  --color-industrial-grey: #2b2b2b;
 
   /* Motion */
   --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
@@ -317,4 +325,9 @@
 
 .animate-slide-down {
   animation: slideDown 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
 }
