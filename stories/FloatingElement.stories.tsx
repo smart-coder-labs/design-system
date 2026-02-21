@@ -43,3 +43,11 @@ export const EngineScrubbing: Story = {
     </div>
   )
 };
+
+export const Bare: Story = {
+  decorators: [],
+  args: {
+    rotationSpeed: 1,
+    children: <div className="p-4 text-black border border-black bg-gray-200">Bare Element</div>
+  }
+};

@@ -1,0 +1,25 @@
+Lista de componentes UI añadidos en los últimos 3 días:
+
+1. ComicPanel ✅
+2. CRTOverlay✅
+3. CyberCable ✅
+4. FloatingElement ✅
+5. GlitchPageTransition ✅
+6. HolographicCard ✅
+7. ImmersiveHero ✅
+8. InfiniteHorizontalLoop ✅
+9. InteractiveCursor ✅
+10. KineticMarquee ✅
+11. MagneticButton ✅
+12. ParallaxBanner ✅
+13. ParallaxStoryStage ✅
+14. PowerMeterTracker ✅
+15. ScrollProgressBar ✅
+16. ScrollRevealCards ✅ 
+17. StickyImageTextSwap ✅
+18. SystemBootPreloader ✅
+19. TerminalAccordion ✅
+20. UnscramblingText ✅
+21. WebGLDistortionImage ✅
+22. WebGLHologram ✅
+23. WebGLTunnel ✅

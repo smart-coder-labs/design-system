@@ -22,8 +22,8 @@ const TunnelScene = () => {
             tubeRef.current.position.z = 0;
         }
         
-        // Una ligera rotación para dar vértigo
-        tubeRef.current.rotation.z -= 0.002;
+        // Una ligera rotación para dar vértigo sobre su propio eje de profundidad (Y local en un cilindro)
+        tubeRef.current.rotation.y -= 0.002;
     });
     
     return (

@@ -35,3 +35,15 @@ export const PanelDirectionShowcase: Story = {
     ),
   ],
 };
+
+export const Bare: Story = {
+  decorators: [],
+  args: {
+    direction: "left",
+    children: (
+      <div className="p-8 text-white font-[family-name:var(--font-sans)]">
+        Componente puro The ComicPanel
+      </div>
+    )
+  }
+};

@@ -2,16 +2,33 @@ import React from 'react';
 
 // You can save a small grain noise image as '/noise-overlay.webp' in your public folder for this.
 // For now we'll rely on the CSS gradients mainly.
-const NOISE_URL = '/noise-overlay.webp'; 
 
-export const CRTOverlay: React.FC = () => {
+export interface CRTOverlayProps {
+  /**
+   * URL for the noise texture image.
+   */
+  noiseUrl?: string;
+  /**
+   * Opacity of the noise texture (0 to 1). Default is 0.15.
+   */
+  noiseOpacity?: number;
+}
+
+export const CRTOverlay: React.FC<CRTOverlayProps> = ({ 
+  noiseUrl = '/noise-overlay.webp',
+  noiseOpacity = 0.15,
+}) => {
   return (
     <div className="fixed inset-0 z-[9999] pointer-events-none overflow-hidden select-none">
       
       {/* 1. Ruido Granulado en bucle (Film Grain) */}
       <div 
-        className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
-        style={{ backgroundImage: `url(${NOISE_URL})`, backgroundSize: '150px' }}
+        className="absolute inset-0 mix-blend-overlay"
+        style={{ 
+          backgroundImage: `url(${noiseUrl})`, 
+          backgroundSize: '150px',
+          opacity: noiseOpacity,
+        }}
       />
       
       {/* 2. Scanlines Horizontales de Tubo de Rayos Catódicos (CRT) usando CSS Gradients puros */}
