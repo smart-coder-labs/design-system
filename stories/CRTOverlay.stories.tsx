@@ -10,13 +10,13 @@ const meta: Meta<typeof CRTOverlay> = {
   },
   decorators: [
     (Story) => (
-      <div className="relative w-full h-screen bg-void-black text-electric-orange font-[family-name:var(--font-vt323)] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-screen bg-white dark:bg-zinc-950 text-zinc-500 font-sans flex items-center justify-center overflow-hidden">
         {/* Background content to showcase the overlay effect */}
         <div className="relative z-0 text-center flex flex-col items-center gap-6 p-10">
-          <h1 className="text-8xl tracking-widest font-bold mix-blend-screen animate-pulse">
+          <h1 className="text-8xl tracking-tight font-bold mix-blend-screen animate-pulse">
             SYSTEM MAINFRAME
           </h1>
-          <p className="text-2xl text-acid-green max-w-2xl bg-black/50 p-6 border border-acid-green/30 backdrop-blur-sm">
+          <p className="text-2xl text-blue-500 max-w-2xl bg-black/50 p-6 border border-blue-500/30 backdrop-blur-sm">
             This content is underneath the CRTOverlay. The overlay adds continuous scanlines, noisy film grain, a slow passing laser effect, and a dark vignette, creating an immersive retro-futuristic CRT monitor aesthetic.
           </p>
         </div>

@@ -8,8 +8,8 @@ const meta: Meta<typeof KineticMarquee> = {
   parameters: { layout: 'fullscreen' },
   decorators: [
     (Story) => (
-      <div className="bg-void-black min-h-[200vh] py-[50vh] text-white">
-        <div className="p-8 text-center text-acid-green mb-10 border border-acid-green max-w-lg mx-auto font-[family-name:var(--font-vt323)] text-xl tracking-widest">
+      <div className="bg-white dark:bg-zinc-950 min-h-[200vh] py-[50vh] text-zinc-900 dark:text-zinc-50">
+        <div className="p-8 text-center text-blue-500 mb-10 border border-blue-500 max-w-lg mx-auto font-sans text-xl tracking-tight">
            Scroll fast up and down to see the Kinetic Marquee deform and accelerate.
         </div>
         <Story />

@@ -50,10 +50,10 @@ export const KineticMarquee: React.FC<KineticMarqueeProps> = ({
   
   return (
     <div className={`overflow-hidden whitespace-nowrap flex flex-nowrap w-full ${className}`}>
-      <motion.div className="flex whitespace-nowrap items-center font-[family-name:var(--font-vt323)] tracking-[0.2em]" style={{ x }}>
+      <motion.div className="flex whitespace-nowrap items-center font-[family-name:var(--font-sans)] tracking-[0.2em]" style={{ x }}>
         {/* Repetimos el texto múltiples veces para llenar la pantalla ancha */}
         {Array.from({ length: 15 }).map((_, i) => (
-          <span key={i} className={`block mr-12 text-6xl opacity-80 uppercase ${!className?.includes('text-') ? 'text-electric-orange' : ''}`}>
+          <span key={i} className={`block mr-12 text-6xl opacity-80  ${!className?.includes('text-') ? 'text-zinc-500' : ''}`}>
             {text} • 
           </span>
         ))}

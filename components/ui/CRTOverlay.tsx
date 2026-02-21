@@ -41,10 +41,10 @@ export const CRTOverlay: React.FC<CRTOverlayProps> = ({
       />
       
       {/* 3. Escaneo Láser Gigante que viaja de arriba a abajo cíclicamente */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-acid-green/10 to-transparent h-[50px] animate-[globalScanline_8s_linear_infinite]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent h-[50px] " />
       
       {/* 4. Viñeta en los bordes para simular curvatura de pantalla vieja */}
-      <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.9)]" />
+      <div className="absolute inset-0 shadow-sm" />
     </div>
   );
 };

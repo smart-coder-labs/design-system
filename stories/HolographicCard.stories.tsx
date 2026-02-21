@@ -15,10 +15,10 @@ const meta: Meta<typeof HolographicCard> = {
   },
   decorators: [
     (Story) => (
-      <div className="w-full min-h-screen bg-void-black text-white p-20 flex flex-col items-center justify-center relative overflow-hidden font-[family-name:var(--font-vt323)] perspective-1000">
+      <div className="w-full min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 p-20 flex flex-col items-center justify-center relative overflow-hidden font-sans perspective-1000">
         
         {/* Helper title */}
-        <h2 className="text-acid-green text-3xl mb-12 tracking-widest uppercase">
+        <h2 className="text-blue-500 text-3xl mb-12 tracking-tight ">
           Interact with the surface to enable 2.5D tracking
         </h2>
 
@@ -41,7 +41,7 @@ export const ThreatCard: Story = {
   args: {
     title: 'Fatal Error',
     description: 'Thermonuclear engine unstable. If radiation levels drop below zero, the entire system network will collapse immediately.',
-    icon: <h1 className="text-5xl text-electric-orange font-[family-name:var(--font-vt323)]">404</h1>,
+    icon: <h1 className="text-5xl text-zinc-500 font-sans">404</h1>,
   },
 };
 

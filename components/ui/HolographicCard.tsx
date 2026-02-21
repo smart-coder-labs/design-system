@@ -64,28 +64,28 @@ export const HolographicCard: React.FC<HolographicCardProps> = ({ title, descrip
         rotateY,
         transformStyle: 'preserve-3d', // IMPORTANTE para que los hijos tengan Z depth
       }}
-      className="relative w-80 h-96 p-8 border border-industrial-grey bg-void-black/80 backdrop-blur-sm cursor-crosshair rounded-sm group perspective-1000"
+      className="relative w-80 h-96 p-8 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950/80 backdrop-blur-xl bg-white/50 dark:bg-zinc-900/50 cursor-pointer rounded-sm group perspective-1000"
     >
       {/* Glare/Reflejo que sigue al ratón */}
       <div 
         className="absolute inset-0 pointer-events-none transition-opacity duration-300 rounded-sm z-10"
         style={{
           opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(circle 150px at ${glarePosition.x}% ${glarePosition.y}%, rgba(204, 255, 0, 0.15), transparent 80%)` // Acid green approx
+          background: `radial-gradient(circle 150px at ${glarePosition.x}% ${glarePosition.y}%, rgba(255, 255, 255, 0.4), transparent 80%)` // Acid green approx
         }}
       />
       
       {/* Contenido empujado en eje Z */}
       <div style={{ transform: 'translateZ(50px)' }} className="relative z-20 flex flex-col h-full pointer-events-none">
-        <div className="text-acid-green mb-6">{icon}</div>
-        <h3 className="font-[family-name:var(--font-vt323)] text-3xl text-white mb-2 tracking-wide uppercase">{title}</h3>
-        <p className="font-[family-name:var(--font-sans)] text-gray-400 text-sm leading-relaxed border-l-2 border-industrial-grey pl-4 mt-auto">
+        <div className="text-blue-500 mb-6">{icon}</div>
+        <h3 className="font-[family-name:var(--font-sans)] text-3xl text-zinc-900 dark:text-white mb-2 tracking-wide ">{title}</h3>
+        <p className="font-[family-name:var(--font-sans)] text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed border-l-2 border-zinc-200 dark:border-zinc-800 pl-4 mt-auto">
           {description}
         </p>
       </div>
       
       {/* Grid background estético */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:16px_16px]" style={{ transform: 'translateZ(-10px)' }}/>
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:16px_16px]" style={{ transform: 'translateZ(-10px)' }}/>
     </motion.div>
   );
 };

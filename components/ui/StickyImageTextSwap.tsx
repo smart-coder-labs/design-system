@@ -50,7 +50,7 @@ export function StickyImageTextSwap({ items, className, ...props }: StickyImageT
               <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-br from-white to-white/60">
                 {item.title}
               </h2>
-              <p className="text-xl text-gray-400 leading-relaxed">
+              <p className="text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed">
                 {item.description}
               </p>
             </motion.div>

@@ -43,9 +43,9 @@ export const MagneticButton: React.FC<MagneticProps> = ({
       // La magia está aquí: físicas de resorte para un retorno elástico y pesado
       transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center px-8 py-4 font-[family-name:var(--font-vt323)] text-2xl tracking-widest uppercase transition-colors duration-300
-                 bg-void-black text-electric-orange border-2 border-electric-orange
-                 hover:bg-electric-orange hover:text-void-black hover:shadow-[0_0_20px_var(--color-electric-orange)] 
+      className={`relative inline-flex items-center justify-center px-8 py-4 font-[family-name:var(--font-sans)] text-2xl tracking-tight  transition-colors duration-300
+                 bg-white dark:bg-zinc-950 text-zinc-500 border-2 border-blue-500
+                 hover:bg-blue-500 hover:text-void-black hover:shadow-[0_0_20px_rgba(0,0,0,0.05)] 
                  interactive ${className}`}
     >
       <span className="relative z-10">{children}</span>

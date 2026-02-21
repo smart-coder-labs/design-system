@@ -8,7 +8,7 @@ const meta: Meta<typeof TerminalAccordion> = {
   parameters: { layout: 'centered' },
   decorators: [
     (Story) => (
-      <div className="bg-void-black p-20 flex flex-col items-center justify-center text-white min-h-[50vh] min-w-[60vw]">
+      <div className="bg-white dark:bg-zinc-950 p-20 flex flex-col items-center justify-center text-zinc-900 dark:text-zinc-50 min-h-[50vh] min-w-[60vw]">
          <Story />
       </div>
     )

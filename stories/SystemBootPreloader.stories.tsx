@@ -13,9 +13,9 @@ export const Default: StoryObj<typeof SystemBootPreloader> = {
   render: () => {
     const [completed, setCompleted] = useState(false);
     return (
-      <div className="h-screen w-full bg-void-black text-white flex items-center justify-center flex-col">
+      <div className="h-screen w-full bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 flex items-center justify-center flex-col">
         {completed ? (
-           <div className="text-acid-green text-3xl font-[family-name:var(--font-vt323)] tracking-widest animate-pulse border-2 border-acid-green p-8 bg-black/50">
+           <div className="text-blue-500 text-3xl font-sans tracking-tight animate-pulse border-2 border-blue-500 p-8 bg-black/50">
              SYSTEM ONLINE. (Refresh frame to see boot again)
            </div>
         ) : (

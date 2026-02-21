@@ -14,7 +14,7 @@ interface ScrollProgressBarProps extends HTMLMotionProps<"div"> {
  * de toda la ventana. Perfecta para un "reading progress".
  */
 export function ScrollProgressBar({
-  color = "#a855f7", // púrpura por defecto
+  color = "#007AFF", // Apple blue por defecto
   height = "h-1.5",
   position = "top",
   className,

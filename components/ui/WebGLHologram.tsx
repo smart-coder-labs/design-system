@@ -82,7 +82,7 @@ const SwarmHologram = () => {
 // Componente Wrapper (Exportable al DOM normal)
 export const WebGLHologram = () => {
     return (
-        <div className="w-full h-screen bg-void-black">
+        <div className="w-full h-screen bg-white dark:bg-zinc-950">
             <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
                 {/* ScrollControls de Drei crea un contenedor de scroll HTML falso de "3 páginas" de alto */}
                 <ScrollControls pages={3} damping={0.2}>

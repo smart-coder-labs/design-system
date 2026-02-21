@@ -51,10 +51,10 @@ export const SystemBootPreloader: React.FC<BootPreloaderProps> = ({ onComplete }
             filter: 'blur(10px)',
             transition: { duration: 0.8, ease: 'easeInOut' } 
           }}
-          className="fixed inset-0 z-[99999] bg-void-black flex flex-col justify-end p-10 font-[family-name:var(--font-vt323)] text-acid-green select-none"
+          className="fixed inset-0 z-[99999] bg-white dark:bg-zinc-950 flex flex-col justify-end p-10 font-[family-name:var(--font-sans)] text-blue-500 select-none"
         >
           {/* Logs de la terminal (Crecen hacia arriba) */}
-          <div className="flex flex-col gap-2 mb-8 text-xl tracking-widest">
+          <div className="flex flex-col gap-2 mb-8 text-xl tracking-tight">
             {logs.map((log, i) => (
               <motion.div 
                 key={i}
@@ -70,12 +70,12 @@ export const SystemBootPreloader: React.FC<BootPreloaderProps> = ({ onComplete }
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: isReady ? 1 : 0 }}
-            className="w-full border-t border-industrial-grey pt-8"
+            className="w-full border-t border-zinc-200 dark:border-zinc-800 pt-8"
           >
             {isReady && (
               <button 
                 onClick={handleStart}
-                className="group relative px-8 py-4 bg-transparent border-2 border-electric-orange text-electric-orange hover:bg-electric-orange hover:text-void-black text-2xl uppercase tracking-[0.3em] font-bold outline-none flex items-center gap-4 transition-colors"
+                className="group relative px-8 py-4 bg-transparent border-2 border-blue-500 text-zinc-500 hover:bg-blue-500 hover:text-void-black text-2xl  tracking-normal font-bold outline-none flex items-center gap-4 transition-colors"
               >
                 <span className="animate-pulse">_</span> INICIAR CONEXIÓN NEURAL
               </button>

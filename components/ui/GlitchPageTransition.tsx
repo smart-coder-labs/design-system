@@ -41,11 +41,11 @@ export const GlitchPageTransition: React.FC<PageTransitionProps> = ({ children, 
       initial="initial"
       animate="animate"
       exit="exit"
-      className="w-full min-h-screen origin-center bg-void-black text-white"
+      className="w-full min-h-screen origin-center bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white"
     >
       {/* Divisor de ruido rápido al entrar */}
       <motion.div 
-        className="absolute top-1/2 left-0 w-full h-[2px] bg-electric-orange z-50 mix-blend-difference"
+        className="absolute top-1/2 left-0 w-full h-[2px] bg-blue-500 z-50 mix-blend-normal"
         initial={{ scaleX: 0, opacity: 1 }}
         animate={{ scaleX: 1, opacity: 0 }}
         transition={{ duration: 0.3, ease: 'circOut' }}

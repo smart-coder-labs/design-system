@@ -44,7 +44,7 @@ const TunnelScene = () => {
 
 export const WebGLTunnel = () => {
     return (
-        <div className="w-full h-[150vh] bg-void-black flex items-center justify-center relative">
+        <div className="w-full h-[150vh] bg-white dark:bg-zinc-950 flex items-center justify-center relative">
             <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     {/* 
@@ -60,10 +60,10 @@ export const WebGLTunnel = () => {
                 </div>
                 
                 <div className="relative z-10 pointer-events-none text-center transform translate-y-10">
-                    <h2 className="text-white text-7xl font-[family-name:var(--font-vt323)] tracking-[0.2em] mix-blend-exclusion">
+                    <h2 className="text-zinc-900 dark:text-white text-7xl font-[family-name:var(--font-sans)] tracking-[0.2em] mix-blend-exclusion">
                         DESCENDING ALGORITHM
                     </h2>
-                    <p className="text-acid-green mt-4 font-[family-name:var(--font-sans)] tracking-widest text-sm uppercase">
+                    <p className="text-blue-500 mt-4 font-[family-name:var(--font-sans)] tracking-tight text-sm ">
                         Scroll down to breach the mainframe
                     </p>
                 </div>

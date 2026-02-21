@@ -17,8 +17,8 @@ type Story = StoryObj<typeof FloatingElement>;
 export const EngineScrubbing: Story = {
   decorators: [
     (Story) => (
-      <div className="min-h-[300vh] bg-void-black text-white relative flex justify-center overflow-hidden">
-        <div className="fixed top-10 left-1/2 -translate-x-1/2 p-4 border border-industrial-grey font-[family-name:var(--font-vt323)] bg-black/50 backdrop-blur z-50 text-xl text-center">
+      <div className="min-h-[300vh] bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 relative flex justify-center overflow-hidden">
+        <div className="fixed top-10 left-1/2 -translate-x-1/2 p-4 border border-zinc-200 dark:border-zinc-800 font-sans bg-black/50 backdrop-blur z-50 text-xl text-center">
           Haz Scroll hacia abajo para ver cómo roza (scrubs) la rotación de los iconos mientras flotan:
         </div>
         <div className="absolute top-[80vh]">
@@ -29,15 +29,15 @@ export const EngineScrubbing: Story = {
   ],
   render: () => (
     <div className="flex justify-center gap-32 items-center">
-      <FloatingElement rotationSpeed={1.5} className="text-acid-green">
+      <FloatingElement rotationSpeed={1.5} className="text-blue-500">
         <Settings size={120} strokeWidth={1} />
       </FloatingElement>
       
-      <FloatingElement rotationSpeed={-0.8} className="text-electric-orange mt-20">
+      <FloatingElement rotationSpeed={-0.8} className="text-zinc-500 mt-20">
         <Settings size={200} strokeWidth={0.5} />
       </FloatingElement>
 
-      <FloatingElement rotationSpeed={3} className="text-white mt-10">
+      <FloatingElement rotationSpeed={3} className="text-zinc-900 dark:text-zinc-50 mt-10">
         <Cpu size={80} strokeWidth={1.5} />
       </FloatingElement>
     </div>

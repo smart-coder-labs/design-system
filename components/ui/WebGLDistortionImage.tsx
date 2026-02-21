@@ -48,7 +48,7 @@ const DistortionMesh: React.FC<DistortionImageProps> = ({ imgUrl }) => {
 
 export const WebGLDistortionImage = () => {
   return (
-    <div className="w-[500px] h-[400px] bg-industrial-grey/20 relative rounded-sm border border-gray-800 cursor-none">
+    <div className="w-[500px] h-[400px] bg-zinc-100 dark:bg-zinc-900/20 relative rounded-sm border border-gray-800 cursor-none">
         <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 5]} intensity={2} />

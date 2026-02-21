@@ -16,16 +16,16 @@ export function ComicPanel({ children, direction = "left", className, ...props }
       transition={{ type: "spring", stiffness: 80, damping: 15 }}
       viewport={{ once: false, margin: "-10%" }}
       className={cn(
-        "bg-void-black border-4 p-6 shadow-md relative overflow-hidden",
+        "bg-white dark:bg-zinc-950 border rounded-3xl p-6 shadow-md relative overflow-hidden",
         className
       )}
       style={{
-        boxShadow: isLeft ? "8px 8px 0px 0px var(--color-electric-orange)" : "-8px 8px 0px 0px var(--color-acid-green)"
+        boxShadow: isLeft ? "8px 8px 0px 0px rgba(0,0,0,0.05)" : "-8px 8px 0px 0px rgba(0,0,0,0.05)"
       }}
       {...props}
     >
       {/* Clip path for typical comic panel look */}
-      <div className="absolute opacity-10 top-0 left-0 w-full h-full pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:8px_8px]" />
+      <div className="absolute opacity-10 top-0 left-0 w-full h-full pointer-events-none bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:8px_8px]" />
       <div className="relative z-10">
         {children}
       </div>

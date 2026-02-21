@@ -17,14 +17,14 @@ type Story = StoryObj<typeof UnscramblingText>;
 export const ShortTitle: Story = {
   args: {
     text: 'INITIALIZING_SYS...',
-    className: 'text-4xl text-electric-orange font-[family-name:var(--font-vt323)]',
+    className: 'text-4xl text-zinc-500 font-sans',
   },
 };
 
 export const LongParagraphBreakdown: Story = {
   args: {
     text: 'WARNING: UNAUTHORIZED ACCES DETECTED IN SECTOR 7G. COMMENCING LOCKDOWN PROTOCOL IN T-MINUS 10 SECONDS.',
-    className: 'text-2xl text-acid-green max-w-2xl leading-relaxed font-[family-name:var(--font-mono)]',
+    className: 'text-2xl text-blue-500 max-w-2xl leading-relaxed font-[family-name:var(--font-mono)]',
   },
 };
 
@@ -32,8 +32,8 @@ export const LongParagraphBreakdown: Story = {
 export const TriggerOnScroll: Story = {
   decorators: [
     (Story) => (
-      <div className="h-[200vh] relative w-full flex flex-col justify-end pb-[20vh] px-10 text-white bg-void-black">
-        <div className="absolute top-10 left-10 opacity-50 font-[family-name:var(--font-vt323)] text-xl">
+      <div className="h-[200vh] relative w-full flex flex-col justify-end pb-[20vh] px-10 text-zinc-900 dark:text-zinc-50 bg-white dark:bg-zinc-950">
+        <div className="absolute top-10 left-10 opacity-50 font-sans text-xl">
           ↓ Haz scroll hacia abajo para activar el descifrado ↓
         </div>
         <Story />
@@ -42,6 +42,6 @@ export const TriggerOnScroll: Story = {
   ],
   args: {
     text: 'TARGET ACQUIRED: THE SPARK',
-    className: 'text-6xl text-white font-black font-[family-name:var(--font-vt323)]',
+    className: 'text-6xl text-zinc-900 dark:text-zinc-50 font-black font-sans',
   },
 };

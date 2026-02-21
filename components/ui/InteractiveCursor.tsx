@@ -36,12 +36,12 @@ export function InteractiveCursor({ className }: React.HTMLAttributes<HTMLDivEle
 
   return (
     <motion.div
-      className={cn("fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] mix-blend-difference bg-white", className)}
+      className={cn("fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] mix-blend-normal bg-white", className)}
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
         scale: isHovering ? 2 : 1,
-        backgroundColor: isHovering ? 'var(--color-acid-green)' : '#fff',
+        backgroundColor: isHovering ? 'rgba(0,0,0,0.05)' : '#fff',
       }}
       transition={{ scale: { type: "spring", stiffness: 300, damping: 20 } }}
     />

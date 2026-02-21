@@ -8,8 +8,8 @@ const meta: Meta<typeof PowerMeterTracker> = {
   parameters: { layout: 'fullscreen' },
   decorators: [
     (Story) => (
-      <div className="bg-void-black min-h-[300vh] w-full text-white relative">
-         <div className="p-20 text-xl font-[family-name:var(--font-vt323)] text-acid-green text-center">
+      <div className="bg-white dark:bg-zinc-950 min-h-[300vh] w-full text-zinc-900 dark:text-zinc-50 relative">
+         <div className="p-20 text-xl font-sans text-blue-500 text-center">
             Scroll down the page to fill the power meter on the left.
          </div>
          <Story />

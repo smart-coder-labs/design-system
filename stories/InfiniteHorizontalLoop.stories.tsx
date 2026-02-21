@@ -20,7 +20,7 @@ const techStack = [
 ];
 
 const TextItems = techStack.map(item => (
-  <div key={item} className="px-6 py-3 bg-neutral-900 text-white rounded-full font-medium text-lg shadow-sm border border-neutral-800">
+  <div key={item} className="px-6 py-3 bg-neutral-900 text-zinc-900 dark:text-zinc-50 rounded-full font-medium text-lg shadow-sm border border-neutral-800">
     {item}
   </div>
 ));

@@ -11,9 +11,9 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <div className="bg-neutral-900 min-h-[200vh] text-white">
+      <div className="bg-neutral-900 min-h-[200vh] text-zinc-900 dark:text-zinc-50">
         <div className="h-[80vh] flex items-center justify-center border-b border-white/10">
-          <p className="text-xl text-gray-400">Scroll down to reveal cards ↓</p>
+          <p className="text-xl text-zinc-500 dark:text-zinc-400">Scroll down to reveal cards ↓</p>
         </div>
         <Story />
       </div>

@@ -37,7 +37,7 @@ export function UnscramblingText({ text, className, ...props }: UnscramblingText
   }, [isInView, text]);
 
   return (
-    <span ref={ref} className={cn("font-mono", className)} {...props}>
+    <span ref={ref} className={cn("font-mono font-medium tracking-tight text-zinc-800 dark:text-zinc-200", className)} {...props}>
       {displayText.join('')}
     </span>
   );

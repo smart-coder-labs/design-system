@@ -42,7 +42,7 @@ export function ImmersiveHero({ title, subtitle, backgroundImage, className, ...
       </motion.div>
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col items-center text-center text-white px-6">
+      <div className="relative z-10 flex flex-col items-center text-center text-zinc-900 dark:text-white px-6">
         <motion.h1
           className="text-5xl md:text-7xl font-bold tracking-tight mb-4"
           initial={{ opacity: 0, y: 40 }}
@@ -55,7 +55,7 @@ export function ImmersiveHero({ title, subtitle, backgroundImage, className, ...
         
         {subtitle && (
           <motion.p
-            className="text-lg md:text-2xl text-white/80 max-w-2xl"
+            className="text-lg md:text-2xl text-zinc-900 dark:text-white/80 max-w-2xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.4 }}
