@@ -52,14 +52,11 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.5.0",
     "chalk": "^4.1.2",
     "commander": "^11.1.0",
     "fs-extra": "^11.2.0",
     "ora": "^5.4.1",
-    "prompts": "^2.4.2",
-    "three": "^0.183.1"
+    "prompts": "^2.4.2"
   },
   "devDependencies": {
     "@storybook/addon-docs": "^10.0.8",
@@ -75,7 +72,6 @@
     "@types/prompts": "^2.4.9",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@types/three": "^0.183.1",
     "autoprefixer": "^10.4.16",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
