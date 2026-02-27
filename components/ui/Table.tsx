@@ -33,6 +33,7 @@ export interface TableProps<T> {
     pageSize?: number;
     onPageChange?: (page: number) => void;
     onSortChange?: (key: keyof T, direction: "asc" | "desc") => void;
+    onRowClick?: (row: T) => void;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -50,6 +51,7 @@ export function Table<T>({
     pageSize = 10,
     onPageChange,
     onSortChange,
+    onRowClick,
 }: TableProps<T>) {
     const [sortKey, setSortKey] = React.useState<keyof T | null>(null);
     const [sortDirection, setSortDirection] = React.useState<"asc" | "desc">(
@@ -169,6 +171,7 @@ export function Table<T>({
                                     hoverable &&
                                     "hover:bg-surface-secondary/70 cursor-pointer"
                                 )}
+                                onClick={() => onRowClick?.(row)}
                             >
                                 {selectable && (
                                     <td className="px-4">

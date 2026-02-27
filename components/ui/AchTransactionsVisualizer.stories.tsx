@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { AchTransactionsVisualizer } from './AchTransactionsVisualizer';
+import { AchTransactionsVisualizer, VisualizerTransaction } from './AchTransactionsVisualizer';
+import { Building2, Calendar, CreditCard, FileText, Hash, ShieldAlert, ShieldCheck, Activity } from 'lucide-react';
 
 const meta = {
     title: 'Fintech/AchTransactionsVisualizer',
@@ -9,7 +10,7 @@ const meta = {
         layout: 'padded',
         docs: {
             description: {
-                component: "A premium, accessible component to view complex ACH transactions. Includes expandable rows for details, fees, and a history timeline.",
+                component: "A premium, accessible component to view complex ACH transactions. Completely customizable layout letting consumers choose exactly what to render for detail properties, fees and history.",
             },
         },
     },
@@ -19,8 +20,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// Sample data injected from the prompt
-const mockData = [
+// Helper to format date in stories
+const formatDate = (dateStr: string) => {
+    return new Intl.DateTimeFormat('en-US', {
+        month: 'short', day: 'numeric', year: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+    }).format(new Date(dateStr));
+};
+
+// Raw data injected from GraphQL
+const rawData = [
     {
         "id": "699ce385437670de7502c7be",
         "employerId": "",
@@ -164,130 +173,129 @@ const mockData = [
                 "changedAt": "2026-02-06T23:31:05.563Z"
             }
         ]
-    },
-    {
-        "id": "6983d29cafd43080a2aaac7a",
-        "employerId": "6965815ea2944c128b9bcabe",
-        "policyId": "69658160a2944c128b9bcf13",
-        "carrierId": "60a2b8b92a45b8e4019d3f2e",
-        "amount": 290.10,
-        "currency": "USD",
-        "type": "DEBIT",
-        "description": "Audit Premium Adjustment",
-        "status": "PENDING",
-        "bankAccountId": "696aa757e7e59970df2918a6",
-        "accountType": "checking",
-        "effectiveDate": "2026-02-06T23:13:32.409Z",
-        "routingNumber": "122000247",
-        "accountNumberLast4": "4362",
-        "requestedAt": "2026-02-04T23:13:32.429Z",
-        "achServiceStatus": null,
-        "retryCount": 0,
-        "traceNumber": null,
-        "errorMessage": null,
-        "employer": {
-            "_id": "6965815ea2944c128b9bcabe",
-            "business_name": "BEE THE QUEEN INC"
-        },
-        "carrier": {
-            "_id": "60a2b8b92a45b8e4019d3f2e",
-            "carrier_name": "CopperPoint"
-        },
-        "policy": {
-            "_id": "69658160a2944c128b9bcf13",
-            "policy_number": "WC1029352"
-        },
-        "bankAccount": {
-            "_id": "696aa757e7e59970df2918a6",
-            "name": "Wells Fargo Bank"
-        },
-        "fees": [],
-        "history": [
-            {
-                "id": "h_6",
-                "transactionId": "6983d29cafd43080a2aaac7a",
-                "status": "PENDING",
-                "action": "INITIATE",
-                "payload": {},
-                "reason": "Audit adjustment created",
-                "changedBy": "admin_user",
-                "changedAt": "2026-02-04T23:13:32.429Z"
-            }
-        ]
-    },
-    {
-        "id": "697e38b6950f0b3d0d4a401b",
-        "employerId": "6965815ea2944c128b9bcabe",
-        "policyId": "69658160a2944c128b9bcf13",
-        "carrierId": "60a2b8b92a45b8e4019d3f2e",
-        "amount": 1000.00,
-        "currency": "USD",
-        "type": "DEBIT",
-        "description": "Initial Down Payment",
-        "status": "UPLOADED",
-        "bankAccountId": "696aa757e7e59970df2918a6",
-        "accountType": "checking",
-        "effectiveDate": "2026-02-02T17:15:34.102Z",
-        "routingNumber": "122000247",
-        "accountNumberLast4": "4362",
-        "requestedAt": "2026-01-31T17:15:34.435Z",
-        "achServiceStatus": null,
-        "retryCount": 0,
-        "traceNumber": "987654329734661",
-        "errorMessage": null,
-        "employer": {
-            "_id": "6965815ea2944c128b9bcabe",
-            "business_name": "BEE THE QUEEN INC"
-        },
-        "carrier": {
-            "_id": "60a2b8b92a45b8e4019d3f2e",
-            "carrier_name": "CopperPoint"
-        },
-        "policy": {
-            "_id": "69658160a2944c128b9bcf13",
-            "policy_number": "WC1029352"
-        },
-        "bankAccount": {
-            "_id": "696aa757e7e59970df2918a6",
-            "name": "Wells Fargo Bank"
-        },
-        "fees": [
-             {
-                "id": "f_3",
-                "totalFeeInDollars": 0.50,
-                "description": "Standard ACH Fee",
-                "feeId": "FEE_ACH_STD"
-            }
-        ],
-        "history": [
-             {
-                "id": "h_7",
-                "transactionId": "697e38b6950f0b3d0d4a401b",
-                "status": "PENDING",
-                "action": "INITIATE",
-                "payload": {},
-                "reason": "Policy bound - initial payment",
-                "changedBy": "user_123",
-                "changedAt": "2026-01-31T17:15:34.435Z"
-            },
-            {
-                "id": "h_8",
-                "transactionId": "697e38b6950f0b3d0d4a401b",
-                "status": "UPLOADED",
-                "action": "BATCH_SENT",
-                "payload": {},
-                "reason": "Included in daily batch #4910",
-                "changedBy": "system",
-                "changedAt": "2026-02-01T17:00:00.000Z"
-            }
-        ]
     }
 ];
+
+// Mapper Example: Converting GraphQL payload into Visualizer Config
+const mapToVisualizer = (data: typeof rawData): VisualizerTransaction[] => {
+    return data.map((tx) => {
+        return {
+            id: tx.id,
+            amount: tx.amount,
+            currency: tx.currency,
+            type: tx.type,
+            status: tx.status,
+            date: formatDate(tx.effectiveDate),
+            title: tx.employer?.business_name || 'System Provider',
+            subtitle: `${tx.bankAccount?.name || 'Bank'} (•••${tx.accountNumberLast4})`,
+            description: tx.description,
+            
+            // Customizing the specific details we want to render below
+            details: [
+                { id: '1', icon: Hash, label: 'Transaction ID', value: <span className="font-mono text-xs">{tx.id}</span> },
+                { id: '2', icon: Calendar, label: 'Requested At', value: formatDate(tx.requestedAt) },
+                { id: '3', icon: Building2, label: 'Carrier', value: tx.carrier?.carrier_name || '—' },
+                { id: '4', icon: ShieldCheck, label: 'Policy Number', value: tx.policy?.policy_number || '—' },
+                { id: '5', icon: CreditCard, label: 'Bank Account', value: `${tx.bankAccount?.name} (${tx.accountType})` },
+                { id: '6', icon: FileText, label: 'Trace Number', value: tx.traceNumber || '—' },
+                ...(tx.errorMessage ? [{
+                    id: 'error',
+                    icon: ShieldAlert,
+                    label: 'Error Message',
+                    value: <span className="text-status-error">{tx.errorMessage}</span>,
+                    fullWidth: true
+                }] : [])
+            ],
+
+            // Customizing fees to abstract structure
+            fees: tx.fees?.map(f => ({
+                id: f.id,
+                title: f.description || 'App Fee',
+                subtitle: `ID: ${f.feeId}`,
+                amount: f.totalFeeInDollars,
+            })) || [],
+
+            // Customizing history and timeline events
+            history: tx.history?.map(h => {
+                let sType: 'default' | 'success' | 'warning' | 'error' | 'info' = 'default';
+                if (h.status === 'FAILED') sType = 'error';
+                else if (h.status === 'COMPLETED') sType = 'success';
+                else if (['PENDING', 'UPLOADED'].includes(h.status)) sType = 'info';
+
+                return {
+                    id: h.id,
+                    statusType: sType,
+                    date: formatDate(h.changedAt),
+                    title: `Status: ${h.status}`,
+                    description: (
+                        <div className="mt-1 space-y-2">
+                            {h.action && <span className="inline-block px-2 py-0.5 bg-surface-secondary border border-border-secondary rounded text-[10px] font-bold text-text-primary mr-2 uppercase tracking-wide">{h.action}</span>}
+                            {h.reason && <p className="text-sm">Reason: {h.reason}</p>}
+                            {h.changedBy && <p className="text-xs text-text-quaternary mt-2">Sys Actor: {h.changedBy}</p>}
+                        </div>
+                    )
+                }
+            }) || []
+        };
+    });
+};
+
+const processedData = mapToVisualizer(rawData);
 
 export const Default: Story = {
     args: {
         title: "ACH Transactions",
-        transactions: mockData,
+        transactions: processedData,
+        layout: 'list'
+    },
+};
+
+export const DataGridVariant: Story = {
+    args: {
+        title: "ACH Transactions (DataGrid View)",
+        transactions: processedData,
+        layout: 'table',
+        tableColumns: [
+            {
+                key: 'title',
+                header: 'Insured / Entity',
+                sortable: true,
+                render: (_, row) => (
+                    <span className="font-bold underline cursor-pointer hover:text-accent-blue">{row.title}</span>
+                )
+            },
+            {
+                key: 'description',
+                header: 'Description',
+                sortable: false,
+                render: (_, row) => (
+                    <span className="text-text-secondary">{row.description}</span>
+                )
+            },
+            {
+                key: 'amount',
+                header: 'Amount',
+                sortable: true,
+                render: (_, row) => {
+                    const isCredit = row.type === 'CREDIT';
+                    return (
+                        <span className={`font-mono font-medium ${isCredit ? 'text-status-success' : 'text-text-primary'}`}>
+                            {isCredit ? '+' : '-'}${Math.abs(row.amount).toFixed(2)}
+                        </span>
+                    );
+                }
+            },
+            {
+                key: 'status',
+                header: 'Status',
+                sortable: true,
+                render: (_, row) => (
+                    <span className="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-surface-secondary border border-border-secondary">
+                        {row.status}
+                    </span>
+                )
+            }
+        ]
     },
 };
 
@@ -301,13 +309,13 @@ export const EmptyState: Story = {
 export const SingleTransactionFocus: Story = {
     args: {
         title: "ACH Transactions",
-        transactions: [mockData[1]], // Just the completed one for focused view
+        transactions: [processedData[1]], 
     },
 };
 
 export const ErroredTransactions: Story = {
     args: {
         title: "ACH Transactions",
-        transactions: [mockData[0]], // Details of the failed one
+        transactions: [processedData[0]],
     },
 };

@@ -2,64 +2,69 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../lib/utils';
 import {
-    ArrowDownRight, ArrowUpRight, Building2, Calendar, CheckCircle2,
-    ChevronDown, CreditCard, DollarSign,
-    FileText, Hash, ShieldAlert, XCircle, Activity, Receipt, ListFilter,
-    ShieldCheck, Banknote, History,
-    Clock
+    ArrowDownRight, ArrowUpRight, CheckCircle2,
+    ChevronDown, DollarSign,
+    FileText, Activity, Receipt, ListFilter,
+    Banknote, History, Clock, XCircle
 } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './Tabs';
 import { Timeline, TimelineItem } from './Timeline';
+import { Table, Column } from './Table';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from './Sheet';
 
 /* ========================================
-   TYPES MAPPED FROM GRAPHQL RESPONSE
+   TYPES
    ======================================== */
 
-export interface AchFee {
+export interface VisualizerDetailItem {
     id: string;
-    totalFeeInDollars: number;
-    description: string;
-    feeId: string;
+    icon?: React.FC<any>;
+    label: string;
+    value: React.ReactNode;
+    fullWidth?: boolean;
 }
 
-export interface AchHistoryItem {
+export interface VisualizerFeeItem {
     id: string;
-    transactionId: string;
-    status: string;
-    action: string;
-    payload: any;
-    reason: string | null;
-    changedBy: string | null;
-    changedAt: string;
+    title: React.ReactNode;
+    subtitle?: React.ReactNode;
+    amount: number;
+    currency?: string;
 }
 
-export interface AchTransaction {
+export interface VisualizerHistoryItem {
+    id: string;
+    statusType?: 'default' | 'success' | 'warning' | 'error' | 'info' | 'loading';
+    date: React.ReactNode;
+    title: React.ReactNode;
+    description?: React.ReactNode;
+}
+
+export interface VisualizerTransaction {
     id: string;
     amount: number;
-    currency: string;
-    type: string; // 'CREDIT' | 'DEBIT' | etc.
-    description: string;
+    currency?: string;
+    type: 'CREDIT' | 'DEBIT' | string;
     status: string;
-    bankAccountId: string;
-    accountType: string;
-    effectiveDate: string;
-    routingNumber: string;
-    accountNumberLast4: string;
-    requestedAt: string;
-    traceNumber: string | null;
-    errorMessage: string | null;
-    employer: { _id: string; business_name: string } | null;
-    carrier: { _id: string; carrier_name: string } | null;
-    policy: { _id: string; policy_number: string } | null;
-    bankAccount: { _id: string; name: string } | null;
-    fees: AchFee[];
-    history: AchHistoryItem[] | null;
+    date: React.ReactNode;
+    title: React.ReactNode;
+    subtitle?: React.ReactNode;
+    description?: React.ReactNode;
+    
+    details?: VisualizerDetailItem[];
+    fees?: VisualizerFeeItem[];
+    history?: VisualizerHistoryItem[];
 }
 
 export interface AchTransactionsVisualizerProps {
-    transactions: AchTransaction[];
-    title?: string;
+    transactions: VisualizerTransaction[];
+    layout?: 'list' | 'table';
+    tableColumns?: Column<VisualizerTransaction>[];
+    title?: React.ReactNode;
+    subtitle?: React.ReactNode;
     className?: string;
+    emptyMessage?: string;
+    emptyDescription?: string;
 }
 
 /* ========================================
@@ -73,45 +78,139 @@ const statusConfig: Record<string, { icon: React.FC<any>; color: string; bg: str
     FAILED: { icon: XCircle, color: 'text-status-error', bg: 'bg-status-error/15 border border-status-error/20', label: 'Failed' },
 };
 
-const getStatusConfig = (status: string) => statusConfig[status] || { icon: Activity, color: 'text-text-tertiary', bg: 'bg-surface-secondary', label: status };
+const getStatusConfig = (status: string) => statusConfig[status.toUpperCase()] || { icon: Activity, color: 'text-text-tertiary', bg: 'bg-surface-secondary', label: status };
 
 const formatCurrency = (amount: number, currency: string = 'USD') => {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency, minimumFractionDigits: 2 }).format(amount);
-};
-
-const formatDate = (dateStr: string) => {
-    if (!dateStr) return 'N/A';
-    return new Intl.DateTimeFormat('en-US', {
-        month: 'short', day: 'numeric', year: 'numeric',
-        hour: '2-digit', minute: '2-digit'
-    }).format(new Date(dateStr));
 };
 
 /* ========================================
    SUB-COMPONENTS
    ======================================== */
 
-const DetailItem = ({ icon: Icon, label, value }: { icon: any; label: string; value: React.ReactNode }) => (
-    <div className="flex items-start gap-3 p-3 rounded-xl bg-surface-primary/50 border border-border-primary/40 hover:bg-surface-secondary/50 transition-colors">
-        <div className="flex-shrink-0 mt-0.5 p-2 bg-surface-secondary rounded-lg text-text-tertiary">
-            <Icon className="w-4 h-4" />
+const DetailItem = ({ item }: { item: VisualizerDetailItem }) => {
+    const Icon = item.icon || FileText;
+    return (
+        <div className={cn(
+            "flex items-start gap-3 p-3 rounded-xl bg-surface-primary/50 border border-border-primary/40 hover:bg-surface-secondary/50 transition-colors",
+            item.fullWidth && "col-span-1 md:col-span-2 lg:col-span-3"
+        )}>
+            <div className="flex-shrink-0 mt-0.5 p-2 bg-surface-secondary rounded-lg text-text-tertiary">
+                <Icon className="w-4 h-4" />
+            </div>
+            <div className="flex-1 min-w-0">
+                <p className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-1">{item.label}</p>
+                <div className="text-sm font-semibold text-text-primary break-words">{item.value || '—'}</div>
+            </div>
         </div>
-        <div className="flex-1 min-w-0">
-            <p className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-1">{label}</p>
-            <div className="text-sm font-semibold text-text-primary break-words">{value || '—'}</div>
-        </div>
-    </div>
-);
+    );
+};
+
+/* ========================================
+   REUSABLE DETAILS TABS
+   ======================================== */
+
+const TransactionDetailsTabView = ({ transaction }: { transaction: VisualizerTransaction }) => {
+    const { details, fees, history } = transaction;
+    return (
+        <Tabs defaultValue="details">
+            <TabsList variant="default" className="mb-6">
+                <TabsTrigger value="details" className="gap-2 flex items-center justify-center">
+                    <FileText className="w-4 h-4" /> Details
+                </TabsTrigger>
+                <TabsTrigger value="fees" className="gap-2 flex items-center justify-center">
+                    <Banknote className="w-4 h-4" /> Fees
+                </TabsTrigger>
+                <TabsTrigger value="history" className="gap-2 flex items-center justify-center">
+                    <History className="w-4 h-4" /> History
+                </TabsTrigger>
+            </TabsList>
+
+            <div className="mt-4 min-h-[200px]">
+                {/* TAB: DETAILS */}
+                <TabsContent value="details">
+                    {(!details || details.length === 0) ? (
+                            <div className="flex flex-col items-center justify-center h-48 text-text-tertiary">
+                            <FileText className="w-12 h-12 mb-4 opacity-20" />
+                            <p className="text-sm font-medium">No additional details available.</p>
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {details.map(item => (
+                                <DetailItem key={item.id} item={item} />
+                            ))}
+                        </div>
+                    )}
+                </TabsContent>
+
+                {/* TAB: FEES */}
+                <TabsContent value="fees">
+                    {(!fees || fees.length === 0) ? (
+                        <div className="flex flex-col items-center justify-center h-48 text-text-tertiary">
+                            <Receipt className="w-12 h-12 mb-4 opacity-20" />
+                            <p className="text-sm font-medium">No fees associated with this transaction.</p>
+                        </div>
+                    ) : (
+                        <div className="space-y-3 max-w-2xl mx-auto">
+                            {fees.map((fee) => (
+                                <div key={fee.id} className="flex items-center justify-between p-4 rounded-xl border border-border-primary bg-surface-secondary/30">
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 bg-surface-primary rounded-lg shadow-sm border border-border-secondary">
+                                            <DollarSign className="w-5 h-5 text-accent-blue" />
+                                        </div>
+                                        <div>
+                                            <div className="font-bold text-text-primary">{fee.title || 'Service Fee'}</div>
+                                            {fee.subtitle && <div className="text-xs text-text-tertiary mt-0.5 font-mono">{fee.subtitle}</div>}
+                                        </div>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-lg font-black text-text-primary tracking-tight">
+                                            {formatCurrency(fee.amount, fee.currency || transaction.currency)}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </TabsContent>
+
+                {/* TAB: HISTORY */}
+                <TabsContent value="history">
+                    {(!history || history.length === 0) ? (
+                        <div className="flex flex-col items-center justify-center h-48 text-text-tertiary">
+                            <History className="w-12 h-12 mb-4 opacity-20" />
+                            <p className="text-sm font-medium">No history trail available.</p>
+                        </div>
+                    ) : (
+                        <div className="flex justify-center">
+                            <Timeline layout="alternate">
+                                {history.map((hist) => (
+                                    <TimelineItem
+                                        key={hist.id}
+                                        status={hist.statusType || 'default'}
+                                        date={hist.date}
+                                        title={hist.title}
+                                        description={hist.description}
+                                    />
+                                ))}
+                            </Timeline>
+                        </div>
+                    )}
+                </TabsContent>
+            </div>
+        </Tabs>
+    );
+};
 
 /* ========================================
    MAIN ROW COMPONENT
    ======================================== */
 
-const AchTransactionRow = ({ transaction }: { transaction: AchTransaction }) => {
+const AchTransactionRow = ({ transaction }: { transaction: VisualizerTransaction }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const { type, amount, status, effectiveDate, description, employer, bankAccount, accountNumberLast4 } = transaction;
+    const { type, amount, status, date, description, title, subtitle, details, fees, history } = transaction;
 
-    const isCredit = type === 'CREDIT';
+    const isCredit = type.toUpperCase() === 'CREDIT';
     const sConf = getStatusConfig(status);
     const StatusIcon = sConf.icon;
 
@@ -142,19 +241,19 @@ const AchTransactionRow = ({ transaction }: { transaction: AchTransaction }) => 
 
                 {/* Core Info */}
                 <div className="flex-1 min-w-0 flex flex-col justify-center">
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex flex-wrap items-center gap-2 mb-1">
                         <span className="text-base font-bold text-text-primary truncate">
-                            {employer?.business_name || 'System Transaction'}
+                            {title || 'Unknown'}
                         </span>
                         <div className={cn("inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase", sConf.bg, sConf.color)}>
                             <StatusIcon className="w-3 h-3" />
                             {sConf.label}
                         </div>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-text-tertiary">
-                        <span className="truncate">{description}</span>
-                        <span className="w-1 h-1 rounded-full bg-border-primary flex-shrink-0" />
-                        <span className="font-medium">{bankAccount?.name} (•••{accountNumberLast4})</span>
+                    <div className="flex flex-wrap items-center gap-2 text-sm text-text-tertiary">
+                        {description && <span className="truncate">{description}</span>}
+                        {description && subtitle && <span className="w-1 h-1 rounded-full bg-border-primary flex-shrink-0" />}
+                        {subtitle && <span className="font-medium">{subtitle}</span>}
                     </div>
                 </div>
 
@@ -167,12 +266,12 @@ const AchTransactionRow = ({ transaction }: { transaction: AchTransaction }) => 
                         )}>
                             {isCredit ? '+' : '-'}{formatCurrency(amount, transaction.currency)}
                         </p>
-                        <p className="text-xs text-text-tertiary font-medium">
-                            {formatDate(effectiveDate)}
+                        <p className="text-xs text-text-tertiary font-medium mt-1">
+                            {date}
                         </p>
                     </div>
                     <div className={cn(
-                        "w-8 h-8 rounded-full flex items-center justify-center bg-surface-secondary text-text-tertiary transition-transform duration-300",
+                        "w-8 h-8 rounded-full flex items-center justify-center bg-surface-secondary text-text-tertiary transition-transform duration-300 flex-shrink-0",
                         isExpanded ? "rotate-180 bg-surface-tertiary text-text-primary" : "group-hover:bg-border-primary/50 group-hover:text-text-primary"
                     )}>
                         <ChevronDown className="w-5 h-5" />
@@ -191,113 +290,7 @@ const AchTransactionRow = ({ transaction }: { transaction: AchTransaction }) => 
                         className="border-t border-border-secondary/60 bg-surface-primary"
                     >
                         <div className="p-5 md:p-6">
-                            <Tabs defaultValue="details">
-                                <TabsList variant="default" className="mb-6">
-                                    <TabsTrigger value="details" className="gap-2 flex items-center justify-center">
-                                        <FileText className="w-4 h-4" /> Details
-                                    </TabsTrigger>
-                                    <TabsTrigger value="fees" className="gap-2 flex items-center justify-center">
-                                        <Banknote className="w-4 h-4" /> Fees
-                                    </TabsTrigger>
-                                    <TabsTrigger value="history" className="gap-2 flex items-center justify-center">
-                                        <History className="w-4 h-4" /> History
-                                    </TabsTrigger>
-                                </TabsList>
-
-                                <div className="mt-4 min-h-[200px]">
-                                    {/* TAB: DETAILS */}
-                                    <TabsContent value="details">
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                            <DetailItem icon={Hash} label="Transaction ID" value={<span className="font-mono text-xs">{transaction.id}</span>} />
-                                            <DetailItem icon={Calendar} label="Requested At" value={formatDate(transaction.requestedAt)} />
-                                            <DetailItem icon={Activity} label="Status" value={sConf.label} />
-                                            <DetailItem icon={Building2} label="Carrier" value={transaction.carrier?.carrier_name} />
-                                            <DetailItem icon={ShieldCheck} label="Policy" value={transaction.policy?.policy_number} />
-                                            <DetailItem icon={CreditCard} label="Bank Account" value={`${transaction.bankAccount?.name} (${transaction.accountType})`} />
-                                            <DetailItem icon={Hash} label="Routing Number" value={transaction.routingNumber} />
-                                            <DetailItem icon={FileText} label="Trace Number" value={transaction.traceNumber} />
-                                            {transaction.errorMessage && (
-                                                <div className="col-span-1 md:col-span-2 lg:col-span-3">
-                                                    <DetailItem icon={ShieldAlert} label="Error Message" value={<span className="text-status-error">{transaction.errorMessage}</span>} />
-                                                </div>
-                                            )}
-                                        </div>
-                                    </TabsContent>
-
-                                    {/* TAB: FEES */}
-                                    <TabsContent value="fees">
-                                        {(!transaction.fees || transaction.fees.length === 0) ? (
-                                            <div className="flex flex-col items-center justify-center h-48 text-text-tertiary">
-                                                <Receipt className="w-12 h-12 mb-4 opacity-20" />
-                                                <p className="text-sm font-medium">No fees associated with this transaction.</p>
-                                            </div>
-                                        ) : (
-                                            <div className="space-y-3 max-w-2xl mx-auto">
-                                                {transaction.fees.map((fee, idx) => (
-                                                    <div key={idx} className="flex items-center justify-between p-4 rounded-xl border border-border-primary bg-surface-secondary/30">
-                                                        <div className="flex items-center gap-3">
-                                                            <div className="p-2 bg-surface-primary rounded-lg shadow-sm border border-border-secondary">
-                                                                <DollarSign className="w-5 h-5 text-accent-blue" />
-                                                            </div>
-                                                            <div>
-                                                                <p className="font-bold text-text-primary">{fee.description || 'Service Fee'}</p>
-                                                                <p className="text-xs text-text-tertiary font-mono tracking-tight mt-0.5">ID: {fee.feeId}</p>
-                                                            </div>
-                                                        </div>
-                                                        <div className="text-right">
-                                                            <p className="text-lg font-black text-text-primary tracking-tight">
-                                                                {formatCurrency(fee.totalFeeInDollars)}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </TabsContent>
-
-                                    {/* TAB: HISTORY */}
-                                    <TabsContent value="history">
-                                        {(!transaction.history || transaction.history.length === 0) ? (
-                                            <div className="flex flex-col items-center justify-center h-48 text-text-tertiary">
-                                                <History className="w-12 h-12 mb-4 opacity-20" />
-                                                <p className="text-sm font-medium">No history trail available.</p>
-                                                <p className="text-xs mt-1">Status changes will appear here.</p>
-                                            </div>
-                                        ) : (
-                                            <div className="flex justify-center">
-                                                <Timeline layout="alternate">
-                                                    {transaction.history.map((hist, idx) => {
-                                                        const isFail = hist.status === 'FAILED';
-                                                        const isPending = hist.status === 'PENDING' || hist.status === 'UPLOADED';
-                                                        const isComplete = hist.status === 'COMPLETED';
-                                                        
-                                                        let sType: 'default' | 'success' | 'warning' | 'error' | 'info' = 'default';
-                                                        if (isFail) sType = 'error';
-                                                        else if (isComplete) sType = 'success';
-                                                        else if (isPending) sType = 'info';
-
-                                                        return (
-                                                            <TimelineItem
-                                                                key={idx}
-                                                                status={sType}
-                                                                date={formatDate(hist.changedAt)}
-                                                                title={`Status: ${hist.status}`}
-                                                                description={
-                                                                    <div className="mt-1 space-y-2">
-                                                                        {hist.action && <span className="inline-block px-2 py-0.5 bg-surface-secondary border border-border-secondary rounded text-xs font-medium text-text-primary mr-2 uppercase tracking-wide">{hist.action}</span>}
-                                                                        {hist.reason && <p className="text-sm">Reason: {hist.reason}</p>}
-                                                                        {hist.changedBy && <p className="text-xs text-text-quaternary mt-2">Changed by: {hist.changedBy}</p>}
-                                                                    </div>
-                                                                }
-                                                            />
-                                                        )
-                                                    })}
-                                                </Timeline>
-                                            </div>
-                                        )}
-                                    </TabsContent>
-                                </div>
-                            </Tabs>
+                            <TransactionDetailsTabView transaction={transaction} />
                         </div>
                     </motion.div>
                 )}
@@ -310,13 +303,78 @@ const AchTransactionRow = ({ transaction }: { transaction: AchTransaction }) => 
    EXPORT COMPONENT
    ======================================== */
 
-export const AchTransactionsVisualizer: React.FC<AchTransactionsVisualizerProps> = ({ transactions, title = 'ACH Transactions', className }) => {
+export const AchTransactionsVisualizer: React.FC<AchTransactionsVisualizerProps> = ({ 
+    transactions, 
+    layout = 'list',
+    tableColumns,
+    title = 'ACH Transactions', 
+    subtitle = 'View and manage all your ACH transfers, payouts, and collections.',
+    emptyMessage = 'No Transactions Found',
+    emptyDescription = 'There are no ACH transactions matching this criteria.',
+    className 
+}) => {
+    const [selectedTx, setSelectedTx] = useState<VisualizerTransaction | null>(null);
+
+    // Generate default columns if not provided
+    const defaultColumns: Column<VisualizerTransaction>[] = [
+        {
+            key: 'title',
+            header: 'Entity / Title',
+            sortable: true,
+            render: (_val, row) => (
+                <div>
+                    <div className="font-bold text-text-primary">{row.title || 'Unknown'}</div>
+                    {row.subtitle && <div className="text-xs text-text-tertiary mt-0.5">{row.subtitle}</div>}
+                </div>
+            )
+        },
+        {
+            key: 'date',
+            header: 'Date',
+            width: '150px',
+            sortable: true,
+            render: (val) => <span className="text-text-secondary whitespace-nowrap">{val}</span>
+        },
+        {
+            key: 'status',
+            header: 'Status',
+            width: '120px',
+            sortable: true,
+            render: (val, row) => {
+                const sConf = getStatusConfig(row.status);
+                const StatusIcon = sConf.icon;
+                return (
+                    <div className={cn("inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold tracking-wide uppercase", sConf.bg, sConf.color)}>
+                        <StatusIcon className="w-3.5 h-3.5" />
+                        {sConf.label}
+                    </div>
+                );
+            }
+        },
+        {
+            key: 'amount',
+            header: 'Amount',
+            width: '120px',
+            sortable: true,
+            render: (val, row) => {
+                const isCredit = row.type.toUpperCase() === 'CREDIT';
+                return (
+                    <div className={cn("font-bold font-mono text-right", isCredit ? "text-status-success" : "text-text-primary")}>
+                        {isCredit ? '+' : '-'}{formatCurrency(row.amount, row.currency)}
+                    </div>
+                );
+            }
+        }
+    ];
+
+    const appliedColumns = tableColumns || defaultColumns;
+
     return (
         <div className={cn("w-full max-w-6xl mx-auto flex flex-col gap-6", className)}>
             <div className="flex items-center justify-between mb-4">
                 <div>
                     <h2 className="text-2xl font-bold tracking-tight text-text-primary">{title}</h2>
-                    <p className="text-sm text-text-tertiary mt-1">View and manage all your ACH transfers, payouts, and collections.</p>
+                    {subtitle && <p className="text-sm text-text-tertiary mt-1">{subtitle}</p>}
                 </div>
                 <div className="hidden sm:flex items-center gap-3">
                     <div className="px-4 py-2 rounded-xl bg-surface-secondary text-sm font-semibold flex items-center gap-2 border border-border-secondary">
@@ -328,17 +386,41 @@ export const AchTransactionsVisualizer: React.FC<AchTransactionsVisualizerProps>
 
             <div className="flex flex-col gap-2">
                 {transactions.length > 0 ? (
-                    transactions.map((tx) => (
-                        <AchTransactionRow key={tx.id} transaction={tx} />
-                    ))
+                    layout === 'table' ? (
+                        <Table 
+                            data={transactions} 
+                            columns={appliedColumns} 
+                            hoverable
+                            density="comfortable"
+                            onRowClick={setSelectedTx}
+                        />
+                    ) : (
+                        transactions.map((tx) => (
+                            <AchTransactionRow key={tx.id} transaction={tx} />
+                        ))
+                    )
                 ) : (
                     <div className="p-12 text-center rounded-3xl border border-dashed border-border-primary/50 bg-surface-secondary/20">
                         <Activity className="w-12 h-12 mx-auto text-text-quaternary mb-4" />
-                        <h3 className="text-lg font-bold text-text-primary mb-1">No Transactions Found</h3>
-                        <p className="text-sm text-text-tertiary">There are no ACH transactions matching this criteria.</p>
+                        <h3 className="text-lg font-bold text-text-primary mb-1">{emptyMessage}</h3>
+                        <p className="text-sm text-text-tertiary">{emptyDescription}</p>
                     </div>
                 )}
             </div>
+
+            {layout === 'table' && (
+                <Sheet open={!!selectedTx} onOpenChange={(open) => !open && setSelectedTx(null)}>
+                    <SheetContent side="right" className="w-[90vw] sm:max-w-xl overflow-y-auto">
+                        <SheetHeader className="mb-6 mt-4">
+                            <SheetTitle>Transaction Details</SheetTitle>
+                            <SheetDescription>View detailed information, fee breakdowns, and history logs.</SheetDescription>
+                        </SheetHeader>
+                        {selectedTx && (
+                            <TransactionDetailsTabView transaction={selectedTx} />
+                        )}
+                    </SheetContent>
+                </Sheet>
+            )}
         </div>
     );
 };
