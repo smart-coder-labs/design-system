@@ -52,6 +52,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "canvas-confetti": "^1.9.4",
     "chalk": "^4.1.2",
     "commander": "^11.1.0",
     "fs-extra": "^11.2.0",
@@ -63,6 +64,7 @@
     "@storybook/addon-onboarding": "^10.0.8",
     "@storybook/react-vite": "^10.0.8",
     "@tailwindcss/postcss": "^4.1.18",
+    "@types/canvas-confetti": "^1.9.0",
     "@types/fs-extra": "^11.0.4",
     "@types/google.maps": "^3.58.1",
     "@types/html2canvas": "^0.5.35",
