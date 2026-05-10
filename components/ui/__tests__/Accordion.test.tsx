@@ -33,9 +33,13 @@ describe('Accordion', () => {
       </Accordion>
     );
 
+    // Before click, trigger should report collapsed state
+    expect(screen.getByText('Section 1')).toHaveAttribute('aria-expanded', 'false');
+
     // After clicking, content should be visible
     await user.click(screen.getByText('Section 1'));
-    expect(screen.getByTestId('content-1')).toBeInTheDocument();
+    expect(screen.getByText('Section 1')).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByTestId('content-1')).toHaveAttribute('aria-hidden', 'false');
   });
 
   it('supports default value', () => {
@@ -51,7 +55,12 @@ describe('Accordion', () => {
         </AccordionItem>
       </Accordion>
     );
-    expect(screen.getByTestId('content-1')).toBeInTheDocument();
+    // Default item should be open
+    expect(screen.getByText('Section 1')).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByTestId('content-1')).toHaveAttribute('aria-hidden', 'false');
+    // Non-default item should be closed
+    expect(screen.getByText('Section 2')).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByTestId('content-2')).toHaveAttribute('aria-hidden', 'true');
   });
 
   it('calls onValueChange when item is selected', async () => {

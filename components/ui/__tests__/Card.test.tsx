@@ -42,7 +42,10 @@ describe('Card', () => {
 
   it('renders with all padding sizes', () => {
     const { rerender } = render(<Card padding="none">None</Card>);
-    expect(screen.getByText('None').closest('div')).not.toHaveClass('p-4', 'p-6', 'p-8');
+    const cardNone = screen.getByText('None').closest('div');
+    expect(cardNone).not.toHaveClass('p-4');
+    expect(cardNone).not.toHaveClass('p-6');
+    expect(cardNone).not.toHaveClass('p-8');
 
     rerender(<Card padding="sm">SM</Card>);
     expect(screen.getByText('SM').closest('div')).toHaveClass('p-4');

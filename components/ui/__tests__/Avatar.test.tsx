@@ -29,6 +29,10 @@ describe('Avatar', () => {
 
     rerender(<Avatar size="xl" data-testid="avatar" />);
     expect(screen.getByTestId('avatar')).toHaveClass('h-16');
+
+    rerender(<Avatar size="2xl" data-testid="avatar" />);
+    expect(screen.getByTestId('avatar')).toHaveClass('h-24');
+    expect(screen.getByTestId('avatar')).toHaveClass('w-24');
   });
 
   it('renders with circle shape by default', () => {
