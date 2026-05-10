@@ -149,7 +149,7 @@ export const SecurityOTPInput: React.FC<SecurityOTPInputProps> = ({
                             className={cn(
                                 'w-12 h-14 text-center text-xl font-bold rounded-xl border-2 bg-surface-primary text-text-primary',
                                 'outline-none transition-all duration-200',
-                                'focus:ring-2 focus:ring-accent-blue/30 focus:border-accent-blue',
+                                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus:border-accent-blue',
                                 'disabled:opacity-50 disabled:cursor-not-allowed',
                                 'placeholder:text-text-quaternary',
                                 borderColor,

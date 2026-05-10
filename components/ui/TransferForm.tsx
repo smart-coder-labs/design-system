@@ -93,7 +93,7 @@ export const TransferForm: React.FC<TransferFormProps> = ({
             <div className="mb-5">
                 <label className="text-xs font-medium text-text-secondary mb-1.5 block">Amount</label>
                 <div className={cn(
-                    'flex items-center border-2 rounded-xl overflow-hidden transition-colors',
+                    'flex items-center border-2 rounded-xl overflow-hidden transition-apple',
                     isInsufficient ? 'border-status-error' : 'border-border-primary focus-within:border-accent-blue',
                 )}>
                     {/* Currency selector */}
@@ -101,7 +101,7 @@ export const TransferForm: React.FC<TransferFormProps> = ({
                         <button
                             type="button"
                             onClick={() => setShowCurrencies((p) => !p)}
-                            className="flex items-center gap-1.5 px-4 py-3.5 bg-surface-secondary/50 text-sm font-semibold text-text-primary hover:bg-surface-secondary transition-colors border-r border-border-primary"
+                            className="flex items-center gap-1.5 px-4 py-3.5 bg-surface-secondary/50 text-sm font-semibold text-text-primary hover:bg-surface-secondary transition-apple border-r border-border-primary"
                         >
                             <span>{selectedCurrency.flag}</span>
                             <span>{selectedCurrency.code}</span>
@@ -121,7 +121,7 @@ export const TransferForm: React.FC<TransferFormProps> = ({
                                             type="button"
                                             onClick={() => { setCurrency(c.code); setShowCurrencies(false); }}
                                             className={cn(
-                                                'w-full flex items-center gap-2 px-4 py-2.5 text-sm text-left hover:bg-surface-secondary transition-colors',
+                                                'w-full flex items-center gap-2 px-4 py-2.5 text-sm text-left hover:bg-surface-secondary transition-apple',
                                                 c.code === currency && 'bg-accent-blue/5 text-accent-blue',
                                             )}
                                         >
@@ -177,7 +177,7 @@ export const TransferForm: React.FC<TransferFormProps> = ({
                         onChange={(e) => setRecipientId(e.target.value)}
                         className={cn(
                             'w-full pl-10 pr-4 py-3 text-sm font-medium rounded-xl border-2 border-border-primary bg-surface-primary text-text-primary',
-                            'focus:border-accent-blue outline-none transition-colors appearance-none cursor-pointer',
+                            'focus:border-accent-blue outline-none transition-apple appearance-none cursor-pointer',
                         )}
                         aria-label="Select recipient"
                     >
@@ -201,7 +201,7 @@ export const TransferForm: React.FC<TransferFormProps> = ({
                     value={concept}
                     onChange={(e) => setConcept(e.target.value)}
                     maxLength={100}
-                    className="w-full px-4 py-3 text-sm rounded-xl border-2 border-border-primary bg-surface-primary text-text-primary focus:border-accent-blue outline-none transition-colors"
+                    className="w-full px-4 py-3 text-sm rounded-xl border-2 border-border-primary bg-surface-primary text-text-primary focus:border-accent-blue outline-none transition-apple focus-visible:ring-2 focus-visible:ring-accent-blue"
                 />
             </div>
 
@@ -210,7 +210,7 @@ export const TransferForm: React.FC<TransferFormProps> = ({
                 type="submit"
                 disabled={!isValid}
                 className={cn(
-                    'w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-sm font-bold transition-colors',
+                    'w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-sm font-bold transition-apple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue',
                     isValid
                         ? 'bg-accent-blue text-white hover:bg-accent-blue-hover active:bg-accent-blue-active'
                         : 'bg-surface-secondary text-text-tertiary cursor-not-allowed',

@@ -272,7 +272,7 @@ export const VirtualCardPreview: React.FC<VirtualCardPreviewProps> = ({
                             <div className="w-20 h-12 bg-white flex items-center justify-center rounded-r-lg shadow-inner">
                                 <button
                                     onClick={(e) => { e.stopPropagation(); setShowCvv((p) => !p); }}
-                                    className="flex items-center gap-1 text-zinc-900"
+                                    className="flex items-center gap-1 text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue rounded"
                                 >
                                     {showCvv ? (
                                         <span className="text-base font-bold font-mono tracking-widest">{cvv}</span>
@@ -285,7 +285,7 @@ export const VirtualCardPreview: React.FC<VirtualCardPreviewProps> = ({
                         <div className="flex items-center justify-end gap-1 mt-3">
                             <button
                                 onClick={(e) => { e.stopPropagation(); setShowCvv((p) => !p); }}
-                                className="text-[10px] font-bold text-white/40 flex items-center gap-1.5 hover:text-white/60 transition-colors uppercase tracking-wider"
+                                className="text-[10px] font-bold text-white/40 flex items-center gap-1.5 hover:text-white/60 transition-apple uppercase tracking-wider"
                             >
                                 {showCvv ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
                                 {showCvv ? 'Hide CVV' : 'Show CVV'}

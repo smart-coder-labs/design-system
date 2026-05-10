@@ -81,7 +81,7 @@ export const DockBar = React.forwardRef<HTMLDivElement, DockBarProps>(
             <div
                 ref={ref}
                 className={cn(
-                    'fixed z-sticky',
+                    'fixed z-30',
                     positionStyles[position],
                     className
                 )}

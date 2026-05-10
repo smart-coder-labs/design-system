@@ -68,7 +68,7 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
             </p>
           </div>
         </div>
-        <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-2 -mr-2 -mt-2">
+        <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-apple p-2 -mr-2 -mt-2">
           <Settings2 size={20} />
         </button>
       </div>
@@ -122,7 +122,7 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
           <Plus size={18} />
           Abonar
         </button>
-        <button className="flex items-center justify-center gap-2 py-3 px-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition relative">
+        <button className="flex items-center justify-center gap-2 py-3 px-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue">
           <TrendingUp size={18} className={theme.text} />
           Auto-ahorro
           <span className="absolute -top-2 -right-2 bg-green-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md uppercase tracking-wide">

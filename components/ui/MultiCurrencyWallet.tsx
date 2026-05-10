@@ -115,7 +115,7 @@ export const MultiCurrencyWallet: React.FC<MultiCurrencyWalletProps> = ({
                 <motion.button
                     whileTap={{ scale: 0.95 }}
                     onClick={() => onAddFunds?.(activeWallet.id)}
-                    className="flex-1 py-3 px-2 sm:px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 transition-colors cursor-pointer whitespace-nowrap"
+                    className="flex-1 py-3 px-2 sm:px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 transition-apple cursor-pointer whitespace-nowrap"
                 >
                     <ArrowDownLeft className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                     <span className="text-sm sm:text-base">Add Funds</span>
@@ -123,7 +123,7 @@ export const MultiCurrencyWallet: React.FC<MultiCurrencyWalletProps> = ({
                 <motion.button
                     whileTap={{ scale: 0.95 }}
                     onClick={() => onSend?.(activeWallet.id)}
-                    className="flex-1 py-3 px-2 sm:px-4 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer whitespace-nowrap"
+                    className="flex-1 py-3 px-2 sm:px-4 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-semibold flex items-center justify-center gap-2 transition-apple cursor-pointer whitespace-nowrap"
                 >
                     <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                     <span className="text-sm sm:text-base">Send</span>

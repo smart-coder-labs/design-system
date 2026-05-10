@@ -53,7 +53,7 @@ export const TopActionBar = React.forwardRef<HTMLDivElement, TopActionBarProps>(
             ${sizeStyles[size]}
             w-full
             flex items-center justify-between
-            ${sticky ? 'sticky top-0 z-sticky' : ''}
+            ${sticky ? 'sticky top-0 z-30' : ''}
             ${glass
                 ? 'bg-surface-glass backdrop-blur-xl'
                 : 'bg-surface-primary'

@@ -50,12 +50,12 @@ export const CurrencyConverterWidget: React.FC<CurrencyConverterWidgetProps> = (
         <div className={cn('w-full max-w-md bg-white dark:bg-zinc-900 rounded-3xl p-6 shadow-xl border border-zinc-200 dark:border-zinc-800', className)}>
             <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Send Money</h3>
-                <button className="text-sm text-blue-600 dark:text-blue-400 font-medium hover:underline">Rates</button>
+                <button className="text-sm text-blue-600 dark:text-blue-400 font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue rounded">Rates</button>
             </div>
 
             <div className="space-y-4">
                 {/* Send Input */}
-                <div className="bg-zinc-50 dark:bg-zinc-800/50 rounded-2xl p-4 border border-zinc-200 dark:border-zinc-800 focus-within:border-blue-500 dark:focus-within:border-blue-500 transition-colors">
+                <div className="bg-zinc-50 dark:bg-zinc-800/50 rounded-2xl p-4 border border-zinc-200 dark:border-zinc-800 focus-within:border-blue-500 dark:focus-within:border-blue-500 transition-apple">
                     <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-2">You send</p>
                     <div className="flex items-center justify-between">
                         <input
@@ -65,7 +65,7 @@ export const CurrencyConverterWidget: React.FC<CurrencyConverterWidgetProps> = (
                             className="bg-transparent text-3xl font-semibold text-zinc-900 dark:text-zinc-100 outline-none w-1/2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                             placeholder="0.00"
                         />
-                        <button className="flex items-center gap-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full px-3 py-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors shadow-sm">
+                        <button className="flex items-center gap-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full px-3 py-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-apple shadow-sm">
                             <span className="text-lg">{fromCurrency.flag}</span>
                             <span className="font-semibold text-zinc-900 dark:text-zinc-100">{fromCurrency.code}</span>
                         </button>
@@ -78,7 +78,7 @@ export const CurrencyConverterWidget: React.FC<CurrencyConverterWidgetProps> = (
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         onClick={handleSwap}
-                        className="absolute top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full p-2 shadow-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                        className="absolute top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full p-2 shadow-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-apple"
                     >
                         <motion.div animate={{ rotate: isSwapping ? 180 : 0 }} transition={{ duration: 0.3 }}>
                             <ArrowDownUp className="w-4 h-4" />
@@ -117,7 +117,7 @@ export const CurrencyConverterWidget: React.FC<CurrencyConverterWidgetProps> = (
                         <span className="text-3xl font-semibold text-zinc-900 dark:text-zinc-100 truncate w-1/2">
                             {convertedAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
-                        <button className="flex items-center gap-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full px-3 py-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors shadow-sm">
+                        <button className="flex items-center gap-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full px-3 py-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-apple shadow-sm">
                             <span className="text-lg">{toCurrency.flag}</span>
                             <span className="font-semibold text-zinc-900 dark:text-zinc-100">{toCurrency.code}</span>
                         </button>

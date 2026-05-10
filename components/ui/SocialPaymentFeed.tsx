@@ -118,7 +118,7 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                             {new Intl.NumberFormat('en-US', { style: 'currency', currency: payment.currency || 'USD' }).format(payment.amount)}
                                         </span>
                                     )}
-                                    <button className="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors">
+                                    <button className="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-apple">
                                         <MoreHorizontal className="w-5 h-5" />
                                     </button>
                                 </div>
@@ -144,7 +144,7 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                         whileTap={{ scale: 0.9 }}
                                         onClick={() => handleLike(payment.id)}
                                         className={cn(
-                                            "flex items-center gap-1.5 text-xs font-bold transition-colors group cursor-pointer",
+                                            "flex items-center gap-1.5 text-xs font-bold transition-apple group cursor-pointer",
                                             isLiked ? "text-pink-600 dark:text-pink-500" : "text-zinc-500 dark:text-zinc-400 hover:text-pink-500"
                                         )}
                                     >
@@ -155,13 +155,13 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                     <motion.button
                                         whileTap={{ scale: 0.9 }}
                                         onClick={() => onComment?.(payment.id)}
-                                        className="flex items-center gap-1.5 text-xs font-bold text-zinc-500 dark:text-zinc-400 hover:text-blue-500 transition-colors group cursor-pointer"
+                                        className="flex items-center gap-1.5 text-xs font-bold text-zinc-500 dark:text-zinc-400 hover:text-blue-500 transition-apple group cursor-pointer"
                                     >
                                         <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
                                         <span>{payment.comments}</span>
                                     </motion.button>
                                     
-                                    <button className="flex items-center gap-1.5 text-xs font-bold text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 ml-auto transition-colors">
+                                    <button className="flex items-center gap-1.5 text-xs font-bold text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 ml-auto transition-apple">
                                         <Share className="w-4 h-4" />
                                     </button>
                                 </div>

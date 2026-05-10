@@ -66,10 +66,10 @@ export const FAB = forwardRef<HTMLButtonElement, FABProps>(
 
         const positions = {
             'none': '',
-            'bottom-right': 'fixed bottom-6 right-6 z-sticky',
-            'bottom-left': 'fixed bottom-6 left-6 z-sticky',
-            'top-right': 'fixed top-6 right-6 z-sticky',
-            'top-left': 'fixed top-6 left-6 z-sticky',
+            'bottom-right': 'fixed bottom-6 right-6 z-30',
+            'bottom-left': 'fixed bottom-6 left-6 z-30',
+            'top-right': 'fixed top-6 right-6 z-30',
+            'top-left': 'fixed top-6 left-6 z-30',
         };
 
         const isExtended = !!label;
@@ -88,7 +88,7 @@ export const FAB = forwardRef<HTMLButtonElement, FABProps>(
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
                         disabled={disabled}
                         className={cn(
-                            "flex items-center justify-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
+                            "flex items-center justify-center rounded-full transition-apple focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                             variants[variant],
                             sizes[size],
                             positions[position],

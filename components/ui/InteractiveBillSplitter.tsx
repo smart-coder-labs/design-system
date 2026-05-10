@@ -85,7 +85,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                                 key={tip}
                                 onClick={() => setTipPercentage(tip)}
                                 className={cn(
-                                    "px-3 py-1.5 rounded-lg text-sm font-bold transition-colors cursor-pointer",
+                                    "px-3 py-1.5 rounded-lg text-sm font-bold transition-apple cursor-pointer",
                                     tipPercentage === tip 
                                         ? "bg-indigo-600 text-white shadow-md shadow-indigo-500/20" 
                                         : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700"

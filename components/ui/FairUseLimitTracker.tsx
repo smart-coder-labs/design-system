@@ -102,7 +102,7 @@ export const FairUseLimitTracker: React.FC<FairUseLimitTrackerProps> = ({
                 })}
             </div>
             
-            <button className="w-full mt-6 py-3 rounded-xl border-2 border-dashed border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 font-semibold hover:border-zinc-300 dark:hover:border-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors">
+            <button className="w-full mt-6 py-3 rounded-xl border-2 border-dashed border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 font-semibold hover:border-zinc-300 dark:hover:border-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-200 transition-apple">
                 Upgrade Plan for Higher Limits
             </button>
         </div>

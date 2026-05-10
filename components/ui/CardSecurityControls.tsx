@@ -67,7 +67,7 @@ const ControlToggle: React.FC<{
     return (
         <motion.div
             className={cn(
-                'flex items-center gap-4 p-4 rounded-xl transition-colors',
+                'flex items-center gap-4 p-4 rounded-xl transition-apple',
                 'hover:bg-surface-secondary/40',
             )}
             initial={{ opacity: 0, x: -8 }}
@@ -100,7 +100,7 @@ const ControlToggle: React.FC<{
                 aria-label={control.label}
                 onClick={() => onToggle?.(control.id, !control.checked)}
                 className={cn(
-                    'w-11 h-6 rounded-full relative shrink-0 transition-colors duration-200',
+                    'w-11 h-6 rounded-full relative shrink-0 transition-apple duration-200',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2',
                     control.checked
                         ? isDanger

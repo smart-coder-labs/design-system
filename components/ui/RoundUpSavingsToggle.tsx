@@ -45,7 +45,7 @@ export const RoundUpSavingsToggle: React.FC<RoundUpSavingsToggleProps> = ({
       <div className="relative z-10 p-6">
         <div className="flex justify-between items-start mb-4">
           <div className="flex items-center gap-3">
-            <div className={`p-3 rounded-xl transition-colors ${
+            <div className={`p-3 rounded-xl transition-apple ${
               isActive 
               ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 dark:shadow-indigo-900/50' 
               : 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
@@ -65,7 +65,7 @@ export const RoundUpSavingsToggle: React.FC<RoundUpSavingsToggleProps> = ({
           {/* Custom Switch specifically styled for this component */}
           <button
             onClick={handleToggle}
-            className={`w-14 h-8 flex items-center rounded-full p-1 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+            className={`w-14 h-8 flex items-center rounded-full p-1 transition-apple duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue ${
               isActive ? 'bg-indigo-600' : 'bg-gray-300 dark:bg-gray-700'
             }`}
             role="switch"
@@ -108,7 +108,7 @@ export const RoundUpSavingsToggle: React.FC<RoundUpSavingsToggleProps> = ({
               <motion.button 
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 flex items-center gap-1 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 py-1.5 px-2 rounded-lg transition-colors"
+                className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 flex items-center gap-1 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 py-1.5 px-2 rounded-lg transition-apple"
               >
                 Ajustar factor <Settings size={12} />
               </motion.button>

@@ -45,10 +45,10 @@ export const FABGroup = forwardRef<HTMLDivElement, FABGroupProps>(
 
         const positions = {
             'none': '',
-            'bottom-right': 'fixed bottom-6 right-6 z-sticky',
-            'bottom-left': 'fixed bottom-6 left-6 z-sticky',
-            'top-right': 'fixed top-6 right-6 z-sticky',
-            'top-left': 'fixed top-6 left-6 z-sticky',
+            'bottom-right': 'fixed bottom-6 right-6 z-30',
+            'bottom-left': 'fixed bottom-6 left-6 z-30',
+            'top-right': 'fixed top-6 right-6 z-30',
+            'top-left': 'fixed top-6 left-6 z-30',
         };
 
         const isFixed = position !== 'none';
@@ -99,7 +99,7 @@ export const FABGroup = forwardRef<HTMLDivElement, FABGroupProps>(
                                         setIsOpen(false);
                                     }}
                                     className={cn(
-                                        "w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
+                                        "w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-apple focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                                         variantStyles[action.variant || 'secondary']
                                     )}
                                 >
@@ -116,7 +116,7 @@ export const FABGroup = forwardRef<HTMLDivElement, FABGroupProps>(
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsOpen(!isOpen)}
                     className={cn(
-                        "w-14 h-14 rounded-full bg-accent-blue text-white flex items-center justify-center shadow-xl transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
+                        "w-14 h-14 rounded-full bg-accent-blue text-white flex items-center justify-center shadow-xl transition-apple focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                         "hover:bg-accent-blueHover"
                     )}
                 >

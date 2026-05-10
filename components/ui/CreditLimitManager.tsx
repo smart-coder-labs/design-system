@@ -124,7 +124,7 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                 disabled={limit === initialLimit && !saved}
                 onClick={handleSave}
                 className={cn(
-                    "w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md",
+                    "w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue",
                     limit === initialLimit && !saved
                         ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed border border-transparent"
                         : saved

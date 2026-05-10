@@ -134,7 +134,7 @@ export const BankAccountCard: React.FC<BankAccountCardProps> = ({
                     </AnimatePresence>
                     <button
                         onClick={toggleVisibility}
-                        className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                        className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-apple"
                         aria-label={isHidden ? 'Show balance' : 'Hide balance'}
                     >
                         {isHidden ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -153,7 +153,7 @@ export const BankAccountCard: React.FC<BankAccountCardProps> = ({
                     <motion.button
                         onClick={handleCopy}
                         className={cn(
-                            'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors',
+                            'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-apple',
                             copied ? 'bg-white/20 text-white' : 'bg-white/10 text-white/70 hover:bg-white/15',
                         )}
                         whileTap={{ scale: 0.95 }}

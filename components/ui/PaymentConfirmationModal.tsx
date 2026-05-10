@@ -84,7 +84,7 @@ export const PaymentConfirmationModal: React.FC<PaymentConfirmationModalProps> =
                             </div>
                             <button
                                 onClick={onCancel}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-surface-secondary flex items-center justify-center text-text-tertiary hover:text-text-primary transition-colors"
+                                className="absolute right-4 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-surface-secondary flex items-center justify-center text-text-tertiary hover:text-text-primary transition-apple"
                                 aria-label="Close"
                             >
                                 <X className="w-3.5 h-3.5" />
@@ -156,10 +156,10 @@ export const PaymentConfirmationModal: React.FC<PaymentConfirmationModalProps> =
                                 onClick={onConfirm}
                                 disabled={loading}
                                 className={cn(
-                                    'w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold transition-colors',
+                                    'w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold transition-apple',
                                     'bg-accent-blue text-white hover:bg-accent-blue-hover active:bg-accent-blue-active',
                                     'disabled:opacity-60 disabled:cursor-not-allowed',
-                                    'focus:outline-none focus:ring-2 focus:ring-accent-blue/30 focus:ring-offset-2',
+                                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue',
                                 )}
                                 whileTap={!loading ? { scale: 0.98 } : {}}
                             >
@@ -175,7 +175,7 @@ export const PaymentConfirmationModal: React.FC<PaymentConfirmationModalProps> =
                             </motion.button>
                             <button
                                 onClick={onCancel}
-                                className="w-full py-2.5 text-sm font-semibold text-text-secondary hover:text-text-primary transition-colors"
+                                className="w-full py-2.5 text-sm font-semibold text-text-secondary hover:text-text-primary transition-apple"
                             >
                                 Cancel
                             </button>

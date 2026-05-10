@@ -119,7 +119,7 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                                         type="number"
                                         value={amount}
                                         onChange={(e) => setAmount(e.target.value)}
-                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-2xl pl-10 pr-4 py-4 text-3xl font-black text-zinc-900 dark:text-zinc-100 outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                        className="w-full bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-2xl pl-10 pr-4 py-4 text-3xl font-black text-zinc-900 dark:text-zinc-100 outline-none focus-visible:ring-2 focus-visible:ring-accent-blue transition-shadow [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                     />
                                 </div>
                             </div>
@@ -172,7 +172,7 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                             <div className="flex gap-3 pt-2">
                                 <button
                                     onClick={handleBack}
-                                    className="px-6 py-4 rounded-xl font-bold text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                                    className="px-6 py-4 rounded-xl font-bold text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-apple"
                                 >
                                     Back
                                 </button>

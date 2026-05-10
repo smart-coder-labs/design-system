@@ -89,7 +89,7 @@ export const BiometricPrompt: React.FC<BiometricPromptProps> = ({
                         {/* Close button */}
                         <button
                             onClick={onCancel}
-                            className="absolute top-3 right-3 w-7 h-7 rounded-full bg-surface-secondary flex items-center justify-center text-text-tertiary hover:text-text-primary transition-colors"
+                            className="absolute top-3 right-3 w-7 h-7 rounded-full bg-surface-secondary flex items-center justify-center text-text-tertiary hover:text-text-primary transition-apple"
                             aria-label="Close"
                         >
                             <X className="w-3.5 h-3.5" />
@@ -108,7 +108,7 @@ export const BiometricPrompt: React.FC<BiometricPromptProps> = ({
                                 animate={status}
                             />
                             <div className={cn(
-                                'relative w-20 h-20 rounded-full flex items-center justify-center transition-colors duration-300',
+                                'relative w-20 h-20 rounded-full flex items-center justify-center transition-apple duration-300',
                                 status === 'success' ? 'bg-status-success/10 text-status-success' :
                                 status === 'failed' ? 'bg-status-error/10 text-status-error' :
                                 'bg-accent-blue/10 text-accent-blue',
@@ -178,8 +178,8 @@ export const BiometricPrompt: React.FC<BiometricPromptProps> = ({
                                 className={cn(
                                     'w-full py-3 px-6 rounded-xl text-sm font-semibold text-white',
                                     'bg-accent-blue hover:bg-accent-blue-hover active:bg-accent-blue-active',
-                                    'transition-colors duration-200',
-                                    'focus:outline-none focus:ring-2 focus:ring-accent-blue/30 focus:ring-offset-2',
+                                    'transition-apple duration-200',
+                                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue',
                                 )}
                                 whileTap={{ scale: 0.97 }}
                             >

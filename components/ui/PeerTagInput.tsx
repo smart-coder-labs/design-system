@@ -90,7 +90,7 @@ export const PeerTagInput: React.FC<PeerTagInputProps> = ({
                     onBlur={() => setTimeout(() => setIsFocused(false), 200)} // delay to allow clicks
                     onKeyDown={handleKeyDown}
                     placeholder={placeholder}
-                    className="flex-1 bg-transparent border-none outline-none py-4 font-semibold text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-500 dark:placeholder:text-zinc-400 placeholder:font-normal"
+                    className="flex-1 bg-transparent border-none outline-none py-4 font-semibold text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-500 dark:placeholder:text-zinc-400 placeholder:font-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue rounded-xl"
                 />
                 
                 <AnimatePresence>
@@ -128,7 +128,7 @@ export const PeerTagInput: React.FC<PeerTagInputProps> = ({
                                         onClick={() => handleSelect(contact)}
                                         onMouseEnter={() => setSelectedIndex(idx)}
                                         className={cn(
-                                            "w-full flex items-center justify-between p-3 rounded-2xl transition-colors cursor-pointer text-left group",
+                                            "w-full flex items-center justify-between p-3 rounded-2xl transition-apple cursor-pointer text-left group",
                                             selectedIndex === idx
                                                 ? "bg-zinc-100 dark:bg-zinc-800"
                                                 : "hover:bg-zinc-50 dark:hover:bg-zinc-800/50"

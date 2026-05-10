@@ -68,7 +68,7 @@ export const Snackbar: React.FC<SnackbarProps> = ({
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 100, opacity: 0 }}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    className="fixed bottom-6 left-1/2 -translate-x-1/2 z-sticky max-w-md w-full mx-4"
+                    className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 max-w-md w-full mx-4"
                 >
                     <div
                         className={cn(
@@ -94,7 +94,7 @@ export const Snackbar: React.FC<SnackbarProps> = ({
                             {onClose && (
                                 <button
                                     onClick={onClose}
-                                    className="p-1 rounded-lg hover:bg-black/10 transition-colors focus:outline-none"
+                                    className="p-1 rounded-lg hover:bg-black/10 transition-apple focus:outline-none"
                                     aria-label="Close"
                                 >
                                     <X className="w-4 h-4" />

@@ -73,7 +73,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                             placeholder="0"
                             className="w-1/2 text-4xl font-bold tracking-tighter bg-transparent outline-none text-zinc-900 dark:text-zinc-100 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
-                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-800 rounded-2xl shadow-sm border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-colors cursor-pointer">
+                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-800 rounded-2xl shadow-sm border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-apple cursor-pointer">
                             <div className="flex items-center gap-2">
                                 <span className="text-2xl">{fromAsset.iconUrl}</span>
                                 <span className="font-bold">{fromAsset.symbol}</span>
@@ -107,7 +107,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                         <div className="w-1/2 text-4xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-100 truncate">
                             {totalOut > 0 ? totalOut.toLocaleString(undefined, { maximumFractionDigits: 4 }) : '0'}
                         </div>
-                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-800 rounded-2xl shadow-sm border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-colors cursor-pointer">
+                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-800 rounded-2xl shadow-sm border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-apple cursor-pointer">
                             <div className="flex items-center gap-2">
                                 <span className="text-2xl">{toAsset.iconUrl}</span>
                                 <span className="font-bold">{toAsset.symbol}</span>
@@ -148,7 +148,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                 onClick={() => onSwap?.(fromAsset.id, toAsset.id, amountNum)}
                 disabled={amountNum > fromAsset.balance || amountNum <= 0}
                 className={cn(
-                    "w-full py-4 rounded-xl font-bold text-center mt-6 transition-all",
+                    "w-full py-4 rounded-xl font-bold text-center mt-6 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue",
                     amountNum > fromAsset.balance || amountNum <= 0
                         ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-400 cursor-not-allowed"
                         : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30"
