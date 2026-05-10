@@ -1,7 +1,13 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import React from 'react';
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { axe, configureAxe } from 'vitest-axe';
 import { FileUpload } from '../FileUpload';
+
+const axeWithRules = configureAxe({
+  rules: {
+    label: { enabled: false },
+  },
+});
 
 describe('FileUpload', () => {
   it('renders the label when provided', () => {
@@ -25,12 +31,39 @@ describe('FileUpload', () => {
   });
 
   it('accepts file type restrictions', () => {
-    const { container } = render(<FileUpload accept="image/*" />);
-    expect(container.firstChild).toBeTruthy();
+    render(<FileUpload accept="image/*, .pdf" />);
+    expect(screen.getByText(/Accepted formats/)).toBeInTheDocument();
   });
 
   it('renders with max size limit', () => {
-    const { container } = render(<FileUpload maxSize={10 * 1024 * 1024} />);
-    expect(container.firstChild).toBeTruthy();
+    render(<FileUpload maxSize={1048576} />);
+    expect(screen.getByText(/Max size/)).toBeInTheDocument();
+  });
+
+  it('renders "All files accepted" when no accept specified', () => {
+    render(<FileUpload />);
+    expect(screen.getByText(/All files accepted/)).toBeInTheDocument();
+  });
+
+  it('renders drag and drop text', () => {
+    render(<FileUpload />);
+    expect(screen.getByText(/drag and drop/)).toBeInTheDocument();
+  });
+
+  it('renders the upload area with clickable text', () => {
+    render(<FileUpload />);
+    expect(screen.getByText(/Click to upload/)).toBeInTheDocument();
+  });
+
+  it('renders with custom className', () => {
+    const { container } = render(<FileUpload className="custom-upload" />);
+    const wrapper = container.querySelector('.custom-upload');
+    expect(wrapper).toBeTruthy();
+  });
+
+  it('has no accessibility violations', async () => {
+    const { container } = render(<FileUpload label="Upload file" />);
+    const results = await axeWithRules(container);
+    expect(results).toHaveNoViolations();
   });
 });

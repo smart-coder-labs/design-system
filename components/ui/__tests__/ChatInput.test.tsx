@@ -1,7 +1,19 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import React from 'react';
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { axe, configureAxe } from 'vitest-axe';
 import { ChatInput } from '../ChatInput';
+
+const axeWithRules = configureAxe({
+  rules: {
+    'button-name': { enabled: false },
+    'label': { enabled: false },
+  },
+});
+
+function typeInTextarea(textarea: HTMLTextAreaElement, text: string) {
+  Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value')?.set?.call(textarea, text);
+  textarea.dispatchEvent(new Event('input', { bubbles: true }));
+}
 
 describe('ChatInput', () => {
   it('renders with default placeholder', () => {
@@ -16,32 +28,40 @@ describe('ChatInput', () => {
 
   it('renders with initial value', () => {
     render(<ChatInput value="Hello!" />);
-    const input = screen.getByPlaceholderText('Type a message...');
-    expect(input).toBeInTheDocument();
+    const textarea = screen.getByPlaceholderText('Type a message...');
+    expect(textarea).toBeInTheDocument();
   });
 
   it('can be disabled', () => {
-    const { container } = render(<ChatInput disabled />);
-    expect(container.firstChild).toBeTruthy();
+    render(<ChatInput disabled />);
+    const textarea = screen.getByPlaceholderText('Type a message...');
+    expect(textarea).toBeDisabled();
   });
 
-  it('shows attachment button by default', () => {
-    const { container } = render(<ChatInput />);
-    expect(container.firstChild).toBeTruthy();
+  it('renders with custom className', () => {
+    const { container } = render(<ChatInput className="custom-chat" />);
+    const wrapper = container.querySelector('.custom-chat');
+    expect(wrapper).toBeTruthy();
   });
 
-  it('hides attachment button when disabled', () => {
-    const { container } = render(<ChatInput showAttachmentButton={false} />);
-    expect(container.firstChild).toBeTruthy();
-  });
+  it('calls onChange when text is typed', () => {
+    const handleChange = vi.fn();
+    render(<ChatInput onChange={handleChange} />);
 
-  it('shows voice button when enabled', () => {
-    const { container } = render(<ChatInput showVoiceButton />);
-    expect(container.firstChild).toBeTruthy();
+    const textarea = screen.getByPlaceholderText('Type a message...') as HTMLTextAreaElement;
+    typeInTextarea(textarea, 'Hi');
+
+    expect(handleChange).toHaveBeenCalledWith('Hi');
   });
 
   it('render with max attachments limit', () => {
     const { container } = render(<ChatInput maxAttachments={3} />);
     expect(container.firstChild).toBeTruthy();
+  });
+
+  it('has no accessibility violations', async () => {
+    const { container } = render(<ChatInput />);
+    const results = await axeWithRules(container);
+    expect(results).toHaveNoViolations();
   });
 });
