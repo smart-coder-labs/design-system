@@ -53,7 +53,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
         new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(val);
 
     return (
-        <div className={cn("w-full max-w-md bg-white dark:bg-zinc-900 rounded-[2rem] p-6 shadow-xl border border-zinc-200 dark:border-zinc-800 flex flex-col gap-6", className)}>
+        <div className={cn("w-full max-w-md bg-surface-primary rounded-[2rem] p-6 shadow-xl border border-border-primary flex flex-col gap-6", className)}>
             
             {/* Header */}
             <div className="flex items-center justify-between">
@@ -62,21 +62,21 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                         <Receipt className="w-5 h-5" />
                     </div>
                     <div>
-                        <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">Bill Splitter</h3>
-                        <p className="text-sm text-zinc-500 dark:text-zinc-400">Dinner at Gusteau's</p>
+                        <h3 className="text-lg font-bold text-text-primary">Bill Splitter</h3>
+                        <p className="text-sm text-text-tertiary">Dinner at Gusteau's</p>
                     </div>
                 </div>
             </div>
 
             {/* Bill Info & Tip */}
-            <div className="bg-zinc-50 dark:bg-zinc-800/40 rounded-3xl p-5 border border-zinc-200 dark:border-zinc-700/50">
+            <div className="bg-zinc-50 dark:bg-zinc-800/40 rounded-3xl p-5 border border-border-primary/50">
                 <div className="flex justify-between items-center mb-4">
                     <span className="text-sm font-semibold text-zinc-500 uppercase tracking-wider">Subtotal</span>
-                    <span className="text-xl font-bold text-zinc-900 dark:text-zinc-100">{formatCurrency(billAmount)}</span>
+                    <span className="text-xl font-bold text-text-primary">{formatCurrency(billAmount)}</span>
                 </div>
 
-                <div className="flex flex-wrap justify-between items-center gap-4 bg-white dark:bg-zinc-900 rounded-2xl p-3 shadow-sm border border-zinc-100 dark:border-zinc-800">
-                    <div className="flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                <div className="flex flex-wrap justify-between items-center gap-4 bg-surface-primary rounded-2xl p-3 shadow-sm border border-border-primary">
+                    <div className="flex items-center gap-2 text-sm font-medium text-text-secondary">
                         <Percent className="w-4 h-4" /> Tip
                     </div>
                     <div className="flex gap-2">
@@ -88,7 +88,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                                     "px-3 py-1.5 rounded-lg text-sm font-bold transition-colors cursor-pointer",
                                     tipPercentage === tip 
                                         ? "bg-indigo-600 text-white shadow-md shadow-indigo-500/20" 
-                                        : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700"
+                                        : "bg-background-secondary text-text-secondary hover:bg-zinc-200 dark:hover:bg-zinc-700"
                                 )}
                             >
                                 {tip}%
@@ -100,7 +100,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                 <div className="h-px bg-zinc-200 dark:bg-zinc-700/50 my-4" />
 
                 <div className="flex justify-between items-center">
-                    <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100 uppercase tracking-wider">Total</span>
+                    <span className="text-sm font-bold text-text-primary uppercase tracking-wider">Total</span>
                     <span className="text-3xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">{formatCurrency(totalAmount)}</span>
                 </div>
             </div>
@@ -108,7 +108,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
             {/* Participants */}
             <div>
                 <div className="flex justify-between items-center mb-3">
-                    <span className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Split with ({participants.length})</span>
+                    <span className="text-sm font-semibold text-text-secondary">Split with ({participants.length})</span>
                     <button 
                         onClick={() => setIsSelecting(!isSelecting)}
                         className="text-indigo-600 dark:text-indigo-400 text-sm font-bold flex items-center gap-1 hover:underline"
@@ -123,7 +123,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            className="bg-zinc-50 dark:bg-zinc-800/40 rounded-2xl p-3 mb-4 overflow-hidden border border-zinc-200 dark:border-zinc-700/50"
+                            className="bg-zinc-50 dark:bg-zinc-800/40 rounded-2xl p-3 mb-4 overflow-hidden border border-border-primary/50"
                         >
                             <div className="flex items-center gap-3 overflow-x-auto pb-2 custom-scrollbar">
                                 {friends.map(friend => {
@@ -142,7 +142,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                                                 <AvatarFallback>{friend.name.substring(0, 2)}</AvatarFallback>
                                             </Avatar>
                                             {isSelected && (
-                                                <div className="absolute -bottom-1 -right-1 bg-white dark:bg-zinc-900 rounded-full">
+                                                <div className="absolute -bottom-1 -right-1 bg-surface-primary rounded-full">
                                                     <CheckCircle2 className="w-5 h-5 text-indigo-500" />
                                                 </div>
                                             )}
@@ -164,7 +164,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.9 }}
-                                className="flex items-center justify-between bg-white dark:bg-zinc-800 p-3 rounded-2xl border border-zinc-100 dark:border-zinc-700 shadow-sm"
+                                className="flex items-center justify-between bg-surface-primary p-3 rounded-2xl border border-border-primary shadow-sm"
                             >
                                 <div className="flex items-center gap-3">
                                     <Avatar className="w-10 h-10 ring-2 ring-indigo-50 dark:ring-indigo-900/30">
@@ -172,11 +172,11 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                                         <AvatarFallback>{p.name.substring(0, 2)}</AvatarFallback>
                                     </Avatar>
                                     <div>
-                                        <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">{p.isUser ? "You" : p.name}</p>
-                                        <p className="text-[10px] text-zinc-500 dark:text-zinc-400 uppercase font-bold tracking-wider">Equal Split</p>
+                                        <p className="text-sm font-semibold text-text-primary">{p.isUser ? "You" : p.name}</p>
+                                        <p className="text-[10px] text-text-tertiary uppercase font-bold tracking-wider">Equal Split</p>
                                     </div>
                                 </div>
-                                <span className="font-bold text-zinc-900 dark:text-zinc-100">{formatCurrency(splitAmount)}</span>
+                                <span className="font-bold text-text-primary">{formatCurrency(splitAmount)}</span>
                             </motion.div>
                         ))}
                     </AnimatePresence>

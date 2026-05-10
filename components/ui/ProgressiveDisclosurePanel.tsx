@@ -28,7 +28,7 @@ export const ProgressiveDisclosurePanel: React.FC<ProgressiveDisclosurePanelProp
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col">
+    <div className="bg-surface-primary rounded-2xl border border-border-primary shadow-sm overflow-hidden flex flex-col">
       {/* Header / Summary Level (0) */}
       <div 
         className="p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex flex-col"
@@ -47,7 +47,7 @@ export const ProgressiveDisclosurePanel: React.FC<ProgressiveDisclosurePanelProp
           <motion.div
             animate={{ rotate: level >= 1 ? 180 : 0 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
-            className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center shrink-0"
+            className="w-8 h-8 rounded-full bg-background-secondary flex items-center justify-center shrink-0"
           >
             <ChevronDown size={18} className="text-gray-500 dark:text-gray-400" />
           </motion.div>
@@ -62,7 +62,7 @@ export const ProgressiveDisclosurePanel: React.FC<ProgressiveDisclosurePanelProp
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800"
+            className="border-t border-border-primary bg-gray-50/50 dark:bg-gray-800"
           >
             <div className="p-5">
               {details}
@@ -97,7 +97,7 @@ export const ProgressiveDisclosurePanel: React.FC<ProgressiveDisclosurePanelProp
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="border-t border-gray-100 dark:border-gray-800 bg-gray-900 dark:bg-black text-gray-300"
+            className="border-t border-border-primary bg-gray-900 dark:bg-black text-gray-300"
           >
             <div className="p-5 text-sm font-mono overflow-x-auto">
               {deepDive}

@@ -49,18 +49,18 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
     const percentage = (limit / maxLimit) * 100;
 
     return (
-        <div className={cn("w-full max-w-md bg-white dark:bg-zinc-900 rounded-[2rem] p-6 shadow-xl border border-zinc-200 dark:border-zinc-800", className)}>
+        <div className={cn("w-full max-w-md bg-surface-primary rounded-[2rem] p-6 shadow-xl border border-border-primary", className)}>
             <div className="flex items-center gap-3 mb-6">
                 <div className="p-2.5 bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 rounded-2xl shadow-sm">
                     <Shield className="w-5 h-5" />
                 </div>
                 <div>
-                    <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">Credit Limit</h3>
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400">Control your spending power</p>
+                    <h3 className="text-lg font-bold text-text-primary">Credit Limit</h3>
+                    <p className="text-sm text-text-tertiary">Control your spending power</p>
                 </div>
             </div>
 
-            <div className="bg-zinc-50 dark:bg-zinc-800/40 rounded-3xl p-6 border border-zinc-200 dark:border-zinc-700/50 mb-6">
+            <div className="bg-zinc-50 dark:bg-zinc-800/40 rounded-3xl p-6 border border-border-primary/50 mb-6">
                 <div className="flex items-end justify-between mb-8">
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1">Active Limit</p>
@@ -68,7 +68,7 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                             key={limit}
                             initial={{ y: 5, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100"
+                            className="text-4xl font-bold tracking-tight text-text-primary"
                         >
                             {formatCurrency(limit)}
                         </motion.h2>
@@ -105,7 +105,7 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                         />
                     </div>
                     
-                    <div className="flex justify-between items-center mt-3 text-xs font-medium text-zinc-500 dark:text-zinc-400">
+                    <div className="flex justify-between items-center mt-3 text-xs font-medium text-text-tertiary">
                         <span>{formatCurrency(safeMinLimit)} (Balance)</span>
                         <span>{formatCurrency(maxLimit)} Max</span>
                     </div>
@@ -126,9 +126,9 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                 className={cn(
                     "w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md",
                     limit === initialLimit && !saved
-                        ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed border border-transparent"
+                        ? "bg-background-secondary text-zinc-400 dark:text-zinc-500 cursor-not-allowed border border-transparent"
                         : saved
-                            ? "bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800"
+                            ? "bg-status-success/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800"
                             : "bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:shadow-lg"
                 )}
             >

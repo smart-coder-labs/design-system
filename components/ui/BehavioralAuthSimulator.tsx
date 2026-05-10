@@ -50,7 +50,7 @@ export const BehavioralAuthSimulator: React.FC<BehavioralAuthSimulatorProps> = (
   }, [duration, checks.length, onComplete]);
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 max-w-sm mx-auto shadow-sm">
+    <div className="bg-surface-primary rounded-2xl border border-border-primary p-6 max-w-sm mx-auto shadow-sm">
       <div className="flex flex-col items-center mb-6 text-center">
         <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
           <AnimatePresence mode="wait">
@@ -79,7 +79,7 @@ export const BehavioralAuthSimulator: React.FC<BehavioralAuthSimulatorProps> = (
           </AnimatePresence>
         </div>
 
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+        <h3 className="text-lg font-semibold text-text-primary mb-1">
           {status === 'analyzing' ? analyzingText : successText}
         </h3>
         {status === 'analyzing' && (

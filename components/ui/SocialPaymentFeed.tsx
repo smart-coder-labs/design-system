@@ -81,7 +81,7 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95 }}
-                            className="bg-white dark:bg-zinc-900 rounded-[2rem] p-5 shadow-sm border border-zinc-200 dark:border-zinc-800"
+                            className="bg-surface-primary rounded-[2rem] p-5 shadow-sm border border-border-primary"
                         >
                             {/* Header */}
                             <div className="flex justify-between items-start mb-3">
@@ -97,12 +97,12 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                         </Avatar>
                                     </div>
                                     <div>
-                                        <div className="text-sm font-medium text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5 flex-wrap">
+                                        <div className="text-sm font-medium text-text-primary flex items-center gap-1.5 flex-wrap">
                                             <span className="font-bold">{payment.senderName}</span>
-                                            <span className="text-zinc-500 dark:text-zinc-400 font-normal">paid</span>
+                                            <span className="text-text-tertiary font-normal">paid</span>
                                             <span className="font-bold">{payment.receiverName}</span>
                                         </div>
-                                        <div className="flex items-center gap-2 mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">
+                                        <div className="flex items-center gap-2 mt-0.5 text-xs text-text-tertiary">
                                             <span className="font-semibold text-zinc-400 dark:text-zinc-500">
                                                 {formatTimeAgo(payment.timestamp)}
                                             </span>
@@ -126,7 +126,7 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
 
                             {/* Content */}
                             <div className="pl-[3.25rem] pr-2">
-                                <div className="bg-zinc-50 dark:bg-zinc-800/50 rounded-2xl p-4 border border-zinc-100 dark:border-zinc-800/50 inline-block group hover:border-zinc-200 dark:hover:border-zinc-700 transition">
+                                <div className="bg-background-secondary rounded-2xl p-4 border border-border-primary/50 inline-block group hover:border-zinc-200 dark:hover:border-zinc-700 transition">
                                     <p className="text-sm text-zinc-800 dark:text-zinc-200 font-medium">
                                         {payment.emoji && <span className="text-xl mr-2 align-middle">{payment.emoji}</span>}
                                         {payment.note}
@@ -145,7 +145,7 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                         onClick={() => handleLike(payment.id)}
                                         className={cn(
                                             "flex items-center gap-1.5 text-xs font-bold transition-colors group cursor-pointer",
-                                            isLiked ? "text-pink-600 dark:text-pink-500" : "text-zinc-500 dark:text-zinc-400 hover:text-pink-500"
+                                            isLiked ? "text-pink-600 dark:text-pink-500" : "text-text-tertiary hover:text-pink-500"
                                         )}
                                     >
                                         <Heart className={cn("w-4 h-4 group-hover:scale-110 transition-transform", isLiked ? "fill-current" : "")} />
@@ -155,7 +155,7 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                     <motion.button
                                         whileTap={{ scale: 0.9 }}
                                         onClick={() => onComment?.(payment.id)}
-                                        className="flex items-center gap-1.5 text-xs font-bold text-zinc-500 dark:text-zinc-400 hover:text-blue-500 transition-colors group cursor-pointer"
+                                        className="flex items-center gap-1.5 text-xs font-bold text-text-tertiary hover:text-blue-500 transition-colors group cursor-pointer"
                                     >
                                         <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
                                         <span>{payment.comments}</span>

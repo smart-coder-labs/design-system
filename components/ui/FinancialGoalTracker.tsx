@@ -49,7 +49,7 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
   const theme = getThemeClasses();
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-800 p-6 overflow-hidden relative shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-surface-primary rounded-3xl border border-border-primary p-6 overflow-hidden relative shadow-sm hover:shadow-md transition-shadow">
       
       {/* Decorative Background Blob */}
       <div className={`absolute -right-8 -top-8 w-32 h-32 rounded-full blur-3xl opacity-20 ${theme.progress}`} />
@@ -60,7 +60,7 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
             {icon}
           </div>
           <div>
-            <h3 className="font-bold text-lg text-gray-900 dark:text-white leading-tight">
+            <h3 className="font-bold text-lg text-text-primary leading-tight">
               {goalName}
             </h3>
             <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mt-0.5 flex gap-2">
@@ -89,7 +89,7 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
         </motion.div>
 
         {/* Progress Track */}
-        <div className="h-4 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden shadow-inner">
+        <div className="h-4 w-full bg-background-secondary rounded-full overflow-hidden shadow-inner">
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
@@ -122,7 +122,7 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
           <Plus size={18} />
           Abonar
         </button>
-        <button className="flex items-center justify-center gap-2 py-3 px-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition relative">
+        <button className="flex items-center justify-center gap-2 py-3 px-4 bg-gray-50 dark:bg-gray-800 text-text-primary rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition relative">
           <TrendingUp size={18} className={theme.text} />
           Auto-ahorro
           <span className="absolute -top-2 -right-2 bg-green-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md uppercase tracking-wide">

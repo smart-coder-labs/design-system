@@ -47,12 +47,12 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
         );
       case 'spending':
         return (
-          <div className="p-4 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl shadow-sm text-gray-900 dark:text-white">
+          <div className="p-4 bg-surface-primary border border-border-primary rounded-xl shadow-sm text-text-primary">
             <div className="flex justify-between items-center mb-3">
               <h4 className="font-semibold text-sm">Gastos del mes</h4>
               <PieChart size={16} className="text-gray-400" />
             </div>
-            <div className="h-2 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div className="h-2 w-full bg-background-secondary rounded-full overflow-hidden">
               <div className="h-full bg-red-500 w-[70%]" />
             </div>
             <p className="text-xs text-gray-500 mt-2">Has gastado el 70% de tu presupuesto.</p>
@@ -81,17 +81,17 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
   };
 
   return (
-    <div className="max-w-md mx-auto relative rounded-3xl bg-gray-50 dark:bg-black p-4 min-h-[500px] border border-gray-200 dark:border-gray-800">
+    <div className="max-w-md mx-auto relative rounded-3xl bg-gray-50 dark:bg-black p-4 min-h-[500px] border border-border-primary">
       
       {/* Header */}
       <div className="flex justify-between items-center mb-6 px-2">
-        <h2 className="text-lg font-bold text-gray-900 dark:text-white">Resumen</h2>
+        <h2 className="text-lg font-bold text-text-primary">Resumen</h2>
         <button 
           onClick={() => setIsEditing(!isEditing)}
           className={`p-2 rounded-full transition-colors ${
             isEditing 
             ? 'bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-50' 
-            : 'bg-white text-gray-500 dark:bg-gray-900 dark:text-gray-400 border border-gray-200 dark:border-gray-800'
+            : 'bg-white text-gray-500 dark:bg-gray-900 dark:text-gray-400 border border-border-primary'
           }`}
         >
           <Settings size={18} />
@@ -140,7 +140,7 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
             </h3>
             <div className="space-y-3">
               {hiddenWidgets.map(widget => (
-                <div key={widget.id} className="flex justify-between items-center p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
+                <div key={widget.id} className="flex justify-between items-center p-3 bg-surface-primary rounded-lg border border-border-primary">
                   <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{widget.title}</span>
                   <button 
                     onClick={() => toggleVisibility(widget.id)}

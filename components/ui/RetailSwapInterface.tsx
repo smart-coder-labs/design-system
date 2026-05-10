@@ -48,9 +48,9 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
     };
 
     return (
-        <div className={cn("w-full max-w-sm bg-white dark:bg-zinc-900 rounded-[2rem] p-6 shadow-xl border border-zinc-200 dark:border-zinc-800", className)}>
+        <div className={cn("w-full max-w-sm bg-surface-primary rounded-[2rem] p-6 shadow-xl border border-border-primary", className)}>
             <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+                <h3 className="text-xl font-bold text-text-primary flex items-center gap-2">
                     <Zap className="w-5 h-5 text-amber-500" />
                     Swap Crypto
                 </h3>
@@ -58,9 +58,9 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
 
             <div className="relative flex flex-col gap-2 relative z-10">
                 {/* Pay */}
-                <div className="bg-zinc-50 dark:bg-zinc-800/50 rounded-3xl p-4 border border-zinc-100 dark:border-zinc-700 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+                <div className="bg-background-secondary rounded-3xl p-4 border border-border-primary focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
                     <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">You pay</span>
+                        <span className="text-sm font-semibold text-text-tertiary">You pay</span>
                         <span className="text-xs font-medium text-zinc-800 dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-700 px-2 py-1 rounded-lg">
                             Bal: {fromAsset.balance} {fromAsset.symbol}
                         </span>
@@ -71,9 +71,9 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
                             placeholder="0"
-                            className="w-1/2 text-4xl font-bold tracking-tighter bg-transparent outline-none text-zinc-900 dark:text-zinc-100 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                            className="w-1/2 text-4xl font-bold tracking-tighter bg-transparent outline-none text-text-primary [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
-                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-800 rounded-2xl shadow-sm border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-colors cursor-pointer">
+                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-text-primary bg-surface-primary rounded-2xl shadow-sm border border-border-primary hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-colors cursor-pointer">
                             <div className="flex items-center gap-2">
                                 <span className="text-2xl">{fromAsset.iconUrl}</span>
                                 <span className="font-bold">{fromAsset.symbol}</span>
@@ -92,22 +92,22 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         onClick={handleInvert}
-                        className="p-2.5 bg-zinc-100 dark:bg-zinc-800 border-4 border-white dark:border-zinc-900 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-blue-500 hover:border-zinc-50 dark:hover:border-zinc-950 transition-all shadow-sm"
+                        className="p-2.5 bg-background-secondary border-4 border-white dark:border-zinc-900 rounded-full text-text-secondary hover:text-blue-500 hover:border-zinc-50 dark:hover:border-zinc-950 transition-all shadow-sm"
                     >
                         <ArrowDown className="w-5 h-5" />
                     </motion.button>
                 </div>
 
                 {/* Receive */}
-                <div className="bg-zinc-50 dark:bg-zinc-800/50 rounded-3xl p-4 border border-zinc-100 dark:border-zinc-700">
+                <div className="bg-background-secondary rounded-3xl p-4 border border-border-primary">
                     <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">You receive</span>
+                        <span className="text-sm font-semibold text-text-tertiary">You receive</span>
                     </div>
                     <div className="flex items-center gap-4">
-                        <div className="w-1/2 text-4xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-100 truncate">
+                        <div className="w-1/2 text-4xl font-bold tracking-tighter text-text-primary truncate">
                             {totalOut > 0 ? totalOut.toLocaleString(undefined, { maximumFractionDigits: 4 }) : '0'}
                         </div>
-                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-800 rounded-2xl shadow-sm border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-colors cursor-pointer">
+                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-text-primary bg-surface-primary rounded-2xl shadow-sm border border-border-primary hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-colors cursor-pointer">
                             <div className="flex items-center gap-2">
                                 <span className="text-2xl">{toAsset.iconUrl}</span>
                                 <span className="font-bold">{toAsset.symbol}</span>
@@ -150,7 +150,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                 className={cn(
                     "w-full py-4 rounded-xl font-bold text-center mt-6 transition-all",
                     amountNum > fromAsset.balance || amountNum <= 0
-                        ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-400 cursor-not-allowed"
+                        ? "bg-background-secondary text-zinc-400 cursor-not-allowed"
                         : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30"
                 )}
             >

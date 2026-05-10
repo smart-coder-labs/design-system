@@ -60,7 +60,7 @@ export const VoiceCommandOverlay: React.FC<VoiceCommandOverlayProps> = ({
             initial={{ opacity: 0, y: 100, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.95 }}
-            className="relative w-full max-w-sm bg-white dark:bg-gray-900 rounded-[2rem] shadow-2xl p-6 border border-gray-200 dark:border-gray-800"
+            className="relative w-full max-w-sm bg-surface-primary rounded-[2rem] shadow-2xl p-6 border border-border-primary"
           >
             <button 
               onClick={onClose}
@@ -121,18 +121,18 @@ export const VoiceCommandOverlay: React.FC<VoiceCommandOverlayProps> = ({
                   </div>
                 </>
               ) : (
-                <div className="text-left bg-gray-50 dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700">
+                <div className="text-left bg-gray-50 dark:bg-gray-800 rounded-2xl p-5 border border-border-primary">
                   <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4 uppercase tracking-wider">
                     Entendido, ¿Confirmo la operación?
                   </p>
                   
                   <div className="flex justify-between items-center mb-6">
                     <div>
-                      <h4 className="font-bold text-gray-900 dark:text-white relative z-10">Transferencia</h4>
+                      <h4 className="font-bold text-text-primary relative z-10">Transferencia</h4>
                       <p className="text-2xl font-black text-blue-600 dark:text-blue-400">$50.00 MXN</p>
                     </div>
                     <div className="text-right">
-                       <h4 className="font-bold text-gray-900 dark:text-white">Para</h4>
+                       <h4 className="font-bold text-text-primary">Para</h4>
                        <p className="text-base font-medium text-gray-600 dark:text-gray-300 flex items-center gap-2">
                          Carlos R.
                        </p>

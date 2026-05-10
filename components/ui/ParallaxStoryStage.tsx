@@ -18,7 +18,7 @@ export function ParallaxStoryStage({ className }: React.HTMLAttributes<HTMLDivEl
 
   return (
     <div ref={containerRef} className={cn("h-[500vh] relative", className)}>
-      <div className="sticky top-0 h-screen overflow-hidden flex items-center bg-white dark:bg-zinc-950/90 border-y border-zinc-200 dark:border-zinc-800">
+      <div className="sticky top-0 h-screen overflow-hidden flex items-center bg-white dark:bg-zinc-950/90 border-y border-border-primary">
         <motion.div style={{ x }} className="flex gap-32 px-[10vw] items-center w-[200vw]">
           
           <div className="w-[50vw] shrink-0">
@@ -43,7 +43,7 @@ export function ParallaxStoryStage({ className }: React.HTMLAttributes<HTMLDivEl
                  text="DATA CORE DISCOVERED" 
                  className="text-6xl sm:text-7xl lg:text-8xl text-blue-500 font-black" 
                />
-               <p className="mt-4 text-zinc-500 dark:text-zinc-400 font-[family-name:var(--font-sans)] text-2xl tracking-tight">
+               <p className="mt-4 text-text-tertiary font-[family-name:var(--font-sans)] text-2xl tracking-tight">
                  1024 YOTABYTES ACCESSIBLE
                </p>
              </div>

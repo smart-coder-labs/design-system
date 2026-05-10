@@ -12,7 +12,7 @@ export const AccessibleHighContrastMode: React.FC<AccessibleHighContrastModeProp
 
   // Apply classes based on states
   const containerClasses = `relative transition-all duration-300 ${
-    highContrast ? 'grayscale-0 bg-black border-4 border-yellow-400' : 'bg-white border dark:bg-gray-900 border-gray-200 dark:border-gray-800'
+    highContrast ? 'grayscale-0 bg-black border-4 border-yellow-400' : 'bg-white border dark:bg-gray-900 border-border-primary'
   } rounded-2xl p-6`;
 
   const textClasses = `
@@ -25,11 +25,11 @@ export const AccessibleHighContrastMode: React.FC<AccessibleHighContrastModeProp
     <div className="w-full max-w-2xl mx-auto space-y-6">
       
       {/* Controls */}
-      <div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-xl flex flex-wrap gap-2 items-center justify-center">
+      <div className="bg-background-secondary p-2 rounded-xl flex flex-wrap gap-2 items-center justify-center">
         <button
           onClick={() => setHighContrast(!highContrast)}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
-            highContrast ? 'bg-black text-yellow-400 shadow-md ring-2 ring-yellow-400' : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 shadow-sm'
+            highContrast ? 'bg-black text-yellow-400 shadow-md ring-2 ring-yellow-400' : 'bg-surface-primary text-text-primary shadow-sm'
           }`}
         >
           <Contrast size={16} />
@@ -39,7 +39,7 @@ export const AccessibleHighContrastMode: React.FC<AccessibleHighContrastModeProp
         <button
           onClick={() => setLargeText(!largeText)}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
-            largeText ? 'bg-blue-600 text-white shadow-md' : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 shadow-sm'
+            largeText ? 'bg-blue-600 text-white shadow-md' : 'bg-surface-primary text-text-primary shadow-sm'
           }`}
         >
           <Type size={16} />
@@ -49,7 +49,7 @@ export const AccessibleHighContrastMode: React.FC<AccessibleHighContrastModeProp
         <button
           onClick={() => setDyslexicFont(!dyslexicFont)}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
-            dyslexicFont ? 'bg-green-600 text-white shadow-md' : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 shadow-sm'
+            dyslexicFont ? 'bg-green-600 text-white shadow-md' : 'bg-surface-primary text-text-primary shadow-sm'
           }`}
         >
           <Eye size={16} />
@@ -70,11 +70,11 @@ export const AccessibleHighContrastMode: React.FC<AccessibleHighContrastModeProp
           <div className={textClasses}>{children}</div>
         ) : (
           <div className="space-y-6">
-            <div className={`flex justify-between items-center pb-4 border-b ${highContrast ? 'border-yellow-400 border-b-4' : 'border-gray-100 dark:border-gray-800'}`}>
-               <h2 className={`font-bold ${largeText ? 'text-3xl' : 'text-xl'} ${highContrast ? 'text-white' : 'text-gray-900 dark:text-white'} ${dyslexicFont ? 'font-serif' : ''}`}>
+            <div className={`flex justify-between items-center pb-4 border-b ${highContrast ? 'border-yellow-400 border-b-4' : 'border-border-primary'}`}>
+               <h2 className={`font-bold ${largeText ? 'text-3xl' : 'text-xl'} ${highContrast ? 'text-white' : 'text-text-primary'} ${dyslexicFont ? 'font-serif' : ''}`}>
                  Estado de Cuenta
                </h2>
-               <div className={`font-black ${largeText ? 'text-4xl' : 'text-2xl'} ${highContrast ? 'text-yellow-400' : 'text-gray-900 dark:text-white'}`}>
+               <div className={`font-black ${largeText ? 'text-4xl' : 'text-2xl'} ${highContrast ? 'text-yellow-400' : 'text-text-primary'}`}>
                  -$1,490.00
                </div>
             </div>
@@ -93,7 +93,7 @@ export const AccessibleHighContrastMode: React.FC<AccessibleHighContrastModeProp
                       {tx.desc}
                     </p>
                   </div>
-                  <div className={`font-black ${highContrast ? 'text-white' : 'text-gray-900 dark:text-white'} ${largeText ? 'text-2xl' : 'text-base'}`}>
+                  <div className={`font-black ${highContrast ? 'text-white' : 'text-text-primary'} ${largeText ? 'text-2xl' : 'text-base'}`}>
                     {tx.amount}
                   </div>
                 </div>
