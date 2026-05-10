@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useId } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /* ========================================
@@ -38,6 +38,8 @@ export const Tooltip: React.FC<TooltipProps> = ({
 }) => {
     const [isVisible, setIsVisible] = useState(false);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const tooltipId = useId();
+    const childRef = useRef<HTMLElement | null>(null);
 
     const handleMouseEnter = () => {
         timeoutRef.current = setTimeout(() => {
@@ -104,6 +106,14 @@ export const Tooltip: React.FC<TooltipProps> = ({
 
     const pos = getPositionStyles();
 
+    // Clone child to pass aria-describedby
+    const childWithAria = React.isValidElement(children)
+        ? React.cloneElement(children as React.ReactElement<any>, {
+            'aria-describedby': isVisible ? tooltipId : undefined,
+            ref: childRef,
+          })
+        : children;
+
     return (
         <div 
             className="relative inline-flex w-fit cursor-default" 
@@ -111,13 +121,15 @@ export const Tooltip: React.FC<TooltipProps> = ({
             onMouseLeave={handleMouseLeave}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            tabIndex={0} // Ensure it's focusable
+            tabIndex={-1} // Wrapper shouldn't be focusable itself; child handles focus
         >
-            {children}
+            {childWithAria}
             
             <AnimatePresence>
                 {isVisible && (
                     <motion.div
+                        id={tooltipId}
+                        role="tooltip"
                         className={`
                             absolute z-tooltip
                             px-3 py-2

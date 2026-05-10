@@ -85,10 +85,21 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
             }
             : {};
 
+        // Assign role="region" and aria-label for interactive cards so screen readers
+        // can navigate to them as landmarks.
+        const interactiveAttrs = hoverable
+            ? {
+                role: 'region' as const,
+                'aria-label': props['aria-label'] || (typeof children === 'string' ? children : undefined),
+              }
+            : {};
+
         return (
             <motion.div
                 ref={ref}
                 className={combinedClassName}
+                role={interactiveAttrs.role}
+                aria-label={interactiveAttrs['aria-label']}
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{

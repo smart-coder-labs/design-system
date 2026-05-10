@@ -87,6 +87,8 @@ export const Modal: React.FC<ModalProps> = ({
         return () => setMounted(false);
     }, []);
 
+    const contentRef = useRef<HTMLDivElement>(null);
+
     // Handle Escape key
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
@@ -97,6 +99,62 @@ export const Modal: React.FC<ModalProps> = ({
         document.addEventListener('keydown', handleEscape);
         return () => document.removeEventListener('keydown', handleEscape);
     }, [open, onOpenChange]);
+
+    // Focus trap: trap focus inside modal while open
+    useEffect(() => {
+        if (!open) return;
+
+        const container = contentRef.current;
+        if (!container) return;
+
+        const focusableSelector =
+            'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+        const getFocusableElements = (): HTMLElement[] => {
+            if (!container) return [];
+            return Array.from(container.querySelectorAll<HTMLElement>(focusableSelector));
+        };
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key !== 'Tab') return;
+
+            const focusable = getFocusableElements();
+            if (focusable.length === 0) {
+                e.preventDefault();
+                return;
+            }
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (e.shiftKey) {
+                if (document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else {
+                if (document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        };
+
+        container.addEventListener('keydown', handleKeyDown);
+
+        // Focus the first focusable element on open
+        const firstFocusable = getFocusableElements()[0];
+        if (firstFocusable) {
+            // Use requestAnimationFrame to ensure the DOM is ready
+            requestAnimationFrame(() => {
+                firstFocusable.focus();
+            });
+        }
+
+        return () => {
+            container.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [open]);
 
     // Animation variants
     const variants: Record<string, any> = {
@@ -163,6 +221,7 @@ export const Modal: React.FC<ModalProps> = ({
 
                     {/* Content */}
                     <motion.div
+                        ref={contentRef}
                         className={`w-full ${sizeStyles[size]} bg-surface-primary shadow-xl p-6 relative z-50 focus:outline-none overflow-y-auto max-h-screen ${config.content}`}
                         initial={variants[config.variant]?.initial}
                         animate={variants[config.variant]?.animate}
@@ -175,6 +234,7 @@ export const Modal: React.FC<ModalProps> = ({
                         }}
                         role="dialog"
                         aria-modal="true"
+                        tabIndex={-1}
                         onClick={(e) => e.stopPropagation()}
                     >
                          {/* Close context could be provided here if needed, but we pass onOpenChange generally */}

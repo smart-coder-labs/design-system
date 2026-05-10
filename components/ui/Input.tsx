@@ -129,6 +129,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                         ref={ref}
                         className={inputClassName}
                         disabled={disabled}
+                        role="textbox"
                         whileFocus={{
                             scale: 1.005,
                         }}
@@ -224,6 +225,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
                     ref={ref as any}
                     className={textareaClassName}
                     disabled={disabled}
+                    role="textbox"
+                    aria-multiline="true"
                     whileFocus={{
                         scale: 1.005,
                     }}
