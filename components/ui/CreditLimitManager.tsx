@@ -64,35 +64,28 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                 <div className="flex items-end justify-between mb-8">
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1">Active Limit</p>
-                        <motion.h2
-                            key={limit}
-                            initial={{ y: 5, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            className="text-4xl font-bold tracking-tight text-text-primary"
-                        >
+                        <h2 className="text-4xl font-bold tracking-tight text-text-primary transition-all duration-100">
                             {formatCurrency(limit)}
-                        </motion.h2>
+                        </h2>
                     </div>
                 </div>
 
                 <div className="relative pt-4 pb-2">
                     {/* The literal Slider if there's an existing standard component, but since it's highly custom, we implement the custom slider here */}
                     <div className="relative h-2 w-full bg-zinc-200 dark:bg-zinc-700 rounded-full">
-                        <motion.div
+                        <div
                             className={cn(
-                                "absolute top-0 left-0 h-full rounded-full transition-all duration-150 relative",
+                                "absolute top-0 left-0 h-full rounded-full",
                                 limit < maxLimit / 2 ? "bg-emerald-500" :
                                     limit < maxLimit * 0.8 ? "bg-violet-500" :
                                         "bg-amber-500"
                             )}
-                            style={{ width: `${percentage}%` }}
+                            style={{ width: `${percentage}%`, transition: 'width 80ms linear' }}
                         >
-                            <motion.div
-                                className="absolute right-0 top-1/2 -mt-3 -mr-3 w-6 h-6 bg-white border-2 border-inherit rounded-full shadow-lg flex items-center justify-center cursor-grab active:cursor-grabbing"
-                                whileHover={{ scale: 1.2 }}
-                                whileTap={{ scale: 0.9 }}
+                            <div
+                                className="absolute right-0 top-1/2 -mt-3 -mr-3 w-6 h-6 bg-white border-2 border-inherit rounded-full shadow-lg cursor-pointer"
                             />
-                        </motion.div>
+                        </div>
                         {/* Fake invisible input for accessibility and sliding logic via slider, since we're using a native one is safer */}
                         <input
                             type="range"

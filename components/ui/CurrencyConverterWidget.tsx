@@ -73,19 +73,22 @@ export const CurrencyConverterWidget: React.FC<CurrencyConverterWidgetProps> = (
                 </div>
 
                 {/* Exchange Details */}
-                <div className="relative flex flex-col items-center">
-                    <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        onClick={handleSwap}
-                        className="absolute top-1/2 -translate-y-1/2 z-10 bg-surface-primary border border-border-primary rounded-full p-2 shadow-sm text-text-secondary hover:text-accent-blue transition-colors"
-                    >
-                        <motion.div animate={{ rotate: isSwapping ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                            <ArrowDownUp className="w-4 h-4" />
-                        </motion.div>
-                    </motion.button>
+                <div className="relative flex flex-col">
+                    <div className="relative">
+                        <div className="absolute left-3.5 top-0 bottom-0 w-0.5 border-l-2 border-dashed border-border-primary" />
+                        <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={handleSwap}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-surface-primary border border-border-primary rounded-full p-2 shadow-sm text-text-secondary hover:text-accent-blue transition-colors"
+                        >
+                            <motion.div animate={{ rotate: isSwapping ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                                <ArrowDownUp className="w-4 h-4" />
+                            </motion.div>
+                        </motion.button>
+                    </div>
 
-                    <div className="w-full flex-1 border-l-2 border-dashed border-border-primary ml-6 py-4 pl-6 space-y-3">
+                    <div className="w-full flex-1 pl-12 py-4 space-y-3">
                         <div className="flex items-center justify-between text-sm">
                             <div className="flex items-center gap-2 text-text-tertiary">
                                 <span className="w-1.5 h-1.5 rounded-full bg-border-primary" />
