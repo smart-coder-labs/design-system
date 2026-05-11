@@ -71,3 +71,23 @@ export const FintechUseCase: Story = {
     },
   },
 };
+
+export const LoadingState: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'ExpenseCategorizer in a loading state, showing skeleton UI while transaction data is being fetched from the server.',
+      },
+    },
+  },
+};
+
+export const WithEmptyData: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'ExpenseCategorizer with no transactions loaded, showing the empty state fallback for new accounts.',
+      },
+    },
+  },
+};

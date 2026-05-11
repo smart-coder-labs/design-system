@@ -144,3 +144,42 @@ export const MobileView: Story = {
         ),
     ],
 };
+
+export const PendingTransaction: Story = {
+    args: {
+        title: 'Pending Payments',
+        transactions: [
+            { id: '1', title: 'Wire Transfer Out', amount: 2500, type: 'expense', status: 'pending', category: 'transfer', date: '2025-05-11', description: 'To Alice Johnson - Checking' },
+            { id: '2', title: 'ACH Deposit', amount: 3200, type: 'income', status: 'pending', category: 'work', date: '2025-05-11', description: 'Client payment - pending clearance' },
+            { id: '3', title: 'Card Authorization', amount: 150, type: 'expense', status: 'pending', category: 'shopping', date: '2025-05-10', description: 'Hotel deposit hold' },
+        ],
+        currency: 'USD',
+    },
+};
+
+export const InternationalTransactions: Story = {
+    args: {
+        title: 'International Activity',
+        transactions: [
+            { id: '1', title: 'SWIFT Transfer', amount: 15000, type: 'expense', status: 'completed', category: 'transfer', date: '2025-05-11', description: 'To EUR account - Santander ES' },
+            { id: '2', title: 'Currency Exchange', amount: 5000, type: 'expense', status: 'completed', category: 'transfer', date: '2025-05-10', description: 'USD → EUR at 0.92 rate' },
+            { id: '3', title: 'Foreign ATM Fee', amount: 5.00, type: 'expense', status: 'completed', category: 'other', date: '2025-05-09', description: 'ATM withdrawal in London' },
+            { id: '4', title: 'Wire Received', amount: 25000, type: 'income', status: 'completed', category: 'transfer', date: '2025-05-08', description: 'From Deutsche Bank AG' },
+        ],
+        currency: 'USD',
+    },
+};
+
+export const MonthlySubscriptionCharges: Story = {
+    args: {
+        title: 'Subscriptions This Month',
+        transactions: [
+            { id: '1', title: 'Netflix', amount: 15.99, type: 'expense', status: 'completed', category: 'other', date: '2025-05-11' },
+            { id: '2', title: 'Spotify', amount: 9.99, type: 'expense', status: 'completed', category: 'other', date: '2025-05-10' },
+            { id: '3', title: 'iCloud Storage', amount: 2.99, type: 'expense', status: 'completed', category: 'other', date: '2025-05-09' },
+            { id: '4', title: 'Adobe Creative Cloud', amount: 54.99, type: 'expense', status: 'completed', category: 'other', date: '2025-05-08' },
+            { id: '5', title: 'Amazon Prime', amount: 14.99, type: 'expense', status: 'completed', category: 'shopping', date: '2025-05-07' },
+        ],
+        currency: 'USD',
+    },
+};

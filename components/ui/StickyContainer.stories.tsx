@@ -184,3 +184,13 @@ export const FintechUseCase: Story = {
     },
   },
 };
+
+export const LoadingState: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'StickyContainer in a loading state, showing the skeleton or placeholder UI while data is being fetched.',
+      },
+    },
+  },
+};

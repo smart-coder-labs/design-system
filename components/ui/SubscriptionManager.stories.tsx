@@ -78,3 +78,11 @@ export const LongSubscriptionList: Story = {
     },
   },
 };
+
+export const WithEmptySubscriptions: Story = {
+  render: () => (
+    <div style={{ padding: 20 }}>
+      <SubscriptionManager subscriptions={[]} />
+    </div>
+  ),
+};

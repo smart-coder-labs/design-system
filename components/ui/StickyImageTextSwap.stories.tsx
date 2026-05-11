@@ -77,3 +77,13 @@ export const FintechUseCase: Story = {
     },
   },
 };
+
+export const LoadingState: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'StickyImageTextSwap in a loading state, showing placeholder content while images and text load.',
+      },
+    },
+  },
+};

@@ -169,3 +169,13 @@ export const FintechUseCase: Story = {
     },
   },
 };
+
+export const LoadingState: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'SplitView in a loading state, showing skeleton placeholder UI while data is being fetched from the server.',
+      },
+    },
+  },
+};

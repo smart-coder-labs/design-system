@@ -1,18 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TreeView } from './TreeView';
+import { useState } from 'react';
 
 const meta = {
     title: 'Components/TreeView',
     component: TreeView,
     tags: ['autodocs'],
-    parameters: {
-        docs: {
-            description: {
-                component:
-                    'A macOS Finder-style tree view with expandable/collapsible folders, file type icons, and meta information. Supports selection, toggling, disabled nodes, and custom icons.',
-            },
-        },
-    },
 } satisfies Meta<typeof TreeView>;
 
 export default meta;
@@ -22,194 +15,187 @@ export const Default: Story = {
     args: {
         data: [
             {
-                id: '1', name: 'Documents', type: 'folder',
-                children: [
-                    { id: '1a', name: 'Tax Returns', type: 'folder', children: [
-                        { id: '1a1', name: '2024 Tax Return.pdf', type: 'file', meta: '2.4 MB' },
-                        { id: '1a2', name: '2023 Tax Return.pdf', type: 'file', meta: '2.1 MB' },
-                    ]},
-                    { id: '1b', name: 'Statements', type: 'folder', children: [
-                        { id: '1b1', name: 'May Statement.pdf', type: 'file', meta: '1.2 MB' },
-                        { id: '1b2', name: 'April Statement.pdf', type: 'file', meta: '1.1 MB' },
-                    ]},
+                id: '1', label: 'Accounts', children: [
+                    { id: '1.1', label: 'Checking ••••4582' },
+                    { id: '1.2', label: 'Savings ••••3391' },
+                    { id: '1.3', label: 'Credit Card ••••7821' },
                 ],
             },
             {
-                id: '2', name: 'Investments', type: 'folder',
-                children: [
-                    { id: '2a', name: 'Portfolio Summary.xlsx', type: 'file', meta: '856 KB' },
-                    { id: '2b', name: 'Stock Analysis', type: 'folder', children: [
-                        { id: '2b1', name: 'AAPL Analysis.pdf', type: 'file', meta: '1.5 MB' },
-                        { id: '2b2', name: 'TSLA Report.pdf', type: 'file', meta: '1.3 MB' },
-                    ]},
+                id: '2', label: 'Investments', children: [
+                    { id: '2.1', label: 'Stocks' },
+                    { id: '2.2', label: 'ETFs' },
+                    { id: '2.3', label: 'Crypto' },
                 ],
             },
             {
-                id: '3', name: 'Reports', type: 'folder',
-                children: [
-                    { id: '3a', name: 'Monthly Report Q1.pdf', type: 'file', meta: '3.2 MB' },
-                    { id: '3b', name: 'Annual Report 2024.pdf', type: 'file', meta: '5.8 MB' },
+                id: '3', label: 'Documents', children: [
+                    { id: '3.1', label: 'Statements' },
+                    { id: '3.2', label: 'Tax Forms' },
+                    { id: '3.3', label: 'Agreements' },
                 ],
             },
         ],
-        defaultExpandedIds: ['1', '2', '1a'],
     },
 };
 
-export const SimpleStructure: Story = {
-    args: {
-        data: [
-            { id: '1', name: 'Checking Account', type: 'file', meta: '$12,450' },
-            { id: '2', name: 'Savings Account', type: 'file', meta: '$45,200' },
-            { id: '3', name: 'Investment Portfolio', type: 'folder', children: [
-                { id: '3a', name: 'Stocks', type: 'file', meta: '$62,300' },
-                { id: '3b', name: 'Bonds', type: 'file', meta: '$28,000' },
-                { id: '3c', name: 'Crypto', type: 'file', meta: '$15,400' },
-            ]},
-            { id: '4', name: 'Credit Cards', type: 'folder', children: [
-                { id: '4a', name: 'Visa Platinum', type: 'file', meta: '-$2,340' },
-                { id: '4b', name: 'Mastercard Gold', type: 'file', meta: '-$1,200' },
-            ]},
-        ],
-        defaultExpandedIds: ['3', '4'],
-    },
-};
-
-export const SingleFolder: Story = {
+export const CategoryTree: Story = {
     args: {
         data: [
             {
-                id: 'root', name: 'My Files', type: 'folder',
-                children: [
-                    { id: 'f1', name: 'document.txt', type: 'file', meta: '12 KB' },
-                    { id: 'f2', name: 'image.png', type: 'file', meta: '2.3 MB' },
-                    { id: 'f3', name: 'code.tsx', type: 'file', meta: '4 KB' },
-                    { id: 'f4', name: 'data.json', type: 'file', meta: '156 KB' },
-                    { id: 'f5', name: 'style.css', type: 'file', meta: '8 KB' },
+                id: '1', label: 'Income ($8,230)', children: [
+                    { id: '1.1', label: 'Salary ($4,500)' },
+                    { id: '1.2', label: 'Freelance ($2,800)' },
+                    { id: '1.3', label: 'Investments ($930)' },
+                ],
+            },
+            {
+                id: '2', label: 'Expenses ($3,780)', children: [
+                    { id: '2.1', label: 'Housing ($1,800)' },
+                    { id: '2.2', label: 'Food ($650)' },
+                    { id: '2.3', label: 'Transport ($320)' },
+                    { id: '2.4', label: 'Entertainment ($180)' },
+                    { id: '2.5', label: 'Utilities ($230)' },
+                    { id: '2.6', label: 'Other ($600)' },
+                ],
+            },
+            {
+                id: '3', label: 'Savings ($4,500)', children: [
+                    { id: '3.1', label: 'Emergency Fund ($2,500)' },
+                    { id: '3.2', label: 'Vacation ($1,200)' },
+                    { id: '3.3', label: 'Retirement ($800)' },
                 ],
             },
         ],
-        defaultExpandedIds: ['root'],
     },
 };
 
-export const DeepNesting: Story = {
-    args: {
-        data: [
-            {
-                id: 'l1', name: 'Project', type: 'folder',
-                children: [
+export const WithCustomRender: Story = {
+    render: () => (
+        <div className="max-w-md">
+            <TreeView
+                data={[
                     {
-                        id: 'l2a', name: 'src', type: 'folder',
-                        children: [
-                            {
-                                id: 'l3a', name: 'components', type: 'folder',
-                                children: [
-                                    {
-                                        id: 'l4a', name: 'ui', type: 'folder',
-                                        children: [
-                                            { id: 'f1', name: 'Button.tsx', type: 'file', meta: '2 KB' },
-                                            { id: 'f2', name: 'Card.tsx', type: 'file', meta: '3 KB' },
-                                        ],
-                                    },
-                                ],
-                            },
-                            { id: 'f3', name: 'app.tsx', type: 'file', meta: '1 KB' },
+                        id: '1', label: '📈 Growth Portfolio', children: [
+                            { id: '1.1', label: 'AAPL - Apple Inc.' },
+                            { id: '1.2', label: 'NVDA - NVIDIA Corp.' },
+                            { id: '1.3', label: 'MSFT - Microsoft Corp.' },
                         ],
                     },
-                    { id: 'f4', name: 'package.json', type: 'file', meta: '0.5 KB' },
-                ],
-            },
-        ],
-        defaultExpandedIds: ['l1', 'l2a', 'l3a', 'l4a'],
-    },
-};
-
-export const EmptyTree: Story = {
-    args: {
-        data: [],
-        defaultExpandedIds: [],
-    },
-};
-
-export const AllFiles: Story = {
-    args: {
-        data: [
-            { id: 's1', name: 'report.txt', type: 'file', meta: '45 KB' },
-            { id: 's2', name: 'image.png', type: 'file', meta: '1.2 MB' },
-            { id: 's3', name: 'code.ts', type: 'file', meta: '8 KB' },
-            { id: 's4', name: 'data.json', type: 'file', meta: '230 KB' },
-            { id: 's5', name: 'style.css', type: 'file', meta: '15 KB' },
-            { id: 's6', name: 'readme.md', type: 'file', meta: '3 KB' },
-            { id: 's7', name: 'logo.svg', type: 'file', meta: '28 KB' },
-        ],
-    },
-};
-
-export const WithDisabledNodes: Story = {
-    args: {
-        data: [
-            {
-                id: 'd1', name: 'Shared Folder', type: 'folder',
-                children: [
-                    { id: 'd1a', name: 'public_file.txt', type: 'file', meta: '14 KB' },
-                    { id: 'd1b', name: 'restricted_file.pdf', type: 'file', meta: '2.1 MB', disabled: true },
-                ],
-            },
-            {
-                id: 'd2', name: 'Private', type: 'folder', disabled: true,
-                children: [
-                    { id: 'd2a', name: 'secret.txt', type: 'file', meta: '1 KB' },
-                ],
-            },
-            { id: 'd3', name: 'read_only.md', type: 'file', meta: '5 KB', disabled: true },
-        ],
-        defaultExpandedIds: ['d1'],
-    },
-};
-
-export const CodeProject: Story = {
-    args: {
-        data: [
-            {
-                id: 'c1', name: 'design-system', type: 'folder',
-                children: [
                     {
-                        id: 'c2', name: 'src', type: 'folder',
-                        children: [
-                            { id: 'c2a', name: 'index.ts', type: 'file', meta: '0.3 KB' },
-                            { id: 'c2b', name: 'utils.ts', type: 'file', meta: '1 KB' },
-                            { id: 'c2c', name: 'components', type: 'folder', children: [
-                                { id: 'c2c1', name: 'Button.tsx', type: 'file', meta: '4 KB' },
-                                { id: 'c2c2', name: 'Card.tsx', type: 'file', meta: '3 KB' },
-                                { id: 'c2c3', name: 'Modal.tsx', type: 'file', meta: '5 KB' },
+                        id: '2', label: '🛡️ Conservative Portfolio', children: [
+                            { id: '2.1', label: 'BND - Vanguard Total Bond' },
+                            { id: '2.2', label: 'VOO - S&P 500 ETF' },
+                            { id: '2.3', label: 'VNQ - Real Estate ETF' },
+                        ],
+                    },
+                ]}
+            />
+        </div>
+    ),
+};
+
+export const SingleCategory: Story = {
+    args: {
+        data: [
+            {
+                id: '1', label: 'September 2025', children: [
+                    { id: '1.1', label: 'Statement_Sept2025.pdf' },
+                    { id: '1.2', label: 'Tax_Summary_Q3.pdf' },
+                ],
+            },
+        ],
+    },
+};
+
+export const DeepNested: Story = {
+    args: {
+        data: [
+            {
+                id: '1', label: '📊 Portfolio', children: [
+                    {
+                        id: '1.1', label: 'Stocks', children: [
+                            { id: '1.1.1', label: 'Tech Sector', children: [
+                                { id: '1.1.1.1', label: 'AAPL - $8,925' },
+                                { id: '1.1.1.2', label: 'MSFT - $12,756' },
+                            ]},
+                            { id: '1.1.2', label: 'Finance', children: [
+                                { id: '1.1.2.1', label: 'JPM - $4,500' },
+                                { id: '1.1.2.2', label: 'V - $6,200' },
                             ]},
                         ],
                     },
-                    { id: 'c3', name: 'package.json', type: 'file', meta: '0.5 KB' },
-                    { id: 'c4', name: 'tsconfig.json', type: 'file', meta: '0.3 KB' },
+                    {
+                        id: '1.2', label: 'ETFs', children: [
+                            { id: '1.2.1', label: 'VOO - $15,200' },
+                            { id: '1.2.2', label: 'QQQ - $8,900' },
+                        ],
+                    },
                 ],
             },
         ],
-        defaultExpandedIds: ['c1', 'c2', 'c2c'],
+    },
+};
+
+export const InteractiveTree: Story = {
+    render: () => {
+        const [selectedId, setSelectedId] = useState<string | null>(null);
+        const details: Record<string, string> = {
+            '1.1.1': 'Total: $21,681 • 12 shares • +3.2%',
+            '1.1.2': 'Total: $10,700 • 8 shares • +1.8%',
+            '1.2.1': 'Total: $15,200 • 45 shares • +4.1%',
+            '1.2.2': 'Total: $8,900 • 20 shares • +5.3%',
+        };
+        return (
+            <div className="space-y-4">
+                <TreeView
+                    data={[
+                        {
+                            id: '1', label: 'Investment Portfolio', children: [
+                                {
+                                    id: '1.1', label: 'Stocks', children: [
+                                        { id: '1.1.1', label: 'Tech Sector' },
+                                        { id: '1.1.2', label: 'Finance Sector' },
+                                    ],
+                                },
+                                {
+                                    id: '1.2', label: 'ETFs', children: [
+                                        { id: '1.2.1', label: 'VOO (S&P 500)' },
+                                        { id: '1.2.2', label: 'QQQ (Nasdaq)' },
+                                    ],
+                                },
+                            ],
+                        },
+                    ]}
+                    selectedId={selectedId || undefined}
+                    onSelect={(id) => setSelectedId(id)}
+                />
+                {selectedId && details[selectedId] && (
+                    <div className="p-3 bg-surface-secondary rounded-lg text-sm">
+                        <p className="text-xs text-text-secondary">Details for selected item:</p>
+                        <p className="font-medium">{details[selectedId]}</p>
+                    </div>
+                )}
+            </div>
+        );
     },
 };
 
 export const DarkMode: Story = {
     parameters: {
-        themes: { default: 'dark' },
+        themes: { themeOverride: 'dark' },
     },
     args: {
         data: [
-            {
-                id: 'dm1', name: 'Dark Folder', type: 'folder',
-                children: [
-                    { id: 'dm1a', name: 'dark_file.txt', type: 'file', meta: '12 KB' },
-                    { id: 'dm1b', name: 'night_mode.ts', type: 'file', meta: '8 KB' },
-                ],
-            },
-            { id: 'dm2', name: 'readme.md', type: 'file', meta: '3 KB' },
+            { id: '1', label: 'Crypto Holdings', children: [
+                { id: '1.1', label: 'Bitcoin (BTC) - $28,400' },
+                { id: '1.2', label: 'Ethereum (ETH) - $12,500' },
+                { id: '1.3', label: 'Solana (SOL) - $3,200' },
+            ]},
+            { id: '2', label: 'Stablecoins', children: [
+                { id: '2.1', label: 'USDC - $15,000' },
+                { id: '2.2', label: 'USDT - $5,000' },
+            ]},
         ],
-        defaultExpandedIds: ['dm1'],
     },
 };

@@ -12,76 +12,59 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        text: '$124,532.00',
-    },
-};
-
-export const WelcomeMessage: Story = {
-    args: {
-        text: 'Welcome to FinTech Pro',
+        text: 'Welcome to FinBank',
+        duration: 2000,
     },
 };
 
 export const ShortText: Story = {
     args: {
-        text: '42.7% APY',
+        text: '$45,230',
+        duration: 1500,
     },
 };
 
-export const LongText: Story = {
+export const LongMessage: Story = {
     args: {
-        text: 'Your portfolio has grown by 18.3% this quarter',
+        text: 'Your transfer of $5,000 has been completed successfully',
+        duration: 3000,
     },
 };
 
-export const CryptoAddress: Story = {
+export const FastAnimation: Story = {
     args: {
-        text: '0x742d35Cc6634C0532925a3b844Bc9e7595f2bD18',
+        text: 'Portfolio Updated',
+        duration: 500,
     },
 };
 
-export const TransactionHash: Story = {
+export const SlowAnimation: Story = {
     args: {
-        text: '0x3a4b...f9e2',
+        text: 'Resolving transaction...',
+        duration: 4000,
     },
 };
 
-export const LargeNumber: Story = {
+export const SecurityMessage: Story = {
     args: {
-        text: '$1,234,567,890.42',
+        text: 'Secure connection established with 256-bit encryption',
+        duration: 2500,
     },
 };
 
-export const PercentageChange: Story = {
+export const DashboardGreeting: Story = {
     args: {
-        text: '+18.47% APY',
-    },
-};
-
-export const EmojiText: Story = {
-    args: {
-        text: 'Payment received 🎉 +$2,450.00',
-    },
-};
-
-export const MixedSymbols: Story = {
-    args: {
-        text: 'BTC → ETH | $45,230 @ 2.5%',
+        text: 'Good morning, Cesar! Your portfolio is up $2,340 today.',
+        duration: 3000,
     },
 };
 
 export const DarkMode: Story = {
-    args: {
-        text: 'Balance: $124,532.80',
-    },
     parameters: {
-        backgrounds: { default: 'dark' },
+        themes: { themeOverride: 'dark' },
     },
-    decorators: [
-        (Story: any) => (
-            <div className="dark p-8 bg-zinc-900 rounded-xl flex items-center justify-center min-h-[100px]">
-                <span className="text-4xl"><Story /></span>
-            </div>
-        ),
-    ],
+    args: {
+        text: 'Dark mode activated',
+        duration: 1500,
+    },
 };
