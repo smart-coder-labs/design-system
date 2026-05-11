@@ -121,6 +121,8 @@ export const Modal: React.FC<ModalProps> = ({
             const focusable = getFocusableElements();
             if (focusable.length === 0) {
                 e.preventDefault();
+                // Focus the dialog container itself so focus doesn't escape
+                (e.currentTarget as HTMLElement).focus();
                 return;
             }
 
@@ -142,14 +144,16 @@ export const Modal: React.FC<ModalProps> = ({
 
         container.addEventListener('keydown', handleKeyDown);
 
-        // Focus the first focusable element on open
+        // Focus the first focusable element on open, or the dialog itself
         const firstFocusable = getFocusableElements()[0];
-        if (firstFocusable) {
-            // Use requestAnimationFrame to ensure the DOM is ready
-            requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            if (firstFocusable) {
                 firstFocusable.focus();
-            });
-        }
+            } else {
+                // If no focusable elements, focus the dialog container (has tabIndex={-1})
+                container.focus();
+            }
+        });
 
         return () => {
             container.removeEventListener('keydown', handleKeyDown);

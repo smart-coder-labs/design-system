@@ -129,7 +129,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                         ref={ref}
                         className={inputClassName}
                         disabled={disabled}
-                        role="textbox"
+                        // Only set role="textbox" for text-like input types
+                        role={(!props.type || ['text','email','password','search','tel','url'].includes(props.type as string)) ? 'textbox' : undefined}
                         whileFocus={{
                             scale: 1.005,
                         }}

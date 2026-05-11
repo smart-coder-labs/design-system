@@ -106,11 +106,25 @@ export const Tooltip: React.FC<TooltipProps> = ({
 
     const pos = getPositionStyles();
 
-    // Clone child to pass aria-describedby
+    // Clone child to pass aria-describedby, merging refs (not overwriting)
     const childWithAria = React.isValidElement(children)
         ? React.cloneElement(children as React.ReactElement<any>, {
-            'aria-describedby': isVisible ? tooltipId : undefined,
-            ref: childRef,
+            'aria-describedby': isVisible
+                ? [
+                    (children.props as any)?.['aria-describedby'],
+                    tooltipId,
+                  ]
+                    .filter(Boolean)
+                    .join(' ')
+                : (children.props as any)?.['aria-describedby'],
+            ref: (node: any) => {
+                // Preserve child's original ref
+                const origRef = (children as any).ref;
+                if (typeof origRef === 'function') origRef(node);
+                else if (origRef && typeof origRef === 'object') origRef.current = node;
+                // Set our internal ref
+                childRef.current = node;
+            },
           })
         : children;
 

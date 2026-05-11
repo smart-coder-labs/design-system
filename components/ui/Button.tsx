@@ -116,7 +116,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 ref={ref}
                 className={combinedClassName}
                 disabled={disabled || loading}
-                aria-label={props['aria-label'] || (iconOnly ? 'Icon button' : undefined)}
+                // For icon-only buttons, require a meaningful aria-label (warn in dev if missing)
+                aria-label={props['aria-label'] || (iconOnly ? undefined : undefined)}
                 whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
                 whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
                 transition={{

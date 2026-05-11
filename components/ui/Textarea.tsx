@@ -3,9 +3,10 @@
 import * as React from "react";
 import { cn } from "../../lib/utils";
 
+// TextareaProps inherits ARIA attributes (including aria-label) from TextareaHTMLAttributes.
+// No need to redeclare them — that would risk drifting from React's typing.
 export interface TextareaProps
     extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-    'aria-label'?: string;
 }
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
