@@ -2,68 +2,88 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Stepper } from './Stepper';
 
 const meta = {
-  title: 'Components/Stepper',
-  component: Stepper,
-  tags: ['autodocs'],
+    title: 'Components/Stepper',
+    component: Stepper,
+    tags: ['autodocs'],
 } satisfies Meta<typeof Stepper>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const checkoutSteps = [
+    { id: 1, title: 'Cart', description: 'Review your items' },
+    { id: 2, title: 'Shipping', description: 'Enter delivery details' },
+    { id: 3, title: 'Payment', description: 'Choose payment method' },
+    { id: 4, title: 'Confirm', description: 'Review and place order' },
+];
+
 export const Default: Story = {
-  args: {
-    steps: [
-      { label: 'Select Asset', description: 'Choose cryptocurrency' },
-      { label: 'Enter Amount', description: 'Set investment amount' },
-      { label: 'Review', description: 'Confirm transaction' },
-      { label: 'Complete', description: 'Transaction done' },
-    ],
-    currentStep: 1,
-  },
-};
-
-export const FirstStep: Story = {
-  args: {
-    steps: [
-      { label: 'Connect Wallet', description: 'Link your wallet' },
-      { label: 'Authorize', description: 'Sign transaction' },
-      { label: 'Done', description: 'Process complete' },
-    ],
-    currentStep: 0,
-  },
-};
-
-export const MiddleStep: Story = {
-  args: {
-    steps: [
-      { label: 'Deposit', description: 'Add funds' },
-      { label: 'Trade', description: 'Execute order' },
-      { label: 'Withdraw', description: 'Transfer out' },
-      { label: 'Confirm', description: 'Final confirmation' },
-    ],
-    currentStep: 2,
-  },
-};
-
-export const Completed: Story = {
-  args: {
-    steps: [
-      { label: 'Register', description: 'Create account' },
-      { label: 'Verify', description: 'KYC verification' },
-      { label: 'Deposit', description: 'Fund wallet' },
-    ],
-    currentStep: 3,
-  },
+    args: {
+        steps: checkoutSteps,
+        activeStep: 1,
+        orientation: 'horizontal',
+        variant: 'default',
+    },
 };
 
 export const Vertical: Story = {
-  args: {
-    steps: [
-      { label: 'Plan', description: 'Define strategy' },
-      { label: 'Execute', description: 'Place orders' },
-      { label: 'Monitor', description: 'Track performance' },
-    ],
-    currentStep: 1,
-    orientation: 'vertical',
-  },
+    args: {
+        steps: checkoutSteps,
+        activeStep: 2,
+        orientation: 'vertical',
+        variant: 'default',
+    },
+};
+
+export const ChevronPipeline: Story = {
+    args: {
+        steps: checkoutSteps,
+        activeStep: 2,
+        orientation: 'horizontal',
+        variant: 'chevron',
+    },
+};
+
+const onboardingSteps = [
+    { id: 'personal', title: 'Personal Info', description: 'Your name and contact details' },
+    { id: 'verify', title: 'Verify Identity', description: 'Upload your ID document' },
+    { id: 'financial', title: 'Financial Profile', description: 'Income and investment goals' },
+    { id: 'done', title: 'All Set', description: 'Start using your account' },
+];
+
+export const Panel: Story = {
+    args: {
+        steps: onboardingSteps,
+        activeStep: 1,
+        orientation: 'vertical',
+        variant: 'panel',
+    },
+};
+
+export const Progress: Story = {
+    args: {
+        steps: [
+            { id: 1, title: 'Application Received' },
+            { id: 2, title: 'Under Review' },
+            { id: 3, title: 'Approved' },
+            { id: 4, title: 'Disbursed' },
+        ],
+        activeStep: 2,
+        orientation: 'horizontal',
+        variant: 'progress',
+    },
+};
+
+export const Timeline: Story = {
+    args: {
+        steps: [
+            { id: 1, title: 'Order Placed', description: 'Your order has been placed' },
+            { id: 2, title: 'Processing', description: 'Payment confirmed, preparing shipment' },
+            { id: 3, title: 'Shipped', description: 'Package is on its way' },
+            { id: 4, title: 'Delivered', description: 'Package delivered successfully' },
+        ],
+        activeStep: 3,
+        orientation: 'vertical',
+        variant: 'timeline',
+    },
 };
