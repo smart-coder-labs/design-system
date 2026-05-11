@@ -125,3 +125,69 @@ export const MinimalData: Story = {
         networkMetrics,
     },
 };
+
+export const ManyProcesses: Story = {
+    args: {
+        processes: [
+            { id: '1', name: 'Fraud Detection Engine', pid: 3891, cpu: 45.2, memory: 420, user: 'system' },
+            { id: '2', name: 'Transaction Indexer-Service', pid: 5562, cpu: 12.7, memory: 204, user: 'system' },
+            { id: '3', name: 'Market Data Stream', pid: 2104, cpu: 8.1, memory: 88, user: 'system' },
+            { id: '4', name: 'Portfolio Sync Worker', pid: 4521, cpu: 23.5, memory: 156, user: 'system' },
+            { id: '5', name: 'Report Generator', pid: 6723, cpu: 3.2, memory: 64, user: 'cesar' },
+            { id: '6', name: 'API Gateway', pid: 1234, cpu: 15.8, memory: 312, user: 'system' },
+            { id: '7', name: 'Cache Warmup', pid: 7890, cpu: 0.5, memory: 12, user: 'system' },
+            { id: '8', name: 'Audit Logger', pid: 3456, cpu: 1.2, memory: 48, user: 'system' },
+        ],
+        cpuMetrics,
+        memoryMetrics,
+        energyMetrics,
+        diskMetrics,
+        networkMetrics,
+        defaultTab: 'cpu',
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'ActivityMonitor with 8 processes showcasing a full fintech backend services view with fraud detection, market data, and API gateway monitoring.',
+            },
+        },
+    },
+};
+
+export const NetworkTab: Story = {
+    args: {
+        processes: sampleProcesses,
+        cpuMetrics,
+        memoryMetrics,
+        energyMetrics,
+        diskMetrics,
+        networkMetrics,
+        defaultTab: 'network',
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'ActivityMonitor focused on the Network tab, showing network throughput metrics with process-level traffic data.',
+            },
+        },
+    },
+};
+
+export const EnergyTab: Story = {
+    args: {
+        processes: sampleProcesses,
+        cpuMetrics,
+        memoryMetrics,
+        energyMetrics,
+        diskMetrics,
+        networkMetrics,
+        defaultTab: 'energy',
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'ActivityMonitor focused on the Energy tab, showing power consumption metrics for the fintech backend processes.',
+            },
+        },
+    },
+};

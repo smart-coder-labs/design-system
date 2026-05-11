@@ -319,3 +319,54 @@ export const ErroredTransactions: Story = {
         transactions: [processedData[0]],
     },
 };
+
+export const WithOnViewAll: Story = {
+    args: {
+        title: "ACH Transactions",
+        transactions: processedData,
+        onViewAll: () => console.log('View all clicked'),
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'ACH Transactions Visualizer with a "View All" action button in the header, enabling navigation to a full transactions page.',
+            },
+        },
+    },
+};
+
+export const ListLayoutWithDetails: Story = {
+    args: {
+        title: "ACH Transactions",
+        transactions: processedData,
+        layout: 'list',
+        isExpanded: true,
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'ACH Transactions displayed in list layout with all details expanded by default, showing fee breakdowns and full transaction history timeline.',
+            },
+        },
+    },
+};
+
+export const TableLayoutCompact: Story = {
+    args: {
+        title: "ACH Summary",
+        transactions: processedData,
+        layout: 'table',
+        tableColumns: [
+            { key: 'title', header: 'Entity', sortable: true, render: (_, row) => <span className="font-bold">{row.title}</span> },
+            { key: 'amount', header: 'Amount', sortable: true, render: (_, row) => <span className="font-mono">${row.amount.toFixed(2)}</span> },
+            { key: 'status', header: 'Status', sortable: true, render: (_, row) => <span className="capitalize">{row.status.toLowerCase()}</span> },
+        ],
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'ACH Transactions displayed in compact table layout with minimal columns (Entity, Amount, Status) for space-efficient viewing.',
+            },
+        },
+    },
+};

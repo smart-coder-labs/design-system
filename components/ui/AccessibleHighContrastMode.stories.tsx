@@ -108,3 +108,34 @@ export const WithFormContent: Story = {
     ),
   },
 };
+
+export const DarkModeDefault: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark bg-gray-950 p-6 max-w-2xl mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
+  args: {
+    children: (
+      <div className="p-6 max-w-md space-y-4">
+        <h2 className="text-xl font-bold text-white">High Contrast Mode</h2>
+        <p className="text-sm text-gray-300">Dark mode with high contrast ensures readability for users with visual impairments while maintaining the fintech brand identity.</p>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-surface-secondary p-4 rounded-xl border border-border-primary">
+            <p className="text-xs text-text-secondary">Portfolio Value</p>
+            <p className="text-2xl font-bold text-white">$128,450.00</p>
+          </div>
+          <div className="bg-surface-secondary p-4 rounded-xl border border-border-primary">
+            <p className="text-xs text-text-secondary">Today Gain</p>
+            <p className="text-2xl font-bold text-green-400">+$2,340.00</p>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+};

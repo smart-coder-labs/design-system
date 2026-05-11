@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ImageCarousel, CarouselImage } from './ImageCarousel';
+import { ImageCarousel } from './ImageCarousel';
 
-const images: CarouselImage[] = [
-  { src: 'https://picsum.photos/seed/dash1/800/400', alt: 'Dashboard', caption: 'Financial Dashboard Overview' },
-  { src: 'https://picsum.photos/seed/dash2/800/400', alt: 'Analytics', caption: 'Real-time Analytics' },
-  { src: 'https://picsum.photos/seed/dash3/800/400', alt: 'Reports', caption: 'Monthly Reports' },
-  { src: 'https://picsum.photos/seed/dash4/800/400', alt: 'Wallet', caption: 'Digital Wallet' },
+const images = [
+  { src: 'https://picsum.photos/seed/dashboard1/800/400', alt: 'Dashboard Overview', caption: 'Main Dashboard View' },
+  { src: 'https://picsum.photos/seed/chart1/800/400', alt: 'Revenue Chart', caption: 'Monthly Revenue — Q1 2025' },
+  { src: 'https://picsum.photos/seed/app1/800/400', alt: 'Mobile App', caption: 'Mobile Banking App Interface' },
+  { src: 'https://picsum.photos/seed/analytics1/800/400', alt: 'Analytics', caption: 'Advanced Analytics Dashboard' },
 ];
 
 const meta: Meta<typeof ImageCarousel> = {
@@ -24,7 +24,7 @@ export const Default: Story = {
   },
 };
 
-export const WithAutoPlay: Story = {
+export const AutoPlay: Story = {
   args: {
     images,
     autoPlay: true,
@@ -32,30 +32,42 @@ export const WithAutoPlay: Story = {
   },
 };
 
-export const FadeEffect: Story = {
-  args: {
-    images,
-    effect: 'fade',
-  },
-};
-
-export const WithoutArrows: Story = {
+export const NoArrows: Story = {
   args: {
     images,
     showArrows: false,
   },
 };
 
-export const WithoutIndicators: Story = {
+export const NoIndicators: Story = {
   args: {
-    images,
+    images: images.slice(0, 3),
     showIndicators: false,
   },
 };
 
-export const Tall: Story = {
+export const SingleImage: Story = {
+  args: {
+    images: images.slice(0, 1),
+  },
+};
+
+export const SlowAutoPlay: Story = {
   args: {
     images,
-    height: '600px',
+    autoPlay: true,
+    interval: 6000,
+  },
+};
+
+export const ProductShowcase: Story = {
+  args: {
+    images: [
+      { src: 'https://picsum.photos/seed/product1/800/400', alt: 'Premium Card', caption: 'Premium Platinum Card' },
+      { src: 'https://picsum.photos/seed/product2/800/400', alt: 'Mobile App', caption: 'Mobile Banking App' },
+      { src: 'https://picsum.photos/seed/product3/800/400', alt: 'Dashboard', caption: 'Wealth Management Dashboard' },
+    ],
+    autoPlay: true,
+    interval: 4000,
   },
 };

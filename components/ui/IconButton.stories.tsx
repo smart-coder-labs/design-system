@@ -1,12 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { IconButton } from './IconButton';
-import { Heart, Settings, Trash2, Bell, Pen, Share2 } from 'lucide-react';
+import { action } from '@storybook/addon-actions';
+import { Bell, Settings, Search, X, Plus, Trash2, Heart, Share2, Edit, MoreHorizontal, ArrowLeft, CreditCard } from 'lucide-react';
 
 const meta: Meta<typeof IconButton> = {
   title: 'Components/IconButton',
   component: IconButton,
   tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export default meta;
@@ -14,75 +18,104 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    icon: Heart,
-    'aria-label': 'Like',
+    icon: <Bell className="w-4 h-4" />,
+    onClick: action('clicked'),
   },
 };
 
 export const Primary: Story = {
   args: {
-    icon: Settings,
+    icon: <Settings className="w-4 h-4" />,
+    onClick: action('clicked'),
     variant: 'primary',
-    'aria-label': 'Settings',
   },
 };
 
-export const Tertiary: Story = {
+export const Secondary: Story = {
   args: {
-    icon: Bell,
-    variant: 'tertiary',
-    'aria-label': 'Notifications',
+    icon: <Search className="w-4 h-4" />,
+    onClick: action('clicked'),
+    variant: 'secondary',
   },
 };
 
 export const Ghost: Story = {
   args: {
-    icon: Share2,
+    icon: <X className="w-4 h-4" />,
+    onClick: action('clicked'),
     variant: 'ghost',
-    'aria-label': 'Share',
   },
 };
 
 export const Danger: Story = {
   args: {
-    icon: Trash2,
+    icon: <Trash2 className="w-4 h-4" />,
+    onClick: action('clicked'),
     variant: 'danger',
-    'aria-label': 'Delete',
   },
 };
 
-export const Loading: Story = {
+export const Small: Story = {
   args: {
-    icon: Pen,
-    isLoading: true,
-    'aria-label': 'Edit',
+    icon: <Plus className="w-3 h-3" />,
+    onClick: action('clicked'),
+    size: 'sm',
   },
 };
 
-export const WithTooltip: Story = {
+export const Large: Story = {
   args: {
-    icon: Settings,
-    tooltip: 'Open settings',
-    'aria-label': 'Settings',
+    icon: <Heart className="w-5 h-5" />,
+    onClick: action('clicked'),
+    size: 'lg',
   },
-};
-
-export const Sizes: Story = {
-  render: () => (
-    <div className="flex items-center gap-4">
-      <IconButton icon={Heart} size="xs" aria-label="xs" />
-      <IconButton icon={Heart} size="sm" aria-label="sm" />
-      <IconButton icon={Heart} size="md" aria-label="md" />
-      <IconButton icon={Heart} size="lg" aria-label="lg" />
-      <IconButton icon={Heart} size="xl" aria-label="xl" />
-    </div>
-  ),
 };
 
 export const Disabled: Story = {
   args: {
-    icon: Trash2,
+    icon: <Share2 className="w-4 h-4" />,
+    onClick: action('clicked'),
     disabled: true,
-    'aria-label': 'Delete',
   },
+};
+
+export const WithLabel: Story = {
+  args: {
+    icon: <Edit className="w-4 h-4" />,
+    label: 'Edit',
+    onClick: action('clicked'),
+  },
+};
+
+export const ActionRow: Story = {
+  render: () => (
+    <div className="flex items-center gap-2 p-2 bg-surface-primary rounded-xl border border-border-primary">
+      <IconButton icon={<ArrowLeft className="w-4 h-4" />} variant="ghost" onClick={action('back')} />
+      <span className="flex-1 text-sm font-semibold text-text-primary text-center">Transaction Details</span>
+      <IconButton icon={<Heart className="w-4 h-4" />} variant="ghost" onClick={action('favorite')} />
+      <IconButton icon={<MoreHorizontal className="w-4 h-4" />} variant="ghost" onClick={action('more')} />
+    </div>
+  ),
+};
+
+export const NotificationButton: Story = {
+  render: () => (
+    <div className="relative">
+      <IconButton icon={<Bell className="w-4 h-4" />} variant="ghost" onClick={action('notifications')} />
+      <span className="absolute -top-1 -right-1 w-4 h-4 bg-status-error text-white text-xs font-bold rounded-full flex items-center justify-center">
+        3
+      </span>
+    </div>
+  ),
+};
+
+export const AllVariants: Story = {
+  render: () => (
+    <div className="flex gap-3">
+      <IconButton icon={<CreditCard className="w-4 h-4" />} variant="primary" onClick={action('primary')} />
+      <IconButton icon={<CreditCard className="w-4 h-4" />} variant="secondary" onClick={action('secondary')} />
+      <IconButton icon={<CreditCard className="w-4 h-4" />} variant="ghost" onClick={action('ghost')} />
+      <IconButton icon={<Trash2 className="w-4 h-4" />} variant="danger" onClick={action('danger')} />
+    </div>
+  ),
 };

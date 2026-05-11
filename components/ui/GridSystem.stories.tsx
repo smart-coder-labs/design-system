@@ -1,85 +1,112 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { GridContainer, Row, Col } from './GridSystem';
+import { GridSystem } from './GridSystem';
 
-const meta: Meta<typeof GridContainer> = {
+const meta: Meta<typeof GridSystem> = {
   title: 'Components/GridSystem',
-  component: GridContainer,
+  component: GridSystem,
   tags: ['autodocs'],
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const placeholder = (text: string) => (
-  <div className="bg-accent-blue/10 text-accent-blue p-4 rounded-xl text-center text-sm font-medium">{text}</div>
-);
-
 export const Default: Story = {
-  render: () => (
-    <GridContainer>
-      <Row>
-        <Col span={4}>{placeholder('Column 1 (4 cols)')}</Col>
-        <Col span={4}>{placeholder('Column 2 (4 cols)')}</Col>
-        <Col span={4}>{placeholder('Column 3 (4 cols)')}</Col>
-      </Row>
-    </GridContainer>
-  ),
+  args: {
+    cols: 3,
+    gap: 'md',
+    children: Array.from({ length: 6 }, (_, i) => (
+      <div key={i} className="h-24 bg-accent-blue/10 rounded-xl flex items-center justify-center text-accent-blue font-semibold text-sm">
+        Item {i + 1}
+      </div>
+    )),
+  },
 };
 
-export const Fluid: Story = {
-  render: () => (
-    <GridContainer fluid>
-      <Row>
-        <Col span={3}>{placeholder('Fluid Col 3')}</Col>
-        <Col span={3}>{placeholder('Fluid Col 3')}</Col>
-        <Col span={3}>{placeholder('Fluid Col 3')}</Col>
-        <Col span={3}>{placeholder('Fluid Col 3')}</Col>
-      </Row>
-    </GridContainer>
-  ),
+export const TwoColumns: Story = {
+  args: {
+    cols: 2,
+    gap: 'lg',
+    children: Array.from({ length: 4 }, (_, i) => (
+      <div key={i} className="h-32 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 font-semibold">
+        Column {i + 1}
+      </div>
+    )),
+  },
 };
 
-export const Asymmetrical: Story = {
-  render: () => (
-    <GridContainer>
-      <Row>
-        <Col span={8}>{placeholder('Main Content (8 cols)')}</Col>
-        <Col span={4}>{placeholder('Sidebar (4 cols)')}</Col>
-      </Row>
-    </GridContainer>
-  ),
+export const FourColumns: Story = {
+  args: {
+    cols: 4,
+    gap: 'sm',
+    children: Array.from({ length: 8 }, (_, i) => (
+      <div key={i} className="h-20 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-500 font-semibold text-xs">
+        Col {i + 1}
+      </div>
+    )),
+  },
 };
 
-export const WithOffset: Story = {
-  render: () => (
-    <GridContainer>
-      <Row>
-        <Col span={4} offset={4}>{placeholder('Centered (4 cols + offset 4)')}</Col>
-      </Row>
-    </GridContainer>
-  ),
+export const SmallGap: Story = {
+  args: {
+    cols: 3,
+    gap: 'sm',
+    children: Array.from({ length: 6 }, (_, i) => (
+      <div key={i} className="h-16 bg-surface-secondary rounded-lg flex items-center justify-center text-text-primary text-xs font-medium">
+        Card {i + 1}
+      </div>
+    )),
+  },
 };
 
-export const Responsive: Story = {
-  render: () => (
-    <GridContainer>
-      <Row>
-        <Col span={12} md={6} lg={4}>{placeholder('xs:12 md:6 lg:4')}</Col>
-        <Col span={12} md={6} lg={4}>{placeholder('xs:12 md:6 lg:4')}</Col>
-        <Col span={12} md={6} lg={4}>{placeholder('xs:12 md:6 lg:4')}</Col>
-      </Row>
-    </GridContainer>
-  ),
+export const LargeGap: Story = {
+  args: {
+    cols: 2,
+    gap: 'lg',
+    children: Array.from({ length: 4 }, (_, i) => (
+      <div key={i} className="h-40 bg-surface-secondary rounded-2xl flex items-center justify-center text-text-primary">
+        Spacious Card {i + 1}
+      </div>
+    )),
+  },
 };
 
-export const CustomGutters: Story = {
-  render: () => (
-    <GridContainer>
-      <Row gutterX={8} gutterY={8}>
-        <Col span={6}>{placeholder('Wider gap col 1')}</Col>
-        <Col span={6}>{placeholder('Wider gap col 2')}</Col>
-      </Row>
-    </GridContainer>
-  ),
+export const DashboardWidgets: Story = {
+  args: {
+    cols: 3,
+    gap: 'md',
+    children: [
+      <div key="1" className="h-32 bg-accent-blue/10 rounded-xl p-4">
+        <p className="text-xs text-accent-blue font-semibold uppercase">Balance</p>
+        <p className="text-xl font-bold text-accent-blue mt-2">$45,892</p>
+      </div>,
+      <div key="2" className="h-32 bg-emerald-500/10 rounded-xl p-4">
+        <p className="text-xs text-emerald-600 font-semibold uppercase">Income</p>
+        <p className="text-xl font-bold text-emerald-600 mt-2">+$12,430</p>
+      </div>,
+      <div key="3" className="h-32 bg-amber-500/10 rounded-xl p-4">
+        <p className="text-xs text-amber-600 font-semibold uppercase">Expenses</p>
+        <p className="text-xl font-bold text-amber-600 mt-2">-$8,210</p>
+      </div>,
+      <div key="4" className="h-24 bg-surface-secondary rounded-xl p-3 col-span-2">
+        <p className="text-xs text-text-tertiary font-semibold uppercase">Transactions</p>
+        <p className="text-sm text-text-primary mt-1">12 pending, 142 completed</p>
+      </div>,
+      <div key="5" className="h-24 bg-surface-secondary rounded-xl p-3">
+        <p className="text-xs text-text-tertiary font-semibold uppercase">Cards</p>
+        <p className="text-sm text-text-primary mt-1">3 active cards</p>
+      </div>,
+    ],
+  },
+};
+
+export const SingleItem: Story = {
+  args: {
+    cols: 1,
+    children: (
+      <div className="h-48 bg-gradient-to-br from-accent-blue to-purple-600 rounded-2xl flex items-center justify-center text-white text-xl font-bold">
+        Full Width Banner
+      </div>
+    ),
+  },
 };

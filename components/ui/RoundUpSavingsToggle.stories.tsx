@@ -1,104 +1,120 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { RoundUpSavingsToggle } from './RoundUpSavingsToggle';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-const meta: Meta<typeof RoundUpSavingsToggle> = {
-  title: 'Fintech/RoundUpSavingsToggle',
-  component: RoundUpSavingsToggle,
-  parameters: {
-    layout: 'centered',
-  },
-  tags: ['autodocs'],
-};
+const meta = {
+    title: 'Components/RoundUpSavingsToggle',
+    component: RoundUpSavingsToggle,
+    tags: ['autodocs'],
+} satisfies Meta<typeof RoundUpSavingsToggle>;
 
 export default meta;
-type Story = StoryObj<typeof RoundUpSavingsToggle>;
+type Story = StoryObj<typeof meta>;
 
-export const Inactive: Story = {
-  args: {
-    initialState: false,
-    monthlyProjection: 850.25
-  },
-  render: (args) => <div className="w-full max-w-[340px]"><RoundUpSavingsToggle {...args} /></div>
+export const Default: Story = {
+    args: {
+        initialState: false,
+        monthlyProjection: 1250.50,
+        onToggle: (active) => console.log('Round-up savings:', active ? 'enabled' : 'disabled'),
+    },
 };
 
 export const Active: Story = {
-  args: {
-    initialState: true,
-    monthlyProjection: 1250.50
-  },
-  render: (args) => <div className="w-full max-w-[340px]"><RoundUpSavingsToggle {...args} /></div>
-};
-
-export const HighProjection: Story = {
-  args: {
-    initialState: true,
-    monthlyProjection: 3450.80
-  },
-  render: (args) => <div className="w-full max-w-[340px]"><RoundUpSavingsToggle {...args} /></div>
+    args: {
+        initialState: true,
+        monthlyProjection: 1250.50,
+        onToggle: (active) => console.log('Round-up savings:', active ? 'enabled' : 'disabled'),
+    },
 };
 
 export const LowProjection: Story = {
-  args: {
-    initialState: true,
-    monthlyProjection: 120.35
-  },
-  render: (args) => <div className="w-full max-w-[340px]"><RoundUpSavingsToggle {...args} /></div>
+    args: {
+        initialState: true,
+        monthlyProjection: 185.75,
+        onToggle: (active) => console.log('Round-up savings:', active ? 'enabled' : 'disabled'),
+    },
 };
 
-export const Interactive: Story = {
-  render: () => {
-    const [isActive, setIsActive] = useState(false);
-    const [log, setLog] = useState<string[]>([]);
-
-    const handleToggle = (active: boolean) => {
-      setIsActive(active);
-      setLog(prev => [...prev, `Redondeo ${active ? 'activado' : 'desactivado'} — ${new Date().toLocaleTimeString()}`]);
-    };
-
-    return (
-      <div className="w-full max-w-[340px] space-y-4">
-        <RoundUpSavingsToggle
-          initialState={isActive}
-          onToggle={handleToggle}
-          monthlyProjection={850.25}
-        />
-        {log.length > 0 && (
-          <div className="bg-background-secondary p-3 rounded-xl border border-border-primary">
-            <p className="text-xs font-medium mb-2 text-text-secondary">Registro de cambios:</p>
-            <ul className="space-y-1">
-              {log.map((entry, i) => (
-                <li key={i} className="text-xs text-text-secondary">{entry}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    );
-  },
+export const HighProjection: Story = {
+    args: {
+        initialState: true,
+        monthlyProjection: 3450.00,
+        onToggle: (active) => console.log('Round-up savings:', active ? 'enabled' : 'disabled'),
+    },
 };
 
-export const InSavingsDashboard: Story = {
-  render: () => (
-    <div className="w-full max-w-md space-y-6 p-6 bg-background-primary rounded-2xl border border-border-primary">
-      <div>
-        <h2 className="text-lg font-bold">Ahorro Automático</h2>
-        <p className="text-sm text-text-secondary">Redondea tus compras y ahorra la diferencia</p>
-      </div>
-      <div className="bg-background-secondary p-4 rounded-xl space-y-3">
-        <div className="flex justify-between text-sm">
-          <span className="text-text-secondary">Ahorrado este mes</span>
-          <span className="font-bold text-green-600">$356.75</span>
-        </div>
-        <div className="flex justify-between text-sm">
-          <span className="text-text-secondary">Total acumulado</span>
-          <span className="font-bold">$2,450.30</span>
-        </div>
-      </div>
-      <RoundUpSavingsToggle
-        initialState={true}
-        monthlyProjection={850.25}
-      />
-    </div>
-  ),
+export const InteractiveToggle: Story = {
+    render: () => {
+        const [active, setActive] = useState(false);
+        const [savings, setSavings] = useState(452.80);
+        return (
+            <div className="space-y-4 max-w-md">
+                <RoundUpSavingsToggle
+                    initialState={active}
+                    monthlyProjection={1250.50}
+                    onToggle={(state) => {
+                        setActive(state);
+                        if (state) {
+                            setSavings(prev => prev + 1250.50);
+                            alert('Round-up savings activated! Your spare change will now go to savings.');
+                        } else {
+                            alert('Round-up savings paused. No more spare change will be moved.');
+                        }
+                    }}
+                />
+                {active && (
+                    <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl text-sm space-y-1">
+                        <p className="font-semibold text-green-700 dark:text-green-300">Total Saved from Round-ups</p>
+                        <p className="text-2xl font-bold text-green-600">${savings.toFixed(2)}</p>
+                        <p className="text-xs text-green-500">Every purchase rounds up to the nearest dollar</p>
+                    </div>
+                )}
+                {!active && (
+                    <div className="p-4 bg-surface-secondary rounded-xl text-sm text-text-secondary text-center">
+                        Enable round-up savings to start saving automatically
+                    </div>
+                )}
+            </div>
+        );
+    },
+};
+
+export const DarkMode: Story = {
+    parameters: {
+        themes: { themeOverride: 'dark' },
+    },
+    args: {
+        initialState: true,
+        monthlyProjection: 1250.50,
+        onToggle: (active) => console.log('Round-up savings:', active ? 'enabled' : 'disabled'),
+    },
+};
+
+export const StatisticsView: Story = {
+    render: () => {
+        const [active, setActive] = useState(true);
+        return (
+            <div className="space-y-4 max-w-md">
+                <RoundUpSavingsToggle
+                    initialState={active}
+                    monthlyProjection={1250.50}
+                    onToggle={setActive}
+                />
+                <div className="grid grid-cols-3 gap-3">
+                    <div className="p-3 bg-surface-secondary rounded-xl text-center">
+                        <p className="text-lg font-bold">89</p>
+                        <p className="text-xs text-text-secondary">Round-ups this month</p>
+                    </div>
+                    <div className="p-3 bg-surface-secondary rounded-xl text-center">
+                        <p className="text-lg font-bold">$0.76</p>
+                        <p className="text-xs text-text-secondary">Avg per round-up</p>
+                    </div>
+                    <div className="p-3 bg-surface-secondary rounded-xl text-center">
+                        <p className="text-lg font-bold">$67.64</p>
+                        <p className="text-xs text-text-secondary">Saved this month</p>
+                    </div>
+                </div>
+            </div>
+        );
+    },
 };

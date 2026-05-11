@@ -1,88 +1,81 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ImageCropper } from './ImageCropper';
-import { action } from '@storybook/addon-actions';
 
 const meta: Meta<typeof ImageCropper> = {
-    title: 'Components/ImageCropper',
-    component: ImageCropper,
-    tags: ['autodocs'],
-    parameters: {
-        layout: 'fullscreen',
-    },
+  title: 'Components/ImageCropper',
+  component: ImageCropper,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {
-        src: 'https://picsum.photos/seed/profile/1200/800',
-        aspectRatio: 1,
-        onCrop: action('cropped'),
-        onCancel: action('cancelled'),
-    },
+  args: {
+    src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+    onCrop: (data) => console.log('Cropped:', data),
+  },
 };
 
-export const Landscape: Story = {
-    args: {
-        src: 'https://picsum.photos/seed/landscape/1600/900',
-        aspectRatio: 16 / 9,
-        onCrop: action('cropped'),
-        onCancel: action('cancelled'),
-    },
+export const CircleAspect: Story = {
+  args: {
+    src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+    aspectRatio: 1,
+    shape: 'circle',
+    onCrop: (data) => console.log('Cropped:', data),
+  },
 };
 
-export const Vertical: Story = {
-    args: {
-        src: 'https://picsum.photos/seed/portrait/800/1200',
-        aspectRatio: 3 / 4,
-        onCrop: action('cropped'),
-        onCancel: action('cancelled'),
-    },
+export const ProfilePicture: Story = {
+  args: {
+    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop',
+    aspectRatio: 1,
+    shape: 'circle',
+    maxWidth: 200,
+    maxHeight: 200,
+    onCrop: (data) => console.log('Cropped:', data),
+  },
+  render: (args) => (
+    <div className="w-80 space-y-4">
+      <p className="text-sm font-semibold text-text-primary">Upload Profile Picture</p>
+      <ImageCropper {...args} />
+    </div>
+  ),
 };
 
-export const SquareProfilePhoto: Story = {
-    args: {
-        src: 'https://picsum.photos/seed/avatar/1024/1024',
-        aspectRatio: 1,
-        onCrop: action('cropped-avatar'),
-        onCancel: action('cancelled'),
-    },
+export const IDDocument: Story = {
+  args: {
+    src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+    aspectRatio: 1.586,
+    onCrop: (data) => console.log('Cropped:', data),
+  },
 };
 
 export const WideBanner: Story = {
-    args: {
-        src: 'https://picsum.photos/seed/banner/2000/600',
-        aspectRatio: 21 / 9,
-        onCrop: action('cropped-banner'),
-        onCancel: action('cancelled'),
-    },
+  args: {
+    src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop',
+    aspectRatio: 2,
+    onCrop: (data) => console.log('Cropped:', data),
+  },
 };
 
-export const DocumentIDPhoto: Story = {
-    args: {
-        src: 'https://picsum.photos/seed/idcard/1500/1000',
-        aspectRatio: 85.6 / 53.98, // Credit card aspect ratio
-        onCrop: action('cropped-id'),
-        onCancel: action('cancelled'),
-    },
+export const Square: Story = {
+  args: {
+    src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=600&fit=crop',
+    aspectRatio: 1,
+    onCrop: (data) => console.log('Cropped:', data),
+  },
 };
 
-export const TallPortrait: Story = {
-    args: {
-        src: 'https://picsum.photos/seed/tall/600/1500',
-        aspectRatio: 2 / 3,
-        onCrop: action('cropped-portrait'),
-        onCancel: action('cancelled'),
-    },
-};
-
-export const InstagramSquare: Story = {
-    args: {
-        src: 'https://picsum.photos/seed/instagram/1080/1080',
-        aspectRatio: 1,
-        onCrop: action('cropped-instagram'),
-        onCancel: action('cancelled'),
-    },
+export const RestrictedSize: Story = {
+  args: {
+    src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+    maxWidth: 300,
+    maxHeight: 200,
+    onCrop: (data) => console.log('Cropped:', data),
+  },
 };
