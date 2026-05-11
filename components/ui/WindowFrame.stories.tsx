@@ -139,3 +139,13 @@ export const EmptyFrame: Story = {
         ),
     },
 };
+
+export const LoadingState: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'WindowFrame in a loading state, showing an empty frame while content is being fetched or computed.',
+      },
+    },
+  },
+};
