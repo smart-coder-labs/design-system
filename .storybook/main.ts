@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     addons: [
         "@storybook/addon-onboarding",
         "@storybook/addon-docs",
+        "storybook-dark-mode",
     ],
     framework: {
         name: "@storybook/react-vite",
