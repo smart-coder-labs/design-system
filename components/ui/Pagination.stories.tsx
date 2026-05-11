@@ -68,3 +68,17 @@ export const WithSizeInfo: Story = {
     onPageChange: (page: number) => console.log('Page:', page),
   },
 };
+
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+    themes: { themeOverride: 'dark' },
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark bg-gray-950 min-h-screen p-8">
+        <Story />
+      </div>
+    ),
+  ],
+};

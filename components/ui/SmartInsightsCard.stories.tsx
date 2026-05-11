@@ -163,3 +163,9 @@ export const InCardGrid: Story = {
     </div>
   ),
 };
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};

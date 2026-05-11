@@ -1,100 +1,101 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MessageReactions, ReactionPicker } from './MessageReactions';
+import React from 'react';
+import { MessageReactions } from './MessageReactions';
+import { action } from '@storybook/addon-actions';
 
-const meta = {
-    title: 'Components/MessageReactions',
-    component: MessageReactions,
-    tags: ['autodocs'],
-} satisfies Meta<typeof MessageReactions>;
+const meta: Meta<typeof MessageReactions> = {
+  title: 'Components/MessageReactions',
+  component: MessageReactions,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {
-        reactions: [
-            { type: 'like', count: 5, userReacted: false },
-            { type: 'love', count: 3, userReacted: false },
-            { type: 'laugh', count: 1, userReacted: false },
-        ],
-    },
-};
-
-export const WithUserReacted: Story = {
-    args: {
-        reactions: [
-            { type: 'like', count: 8, userReacted: true },
-            { type: 'love', count: 2, userReacted: false },
-            { type: 'laugh', count: 4, userReacted: true },
-        ],
-    },
+  args: {
+    reactions: [
+      { emoji: '👍', count: 5, reacted: false },
+      { emoji: '❤️', count: 3, reacted: true },
+      { emoji: '😄', count: 2, reacted: false },
+      { emoji: '🎉', count: 1, reacted: false },
+    ],
+    onReact: action('react'),
+  },
 };
 
 export const SingleReaction: Story = {
-    args: {
-        reactions: [
-            { type: 'thumbs-up', count: 12, userReacted: false },
-        ],
-    },
+  args: {
+    reactions: [{ emoji: '👍', count: 12, reacted: false }],
+    onReact: action('react'),
+  },
 };
 
-export const AllReactions: Story = {
-    args: {
-        reactions: [
-            { type: 'like', count: 10, userReacted: false },
-            { type: 'love', count: 7, userReacted: false },
-            { type: 'laugh', count: 3, userReacted: false },
-            { type: 'angry', count: 1, userReacted: false },
-            { type: 'thumbs-up', count: 15, userReacted: false },
-            { type: 'thumbs-down', count: 2, userReacted: false },
-        ],
-    },
+export const ManyReactions: Story = {
+  args: {
+    reactions: [
+      { emoji: '👍', count: 42, reacted: false },
+      { emoji: '❤️', count: 28, reacted: true },
+      { emoji: '🔥', count: 15, reacted: false },
+      { emoji: '🎉', count: 12, reacted: false },
+      { emoji: '🚀', count: 8, reacted: false },
+      { emoji: '💯', count: 5, reacted: false },
+      { emoji: '👏', count: 3, reacted: false },
+    ],
+    onReact: action('react'),
+  },
 };
 
-export const Empty: Story = {
-    args: {
-        reactions: [],
-    },
+export const AllReacted: Story = {
+  args: {
+    reactions: [
+      { emoji: '👍', count: 10, reacted: true },
+      { emoji: '❤️', count: 7, reacted: true },
+      { emoji: '😂', count: 4, reacted: true },
+    ],
+    onReact: action('react'),
+  },
 };
 
-export const WithUsersTooltip: Story = {
-    args: {
-        reactions: [
-            {
-                type: 'like',
-                count: 5,
-                userReacted: true,
-                users: ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'],
-            },
-            {
-                type: 'love',
-                count: 2,
-                userReacted: false,
-                users: ['Frank', 'Grace'],
-            },
-        ],
-        showUsers: true,
-    },
+export const FinanceReactions: Story = {
+  args: {
+    reactions: [
+      { emoji: '💪', count: 24, reacted: false },
+      { emoji: '🎯', count: 18, reacted: true },
+      { emoji: '💰', count: 12, reacted: false },
+      { emoji: '🔥', count: 9, reacted: false },
+    ],
+    onReact: action('react'),
+  },
 };
 
-export const WithoutCount: Story = {
-    args: {
-        reactions: [
-            { type: 'like', count: 5, userReacted: false },
-            { type: 'love', count: 3, userReacted: true },
-        ],
-        showCount: false,
-    },
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+    themes: { themeOverride: 'dark' },
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark bg-gray-950 min-h-screen p-8">
+        <Story />
+      </div>
+    ),
+  ],
 };
-
-/* ReactionPicker stories */
-
-const reactionPickerMeta = {
-    title: 'Components/ReactionPicker',
-    component: ReactionPicker,
-    tags: ['autodocs'],
-} satisfies Meta<typeof ReactionPicker>;
-
-export const ReactionPickerDefault: StoryObj<typeof ReactionPicker> = {
-    render: () => <ReactionPicker onReactionSelect={(type) => console.log('Selected:', type)} />,
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};
+export const FintechUseCase: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'MessageReactions used in a realistic fintech/banking context, demonstrating how it integrates into a financial dashboard workflow.',
+      },
+    },
+  },
 };

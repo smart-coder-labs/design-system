@@ -99,3 +99,31 @@ export const NoStripes: Story = {
     striped: false,
   },
 };
+
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+    themes: { themeOverride: 'dark' },
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark bg-gray-950 min-h-screen p-8">
+        <Story />
+      </div>
+    ),
+  ],
+};
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};
+export const FintechUseCase: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'DataGrid used in a realistic fintech/banking context, demonstrating how it integrates into a financial dashboard workflow.',
+      },
+    },
+  },
+};

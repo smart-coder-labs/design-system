@@ -86,3 +86,9 @@ export const DarkMode: Story = {
         onSwap: (from, to, amount) => console.log(`Swap ${amount} ${from} to ${to}`),
     },
 };
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};

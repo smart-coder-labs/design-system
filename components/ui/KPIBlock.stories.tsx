@@ -1,12 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { KPIBlock } from './KPIBlock';
-import { DollarSign, Users, TrendingUp, ShoppingCart } from 'lucide-react';
+import { TrendingUp, TrendingDown, DollarSign, Users, CreditCard, Activity } from 'lucide-react';
 
 const meta: Meta<typeof KPIBlock> = {
   title: 'Components/KPIBlock',
   component: KPIBlock,
   tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export default meta;
@@ -15,104 +18,83 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     label: 'Total Revenue',
-    value: '$124,500',
-    change: '+12.5%',
-    trend: 'up',
+    value: '$128,430',
+    change: 12.5,
     icon: <DollarSign className="w-5 h-5" />,
   },
 };
 
-export const DownTrend: Story = {
+export const NegativeChange: Story = {
   args: {
-    label: 'Expenses',
-    value: '$38,200',
-    change: '-5.2%',
-    trend: 'down',
-    icon: <ShoppingCart className="w-5 h-5" />,
+    label: 'Operating Costs',
+    value: '$42,890',
+    change: -5.2,
+    icon: <TrendingDown className="w-5 h-5" />,
   },
 };
 
-export const NeutralTrend: Story = {
+export const NoChange: Story = {
   args: {
     label: 'Active Users',
-    value: '2,847',
-    change: '0%',
-    trend: 'neutral',
+    value: '2,458',
+    change: 0,
     icon: <Users className="w-5 h-5" />,
   },
 };
 
-export const BorderedVariant: Story = {
+export const LargeValue: Story = {
   args: {
-    label: 'Net Profit',
-    value: '$86,300',
-    change: '+8.3%',
-    trend: 'up',
-    variant: 'bordered',
+    label: 'Assets Under Management',
+    value: '$12.4B',
+    change: 8.3,
+    icon: <Activity className="w-5 h-5" />,
+  },
+};
+
+export const Compact: Story = {
+  args: {
+    label: 'Daily Volume',
+    value: '$1.2M',
+    change: 3.8,
+    compact: true,
+  },
+};
+
+export const DashboardGrid: Story = {
+  render: () => (
+    <div className="grid grid-cols-2 gap-4 w-96">
+      <KPIBlock label="Balance" value="$45,892" change={5.2} icon={<DollarSign className="w-5 h-5" />} />
+      <KPIBlock label="Income" value="$12,430" change={8.1} icon={<TrendingUp className="w-5 h-5" />} />
+      <KPIBlock label="Expenses" value="$8,210" change={-3.4} icon={<CreditCard className="w-5 h-5" />} />
+      <KPIBlock label="Savings Rate" value="34%" change={2.1} icon={<Activity className="w-5 h-5" />} />
+    </div>
+  ),
+};
+
+export const SmallChange: Story = {
+  args: {
+    label: 'Portfolio Return',
+    value: '+$3,240',
+    change: 0.4,
     icon: <TrendingUp className="w-5 h-5" />,
   },
 };
 
-export const ElevatedVariant: Story = {
+export const LargeChange: Story = {
   args: {
-    label: 'Monthly Recurring Revenue',
-    value: '$42,000',
-    change: '+3.1%',
-    trend: 'up',
-    variant: 'elevated',
-    icon: <DollarSign className="w-5 h-5" />,
-  },
-};
-
-export const MinimalVariant: Story = {
-  args: {
-    label: 'Conversion Rate',
-    value: '3.4%',
-    change: '+0.6%',
-    trend: 'up',
-    variant: 'minimal',
-    icon: <TrendingUp className="w-5 h-5" />,
-  },
-};
-
-export const Small: Story = {
-  args: {
-    label: 'Today Sales',
-    value: '$3,240',
-    change: '+2.1%',
-    trend: 'up',
-    size: 'sm',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    label: 'Total Assets Under Management',
-    value: '$2.4M',
-    change: '+15.8%',
-    trend: 'up',
-    size: 'lg',
-    icon: <DollarSign className="w-6 h-6" />,
-  },
-};
-
-export const Loading: Story = {
-  args: {
-    label: 'Portfolio Value',
-    value: '$485,000',
-    change: '+4.2%',
-    trend: 'up',
-    loading: true,
-  },
-};
-
-export const WithDescription: Story = {
-  args: {
-    label: 'Customer Lifetime Value',
-    value: '$1,240',
-    change: '+7.5%',
-    trend: 'up',
-    description: 'Average across all segments',
+    label: 'New Accounts',
+    value: '847',
+    change: 45.8,
     icon: <Users className="w-5 h-5" />,
   },
+};
+
+export const CompactDashboard: Story = {
+  render: () => (
+    <div className="flex gap-3 w-96">
+      <KPIBlock label="BTC" value="$67K" change={2.4} compact icon={<TrendingUp className="w-4 h-4" />} />
+      <KPIBlock label="ETH" value="$3.4K" change={-1.2} compact icon={<TrendingDown className="w-4 h-4" />} />
+      <KPIBlock label="SOL" value="$185" change={8.4} compact icon={<TrendingUp className="w-4 h-4" />} />
+    </div>
+  ),
 };

@@ -257,3 +257,18 @@ export const SimpleSummaryOnly: Story = {
     ),
   },
 };
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};
+export const FintechUseCase: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'ProgressiveDisclosurePanel used in a realistic fintech/banking context, demonstrating how it integrates into a financial dashboard workflow.',
+      },
+    },
+  },
+};

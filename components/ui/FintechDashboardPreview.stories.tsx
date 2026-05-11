@@ -50,3 +50,46 @@ export const DarkMode: Story = {
         ),
     ],
 };
+
+export const WithHighBalance: Story = {
+    args: {
+        userName: 'Elizabeth',
+        accountBalance: 245000,
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'Shows the dashboard for a high-net-worth user with $245K balance, demonstrating how the UI handles large monetary values.',
+            },
+        },
+    },
+};
+
+export const WithLowBalance: Story = {
+    args: {
+        userName: 'Pablo',
+        accountBalance: 45.30,
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'Shows the dashboard for a user with minimal balance ($45.30), useful for testing edge case scenarios with small amounts.',
+            },
+        },
+    },
+};
+
+export const PremiumFeaturesActive: Story = {
+    args: {
+        userName: 'PremiumUser',
+        accountBalance: 52300,
+        isPremium: true,
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'Dashboard preview for a premium-tier user, demonstrating any premium badge or feature indicators.',
+            },
+        },
+    },
+};

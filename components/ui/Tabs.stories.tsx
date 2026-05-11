@@ -120,3 +120,18 @@ export const DarkMode: Story = {
         </Tabs>
     ),
 };
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};
+export const FintechUseCase: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Tabs used in a realistic fintech/banking context, demonstrating how it integrates into a financial dashboard workflow.',
+      },
+    },
+  },
+};

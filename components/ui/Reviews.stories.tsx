@@ -97,3 +97,37 @@ export const DarkMode: Story = {
         onAddReview: (review) => console.log('New review:', review),
     },
 };
+
+export const FinancialProductReview: Story = {
+    args: {
+        reviews: [
+            { id: '1', author: 'Warren B.', rating: 5, date: 'May 11, 2026', text: 'Best high-yield savings account. APY is unbeatable at 4.5%.' },
+            { id: '2', author: 'Maria G.', rating: 4, date: 'May 9, 2026', text: 'The robo-advisor feature really helps me stay on track with my goals.' },
+            { id: '3', author: 'Carlos R.', rating: 1, date: 'May 7, 2026', text: 'Customer service wait times are unacceptable. Been on hold for 45 minutes.' },
+            { id: '4', author: 'Sarah K.', rating: 5, date: 'May 5, 2026', text: 'Finally a bank that understands modern needs. Instant transfers are a game-changer.' },
+        ],
+        onAddReview: (review) => console.log('New review:', review),
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'A product review section for a fintech app showing real user feedback on banking features like APY, robo-advisor, support, and transfer speed.',
+            },
+        },
+    },
+};
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};
+export const FintechUseCase: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Reviews used in a realistic fintech/banking context, demonstrating how it integrates into a financial dashboard workflow.',
+      },
+    },
+  },
+};

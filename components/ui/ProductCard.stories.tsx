@@ -62,3 +62,31 @@ export const Compact: Story = {
     imageUrl: 'https://images.unsplash.com/photo-1621416894569-0f4a1e1f2e5f?w=200&h=200&fit=crop',
   },
 };
+
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+    themes: { themeOverride: 'dark' },
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark bg-gray-950 min-h-screen p-8">
+        <Story />
+      </div>
+    ),
+  ],
+};
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};
+export const FintechUseCase: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'ProductCard used in a realistic fintech/banking context, demonstrating how it integrates into a financial dashboard workflow.',
+      },
+    },
+  },
+};

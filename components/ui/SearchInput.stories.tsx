@@ -114,3 +114,9 @@ export const Disabled: Story = {
         onChange: (value) => console.log('Search:', value),
     },
 };
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};

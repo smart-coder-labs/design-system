@@ -1,292 +1,186 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StickyContainer } from './StickyContainer';
-import { Search, Filter, X, ArrowUpDown } from 'lucide-react';
 
 const meta = {
     title: 'Components/StickyContainer',
     component: StickyContainer,
     tags: ['autodocs'],
-    parameters: {
-        docs: {
-            description: {
-                component:
-                    'A macOS-style sticky header surface with glassmorphism, configurable top offset, and custom z-index. Ideal for filter bars, table headers, or pinned controls.',
-            },
-        },
-    },
 } satisfies Meta<typeof StickyContainer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {
-        top: 0,
-        zIndex: 20,
-        children: (
-            <div className="p-4">
-                <p className="font-semibold text-sm text-text-primary">📌 Sticky Header</p>
-                <p className="text-xs text-text-tertiary mt-1">This content stays visible while scrolling</p>
-            </div>
-        ),
-    },
     decorators: [
         (Story) => (
-            <div className="h-64 overflow-y-auto border border-border-primary rounded-xl bg-surface-primary">
+            <div className="relative" style={{ height: 400 }}>
                 <Story />
-                <div className="p-4 space-y-4 mt-2">
-                    {Array.from({ length: 12 }, (_, i) => (
-                        <div key={i} className="h-16 bg-surface-secondary rounded-xl flex items-center px-4 text-sm text-text-tertiary border border-border-primary">
-                            Scrollable content item {i + 1}
+                <div className="mt-16 space-y-4 p-4">
+                    {Array.from({ length: 10 }, (_, i) => (
+                        <div key={i} className="h-16 bg-surface-secondary rounded-lg flex items-center px-4 text-sm text-text-secondary">
+                            Scroll content section {i + 1}
                         </div>
                     ))}
                 </div>
             </div>
         ),
     ],
-};
-
-export const FilterBar: Story = {
     args: {
-        top: 0,
-        zIndex: 20,
         children: (
-            <div>
-                <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-2 flex-1">
-                        <Search className="w-4 h-4 text-text-tertiary" />
-                        <input
-                            type="text"
-                            placeholder="Search transactions..."
-                            className="bg-transparent text-sm text-text-primary outline-none flex-1 placeholder:text-text-tertiary"
-                            readOnly
-                        />
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <span className="px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-medium cursor-pointer">All</span>
-                        <span className="px-3 py-1 rounded-full bg-surface-primary border border-border-primary text-xs text-text-secondary cursor-pointer hover:bg-surface-secondary">Income</span>
-                        <span className="px-3 py-1 rounded-full bg-surface-primary border border-border-primary text-xs text-text-secondary cursor-pointer hover:bg-surface-secondary">Expenses</span>
-                    </div>
-                    <button className="p-1.5 rounded-lg hover:bg-surface-secondary text-text-tertiary">
-                        <Filter className="w-4 h-4" />
-                    </button>
-                </div>
+            <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold">Filter Controls</span>
+                <span className="text-xs text-text-secondary">3 active filters</span>
             </div>
         ),
     },
+};
+
+export const TransactionFilters: Story = {
     decorators: [
         (Story) => (
-            <div className="h-64 overflow-y-auto border border-border-primary rounded-xl bg-surface-primary">
+            <div className="relative" style={{ height: 500 }}>
                 <Story />
-                <div className="p-4 space-y-3 mt-2">
+                <div className="mt-20 space-y-3 p-4">
                     {[
-                        { name: 'Salary Deposit', amount: '+$4,500.00', type: 'income' },
-                        { name: 'Starbucks', amount: '-$5.50', type: 'expense' },
-                        { name: 'Amazon Purchase', amount: '-$89.99', type: 'expense' },
-                        { name: 'Transfer from Savings', amount: '+$1,000.00', type: 'income' },
-                        { name: 'Netflix Subscription', amount: '-$15.99', type: 'expense' },
-                        { name: 'Uber Ride', amount: '-$24.50', type: 'expense' },
-                        { name: 'Freelance Payment', amount: '+$850.00', type: 'income' },
-                        { name: 'Grocery Store', amount: '-$132.40', type: 'expense' },
-                        { name: 'Electric Bill', amount: '-$78.20', type: 'expense' },
-                        { name: 'Dividend Payment', amount: '+$45.00', type: 'income' },
-                    ].map((tx, i) => (
-                        <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-surface-secondary border border-border-primary">
-                            <span className="text-sm text-text-primary">{tx.name}</span>
-                            <span className={`text-sm font-semibold ${tx.type === 'income' ? 'text-status-success' : 'text-status-error'}`}>{tx.amount}</span>
+                        { name: 'Amazon', amount: '$89.99', date: 'May 10' },
+                        { name: 'Uber', amount: '$24.50', date: 'May 9' },
+                        { name: 'Netflix', amount: '$15.99', date: 'May 8' },
+                        { name: 'Starbucks', amount: '$5.75', date: 'May 8' },
+                        { name: 'Apple Store', amount: '$999.00', date: 'May 5' },
+                        { name: 'Electric Bill', amount: '$134.50', date: 'May 3' },
+                        { name: 'Salary', amount: '+$4,500', date: 'May 1', positive: true },
+                    ].map(tx => (
+                        <div key={tx.name} className="flex justify-between p-3 bg-surface-secondary rounded-lg text-sm">
+                            <span>{tx.name}</span>
+                            <span className={tx.positive ? 'text-green-600' : ''}>{tx.amount}</span>
                         </div>
                     ))}
                 </div>
             </div>
         ),
     ],
-};
-
-export const OffsetTop: Story = {
     args: {
-        top: 60,
-        zIndex: 10,
+        top: 0,
         children: (
-            <div className="p-4">
-                <div className="flex items-center justify-between">
-                    <p className="font-semibold text-sm text-text-primary">📋 Data Filters</p>
-                    <div className="flex gap-2">
-                        <span className="px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-medium">Active</span>
-                        <span className="px-3 py-1 rounded-full bg-surface-primary border border-border-primary text-xs text-text-secondary">Archived</span>
-                    </div>
-                </div>
+            <div className="flex items-center gap-3">
+                <select className="flex-1 p-2 rounded-lg border border-border-primary bg-surface-primary text-sm">
+                    <option>All Categories</option>
+                    <option>Dining</option>
+                    <option>Transport</option>
+                    <option>Bills</option>
+                    <option>Shopping</option>
+                </select>
+                <button className="px-3 py-2 bg-blue-600 text-white text-sm rounded-lg">Apply</button>
             </div>
         ),
     },
 };
 
-export const WithDismissButton: Story = {
+export const StickyHeader: Story = {
+    decorators: [
+        (Story) => (
+            <div className="relative" style={{ height: 400 }}>
+                <Story />
+                <div className="mt-20 space-y-4 p-4">
+                    {['Portfolio Overview', 'Transactions', 'Budget', 'Goals', 'Settings'].map((section, i) => (
+                        <div key={section}>
+                            <h3 className="text-sm font-bold mb-2">{section}</h3>
+                            {Array.from({ length: 3 }, (_, j) => (
+                                <div key={j} className="h-12 bg-surface-secondary rounded-lg mb-2 flex items-center px-4 text-sm text-text-secondary">
+                                    Item {i * 3 + j + 1}
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        ),
+    ],
     args: {
         top: 0,
         zIndex: 30,
+        className: 'px-6 py-3',
         children: (
-            <div className="flex items-center justify-between p-4">
-                <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-accent-blue/10 flex items-center justify-center text-accent-blue text-sm font-bold">!</span>
-                    <div>
-                        <p className="text-sm font-semibold text-text-primary">New feature available</p>
-                        <p className="text-xs text-text-tertiary">Try our new AI-powered insights</p>
-                    </div>
-                </div>
-                <button className="p-1.5 rounded-lg hover:bg-surface-secondary text-text-tertiary">
-                    <X className="w-4 h-4" />
-                </button>
+            <div className="flex items-center gap-3">
+                <h2 className="text-base font-bold flex-1">Dashboard</h2>
+                <span className="text-xs text-text-secondary bg-background px-2 py-1 rounded-full">Live</span>
             </div>
         ),
     },
 };
 
-export const TableHeader: Story = {
-    args: {
-        top: 0,
-        zIndex: 20,
-        children: (
-            <div className="grid grid-cols-4 gap-4 px-4 py-3 text-xs font-semibold text-text-secondary uppercase tracking-wider">
-                <span className="flex items-center gap-1 cursor-pointer">Name <ArrowUpDown className="w-3 h-3" /></span>
-                <span className="flex items-center gap-1 cursor-pointer">Amount <ArrowUpDown className="w-3 h-3" /></span>
-                <span className="flex items-center gap-1 cursor-pointer">Date <ArrowUpDown className="w-3 h-3" /></span>
-                <span className="flex items-center gap-1 cursor-pointer">Status <ArrowUpDown className="w-3 h-3" /></span>
-            </div>
-        ),
-    },
+export const CustomOffset: Story = {
     decorators: [
         (Story) => (
-            <div className="h-64 overflow-y-auto border border-border-primary rounded-xl bg-surface-primary">
+            <div className="relative pt-16" style={{ height: 400 }}>
+                <div style={{ height: 64, position: 'absolute', top: 0, left: 0, right: 0 }} className="bg-blue-600 flex items-center px-4 text-white text-sm font-semibold">
+                    App Navigation Bar
+                </div>
                 <Story />
-                <div className="divide-y divide-border-primary">
-                    {Array.from({ length: 15 }, (_, i) => (
-                        <div key={i} className="grid grid-cols-4 gap-4 px-4 py-3 text-sm text-text-primary">
-                            <span>Transaction {i + 1}</span>
-                            <span className={i % 3 === 0 ? 'text-status-success' : 'text-status-error'}>
-                                {i % 3 === 0 ? '+$' : '-$'}{(Math.random() * 1000).toFixed(2)}
-                            </span>
-                            <span className="text-text-tertiary">May {i + 1}, 2026</span>
-                            <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${i % 2 === 0 ? 'bg-status-success/10 text-status-success' : 'bg-status-warning/10 text-status-warning'}`}>
-                                {i % 2 === 0 ? 'Completed' : 'Pending'}
-                            </span>
+                <div className="mt-20 space-y-4 p-4">
+                    {Array.from({ length: 8 }, (_, i) => (
+                        <div key={i} className="h-16 bg-surface-secondary rounded-lg flex items-center px-4 text-sm text-text-secondary">
+                            Scroll content {i + 1}
                         </div>
                     ))}
                 </div>
             </div>
         ),
     ],
-};
-
-export const MultipleStickySections: Story = {
-    decorators: [
-        (Story) => (
-            <div className="h-80 overflow-y-auto border border-border-primary rounded-xl bg-surface-primary">
-                <Story />
-            </div>
-        ),
-    ],
-    render: () => (
-        <div>
-            <StickyContainer top={0} zIndex={20}>
-                <div className="p-4">
-                    <p className="font-semibold text-sm text-text-primary">🔝 Primary Header</p>
-                    <p className="text-xs text-text-tertiary mt-0.5">Always visible at the top</p>
-                </div>
-            </StickyContainer>
-            <div className="p-4 space-y-4">
-                {Array.from({ length: 5 }, (_, i) => (
-                    <div key={i} className="h-16 bg-surface-secondary rounded-xl flex items-center px-4 text-sm text-text-tertiary border border-border-primary">
-                        Content section {i + 1}
-                    </div>
-                ))}
-            </div>
-            <StickyContainer top={80} zIndex={15}>
-                <div className="p-4">
-                    <p className="font-semibold text-sm text-text-primary">📋 Secondary Filter Bar</p>
-                    <p className="text-xs text-text-tertiary mt-0.5">Starts sticking after 80px offset</p>
-                </div>
-            </StickyContainer>
-            <div className="p-4 space-y-4">
-                {Array.from({ length: 8 }, (_, i) => (
-                    <div key={i + 5} className="h-16 bg-surface-secondary rounded-xl flex items-center px-4 text-sm text-text-tertiary border border-border-primary">
-                        More content item {i + 6}
-                    </div>
-                ))}
-            </div>
-        </div>
-    ),
-};
-
-export const EmptyContent: Story = {
     args: {
-        top: 0,
-        zIndex: 20,
+        top: 72,
         children: (
-            <div className="p-4">
-                <p className="font-semibold text-sm text-text-primary">📭 Empty State</p>
-                <p className="text-xs text-text-tertiary mt-1">No items to display</p>
-            </div>
-        ),
-    },
-};
-
-export const NestedInModal: Story = {
-    args: {
-        top: 0,
-        zIndex: 20,
-        children: (
-            <div className="p-4">
-                <p className="font-semibold text-sm text-text-primary">Modal Header</p>
-                <p className="text-xs text-text-tertiary mt-0.5">Sticks inside a modal-like container</p>
-            </div>
-        ),
-    },
-    decorators: [
-        (Story) => (
-            <div className="h-72 overflow-y-auto border border-border-primary rounded-xl bg-surface-primary max-w-sm mx-auto shadow-xl">
-                <div className="bg-surface-primary border-b border-border-primary px-4 py-3 flex items-center justify-between">
-                    <span className="font-semibold text-sm text-text-primary">Modal Title</span>
-                    <X className="w-4 h-4 text-text-tertiary cursor-pointer" />
-                </div>
-                <Story />
-                <div className="p-4 space-y-3">
-                    {Array.from({ length: 10 }, (_, i) => (
-                        <div key={i} className="h-14 bg-surface-secondary rounded-xl flex items-center px-4 text-sm text-text-tertiary border border-border-primary">
-                            Modal content row {i + 1}
-                        </div>
+            <div className="flex items-center gap-3">
+                <span className="text-sm font-semibold">Section Filter</span>
+                <div className="flex gap-1">
+                    {['All', 'Cards', 'Bank', 'Crypto'].map(tab => (
+                        <button key={tab} className={`px-3 py-1 text-xs rounded-lg ${tab === 'All' ? 'bg-blue-600 text-white' : 'bg-surface-secondary'}`}>{tab}</button>
                     ))}
                 </div>
             </div>
         ),
-    ],
+    },
 };
 
 export const DarkMode: Story = {
     parameters: {
-        themes: { default: 'dark' },
-    },
-    args: {
-        top: 0,
-        zIndex: 20,
-        children: (
-            <div className="p-4">
-                <p className="font-semibold text-sm text-text-primary">🌙 Dark Mode Header</p>
-                <p className="text-xs text-text-tertiary mt-1">Glass effect adapts to dark theme</p>
-            </div>
-        ),
+        themes: { themeOverride: 'dark' },
     },
     decorators: [
         (Story) => (
-            <div className="h-64 overflow-y-auto border border-border-primary rounded-xl bg-surface-primary">
+            <div className="relative" style={{ height: 300 }}>
                 <Story />
-                <div className="p-4 space-y-4 mt-2">
-                    {Array.from({ length: 8 }, (_, i) => (
-                        <div key={i} className="h-16 bg-surface-secondary rounded-xl flex items-center px-4 text-sm text-text-tertiary border border-border-primary">
-                            Dark mode item {i + 1}
+                <div className="mt-16 space-y-4 p-4">
+                    {Array.from({ length: 5 }, (_, i) => (
+                        <div key={i} className="h-16 bg-surface-secondary rounded-lg flex items-center px-4 text-sm text-text-secondary">
+                            Dark mode content {i + 1}
                         </div>
                     ))}
                 </div>
             </div>
         ),
     ],
+    args: {
+        children: (
+            <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold">Sticky Controls</span>
+                <span className="text-xs text-text-secondary">Dark mode</span>
+            </div>
+        ),
+    },
+};
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};
+export const FintechUseCase: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'StickyContainer used in a realistic fintech/banking context, demonstrating how it integrates into a financial dashboard workflow.',
+      },
+    },
+  },
 };

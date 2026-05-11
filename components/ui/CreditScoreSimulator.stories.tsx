@@ -59,3 +59,22 @@ export const Interactive: Story = {
     </div>
   ),
 };
+
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+    themes: { themeOverride: 'dark' },
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark bg-gray-950 min-h-screen p-8">
+        <Story />
+      </div>
+    ),
+  ],
+};
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};

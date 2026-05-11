@@ -45,3 +45,29 @@ export const Minimal: Story = {
     message: 'Offline',
   },
 };
+
+export const BankingOffline: Story = {
+  args: {
+    title: 'No Internet Connection',
+    message: 'Your data is safe and will sync automatically when reconnected.',
+    icon: 'bank',
+    onRetry: () => console.log('Retrying...'),
+    retryLabel: 'Reconnect',
+  },
+};
+
+export const ServerMaintenance: Story = {
+  args: {
+    title: 'Scheduled Maintenance',
+    message: 'We are upgrading our systems. Expected completion: 3:00 AM EST.',
+    icon: 'maintenance',
+  },
+};
+
+export const RateLimited: Story = {
+  args: {
+    title: 'Too Many Requests',
+    message: 'Please wait 60 seconds before trying again.',
+    icon: 'clock',
+  },
+};

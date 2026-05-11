@@ -122,3 +122,54 @@ export const PaymentConfirmationFlow: Story = {
     );
   }
 };
+
+export const Listening: Story = {
+    args: {
+        isOpen: true,
+        onClose: () => console.log('close'),
+        transcript: 'Show my account balance',
+        isProcessing: true,
+    },
+    decorators: [
+        (Story) => (
+            <div style={{ minHeight: 300, position: 'relative' }}>
+                <Story />
+            </div>
+        ),
+    ],
+};
+
+export const ResultShown: Story = {
+    args: {
+        isOpen: true,
+        onClose: () => console.log('close'),
+        transcript: 'Transfer $500 to savings account',
+        response: 'Transferring $500.00 to your High-Yield Savings account ending in 7890.',
+        isProcessing: false,
+    },
+    decorators: [
+        (Story) => (
+            <div style={{ minHeight: 350, position: 'relative' }}>
+                <Story />
+            </div>
+        ),
+    ],
+};
+
+export const ErrorState: Story = {
+    args: {
+        isOpen: true,
+        onClose: () => console.log('close'),
+        transcript: '',
+        response: 'Sorry, I did not understand that. Please try again.',
+        isProcessing: false,
+        error: true,
+    },
+    decorators: [
+        (Story) => (
+            <div style={{ minHeight: 300, position: 'relative' }}>
+                <Story />
+            </div>
+        ),
+    ],
+};

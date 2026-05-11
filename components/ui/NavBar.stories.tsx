@@ -68,3 +68,88 @@ export const NonSticky: Story = {
         </NavBar>
     ),
 };
+
+/** Many navigation items — edge case for overflow */
+export const ManyItems: Story = {
+    render: () => (
+        <NavBar>
+            <NavBarBrand>FinFlow</NavBarBrand>
+            <NavBarContent align="center">
+                <NavBarItem active>Dashboard</NavBarItem>
+                <NavBarItem>Transactions</NavBarItem>
+                <NavBarItem>Investments</NavBarItem>
+                <NavBarItem>Analytics</NavBarItem>
+                <NavBarItem>Wallets</NavBarItem>
+                <NavBarItem>Reports</NavBarItem>
+                <NavBarItem>Settings</NavBarItem>
+                <NavBarItem>Help</NavBarItem>
+            </NavBarContent>
+        </NavBar>
+    ),
+};
+
+/** Brand with link (href) */
+export const WithBrandLink: Story = {
+    render: () => (
+        <NavBar>
+            <NavBarBrand href="https://finflow.app">FinFlow</NavBarBrand>
+            <NavBarContent align="center">
+                <NavBarItem active>Dashboard</NavBarItem>
+                <NavBarItem>Transactions</NavBarItem>
+            </NavBarContent>
+            <NavBarContent align="right">
+                <NavBarSeparator />
+                <NavBarItem>Profile</NavBarItem>
+            </NavBarContent>
+        </NavBar>
+    ),
+};
+
+/** Glass variant with multiple sections */
+export const GlassFull: Story = {
+    render: () => (
+        <NavBar variant="glass">
+            <NavBarBrand>FinFlow</NavBarBrand>
+            <NavBarContent align="center">
+                <NavBarItem active>Dashboard</NavBarItem>
+                <NavBarItem>Transactions</NavBarItem>
+                <NavBarItem>Analytics</NavBarItem>
+                <NavBarItem>Wallets</NavBarItem>
+            </NavBarContent>
+            <NavBarContent align="right">
+                <NavBarSeparator />
+                <NavBarItem>Sign Out</NavBarItem>
+            </NavBarContent>
+        </NavBar>
+    ),
+};
+
+/** Dark mode navbar */
+export const DarkMode: Story = {
+    render: () => (
+        <div className="dark">
+            <NavBar>
+                <NavBarBrand>FinFlow</NavBarBrand>
+                <NavBarContent align="center">
+                    <NavBarItem active>Dashboard</NavBarItem>
+                    <NavBarItem>Transactions</NavBarItem>
+                    <NavBarItem>Investments</NavBarItem>
+                </NavBarContent>
+            </NavBar>
+        </div>
+    ),
+};
+
+/** Mobile responsive */
+export const Mobile: Story = {
+    render: () => (
+        <div className="max-w-sm mx-auto border border-border-primary rounded-lg overflow-hidden">
+            <NavBar>
+                <NavBarBrand>FinFlow</NavBarBrand>
+                <NavBarContent align="center">
+                    <NavBarItem active>Home</NavBarItem>
+                </NavBarContent>
+            </NavBar>
+        </div>
+    ),
+};

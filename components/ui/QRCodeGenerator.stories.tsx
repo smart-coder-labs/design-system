@@ -45,3 +45,41 @@ export const Small: Story = {
     label: 'Payment Code',
   },
 };
+
+export const PaymentQR: Story = {
+    args: {
+        defaultValue: 'https://pay.bank.com/send?to=123456&amount=50.00',
+        size: 200,
+        showInput: false,
+        label: 'Scan to Pay $50 USD',
+    },
+};
+
+export const BitcoinAddress: Story = {
+    args: {
+        defaultValue: 'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa?amount=0.01',
+        size: 200,
+        showInput: false,
+        label: 'Bitcoin Receiving Address',
+    },
+};
+
+export const WithColor: Story = {
+    args: {
+        defaultValue: 'https://fintech.app/profile/cesar',
+        size: 180,
+        color: '#007AFF',
+        backgroundColor: '#F2F2F7',
+        showInput: true,
+        label: 'Profile QR Code',
+    },
+};
+
+export const LargeQR: Story = {
+    args: {
+        defaultValue: 'https://banking.app/invite/referral?code=CESAR2026',
+        size: 300,
+        showInput: false,
+        label: 'Referral Code',
+    },
+};

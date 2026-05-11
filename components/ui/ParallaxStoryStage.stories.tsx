@@ -69,3 +69,55 @@ export const WithBackToTop: Story = {
     );
   },
 };
+
+export const FintechStory: Story = {
+    render: () => (
+        <div style={{ height: 500, position: 'relative', overflow: 'hidden' }}>
+            <ParallaxStoryStage
+                layers={[
+                    { image: '', speed: 0.2, opacity: 0.1, content: null },
+                    { image: '', speed: 0.5, opacity: 0.3, content: null },
+                ]}
+                foreground={
+                    <div style={{ position: 'absolute', bottom: 40, left: 20, right: 20, color: 'white', textAlign: 'center' }}>
+                        <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Invest Smarter</h2>
+                        <p style={{ fontSize: 16, opacity: 0.9 }}>AI-powered portfolio management for everyone</p>
+                    </div>
+                }
+            />
+        </div>
+    ),
+};
+
+export const OnboardingStage: Story = {
+    render: () => (
+        <div style={{ height: 400, position: 'relative', overflow: 'hidden' }}>
+            <ParallaxStoryStage
+                layers={[
+                    { image: '', speed: 0.3, opacity: 0.15, content: null },
+                ]}
+                foreground={
+                    <div style={{ position: 'absolute', bottom: 50, left: 20, right: 20, color: 'white' }}>
+                        <div style={{ fontSize: 14, opacity: 0.7, marginBottom: 4 }}>STEP 2 OF 5</div>
+                        <h2 style={{ fontSize: 26, fontWeight: 700, marginBottom: 8 }}>Verify Your Identity</h2>
+                        <p style={{ fontSize: 14, opacity: 0.8, marginBottom: 20 }}>It takes just 2 minutes</p>
+                        <div style={{ display: 'flex', gap: 12 }}>
+                            <span style={{ padding: '10px 24px', background: '#007AFF', color: 'white', borderRadius: 8, fontWeight: 600, cursor: 'pointer' }}>
+                                Continue
+                            </span>
+                            <span style={{ padding: '10px 24px', border: '1px solid rgba(255,255,255,0.3)', color: 'white', borderRadius: 8, cursor: 'pointer' }}>
+                                Skip
+                            </span>
+                        </div>
+                    </div>
+                }
+            />
+        </div>
+    ),
+};
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};

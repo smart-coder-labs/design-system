@@ -58,3 +58,51 @@ export const MaxReached: Story = {
     onChange: (val: number) => console.log('Quantity:', val),
   },
 };
+
+export const WithDefaultValue: Story = {
+    args: {
+        defaultValue: 3,
+        min: 1,
+        max: 10,
+        onChange: (v) => console.log('Quantity:', v),
+    },
+};
+
+export const WithLimits: Story = {
+    args: {
+        defaultValue: 5,
+        min: 1,
+        max: 5,
+        onChange: (v) => console.log('Quantity:', v),
+    },
+};
+
+export const Disabled: Story = {
+    args: {
+        defaultValue: 2,
+        min: 1,
+        max: 10,
+        disabled: true,
+        onChange: (v) => console.log('Quantity:', v),
+    },
+};
+
+export const Compact: Story = {
+    args: {
+        defaultValue: 1,
+        min: 0,
+        max: 99,
+        compact: true,
+        onChange: (v) => console.log('Quantity:', v),
+    },
+};
+
+export const LargeRange: Story = {
+    args: {
+        defaultValue: 50,
+        min: 1,
+        max: 100,
+        step: 5,
+        onChange: (v) => console.log('Quantity:', v),
+    },
+};

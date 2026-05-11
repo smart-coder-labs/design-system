@@ -1,90 +1,81 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { LoginForm } from './LoginForm';
+import { action } from '@storybook/addon-actions';
 
-const meta = {
-    title: 'Components/LoginForm',
-    component: LoginForm,
-    parameters: {
-        layout: 'centered',
-    },
-    tags: ['autodocs'],
-} satisfies Meta<typeof LoginForm>;
+const meta: Meta<typeof LoginForm> = {
+  title: 'Components/LoginForm',
+  component: LoginForm,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {
-        onSubmit: async (data) => {
-            console.log('Login submitted:', data);
-            await new Promise(resolve => setTimeout(resolve, 1000));
-        },
-    },
+  args: {
+    onSubmit: action('login-submit'),
+  },
 };
 
 export const WithError: Story = {
-    args: {
-        error: 'Invalid email or password. Please try again.',
-        onSubmit: async (data) => {
-            console.log('Login submitted:', data);
-        },
-    },
+  args: {
+    onSubmit: action('login-submit'),
+    error: 'Invalid email or password. Please try again.',
+  },
 };
 
 export const Loading: Story = {
-    args: {
-        isLoading: true,
-        onSubmit: async (data) => {
-            console.log('Login submitted:', data);
-        },
-    },
+  args: {
+    onSubmit: action('login-submit'),
+    loading: true,
+  },
 };
 
-export const WithForgotPassword: Story = {
-    args: {
-        onSubmit: async (data) => {
-            console.log('Login submitted:', data);
-        },
-        onForgotPassword: () => {
-            console.log('Forgot password clicked');
-        },
-    },
+export const WithTwoFactor: Story = {
+  args: {
+    onSubmit: action('login-submit'),
+    showTwoFactor: true,
+  },
 };
 
-export const Interactive: Story = {
-    render: () => {
-        const handleSubmit = async (data: { email: string; password: string; rememberMe: boolean }) => {
-            console.log('Login data:', data);
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            alert(`Logged in as ${data.email}`);
-        };
-
-        const handleForgotPassword = () => {
-            alert('Password reset link sent to your email');
-        };
-
-        return (
-            <LoginForm
-                onSubmit={handleSubmit}
-                onForgotPassword={handleForgotPassword}
-            />
-        );
-    },
+export const BankingLogin: Story = {
+  args: {
+    onSubmit: action('login-submit'),
+    title: 'FinBank Online',
+    subtitle: 'Secure access to your accounts',
+    showTwoFactor: true,
+  },
 };
 
-export const WithValidationError: Story = {
-    render: () => {
-        const handleSubmit = async (data: { email: string; password: string; rememberMe: boolean }) => {
-            // Simulate validation error
-            throw new Error('Account locked. Please contact support.');
-        };
+export const ForgotPasswordForm: Story = {
+  args: {
+    onSubmit: action('login-submit'),
+    showForgotPassword: true,
+  },
+};
 
-        return (
-            <LoginForm
-                onSubmit={handleSubmit}
-                onForgotPassword={() => console.log('Forgot password')}
-            />
-        );
-    },
+export const FullError: Story = {
+  args: {
+    onSubmit: action('login-submit'),
+    error: 'Your account has been locked due to multiple failed attempts. Please contact support.',
+    loading: false,
+  },
+};
+
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+    themes: { themeOverride: 'dark' },
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark bg-gray-950 min-h-screen p-8">
+        <Story />
+      </div>
+    ),
+  ],
 };

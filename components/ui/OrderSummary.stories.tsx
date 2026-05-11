@@ -63,3 +63,41 @@ export const Loading: Story = {
     currency: 'USD',
   },
 };
+
+export const WithDiscount: Story = {
+    args: {
+        items: [
+            { id: '1', name: 'Apple MacBook Pro 16"', price: 2499.00, quantity: 1, image: '', variant: 'Space Black' },
+            { id: '2', name: 'USB-C Hub', price: 49.99, quantity: 1, image: '', variant: '7-in-1' },
+        ],
+        currency: 'USD',
+        discountAmount: 150.00,
+        shippingCost: 0,
+        taxAmount: 254.89,
+    },
+};
+
+export const MultipleItems: Story = {
+    args: {
+        items: [
+            { id: '1', name: 'Wireless Mouse', price: 79.99, quantity: 2, image: '' },
+            { id: '2', name: 'Mechanical Keyboard', price: 199.99, quantity: 1, image: '', variant: 'Blue Switch' },
+            { id: '3', name: 'Monitor Stand', price: 49.99, quantity: 1, image: '' },
+            { id: '4', name: 'Webcam 4K', price: 129.99, quantity: 1, image: '' },
+            { id: '5', name: 'Desk Lamp', price: 39.99, quantity: 1, image: '' },
+        ],
+        currency: 'USD',
+        shippingCost: 12.99,
+        taxAmount: 38.40,
+    },
+};
+
+export const SingleItem: Story = {
+    args: {
+        items: [
+            { id: '1', name: 'Annual Premium Subscription', price: 299.99, quantity: 1, image: '' },
+        ],
+        currency: 'USD',
+        taxAmount: 30.00,
+    },
+};

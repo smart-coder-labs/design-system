@@ -141,3 +141,9 @@ export const DarkMode: Story = {
         </div>
     ),
 };
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};

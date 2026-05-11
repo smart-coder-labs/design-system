@@ -61,3 +61,105 @@ export const Loading: Story = {
     onCancel: () => alert('Cancelled'),
   },
 };
+
+/** Bank transfer with fee */
+export const BankTransfer: Story = {
+  args: {
+    open: true,
+    amount: 3500.00,
+    currency: 'USD',
+    recipient: 'Acme Corporation',
+    description: 'Invoice INV-2025-4421',
+    fee: '$15.00',
+    bankName: 'Chase Bank',
+    accountLastFour: '4823',
+    onConfirm: () => alert('Confirmed!'),
+    onCancel: () => alert('Cancelled'),
+  },
+};
+
+/** Zero amount payment — edge case */
+export const ZeroAmount: Story = {
+  args: {
+    open: true,
+    amount: 0.00,
+    currency: 'USD',
+    recipient: 'test@example.com',
+    description: 'Test transaction — zero value',
+    onConfirm: () => alert('Confirmed!'),
+    onCancel: () => alert('Cancelled'),
+  },
+};
+
+/** International wire transfer */
+export const InternationalWire: Story = {
+  args: {
+    open: true,
+    amount: 12500.00,
+    currency: 'EUR',
+    recipient: 'Global Bank GmbH',
+    description: 'SWIFT transfer for Q3 services',
+    fee: '€35.00',
+    bankName: 'Deutsche Bank',
+    accountLastFour: '7712',
+    estimatedArrival: '3-5 business days',
+    onConfirm: () => alert('Confirmed!'),
+    onCancel: () => alert('Cancelled'),
+  },
+};
+
+/** High-precision crypto amount */
+export const CryptoSmallAmount: Story = {
+  args: {
+    open: true,
+    amount: 0.0001,
+    currency: 'BTC',
+    recipient: 'bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq',
+    description: 'Test micro-transaction',
+    network: 'Bitcoin',
+    fee: '0.00005 BTC',
+    onConfirm: () => alert('Confirmed!'),
+    onCancel: () => alert('Cancelled'),
+  },
+};
+
+/** Dark mode */
+export const DarkMode: Story = {
+  args: {
+    open: true,
+    amount: 500.00,
+    currency: 'USDC',
+    recipient: '0xDeFi...Wallet',
+    description: 'DeFi yield deposit',
+    fee: '$2.50',
+    onConfirm: () => alert('Confirmed!'),
+    onCancel: () => alert('Cancelled'),
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark">
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+/** Mobile narrow container */
+export const Mobile: Story = {
+  args: {
+    open: true,
+    amount: 75.00,
+    currency: 'USD',
+    recipient: 'merchant@store.com',
+    description: 'Online purchase — Order #8832',
+    onConfirm: () => alert('Confirmed!'),
+    onCancel: () => alert('Cancelled'),
+  },
+  decorators: [
+    (Story) => (
+      <div className="max-w-[320px] mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
+};

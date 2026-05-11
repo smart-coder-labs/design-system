@@ -3,120 +3,97 @@ import React from 'react';
 import { InteractiveCursor } from './InteractiveCursor';
 
 const meta: Meta<typeof InteractiveCursor> = {
-    title: 'Components/InteractiveCursor',
-    component: InteractiveCursor,
-    tags: ['autodocs'],
-    parameters: {
-        layout: 'fullscreen',
-    },
+  title: 'Components/InteractiveCursor',
+  component: InteractiveCursor,
+  tags: ['autodocs'],
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    decorators: [
-        (Story) => (
-            <div className="h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-12">
-                <div className="text-center max-w-lg">
-                    <h2 className="text-2xl font-bold text-text-primary mb-2">Move your cursor</h2>
-                    <p className="text-text-secondary">
-                        The interactive cursor follows your mouse with a smooth spring animation.
-                    </p>
-                    <div className="mt-8 interactive p-6 bg-accent-blue/10 rounded-2xl border border-accent-blue/30">
-                        <p className="text-sm font-semibold text-accent-blue">Hover over this area</p>
-                        <p className="text-xs text-text-secondary mt-1">The cursor scales up when hovering interactive elements</p>
-                    </div>
-                </div>
-                <Story />
-            </div>
-        ),
-    ],
+  args: {
+    children: <div className="h-64 w-96 bg-gradient-to-br from-accent-blue/10 to-purple-500/10 rounded-2xl flex items-center justify-center text-text-primary">Move your cursor over this area</div>,
+  },
 };
 
-export const OnDarkBackground: Story = {
-    decorators: [
-        (Story) => (
-            <div className="h-screen flex items-center justify-center bg-gray-900 p-12">
-                <div className="text-center max-w-lg">
-                    <h2 className="text-2xl font-bold text-white mb-2">Dark Mode Cursor</h2>
-                    <p className="text-gray-400">
-                        The cursor adapts on dark backgrounds.
-                    </p>
-                    <div className="mt-8 interactive p-6 bg-purple-900/30 rounded-2xl border border-purple-500/30">
-                        <p className="text-sm font-semibold text-purple-400">Hover for scale effect</p>
-                        <p className="text-xs text-gray-400 mt-1">The cursor should enlarge slightly</p>
-                    </div>
-                </div>
-                <Story />
-            </div>
-        ),
-    ],
+export const CardHover: Story = {
+  args: {
+    color: '#3B82F6',
+    size: 200,
+    children: (
+      <div className="h-64 w-96 bg-surface-primary rounded-2xl border border-border-primary p-6 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-lg font-bold text-text-primary">Interactive Card</p>
+          <p className="text-sm text-text-secondary mt-2">Hover to see the glow effect</p>
+        </div>
+      </div>
+    ),
+  },
 };
 
-export const MultipleInteractiveElements: Story = {
-    decorators: [
-        (Story) => (
-            <div className="h-screen flex flex-col items-center justify-center gap-4 bg-zinc-50 dark:bg-zinc-900 p-12">
-                <h2 className="text-2xl font-bold text-text-primary mb-4">Multiple interactive targets</h2>
-                <div className="flex gap-4 flex-wrap justify-center">
-                    <div className="interactive px-8 py-4 bg-rose-100 dark:bg-rose-900/30 rounded-2xl border border-rose-300 dark:border-rose-700">
-                        <span className="text-sm font-semibold text-rose-600 dark:text-rose-400">Button A</span>
-                    </div>
-                    <div className="interactive px-8 py-4 bg-sky-100 dark:bg-sky-900/30 rounded-2xl border border-sky-300 dark:border-sky-700">
-                        <span className="text-sm font-semibold text-sky-600 dark:text-sky-400">Button B</span>
-                    </div>
-                    <div className="interactive px-8 py-4 bg-emerald-100 dark:bg-emerald-900/30 rounded-2xl border border-emerald-300 dark:border-emerald-700">
-                        <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Button C</span>
-                    </div>
-                </div>
-                <p className="text-xs text-text-tertiary mt-4">All .interactive elements trigger the scale effect</p>
-                <Story />
-            </div>
-        ),
-    ],
+export const SmallCursor: Story = {
+  args: {
+    size: 100,
+    children: <div className="h-48 w-80 bg-surface-secondary rounded-2xl flex items-center justify-center text-sm text-text-secondary">Small glow radius</div>,
+  },
 };
 
-export const WithContentArea: Story = {
-    decorators: [
-        (Story) => (
-            <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-br from-violet-100 to-indigo-100 dark:from-violet-950 dark:to-indigo-950 p-12">
-                <div className="max-w-2xl text-center">
-                    <h2 className="text-3xl font-bold text-text-primary mb-4">Interactive Demo</h2>
-                    <p className="text-text-secondary mb-8">
-                        The custom cursor replaces the default cursor across the entire screen.
-                        Notice how it scales up over the interactive elements below.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4 text-left">
-                        <div className="interactive p-4 bg-white dark:bg-zinc-800 rounded-xl shadow-sm border border-border-primary">
-                            <p className="font-semibold text-sm">Card One</p>
-                            <p className="text-xs text-text-tertiary mt-1">Hover me</p>
-                        </div>
-                        <div className="interactive p-4 bg-white dark:bg-zinc-800 rounded-xl shadow-sm border border-border-primary">
-                            <p className="font-semibold text-sm">Card Two</p>
-                            <p className="text-xs text-text-tertiary mt-1">And me</p>
-                        </div>
-                    </div>
-                </div>
-                <Story />
-            </div>
-        ),
-    ],
+export const LargeCursor: Story = {
+  args: {
+    size: 400,
+    children: <div className="h-64 w-96 bg-surface-tertiary rounded-2xl flex items-center justify-center text-text-primary">Large diffused glow</div>,
+  },
 };
 
-export const SingleInteractiveButton: Story = {
-    decorators: [
-        (Story) => (
-            <div className="h-screen flex items-center justify-center bg-gradient-to-tr from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-800 p-12">
-                <div className="text-center">
-                    <h2 className="text-xl font-bold text-text-primary mb-4">Fintech CTA</h2>
-                    <div className="interactive inline-block px-8 py-4 bg-accent-blue text-white rounded-2xl shadow-lg cursor-pointer">
-                        <span className="font-bold">Open Account</span>
-                    </div>
-                    <p className="text-xs text-text-tertiary mt-4">Hover the button — cursor scales up</p>
-                </div>
-                <Story />
-            </div>
-        ),
-    ],
+export const GreenGlow: Story = {
+  args: {
+    color: '#10B981',
+    size: 250,
+    children: (
+      <div className="h-48 w-80 bg-gray-900 rounded-2xl flex items-center justify-center">
+        <p className="text-emerald-400 font-semibold">Portfolio +12.4%</p>
+      </div>
+    ),
+  },
+};
+
+export const PurpleGlow: Story = {
+  args: {
+    color: '#8B5CF6',
+    size: 300,
+    children: (
+      <div className="h-64 w-96 bg-gradient-to-br from-indigo-900 to-purple-900 rounded-2xl flex items-center justify-center">
+        <p className="text-purple-300 text-lg font-bold">Premium Account</p>
+      </div>
+    ),
+  },
+};
+
+export const DashboardWidgetGlow: Story = {
+  args: {
+    size: 180,
+    children: (
+      <div className="grid grid-cols-2 gap-4 w-96">
+        <div className="h-24 bg-accent-blue/10 rounded-xl flex items-center justify-center text-sm font-semibold text-accent-blue">Balance</div>
+        <div className="h-24 bg-emerald-500/10 rounded-xl flex items-center justify-center text-sm font-semibold text-emerald-600">Income</div>
+        <div className="h-24 bg-amber-500/10 rounded-xl flex items-center justify-center text-sm font-semibold text-amber-600">Spending</div>
+        <div className="h-24 bg-purple-500/10 rounded-xl flex items-center justify-center text-sm font-semibold text-purple-600">Investments</div>
+      </div>
+    ),
+  },
+};
+
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+    themes: { themeOverride: 'dark' },
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark bg-gray-950 min-h-screen p-8">
+        <Story />
+      </div>
+    ),
+  ],
 };

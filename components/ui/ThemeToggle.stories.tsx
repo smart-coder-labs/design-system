@@ -1,18 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeToggle } from './ThemeToggle';
+import { useState } from 'react';
 
 const meta = {
     title: 'Components/ThemeToggle',
     component: ThemeToggle,
     tags: ['autodocs'],
-    parameters: {
-        docs: {
-            description: {
-                component:
-                    'A macOS/iOS-inspired theme switcher with light, dark, and system modes. Includes animated icon transitions, an Auto button, and a Switch component. Persists preference to localStorage.',
-            },
-        },
-    },
 } satisfies Meta<typeof ThemeToggle>;
 
 export default meta;
@@ -21,113 +14,74 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         defaultMode: 'system',
-        label: 'Theme',
-        allowSystem: true,
+        onModeChange: (mode, theme) => console.log('Mode:', mode, 'Theme:', theme),
+    },
+};
+
+export const Light: Story = {
+    args: {
+        defaultMode: 'light',
+        onModeChange: (mode, theme) => console.log('Mode:', mode),
+    },
+};
+
+export const Dark: Story = {
+    args: {
+        defaultMode: 'dark',
+        onModeChange: (mode, theme) => console.log('Mode:', mode),
+    },
+};
+
+export const CustomLabel: Story = {
+    args: {
+        label: 'Appearance Settings',
+        description: 'Choose between light, dark, or system theme',
+        defaultMode: 'system',
+        onModeChange: (mode, theme) => console.log('Mode:', mode),
     },
 };
 
 export const WithoutSystem: Story = {
     args: {
         defaultMode: 'light',
-        label: 'Appearance',
         allowSystem: false,
+        onModeChange: (mode, theme) => console.log('Mode:', mode),
     },
 };
 
-export const DarkDefault: Story = {
-    args: {
-        defaultMode: 'dark',
-        label: 'Dark Mode',
-        allowSystem: false,
-    },
-};
-
-export const CustomLabels: Story = {
-    args: {
-        defaultMode: 'system',
-        label: 'Display Mode',
-        description: 'Choose your preferred color scheme',
-        allowSystem: true,
-    },
-};
-
-export const SpanishLabels: Story = {
-    args: {
-        defaultMode: 'system',
-        label: 'Apariencia',
-        description: 'Sincroniza con la preferencia del sistema',
-        allowSystem: true,
-    },
-};
-
-export const MinimalNoSystem: Story = {
-    args: {
-        defaultMode: 'light',
-        label: 'Theme',
-        allowSystem: false,
-    },
-};
-
-export const WithStorageKey: Story = {
-    args: {
-        defaultMode: 'system',
-        storageKey: 'app-theme-preference',
-        label: 'Theme',
-        description: 'Saved as "app-theme-preference" in localStorage',
-        allowSystem: true,
-    },
-};
-
-export const InCardContext: Story = {
-    decorators: [
-        (Story) => (
-            <div className="max-w-md mx-auto p-6 bg-surface-primary rounded-2xl border border-border-primary shadow-sm">
-                <h3 className="text-sm font-semibold text-text-primary mb-4">Settings</h3>
-                <Story />
-                <div className="mt-4 pt-4 border-t border-border-primary space-y-3">
-                    {[
-                        { label: 'Notifications', desc: 'Push, email, SMS' },
-                        { label: 'Language', desc: 'English (US)' },
-                        { label: 'Sound', desc: 'Enabled' },
-                    ].map((s) => (
-                        <div key={s.label} className="flex items-center justify-between py-1">
-                            <div>
-                                <p className="text-sm text-text-primary">{s.label}</p>
-                                <p className="text-xs text-text-tertiary">{s.desc}</p>
-                            </div>
-                        </div>
-                    ))}
+export const InteractiveTheme: Story = {
+    render: () => {
+        const [mode, setMode] = useState<'light' | 'dark' | 'system'>('system');
+        const [theme, setTheme] = useState<'light' | 'dark'>('light');
+        return (
+            <div className="space-y-4">
+                <ThemeToggle
+                    defaultMode={mode}
+                    onModeChange={(m, t) => { setMode(m); setTheme(t); }}
+                    allowSystem
+                />
+                <div className="p-3 bg-surface-secondary rounded-lg text-xs space-y-1">
+                    <p>Current mode: <strong>{mode}</strong></p>
+                    <p>Resolved theme: <strong>{theme}</strong></p>
                 </div>
             </div>
-        ),
-    ],
+        );
+    },
+};
+
+export const DarkModeDefault: Story = {
+    parameters: {
+        themes: { themeOverride: 'dark' },
+    },
     args: {
-        defaultMode: 'system',
-        label: 'Theme',
-        description: 'Follow system or choose manually',
-        allowSystem: true,
+        defaultMode: 'dark',
+        label: 'Dark Theme Toggle',
+        onModeChange: (mode, theme) => console.log('Mode:', mode),
     },
 };
 
 export const MobileView: Story = {
-    parameters: {
-        viewport: { defaultViewport: 'mobile1' },
-    },
-    args: {
-        defaultMode: 'system',
-        label: 'Theme',
-        allowSystem: true,
-    },
-};
-
-export const InteractiveLogging: Story = {
-    args: {
-        defaultMode: 'system',
-        label: 'Theme',
-        description: 'Check browser console for mode changes',
-        allowSystem: true,
-        onModeChange: (mode, theme) => {
-            console.log('Theme changed:', { mode, theme });
-        },
-    },
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
 };

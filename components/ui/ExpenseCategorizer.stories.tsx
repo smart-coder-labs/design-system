@@ -61,3 +61,13 @@ export const InDashboard: Story = {
     </div>
   ),
 };
+
+export const FintechUseCase: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'ExpenseCategorizer used in a realistic fintech/banking context, demonstrating how it integrates into a financial dashboard workflow.',
+      },
+    },
+  },
+};

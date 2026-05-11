@@ -109,3 +109,9 @@ export const DarkMode: Story = {
     ),
   ],
 };
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};

@@ -64,3 +64,44 @@ export const RichContent: Story = {
         side: 'top',
     },
 };
+
+export const RightSide: Story = {
+    args: {
+        children: <span style={{ padding: '8px 16px', background: '#e5e7eb', borderRadius: 6, display: 'inline-block' }}>Hover me</span>,
+        content: 'Tooltip on the right side',
+        side: 'right',
+    },
+};
+
+export const BottomAlign: Story = {
+    args: {
+        children: <span style={{ padding: '8px 16px', background: '#e5e7eb', borderRadius: 6, display: 'inline-block' }}>Bottom tooltip</span>,
+        content: 'This tooltip appears below with end alignment',
+        side: 'bottom',
+        align: 'end',
+    },
+};
+
+export const FintechHelp: Story = {
+    render: () => (
+        <div className="space-y-4 p-6">
+            <TooltipProvider>
+                <div className="flex items-center gap-8 justify-center">
+                    <Tooltip content="Your available balance after pending transactions">
+                        <span className="underline decoration-dotted cursor-help">Available Balance: $3,420.50</span>
+                    </Tooltip>
+                    <Tooltip content="Annual Percentage Yield - Current rate: 4.5%">
+                        <span className="underline decoration-dotted cursor-help">APY: 4.5%</span>
+                    </Tooltip>
+                </div>
+            </TooltipProvider>
+        </div>
+    ),
+    decorators: [
+        (Story) => (
+            <div style={{ padding: '80px 20px', display: 'flex', justifyContent: 'center' }}>
+                <Story />
+            </div>
+        ),
+    ],
+};

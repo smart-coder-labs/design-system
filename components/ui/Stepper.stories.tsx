@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Stepper } from './Stepper';
+import { useState } from 'react';
 
 const meta = {
     title: 'Components/Stepper',
@@ -10,80 +11,126 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const checkoutSteps = [
-    { id: 1, title: 'Cart', description: 'Review your items' },
-    { id: 2, title: 'Shipping', description: 'Enter delivery details' },
-    { id: 3, title: 'Payment', description: 'Choose payment method' },
-    { id: 4, title: 'Confirm', description: 'Review and place order' },
+const steps = [
+    { id: 1, title: 'Account Setup', description: 'Create your account and verify your identity' },
+    { id: 2, title: 'Funding', description: 'Add funds to your account' },
+    { id: 3, title: 'Portfolio Selection', description: 'Choose your investment strategy' },
+    { id: 4, title: 'Confirmation', description: 'Review and confirm your setup' },
+];
+
+const content = [
+    <div key="1" className="p-4 bg-surface-secondary rounded-lg text-sm">Account setup form with name, email, and ID verification</div>,
+    <div key="2" className="p-4 bg-surface-secondary rounded-lg text-sm">Fund your account via bank transfer or credit card</div>,
+    <div key="3" className="p-4 bg-surface-secondary rounded-lg text-sm">Select from 3 portfolio options: Conservative, Balanced, Aggressive</div>,
+    <div key="4" className="p-4 bg-surface-secondary rounded-lg text-sm">Review all details and confirm your investment account</div>,
 ];
 
 export const Default: Story = {
-    args: {
-        steps: checkoutSteps,
-        activeStep: 1,
-        orientation: 'horizontal',
-        variant: 'default',
+    render: () => {
+        const [active, setActive] = useState(1);
+        return (
+            <div className="space-y-6">
+                <Stepper steps={steps} activeStep={active} onStepClick={setActive}>
+                    {content[active]}
+                </Stepper>
+                <div className="flex gap-3">
+                    <button disabled={active === 0} onClick={() => setActive(Math.max(0, active - 1))} className="px-4 py-2 bg-surface-secondary rounded-lg text-sm hover:bg-surface-tertiary disabled:opacity-50">Back</button>
+                    <button disabled={active === steps.length - 1} onClick={() => setActive(Math.min(steps.length - 1, active + 1))} className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 disabled:opacity-50">Next</button>
+                </div>
+            </div>
+        );
     },
 };
 
 export const Vertical: Story = {
     args: {
-        steps: checkoutSteps,
-        activeStep: 2,
-        orientation: 'vertical',
-        variant: 'default',
-    },
-};
-
-export const ChevronPipeline: Story = {
-    args: {
-        steps: checkoutSteps,
-        activeStep: 2,
-        orientation: 'horizontal',
-        variant: 'chevron',
-    },
-};
-
-const onboardingSteps = [
-    { id: 'personal', title: 'Personal Info', description: 'Your name and contact details' },
-    { id: 'verify', title: 'Verify Identity', description: 'Upload your ID document' },
-    { id: 'financial', title: 'Financial Profile', description: 'Income and investment goals' },
-    { id: 'done', title: 'All Set', description: 'Start using your account' },
-];
-
-export const Panel: Story = {
-    args: {
-        steps: onboardingSteps,
+        steps: steps,
         activeStep: 1,
         orientation: 'vertical',
-        variant: 'panel',
+        onStepClick: (i) => console.log('Step:', i),
     },
 };
 
-export const Progress: Story = {
+export const Simple: Story = {
+    render: () => {
+        const [active, setActive] = useState(1);
+        return (
+            <div className="space-y-6">
+                <Stepper steps={steps} activeStep={active} variant="simple" onStepClick={setActive} />
+                {content[active]}
+                <div className="flex gap-3">
+                    <button disabled={active === 0} onClick={() => setActive(active - 1)} className="px-4 py-2 bg-surface-secondary rounded-lg text-sm">Back</button>
+                    <button disabled={active === 3} onClick={() => setActive(active + 1)} className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm">Next</button>
+                </div>
+            </div>
+        );
+    },
+};
+
+export const TabsVariant: Story = {
+    render: () => {
+        const [active, setActive] = useState(0);
+        return (
+            <div className="space-y-4">
+                <Stepper steps={steps} activeStep={active} variant="tabs" onStepClick={setActive} />
+                {content[active]}
+            </div>
+        );
+    },
+};
+
+export const ProgressVariant: Story = {
     args: {
-        steps: [
-            { id: 1, title: 'Application Received' },
-            { id: 2, title: 'Under Review' },
-            { id: 3, title: 'Approved' },
-            { id: 4, title: 'Disbursed' },
-        ],
+        steps: steps,
         activeStep: 2,
-        orientation: 'horizontal',
         variant: 'progress',
     },
 };
 
-export const Timeline: Story = {
+export const ChevronVariant: Story = {
     args: {
         steps: [
-            { id: 1, title: 'Order Placed', description: 'Your order has been placed' },
-            { id: 2, title: 'Processing', description: 'Payment confirmed, preparing shipment' },
-            { id: 3, title: 'Shipped', description: 'Package is on its way' },
-            { id: 4, title: 'Delivered', description: 'Package delivered successfully' },
+            { id: 1, title: 'Cart' },
+            { id: 2, title: 'Payment' },
+            { id: 3, title: 'Confirm' },
         ],
-        activeStep: 3,
-        orientation: 'vertical',
+        activeStep: 1,
+        variant: 'chevron',
+    },
+};
+
+export const TimelineVariant: Story = {
+    args: {
+        steps: steps,
+        activeStep: 2,
         variant: 'timeline',
+    },
+};
+
+export const WithError: Story = {
+    args: {
+        steps: steps,
+        activeStep: 2,
+        isError: true,
+        onStepClick: (i) => console.log('Step:', i),
+    },
+};
+
+export const CardVariant: Story = {
+    args: {
+        steps: steps,
+        activeStep: 1,
+        variant: 'cards',
+    },
+};
+
+export const DarkMode: Story = {
+    parameters: {
+        themes: { themeOverride: 'dark' },
+    },
+    args: {
+        steps: steps,
+        activeStep: 1,
+        onStepClick: (i) => console.log('Step:', i),
     },
 };

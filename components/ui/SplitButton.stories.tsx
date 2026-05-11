@@ -1,160 +1,123 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SplitButton, type SplitButtonAction } from './SplitButton';
-import { Send, Download, CreditCard, ArrowUpRight, Coins, Wallet, Banknote, RefreshCw, QrCode, Zap, Users, DollarSign } from 'lucide-react';
+import { SplitButton } from './SplitButton';
+import { Download, Share2, Eye, Printer, Edit3, Trash2, Archive } from 'lucide-react';
 
 const meta = {
-  title: 'Components/SplitButton',
-  component: SplitButton,
-  tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        component:
-          'A macOS/iOS-style split button with a primary action and a dropdown of secondary actions. Supports variants, sizes, and disabled states.',
-      },
-    },
-  },
+    title: 'Components/SplitButton',
+    component: SplitButton,
+    tags: ['autodocs'],
 } satisfies Meta<typeof SplitButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const defaultActions: SplitButtonAction[] = [
-  { label: 'Bitcoin (BTC)', onClick: () => {}, icon: Coins },
-  { label: 'Ethereum (ETH)', onClick: () => {}, icon: Coins },
-  { label: 'Solana (SOL)', onClick: () => {}, icon: Zap },
-];
-
 export const Default: Story = {
-  args: {
-    label: 'Buy Crypto',
-    onClick: () => {},
-    actions: defaultActions,
-    variant: 'primary',
-  },
+    args: {
+        label: 'Export',
+        onClick: () => alert('Exporting...'),
+        actions: [
+            { label: 'Export as PDF', icon: Download, onClick: () => alert('Exporting as PDF') },
+            { label: 'Export as CSV', icon: Download, onClick: () => alert('Exporting as CSV') },
+            { label: 'Print', icon: Printer, onClick: () => alert('Printing...') },
+        ],
+    },
 };
 
-export const Secondary: Story = {
-  args: {
-    label: 'Send Money',
-    onClick: () => {},
-    actions: [
-      { label: 'To Wallet', onClick: () => {}, icon: Wallet },
-      { label: 'To Email', onClick: () => {}, icon: Send },
-      { label: 'To Phone', onClick: () => {}, icon: QrCode },
-      { label: 'To Bank', onClick: () => {}, icon: Banknote },
-    ],
-    variant: 'secondary',
-  },
-};
-
-export const Tertiary: Story = {
-  args: {
-    label: 'More Actions',
-    onClick: () => {},
-    actions: [
-      { label: 'Download Report', onClick: () => {}, icon: Download },
-      { label: 'Refresh Data', onClick: () => {}, icon: RefreshCw },
-      { label: 'Share', onClick: () => {}, icon: ArrowUpRight },
-    ],
-    variant: 'tertiary',
-  },
+export const Primary: Story = {
+    args: {
+        label: 'Share Report',
+        onClick: () => alert('Sharing...'),
+        actions: [
+            { label: 'Share via Email', icon: Share2, onClick: () => alert('Email share') },
+            { label: 'Share via Link', icon: Share2, onClick: () => alert('Link share') },
+            { label: 'Preview', icon: Eye, onClick: () => alert('Preview') },
+        ],
+        variant: 'primary',
+    },
 };
 
 export const Disabled: Story = {
-  args: {
-    label: 'Withdraw',
-    onClick: () => {},
-    actions: [
-      { label: 'Bank Account', onClick: () => {} },
-      { label: 'Crypto Address', onClick: () => {} },
-    ],
-    disabled: true,
-    variant: 'primary',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    label: 'Deposit',
-    onClick: () => {},
-    actions: [
-      { label: 'USDC', onClick: () => {}, icon: DollarSign },
-      { label: 'USDT', onClick: () => {}, icon: DollarSign },
-      { label: 'DAI', onClick: () => {}, icon: DollarSign },
-    ],
-    size: 'sm',
-    variant: 'primary',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    label: 'Transfer',
-    onClick: () => {},
-    actions: [
-      { label: 'Same Bank', onClick: () => {}, icon: CreditCard },
-      { label: 'International', onClick: () => {}, icon: ArrowUpRight },
-      { label: 'To Savings', onClick: () => {}, icon: Wallet },
-    ],
-    size: 'lg',
-    variant: 'primary',
-  },
+    args: {
+        label: 'Export',
+        onClick: () => alert('Exporting...'),
+        actions: [
+            { label: 'PDF', icon: Download, onClick: () => alert('PDF') },
+            { label: 'CSV', icon: Download, onClick: () => alert('CSV') },
+        ],
+        disabled: true,
+    },
 };
 
 export const WithDisabledAction: Story = {
-  args: {
-    label: 'Pay',
-    onClick: () => {},
-    actions: [
-      { label: 'Credit Card', onClick: () => {}, icon: CreditCard },
-      { label: 'Debit Card', onClick: () => {}, icon: CreditCard, disabled: true },
-      { label: 'Crypto', onClick: () => {}, icon: Coins },
-    ],
-    variant: 'primary',
-  },
+    args: {
+        label: 'Manage Document',
+        onClick: () => alert('Opening...'),
+        actions: [
+            { label: 'Edit', icon: Edit3, onClick: () => alert('Editing') },
+            { label: 'Archive', icon: Archive, onClick: () => alert('Archiving'), disabled: true },
+            { label: 'Delete', icon: Trash2, onClick: () => alert('Deleting'), disabled: true },
+        ],
+    },
 };
 
-export const WithIconsOnlyActions: Story = {
-  args: {
-    label: 'Actions',
-    onClick: () => {},
-    actions: [
-      { label: 'Request Payment', onClick: () => {}, icon: Users },
-      { label: 'Split Bill', onClick: () => {}, icon: Users },
-      { label: 'Rewards', onClick: () => {}, icon: Coins },
-    ],
-    variant: 'secondary',
-    size: 'md',
-  },
+export const Secondary: Story = {
+    args: {
+        label: 'More Options',
+        onClick: () => alert('Default action'),
+        actions: [
+            { label: 'View Details', icon: Eye, onClick: () => alert('Viewing details') },
+            { label: 'Duplicate', onClick: () => alert('Duplicating') },
+        ],
+        variant: 'secondary',
+    },
 };
 
-export const LoadingInteraction: Story = {
-  args: {
-    label: 'Confirm Payment',
-    onClick: () => {},
-    actions: [
-      { label: 'Card (Visa ***1234)', onClick: () => {}, icon: CreditCard },
-      { label: 'Balance ($5,230.00)', onClick: () => {}, icon: Wallet },
-      { label: 'Add Payment Method', onClick: () => {}, icon: CreditCard },
-    ],
-    variant: 'primary',
-    size: 'lg',
-  },
+export const Tertiary: Story = {
+    args: {
+        label: 'Actions',
+        onClick: () => alert('Default action'),
+        actions: [
+            { label: 'Option 1', onClick: () => alert('Option 1') },
+            { label: 'Option 2', onClick: () => alert('Option 2') },
+        ],
+        variant: 'tertiary',
+    },
 };
 
-export const MobileSize: Story = {
-  parameters: {
-    viewport: { defaultViewport: 'mobile1' },
-  },
-  args: {
-    label: 'Send',
-    onClick: () => {},
-    actions: [
-      { label: 'To Contact', onClick: () => {}, icon: Users },
-      { label: 'To Account', onClick: () => {}, icon: CreditCard },
-    ],
-    variant: 'primary',
-    size: 'sm',
-  },
+export const Small: Story = {
+    args: {
+        label: 'Export',
+        onClick: () => alert('Exporting...'),
+        actions: [
+            { label: 'PDF', icon: Download, onClick: () => alert('PDF') },
+            { label: 'CSV', icon: Download, onClick: () => alert('CSV') },
+        ],
+        size: 'sm',
+    },
+};
+
+export const Large: Story = {
+    args: {
+        label: 'Share Report',
+        onClick: () => alert('Sharing...'),
+        actions: [
+            { label: 'Email', icon: Share2, onClick: () => alert('Email') },
+            { label: 'Link', icon: Share2, onClick: () => alert('Link') },
+        ],
+        size: 'lg',
+    },
+};
+
+export const DarkMode: Story = {
+    parameters: {
+        themes: { themeOverride: 'dark' },
+    },
+    args: {
+        label: 'Export',
+        onClick: () => alert('Exporting...'),
+        actions: [
+            { label: 'PDF', icon: Download, onClick: () => alert('PDF') },
+            { label: 'CSV', icon: Download, onClick: () => alert('CSV') },
+        ],
+    },
 };

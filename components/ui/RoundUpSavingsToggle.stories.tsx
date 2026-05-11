@@ -118,3 +118,9 @@ export const StatisticsView: Story = {
         );
     },
 };
+
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};

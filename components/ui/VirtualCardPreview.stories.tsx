@@ -81,3 +81,69 @@ export const Compact: Story = {
         currency: 'USD',
     },
 };
+
+export const PremiumBlack: Story = {
+    args: {
+        cardholderName: 'CESAR RUIZ',
+        cardNumber: '5412 7500 3829 1745',
+        expiryDate: '12/27',
+        cvv: '***',
+        brand: 'mastercard',
+        gradient: 'from-gray-900 to-black',
+        balance: 45230.00,
+        currency: 'USD',
+    },
+};
+
+export const BusinessCard: Story = {
+    args: {
+        cardholderName: 'ACME CORP',
+        cardNumber: '4520 1200 3491 8832',
+        expiryDate: '03/28',
+        cvv: '***',
+        brand: 'visa',
+        gradient: 'from-blue-800 to-indigo-900',
+        balance: 125000.00,
+        currency: 'USD',
+    },
+};
+
+export const VirtualOnly: Story = {
+    args: {
+        cardholderName: 'CESAR RUIZ',
+        cardNumber: '4916 8032 2567 4410',
+        expiryDate: '09/27',
+        cvv: '***',
+        brand: 'visa',
+        gradient: 'from-teal-500 to-cyan-600',
+        balance: 5000.00,
+        currency: 'USD',
+        frozen: false,
+    },
+};
+
+export const FrozenCard: Story = {
+    args: {
+        cardholderName: 'CESAR RUIZ',
+        cardNumber: '4532 1002 8876 5432',
+        expiryDate: '06/28',
+        cvv: '***',
+        brand: 'visa',
+        gradient: 'from-gray-400 to-gray-500',
+        balance: 2400.00,
+        currency: 'USD',
+        frozen: true,
+    },
+};
+
+export const CompactView: Story = {
+    args: {
+        cardholderName: 'CESAR RUIZ',
+        cardNumber: '5412 7500 3829 1745',
+        expiryDate: '12/27',
+        brand: 'mastercard',
+        balance: 15200.00,
+        currency: 'USD',
+        variant: 'compact',
+    },
+};
