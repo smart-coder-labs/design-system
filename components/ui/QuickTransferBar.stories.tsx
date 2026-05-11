@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { QuickTransferBar } from './QuickTransferBar';
+import { fn } from '@storybook/test';
 
 const meta = {
   title: 'Components/QuickTransferBar',
@@ -10,31 +11,83 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const sampleContacts = [
+  { id: '1', name: 'Alice Johnson', initials: 'AJ', lastTransfer: '2h ago' },
+  { id: '2', name: 'Bob Martinez', initials: 'BM', lastTransfer: 'Yesterday' },
+  { id: '3', name: 'Carol Smith', initials: 'CS', lastTransfer: '3d ago' },
+  { id: '4', name: 'Dave Wilson', initials: 'DW', lastTransfer: '1w ago' },
+  { id: '5', name: 'Eve Davis', initials: 'ED', lastTransfer: '2w ago' },
+  { id: '6', name: 'Frank Lee', initials: 'FL', lastTransfer: '3w ago' },
+  { id: '7', name: 'Grace Kim', initials: 'GK', lastTransfer: '1mo ago' },
+];
+
 export const Default: Story = {
   args: {
-    onTransfer: (data: any) => console.log('Transfer:', data),
+    contacts: sampleContacts.slice(0, 5),
+    onSelect: fn(),
+    onAddNew: fn(),
   },
 };
 
-export const WithRecentContacts: Story = {
+export const Minimal: Story = {
   args: {
-    recentContacts: [
-      { id: '1', name: 'Alice', avatar: '', handle: '@alice' },
-      { id: '2', name: 'Bob', avatar: '', handle: '@bob' },
-      { id: '3', name: 'Carol', avatar: '', handle: '@carol' },
-      { id: '4', name: 'Dave', avatar: '', handle: '@dave' },
+    contacts: [
+      { id: '1', name: 'Alice Johnson', initials: 'AJ' },
     ],
-    onTransfer: (data: any) => console.log('Transfer:', data),
+    onSelect: fn(),
+    onAddNew: fn(),
   },
 };
 
-export const WithPresetAmounts: Story = {
+export const ManyContacts: Story = {
   args: {
-    recentContacts: [
-      { id: '1', name: 'Alice', avatar: '', handle: '@alice' },
-      { id: '2', name: 'Bob', avatar: '', handle: '@bob' },
+    contacts: sampleContacts,
+    onSelect: fn(),
+    onAddNew: fn(),
+  },
+};
+
+export const CustomTitle: Story = {
+  args: {
+    contacts: sampleContacts.slice(0, 4),
+    title: 'Send to',
+    onSelect: fn(),
+    onAddNew: fn(),
+  },
+};
+
+export const WithAvatars: Story = {
+  args: {
+    contacts: [
+      { id: '1', name: 'Alice Johnson', avatarUrl: 'https://i.pravatar.cc/150?u=alice', initials: 'AJ' },
+      { id: '2', name: 'Bob Martinez', avatarUrl: 'https://i.pravatar.cc/150?u=bob', initials: 'BM' },
+      { id: '3', name: 'Carol Smith', avatarUrl: 'https://i.pravatar.cc/150?u=carol', initials: 'CS' },
     ],
-    presetAmounts: [10, 25, 50, 100, 250],
-    onTransfer: (data: any) => console.log('Transfer:', data),
+    onSelect: fn(),
+    onAddNew: fn(),
+  },
+};
+
+export const NoContacts: Story = {
+  args: {
+    contacts: [],
+    onSelect: fn(),
+    onAddNew: fn(),
+  },
+};
+
+export const WithLastTransfer: Story = {
+  args: {
+    contacts: sampleContacts.slice(0, 4).map(c => ({ ...c, lastTransfer: c.lastTransfer })),
+    onSelect: fn(),
+    onAddNew: fn(),
+    title: 'Recent transfers',
+  },
+};
+
+export const EmptyNoAddNew: Story = {
+  args: {
+    contacts: [],
+    title: 'Quick Transfer',
   },
 };

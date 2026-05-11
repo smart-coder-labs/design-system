@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { RecurringInvestConfigurator } from './RecurringInvestConfigurator';
+import { fn } from '@storybook/test';
 
 const meta = {
   title: 'Components/RecurringInvestConfigurator',
@@ -12,44 +13,99 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    assets: [
-      { symbol: 'BTC', name: 'Bitcoin', price: 43250 },
-      { symbol: 'ETH', name: 'Ethereum', price: 2280 },
-      { symbol: 'SOL', name: 'Solana', price: 145 },
-    ],
-    onSubmit: (config: any) => console.log('Config:', config),
+    onSave: fn(),
   },
 };
 
-export const WithExistingPlan: Story = {
+export const WithDefaultAmount: Story = {
   args: {
-    assets: [
-      { symbol: 'BTC', name: 'Bitcoin', price: 43250 },
-      { symbol: 'ETH', name: 'Ethereum', price: 2280 },
-    ],
-    initialConfig: {
-      asset: 'BTC',
-      amount: 100,
-      frequency: 'weekly',
-      dayOfWeek: 1,
-    },
-    onSubmit: (config: any) => console.log('Config:', config),
+    onSave: fn(),
   },
+  decorators: [
+    (Story) => (
+      <div className="p-8 bg-surface-secondary min-h-[500px] flex items-center justify-center">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
-export const MonthlyPlan: Story = {
+export const WeeklyBitcoinPlan: Story = {
   args: {
-    assets: [
-      { symbol: 'BTC', name: 'Bitcoin', price: 43250 },
-      { symbol: 'ETH', name: 'Ethereum', price: 2280 },
-      { symbol: 'USDC', name: 'USD Coin', price: 1 },
-    ],
-    initialConfig: {
-      asset: 'ETH',
-      amount: 500,
-      frequency: 'monthly',
-      dayOfMonth: 15,
-    },
-    onSubmit: (config: any) => console.log('Config:', config),
+    onSave: fn(),
   },
+  decorators: [
+    (Story) => (
+      <div className="p-8 bg-surface-secondary min-h-[500px] flex items-center justify-center">
+        <div className="text-center mb-4 text-sm text-text-tertiary">
+          💡 Configure $50 Bitcoin every Monday
+        </div>
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export const MonthlyETHSaver: Story = {
+  args: {
+    onSave: fn(),
+  },
+  decorators: [
+    (Story) => (
+      <div className="p-8 bg-surface-secondary min-h-[500px] flex items-center justify-center">
+        <div className="text-center mb-4 text-sm text-text-tertiary">
+          💡 DCA $200 into Ethereum on the 1st of each month
+        </div>
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export const LargeInvestment: Story = {
+  args: {
+    onSave: fn(),
+  },
+  decorators: [
+    (Story) => (
+      <div className="p-8 bg-surface-secondary min-h-[500px] flex items-center justify-center">
+        <div className="text-center mb-4 text-sm text-text-tertiary">
+          💡 $10,000 weekly into S&P 500 for long-term growth
+        </div>
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export const SmallDCA: Story = {
+  args: {
+    onSave: fn(),
+  },
+  decorators: [
+    (Story) => (
+      <div className="p-8 bg-surface-secondary min-h-[500px] flex items-center justify-center">
+        <div className="text-center mb-4 text-sm text-text-tertiary">
+          💡 Start small: $5 daily into S&P 500
+        </div>
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export const DarkMode: Story = {
+  args: {
+    onSave: fn(),
+  },
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  decorators: [
+    (Story) => (
+      <div className="p-8 min-h-[500px] flex items-center justify-center" style={{ backgroundColor: '#1C1C1E' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
