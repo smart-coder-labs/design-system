@@ -94,7 +94,7 @@ export const Snackbar: React.FC<SnackbarProps> = ({
                             {onClose && (
                                 <button
                                     onClick={onClose}
-                                    className="p-1 rounded-lg hover:bg-black/10 transition-apple focus:outline-none"
+                                    className="p-1 rounded-lg hover:bg-black/10 transition-apple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2"
                                     aria-label="Close"
                                 >
                                     <X className="w-4 h-4" />

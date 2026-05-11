@@ -117,7 +117,7 @@ export const FABGroup = forwardRef<HTMLDivElement, FABGroupProps>(
                     onClick={() => setIsOpen(!isOpen)}
                     className={cn(
                         "w-14 h-14 rounded-full bg-accent-blue text-white flex items-center justify-center shadow-xl transition-apple focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
-                        "hover:bg-accent-blueHover"
+                        "hover:bg-accent-blue-hover"
                     )}
                 >
                     <motion.div

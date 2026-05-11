@@ -93,7 +93,7 @@ export const TransferForm: React.FC<TransferFormProps> = ({
             <div className="mb-5">
                 <label className="text-xs font-medium text-text-secondary mb-1.5 block">Amount</label>
                 <div className={cn(
-                    'flex items-center border-2 rounded-xl overflow-hidden transition-apple',
+                    'flex items-center border-2 rounded-xl overflow-hidden transition-colors duration-200 transition-apple',
                     isInsufficient ? 'border-status-error' : 'border-border-primary focus-within:border-accent-blue',
                 )}>
                     {/* Currency selector */}

@@ -159,7 +159,7 @@ export const PaymentConfirmationModal: React.FC<PaymentConfirmationModalProps> =
                                     'w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold transition-apple',
                                     'bg-accent-blue text-white hover:bg-accent-blue-hover active:bg-accent-blue-active',
                                     'disabled:opacity-60 disabled:cursor-not-allowed',
-                                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue',
+                                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2',
                                 )}
                                 whileTap={!loading ? { scale: 0.98 } : {}}
                             >
