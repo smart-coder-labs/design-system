@@ -61,7 +61,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                 <div className="bg-background-secondary rounded-3xl p-4 border border-border-primary focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
                     <div className="flex justify-between items-center mb-2">
                         <span className="text-sm font-semibold text-text-tertiary">You pay</span>
-                        <span className="text-xs font-medium text-zinc-800 dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-700 px-2 py-1 rounded-lg">
+                        <span className="text-xs font-medium text-text-secondary bg-zinc-200 dark:bg-zinc-700 px-2 py-1 rounded-lg">
                             Bal: {fromAsset.balance} {fromAsset.symbol}
                         </span>
                     </div>
@@ -73,15 +73,15 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                             placeholder="0"
                             className="w-1/2 text-4xl font-bold tracking-tighter bg-transparent outline-none text-text-primary [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
-                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-text-primary bg-surface-primary rounded-2xl shadow-sm border border-border-primary hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-colors cursor-pointer">
+                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-text-primary bg-surface-primary rounded-2xl shadow-sm border border-border-primary hover:bg-background-secondary transition-colors cursor-pointer">
                             <div className="flex items-center gap-2">
                                 <span className="text-2xl">{fromAsset.iconUrl}</span>
                                 <span className="font-bold">{fromAsset.symbol}</span>
                             </div>
-                            <span className="text-zinc-400 rotate-90">›</span>
+                            <span className="text-text-tertiary rotate-90">›</span>
                         </button>
                     </div>
-                    <p className="text-sm font-medium text-zinc-500 mt-2">
+                    <p className="text-sm font-medium text-text-tertiary mt-2">
                         ≈ ${usdValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </p>
                 </div>
@@ -107,12 +107,12 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                         <div className="w-1/2 text-4xl font-bold tracking-tighter text-text-primary truncate">
                             {totalOut > 0 ? totalOut.toLocaleString(undefined, { maximumFractionDigits: 4 }) : '0'}
                         </div>
-                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-text-primary bg-surface-primary rounded-2xl shadow-sm border border-border-primary hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-colors cursor-pointer">
+                        <button className="flex-1 flex items-center justify-between gap-2 p-2 pl-3 ml-auto text-text-primary bg-surface-primary rounded-2xl shadow-sm border border-border-primary hover:bg-background-secondary transition-colors cursor-pointer">
                             <div className="flex items-center gap-2">
                                 <span className="text-2xl">{toAsset.iconUrl}</span>
                                 <span className="font-bold">{toAsset.symbol}</span>
                             </div>
-                            <span className="text-zinc-400 rotate-90">›</span>
+                            <span className="text-text-tertiary rotate-90">›</span>
                         </button>
                     </div>
                 </div>
@@ -121,16 +121,16 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
             {/* Smart Abstracted Details */}
             <div className="mt-6 space-y-3 bg-blue-50/50 dark:bg-blue-900/10 p-4 rounded-2xl border border-blue-100 dark:border-blue-900/40">
                 <div className="flex justify-between items-center text-sm font-medium">
-                    <span className="text-zinc-500 flex items-center gap-1.5 tooltip-trigger relative group">
+                    <span className="text-text-tertiary flex items-center gap-1.5 tooltip-trigger relative group">
                         Network Cost <Info className="w-3.5 h-3.5" />
                         <div className="absolute bottom-full left-0 mb-2 w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none bg-zinc-900 text-white text-xs p-2 rounded-lg z-50 shadow-xl">
                             Gas fee to process this on the blockchain. We found the cheapest route.
                         </div>
                     </span>
-                    <span className="text-zinc-900 dark:text-zinc-200">${gasFeeUsd.toFixed(2)}</span>
+                    <span className="text-text-primary">${gasFeeUsd.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between items-center text-sm font-medium">
-                    <span className="text-zinc-500 flex items-center gap-1.5 tooltip-trigger relative group">
+                    <span className="text-text-tertiary flex items-center gap-1.5 tooltip-trigger relative group">
                         Fair Execution <Info className="w-3.5 h-3.5" />
                         <div className="absolute bottom-full left-0 mb-2 w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none bg-zinc-900 text-white text-xs p-2 rounded-lg z-50 shadow-xl">
                             Includes a {spreadPercentage}% protective spread to prevent failed transactions (Slippage).
@@ -150,7 +150,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                 className={cn(
                     "w-full py-4 rounded-xl font-bold text-center mt-6 transition-all",
                     amountNum > fromAsset.balance || amountNum <= 0
-                        ? "bg-background-secondary text-zinc-400 cursor-not-allowed"
+                        ? "bg-background-secondary text-text-tertiary cursor-not-allowed"
                         : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30"
                 )}
             >

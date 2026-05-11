@@ -50,12 +50,12 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
           <div className="p-4 bg-surface-primary border border-border-primary rounded-xl shadow-sm text-text-primary">
             <div className="flex justify-between items-center mb-3">
               <h4 className="font-semibold text-sm">Gastos del mes</h4>
-              <PieChart size={16} className="text-gray-400" />
+              <PieChart size={16} className="text-text-tertiary" />
             </div>
             <div className="h-2 w-full bg-background-secondary rounded-full overflow-hidden">
               <div className="h-full bg-red-500 w-[70%]" />
             </div>
-            <p className="text-xs text-gray-500 mt-2">Has gastado el 70% de tu presupuesto.</p>
+            <p className="text-xs text-text-tertiary mt-2">Has gastado el 70% de tu presupuesto.</p>
           </div>
         );
       case 'crypto':
@@ -81,7 +81,7 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
   };
 
   return (
-    <div className="max-w-md mx-auto relative rounded-3xl bg-gray-50 dark:bg-black p-4 min-h-[500px] border border-border-primary">
+    <div className="max-w-md mx-auto relative rounded-3xl bg-background-secondary p-4 min-h-[500px] border border-border-primary">
       
       {/* Header */}
       <div className="flex justify-between items-center mb-6 px-2">
@@ -90,8 +90,8 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
           onClick={() => setIsEditing(!isEditing)}
           className={`p-2 rounded-full transition-colors ${
             isEditing 
-            ? 'bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-50' 
-            : 'bg-white text-gray-500 dark:bg-gray-900 dark:text-gray-400 border border-border-primary'
+            ? 'bg-accent-blue-tint text-accent-blue' 
+            : 'bg-surface-primary text-text-tertiary border border-border-primary'
           }`}
         >
           <Settings size={18} />
@@ -111,7 +111,7 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
           >
             {isEditing && (
               <div className="absolute -left-3 top-1/2 -translate-y-1/2 z-20 flex gap-2 items-center">
-                 <div className="cursor-grab active:cursor-grabbing text-gray-400 p-1 hover:text-gray-600 dark:hover:text-gray-300">
+                 <div className="cursor-grab active:cursor-grabbing text-text-tertiary p-1 hover:text-text-secondary">
                     <GripVertical size={16} />
                  </div>
                  <button 
@@ -133,15 +133,15 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-8 pt-6 border-t border-dashed border-gray-300 dark:border-gray-700"
+            className="mt-8 pt-6 border-t border-dashed border-border-primary dark:border-gray-700"
           >
-            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-4 px-2">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-text-tertiary mb-4 px-2">
               Widgets Inactivos
             </h3>
             <div className="space-y-3">
               {hiddenWidgets.map(widget => (
                 <div key={widget.id} className="flex justify-between items-center p-3 bg-surface-primary rounded-lg border border-border-primary">
-                  <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{widget.title}</span>
+                  <span className="text-sm font-medium text-text-secondary">{widget.title}</span>
                   <button 
                     onClick={() => toggleVisibility(widget.id)}
                     className="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600"

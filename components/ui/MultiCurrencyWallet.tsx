@@ -51,13 +51,13 @@ export const MultiCurrencyWallet: React.FC<MultiCurrencyWalletProps> = ({
                 <div className="flex gap-2">
                     <button
                         onClick={prevWallet}
-                        className="p-1.5 rounded-full bg-background-secondary hover:bg-zinc-200 dark:hover:bg-zinc-700 transition"
+                        className="p-1.5 rounded-full bg-background-secondary hover:bg-background-secondary transition"
                     >
                         <ChevronLeft className="w-4 h-4 text-text-secondary" />
                     </button>
                     <button
                         onClick={nextWallet}
-                        className="p-1.5 rounded-full bg-background-secondary hover:bg-zinc-200 dark:hover:bg-zinc-700 transition"
+                        className="p-1.5 rounded-full bg-background-secondary hover:bg-background-secondary transition"
                     >
                         <ChevronRight className="w-4 h-4 text-text-secondary" />
                     </button>
@@ -115,7 +115,7 @@ export const MultiCurrencyWallet: React.FC<MultiCurrencyWalletProps> = ({
                 <motion.button
                     whileTap={{ scale: 0.95 }}
                     onClick={() => onAddFunds?.(activeWallet.id)}
-                    className="flex-1 py-3 px-2 sm:px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 transition-colors cursor-pointer whitespace-nowrap"
+                    className="flex-1 py-3 px-2 sm:px-4 rounded-xl bg-accent-blue hover:bg-accent-blue-hover text-white font-semibold flex items-center justify-center gap-2 shadow-md shadow-accent-blue/20 transition-colors cursor-pointer whitespace-nowrap"
                 >
                     <ArrowDownLeft className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                     <span className="text-sm sm:text-base">Add Funds</span>
@@ -123,7 +123,7 @@ export const MultiCurrencyWallet: React.FC<MultiCurrencyWalletProps> = ({
                 <motion.button
                     whileTap={{ scale: 0.95 }}
                     onClick={() => onSend?.(activeWallet.id)}
-                    className="flex-1 py-3 px-2 sm:px-4 rounded-xl bg-background-secondary hover:bg-zinc-200 dark:hover:bg-zinc-700 text-text-primary font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer whitespace-nowrap"
+                    className="flex-1 py-3 px-2 sm:px-4 rounded-xl bg-background-secondary hover:bg-background-secondary text-text-primary font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer whitespace-nowrap"
                 >
                     <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                     <span className="text-sm sm:text-base">Send</span>
@@ -138,7 +138,7 @@ export const MultiCurrencyWallet: React.FC<MultiCurrencyWalletProps> = ({
                         className={cn(
                             "h-1.5 rounded-full transition-all duration-300",
                             idx === activeIndex
-                                ? "w-6 bg-blue-500"
+                                ? "w-6 bg-accent-blue"
                                 : "w-1.5 bg-zinc-300 dark:bg-zinc-700"
                         )}
                     />

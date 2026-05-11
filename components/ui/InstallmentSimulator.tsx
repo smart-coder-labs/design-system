@@ -49,10 +49,10 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
                 </div>
             </div>
 
-            <div className="bg-zinc-50 dark:bg-zinc-800/40 rounded-3xl p-6 border border-border-primary/50 mb-6">
+            <div className="bg-background-secondary dark:bg-gray-900/40 rounded-3xl p-6 border border-border-primary/50 mb-6">
                 <div className="flex justify-between items-end mb-4">
                     <div>
-                        <p className="text-xs uppercase tracking-wider text-zinc-500 font-bold mb-1">Buy Now Price</p>
+                        <p className="text-xs uppercase tracking-wider text-text-tertiary font-bold mb-1">Buy Now Price</p>
                         <h2 className="text-2xl font-bold tracking-tight text-text-primary">
                             {formatCurrency(purchaseAmount)}
                         </h2>
@@ -69,7 +69,7 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
                                 className={cn(
                                     "flex-1 py-3 rounded-xl border flex flex-col items-center justify-center transition-all cursor-pointer shadow-sm",
                                     months === m
-                                        ? "border-blue-500 bg-blue-50 dark:bg-blue-500/10 text-blue-700 dark:text-blue-300 ring-1 ring-blue-500"
+                                        ? "border-accent-blue bg-accent-blue-tint text-accent-blue ring-1 ring-accent-blue"
                                         : "border-border-primary bg-surface-primary text-text-secondary hover:border-zinc-300 dark:hover:border-zinc-600 hover:shadow-md"
                                 )}
                             >
@@ -83,7 +83,7 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
 
             <div className="bg-surface-primary border border-border-primary rounded-2xl p-5 mb-6 shadow-sm">
                 <div className="flex items-center gap-2 mb-4">
-                    <CalendarDays className="w-5 h-5 text-zinc-400" />
+                    <CalendarDays className="w-5 h-5 text-text-tertiary" />
                     <p className="text-sm font-semibold">Payment Summary</p>
                 </div>
                 <div className="space-y-3 text-sm">
@@ -107,7 +107,7 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
                             {months === 1 ? '0.00' : formatCurrency(totalInterest)}
                         </motion.span>
                     </div>
-                    <div className="h-px bg-zinc-200 dark:bg-zinc-800 my-2" />
+                    <div className="h-px bg-zinc-200 dark:bg-gray-900 my-2" />
                     <div className="flex justify-between items-center font-bold text-text-primary">
                         <span>Total Paid Over Time</span>
                         <motion.span
@@ -135,7 +135,7 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
                         transition={{ duration: 0.5 }}
                     />
                 </div>
-                <div className="flex justify-between items-center text-[10px] uppercase font-bold text-zinc-400 mt-2">
+                <div className="flex justify-between items-center text-[10px] uppercase font-bold text-text-tertiary mt-2">
                     <span className="flex items-center gap-1"><div className="w-2 h-2 rounded-full bg-blue-500" /> Principal</span>
                     <span className="flex items-center gap-1"><div className="w-2 h-2 rounded-full bg-amber-400" /> Interest</span>
                 </div>
@@ -144,7 +144,7 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
             <motion.button
                 whileTap={{ scale: 0.96 }}
                 onClick={() => onConfirm?.(months, monthlyPayment)}
-                className="w-full py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all"
+                className="w-full py-4 bg-zinc-900 dark:bg-surface-primary text-white dark:text-zinc-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all"
             >
                 Confirm Plan
             </motion.button>

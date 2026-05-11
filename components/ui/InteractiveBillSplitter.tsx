@@ -69,9 +69,9 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
             </div>
 
             {/* Bill Info & Tip */}
-            <div className="bg-zinc-50 dark:bg-zinc-800/40 rounded-3xl p-5 border border-border-primary/50">
+            <div className="bg-background-secondary dark:bg-gray-900/40 rounded-3xl p-5 border border-border-primary/50">
                 <div className="flex justify-between items-center mb-4">
-                    <span className="text-sm font-semibold text-zinc-500 uppercase tracking-wider">Subtotal</span>
+                    <span className="text-sm font-semibold text-text-tertiary uppercase tracking-wider">Subtotal</span>
                     <span className="text-xl font-bold text-text-primary">{formatCurrency(billAmount)}</span>
                 </div>
 
@@ -123,7 +123,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            className="bg-zinc-50 dark:bg-zinc-800/40 rounded-2xl p-3 mb-4 overflow-hidden border border-border-primary/50"
+                            className="bg-background-secondary rounded-2xl p-3 mb-4 overflow-hidden border border-border-primary/50"
                         >
                             <div className="flex items-center gap-3 overflow-x-auto pb-2 custom-scrollbar">
                                 {friends.map(friend => {
@@ -134,7 +134,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                                             onClick={() => toggleParticipant(friend)}
                                             className={cn(
                                                 "relative flex-shrink-0 flex items-center justify-center p-1 rounded-full transition-all border-2",
-                                                isSelected ? "border-indigo-500" : "border-transparent opacity-60 hover:opacity-100"
+                                                isSelected ? "border-accent-blue" : "border-transparent opacity-60 hover:opacity-100"
                                             )}
                                         >
                                             <Avatar className="w-12 h-12">
@@ -143,7 +143,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                                             </Avatar>
                                             {isSelected && (
                                                 <div className="absolute -bottom-1 -right-1 bg-surface-primary rounded-full">
-                                                    <CheckCircle2 className="w-5 h-5 text-indigo-500" />
+                                                    <CheckCircle2 className="w-5 h-5 text-accent-blue" />
                                                 </div>
                                             )}
                                         </button>
@@ -167,7 +167,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                                 className="flex items-center justify-between bg-surface-primary p-3 rounded-2xl border border-border-primary shadow-sm"
                             >
                                 <div className="flex items-center gap-3">
-                                    <Avatar className="w-10 h-10 ring-2 ring-indigo-50 dark:ring-indigo-900/30">
+                                    <Avatar className="w-10 h-10 ring-2 ring-accent-blue-tint">
                                         <AvatarImage src={p.avatarUrl} alt={p.name} />
                                         <AvatarFallback>{p.name.substring(0, 2)}</AvatarFallback>
                                     </Avatar>
@@ -187,7 +187,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => onSplitComplete?.(participants.map(p => ({ contactId: p.id, amount: splitAmount })))}
-                className="w-full py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-xl flex items-center justify-center gap-2 hover:shadow-xl transition-all shadow-md group mt-2"
+                className="w-full py-4 bg-zinc-900 dark:bg-surface-primary text-white dark:text-zinc-900 font-bold rounded-xl flex items-center justify-center gap-2 hover:shadow-xl transition-all shadow-md group mt-2"
             >
                 <Users className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 Request Splits

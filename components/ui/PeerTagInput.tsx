@@ -78,7 +78,7 @@ export const PeerTagInput: React.FC<PeerTagInputProps> = ({
                     ? "border-emerald-500 ring-4 ring-emerald-500/20"
                     : "border-border-primary hover:border-zinc-300 dark:hover:border-zinc-700"
             )}>
-                <div className="pl-4 pr-2 text-zinc-400">
+                <div className="pl-4 pr-2 text-text-tertiary">
                     <Search className="w-5 h-5" />
                 </div>
                 <input
@@ -90,7 +90,7 @@ export const PeerTagInput: React.FC<PeerTagInputProps> = ({
                     onBlur={() => setTimeout(() => setIsFocused(false), 200)} // delay to allow clicks
                     onKeyDown={handleKeyDown}
                     placeholder={placeholder}
-                    className="flex-1 bg-transparent border-none outline-none py-4 font-semibold text-text-primary placeholder:text-zinc-500 dark:placeholder:text-zinc-400 placeholder:font-normal"
+                    className="flex-1 bg-transparent border-none outline-none py-4 font-semibold text-text-primary placeholder:text-text-tertiary dark:placeholder:text-text-tertiary placeholder:font-normal"
                 />
                 
                 <AnimatePresence>
@@ -100,9 +100,9 @@ export const PeerTagInput: React.FC<PeerTagInputProps> = ({
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0, opacity: 0 }}
                             onClick={() => { setQuery(""); inputRef.current?.focus(); }}
-                            className="p-2 mr-2 bg-background-secondary rounded-xl hover:bg-zinc-200 dark:hover:bg-zinc-700 transition"
+                            className="p-2 mr-2 bg-background-secondary rounded-xl hover:bg-background-secondary transition"
                         >
-                            <X className="w-4 h-4 text-zinc-500" />
+                            <X className="w-4 h-4 text-text-tertiary" />
                         </motion.button>
                     )}
                 </AnimatePresence>
@@ -131,7 +131,7 @@ export const PeerTagInput: React.FC<PeerTagInputProps> = ({
                                             "w-full flex items-center justify-between p-3 rounded-2xl transition-colors cursor-pointer text-left group",
                                             selectedIndex === idx
                                                 ? "bg-background-secondary"
-                                                : "hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
+                                                : "hover:bg-background-secondary"
                                         )}
                                     >
                                         <div className="flex items-center gap-3">

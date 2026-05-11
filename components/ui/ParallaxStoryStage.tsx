@@ -18,13 +18,13 @@ export function ParallaxStoryStage({ className }: React.HTMLAttributes<HTMLDivEl
 
   return (
     <div ref={containerRef} className={cn("h-[500vh] relative", className)}>
-      <div className="sticky top-0 h-screen overflow-hidden flex items-center bg-white dark:bg-zinc-950/90 border-y border-border-primary">
+      <div className="sticky top-0 h-screen overflow-hidden flex items-center bg-surface-primary dark:bg-zinc-950/90 border-y border-border-primary">
         <motion.div style={{ x }} className="flex gap-32 px-[10vw] items-center w-[200vw]">
           
           <div className="w-[50vw] shrink-0">
             <UnscramblingText 
               text="SCENE 01: THE INFILTRATION" 
-              className="text-6xl text-zinc-500 font-[family-name:var(--font-sans)] block mb-10" 
+              className="text-6xl text-text-tertiary font-[family-name:var(--font-sans)] block mb-10" 
             />
             <ComicPanel direction="left" className="border-blue-500 max-w-2xl bg-black">
               <p className="text-2xl text-zinc-900 dark:text-white font-[family-name:var(--font-mono)] break-words">
@@ -51,7 +51,7 @@ export function ParallaxStoryStage({ className }: React.HTMLAttributes<HTMLDivEl
 
           <div className="w-[50vw] shrink-0 pb-[10vh]">
             <ComicPanel direction="right" className="border-blue-500 max-w-xl bg-black">
-              <h3 className="text-4xl text-zinc-500 font-[family-name:var(--font-sans)] mb-4">EXTRACTION PROTOCOL</h3>
+              <h3 className="text-4xl text-text-tertiary font-[family-name:var(--font-sans)] mb-4">EXTRACTION PROTOCOL</h3>
               <p className="text-lg text-zinc-900 dark:text-white/80 font-[family-name:var(--font-mono)]">
                 Downloading encrypted fragments into portable drives. Keep the connection stable until completion.
                 Do not let the ICE locate your subnet.

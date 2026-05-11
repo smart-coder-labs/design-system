@@ -49,15 +49,15 @@ export const SubscriptionManager: React.FC = () => {
     <div className="bg-surface-primary rounded-3xl border border-border-primary overflow-hidden max-w-md mx-auto shadow-sm">
       
       {/* Header */}
-      <div className="p-6 bg-gray-50 dark:bg-gray-800 border-b border-border-primary">
+      <div className="p-6 bg-background-secondary dark:bg-gray-900 border-b border-border-primary">
         <h2 className="text-xl font-bold text-text-primary flex items-center gap-2 mb-1">
           <CalendarClock className="text-blue-500" />
           Suscripciones
         </h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Gasto mensual proyectado</p>
+        <p className="text-sm text-text-tertiary mb-4">Gasto mensual proyectado</p>
         <div className="text-4xl font-black text-text-primary tracking-tight">
           ${totalActive.toLocaleString('es-MX')}
-          <span className="text-sm font-medium text-gray-400 ml-1">/ mes</span>
+          <span className="text-sm font-medium text-text-tertiary ml-1">/ mes</span>
         </div>
       </div>
 
@@ -76,8 +76,8 @@ export const SubscriptionManager: React.FC = () => {
               onClick={() => setSelected(isSelected ? null : sub.id)}
               className={`relative border rounded-2xl p-4 cursor-pointer overflow-hidden transition-all ${
                 isSelected 
-                ? 'bg-blue-50/50 border-blue-200 dark:bg-blue-900 dark:border-blue-800 shadow-md ring-1 ring-blue-500/10' 
-                : 'bg-white border-gray-100 dark:bg-black dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm'
+                ? 'bg-accent-blue-tint border-accent-blue/20 shadow-md ring-1 ring-accent-blue/10' 
+                : 'bg-surface-primary border-border-primary hover:border-border-primary hover:shadow-sm'
               }`}
             >
               {sub.warning && !isSelected && (
@@ -95,7 +95,7 @@ export const SubscriptionManager: React.FC = () => {
                   <h4 className="font-semibold text-text-primary text-base truncate">
                     {sub.name}
                   </h4>
-                  <div className="flex items-center gap-2 text-xs font-medium text-gray-500 mt-0.5">
+                  <div className="flex items-center gap-2 text-xs font-medium text-text-tertiary mt-0.5">
                     <span>{sub.category}</span>
                     <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600" />
                     <span>Renueva el {sub.nextBilling}</span>
@@ -123,14 +123,14 @@ export const SubscriptionManager: React.FC = () => {
                         onClick={(e) => handleCancel(sub.id, e)}
                         className={`flex-1 py-2 rounded-xl text-sm font-semibold transition-all ${
                           sub.status === 'canceling' 
-                          ? 'bg-gray-100 text-gray-400 dark:bg-gray-800 cursor-not-allowed'
+                          ? 'bg-background-secondary text-text-tertiary dark:bg-gray-900 cursor-not-allowed'
                           : 'bg-red-50 text-red-600 hover:bg-red-100 dark:bg-red-900 dark:text-red-400 dark:hover:bg-red-800 border border-red-100 dark:border-red-900/30'
                         }`}
                       >
                         {sub.status === 'canceling' ? 'Procesando...' : 'Cancelar Suscripción'}
                       </button>
                       <button 
-                        className="flex-1 bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 font-semibold text-sm rounded-xl py-2 transition-all flex items-center justify-center gap-1"
+                        className="flex-1 bg-surface-primary text-text-secondary hover:bg-background-secondary border border-border-primary dark:bg-gray-900 dark:text-text-primary dark:border-gray-700 font-semibold text-sm rounded-xl py-2 transition-all flex items-center justify-center gap-1"
                       >
                         Pausar <ChevronRight size={14} />
                       </button>

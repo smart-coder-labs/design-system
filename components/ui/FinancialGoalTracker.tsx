@@ -63,12 +63,12 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
             <h3 className="font-bold text-lg text-text-primary leading-tight">
               {goalName}
             </h3>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mt-0.5 flex gap-2">
+            <p className="text-sm font-medium text-text-tertiary mt-0.5 flex gap-2">
               <span>{Math.floor(progress)}% completado</span>
             </p>
           </div>
         </div>
-        <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-2 -mr-2 -mt-2">
+        <button className="text-text-tertiary hover:text-text-secondary transition-colors p-2 -mr-2 -mt-2">
           <Settings2 size={20} />
         </button>
       </div>
@@ -82,7 +82,7 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
           className="absolute -top-3 -translate-x-1/2 flex flex-col items-center"
           style={{ width: 'max-content' }}
         >
-          <div className={`px-2 py-1 rounded bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-[10px] font-bold tracking-wider relative`}>
+          <div className={`px-2 py-1 rounded bg-gray-900 dark:bg-surface-primary text-white dark:text-gray-900 text-[10px] font-bold tracking-wider relative`}>
             ${balance.toLocaleString('es-MX')}
             <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-900 dark:border-t-white w-0 h-0" />
           </div>
@@ -103,7 +103,7 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
           </motion.div>
         </div>
         
-        <div className="flex justify-between mt-2 text-xs font-semibold text-gray-400 dark:text-gray-500">
+        <div className="flex justify-between mt-2 text-xs font-semibold text-text-tertiary">
           <span>$0</span>
           <span>Meta: ${targetAmount.toLocaleString('es-MX')}</span>
         </div>
@@ -115,14 +115,14 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
           disabled={balance >= targetAmount}
           className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-semibold transition-all ${
             balance >= targetAmount 
-            ? 'bg-gray-100 text-gray-400 dark:bg-gray-800 cursor-not-allowed'
-            : 'bg-gray-900 text-white hover:bg-black dark:bg-white dark:text-gray-900 hover:-translate-y-0.5 shadow-md active:scale-95'
+            ? 'bg-background-secondary text-text-tertiary cursor-not-allowed'
+            : 'bg-gray-900 text-white hover:bg-black dark:bg-surface-primary dark:text-gray-900 hover:-translate-y-0.5 shadow-md active:scale-95'
           }`}
         >
           <Plus size={18} />
           Abonar
         </button>
-        <button className="flex items-center justify-center gap-2 py-3 px-4 bg-gray-50 dark:bg-gray-800 text-text-primary rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition relative">
+        <button className="flex items-center justify-center gap-2 py-3 px-4 bg-background-secondary text-text-primary rounded-xl font-semibold hover:bg-background-secondary transition relative">
           <TrendingUp size={18} className={theme.text} />
           Auto-ahorro
           <span className="absolute -top-2 -right-2 bg-green-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md uppercase tracking-wide">

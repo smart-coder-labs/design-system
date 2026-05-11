@@ -69,7 +69,7 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                         transition={{ duration: 0.3 }}
                     />
                 </div>
-                <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-zinc-400 mt-2">
+                <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-text-tertiary mt-2">
                     <span className={step === 1 ? "text-indigo-600 dark:text-indigo-400" : ""}>Step 1: What</span>
                     <span className={step === 2 ? "text-indigo-600 dark:text-indigo-400" : ""}>Step 2: When</span>
                 </div>
@@ -114,7 +114,7 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                             <div className="space-y-3">
                                 <label className="text-sm font-semibold text-text-secondary block">Amount</label>
                                 <div className="relative">
-                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-xl font-bold text-zinc-400">$</span>
+                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-xl font-bold text-text-tertiary">$</span>
                                     <input
                                         type="number"
                                         value={amount}
@@ -127,7 +127,7 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                             <motion.button
                                 whileTap={{ scale: 0.96 }}
                                 onClick={handleNext}
-                                className="w-full py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-xl font-bold flex items-center justify-center gap-2 mt-4 shadow-md hover:shadow-lg transition-all"
+                                className="w-full py-4 bg-zinc-900 dark:bg-surface-primary text-white dark:text-zinc-900 rounded-xl font-bold flex items-center justify-center gap-2 mt-4 shadow-md hover:shadow-lg transition-all"
                             >
                                 Continue <ChevronRight className="w-5 h-5" />
                             </motion.button>
@@ -159,7 +159,7 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                                             )}
                                         >
                                             <div className="font-bold text-text-primary">{f.label}</div>
-                                            <div className="text-xs text-zinc-500 mt-1 font-medium">{f.desc}</div>
+                                            <div className="text-xs text-text-tertiary mt-1 font-medium">{f.desc}</div>
                                         </button>
                                     ))}
                                 </div>
@@ -172,14 +172,14 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                             <div className="flex gap-3 pt-2">
                                 <button
                                     onClick={handleBack}
-                                    className="px-6 py-4 rounded-xl font-bold text-text-tertiary bg-background-secondary hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                                    className="px-6 py-4 rounded-xl font-bold text-text-tertiary bg-background-secondary hover:bg-background-secondary transition-colors"
                                 >
                                     Back
                                 </button>
                                 <motion.button
                                     whileTap={{ scale: 0.96 }}
                                     onClick={handleSave}
-                                    className="flex-1 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/30 transition-all"
+                                    className="flex-1 py-4 bg-accent-blue hover:bg-accent-blue-hover text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-accent-blue/30 transition-all"
                                 >
                                     <Rocket className="w-5 h-5" /> Activate
                                 </motion.button>

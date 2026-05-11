@@ -91,12 +91,12 @@ export const JargonTooltip: React.FC<JargonTooltipProps> = ({
                 <BookOpen size={16} className="text-blue-500" />
                 <h5 className="font-semibold text-sm capitalize">{term}</h5>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-3">
+              <p className="text-sm text-text-secondary leading-relaxed mb-3">
                 {definition}
               </p>
               {example && (
-                <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-3 border border-border-primary">
-                  <p className="text-xs text-gray-500 dark:text-gray-400 font-medium mb-1 uppercase tracking-wider">
+                <div className="bg-background-secondary rounded-lg p-3 border border-border-primary">
+                  <p className="text-xs text-text-tertiary font-medium mb-1 uppercase tracking-wider">
                     Ejemplo
                   </p>
                   <p className="text-sm text-text-primary">

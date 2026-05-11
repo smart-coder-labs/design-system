@@ -15,7 +15,7 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
 }) => {
   const tiers = {
     Bronze: { color: 'from-amber-700 to-amber-900', light: 'text-amber-700', next: 'Silver', nextPoints: 1000, icon: Shield },
-    Silver: { color: 'from-gray-300 to-gray-500', light: 'text-gray-500', next: 'Gold', nextPoints: 5000, icon: Star },
+    Silver: { color: 'from-gray-300 to-gray-500', light: 'text-text-tertiary', next: 'Gold', nextPoints: 5000, icon: Star },
     Gold: { color: 'from-yellow-400 to-yellow-600', light: 'text-yellow-500', next: 'Platinum', nextPoints: 15000, icon: Trophy },
     Platinum: { color: 'from-blue-200 via-purple-300 to-blue-400', light: 'text-purple-400', next: null, nextPoints: 0, icon: Gift }
   };
@@ -42,7 +42,7 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
         
         <div className="relative z-10 flex justify-between items-center mb-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
+            <p className="text-xs font-semibold uppercase tracking-wider text-text-tertiary mb-1">
               Programa de Recompensas
             </p>
             <h2 className="text-xl font-bold text-text-primary flex items-center gap-2">
@@ -57,7 +57,7 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
             <h3 className="text-2xl font-black text-text-primary tracking-tight">
               {points.toLocaleString()}
             </h3>
-            <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">
+            <p className="text-xs font-medium text-text-tertiary uppercase">
               Puntos Vida
             </p>
           </div>
@@ -68,7 +68,7 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
           <div className="relative mb-2">
             <div className="flex justify-between text-xs font-bold mb-2">
               <span className={`uppercase tracking-wider ${tier.light}`}>{currentTier}</span>
-              <span className="text-gray-400 dark:text-gray-500 uppercase tracking-wider">{tier.next}</span>
+              <span className="text-text-tertiary uppercase tracking-wider">{tier.next}</span>
             </div>
             
             <div className="h-3 w-full bg-background-secondary rounded-full overflow-hidden shadow-inner">
@@ -84,7 +84,7 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
               </motion.div>
             </div>
             
-            <p className="text-center text-xs text-gray-500 dark:text-gray-400 font-medium mt-3">
+            <p className="text-center text-xs text-text-tertiary font-medium mt-3">
               Faltan <span className="font-bold text-text-primary">{(tier.nextPoints - points).toLocaleString()} puntos</span> para ascender
             </p>
           </div>
@@ -92,7 +92,7 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
       </div>
 
       {/* Perks List */}
-      <div className="bg-gray-50 dark:bg-gray-800 p-6 border-t border-border-primary">
+      <div className="bg-background-secondary p-6 border-t border-border-primary">
         <h4 className="text-sm font-semibold text-text-primary mb-4">
           Tus Beneficios Activos
         </h4>
@@ -104,7 +104,7 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
             </div>
             <div className="flex-1">
               <p className="text-sm font-semibold text-text-primary">Cashback 2%</p>
-              <p className="text-xs text-gray-500">En todas tus compras</p>
+              <p className="text-xs text-text-tertiary">En todas tus compras</p>
             </div>
             <CheckBadge />
           </div>
@@ -118,21 +118,21 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
               <p className="text-sm font-semibold text-text-primary cursor-pointer flex items-center gap-1 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
                 Regalo de Cumpleaños <ChevronRight size={14} />
               </p>
-              <p className="text-xs text-gray-500">Disponible tu mes</p>
+              <p className="text-xs text-text-tertiary">Disponible tu mes</p>
             </div>
             <CheckBadge className="relative z-10" />
           </div>
 
           {tier.next && (
             <div className="flex items-center gap-3 p-3 border border-dashed border-border-primary rounded-xl opacity-60 grayscale hover:grayscale-0 transition-all cursor-not-allowed">
-              <div className="p-2 bg-background-secondary text-gray-400 rounded-lg">
+              <div className="p-2 bg-background-secondary text-text-tertiary rounded-lg">
                 <Plane size={16} />
               </div>
               <div className="flex-1">
                 <p className="text-sm font-semibold flex items-center gap-2">
                   Acceso VIP Aeropuertos <Lock size={12} className="text-yellow-500" />
                 </p>
-                <p className="text-xs text-gray-500">Disponible en Nivel {tier.next}</p>
+                <p className="text-xs text-text-tertiary">Disponible en Nivel {tier.next}</p>
               </div>
             </div>
           )}

@@ -103,10 +103,10 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                             <span className="font-bold">{payment.receiverName}</span>
                                         </div>
                                         <div className="flex items-center gap-2 mt-0.5 text-xs text-text-tertiary">
-                                            <span className="font-semibold text-zinc-400 dark:text-zinc-500">
+                                            <span className="font-semibold text-text-tertiary dark:text-text-tertiary">
                                                 {formatTimeAgo(payment.timestamp)}
                                             </span>
-                                            <span className="w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+                                            <span className="w-1 h-1 rounded-full bg-border-primary" />
                                             {getPrivacyIcon(payment.privacy)}
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                             {new Intl.NumberFormat('en-US', { style: 'currency', currency: payment.currency || 'USD' }).format(payment.amount)}
                                         </span>
                                     )}
-                                    <button className="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors">
+                                    <button className="text-text-tertiary hover:text-text-secondary dark:hover:text-text-primary transition-colors">
                                         <MoreHorizontal className="w-5 h-5" />
                                     </button>
                                 </div>
@@ -126,8 +126,8 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
 
                             {/* Content */}
                             <div className="pl-[3.25rem] pr-2">
-                                <div className="bg-background-secondary rounded-2xl p-4 border border-border-primary/50 inline-block group hover:border-zinc-200 dark:hover:border-zinc-700 transition">
-                                    <p className="text-sm text-zinc-800 dark:text-zinc-200 font-medium">
+                                <div className="bg-background-secondary rounded-2xl p-4 border border-border-primary/50 inline-block group hover:border-border-primary dark:hover:border-zinc-700 transition">
+                                    <p className="text-sm text-text-secondary font-medium">
                                         {payment.emoji && <span className="text-xl mr-2 align-middle">{payment.emoji}</span>}
                                         {payment.note}
                                     </p>
@@ -161,7 +161,7 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                         <span>{payment.comments}</span>
                                     </motion.button>
                                     
-                                    <button className="flex items-center gap-1.5 text-xs font-bold text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 ml-auto transition-colors">
+                                    <button className="flex items-center gap-1.5 text-xs font-bold text-text-tertiary hover:text-text-secondary dark:hover:text-text-primary ml-auto transition-colors">
                                         <Share className="w-4 h-4" />
                                     </button>
                                 </div>
