@@ -1,65 +1,66 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tooltip } from './Tooltip';
+import { Tooltip, TooltipProvider } from './Tooltip';
 
 const meta = {
-  title: 'Components/Tooltip',
-  component: Tooltip,
-  tags: ['autodocs'],
+    title: 'Components/Tooltip',
+    component: Tooltip,
+    tags: ['autodocs'],
+    decorators: [
+        (Story) => (
+            <TooltipProvider>
+                <div className="flex items-center justify-center p-12">
+                    <Story />
+                </div>
+            </TooltipProvider>
+        ),
+    ],
 } satisfies Meta<typeof Tooltip>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {
-    content: 'This is a tooltip',
-    children: <span className="text-text-primary font-medium cursor-default">Hover me</span>,
-  },
-};
-
 export const Top: Story = {
-  args: {
-    content: 'Tooltip on top',
-    side: 'top',
-    children: <span className="text-text-primary font-medium cursor-default">Top</span>,
-  },
+    args: {
+        content: 'Portfolio value: $124,532',
+        children: <button className="px-4 py-2 bg-gray-900 text-white rounded-lg text-sm">Hover me</button>,
+        side: 'top',
+    },
 };
 
 export const Bottom: Story = {
-  args: {
-    content: 'Tooltip on bottom',
-    side: 'bottom',
-    children: <span className="text-text-primary font-medium cursor-default">Bottom</span>,
-  },
-};
-
-export const Left: Story = {
-  args: {
-    content: 'Tooltip on left',
-    side: 'left',
-    children: <span className="text-text-primary font-medium cursor-default">Left</span>,
-  },
+    args: {
+        content: 'Click to view transaction details',
+        children: <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm">View Details</button>,
+        side: 'bottom',
+    },
 };
 
 export const Right: Story = {
-  args: {
-    content: 'Tooltip on right',
-    side: 'right',
-    children: <span className="text-text-primary font-medium cursor-default">Right</span>,
-  },
+    args: {
+        content: '24/7 Customer Support',
+        children: <button className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm">Help</button>,
+        side: 'right',
+    },
 };
 
-export const LongContent: Story = {
-  args: {
-    content: <div><p className="font-semibold">BTC Price Alert</p><p className="text-text-secondary text-xs">Set when BTC crosses $45,000</p></div>,
-    children: <span className="text-accent-blue font-medium cursor-default">Price Alert</span>,
-  },
+export const Left: Story = {
+    args: {
+        content: 'Total balance: $45,230.50',
+        children: <button className="px-4 py-2 bg-purple-600 text-white rounded-lg text-sm">Balance</button>,
+        side: 'left',
+    },
 };
 
-export const Delayed: Story = {
-  args: {
-    content: 'Appears after 1 second',
-    delayDuration: 1000,
-    children: <span className="text-text-primary font-medium cursor-default">Delayed</span>,
-  },
+export const RichContent: Story = {
+    args: {
+        content: (
+            <div className="space-y-1">
+                <p className="font-semibold">BTC - Bitcoin</p>
+                <p className="text-green-400">+2.45% ▲ $67,432</p>
+                <p className="text-xs text-gray-400">24h volume: $28.5B</p>
+            </div>
+        ),
+        children: <button className="px-4 py-2 bg-orange-500 text-white rounded-lg text-sm">BTC Price</button>,
+        side: 'top',
+    },
 };
