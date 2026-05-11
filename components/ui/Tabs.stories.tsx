@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from './Tabs';
+import { Tabs } from './Tabs';
+import { useState } from 'react';
 
 const meta = {
     title: 'Components/Tabs',
@@ -13,84 +14,109 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     render: () => (
         <Tabs defaultValue="overview">
-            <TabsList>
-                <TabsTrigger value="overview">Overview</TabsTrigger>
-                <TabsTrigger value="transactions">Transactions</TabsTrigger>
-                <TabsTrigger value="analytics">Analytics</TabsTrigger>
-            </TabsList>
-            <TabsContent value="overview">
-                <div className="p-4 text-sm text-gray-600">
-                    Account overview showing balance, recent activity, and key metrics.
-                </div>
-            </TabsContent>
-            <TabsContent value="transactions">
-                <div className="p-4 text-sm text-gray-600">
-                    List of recent transactions with filtering and search options.
-                </div>
-            </TabsContent>
-            <TabsContent value="analytics">
-                <div className="p-4 text-sm text-gray-600">
-                    Spending analytics with charts and category breakdown.
-                </div>
-            </TabsContent>
+            <Tabs.List>
+                <Tabs.Trigger value="overview">Overview</Tabs.Trigger>
+                <Tabs.Trigger value="transactions">Transactions</Tabs.Trigger>
+                <Tabs.Trigger value="analytics">Analytics</Tabs.Trigger>
+            </Tabs.List>
+            <Tabs.Content value="overview" className="p-4 text-sm text-text-secondary">Account overview with balance and recent activity</Tabs.Content>
+            <Tabs.Content value="transactions" className="p-4 text-sm text-text-secondary">List of all recent transactions</Tabs.Content>
+            <Tabs.Content value="analytics" className="p-4 text-sm text-text-secondary">Spending analytics and charts</Tabs.Content>
         </Tabs>
     ),
 };
 
-export const Segmented: Story = {
-    args: {
-        defaultValue: 'week',
-    },
+export const SegmentedVariant: Story = {
     render: () => (
-        <Tabs defaultValue="week">
-            <TabsList variant="segmented">
-                <TabsTrigger value="day">Day</TabsTrigger>
-                <TabsTrigger value="week">Week</TabsTrigger>
-                <TabsTrigger value="month">Month</TabsTrigger>
-                <TabsTrigger value="year">Year</TabsTrigger>
-            </TabsList>
-            <TabsContent value="day">Daily view content</TabsContent>
-            <TabsContent value="week">Weekly view content</TabsContent>
-            <TabsContent value="month">Monthly view content</TabsContent>
-            <TabsContent value="year">Yearly view content</TabsContent>
+        <Tabs defaultValue="buy">
+            <Tabs.List variant="segmented">
+                <Tabs.Trigger value="buy">Buy</Tabs.Trigger>
+                <Tabs.Trigger value="sell">Sell</Tabs.Trigger>
+                <Tabs.Trigger value="swap">Swap</Tabs.Trigger>
+            </Tabs.List>
+            <Tabs.Content value="buy" className="p-4 text-sm text-text-secondary">Buy stocks, crypto, and ETFs</Tabs.Content>
+            <Tabs.Content value="sell" className="p-4 text-sm text-text-secondary">Sell your holdings</Tabs.Content>
+            <Tabs.Content value="swap" className="p-4 text-sm text-text-secondary">Swap between currencies and assets</Tabs.Content>
+        </Tabs>
+    ),
+};
+
+export const WithContent: Story = {
+    render: () => (
+        <Tabs defaultValue="checking">
+            <Tabs.List>
+                <Tabs.Trigger value="checking">Checking</Tabs.Trigger>
+                <Tabs.Trigger value="savings">Savings</Tabs.Trigger>
+                <Tabs.Trigger value="credit">Credit Card</Tabs.Trigger>
+            </Tabs.List>
+            <Tabs.Content value="checking" className="p-4 space-y-3">
+                <div className="flex justify-between"><span className="text-sm text-text-secondary">Balance</span><span className="text-sm font-bold">$12,450.80</span></div>
+                <div className="flex justify-between"><span className="text-sm text-text-secondary">Account Number</span><span className="text-sm font-mono">••••4582</span></div>
+            </Tabs.Content>
+            <Tabs.Content value="savings" className="p-4 space-y-3">
+                <div className="flex justify-between"><span className="text-sm text-text-secondary">Balance</span><span className="text-sm font-bold text-green-600">$45,200.00</span></div>
+                <div className="flex justify-between"><span className="text-sm text-text-secondary">APY</span><span className="text-sm font-bold">4.5%</span></div>
+            </Tabs.Content>
+            <Tabs.Content value="credit" className="p-4 space-y-3">
+                <div className="flex justify-between"><span className="text-sm text-text-secondary">Available Credit</span><span className="text-sm font-bold">$8,500</span></div>
+                <div className="flex justify-between"><span className="text-sm text-text-secondary">Current Balance</span><span className="text-sm font-bold">$2,340.50</span></div>
+            </Tabs.Content>
         </Tabs>
     ),
 };
 
 export const DisabledTab: Story = {
     render: () => (
-        <Tabs defaultValue="active">
-            <TabsList>
-                <TabsTrigger value="active">Active</TabsTrigger>
-                <TabsTrigger value="pending">Pending</TabsTrigger>
-                <TabsTrigger value="archived" disabled>Archived</TabsTrigger>
-            </TabsList>
-            <TabsContent value="active">Active loans</TabsContent>
-            <TabsContent value="pending">Pending approvals</TabsContent>
-            <TabsContent value="archived">Archived records</TabsContent>
+        <Tabs defaultValue="portfolio">
+            <Tabs.List>
+                <Tabs.Trigger value="portfolio">Portfolio</Tabs.Trigger>
+                <Tabs.Trigger value="history">History</Tabs.Trigger>
+                <Tabs.Trigger value="settings" disabled>Settings (Coming Soon)</Tabs.Trigger>
+            </Tabs.List>
+            <Tabs.Content value="portfolio" className="p-4 text-sm text-text-secondary">Your investment portfolio overview</Tabs.Content>
+            <Tabs.Content value="history" className="p-4 text-sm text-text-secondary">Transaction history and statements</Tabs.Content>
         </Tabs>
     ),
 };
 
-export const Controlled: Story = {
+export const InteractiveTab: Story = {
     render: () => {
+        const [activeTab, setActiveTab] = useState('balance');
+        const balances: Record<string, { label: string; value: string; change: string }> = {
+            balance: { label: 'Total Balance', value: '$124,532.80', change: '+3.2%' },
+            invested: { label: 'Invested', value: '$78,200.00', change: '+12.4%' },
+            available: { label: 'Available Cash', value: '$46,332.80', change: '+1.1%' },
+        };
+        const current = balances[activeTab];
         return (
-            <Tabs defaultValue="send">
-                <TabsList>
-                    <TabsTrigger value="send">Send</TabsTrigger>
-                    <TabsTrigger value="request">Request</TabsTrigger>
-                    <TabsTrigger value="schedule">Schedule</TabsTrigger>
-                </TabsList>
-                <TabsContent value="send">
-                    <div className="p-4 text-sm text-gray-600">Transfer money to another account</div>
-                </TabsContent>
-                <TabsContent value="request">
-                    <div className="p-4 text-sm text-gray-600">Request money from contacts</div>
-                </TabsContent>
-                <TabsContent value="schedule">
-                    <div className="p-4 text-sm text-gray-600">Schedule recurring transfers</div>
-                </TabsContent>
+            <Tabs value={activeTab} onValueChange={setActiveTab}>
+                <Tabs.List>
+                    <Tabs.Trigger value="balance">Balance</Tabs.Trigger>
+                    <Tabs.Trigger value="invested">Invested</Tabs.Trigger>
+                    <Tabs.Trigger value="available">Available</Tabs.Trigger>
+                </Tabs.List>
+                <Tabs.Content value={activeTab} className="p-6 text-center space-y-2">
+                    <p className="text-xs text-text-secondary">{current.label}</p>
+                    <p className="text-4xl font-bold">{current.value}</p>
+                    <p className="text-sm text-green-600">{current.change} this month</p>
+                </Tabs.Content>
             </Tabs>
         );
     },
+};
+
+export const DarkMode: Story = {
+    parameters: {
+        themes: { themeOverride: 'dark' },
+    },
+    render: () => (
+        <Tabs defaultValue="dashboard">
+            <Tabs.List>
+                <Tabs.Trigger value="dashboard">Dashboard</Tabs.Trigger>
+                <Tabs.Trigger value="reports">Reports</Tabs.Trigger>
+            </Tabs.List>
+            <Tabs.Content value="dashboard" className="p-4 text-sm text-text-secondary">Dashboard content in dark mode</Tabs.Content>
+            <Tabs.Content value="reports" className="p-4 text-sm text-text-secondary">Reports and statements</Tabs.Content>
+        </Tabs>
+    ),
 };
