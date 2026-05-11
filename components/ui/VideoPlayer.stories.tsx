@@ -5,14 +5,6 @@ const meta = {
     title: 'Components/VideoPlayer',
     component: VideoPlayer,
     tags: ['autodocs'],
-    parameters: {
-        docs: {
-            description: {
-                component:
-                    'A macOS/iOS-inspired video player with custom controls, progress bar, volume slider, fullscreen toggle, loading state, and auto-hiding controls. Supports autoplay, loop, and mute.',
-            },
-        },
-    },
 } satisfies Meta<typeof VideoPlayer>;
 
 export default meta;
@@ -21,106 +13,90 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80',
-        muted: true,
+        poster: 'https://picsum.photos/seed/fintech/800/450',
+        title: 'Investment Basics Guide',
+    },
+};
+
+export const WithDescription: Story = {
+    args: {
+        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        poster: 'https://picsum.photos/seed/learn/800/450',
+        title: 'Portfolio Diversification',
+        description: 'Learn how to build a diversified investment portfolio that balances risk and reward.',
+    },
+};
+
+export const NoPoster: Story = {
+    args: {
+        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        title: 'Weekly Market Review',
     },
 };
 
 export const AutoPlay: Story = {
     args: {
         src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80',
-        autoPlay: true,
-        muted: true,
-        loop: true,
+        poster: 'https://picsum.photos/seed/market/800/450',
+        autoPlay: false,
+        title: 'Market Update',
     },
 };
 
-export const Looping: Story = {
+export const ControlsHidden: Story = {
     args: {
         src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80',
-        loop: true,
-        muted: true,
+        poster: 'https://picsum.photos/seed/nocontrols/800/450',
+        controls: false,
+        title: 'Background Video',
     },
 };
 
-export const WithoutPoster: Story = {
+export const LoadingFallback: Story = {
     args: {
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        muted: true,
+        src: 'https://example.com/slow-video.mp4',
+        poster: undefined,
+        title: 'Loading Example',
     },
 };
 
-export const WithCustomPoster: Story = {
-    args: {
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://images.unsplash.com/photo-1626379953822-baec19c3accd?w=600&q=80',
-        muted: true,
+export const DarkMode: Story = {
+    parameters: {
+        themes: { themeOverride: 'dark' },
     },
-};
-
-export const Silent: Story = {
     args: {
         src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80',
-        muted: true,
-    },
-};
-
-export const WithSound: Story = {
-    args: {
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80',
-        muted: false,
+        poster: 'https://picsum.photos/seed/darkvideo/800/450',
+        title: 'Financial Education Series',
     },
 };
 
 export const MobileView: Story = {
-    parameters: {
-        viewport: { defaultViewport: 'mobile1' },
-    },
-    args: {
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80',
-        muted: true,
-    },
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
 };
 
-export const DarkUI: Story = {
-    args: {
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80',
-        muted: true,
-    },
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+    themes: { themeOverride: 'dark' },
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark bg-gray-950 min-h-screen p-8">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
-export const TallAspectRatio: Story = {
-    decorators: [
-        (Story) => (
-            <div className="max-w-xs mx-auto">
-                <Story />
-            </div>
-        ),
-    ],
-    args: {
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80',
-        muted: true,
+export const LoadingState: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: '$f in a loading state, showing skeleton or placeholder UI while data is being fetched.',
+      },
     },
-};
-
-export const WideAspectRatio: Story = {
-    decorators: [
-        (Story) => (
-            <div className="max-w-3xl mx-auto">
-                <Story />
-            </div>
-        ),
-    ],
-    args: {
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80',
-        muted: true,
-    },
+  },
 };

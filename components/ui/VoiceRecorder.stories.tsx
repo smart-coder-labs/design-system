@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { VoiceRecorder } from './VoiceRecorder';
+import { useState } from 'react';
 
 const meta = {
     title: 'Components/VoiceRecorder',
     component: VoiceRecorder,
-    parameters: {
-        layout: 'centered',
-    },
     tags: ['autodocs'],
 } satisfies Meta<typeof VoiceRecorder>;
 
@@ -15,116 +13,91 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        onRecordingComplete: (audioBlob, duration) => {
-            console.log('Recording complete:', { audioBlob, duration });
-        },
+        onRecordingComplete: (blob) => console.log('Recording complete:', blob),
     },
 };
 
-export const WithAutoSend: Story = {
-    args: {
-        autoSend: true,
-        onSend: (audioBlob) => {
-            console.log('Sending audio:', audioBlob);
-            alert('Audio sent!');
-        },
-        onRecordingComplete: (audioBlob, duration) => {
-            console.log('Recording complete:', { audioBlob, duration });
-        },
-    },
-};
-
-export const WithMaxDuration: Story = {
-    args: {
-        maxDuration: 30, // 30 seconds
-        onRecordingComplete: (audioBlob, duration) => {
-            console.log('Recording complete:', { audioBlob, duration });
-            alert(`Recording stopped at ${duration} seconds`);
-        },
-    },
-};
-
-export const WithoutWaveform: Story = {
-    args: {
-        showWaveform: false,
-        onRecordingComplete: (audioBlob, duration) => {
-            console.log('Recording complete:', { audioBlob, duration });
-        },
-    },
-};
-
-export const Interactive: Story = {
+export const InteractiveRecorder: Story = {
     render: () => {
-        const handleRecordingComplete = (audioBlob: Blob, duration: number) => {
-            console.log('Recording completed:', {
-                size: audioBlob.size,
-                type: audioBlob.type,
-                duration,
-            });
-            alert(`Recording completed! Duration: ${duration}s, Size: ${(audioBlob.size / 1024).toFixed(2)}KB`);
+        const [recordings, setRecordings] = useState<string[]>([]);
+        const [isRecording, setIsRecording] = useState(false);
+        const handleRecordingComplete = (blob: Blob) => {
+            const url = URL.createObjectURL(blob);
+            setRecordings(prev => [...prev, url]);
+            setIsRecording(false);
         };
-
-        const handleSend = (audioBlob: Blob) => {
-            console.log('Sending audio:', audioBlob);
-            alert('Audio message sent successfully!');
-        };
-
         return (
-            <VoiceRecorder
-                onRecordingComplete={handleRecordingComplete}
-                onSend={handleSend}
-                maxDuration={60}
-                showWaveform={true}
-            />
+            <div className="space-y-4 max-w-sm">
+                <VoiceRecorder
+                    onRecordingComplete={handleRecordingComplete}
+                    onRecordingStateChange={setIsRecording}
+                />
+                {recordings.length > 0 && (
+                    <div className="p-3 bg-surface-secondary rounded-lg space-y-3">
+                        <h4 className="text-xs font-semibold text-text-secondary">
+                            Recordings ({recordings.length})
+                        </h4>
+                        {recordings.map((url, i) => (
+                            <div key={i} className="space-y-1">
+                                <p className="text-xs text-text-secondary">Recording #{i + 1}</p>
+                                <audio src={url} controls className="w-full h-8" />
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
         );
     },
 };
 
-export const ShortRecording: Story = {
+export const DarkMode: Story = {
+    parameters: {
+        themes: { themeOverride: 'dark' },
+    },
     args: {
-        maxDuration: 10, // 10 seconds for quick messages
-        autoSend: true,
-        onSend: (audioBlob) => {
-            console.log('Quick message sent:', audioBlob);
-        },
-        onRecordingComplete: (audioBlob, duration) => {
-            console.log('Quick recording:', { audioBlob, duration });
-        },
+        onRecordingComplete: (blob) => console.log('Recording complete:', blob),
     },
 };
 
-export const LongRecording: Story = {
-    args: {
-        maxDuration: 300, // 5 minutes
-        showWaveform: true,
-        onRecordingComplete: (audioBlob, duration) => {
-            console.log('Long recording complete:', { audioBlob, duration });
-        },
-    },
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
 };
 
-export const WithSendCallback: Story = {
-    render: () => {
-        const handleSend = (audioBlob: Blob) => {
-            // Simulate upload
-            const formData = new FormData();
-            formData.append('audio', audioBlob, 'recording.webm');
-
-            console.log('Uploading audio...', {
-                size: audioBlob.size,
-                type: audioBlob.type,
-            });
-
-            alert('Audio uploaded successfully!');
-        };
-
-        return (
-            <VoiceRecorder
-                onSend={handleSend}
-                onRecordingComplete={(blob, duration) => {
-                    console.log('Recording ready:', { duration });
-                }}
-            />
-        );
+export const LoadingState: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: '$f in a loading state, showing placeholder UI while data is being fetched.',
+      },
     },
+  },
+};
+
+export const LoadingState: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'VoiceRecorder in a loading state, showing placeholder UI while audio data is being processed.',
+      },
+    },
+  },
+};
+
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+    themes: { themeOverride: 'dark' },
+  },
+};
+
+export const FintechUseCase: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'VoiceRecorder used in a fintech context for voice memo transactions or support recording.',
+      },
+    },
+  },
 };
