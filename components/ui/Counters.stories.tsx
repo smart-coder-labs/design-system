@@ -53,3 +53,48 @@ export const FiveItems: Story = {
         compact: true,
     },
 };
+
+export const FintechFormat: Story = {
+    args: {
+        items: [
+            { value: '$145,230.50', label: 'Saldo Total', subtitle: 'Todas las cuentas' },
+            { value: '23', label: 'Transacciones', subtitle: 'Este mes' },
+            { value: '4.75%', label: 'APY', subtitle: 'Tasa actual' },
+            { value: '$2,500', label: 'Límite Diario', subtitle: 'Disponible: $1,200' },
+        ],
+    },
+};
+
+export const LargeValues: Story = {
+    args: {
+        items: [
+            { value: '$12,458,932,100', label: 'Market Cap' },
+            { value: '99.9999%', label: 'Uptime SLA' },
+            { value: '1,234,567', label: 'Total Users' },
+        ],
+    },
+};
+
+export const SingleCounter: Story = {
+    args: {
+        items: [
+            { value: '42', label: 'Pending Tasks', subtitle: 'Requires attention' },
+        ],
+    },
+};
+
+export const DarkMode: Story = {
+    args: {
+        items: [
+            { value: '$12,450', label: 'Balance', subtitle: 'Available' },
+            { value: '47', label: 'Transactions', subtitle: 'This month' },
+        ],
+    },
+    decorators: [
+        (Story) => (
+            <div className="dark p-4 bg-gray-900 rounded-lg">
+                <Story />
+            </div>
+        ),
+    ],
+};

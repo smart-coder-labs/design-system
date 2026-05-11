@@ -98,3 +98,87 @@ export const SingleDay: Story = {
         days: 1,
     },
 };
+
+export const ManyEvents: Story = {
+    args: {
+        events: Array.from({ length: 25 }, (_, i) => ({
+            id: `many-${i}`,
+            date: new Date(today.getTime() + i * 3600000 * 4),
+            startTime: `${String((i % 12) + 8).padStart(2, '0')}:00`,
+            endTime: `${String((i % 12) + 9).padStart(2, '0')}:00`,
+            title: `Event #${i + 1}`,
+            description: `Auto-generated event number ${i + 1} for stress testing`,
+            color: ['#007AFF', '#34C759', '#FF9500', '#FF3B30', '#AF52DE'][i % 5],
+            location: i % 3 === 0 ? 'Room ' + ((i % 10) + 1) : undefined,
+        })),
+        currentDate: today,
+        days: 5,
+    },
+};
+
+export const WithOnEventClick: Story = {
+    args: {
+        events: sampleEvents,
+        currentDate: today,
+        days: 30,
+        onEventClick: (event) => console.log('Event clicked:', event.title, event.id),
+    },
+};
+
+export const LongTitles: Story = {
+    args: {
+        events: [
+            {
+                id: 'long-1',
+                date: today,
+                startTime: '08:00',
+                endTime: '09:30',
+                title: 'International Product Strategy & Quarterly Planning Review Session',
+                description: 'A very long description that should demonstrate how text truncation handles edge cases with exceptionally verbose content that goes on and on',
+                color: '#007AFF',
+                location: 'Main Conference Room - Floor 42 - Building A - Innovation Hub',
+            },
+            {
+                id: 'long-2',
+                date: today,
+                startTime: '10:00',
+                endTime: '11:00',
+                title: 'Sprint',
+                description: 'Short',
+                color: '#34C759',
+            },
+        ],
+        currentDate: today,
+        days: 1,
+    },
+};
+
+export const DarkMode: Story = {
+    args: {
+        events: sampleEvents.slice(0, 3),
+        currentDate: today,
+        days: 7,
+    },
+    decorators: [
+        (Story) => (
+            <div className="dark p-4 bg-gray-900 rounded-lg">
+                <Story />
+            </div>
+        ),
+    ],
+};
+
+export const MobileResponsive: Story = {
+    args: {
+        events: sampleEvents,
+        currentDate: today,
+        days: 7,
+    },
+    decorators: [
+        (Story) => (
+            <div className="max-w-sm mx-auto">
+                <Story />
+            </div>
+        ),
+    ],
+};

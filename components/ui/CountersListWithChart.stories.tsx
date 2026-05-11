@@ -59,3 +59,60 @@ export const WithoutTitle: Story = {
         ],
     },
 };
+
+export const ManyItems: Story = {
+    args: {
+        title: 'Diversified Portfolio',
+        items: [
+            { label: 'US Large Cap', value: 35000, percent: 28, color: '#007AFF' },
+            { label: 'International', value: 20000, percent: 16, color: '#34C759' },
+            { label: 'Emerging Markets', value: 15000, percent: 12, color: '#FF9500' },
+            { label: 'Real Estate', value: 18000, percent: 14, color: '#AF52DE' },
+            { label: 'Bonds', value: 12000, percent: 10, color: '#5AC8FA' },
+            { label: 'Commodities', value: 10000, percent: 8, color: '#FF6482' },
+            { label: 'Crypto', value: 8000, percent: 6, color: '#FFD60A' },
+            { label: 'Cash', value: 7500, percent: 6, color: '#30D158' },
+        ],
+    },
+};
+
+export const SingleItem: Story = {
+    args: {
+        title: 'Allocation',
+        items: [
+            { label: 'Total Portfolio', value: 100000, percent: 100, color: '#007AFF' },
+        ],
+    },
+};
+
+export const ZeroValues: Story = {
+    args: {
+        title: 'New Account',
+        items: [
+            { label: 'Stocks', value: 0, percent: 0, color: '#007AFF' },
+            { label: 'Bonds', value: 0, percent: 0, color: '#34C759' },
+            { label: 'Cash', value: 500, percent: 100, color: '#5AC8FA' },
+        ],
+    },
+};
+
+export const DarkMode: Story = {
+    args: {
+        title: 'Asset Allocation',
+        chartType: 'donut',
+        items: [
+            { label: 'US Equities', value: 45000, percent: 45, color: '#007AFF' },
+            { label: 'Bonds', value: 20000, percent: 20, color: '#34C759' },
+            { label: 'Crypto', value: 15000, percent: 15, color: '#AF52DE' },
+            { label: 'Real Estate', value: 12000, percent: 12, color: '#FF9500' },
+            { label: 'Cash', value: 8000, percent: 8, color: '#5AC8FA' },
+        ],
+    },
+    decorators: [
+        (Story) => (
+            <div className="dark p-4 bg-gray-900 min-h-screen">
+                <Story />
+            </div>
+        ),
+    ],
+};

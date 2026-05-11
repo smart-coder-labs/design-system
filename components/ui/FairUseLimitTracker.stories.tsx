@@ -84,3 +84,51 @@ export const CurrencyLimits: Story = {
     ],
   },
 };
+
+export const SingleCategory: Story = {
+  args: {
+    categories: [{
+      id: 'single',
+      title: 'International Transfers',
+      used: 3,
+      total: 5,
+      icon: <RefreshCw className="w-4 h-4" />,
+      color: 'text-blue-500',
+    }],
+  },
+};
+
+export const EmptyLimits: Story = {
+  args: {
+    categories: [],
+  },
+};
+
+export const AllAtZero: Story = {
+  args: {
+    categories: categories.map(c => ({ ...c, used: 0 })),
+  },
+};
+
+export const MobileCard: Story = {
+  args: {
+    categories: [
+      ...categories,
+      {
+        id: 'debit-card',
+        title: 'Debit Card Purchases',
+        used: 42,
+        total: 50,
+        icon: <CreditCard className="w-4 h-4" />,
+        color: 'text-amber-500',
+      },
+    ],
+  },
+  decorators: [
+    (Story) => (
+      <div className="max-w-sm mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
+};
