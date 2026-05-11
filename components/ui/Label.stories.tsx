@@ -94,3 +94,34 @@ export const MobileView: Story = {
     viewport: { defaultViewport: 'mobile1' },
   },
 };
+
+/** Very long label text — edge case */
+export const LongText: Story = {
+  args: {
+    children: 'This is an exceptionally long label text that should test how the component handles text wrapping and overflow in various container widths',
+  },
+};
+
+/** Required with custom long text */
+export const RequiredLongText: Story = {
+  args: {
+    children: 'Password Confirmation (must match password entered above)',
+    required: true,
+    htmlFor: 'password-confirm',
+  },
+};
+
+/** Mobile narrow container */
+export const Mobile: Story = {
+  args: {
+    children: 'Mobile Responsive Label',
+    required: true,
+  },
+  decorators: [
+    (Story) => (
+      <div className="max-w-[200px]">
+        <Story />
+      </div>
+    ),
+  ],
+};
