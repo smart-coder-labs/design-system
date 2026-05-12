@@ -108,7 +108,7 @@ export const BalanceChart: React.FC<BalanceChartProps> = ({
                 {maskable && (
                     <button
                         onClick={() => setMasked((p) => !p)}
-                        className="w-7 h-7 rounded-full bg-surface-secondary flex items-center justify-center text-text-tertiary hover:text-text-primary transition-colors"
+                        className="w-7 h-7 rounded-full bg-surface-secondary flex items-center justify-center text-text-tertiary hover:text-text-primary transition-apple"
                         aria-label={masked ? 'Show balance' : 'Hide balance'}
                     >
                         {masked ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
@@ -185,7 +185,7 @@ export const BalanceChart: React.FC<BalanceChartProps> = ({
                     <span
                         key={i}
                         className={cn(
-                            'text-[10px] tabular-nums transition-colors duration-200',
+                            'text-[10px] tabular-nums transition-apple duration-200',
                             hoveredIndex === i ? 'text-text-primary' : 'text-text-quaternary',
                         )}
                     >

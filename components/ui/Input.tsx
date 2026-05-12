@@ -129,6 +129,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                         ref={ref}
                         className={inputClassName}
                         disabled={disabled}
+                        // Only set role="textbox" for text-like input types
+                        role={(!props.type || ['text','email','password','search','tel','url'].includes(props.type as string)) ? 'textbox' : undefined}
                         whileFocus={{
                             scale: 1.005,
                         }}
@@ -224,6 +226,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
                     ref={ref as any}
                     className={textareaClassName}
                     disabled={disabled}
+                    role="textbox"
+                    aria-multiline="true"
                     whileFocus={{
                         scale: 1.005,
                     }}

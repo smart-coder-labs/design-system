@@ -97,6 +97,7 @@ export const TabsList: React.FC<TabsListProps> = ({
         <TabsContext.Provider value={{ ...context, variant }}>
             <div
                 role="tablist"
+                aria-orientation="horizontal"
                 className={cn(variantStyles[variant], className)}
             >
                 {children}

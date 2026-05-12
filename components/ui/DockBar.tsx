@@ -67,21 +67,20 @@ export const DockBar = React.forwardRef<HTMLDivElement, DockBarProps>(
 
         const { icon: iconSize, gap, padding, magnifiedSize, normalSize } = sizeStyles[size];
 
-        const getScale = (index: number) => {
-            if (!magnification || hoveredIndex === null) return 1;
-
+        const getSize = (index: number): number => {
+            if (!magnification || hoveredIndex === null) return normalSize;
             const distance = Math.abs(index - hoveredIndex);
-            if (distance === 0) return magnifiedSize / normalSize;
-            if (distance === 1) return 1.2;
-            if (distance === 2) return 1.1;
-            return 1;
+            if (distance === 0) return magnifiedSize;
+            if (distance === 1) return Math.round(normalSize * 1.2);
+            if (distance === 2) return Math.round(normalSize * 1.1);
+            return normalSize;
         };
 
         return (
             <div
                 ref={ref}
                 className={cn(
-                    'fixed z-sticky',
+                    'fixed z-30',
                     positionStyles[position],
                     className
                 )}
@@ -101,10 +100,9 @@ export const DockBar = React.forwardRef<HTMLDivElement, DockBarProps>(
                         <DockBarIcon
                             key={item.id}
                             item={item}
-                            scale={getScale(index)}
+                            actualSize={getSize(index)}
                             onHoverStart={() => setHoveredIndex(index)}
                             onHoverEnd={() => setHoveredIndex(null)}
-                            iconSize={iconSize}
                         />
                     ))}
                 </motion.div>
@@ -117,18 +115,16 @@ DockBar.displayName = 'DockBar';
 
 interface DockBarIconProps {
     item: DockBarItem;
-    scale: number;
+    actualSize: number;
     onHoverStart: () => void;
     onHoverEnd: () => void;
-    iconSize: string;
 }
 
 const DockBarIcon: React.FC<DockBarIconProps> = ({
     item,
-    scale,
+    actualSize,
     onHoverStart,
     onHoverEnd,
-    iconSize,
 }) => {
     const [showLabel, setShowLabel] = React.useState(false);
 
@@ -159,17 +155,13 @@ const DockBarIcon: React.FC<DockBarIconProps> = ({
                     setShowLabel(false);
                 }}
                 className={cn(
-                    'relative flex items-center justify-center rounded-xl transition-all',
+                    'relative flex items-center justify-center rounded-xl',
                     'bg-surface-primary/50 backdrop-blur-sm',
                     'hover:bg-surface-primary/80',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue',
                     item.active && 'ring-2 ring-accent-blue',
-                    iconSize
                 )}
-                style={{
-                    scale,
-                    transformOrigin: 'bottom center',
-                }}
+                animate={{ width: actualSize, height: actualSize }}
                 transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             >
                 <div className="text-2xl">{item.icon}</div>

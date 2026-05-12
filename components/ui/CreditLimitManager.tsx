@@ -85,7 +85,7 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                                     limit < maxLimit * 0.8 ? "bg-violet-500" :
                                         "bg-amber-500"
                             )}
-                            style={{ width: `${percentage}%` }}
+                            style={{ width: `${percentage}%`, transition: 'width 80ms linear' }}
                         >
                             <motion.div
                                 className="absolute right-0 top-1/2 -mt-3 -mr-3 w-6 h-6 bg-white border-2 border-inherit rounded-full shadow-lg flex items-center justify-center cursor-grab active:cursor-grabbing"
@@ -124,7 +124,7 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                 disabled={limit === initialLimit && !saved}
                 onClick={handleSave}
                 className={cn(
-                    "w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md",
+                    "w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue",
                     limit === initialLimit && !saved
                         ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed border border-transparent"
                         : saved

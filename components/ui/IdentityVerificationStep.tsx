@@ -121,7 +121,7 @@ const DocumentCard: React.FC<{
             <div className="flex items-start gap-4">
                 {/* Icon */}
                 <div className={cn(
-                    'flex items-center justify-center w-12 h-12 rounded-xl transition-colors',
+                    'flex items-center justify-center w-12 h-12 rounded-xl transition-apple',
                     status.bgColor, status.color,
                 )}>
                     {doc.status === 'uploading' || doc.status === 'verifying'
@@ -165,7 +165,7 @@ const DocumentCard: React.FC<{
                 {doc.status === 'failed' && (
                     <button
                         onClick={(e) => { e.stopPropagation(); onRetry?.(doc.type); }}
-                        className="text-xs font-semibold text-accent-blue hover:underline"
+                        className="text-xs font-semibold text-accent-blue hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue rounded"
                     >
                         Retry
                     </button>

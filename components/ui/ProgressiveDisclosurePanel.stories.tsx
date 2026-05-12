@@ -16,6 +16,11 @@ export default meta;
 type Story = StoryObj<typeof ProgressiveDisclosurePanel>;
 
 export const TransactionDetails: Story = {
+  render: (args) => (
+    <div className="max-w-2xl mx-auto">
+      <ProgressiveDisclosurePanel {...args} />
+    </div>
+  ),
   args: {
     title: 'Detalle de Operación',
     defaultExpanded: false,
@@ -51,7 +56,7 @@ export const TransactionDetails: Story = {
       </div>
     ),
     deepDive: (
-      <pre>
+      <pre className="font-mono text-sm leading-relaxed overflow-auto">
 {`{
   "id": "tx_2M8c...",
   "status": "cleared",
