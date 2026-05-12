@@ -84,14 +84,14 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                             className="bg-surface-primary rounded-[2rem] p-5 shadow-sm border border-border-primary"
                         >
                             {/* Header */}
-                            <div className="flex justify-between items-start mb-3">
-                                <div className="flex items-center gap-3">
+                            <div className="flex justify-between items-start gap-3 mb-3">
+                                <div className="flex items-center gap-3 min-w-0 flex-1">
                                     <div className="relative flex">
-                                        <Avatar className="w-10 h-10 ring-2 ring-white dark:ring-zinc-900 z-10">
+                                        <Avatar className="w-10 h-10 ring-2 ring-surface-primary z-10">
                                             <AvatarImage src={payment.senderAvatar} alt={payment.senderName} />
                                             <AvatarFallback>{payment.senderName[0]}</AvatarFallback>
                                         </Avatar>
-                                        <Avatar className="w-10 h-10 ring-2 ring-white dark:ring-zinc-900 -ml-4 z-0 opacity-80">
+                                        <Avatar className="w-10 h-10 ring-2 ring-surface-primary -ml-4 z-0 opacity-80">
                                             <AvatarImage src={payment.receiverAvatar} alt={payment.receiverName} />
                                             <AvatarFallback>{payment.receiverName[0]}</AvatarFallback>
                                         </Avatar>
@@ -112,7 +112,7 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                     </div>
                                 </div>
 
-                                <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-3 flex-shrink-0">
                                     {payment.amount !== undefined && (
                                         <span className="font-bold text-lg tracking-tight text-emerald-600 dark:text-emerald-400">
                                             {new Intl.NumberFormat('en-US', { style: 'currency', currency: payment.currency || 'USD' }).format(payment.amount)}

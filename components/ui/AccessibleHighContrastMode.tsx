@@ -12,11 +12,11 @@ export const AccessibleHighContrastMode: React.FC<AccessibleHighContrastModeProp
 
   // Apply classes based on states
   const containerClasses = `relative transition-all duration-300 ${
-    highContrast ? 'grayscale-0 bg-black border-4 border-yellow-400' : 'bg-background-secondary border dark:bg-gray-900 border-border-primary'
+    highContrast ? 'grayscale-0 bg-black border-4 border-yellow-400' : 'bg-surface-primary border border-border-primary'
   } rounded-2xl p-6`;
 
   const textClasses = `
-    ${highContrast ? 'text-yellow-400 font-extrabold tracking-wide' : 'text-gray-800 dark:text-gray-200 font-normal tracking-normal'}
+    ${highContrast ? 'text-yellow-400 font-extrabold tracking-wide' : 'text-text-primary font-normal tracking-normal'}
     ${largeText ? 'text-xl' : 'text-sm'}
     ${dyslexicFont ? 'font-serif tracking-widest leading-loose' : 'font-sans leading-normal'}
   `;
@@ -86,7 +86,7 @@ export const AccessibleHighContrastMode: React.FC<AccessibleHighContrastModeProp
               ].map(tx => (
                 <div key={tx.id} className={`flex justify-between items-start gap-4 p-4 rounded-xl ${highContrast ? 'border-2 border-yellow-400/50 hover:border-yellow-400 bg-black' : 'bg-surface-primary'}`}>
                   <div>
-                    <p className={`font-bold ${highContrast ? 'text-yellow-400' : 'text-text-tertiary'} ${largeText ? 'text-base' : 'text-xs'}`}>
+                    <p className={`font-bold ${highContrast ? 'text-yellow-400' : 'text-text-secondary'} ${largeText ? 'text-base' : 'text-xs'}`}>
                       {tx.date}
                     </p>
                     <p className={`mt-1 ${textClasses} font-bold`}>

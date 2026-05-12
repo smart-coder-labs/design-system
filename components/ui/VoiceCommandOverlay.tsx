@@ -86,7 +86,7 @@ export const VoiceCommandOverlay: React.FC<VoiceCommandOverlayProps> = ({
                 ) : phase === 'processing' ? (
                   <motion.div key="process" className="relative flex items-center justify-center flex-col text-blue-500">
                     <Loader2 size={40} className="animate-spin mb-2" />
-                    <span className="text-xs font-bold uppercase tracking-widest text-text-tertiary">Procesando AI</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-text-secondary">Procesando AI</span>
                   </motion.div>
                 ) : (
                   <motion.div key="confirm" initial={{ scale: 0.5 }} animate={{ scale: 1 }} className="relative flex items-center justify-center">
@@ -121,7 +121,7 @@ export const VoiceCommandOverlay: React.FC<VoiceCommandOverlayProps> = ({
                   </div>
                 </>
               ) : (
-                <div className="text-left bg-background-secondary dark:bg-gray-900 rounded-2xl p-5 border border-border-primary">
+                <div className="text-left bg-background-secondary rounded-2xl p-5 border border-border-primary">
                   <p className="text-sm font-semibold text-text-tertiary mb-4 uppercase tracking-wider">
                     Entendido, ¿Confirmo la operación?
                   </p>
@@ -139,7 +139,7 @@ export const VoiceCommandOverlay: React.FC<VoiceCommandOverlayProps> = ({
                     </div>
                   </div>
 
-                  <button className="w-full bg-gray-900 text-white dark:bg-surface-primary dark:text-gray-900 py-3.5 rounded-xl font-bold flex justify-center items-center gap-2 shadow-lg hover:-translate-y-0.5 transition-transform active:scale-95">
+                  <button className="w-full bg-gray-900 hover:bg-gray-700 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 py-3.5 rounded-xl font-bold flex justify-center items-center gap-2 shadow-lg hover:-translate-y-0.5 transition-transform active:scale-95">
                     Ejecutar orden verbal <ArrowRight size={18} />
                   </button>
                 </div>

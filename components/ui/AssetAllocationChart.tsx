@@ -71,7 +71,7 @@ export const AssetAllocationChart: React.FC<AssetAllocationChartProps> = ({
                             onMouseEnter={() => setHoveredId(asset.id)}
                             onMouseLeave={() => setHoveredId(null)}
                             className={cn(
-                                "relative rounded-xl flex flex-col justify-end p-3 overflow-hidden cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md",
+                                "relative rounded-xl flex flex-col justify-end p-3 overflow-hidden cursor-pointer shadow-sm",
                                 asset.color.startsWith('bg-') ? asset.color : 'bg-accent-blue'
                             )}
                             style={{
@@ -80,9 +80,7 @@ export const AssetAllocationChart: React.FC<AssetAllocationChartProps> = ({
                                 backgroundColor: !asset.color.startsWith('bg-') ? asset.color : undefined,
                                 opacity: isDimmed ? 0.4 : 1,
                                 filter: isDimmed ? 'grayscale(50%)' : 'none',
-                                transform: hoveredId === asset.id ? 'scale(1.02)' : 'scale(1)',
-                                zIndex: hoveredId === asset.id ? 10 : 1,
-                                transition: 'transform 200ms ease, opacity 200ms ease, filter 200ms ease',
+                                transition: 'opacity 300ms ease, filter 300ms ease',
                             }}
                         >
                             {/* Decorative shiny effect */}
