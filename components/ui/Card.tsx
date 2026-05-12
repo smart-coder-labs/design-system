@@ -88,13 +88,11 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         // Assign role="region" and aria-label for interactive cards so screen readers
         // can navigate to them as landmarks.
         // Only use role="region" (a landmark) when an accessible name is available.
-        // Otherwise fall back to role="group" (a non-landmark grouping role).
+        // Without an accessible name, no role is better than role="group" —
+        // unnamed group roles add noise without benefit for screen reader users.
         const accessibleName = props['aria-label'] || (typeof children === 'string' ? children : undefined);
-        const interactiveAttrs = hoverable
-            ? {
-                role: accessibleName ? ('region' as const) : ('group' as const),
-                'aria-label': accessibleName,
-              }
+        const interactiveAttrs = hoverable && accessibleName
+            ? { role: 'region' as const, 'aria-label': accessibleName }
             : {};
 
         return (

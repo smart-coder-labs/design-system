@@ -111,13 +111,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         const hasTextChildren = children && !(typeof children === 'string' && children.trim() === '');
         const iconOnly = !hasTextChildren && (!!leftIcon || !!rightIcon);
 
+        if (process.env.NODE_ENV !== 'production' && iconOnly && !props['aria-label']) {
+            console.warn('[Button] Icon-only button is missing an aria-label. Screen readers will not be able to describe this control.');
+        }
+
         return (
             <motion.button
                 ref={ref}
                 className={combinedClassName}
                 disabled={disabled || loading}
-                // For icon-only buttons, require a meaningful aria-label (warn in dev if missing)
-                aria-label={props['aria-label'] || (iconOnly ? undefined : undefined)}
                 whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
                 whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
                 transition={{
