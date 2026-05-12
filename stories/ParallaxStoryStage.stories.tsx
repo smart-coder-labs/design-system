@@ -16,7 +16,7 @@ type Story = StoryObj<typeof ParallaxStoryStage>;
 
 export const TheSparkConcept: Story = {
   render: () => (
-    <div className="font-sans overflow-hidden cursor-none">
+    <div className="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 font-sans overflow-hidden cursor-none">
       <InteractiveCursor />
       
       {/* Sección Hero estática para dar lugar a que nazca el scroll */}

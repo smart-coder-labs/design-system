@@ -55,7 +55,7 @@ export const CashbackWidget: React.FC<CashbackWidgetProps> = ({
             whileHover={{ y: -2 }}
         >
             {/* Decorative glow */}
-            <div className="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-amber-400/5 blur-2xl group-hover:bg-amber-400/10 transition-colors duration-500" />
+            <div className="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-amber-400/5 blur-2xl group-hover:bg-amber-400/10 transition-apple duration-500" />
 
             <div className="relative flex items-center gap-4">
                 {/* Progress ring */}

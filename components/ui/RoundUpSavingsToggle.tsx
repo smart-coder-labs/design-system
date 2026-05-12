@@ -45,7 +45,7 @@ export const RoundUpSavingsToggle: React.FC<RoundUpSavingsToggleProps> = ({
       <div className="relative z-10 p-6">
         <div className="flex justify-between items-start mb-4">
           <div className="flex items-center gap-3">
-            <div className={`p-3 rounded-xl transition-colors ${
+            <div className={`p-3 rounded-xl transition-apple ${
               isActive 
               ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 dark:shadow-indigo-900/50' 
               : 'bg-background-secondary text-text-tertiary'
@@ -66,7 +66,7 @@ export const RoundUpSavingsToggle: React.FC<RoundUpSavingsToggleProps> = ({
           <button
             onClick={handleToggle}
             className={`w-14 h-8 flex items-center rounded-full p-1 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
-              isActive ? 'bg-indigo-600' : 'bg-background-secondary'
+              isActive ? 'bg-indigo-600' : 'bg-gray-300 dark:bg-zinc-600'
             }`}
             role="switch"
             aria-checked={isActive}
@@ -74,7 +74,7 @@ export const RoundUpSavingsToggle: React.FC<RoundUpSavingsToggleProps> = ({
             <motion.div
               animate={{ x: isActive ? 24 : 0 }}
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
-              className="w-6 h-6 bg-surface-primary rounded-full shadow-sm flex items-center justify-center"
+              className="w-6 h-6 bg-white rounded-full shadow-sm flex items-center justify-center"
             >
               {isActive && <span className="block w-2.5 h-2.5 bg-indigo-600 rounded-full" />}
             </motion.div>

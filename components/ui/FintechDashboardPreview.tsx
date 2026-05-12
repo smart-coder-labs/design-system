@@ -107,10 +107,10 @@ export const FintechDashboardPreview: React.FC<FintechDashboardPreviewProps> = (
                         <h1 className="text-lg font-bold text-text-primary">{userName} 👋</h1>
                     </div>
                     <div className="flex items-center gap-2">
-                        <button className="w-9 h-9 rounded-full bg-surface-secondary flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors">
+                        <button className="w-9 h-9 rounded-full bg-surface-secondary flex items-center justify-center text-text-secondary hover:text-text-primary transition-apple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue">
                             <Search className="w-4 h-4" />
                         </button>
-                        <button className="relative w-9 h-9 rounded-full bg-surface-secondary flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors">
+                        <button className="relative w-9 h-9 rounded-full bg-surface-secondary flex items-center justify-center text-text-secondary hover:text-text-primary transition-apple">
                             <Bell className="w-4 h-4" />
                             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-status-error rounded-full" />
                         </button>
@@ -226,7 +226,7 @@ export const FintechDashboardPreview: React.FC<FintechDashboardPreviewProps> = (
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={cn(
-                                'flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-colors',
+                                'flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-apple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue',
                                 activeTab === tab.id
                                     ? 'text-accent-blue'
                                     : 'text-text-tertiary hover:text-text-secondary',

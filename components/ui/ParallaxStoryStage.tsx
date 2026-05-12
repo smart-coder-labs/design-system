@@ -7,7 +7,7 @@ import { cn } from '../../lib/utils';
 
 export function ParallaxStoryStage({ className }: React.HTMLAttributes<HTMLDivElement>) {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]

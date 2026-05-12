@@ -54,9 +54,6 @@
     "build": "npm run clean && tsc -p tsconfig.build.json",
     "build:registry": "ts-node scripts/build-registry.ts",
     "prepublishOnly": "npm run build",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

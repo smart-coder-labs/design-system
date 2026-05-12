@@ -16,7 +16,7 @@ type Story = StoryObj<typeof JargonTooltip>;
 
 export const Default: Story = {
   render: () => (
-    <div className="text-text-primary text-gray-100 max-w-md text-lg leading-relaxed bg-surface-primary rounded-xl p-6">
+    <div className="text-gray-900 dark:text-white max-w-md text-lg leading-relaxed">
       Acepto transferir los fondos a mi cuenta de inversión con un <JargonTooltip
         term="Rendimiento Anual Porcentual (APY)"
         definition="El APY es la tasa real de rendimiento ganada en una cuenta de ahorros o inversión, considerando el efecto del interés compuesto a lo largo de un año."

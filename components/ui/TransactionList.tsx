@@ -113,7 +113,7 @@ export const TransactionRow: React.FC<TransactionRowProps> = ({
         <motion.div
             className={cn(
                 'flex items-center gap-3.5 py-3.5 px-4 rounded-xl cursor-pointer',
-                'hover:bg-surface-secondary/60 transition-colors duration-150',
+                'hover:bg-surface-secondary/60 transition-apple duration-150',
                 'group',
                 className,
             )}
@@ -139,7 +139,7 @@ export const TransactionRow: React.FC<TransactionRowProps> = ({
                         <span className="text-xs text-text-tertiary truncate">{description}</span>
                     )}
                     {status !== 'completed' && (
-                        <span className={cn('flex items-center gap-0.5 text-[10px] font-bold uppercase tracking-wider', statusInfo.color)}>
+                        <span className={cn('inline-flex items-center gap-0.5 text-[10px] font-bold uppercase tracking-wider leading-none', statusInfo.color)}>
                             {statusInfo.icon} {statusInfo.label}
                         </span>
                     )}
@@ -194,7 +194,7 @@ export const TransactionList: React.FC<TransactionListProps> = ({
                 {maskable && (
                     <button
                         onClick={() => setMasked((p) => !p)}
-                        className="w-7 h-7 rounded-full bg-surface-secondary flex items-center justify-center text-text-tertiary hover:text-text-primary transition-colors"
+                        className="w-7 h-7 rounded-full bg-surface-secondary flex items-center justify-center text-text-tertiary hover:text-text-primary transition-apple"
                         aria-label={masked ? 'Show amounts' : 'Hide amounts'}
                     >
                         {masked ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}

@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
 
 /* ========================================

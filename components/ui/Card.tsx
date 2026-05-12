@@ -19,7 +19,6 @@ export interface CardProps extends HTMLMotionProps<'div'> {
 
 const baseStyles = `
   rounded-2xl
-  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2
   transition-apple
 `;
 

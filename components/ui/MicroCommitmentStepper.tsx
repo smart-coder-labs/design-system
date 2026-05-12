@@ -46,16 +46,16 @@ export const MicroCommitmentStepper: React.FC = () => {
   ];
 
   return (
-    <div className="bg-surface-primary rounded-2xl border border-border-primary p-6">
+    <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-text-primary mb-2">Desbloqueo Progresivo</h3>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Desbloqueo Progresivo</h3>
         <p className="text-sm text-gray-500 dark:text-gray-400">
           En lugar de pedirte todo a la vez, solo pedimos lo que necesitas según cómo uses la app.
         </p>
       </div>
 
       <div className="relative">
-        <div className="absolute top-0 bottom-0 left-[23px] w-0.5 bg-background-secondary" />
+        <div className="absolute top-0 bottom-0 left-[23px] w-0.5 bg-gray-100 dark:bg-gray-800" />
         
         <div className="space-y-6 relative">
           {steps.map((step, index) => {
@@ -77,7 +77,7 @@ export const MicroCommitmentStepper: React.FC = () => {
                     ? 'bg-green-500 border-green-100 dark:border-green-800 text-white' 
                     : isCurrent 
                       ? 'bg-blue-600 border-blue-100 dark:border-blue-800 text-white'
-                      : 'bg-surface-primary border-border-primary text-gray-400'
+                      : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-400'
                 } flex items-center justify-center shrink-0 transition-colors`}>
                   {isPast ? <CheckIcon className="w-5 h-5" /> : <Icon className="w-5 h-5" />}
                 </div>
@@ -86,11 +86,11 @@ export const MicroCommitmentStepper: React.FC = () => {
                   <div className={`p-4 rounded-xl border transition-all ${
                     isCurrent 
                       ? 'bg-blue-50/50 dark:bg-blue-900 border-blue-200 dark:border-blue-800 shadow-md ring-1 ring-blue-500/20' 
-                      : 'bg-surface-primary border-border-primary hover:border-gray-300 dark:hover:border-gray-700'
+                      : 'bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700'
                   }`}>
                     <div className="flex justify-between items-start mb-2">
                       <h4 className={`font-semibold ${
-                        isCurrent ? 'text-blue-900 dark:text-blue-50' : 'text-text-primary'
+                        isCurrent ? 'text-blue-900 dark:text-blue-50' : 'text-gray-900 dark:text-white'
                       }`}>
                         {step.title}
                       </h4>
@@ -109,7 +109,7 @@ export const MicroCommitmentStepper: React.FC = () => {
                       {step.description}
                     </p>
 
-                    <div className="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 p-2.5 rounded-lg border border-border-primary">
+                    <div className="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 p-2.5 rounded-lg border border-gray-100 dark:border-gray-700">
                       {isLocked ? (
                         <Lock className="w-4 h-4 text-gray-400" />
                       ) : (

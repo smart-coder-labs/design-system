@@ -50,7 +50,7 @@ export const CurrencyConverterWidget: React.FC<CurrencyConverterWidgetProps> = (
         <div className={cn('w-full max-w-md bg-surface-primary rounded-3xl p-6 shadow-xl border border-border-primary', className)}>
             <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-semibold text-text-primary">Send Money</h3>
-                <button className="text-sm text-accent-blue font-medium hover:underline">Rates</button>
+                <button className="text-sm text-accent-blue font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue rounded">Rates</button>
             </div>
 
             <div className="space-y-4">

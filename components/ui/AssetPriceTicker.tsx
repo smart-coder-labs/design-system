@@ -77,7 +77,7 @@ export const AssetPriceTicker: React.FC<AssetPriceTickerProps> = ({
                         key={asset.id}
                         onClick={() => onSelect?.(asset)}
                         className={cn(
-                            'flex items-center gap-3 rounded-xl transition-colors shrink-0',
+                            'flex items-center gap-3 rounded-xl transition-apple shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue',
                             'hover:bg-surface-secondary/60 active:bg-surface-secondary',
                             compact
                                 ? 'gap-2 px-3 py-2'

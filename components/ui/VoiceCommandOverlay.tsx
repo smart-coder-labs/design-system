@@ -60,11 +60,11 @@ export const VoiceCommandOverlay: React.FC<VoiceCommandOverlayProps> = ({
             initial={{ opacity: 0, y: 100, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.95 }}
-            className="relative w-full max-w-sm bg-surface-primary rounded-[2rem] shadow-2xl p-6 border border-border-primary"
+            className="relative w-full max-w-sm bg-white dark:bg-gray-900 rounded-[2rem] shadow-2xl p-6 border border-gray-200 dark:border-gray-800"
           >
             <button 
               onClick={onClose}
-              className="absolute top-4 right-4 p-2 bg-background-secondary text-text-tertiary rounded-full hover:bg-background-secondary transition-colors"
+              className="absolute top-4 right-4 p-2 bg-gray-100 text-gray-500 rounded-full hover:bg-gray-200 transition-colors"
             >
               <X size={16} />
             </button>
@@ -86,7 +86,7 @@ export const VoiceCommandOverlay: React.FC<VoiceCommandOverlayProps> = ({
                 ) : phase === 'processing' ? (
                   <motion.div key="process" className="relative flex items-center justify-center flex-col text-blue-500">
                     <Loader2 size={40} className="animate-spin mb-2" />
-                    <span className="text-xs font-bold uppercase tracking-widest text-text-secondary">Procesando AI</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Procesando AI</span>
                   </motion.div>
                 ) : (
                   <motion.div key="confirm" initial={{ scale: 0.5 }} animate={{ scale: 1 }} className="relative flex items-center justify-center">
@@ -102,9 +102,9 @@ export const VoiceCommandOverlay: React.FC<VoiceCommandOverlayProps> = ({
             <div className="text-center min-h-[120px]">
               {phase === 'listening' || phase === 'processing' ? (
                 <>
-                  <h3 className="text-xl font-medium text-text-primary h-14">
+                  <h3 className="text-xl font-medium text-gray-900 dark:text-gray-100 h-14">
                     {transcript || (
-                      <span className="text-text-tertiary">Te escucho...</span>
+                      <span className="text-gray-400 dark:text-gray-600">Te escucho...</span>
                     )}
                   </h3>
                   <div className="flex justify-center gap-1 mt-6 h-6 items-center">
@@ -121,25 +121,25 @@ export const VoiceCommandOverlay: React.FC<VoiceCommandOverlayProps> = ({
                   </div>
                 </>
               ) : (
-                <div className="text-left bg-background-secondary rounded-2xl p-5 border border-border-primary">
-                  <p className="text-sm font-semibold text-text-tertiary mb-4 uppercase tracking-wider">
+                <div className="text-left bg-gray-50 dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700">
+                  <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4 uppercase tracking-wider">
                     Entendido, ¿Confirmo la operación?
                   </p>
                   
                   <div className="flex justify-between items-center mb-6">
                     <div>
-                      <h4 className="font-bold text-text-primary relative z-10">Transferencia</h4>
+                      <h4 className="font-bold text-gray-900 dark:text-white relative z-10">Transferencia</h4>
                       <p className="text-2xl font-black text-blue-600 dark:text-blue-400">$50.00 MXN</p>
                     </div>
                     <div className="text-right">
-                       <h4 className="font-bold text-text-primary">Para</h4>
-                       <p className="text-base font-medium text-text-secondary flex items-center gap-2">
+                       <h4 className="font-bold text-gray-900 dark:text-white">Para</h4>
+                       <p className="text-base font-medium text-gray-600 dark:text-gray-300 flex items-center gap-2">
                          Carlos R.
                        </p>
                     </div>
                   </div>
 
-                  <button className="w-full bg-gray-900 hover:bg-gray-700 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 py-3.5 rounded-xl font-bold flex justify-center items-center gap-2 shadow-lg hover:-translate-y-0.5 transition-transform active:scale-95">
+                  <button className="w-full bg-gray-900 text-white dark:bg-white dark:text-gray-900 py-3.5 rounded-xl font-bold flex justify-center items-center gap-2 shadow-lg hover:-translate-y-0.5 transition-transform active:scale-95">
                     Ejecutar orden verbal <ArrowRight size={18} />
                   </button>
                 </div>

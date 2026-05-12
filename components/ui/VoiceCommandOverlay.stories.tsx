@@ -18,8 +18,8 @@ export const Interactive: Story = {
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-      <div className="flex flex-col items-center gap-4 text-center p-8 bg-surface-primary border border-border-primary rounded-3xl shadow-sm">
-        <h3 className="text-xl font-bold text-text-primary mb-2">Asistente de Voz Inteligente</h3>
+      <div className="flex flex-col items-center gap-4 text-center p-8 bg-gray-50 border border-gray-200 rounded-3xl dark:bg-gray-800 dark:border-gray-700">
+        <h3 className="text-xl font-bold dark:text-white mb-2">Asistente de Voz Inteligente</h3>
         <p className="text-sm text-gray-500 max-w-sm">Pulsa explorar el componente VoiceCommandOverlay que simula confirmación iterativa con el usuario.</p>
         <button 
           onClick={() => setIsOpen(true)}

@@ -152,7 +152,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                 onClick={() => onSwap?.(fromAsset.id, toAsset.id, amountNum)}
                 disabled={amountNum > fromAsset.balance || amountNum <= 0}
                 className={cn(
-                    "w-full py-4 rounded-xl font-bold text-center mt-6 transition-all",
+                    "w-full py-4 rounded-xl font-bold text-center mt-6 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue",
                     amountNum > fromAsset.balance || amountNum <= 0
                         ? "bg-background-secondary text-text-tertiary cursor-not-allowed"
                         : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30"

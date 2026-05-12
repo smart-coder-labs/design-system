@@ -135,7 +135,7 @@ export const PortfolioDistribution: React.FC<PortfolioDistributionProps> = ({
                         <motion.div
                             key={seg.id}
                             className={cn(
-                                'flex items-center gap-3 px-3 py-2.5 rounded-xl cursor-pointer transition-colors',
+                                'flex items-center gap-3 px-3 py-2.5 rounded-xl cursor-pointer transition-apple',
                                 hoveredId === seg.id ? 'bg-surface-secondary' : 'hover:bg-surface-secondary/50',
                             )}
                             onMouseEnter={() => setHoveredId(seg.id)}

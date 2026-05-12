@@ -28,14 +28,14 @@ export const ProgressiveDisclosurePanel: React.FC<ProgressiveDisclosurePanelProp
   };
 
   return (
-    <div className="bg-surface-primary rounded-2xl border border-border-primary shadow-sm overflow-hidden flex flex-col">
+    <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col">
       {/* Header / Summary Level (0) */}
       <div 
-        className="p-5 cursor-pointer hover:bg-background-secondary transition-colors flex flex-col"
+        className="p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex flex-col"
         onClick={() => expandToLevels(1)}
       >
         {title && (
-          <div className="text-sm font-medium text-text-tertiary mb-3 uppercase tracking-wider flex items-center gap-2">
+          <div className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wider flex items-center gap-2">
             <ListFilter size={14} />
             {title}
           </div>
@@ -47,9 +47,9 @@ export const ProgressiveDisclosurePanel: React.FC<ProgressiveDisclosurePanelProp
           <motion.div
             animate={{ rotate: level >= 1 ? 180 : 0 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
-            className="w-8 h-8 rounded-full bg-background-secondary flex items-center justify-center shrink-0"
+            className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center shrink-0"
           >
-            <ChevronDown size={18} className="text-text-tertiary" />
+            <ChevronDown size={18} className="text-gray-500 dark:text-gray-400" />
           </motion.div>
         </div>
       </div>
@@ -62,7 +62,7 @@ export const ProgressiveDisclosurePanel: React.FC<ProgressiveDisclosurePanelProp
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="border-t border-border-primary bg-background-secondary/50"
+            className="border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800"
           >
             <div className="p-5">
               {details}
@@ -75,7 +75,7 @@ export const ProgressiveDisclosurePanel: React.FC<ProgressiveDisclosurePanelProp
                       e.stopPropagation();
                       expandToLevels(2);
                     }}
-                    className="text-xs font-medium text-accent-blue hover:text-accent-blue-hover py-1.5 px-3 rounded-md hover:bg-accent-blue-tint transition-colors flex items-center gap-1.5"
+                    className="text-xs font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 py-1.5 px-3 rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors flex items-center gap-1.5"
                   >
                     {level === 2 ? 'Ocultar datos técnicos' : 'Ver datos técnicos en crudo'}
                     <motion.div animate={{ rotate: level === 2 ? 180 : 0 }}>
@@ -97,7 +97,7 @@ export const ProgressiveDisclosurePanel: React.FC<ProgressiveDisclosurePanelProp
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="border-t border-border-primary bg-zinc-100 dark:bg-zinc-900 text-text-primary"
+            className="border-t border-gray-100 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-300"
           >
             <div className="p-5 text-sm font-mono overflow-x-auto">
               {deepDive}

@@ -115,7 +115,7 @@ export const EarlyPaymentDiscount: React.FC<EarlyPaymentDiscountProps> = ({
                 onClick={() => onPayEarly?.(extraPaymentAmount, totalInterestSaved)}
                 className="relative z-10 w-full bg-white text-emerald-800 hover:text-emerald-900 py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-emerald-900/20 transition-all cursor-pointer group"
             >
-                <Zap className="w-5 h-5 text-emerald-500 group-hover:text-emerald-600 transition-colors" />
+                <Zap className="w-5 h-5 text-emerald-500 group-hover:text-emerald-600 transition-apple" />
                 Capture Savings
                 <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </motion.button>

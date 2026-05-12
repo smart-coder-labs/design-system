@@ -15,7 +15,7 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
 }) => {
   const tiers = {
     Bronze: { color: 'from-amber-700 to-amber-900', light: 'text-amber-700', next: 'Silver', nextPoints: 1000, icon: Shield },
-    Silver: { color: 'from-gray-300 to-gray-500', light: 'text-text-tertiary', next: 'Gold', nextPoints: 5000, icon: Star },
+    Silver: { color: 'from-gray-300 to-gray-500', light: 'text-gray-500', next: 'Gold', nextPoints: 5000, icon: Star },
     Gold: { color: 'from-yellow-400 to-yellow-600', light: 'text-yellow-500', next: 'Platinum', nextPoints: 15000, icon: Trophy },
     Platinum: { color: 'from-blue-200 via-purple-300 to-blue-400', light: 'text-purple-400', next: null, nextPoints: 0, icon: Gift }
   };
@@ -33,7 +33,7 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
   const progress = tier.next ? Math.min(100, Math.max(0, (pointsInCurrentLevel / pointsNeededForNext) * 100)) : 100;
 
   return (
-    <div className="bg-surface-primary rounded-3xl border border-border-primary shadow-sm overflow-hidden">
+    <div className="bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
       
       {/* Premium Header Header */}
       <div className="relative p-6 overflow-hidden">
@@ -42,10 +42,10 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
         
         <div className="relative z-10 flex justify-between items-start mb-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-text-tertiary mb-1">
+            <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
               Programa de Recompensas
             </p>
-            <h2 className="text-xl font-bold text-text-primary flex items-center gap-2">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
               Nivel {currentTier}
               <div className={`p-1 rounded-full bg-gradient-to-br ${tier.color} shadow-sm`}>
                 <Icon size={14} className="text-white drop-shadow-sm" />
@@ -54,10 +54,10 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
           </div>
           
           <div className="text-right">
-            <h3 className="text-2xl font-black text-text-primary tracking-tight">
+            <h3 className="text-2xl font-black text-gray-900 dark:text-white tracking-tight">
               {points.toLocaleString()}
             </h3>
-            <p className="text-xs font-medium text-text-tertiary uppercase">
+            <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">
               Puntos Vida
             </p>
           </div>
@@ -68,10 +68,10 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
           <div className="relative mb-2">
             <div className="flex justify-between text-xs font-bold mb-2">
               <span className={`uppercase tracking-wider ${tier.light}`}>{currentTier}</span>
-              <span className="text-text-tertiary uppercase tracking-wider">{tier.next}</span>
+              <span className="text-gray-400 dark:text-gray-500 uppercase tracking-wider">{tier.next}</span>
             </div>
             
-            <div className="h-3 w-full bg-background-secondary rounded-full overflow-hidden shadow-inner">
+            <div className="h-3 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden shadow-inner">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
@@ -84,55 +84,55 @@ export const GamifiedRewardTier: React.FC<GamifiedRewardTierProps> = ({
               </motion.div>
             </div>
             
-            <p className="text-center text-xs text-text-tertiary font-medium mt-3">
-              Faltan <span className="font-bold text-text-primary">{(tier.nextPoints - points).toLocaleString()} puntos</span> para ascender
+            <p className="text-center text-xs text-gray-500 dark:text-gray-400 font-medium mt-3">
+              Faltan <span className="font-bold text-gray-900 dark:text-white">{(tier.nextPoints - points).toLocaleString()} puntos</span> para ascender
             </p>
           </div>
         )}
       </div>
 
       {/* Perks List */}
-      <div className="bg-background-secondary p-6 border-t border-border-primary">
-        <h4 className="text-sm font-semibold text-text-primary mb-4">
+      <div className="bg-gray-50 dark:bg-gray-800 p-6 border-t border-gray-100 dark:border-gray-700">
+        <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
           Tus Beneficios Activos
         </h4>
         
         <div className="space-y-3">
-          <div className="flex items-center gap-3 p-3 bg-surface-primary rounded-xl border border-border-primary shadow-sm">
+          <div className="flex items-center gap-3 p-3 bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
             <div className="p-2 bg-green-50 dark:bg-green-900 text-green-600 dark:text-green-400 rounded-lg">
               <TrendingUp size={16} />
             </div>
             <div className="flex-1">
-              <p className="text-sm font-semibold text-text-primary">Cashback 2%</p>
-              <p className="text-xs text-text-tertiary">En todas tus compras</p>
+              <p className="text-sm font-semibold text-gray-900 dark:text-white">Cashback 2%</p>
+              <p className="text-xs text-gray-500">En todas tus compras</p>
             </div>
             <CheckBadge />
           </div>
           
-          <div className="flex items-center gap-3 p-3 bg-surface-primary rounded-xl border border-border-primary shadow-sm relative overflow-hidden group">
+          <div className="flex items-center gap-3 p-3 bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="p-2 bg-yellow-50 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-400 rounded-lg relative z-10">
               <Gift size={16} />
             </div>
             <div className="flex-1 relative z-10">
-              <p className="text-sm font-semibold text-text-primary cursor-pointer flex items-center gap-1 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
+              <p className="text-sm font-semibold text-gray-900 dark:text-white cursor-pointer flex items-center gap-1 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
                 Regalo de Cumpleaños <ChevronRight size={14} />
               </p>
-              <p className="text-xs text-text-tertiary">Disponible tu mes</p>
+              <p className="text-xs text-gray-500">Disponible tu mes</p>
             </div>
             <CheckBadge className="relative z-10" />
           </div>
 
           {tier.next && (
-            <div className="flex items-center gap-3 p-3 border border-dashed border-border-primary rounded-xl opacity-60 grayscale hover:grayscale-0 transition-all cursor-not-allowed">
-              <div className="p-2 bg-background-secondary text-text-tertiary rounded-lg">
+            <div className="flex items-center gap-3 p-3 border border-dashed border-gray-200 dark:border-gray-700 rounded-xl opacity-60 grayscale hover:grayscale-0 transition-all cursor-not-allowed">
+              <div className="p-2 bg-gray-100 dark:bg-gray-800 text-gray-400 rounded-lg">
                 <Plane size={16} />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-semibold flex items-center gap-2 text-text-primary">
+                <p className="text-sm font-semibold flex items-center gap-2">
                   Acceso VIP Aeropuertos <Lock size={12} className="text-yellow-500" />
                 </p>
-                <p className="text-xs text-text-tertiary">Disponible en Nivel {tier.next}</p>
+                <p className="text-xs text-gray-500">Disponible en Nivel {tier.next}</p>
               </div>
             </div>
           )}

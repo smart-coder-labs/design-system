@@ -118,7 +118,8 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                             {new Intl.NumberFormat('en-US', { style: 'currency', currency: payment.currency || 'USD' }).format(payment.amount)}
                                         </span>
                                     )}
-                                    <button className="text-text-tertiary hover:text-text-secondary dark:hover:text-text-primary transition-colors">
+                                    <button className="text-text-tertiary hover:text-text-secondary dark:hover:text-text-primary transition-colors"
+                                        aria-label="More options">
                                         <MoreHorizontal className="w-5 h-5" />
                                     </button>
                                 </div>
@@ -161,7 +162,8 @@ export const SocialPaymentFeed: React.FC<SocialPaymentFeedProps> = ({
                                         <span>{payment.comments}</span>
                                     </motion.button>
                                     
-                                    <button className="flex items-center gap-1.5 text-xs font-bold text-text-tertiary hover:text-text-secondary dark:hover:text-text-primary ml-auto transition-colors">
+                                    <button className="flex items-center gap-1.5 text-xs font-bold text-text-tertiary hover:text-text-secondary dark:hover:text-text-primary ml-auto transition-colors"
+                                        aria-label="Share">
                                         <Share className="w-4 h-4" />
                                     </button>
                                 </div>

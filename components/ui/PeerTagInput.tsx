@@ -128,7 +128,7 @@ export const PeerTagInput: React.FC<PeerTagInputProps> = ({
                                         onClick={() => handleSelect(contact)}
                                         onMouseEnter={() => setSelectedIndex(idx)}
                                         className={cn(
-                                            "w-full flex items-center justify-between p-3 rounded-2xl transition-colors cursor-pointer text-left group",
+                                            "w-full flex items-center justify-between p-3 rounded-2xl transition-apple cursor-pointer text-left group",
                                             selectedIndex === idx
                                                 ? "bg-background-secondary"
                                                 : "hover:bg-background-secondary"

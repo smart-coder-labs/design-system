@@ -51,10 +51,10 @@ export const ExpenseCategorizer: React.FC = () => {
   };
 
   return (
-    <div className="bg-surface-primary border border-border-primary rounded-3xl p-6 shadow-sm overflow-hidden select-none">
+    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-6 shadow-sm overflow-hidden select-none">
       
       <div className="mb-8">
-        <h2 className="text-xl font-bold text-text-primary">Ordena tus Gastos</h2>
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">Ordena tus Gastos</h2>
         <p className="text-sm text-gray-500 dark:text-gray-400">
           Arrastra los gastos sin categorizar a sus cubetas correspondientes.
         </p>
@@ -63,7 +63,7 @@ export const ExpenseCategorizer: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
         
         {/* Uncategorized List */}
-        <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 border-2 border-dashed border-border-primary min-h-[300px]">
+        <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 border-2 border-dashed border-gray-200 dark:border-gray-700 min-h-[300px]">
           <h3 className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4 flex items-center gap-2 px-2">
             <Inbox size={14} /> Bandeja de Entrada ({uncategorized.length})
           </h3>
@@ -83,15 +83,15 @@ export const ExpenseCategorizer: React.FC = () => {
                     onDragStart={() => setDraggedItem(tx.id)}
                     onDragEnd={(e, info) => handleDragEnd(e, info, tx.id)}
                     whileDrag={{ scale: 1.05, opacity: 0.9, zIndex: 50, cursor: 'grabbing' }}
-                    className={`bg-surface-primary border border-border-primary p-4 rounded-xl shadow-sm cursor-grab active:cursor-grabbing hover:shadow-md transition-shadow flex justify-between items-center ${
+                    className={`bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-4 rounded-xl shadow-sm cursor-grab active:cursor-grabbing hover:shadow-md transition-shadow flex justify-between items-center ${
                       draggedItem === tx.id ? 'shadow-2xl ring-2 ring-blue-500' : ''
                     }`}
                   >
                     <div>
-                      <p className="font-semibold text-sm text-text-primary">{tx.name}</p>
+                      <p className="font-semibold text-sm text-gray-900 dark:text-white">{tx.name}</p>
                       <p className="text-xs font-medium text-gray-400 mt-0.5">Sin Categoría</p>
                     </div>
-                    <div className="font-black text-text-primary">
+                    <div className="font-black text-gray-900 dark:text-white">
                       ${tx.amount.toFixed(2)}
                     </div>
                   </motion.div>
@@ -107,7 +107,7 @@ export const ExpenseCategorizer: React.FC = () => {
             return (
               <div 
                 key={cat.id} 
-                className={`flex flex-col items-center justify-center p-6 border-2 border-border-primary rounded-2xl bg-white dark:bg-black transition-all ${
+                className={`flex flex-col items-center justify-center p-6 border-2 border-gray-100 dark:border-gray-800 rounded-2xl bg-white dark:bg-black transition-all ${
                   draggedItem ? 'border-dashed border-gray-300 dark:border-gray-600 opacity-80 scale-95' : ''
                 }`}
               >
@@ -115,7 +115,7 @@ export const ExpenseCategorizer: React.FC = () => {
                   <Icon size={24} />
                 </div>
                 <h4 className="font-bold text-sm text-gray-800 dark:text-gray-200 mb-1">{cat.name}</h4>
-                <p className="text-xs font-mono font-bold text-gray-500 dark:text-gray-400 bg-background-secondary px-2 py-0.5 rounded-full">
+                <p className="text-xs font-mono font-bold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-full">
                   ${cat.total.toLocaleString('es-MX')}
                 </p>
               </div>
