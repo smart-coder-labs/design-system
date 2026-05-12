@@ -49,7 +49,7 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
   const theme = getThemeClasses();
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-800 p-6 overflow-hidden relative shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-surface-primary rounded-3xl border border-border-primary p-6 overflow-hidden relative shadow-sm hover:shadow-md transition-shadow">
       
       {/* Decorative Background Blob */}
       <div className={`absolute -right-8 -top-8 w-32 h-32 rounded-full blur-3xl opacity-20 ${theme.progress}`} />
@@ -60,15 +60,15 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
             {icon}
           </div>
           <div>
-            <h3 className="font-bold text-lg text-gray-900 dark:text-white leading-tight">
+            <h3 className="font-bold text-lg text-text-primary leading-tight">
               {goalName}
             </h3>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mt-0.5 flex gap-2">
+            <p className="text-sm font-medium text-text-tertiary mt-0.5 flex gap-2">
               <span>{Math.floor(progress)}% completado</span>
             </p>
           </div>
         </div>
-        <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-apple p-2 -mr-2 -mt-2">
+        <button className="text-text-tertiary hover:text-text-secondary transition-colors p-2 -mr-2 -mt-2">
           <Settings2 size={20} />
         </button>
       </div>
@@ -82,14 +82,14 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
           className="absolute -top-3 -translate-x-1/2 flex flex-col items-center"
           style={{ width: 'max-content' }}
         >
-          <div className={`px-2 py-1 rounded bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-[10px] font-bold tracking-wider relative`}>
+          <div className={`px-2 py-1 rounded bg-gray-900 dark:bg-surface-primary text-white dark:text-gray-900 text-[10px] font-bold tracking-wider relative`}>
             ${balance.toLocaleString('es-MX')}
             <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-900 dark:border-t-white w-0 h-0" />
           </div>
         </motion.div>
 
         {/* Progress Track */}
-        <div className="h-4 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden shadow-inner">
+        <div className="h-4 w-full bg-background-secondary rounded-full overflow-hidden shadow-inner">
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
@@ -103,7 +103,7 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
           </motion.div>
         </div>
         
-        <div className="flex justify-between mt-2 text-xs font-semibold text-gray-400 dark:text-gray-500">
+        <div className="flex justify-between mt-2 text-xs font-semibold text-text-tertiary">
           <span>$0</span>
           <span>Meta: ${targetAmount.toLocaleString('es-MX')}</span>
         </div>
@@ -115,14 +115,14 @@ export const FinancialGoalTracker: React.FC<FinancialGoalTrackerProps> = ({
           disabled={balance >= targetAmount}
           className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-semibold transition-all ${
             balance >= targetAmount 
-            ? 'bg-gray-100 text-gray-400 dark:bg-gray-800 cursor-not-allowed'
-            : 'bg-gray-900 text-white hover:bg-black dark:bg-white dark:text-gray-900 hover:-translate-y-0.5 shadow-md active:scale-95'
+            ? 'bg-background-secondary text-text-tertiary cursor-not-allowed'
+            : 'bg-gray-900 text-white hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200 hover:-translate-y-0.5 shadow-md active:scale-95'
           }`}
         >
           <Plus size={18} />
           Abonar
         </button>
-        <button className="flex items-center justify-center gap-2 py-3 px-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue">
+        <button className="flex items-center justify-center gap-2 py-3 px-4 bg-background-secondary text-text-primary rounded-xl font-semibold hover:bg-border-primary/30 transition relative">
           <TrendingUp size={18} className={theme.text} />
           Auto-ahorro
           <span className="absolute -top-2 -right-2 bg-green-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md uppercase tracking-wide">

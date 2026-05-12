@@ -24,10 +24,10 @@ export const FairUseLimitTracker: React.FC<FairUseLimitTrackerProps> = ({
     className,
 }) => {
     return (
-        <div className={cn("w-full max-w-sm rounded-[2rem] p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-xl", className)}>
+        <div className={cn("w-full max-w-sm rounded-[2rem] p-6 bg-surface-primary border border-border-primary shadow-xl", className)}>
             <div className="mb-6">
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-1">Fair Use Limits</h3>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400">Your monthly free allowances reset in 12 days</p>
+                <h3 className="text-xl font-bold text-text-primary mb-1">Fair Use Limits</h3>
+                <p className="text-sm text-text-tertiary">Your monthly free allowances reset in 12 days</p>
             </div>
 
             <div className="space-y-6">
@@ -44,18 +44,18 @@ export const FairUseLimitTracker: React.FC<FairUseLimitTrackerProps> = ({
                         : cat.total;
 
                     return (
-                        <div key={cat.id} className="relative bg-zinc-50 dark:bg-zinc-800/50 rounded-2xl p-4 border border-zinc-200 dark:border-zinc-700">
+                        <div key={cat.id} className="relative bg-background-secondary rounded-2xl p-4 border border-border-primary">
                             <div className="flex items-center justify-between mb-3">
                                 <div className="flex items-center gap-3">
                                     <div className={cn("p-2 rounded-xl bg-white dark:bg-zinc-700 shadow-sm", cat.color || "text-zinc-600 dark:text-zinc-300")}>
                                         {cat.icon || <RefreshCw className="w-4 h-4" />}
                                     </div>
                                     <div>
-                                        <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">{cat.title}</p>
+                                        <p className="font-semibold text-text-primary text-sm">{cat.title}</p>
                                         <p className={cn("text-xs font-medium mix-blend-overlay",
                                             isExceeded ? "text-red-600 dark:text-red-400" :
                                                 isWarning ? "text-amber-600 dark:text-amber-400" :
-                                                    "text-zinc-500 dark:text-zinc-400"
+                                                    "text-text-tertiary"
                                         )}>
                                             {formattedUsed} / {formattedTotal}
                                         </p>
@@ -102,7 +102,7 @@ export const FairUseLimitTracker: React.FC<FairUseLimitTrackerProps> = ({
                 })}
             </div>
             
-            <button className="w-full mt-6 py-3 rounded-xl border-2 border-dashed border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 font-semibold hover:border-zinc-300 dark:hover:border-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-200 transition-apple">
+            <button className="w-full mt-6 py-3 rounded-xl border-2 border-dashed border-border-primary text-text-secondary font-semibold hover:border-zinc-300 dark:hover:border-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors">
                 Upgrade Plan for Higher Limits
             </button>
         </div>
