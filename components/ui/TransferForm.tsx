@@ -59,6 +59,7 @@ export const TransferForm: React.FC<TransferFormProps> = ({
     const [recipientId, setRecipientId] = useState('');
     const [concept, setConcept] = useState('');
     const [showCurrencies, setShowCurrencies] = useState(false);
+    const [showRecipients, setShowRecipients] = useState(false);
 
     const numericAmount = parseFloat(amount) || 0;
     const isInsufficient = numericAmount > availableBalance;
@@ -171,24 +172,55 @@ export const TransferForm: React.FC<TransferFormProps> = ({
             <div className="mb-5">
                 <label className="text-xs font-medium text-text-secondary mb-1.5 block">Recipient</label>
                 <div className="relative">
-                    <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-tertiary" />
-                    <select
-                        value={recipientId}
-                        onChange={(e) => setRecipientId(e.target.value)}
+                    <button
+                        type="button"
+                        onClick={() => setShowRecipients((v) => !v)}
                         className={cn(
-                            'w-full pl-10 pr-4 py-3 text-sm font-medium rounded-xl border-2 border-border-primary bg-surface-primary text-text-primary',
-                            'focus:border-accent-blue outline-none transition-apple appearance-none cursor-pointer',
+                            'w-full flex items-center gap-2.5 pl-10 pr-4 py-3 text-sm font-medium rounded-xl border-2 bg-surface-primary transition-apple text-left',
+                            showRecipients ? 'border-accent-blue' : 'border-border-primary',
+                            recipientId ? 'text-text-primary' : 'text-text-tertiary',
                         )}
-                        aria-label="Select recipient"
                     >
-                        <option value="">Select a recipient</option>
-                        {recipients.map((r) => (
-                            <option key={r.id} value={r.id}>
-                                {r.name} {r.bank ? `(${r.bank})` : ''}
-                            </option>
-                        ))}
-                    </select>
-                    <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-tertiary pointer-events-none" />
+                        <User className="absolute left-3.5 w-4 h-4 text-text-tertiary shrink-0" />
+                        <span className="flex-1 truncate">
+                            {selectedRecipient ? `${selectedRecipient.name}${selectedRecipient.bank ? ` (${selectedRecipient.bank})` : ''}` : 'Select a recipient'}
+                        </span>
+                        <ChevronDown className={cn('w-4 h-4 text-text-tertiary shrink-0 transition-transform duration-200', showRecipients && 'rotate-180')} />
+                    </button>
+
+                    <AnimatePresence>
+                        {showRecipients && (
+                            <motion.div
+                                initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                                transition={{ duration: 0.15 }}
+                                className="absolute z-20 w-full mt-1.5 bg-surface-primary border border-border-primary rounded-xl shadow-lg overflow-hidden"
+                            >
+                                {recipients.map((r) => (
+                                    <button
+                                        key={r.id}
+                                        type="button"
+                                        onClick={() => { setRecipientId(r.id); setShowRecipients(false); }}
+                                        className={cn(
+                                            'w-full flex items-center gap-3 px-4 py-2.5 text-sm text-left transition-colors',
+                                            r.id === recipientId
+                                                ? 'bg-accent-blue/10 text-accent-blue font-medium'
+                                                : 'text-text-primary hover:bg-surface-secondary',
+                                        )}
+                                    >
+                                        <div className="w-7 h-7 rounded-full bg-surface-secondary flex items-center justify-center shrink-0 text-xs font-bold text-text-secondary">
+                                            {r.name[0]}
+                                        </div>
+                                        <div className="min-w-0">
+                                            <p className="font-medium truncate">{r.name}</p>
+                                            {r.bank && <p className="text-xs text-text-tertiary">{r.bank}</p>}
+                                        </div>
+                                    </button>
+                                ))}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             </div>
 

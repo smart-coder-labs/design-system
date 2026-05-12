@@ -144,10 +144,10 @@ export const VirtualCardPreview: React.FC<VirtualCardPreviewProps> = ({
                     transformStyle: 'preserve-3d', 
                     aspectRatio: '1.5858 / 1',
                 }}
-                animate={{ 
+                animate={{
                     rotateY: isFlipped ? 180 : rotateY,
                     rotateX: isFlipped ? 0 : rotateX,
-                    scale: 1.02
+                    scale: 1,
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}

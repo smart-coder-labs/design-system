@@ -100,7 +100,7 @@ const ControlToggle: React.FC<{
                 aria-label={control.label}
                 onClick={() => onToggle?.(control.id, !control.checked)}
                 className={cn(
-                    'w-11 h-6 rounded-full relative shrink-0 transition-apple duration-200',
+                    'w-11 h-6 rounded-full relative shrink-0 transition-apple duration-200 flex items-center px-0.5',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2',
                     control.checked
                         ? isDanger
@@ -110,8 +110,8 @@ const ControlToggle: React.FC<{
                 )}
             >
                 <motion.span
-                    className="block w-5 h-5 rounded-full bg-white shadow-sm"
-                    animate={{ x: control.checked ? 20 : 2, y: 2 }}
+                    className="block w-5 h-5 rounded-full bg-white shadow-sm shrink-0"
+                    animate={{ x: control.checked ? 18 : 0 }}
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                 />
             </button>

@@ -81,7 +81,7 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
   };
 
   return (
-    <div className="max-w-md mx-auto relative rounded-3xl bg-gray-50 dark:bg-black p-4 min-h-[500px] border border-gray-200 dark:border-gray-800">
+    <div className="max-w-md mx-auto relative rounded-3xl bg-gray-50 dark:bg-black p-4 min-h-[500px] border border-gray-200 dark:border-gray-800 overflow-hidden">
       
       {/* Header */}
       <div className="flex justify-between items-center mb-6 px-2">
@@ -107,23 +107,22 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="relative cursor-pointer group"
+            className="flex items-center gap-2"
           >
             {isEditing && (
-              <div className="absolute -left-3 top-1/2 -translate-y-1/2 z-20 flex gap-2 items-center">
-                 <div className="cursor-grab active:cursor-grabbing text-gray-400 p-1 hover:text-gray-600 dark:hover:text-gray-300">
-                    <GripVertical size={16} />
-                 </div>
-                 <button 
-                    onClick={() => toggleVisibility(widget.id)}
-                    className="w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600"
-                 >
-                    <Minus size={14} />
-                 </button>
+              <div className="flex gap-1 items-center shrink-0">
+                <div className="cursor-grab active:cursor-grabbing text-gray-400 p-1 hover:text-gray-600 dark:hover:text-gray-300">
+                  <GripVertical size={16} />
+                </div>
+                <button
+                  onClick={() => toggleVisibility(widget.id)}
+                  className="w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600"
+                >
+                  <Minus size={14} />
+                </button>
               </div>
             )}
-            
-            <div className={`transition-transform duration-300 ${isEditing ? 'translate-x-12 opacity-50 scale-[0.98]' : ''}`}>
+            <div className="flex-1 min-w-0">
               {renderWidgetContent(widget.type)}
             </div>
           </motion.div>

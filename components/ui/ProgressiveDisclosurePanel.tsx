@@ -97,7 +97,7 @@ export const ProgressiveDisclosurePanel: React.FC<ProgressiveDisclosurePanelProp
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="border-t border-gray-100 dark:border-gray-800 bg-gray-900 dark:bg-black text-gray-300"
+            className="border-t border-gray-100 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-300"
           >
             <div className="p-5 text-sm font-mono overflow-x-auto">
               {deepDive}

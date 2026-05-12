@@ -85,7 +85,7 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                                     limit < maxLimit * 0.8 ? "bg-violet-500" :
                                         "bg-amber-500"
                             )}
-                            style={{ width: `${percentage}%` }}
+                            style={{ width: `${percentage}%`, transition: 'width 80ms linear' }}
                         >
                             <motion.div
                                 className="absolute right-0 top-1/2 -mt-3 -mr-3 w-6 h-6 bg-white border-2 border-inherit rounded-full shadow-lg flex items-center justify-center cursor-grab active:cursor-grabbing"

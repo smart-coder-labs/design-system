@@ -10,7 +10,7 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <div className="bg-neutral-950 min-h-screen text-zinc-900 dark:text-zinc-50">
+      <div className="bg-white dark:bg-neutral-950 min-h-screen text-zinc-900 dark:text-zinc-50">
         <div className="h-[40vh] flex items-center justify-center">
           <h1 className="text-4xl font-bold">Scroll narrative ↓</h1>
         </div>

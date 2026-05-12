@@ -56,7 +56,7 @@ export const QuickTransferBar: React.FC<QuickTransferBarProps> = ({
                 )}
             </div>
 
-            <div className="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-hide">
+            <div className="flex items-center gap-4 overflow-x-auto overflow-y-visible py-2 scrollbar-hide">
                 {/* Add new contact */}
                 <motion.button
                     onClick={onAddNew}

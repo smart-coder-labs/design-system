@@ -139,7 +139,7 @@ export const TransactionRow: React.FC<TransactionRowProps> = ({
                         <span className="text-xs text-text-tertiary truncate">{description}</span>
                     )}
                     {status !== 'completed' && (
-                        <span className={cn('flex items-center gap-0.5 text-[10px] font-bold uppercase tracking-wider', statusInfo.color)}>
+                        <span className={cn('inline-flex items-center gap-0.5 text-[10px] font-bold uppercase tracking-wider leading-none', statusInfo.color)}>
                             {statusInfo.icon} {statusInfo.label}
                         </span>
                     )}
