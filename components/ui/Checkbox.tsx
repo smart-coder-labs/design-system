@@ -57,7 +57,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
                     ref={setRefs}
                     type="checkbox"
                     className={cn(
-                        "peer h-5 w-5 shrink-0 rounded-md border border-border-primary shadow-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent-blue data-[state=checked]:text-white data-[state=checked]:border-accent-blue data-[state=indeterminate]:bg-accent-blue data-[state=indeterminate]:text-white data-[state=indeterminate]:border-accent-blue transition-all duration-200 appearance-none",
+                        "peer h-5 w-5 shrink-0 rounded-md border border-border-primary shadow-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent-blue data-[state=checked]:text-white data-[state=checked]:border-accent-blue data-[state=indeterminate]:bg-accent-blue data-[state=indeterminate]:text-white data-[state=indeterminate]:border-accent-blue transition-all duration-200 transition-apple appearance-none",
                         className
                     )}
                     role="checkbox"

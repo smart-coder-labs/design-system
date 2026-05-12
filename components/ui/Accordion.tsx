@@ -210,7 +210,7 @@ const AccordionTrigger = React.forwardRef<HTMLButtonElement, AccordionTriggerPro
                     data-state={isOpen ? "open" : "closed"}
                     data-disabled={disabled || props.disabled ? "" : undefined}
                     className={cn(
-                        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:text-accent-blue [&[data-state=open]>svg]:rotate-180",
+                        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:text-accent-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-inset rounded-lg [&[data-state=open]>svg]:rotate-180",
                         className
                     )}
                     {...props}
