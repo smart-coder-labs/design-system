@@ -81,8 +81,8 @@ export const RoundUpSavingsToggle: React.FC<RoundUpSavingsToggleProps> = ({
           </button>
         </div>
 
-        <div className="bg-white/60 dark:bg-black/20 backdrop-blur-md rounded-xl p-4 border border-white/50 dark:border-gray-700/50">
-          <p className="text-sm text-text-secondary mb-2 font-medium">
+        <div className="bg-white/80 dark:bg-black/20 backdrop-blur-md rounded-xl p-4 border border-gray-200/80 dark:border-gray-700/50">
+          <p className="text-sm text-text-primary mb-2 font-medium">
             Redondeamos tus compras al siguiente dólar y ahorramos la diferencia.
           </p>
           

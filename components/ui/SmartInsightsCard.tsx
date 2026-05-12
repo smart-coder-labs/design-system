@@ -85,7 +85,7 @@ export const SmartInsightsCard: React.FC<SmartInsightsCardProps> = ({
             <h4 className="text-base font-semibold text-text-primary mb-1">
               {title}
             </h4>
-            <p className="text-sm text-gray-600 dark:text-gray-200 leading-relaxed">
+            <p className="text-sm text-text-secondary leading-relaxed">
               {summary}
             </p>
           </div>
@@ -108,7 +108,7 @@ export const SmartInsightsCard: React.FC<SmartInsightsCardProps> = ({
           </AnimatePresence>
         )}
 
-        <div className="mt-5 flex items-center gap-3">
+        <div className="mt-5 flex flex-wrap items-center gap-3">
           {actions.map((action, idx) => (
             <button
               key={idx}

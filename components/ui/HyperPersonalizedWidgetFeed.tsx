@@ -60,7 +60,7 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
         );
       case 'crypto':
         return (
-          <div className="p-4 bg-black rounded-xl text-white shadow-sm border border-gray-800">
+          <div className="p-4 bg-zinc-900 dark:bg-black rounded-xl text-white shadow-sm border border-zinc-700 dark:border-gray-800">
             <div className="flex justify-between items-center mb-3">
               <h4 className="font-semibold text-sm">Criptomonedas</h4>
               <BarChart2 size={16} className="text-emerald-400" />
@@ -110,11 +110,11 @@ export const HyperPersonalizedWidgetFeed: React.FC<HyperPersonalizedWidgetFeedPr
             className="relative cursor-pointer group"
           >
             {isEditing && (
-              <div className="absolute -left-3 top-1/2 -translate-y-1/2 z-20 flex gap-2 items-center">
+              <div className="absolute -left-3 top-1/2 -translate-y-1/2 z-20 flex gap-2 items-center bg-surface-primary rounded-lg p-1 shadow-sm border border-border-primary">
                  <div className="cursor-grab active:cursor-grabbing text-text-tertiary p-1 hover:text-text-secondary">
                     <GripVertical size={16} />
                  </div>
-                 <button 
+                 <button
                     onClick={() => toggleVisibility(widget.id)}
                     className="w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600"
                  >

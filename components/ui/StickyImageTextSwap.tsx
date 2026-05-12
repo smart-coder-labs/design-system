@@ -20,7 +20,7 @@ export function StickyImageTextSwap({ items, className, ...props }: StickyImageT
     <div className={cn("relative w-full max-w-6xl mx-auto px-4 py-24", className)} {...props}>
       <div className="flex flex-col md:flex-row items-start gap-16">
         {/* Lado izquierdo Fijo (Sticky) - Imagen */}
-        <div className="w-full md:w-1/2 sticky top-32 h-[60vh] rounded-3xl overflow-hidden bg-text-primary border border-border-primary shadow-2xl">
+        <div className="w-full md:w-1/2 sticky top-32 h-[60vh] rounded-3xl overflow-hidden bg-surface-secondary border border-border-primary shadow-2xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}

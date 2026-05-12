@@ -49,7 +49,7 @@ export const SubscriptionManager: React.FC = () => {
     <div className="bg-surface-primary rounded-3xl border border-border-primary overflow-hidden max-w-md mx-auto shadow-sm">
       
       {/* Header */}
-      <div className="p-6 bg-background-secondary dark:bg-gray-900 border-b border-border-primary">
+      <div className="p-6 bg-background-secondary border-b border-border-primary">
         <h2 className="text-xl font-bold text-text-primary flex items-center gap-2 mb-1">
           <CalendarClock className="text-blue-500" />
           Suscripciones
@@ -130,7 +130,7 @@ export const SubscriptionManager: React.FC = () => {
                         {sub.status === 'canceling' ? 'Procesando...' : 'Cancelar Suscripción'}
                       </button>
                       <button 
-                        className="flex-1 bg-surface-primary text-text-secondary hover:bg-background-secondary border border-border-primary dark:bg-gray-900 dark:text-text-primary dark:border-gray-700 font-semibold text-sm rounded-xl py-2 transition-all flex items-center justify-center gap-1"
+                        className="flex-1 bg-surface-primary text-text-primary hover:bg-background-secondary border border-border-primary font-semibold text-sm rounded-xl py-2 transition-all flex items-center justify-center gap-1"
                       >
                         Pausar <ChevronRight size={14} />
                       </button>

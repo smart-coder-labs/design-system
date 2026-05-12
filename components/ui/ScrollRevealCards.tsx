@@ -45,12 +45,12 @@ export function ScrollRevealCards({ items, columns = 3, className, ...props }: S
             // Agregamos un delay de stagger manual basado en el index de la iteración
             transition={{ delay: index * 0.1 }}
             variants={cardVariants}
-            className="p-6 rounded-2xl bg-surface-primary/50 border border-border-primary shadow-lg backdrop-blur-xl
+            className="p-6 rounded-2xl bg-surface-primary border border-border-primary shadow-lg backdrop-blur-xl
                        transition-colors hover:bg-background-secondary"
           >
             {item.icon && <div className="mb-4 text-3xl">{item.icon}</div>}
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <p className="text-text-tertiary text-sm leading-relaxed">{item.description}</p>
+            <h3 className="text-xl font-semibold mb-2 text-text-primary">{item.title}</h3>
+            <p className="text-text-secondary text-sm leading-relaxed">{item.description}</p>
           </motion.div>
         ))}
       </div>

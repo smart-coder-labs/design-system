@@ -144,7 +144,7 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
             <motion.button
                 whileTap={{ scale: 0.96 }}
                 onClick={() => onConfirm?.(months, monthlyPayment)}
-                className="w-full py-4 bg-zinc-900 dark:bg-surface-primary text-white dark:text-zinc-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all"
+                className="w-full py-4 bg-zinc-900 hover:bg-zinc-700 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-zinc-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all"
             >
                 Confirm Plan
             </motion.button>

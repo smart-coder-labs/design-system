@@ -64,7 +64,7 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                 <div className="flex items-end justify-between mb-8">
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1">Active Limit</p>
-                        <h2 className="text-4xl font-bold tracking-tight text-text-primary transition-all duration-100">
+                        <h2 className="text-4xl font-bold tracking-tight text-text-primary">
                             {formatCurrency(limit)}
                         </h2>
                     </div>

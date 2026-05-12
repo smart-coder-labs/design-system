@@ -101,7 +101,7 @@ export const InteractiveBillSplitter: React.FC<InteractiveBillSplitterProps> = (
 
                 <div className="flex justify-between items-center">
                     <span className="text-sm font-bold text-text-primary uppercase tracking-wider">Total</span>
-                    <span className="text-3xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">{formatCurrency(totalAmount)}</span>
+                    <span className="text-xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">{formatCurrency(totalAmount)}</span>
                 </div>
             </div>
 
