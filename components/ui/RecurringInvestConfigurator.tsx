@@ -95,7 +95,7 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                                             className={cn(
                                                 "flex-shrink-0 flex items-center gap-2 p-2 pr-4 rounded-xl border-2 transition-all",
                                                 asset === a.id
-                                                    ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-900 dark:text-indigo-100"
+                                                    ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-500"
                                                     : "border-border-primary hover:border-zinc-300 shadow-sm text-text-primary"
                                             )}
                                         >
@@ -104,7 +104,7 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                                             </div>
                                             <div className="text-left leading-tight">
                                                 <div className="text-sm font-bold">{a.name}</div>
-                                                <div className="text-[10px] uppercase font-semibold opacity-60">{a.type}</div>
+                                                <div className="text-[10px] uppercase font-semibold text-text-tertiary">{a.type}</div>
                                             </div>
                                         </button>
                                     ))}
@@ -127,7 +127,7 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                             <motion.button
                                 whileTap={{ scale: 0.96 }}
                                 onClick={handleNext}
-                                className="w-full py-4 bg-zinc-900 dark:bg-surface-primary text-white dark:text-zinc-900 rounded-xl font-bold flex items-center justify-center gap-2 mt-4 shadow-md hover:shadow-lg transition-all"
+                                className="w-full py-4 bg-zinc-900 hover:bg-zinc-700 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-zinc-900 rounded-xl font-bold flex items-center justify-center gap-2 mt-4 shadow-md hover:shadow-lg transition-all"
                             >
                                 Continue <ChevronRight className="w-5 h-5" />
                             </motion.button>
@@ -154,8 +154,8 @@ export const RecurringInvestConfigurator: React.FC<RecurringInvestConfiguratorPr
                                             className={cn(
                                                 "p-4 rounded-xl border-2 text-left transition-all",
                                                 frequency === f.id
-                                                    ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-500/10 ring-2 ring-indigo-500/20 shadow-sm"
-                                                    : "border-border-primary hover:border-zinc-300"
+                                                    ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-500/10 ring-2 ring-indigo-500/20 shadow-sm text-indigo-900 dark:text-indigo-100"
+                                                    : "border-border-primary hover:border-zinc-300 text-text-primary"
                                             )}
                                         >
                                             <div className="font-bold text-text-primary">{f.label}</div>

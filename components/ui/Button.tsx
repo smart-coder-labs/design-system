@@ -15,6 +15,11 @@ export interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'size'> {
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
     fullWidth?: boolean;
+    /**
+     * Accessible label for the button. Required when the button has no visible text
+     * (e.g. icon-only buttons with only a leftIcon or rightIcon).
+     */
+    'aria-label'?: string;
 }
 
 /* ========================================
@@ -102,12 +107,19 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ${className}
     `.trim().replace(/\s+/g, ' ');
 
+        // Detect icon-only button (no visible text children)
+        const hasTextChildren = children && !(typeof children === 'string' && children.trim() === '');
+        const iconOnly = !hasTextChildren && (!!leftIcon || !!rightIcon);
+
+        if (process.env.NODE_ENV !== 'production' && iconOnly && !props['aria-label']) {
+            console.warn('[Button] Icon-only button is missing an aria-label. Screen readers will not be able to describe this control.');
+        }
+
         return (
             <motion.button
                 ref={ref}
                 className={combinedClassName}
                 disabled={disabled || loading}
-                aria-busy={loading || undefined}
                 whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
                 whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
                 transition={{

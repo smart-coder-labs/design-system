@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Info, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowLeftRight, Info, ShieldCheck, Zap } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { Tooltip } from './Tooltip'; // assumed to exist, will use native styled tooltip if not
 
@@ -28,6 +28,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
     const [fromAsset, setFromAsset] = useState<CryptoAsset>(assets[0] || { id: 'btc', symbol: 'BTC', name: 'Bitcoin', iconUrl: '₿', balance: 0.5, priceUsd: 45000 });
     const [toAsset, setToAsset] = useState<CryptoAsset>(assets[1] || { id: 'usdc', symbol: 'USDC', name: 'USD Coin', iconUrl: '💲', balance: 1000, priceUsd: 1 });
     const [amount, setAmount] = useState<string>("0.1");
+    const [swapRotation, setSwapRotation] = useState(0);
 
     const amountNum = parseFloat(amount) || 0;
     const usdValue = amountNum * fromAsset.priceUsd;
@@ -42,6 +43,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
     const totalOut = Math.max(0, outAmount * (1 - spreadPercentage / 100) - (gasFeeUsd / toAsset.priceUsd));
     
     const handleInvert = () => {
+        setSwapRotation(prev => prev + 180);
         setFromAsset(toAsset);
         setToAsset(fromAsset);
         setAmount("0");
@@ -61,7 +63,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                 <div className="bg-background-secondary rounded-3xl p-4 border border-border-primary focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
                     <div className="flex justify-between items-center mb-2">
                         <span className="text-sm font-semibold text-text-tertiary">You pay</span>
-                        <span className="text-xs font-medium text-text-secondary bg-zinc-200 dark:bg-zinc-700 px-2 py-1 rounded-lg">
+                        <span className="text-xs font-medium text-text-secondary bg-background-secondary px-2 py-1 rounded-lg">
                             Bal: {fromAsset.balance} {fromAsset.symbol}
                         </span>
                     </div>
@@ -92,9 +94,11 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         onClick={handleInvert}
-                        className="p-2.5 bg-background-secondary border-4 border-white dark:border-zinc-900 rounded-full text-text-secondary hover:text-blue-500 hover:border-zinc-50 dark:hover:border-zinc-950 transition-all shadow-sm"
+                        className="p-2.5 bg-background-secondary border-4 border-surface-primary dark:border-zinc-900 rounded-full text-text-secondary hover:text-blue-500 transition-all shadow-sm"
                     >
-                        <ArrowDown className="w-5 h-5" />
+                        <motion.div animate={{ rotate: swapRotation }} transition={{ duration: 0.35, ease: 'easeInOut' }}>
+                            <ArrowLeftRight className="w-5 h-5" />
+                        </motion.div>
                     </motion.button>
                 </div>
 
@@ -119,7 +123,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
             </div>
 
             {/* Smart Abstracted Details */}
-            <div className="mt-6 space-y-3 bg-blue-50/50 dark:bg-blue-900/10 p-4 rounded-2xl border border-blue-100 dark:border-blue-900/40">
+            <div className="mt-6 space-y-3 bg-blue-50 dark:bg-blue-900/10 p-4 rounded-2xl border border-blue-200 dark:border-blue-900/40">
                 <div className="flex justify-between items-center text-sm font-medium">
                     <span className="text-text-tertiary flex items-center gap-1.5 tooltip-trigger relative group">
                         Network Cost <Info className="w-3.5 h-3.5" />
@@ -148,7 +152,7 @@ export const RetailSwapInterface: React.FC<RetailSwapInterfaceProps> = ({
                 onClick={() => onSwap?.(fromAsset.id, toAsset.id, amountNum)}
                 disabled={amountNum > fromAsset.balance || amountNum <= 0}
                 className={cn(
-                    "w-full py-4 rounded-xl font-bold text-center mt-6 transition-all",
+                    "w-full py-4 rounded-xl font-bold text-center mt-6 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue",
                     amountNum > fromAsset.balance || amountNum <= 0
                         ? "bg-background-secondary text-text-tertiary cursor-not-allowed"
                         : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30"

@@ -23,7 +23,7 @@ export interface PeerTagInputProps {
 
 export const PeerTagInput: React.FC<PeerTagInputProps> = ({
     contacts,
-    placeholder = "Search $Cashtag, Name, or Phone",
+    placeholder = "Search $Name",
     className,
     onSelect,
 }) => {
@@ -90,7 +90,7 @@ export const PeerTagInput: React.FC<PeerTagInputProps> = ({
                     onBlur={() => setTimeout(() => setIsFocused(false), 200)} // delay to allow clicks
                     onKeyDown={handleKeyDown}
                     placeholder={placeholder}
-                    className="flex-1 bg-transparent border-none outline-none py-4 font-semibold text-text-primary placeholder:text-text-tertiary dark:placeholder:text-text-tertiary placeholder:font-normal"
+                    className="flex-1 bg-transparent border-none outline-none py-3 font-semibold text-text-primary placeholder:text-text-tertiary dark:placeholder:text-text-tertiary placeholder:font-normal"
                 />
                 
                 <AnimatePresence>
@@ -128,14 +128,14 @@ export const PeerTagInput: React.FC<PeerTagInputProps> = ({
                                         onClick={() => handleSelect(contact)}
                                         onMouseEnter={() => setSelectedIndex(idx)}
                                         className={cn(
-                                            "w-full flex items-center justify-between p-3 rounded-2xl transition-colors cursor-pointer text-left group",
+                                            "w-full flex items-center justify-between p-3 rounded-2xl transition-apple cursor-pointer text-left group",
                                             selectedIndex === idx
                                                 ? "bg-background-secondary"
                                                 : "hover:bg-background-secondary"
                                         )}
                                     >
                                         <div className="flex items-center gap-3">
-                                            <Avatar className="w-12 h-12">
+                                            <Avatar className="w-10 h-10">
                                                 <AvatarImage src={contact.avatarUrl} alt={contact.name} />
                                                 <AvatarFallback>{contact.name[0]}</AvatarFallback>
                                             </Avatar>

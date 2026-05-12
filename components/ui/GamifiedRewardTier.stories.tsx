@@ -6,7 +6,7 @@ const meta: Meta<typeof GamifiedRewardTier> = {
   title: 'Fintech/GamifiedRewardTier',
   component: GamifiedRewardTier,
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
   },
   tags: ['autodocs'],
 };
