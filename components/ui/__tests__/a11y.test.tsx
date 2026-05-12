@@ -15,9 +15,10 @@ async function assertNoViolations(container: HTMLElement) {
 
 describe('Accessibility - Button', () => {
   it('has no accessibility violations', async () => {
+    // axe initializes its ruleset lazily on first call — allow extra time
     const { container } = render(<Button>Click me</Button>);
     await assertNoViolations(container);
-  });
+  }, 15000);
 
   it('has no violations with icon', async () => {
     const { container } = render(
