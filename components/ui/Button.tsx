@@ -120,6 +120,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 ref={ref}
                 className={combinedClassName}
                 disabled={disabled || loading}
+                aria-busy={loading || undefined}
                 whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
                 whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
                 transition={{
