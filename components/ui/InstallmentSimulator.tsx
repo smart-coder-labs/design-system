@@ -38,29 +38,29 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
     const monthOptions = [1, 3, 6, 9, 12].filter(m => m <= maxMonths);
 
     return (
-        <div className={cn("w-full max-w-md bg-white dark:bg-zinc-900 rounded-[2rem] p-6 shadow-xl border border-zinc-200 dark:border-zinc-800", className)}>
+        <div className={cn("w-full max-w-md bg-surface-primary rounded-[2rem] p-6 shadow-xl border border-border-primary", className)}>
             <div className="flex items-center gap-3 mb-6">
                 <div className="p-2.5 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl shadow-sm">
                     <ShoppingBag className="w-5 h-5" />
                 </div>
                 <div>
-                    <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">Pay Over Time</h3>
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400">Choose how you want to split this purchase</p>
+                    <h3 className="text-lg font-bold text-text-primary">Pay Over Time</h3>
+                    <p className="text-sm text-text-tertiary">Choose how you want to split this purchase</p>
                 </div>
             </div>
 
-            <div className="bg-zinc-50 dark:bg-zinc-800/40 rounded-3xl p-6 border border-zinc-200 dark:border-zinc-700/50 mb-6">
+            <div className="bg-background-secondary dark:bg-gray-900/40 rounded-3xl p-6 border border-border-primary/50 mb-6">
                 <div className="flex justify-between items-end mb-4">
                     <div>
-                        <p className="text-xs uppercase tracking-wider text-zinc-500 font-bold mb-1">Buy Now Price</p>
-                        <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                        <p className="text-xs uppercase tracking-wider text-text-tertiary font-bold mb-1">Buy Now Price</p>
+                        <h2 className="text-2xl font-bold tracking-tight text-text-primary">
                             {formatCurrency(purchaseAmount)}
                         </h2>
                     </div>
                 </div>
 
                 <div className="space-y-3">
-                    <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300">Choose Duration</p>
+                    <p className="text-sm font-medium text-text-secondary">Choose Duration</p>
                     <div className="flex gap-2 pb-2">
                         {monthOptions.map(m => (
                             <button
@@ -69,8 +69,8 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
                                 className={cn(
                                     "flex-1 py-3 rounded-xl border flex flex-col items-center justify-center transition-all cursor-pointer shadow-sm",
                                     months === m
-                                        ? "border-blue-500 bg-blue-50 dark:bg-blue-500/10 text-blue-700 dark:text-blue-300 ring-1 ring-blue-500"
-                                        : "border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-zinc-300 dark:hover:border-zinc-600 hover:shadow-md"
+                                        ? "border-accent-blue bg-accent-blue-tint text-accent-blue ring-1 ring-accent-blue"
+                                        : "border-border-primary bg-surface-primary text-text-secondary hover:border-zinc-300 dark:hover:border-zinc-600 hover:shadow-md"
                                 )}
                             >
                                 <span className={cn("text-lg font-bold", months === m ? "text-blue-600 dark:text-blue-400" : "")}>{m}</span>
@@ -81,23 +81,23 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
                 </div>
             </div>
 
-            <div className="bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-2xl p-5 mb-6 shadow-sm">
+            <div className="bg-surface-primary border border-border-primary rounded-2xl p-5 mb-6 shadow-sm">
                 <div className="flex items-center gap-2 mb-4">
-                    <CalendarDays className="w-5 h-5 text-zinc-400" />
+                    <CalendarDays className="w-5 h-5 text-text-tertiary" />
                     <p className="text-sm font-semibold">Payment Summary</p>
                 </div>
                 <div className="space-y-3 text-sm">
-                    <div className="flex justify-between items-center text-zinc-600 dark:text-zinc-400">
+                    <div className="flex justify-between items-center text-text-secondary">
                         <span>Monthly Payment</span>
                         <motion.span
                             key={`monthly-${months}`}
                             initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }}
-                            className="font-bold text-zinc-900 dark:text-zinc-100"
+                            className="font-bold text-text-primary"
                         >
                             {formatCurrency(monthlyPayment)}
                         </motion.span>
                     </div>
-                    <div className="flex justify-between items-center text-zinc-600 dark:text-zinc-400">
+                    <div className="flex justify-between items-center text-text-secondary">
                         <span>Total Interest ({interestRate}% APR)</span>
                         <motion.span
                             key={`interest-${months}`}
@@ -107,8 +107,8 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
                             {months === 1 ? '0.00' : formatCurrency(totalInterest)}
                         </motion.span>
                     </div>
-                    <div className="h-px bg-zinc-200 dark:bg-zinc-800 my-2" />
-                    <div className="flex justify-between items-center font-bold text-zinc-900 dark:text-zinc-100">
+                    <div className="h-px bg-zinc-200 dark:bg-gray-900 my-2" />
+                    <div className="flex justify-between items-center font-bold text-text-primary">
                         <span>Total Paid Over Time</span>
                         <motion.span
                             key={`total-${months}`}
@@ -121,7 +121,7 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
                 </div>
 
                 {/* mini chart visualizing interest vs principal */}
-                <div className="mt-5 relative h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden flex shadow-inner">
+                <div className="mt-5 relative h-3 bg-background-secondary rounded-full overflow-hidden flex shadow-inner">
                     <motion.div
                         className="h-full bg-blue-500"
                         initial={{ width: 0 }}
@@ -135,7 +135,7 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
                         transition={{ duration: 0.5 }}
                     />
                 </div>
-                <div className="flex justify-between items-center text-[10px] uppercase font-bold text-zinc-400 mt-2">
+                <div className="flex justify-between items-center text-[10px] uppercase font-bold text-text-tertiary mt-2">
                     <span className="flex items-center gap-1"><div className="w-2 h-2 rounded-full bg-blue-500" /> Principal</span>
                     <span className="flex items-center gap-1"><div className="w-2 h-2 rounded-full bg-amber-400" /> Interest</span>
                 </div>
@@ -144,7 +144,7 @@ export const InstallmentSimulator: React.FC<InstallmentSimulatorProps> = ({
             <motion.button
                 whileTap={{ scale: 0.96 }}
                 onClick={() => onConfirm?.(months, monthlyPayment)}
-                className="w-full py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all"
+                className="w-full py-4 bg-zinc-900 hover:bg-zinc-700 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-zinc-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all"
             >
                 Confirm Plan
             </motion.button>
