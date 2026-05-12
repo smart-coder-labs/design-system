@@ -86,20 +86,20 @@ export const JargonTooltip: React.FC<JargonTooltipProps> = ({
               filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.1))'
             }}
           >
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 p-4 text-left pointer-events-auto shadow-xl">
-              <div className="flex items-center gap-2 mb-2 text-gray-900 dark:text-white">
+            <div className="bg-surface-primary rounded-xl border border-border-primary p-4 text-left pointer-events-auto shadow-xl">
+              <div className="flex items-center gap-2 mb-2 text-text-primary">
                 <BookOpen size={16} className="text-blue-500" />
                 <h5 className="font-semibold text-sm capitalize">{term}</h5>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-3">
+              <p className="text-sm text-text-secondary leading-relaxed mb-3">
                 {definition}
               </p>
               {example && (
-                <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-3 border border-gray-100 dark:border-gray-700">
-                  <p className="text-xs text-gray-500 dark:text-gray-400 font-medium mb-1 uppercase tracking-wider">
+                <div className="bg-background-secondary rounded-lg p-3 border border-border-primary">
+                  <p className="text-xs text-text-tertiary font-medium mb-1 uppercase tracking-wider">
                     Ejemplo
                   </p>
-                  <p className="text-sm text-gray-700 dark:text-gray-200">
+                  <p className="text-sm text-text-primary">
                     "{example}"
                   </p>
                 </div>
@@ -107,7 +107,7 @@ export const JargonTooltip: React.FC<JargonTooltipProps> = ({
               
               {/* Triangle pointer */}
               <div 
-                className="absolute w-3 h-3 bg-white dark:bg-gray-800 border-b border-r border-gray-100 dark:border-gray-700 left-1/2 -translate-x-1/2 -bottom-1.5 rotate-45"
+                className="absolute w-3 h-3 bg-surface-primary border-b border-r border-border-primary left-1/2 -translate-x-1/2 -bottom-1.5 rotate-45"
               />
             </div>
           </motion.div>
