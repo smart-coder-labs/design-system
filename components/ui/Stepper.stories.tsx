@@ -3,7 +3,7 @@ import { Stepper } from './Stepper';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/Stepper',
+    title: 'Navigation/Stepper',
     component: Stepper,
     tags: ['autodocs'],
 } satisfies Meta<typeof Stepper>;

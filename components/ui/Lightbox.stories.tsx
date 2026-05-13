@@ -3,7 +3,7 @@ import React from 'react';
 import { Lightbox } from './Lightbox';
 
 const meta: Meta<typeof Lightbox> = {
-  title: 'Components/Lightbox',
+  title: 'Data Display/Lightbox',
   component: Lightbox,
   tags: ['autodocs'],
   parameters: {

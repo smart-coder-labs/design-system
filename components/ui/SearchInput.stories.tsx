@@ -3,7 +3,7 @@ import { SearchInput } from './SearchInput';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/SearchInput',
+    title: 'Forms/SearchInput',
     component: SearchInput,
     tags: ['autodocs'],
 } satisfies Meta<typeof SearchInput>;

@@ -3,7 +3,7 @@ import { Select } from './Select';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/Select',
+    title: 'Forms/Select',
     component: Select,
     tags: ['autodocs'],
 } satisfies Meta<typeof Select>;

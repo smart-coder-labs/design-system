@@ -3,7 +3,7 @@ import React from 'react';
 import { KeyValueInfo } from './KeyValueInfo';
 
 const meta: Meta<typeof KeyValueInfo> = {
-  title: 'Components/KeyValueInfo',
+  title: 'Data Display/KeyValueInfo',
   component: KeyValueInfo,
   tags: ['autodocs'],
   parameters: {

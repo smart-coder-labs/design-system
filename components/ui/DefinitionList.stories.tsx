@@ -14,7 +14,7 @@ const items: DefinitionItem[] = [
 ];
 
 const meta: Meta<typeof DefinitionList> = {
-  title: 'Components/DefinitionList',
+  title: 'Data Display/DefinitionList',
   component: DefinitionList,
   tags: ['autodocs'],
 };

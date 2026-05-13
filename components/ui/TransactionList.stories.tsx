@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TransactionList } from './TransactionList';
 
 const meta = {
-    title: 'Components/TransactionList',
+    title: 'Fintech/Dashboard/TransactionList',
     component: TransactionList,
     tags: ['autodocs'],
 } satisfies Meta<typeof TransactionList>;

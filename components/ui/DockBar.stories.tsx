@@ -13,7 +13,7 @@ const defaultItems: DockBarItem[] = [
 ];
 
 const meta: Meta<typeof DockBar> = {
-  title: 'Components/DockBar',
+  title: 'Navigation/DockBar',
   component: DockBar,
   tags: ['autodocs'],
 };

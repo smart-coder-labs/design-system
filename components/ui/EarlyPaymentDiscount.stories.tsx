@@ -3,7 +3,7 @@ import React from 'react';
 import { EarlyPaymentDiscount } from './EarlyPaymentDiscount';
 
 const meta: Meta<typeof EarlyPaymentDiscount> = {
-  title: 'Components/EarlyPaymentDiscount',
+  title: 'Fintech/Credit & BNPL/EarlyPaymentDiscount',
   component: EarlyPaymentDiscount,
   tags: ['autodocs'],
 };

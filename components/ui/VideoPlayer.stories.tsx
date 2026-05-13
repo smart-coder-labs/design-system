@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { VideoPlayer } from './VideoPlayer';
 
 const meta = {
-    title: 'Components/VideoPlayer',
+    title: 'Data Display/VideoPlayer',
     component: VideoPlayer,
     tags: ['autodocs'],
 } satisfies Meta<typeof VideoPlayer>;

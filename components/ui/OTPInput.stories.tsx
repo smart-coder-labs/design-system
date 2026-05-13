@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { OTPInput } from './OTPInput';
 
 const meta = {
-    title: 'Components/OTPInput',
+    title: 'Forms/OTPInput',
     component: OTPInput,
     tags: ['autodocs'],
 } satisfies Meta<typeof OTPInput>;

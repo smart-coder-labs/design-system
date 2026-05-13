@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { BalanceChart } from './BalanceChart';
 
 const meta = {
-    title: 'Components/BalanceChart',
+    title: 'Fintech/Dashboard/BalanceChart',
     component: BalanceChart,
     tags: ['autodocs'],
 } satisfies Meta<typeof BalanceChart>;

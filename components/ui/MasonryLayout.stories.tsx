@@ -3,7 +3,7 @@ import React from 'react';
 import { MasonryLayout } from './MasonryLayout';
 
 const meta: Meta<typeof MasonryLayout> = {
-  title: 'Components/MasonryLayout',
+  title: 'Layout/MasonryLayout',
   component: MasonryLayout,
   tags: ['autodocs'],
 };

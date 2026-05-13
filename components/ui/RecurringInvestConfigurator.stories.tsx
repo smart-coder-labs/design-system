@@ -3,7 +3,7 @@ import { RecurringInvestConfigurator } from './RecurringInvestConfigurator';
 import { fn } from 'storybook/test';
 
 const meta = {
-  title: 'Components/RecurringInvestConfigurator',
+  title: 'Fintech/Wealth & Crypto/RecurringInvestConfigurator',
   component: RecurringInvestConfigurator,
   tags: ['autodocs'],
 } satisfies Meta<typeof RecurringInvestConfigurator>;

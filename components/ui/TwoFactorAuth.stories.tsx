@@ -3,7 +3,7 @@ import { TwoFactorAuth } from './TwoFactorAuth';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/TwoFactorAuth',
+    title: 'Fintech/KYC/TwoFactorAuth',
     component: TwoFactorAuth,
     tags: ['autodocs'],
 } satisfies Meta<typeof TwoFactorAuth>;

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TransferForm, type TransferRecipient, type CurrencyOption } from './TransferForm';
 
 const meta = {
-    title: 'Components/TransferForm',
+    title: 'Fintech/Payments/TransferForm',
     component: TransferForm,
     tags: ['autodocs'],
     parameters: {

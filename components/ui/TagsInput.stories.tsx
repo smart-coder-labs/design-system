@@ -3,7 +3,7 @@ import { TagsInput } from './TagsInput';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/TagsInput',
+    title: 'Forms/TagsInput',
     component: TagsInput,
     tags: ['autodocs'],
 } satisfies Meta<typeof TagsInput>;

@@ -19,7 +19,7 @@ const fintechActions: FABGroupAction[] = [
 ];
 
 const meta: Meta<typeof FABGroup> = {
-    title: 'Components/FABGroup',
+    title: 'Buttons/FABGroup',
     component: FABGroup,
     tags: ['autodocs'],
 };

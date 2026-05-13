@@ -3,7 +3,7 @@ import { ContextualTrustBadge } from './ContextualTrustBadge';
 import React from 'react';
 
 const meta: Meta<typeof ContextualTrustBadge> = {
-  title: 'Fintech/ContextualTrustBadge',
+  title: 'Fintech/Security/ContextualTrustBadge',
   component: ContextualTrustBadge,
   parameters: {
     layout: 'centered',

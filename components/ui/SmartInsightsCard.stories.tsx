@@ -3,7 +3,7 @@ import { SmartInsightsCard } from './SmartInsightsCard';
 import React from 'react';
 
 const meta: Meta<typeof SmartInsightsCard> = {
-  title: 'Fintech/SmartInsightsCard',
+  title: 'Fintech/Dashboard/SmartInsightsCard',
   component: SmartInsightsCard,
   parameters: {
     layout: 'centered',

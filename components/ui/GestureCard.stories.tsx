@@ -4,7 +4,7 @@ import { GestureCard } from './GestureCard';
 import { Wallet, TrendingUp, CreditCard, PiggyBank } from 'lucide-react';
 
 const meta: Meta<typeof GestureCard> = {
-  title: 'Components/GestureCard',
+  title: 'Surfaces/GestureCard',
   component: GestureCard,
   tags: ['autodocs'],
 };

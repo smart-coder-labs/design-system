@@ -3,7 +3,7 @@ import { Reviews, RatingStars } from './Reviews';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/Reviews',
+    title: 'Data Display/ReviewsRatings',
     component: Reviews,
     tags: ['autodocs'],
 } satisfies Meta<typeof Reviews>;

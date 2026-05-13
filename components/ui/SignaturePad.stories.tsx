@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SignaturePad } from './SignaturePad';
 
 const meta = {
-  title: 'Components/SignaturePad',
+  title: 'Data Display/SignaturePad',
   component: SignaturePad,
   tags: ['autodocs'],
 } satisfies Meta<typeof SignaturePad>;

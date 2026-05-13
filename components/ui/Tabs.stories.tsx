@@ -3,7 +3,7 @@ import { Tabs } from './Tabs';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/Tabs',
+    title: 'Navigation/Tabs',
     component: Tabs,
     tags: ['autodocs'],
 } satisfies Meta<typeof Tabs>;

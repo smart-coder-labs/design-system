@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ProductCard } from './ProductCard';
 
 const meta = {
-  title: 'Components/ProductCard',
+  title: 'E-Commerce/ProductCard',
   component: ProductCard,
   tags: ['autodocs'],
 } satisfies Meta<typeof ProductCard>;

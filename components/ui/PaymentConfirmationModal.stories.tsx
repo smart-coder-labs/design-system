@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PaymentConfirmationModal } from './PaymentConfirmationModal';
 
 const meta = {
-  title: 'Components/PaymentConfirmationModal',
+  title: 'Fintech/Payments/PaymentConfirmationModal',
   component: PaymentConfirmationModal,
   tags: ['autodocs'],
 } satisfies Meta<typeof PaymentConfirmationModal>;

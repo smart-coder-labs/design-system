@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { BankAccountCard } from './BankAccountCard';
 
 const meta = {
-    title: 'Components/BankAccountCard',
+    title: 'Fintech/Dashboard/BankAccountCard',
     component: BankAccountCard,
     tags: ['autodocs'],
 } satisfies Meta<typeof BankAccountCard>;

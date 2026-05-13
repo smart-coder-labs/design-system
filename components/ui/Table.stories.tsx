@@ -3,7 +3,7 @@ import { Table } from './Table';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/Table',
+    title: 'Data Display/Table',
     component: Table,
     tags: ['autodocs'],
 } satisfies Meta<typeof Table>;

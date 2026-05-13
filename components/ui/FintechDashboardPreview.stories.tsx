@@ -3,7 +3,7 @@ import React from 'react';
 import { FintechDashboardPreview } from './FintechDashboardPreview';
 
 const meta: Meta<typeof FintechDashboardPreview> = {
-    title: 'Components/FintechDashboardPreview',
+    title: 'Fintech/Dashboard/FintechDashboardPreview',
     component: FintechDashboardPreview,
     tags: ['autodocs'],
     parameters: {

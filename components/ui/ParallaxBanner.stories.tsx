@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ParallaxBanner } from './ParallaxBanner';
 
 const meta = {
-  title: 'Components/ParallaxBanner',
+  title: 'Surfaces/ParallaxBanner',
   component: ParallaxBanner,
   tags: ['autodocs'],
 } satisfies Meta<typeof ParallaxBanner>;

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { OfflineState } from './OfflineState';
 
 const meta = {
-  title: 'Components/OfflineState',
+  title: 'Surfaces/OfflineState',
   component: OfflineState,
   tags: ['autodocs'],
 } satisfies Meta<typeof OfflineState>;

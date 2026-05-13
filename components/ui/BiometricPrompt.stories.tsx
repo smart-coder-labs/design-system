@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { BiometricPrompt } from './BiometricPrompt';
 
 const meta = {
-    title: 'Components/BiometricPrompt',
+    title: 'Fintech/KYC/BiometricPrompt',
     component: BiometricPrompt,
     tags: ['autodocs'],
 } satisfies Meta<typeof BiometricPrompt>;

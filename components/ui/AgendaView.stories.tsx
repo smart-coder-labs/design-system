@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AgendaView } from './AgendaView';
 
 const meta = {
-    title: 'Components/AgendaView',
+    title: 'Data Display/AgendaView',
     component: AgendaView,
     tags: ['autodocs'],
 } satisfies Meta<typeof AgendaView>;

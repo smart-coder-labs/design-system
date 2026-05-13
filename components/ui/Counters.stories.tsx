@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Counters } from './Counters';
 
 const meta = {
-    title: 'Components/Counters',
+    title: 'Data Display/Counters',
     component: Counters,
     tags: ['autodocs'],
 } satisfies Meta<typeof Counters>;

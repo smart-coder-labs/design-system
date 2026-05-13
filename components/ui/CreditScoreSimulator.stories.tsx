@@ -3,7 +3,7 @@ import { CreditScoreSimulator } from './CreditScoreSimulator';
 import React from 'react';
 
 const meta: Meta<typeof CreditScoreSimulator> = {
-  title: 'Fintech/CreditScoreSimulator',
+  title: 'Fintech/Credit & BNPL/CreditScoreSimulator',
   component: CreditScoreSimulator,
   parameters: {
     layout: 'centered',

@@ -3,7 +3,7 @@ import { SocialPaymentFeed } from './SocialPaymentFeed';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/SocialPaymentFeed',
+    title: 'Fintech/Social & P2P/SocialPaymentFeed',
     component: SocialPaymentFeed,
     tags: ['autodocs'],
 } satisfies Meta<typeof SocialPaymentFeed>;

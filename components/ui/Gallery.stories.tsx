@@ -19,7 +19,7 @@ const receiptImages: LightboxImage[] = [
 ];
 
 const meta: Meta<typeof Gallery> = {
-  title: 'Components/Gallery',
+  title: 'Data Display/Gallery',
   component: Gallery,
   tags: ['autodocs'],
 };

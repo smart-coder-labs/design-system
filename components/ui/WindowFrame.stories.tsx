@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { WindowFrame } from './WindowFrame';
 
 const meta = {
-    title: 'Components/WindowFrame',
+    title: 'Surfaces/WindowFrame',
     component: WindowFrame,
     tags: ['autodocs'],
 } satisfies Meta<typeof WindowFrame>;

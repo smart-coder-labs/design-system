@@ -3,7 +3,7 @@ import { StatisticDisplay } from './StatisticDisplay';
 import { CreditCard, PiggyBank, TrendingUp, DollarSign } from 'lucide-react';
 
 const meta = {
-    title: 'Components/StatisticDisplay',
+    title: 'Data Display/StatisticDisplay',
     component: StatisticDisplay,
     tags: ['autodocs'],
 } satisfies Meta<typeof StatisticDisplay>;

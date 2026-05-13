@@ -13,7 +13,7 @@ const editingActions: FloatingToolbarAction[] = [
 ];
 
 const meta: Meta<typeof FloatingToolbar> = {
-  title: 'Components/FloatingToolbar',
+  title: 'Navigation/FloatingToolbar',
   component: FloatingToolbar,
   tags: ['autodocs'],
 };

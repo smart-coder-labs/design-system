@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AddressSelector } from './AddressSelector';
 
 const meta = {
-    title: 'Components/AddressSelector',
+    title: 'Forms/AddressSelector',
     component: AddressSelector,
     tags: ['autodocs'],
 } satisfies Meta<typeof AddressSelector>;

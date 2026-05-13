@@ -4,7 +4,7 @@ import { AchTransactionsVisualizer, VisualizerTransaction } from './AchTransacti
 import { Building2, Calendar, CreditCard, FileText, Hash, ShieldAlert, ShieldCheck, Activity } from 'lucide-react';
 
 const meta = {
-    title: 'Fintech/AchTransactionsVisualizer',
+    title: 'Fintech/Transactions/AchTransactionsVisualizer',
     component: AchTransactionsVisualizer,
     parameters: {
         layout: 'padded',

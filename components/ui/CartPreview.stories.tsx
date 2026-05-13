@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CartPreview } from './CartPreview';
 
 const meta = {
-    title: 'Components/CartPreview',
+    title: 'E-Commerce/CartPreview',
     component: CartPreview,
     tags: ['autodocs'],
 } satisfies Meta<typeof CartPreview>;

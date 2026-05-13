@@ -4,7 +4,7 @@ import { InstallmentSimulator } from './InstallmentSimulator';
 import { action } from 'storybook/actions';
 
 const meta: Meta<typeof InstallmentSimulator> = {
-  title: 'Components/InstallmentSimulator',
+  title: 'Fintech/Credit & BNPL/InstallmentSimulator',
   component: InstallmentSimulator,
   tags: ['autodocs'],
 };

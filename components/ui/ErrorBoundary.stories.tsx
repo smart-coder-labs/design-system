@@ -18,7 +18,7 @@ const NetworkErrorComponent = () => {
 };
 
 const meta: Meta<typeof ErrorBoundary> = {
-    title: 'Components/ErrorBoundary',
+    title: 'Utils/ErrorBoundary',
     component: ErrorBoundary,
     tags: ['autodocs'],
 };

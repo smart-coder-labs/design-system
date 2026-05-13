@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ActivityFeed, ActivityItem } from './ActivityFeed';
 
 const meta = {
-    title: 'Components/ActivityFeed',
+    title: 'Data Display/ActivityFeed',
     component: ActivityFeed,
     tags: ['autodocs'],
 } satisfies Meta<typeof ActivityFeed>;

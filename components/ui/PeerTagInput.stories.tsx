@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PeerTagInput } from './PeerTagInput';
 
 const meta = {
-  title: 'Components/PeerTagInput',
+  title: 'Fintech/Social & P2P/PeerTagInput',
   component: PeerTagInput,
   tags: ['autodocs'],
 } satisfies Meta<typeof PeerTagInput>;

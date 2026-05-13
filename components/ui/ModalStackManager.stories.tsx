@@ -4,7 +4,7 @@ import { ModalStackManager } from './ModalStackManager';
 import { action } from 'storybook/actions';
 
 const meta: Meta<typeof ModalStackManager> = {
-  title: 'Components/ModalStackManager',
+  title: 'Overlays/ModalStackManager',
   component: ModalStackManager,
   tags: ['autodocs'],
   parameters: {

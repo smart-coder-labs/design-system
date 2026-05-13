@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AIThinkingIndicator } from './AIThinkingIndicator';
 
 const meta = {
-    title: 'Components/AIThinkingIndicator',
+    title: 'Feedback/AIThinkingIndicator',
     component: AIThinkingIndicator,
     tags: ['autodocs'],
 } satisfies Meta<typeof AIThinkingIndicator>;

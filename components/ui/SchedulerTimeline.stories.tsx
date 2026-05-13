@@ -3,7 +3,7 @@ import { SchedulerTimeline } from './SchedulerTimeline';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/SchedulerTimeline',
+    title: 'Data Display/SchedulerTimeline',
     component: SchedulerTimeline,
     tags: ['autodocs'],
 } satisfies Meta<typeof SchedulerTimeline>;

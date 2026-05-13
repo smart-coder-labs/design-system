@@ -4,7 +4,7 @@ import { MarkdownEditor } from './MarkdownEditor';
 import { action } from 'storybook/actions';
 
 const meta: Meta<typeof MarkdownEditor> = {
-  title: 'Components/MarkdownEditor',
+  title: 'Forms/MarkdownEditor',
   component: MarkdownEditor,
   tags: ['autodocs'],
   parameters: {

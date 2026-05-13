@@ -5,7 +5,7 @@ import { action } from 'storybook/actions';
 import { File, Settings, HelpCircle, LogOut, CreditCard, TrendingUp, Users, Shield } from 'lucide-react';
 
 const meta: Meta<typeof MenuBar> = {
-  title: 'Components/MenuBar',
+  title: 'Navigation/MenuBar',
   component: MenuBar,
   tags: ['autodocs'],
 };

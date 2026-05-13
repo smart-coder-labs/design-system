@@ -4,7 +4,7 @@ import React from 'react';
 import { Wallet, Info, ShoppingBag, CreditCard, Home, TrendingUp } from 'lucide-react';
 
 const meta: Meta<typeof ProgressiveDisclosurePanel> = {
-  title: 'Fintech/ProgressiveDisclosurePanel',
+  title: 'Fintech/UX/ProgressiveDisclosurePanel',
   component: ProgressiveDisclosurePanel,
   parameters: {
     layout: 'padded',

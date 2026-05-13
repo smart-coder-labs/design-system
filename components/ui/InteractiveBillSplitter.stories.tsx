@@ -28,7 +28,7 @@ const largeGroup: SplitContact[] = [
 ];
 
 const meta: Meta<typeof InteractiveBillSplitter> = {
-    title: 'Components/InteractiveBillSplitter',
+    title: 'Fintech/Social & P2P/InteractiveBillSplitter',
     component: InteractiveBillSplitter,
     tags: ['autodocs'],
 };

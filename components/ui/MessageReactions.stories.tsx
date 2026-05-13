@@ -4,7 +4,7 @@ import { MessageReactions } from './MessageReactions';
 import { action } from 'storybook/actions';
 
 const meta: Meta<typeof MessageReactions> = {
-  title: 'Components/MessageReactions',
+  title: 'Data Display/MessageReactions',
   component: MessageReactions,
   tags: ['autodocs'],
   parameters: {

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Spacer } from './Spacer';
 
 const meta = {
-    title: 'Components/Spacer',
+    title: 'Layout/Spacer',
     component: Spacer,
     tags: ['autodocs'],
 } satisfies Meta<typeof Spacer>;

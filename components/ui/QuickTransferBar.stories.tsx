@@ -3,7 +3,7 @@ import { QuickTransferBar } from './QuickTransferBar';
 import { fn } from 'storybook/test';
 
 const meta = {
-  title: 'Components/QuickTransferBar',
+  title: 'Fintech/Payments/QuickTransferBar',
   component: QuickTransferBar,
   tags: ['autodocs'],
 } satisfies Meta<typeof QuickTransferBar>;

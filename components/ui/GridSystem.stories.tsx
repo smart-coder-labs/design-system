@@ -3,7 +3,7 @@ import React from 'react';
 import { GridSystem } from './GridSystem';
 
 const meta: Meta<typeof GridSystem> = {
-  title: 'Components/GridSystem',
+  title: 'Layout/GridSystem',
   component: GridSystem,
   tags: ['autodocs'],
 };

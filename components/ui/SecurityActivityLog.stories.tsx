@@ -3,7 +3,7 @@ import { SecurityActivityLog } from './SecurityActivityLog';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/SecurityActivityLog',
+    title: 'Data Display/SecurityActivityLog',
     component: SecurityActivityLog,
     tags: ['autodocs'],
 } satisfies Meta<typeof SecurityActivityLog>;

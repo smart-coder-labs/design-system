@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ResourceMonitor } from './ResourceMonitor';
 
 const meta = {
-    title: 'Components/ResourceMonitor',
+    title: 'Data Display/ResourceMonitor',
     component: ResourceMonitor,
     tags: ['autodocs'],
 } satisfies Meta<typeof ResourceMonitor>;

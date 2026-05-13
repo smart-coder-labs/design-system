@@ -80,7 +80,7 @@ const transactionGroups: FilterGroup[] = [
 ];
 
 const meta: Meta<typeof FilterBar> = {
-  title: 'Components/FilterBar',
+  title: 'Navigation/FilterBar',
   component: FilterBar,
   tags: ['autodocs'],
 };

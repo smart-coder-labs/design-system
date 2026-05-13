@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ActivityMonitor } from './ActivityMonitor';
 
 const meta = {
-    title: 'Components/ActivityMonitor',
+    title: 'Data Display/ActivityMonitor',
     component: ActivityMonitor,
     tags: ['autodocs'],
 } satisfies Meta<typeof ActivityMonitor>;

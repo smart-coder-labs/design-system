@@ -3,7 +3,7 @@ import React from 'react';
 import { InteractiveCursor } from './InteractiveCursor';
 
 const meta: Meta<typeof InteractiveCursor> = {
-  title: 'Components/InteractiveCursor',
+  title: 'Cyberpunk/InteractiveCursor',
   component: InteractiveCursor,
   tags: ['autodocs'],
 };

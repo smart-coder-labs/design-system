@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ScrollRevealCards } from './ScrollRevealCards';
 
 const meta = {
-    title: 'Components/ScrollRevealCards',
+    title: 'Data Display/ScrollRevealCards',
     component: ScrollRevealCards,
     tags: ['autodocs'],
 } satisfies Meta<typeof ScrollRevealCards>;

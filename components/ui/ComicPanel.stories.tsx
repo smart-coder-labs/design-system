@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ComicPanel } from './ComicPanel';
 
 const meta = {
-    title: 'Components/ComicPanel',
+    title: 'Cyberpunk/ComicPanel',
     component: ComicPanel,
     tags: ['autodocs'],
 } satisfies Meta<typeof ComicPanel>;

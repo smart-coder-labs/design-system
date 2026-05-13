@@ -5,7 +5,7 @@ import { action } from 'storybook/actions';
 import { Upload, Camera, CheckCircle, Clock, AlertCircle } from 'lucide-react';
 
 const meta: Meta<typeof IdentityVerificationStep> = {
-  title: 'Fintech/IdentityVerificationStep',
+  title: 'Fintech/KYC/IdentityVerificationStep',
   component: IdentityVerificationStep,
   tags: ['autodocs'],
   parameters: {

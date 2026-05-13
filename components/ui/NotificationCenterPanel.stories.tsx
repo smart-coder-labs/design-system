@@ -4,7 +4,7 @@ import { Mail, Calendar, AlertCircle, CheckCircle2, Info } from 'lucide-react';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/NotificationCenterPanel',
+    title: 'Surfaces/NotificationCenterPanel',
     component: NotificationCenterPanel,
     parameters: {
         layout: 'centered',

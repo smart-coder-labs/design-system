@@ -3,7 +3,7 @@ import React from 'react';
 import { Label } from './Label';
 
 const meta: Meta<typeof Label> = {
-  title: 'Components/Label',
+  title: 'Typography/Label',
   component: Label,
   tags: ['autodocs'],
   parameters: {

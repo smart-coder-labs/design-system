@@ -3,7 +3,7 @@ import React from 'react';
 import { InfiniteHorizontalLoop } from './InfiniteHorizontalLoop';
 
 const meta: Meta<typeof InfiniteHorizontalLoop> = {
-  title: 'Components/InfiniteHorizontalLoop',
+  title: 'Data Display/InfiniteHorizontalLoop',
   component: InfiniteHorizontalLoop,
   tags: ['autodocs'],
 };

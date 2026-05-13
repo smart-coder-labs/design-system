@@ -3,7 +3,7 @@ import { BehavioralAuthSimulator } from './BehavioralAuthSimulator';
 import React from 'react';
 
 const meta: Meta<typeof BehavioralAuthSimulator> = {
-  title: 'Fintech/BehavioralAuthSimulator',
+  title: 'Fintech/KYC/BehavioralAuthSimulator',
   component: BehavioralAuthSimulator,
   parameters: {
     layout: 'centered',

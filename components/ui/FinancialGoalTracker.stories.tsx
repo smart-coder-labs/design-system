@@ -4,7 +4,7 @@ import React from 'react';
 import { Car, Home, Plane, GraduationCap, PiggyBank, Heart, Building, Laptop } from 'lucide-react';
 
 const meta: Meta<typeof FinancialGoalTracker> = {
-  title: 'Fintech/FinancialGoalTracker',
+  title: 'Fintech/Goals/FinancialGoalTracker',
   component: FinancialGoalTracker,
   parameters: {
     layout: 'centered',

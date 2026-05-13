@@ -3,7 +3,7 @@ import { NavBar, NavBarBrand, NavBarContent, NavBarItem, NavBarSeparator } from 
 import React from 'react';
 
 const meta = {
-    title: 'Components/NavBar',
+    title: 'Navigation/NavBar',
     component: NavBar,
     tags: ['autodocs'],
 } satisfies Meta<typeof NavBar>;

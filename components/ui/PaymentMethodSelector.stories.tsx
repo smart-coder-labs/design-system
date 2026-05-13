@@ -3,7 +3,7 @@ import { PaymentMethodSelector, type PaymentMethod } from './PaymentMethodSelect
 import { fn } from 'storybook/test';
 
 const meta = {
-  title: 'Components/PaymentMethodSelector',
+  title: 'Fintech/Payments/PaymentMethodSelector',
   component: PaymentMethodSelector,
   tags: ['autodocs'],
 } satisfies Meta<typeof PaymentMethodSelector>;

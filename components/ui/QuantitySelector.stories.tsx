@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { QuantitySelector } from './QuantitySelector';
 
 const meta = {
-  title: 'Components/QuantitySelector',
+  title: 'Forms/QuantitySelector',
   component: QuantitySelector,
   tags: ['autodocs'],
 } satisfies Meta<typeof QuantitySelector>;

@@ -3,7 +3,7 @@ import { BottomNavigation } from './BottomNavigation';
 import { Home, Search, Bell, User, Settings, Wallet, ChartBar, CreditCard } from 'lucide-react';
 
 const meta = {
-    title: 'Components/BottomNavigation',
+    title: 'Navigation/BottomNavigation',
     component: BottomNavigation,
     tags: ['autodocs'],
 } satisfies Meta<typeof BottomNavigation>;

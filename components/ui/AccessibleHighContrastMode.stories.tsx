@@ -3,7 +3,7 @@ import { AccessibleHighContrastMode } from './AccessibleHighContrastMode';
 import React from 'react';
 
 const meta: Meta<typeof AccessibleHighContrastMode> = {
-  title: 'Fintech/AccessibleHighContrastMode',
+  title: 'Fintech/Accessibility/AccessibleHighContrastMode',
   component: AccessibleHighContrastMode,
   parameters: {
     layout: 'padded',

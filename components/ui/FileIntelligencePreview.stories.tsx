@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { FileIntelligencePreview } from './FileIntelligencePreview';
 
 const meta = {
-    title: 'Components/FileIntelligencePreview',
+    title: 'Data Display/FileIntelligencePreview',
     component: FileIntelligencePreview,
     parameters: {
         layout: 'centered',

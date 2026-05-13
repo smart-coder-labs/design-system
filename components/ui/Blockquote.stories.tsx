@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Blockquote } from './Blockquote';
 
 const meta = {
-    title: 'Components/Blockquote',
+    title: 'Typography/Blockquote',
     component: Blockquote,
     tags: ['autodocs'],
 } satisfies Meta<typeof Blockquote>;

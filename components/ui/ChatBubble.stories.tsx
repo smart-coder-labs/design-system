@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ChatBubble } from './ChatBubble';
 
 const meta = {
-    title: 'Components/ChatBubble',
+    title: 'Data Display/ChatBubble',
     component: ChatBubble,
     tags: ['autodocs'],
 } satisfies Meta<typeof ChatBubble>;

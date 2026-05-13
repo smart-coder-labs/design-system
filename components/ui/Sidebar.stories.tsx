@@ -4,7 +4,7 @@ import { fn } from 'storybook/test';
 import { LayoutDashboard, PieChart, ArrowLeftRight, TrendingUp, Settings, Wallet, Send, Shield, Bell, BarChart3 } from 'lucide-react';
 
 const meta = {
-  title: 'Components/Sidebar',
+  title: 'Navigation/Sidebar',
   component: Sidebar,
   tags: ['autodocs'],
 } satisfies Meta<typeof Sidebar>;

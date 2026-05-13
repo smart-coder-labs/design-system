@@ -5,7 +5,7 @@ import { action } from 'storybook/actions';
 import { Send, ArrowRight, Check, CreditCard, Wallet } from 'lucide-react';
 
 const meta: Meta<typeof HapticButton> = {
-  title: 'Components/HapticButton',
+  title: 'Buttons/HapticButton',
   component: HapticButton,
   tags: ['autodocs'],
   parameters: {

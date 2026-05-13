@@ -3,7 +3,7 @@ import { SecurityOTPInput } from './SecurityOTPInput';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/SecurityOTPInput',
+    title: 'Fintech/KYC/SecurityOTPInput',
     component: SecurityOTPInput,
     tags: ['autodocs'],
 } satisfies Meta<typeof SecurityOTPInput>;

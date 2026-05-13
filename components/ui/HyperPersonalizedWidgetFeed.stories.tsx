@@ -3,7 +3,7 @@ import React from 'react';
 import { HyperPersonalizedWidgetFeed } from './HyperPersonalizedWidgetFeed';
 
 const meta: Meta<typeof HyperPersonalizedWidgetFeed> = {
-  title: 'Fintech/HyperPersonalizedWidgetFeed',
+  title: 'Fintech/Dashboard/HyperPersonalizedWidgetFeed',
   component: HyperPersonalizedWidgetFeed,
   tags: ['autodocs'],
   parameters: {

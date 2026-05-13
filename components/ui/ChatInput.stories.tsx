@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ChatInput } from './ChatInput';
 
 const meta = {
-    title: 'Components/ChatInput',
+    title: 'Forms/ChatInput',
     component: ChatInput,
     tags: ['autodocs'],
 } satisfies Meta<typeof ChatInput>;

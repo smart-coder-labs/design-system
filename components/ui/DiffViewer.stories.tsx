@@ -15,7 +15,7 @@ const newCode = `const calculateTotal = (items: Item[]): number => {
 };`;
 
 const meta: Meta<typeof DiffViewer> = {
-  title: 'Components/DiffViewer',
+  title: 'Data Display/DiffViewer',
   component: DiffViewer,
   tags: ['autodocs'],
 };
