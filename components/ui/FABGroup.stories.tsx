@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { FABGroup, FABGroupAction } from './FABGroup';
 import { Pen, Camera, FileText, Image, Send, CreditCard, PiggyBank, Shield, Wallet } from 'lucide-react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 const defaultActions: FABGroupAction[] = [
     { icon: Pen, label: 'Write Note', onClick: action('write-note') },

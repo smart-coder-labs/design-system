@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { IdentityVerificationStep } from './IdentityVerificationStep';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Upload, Camera, CheckCircle, Clock, AlertCircle } from 'lucide-react';
 
 const meta: Meta<typeof IdentityVerificationStep> = {

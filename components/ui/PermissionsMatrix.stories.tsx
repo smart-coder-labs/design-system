@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { PermissionsMatrix, type Role, type Permission } from './PermissionsMatrix';
-import { fn } from '@storybook/test';
+import { fn } from 'storybook/test';
 
 const meta = {
   title: 'Components/PermissionsMatrix',

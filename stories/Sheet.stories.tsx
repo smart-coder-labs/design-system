@@ -50,7 +50,7 @@ export const Default: Story = {
                     </div>
                 </div>
                 <SheetFooter>
-                    <SheetClose asChild>
+                    <SheetClose>
                         <Button type="submit">Save changes</Button>
                     </SheetClose>
                 </SheetFooter>
@@ -89,7 +89,7 @@ export const Side: Story = {
                             </div>
                         </div>
                         <SheetFooter>
-                            <SheetClose asChild>
+                            <SheetClose>
                                 <Button type="submit">Save changes</Button>
                             </SheetClose>
                         </SheetFooter>

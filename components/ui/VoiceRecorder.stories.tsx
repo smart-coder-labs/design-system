@@ -69,26 +69,9 @@ export const LoadingState: Story = {
   parameters: {
     docs: {
       description: {
-        story: '$f in a loading state, showing placeholder UI while data is being fetched.',
-      },
-    },
-  },
-};
-
-export const LoadingState: Story = {
-  parameters: {
-    docs: {
-      description: {
         story: 'VoiceRecorder in a loading state, showing placeholder UI while audio data is being processed.',
       },
     },
-  },
-};
-
-export const DarkMode: Story = {
-  parameters: {
-    backgrounds: { default: 'dark' },
-    themes: { themeOverride: 'dark' },
   },
 };
 

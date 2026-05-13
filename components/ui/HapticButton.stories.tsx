@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { HapticButton } from './HapticButton';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Send, ArrowRight, Check, CreditCard, Wallet } from 'lucide-react';
 
 const meta: Meta<typeof HapticButton> = {

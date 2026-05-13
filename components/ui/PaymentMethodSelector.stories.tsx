@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { PaymentMethodSelector, type PaymentMethod } from './PaymentMethodSelector';
-import { fn } from '@storybook/test';
+import { fn } from 'storybook/test';
 
 const meta = {
   title: 'Components/PaymentMethodSelector',

@@ -77,7 +77,7 @@ export const WithLimits: Story = {
     },
 };
 
-export const Disabled: Story = {
+export const DisabledWithDefault: Story = {
     args: {
         defaultValue: 2,
         min: 1,

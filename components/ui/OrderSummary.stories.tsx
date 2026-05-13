@@ -92,7 +92,7 @@ export const MultipleItems: Story = {
     },
 };
 
-export const SingleItem: Story = {
+export const SingleSubscription: Story = {
     args: {
         items: [
             { id: '1', name: 'Annual Premium Subscription', price: 299.99, quantity: 1, image: '' },

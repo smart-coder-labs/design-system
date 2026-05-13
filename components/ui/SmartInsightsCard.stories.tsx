@@ -153,7 +153,7 @@ export const InCardGrid: Story = {
       />
       <SmartInsightsCard
         title="Comisiones Detectadas"
-        summary="Se identificaron $450.00 en comisiones por manejo de cuenta que podrían evitarse con el plan Premium.",
+        summary="Se identificaron $450.00 en comisiones por manejo de cuenta que podrían evitarse con el plan Premium."
         type="negative"
         actions={[
           { label: 'Cambiar Plan', onClick: () => console.log('Change plan'), primary: true },

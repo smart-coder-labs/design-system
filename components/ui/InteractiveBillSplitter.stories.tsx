@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { InteractiveBillSplitter, SplitContact } from './InteractiveBillSplitter';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 const friends: SplitContact[] = [
     { id: 'me', name: 'You', isUser: true },

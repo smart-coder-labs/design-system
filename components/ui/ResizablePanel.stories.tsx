@@ -73,7 +73,7 @@ export const CodeEditorLayout: Story = {
                 <div className="space-y-1 opacity-70">
                     <p><span className="text-blue-400">import</span> { }<span className="text-green-400">React</span> <span className="text-blue-400">from</span> <span className="text-orange-400">'react'</span>;</p>
                     <p className="text-gray-500">// Portfolio component</p>
-                    <p><span className="text-blue-400">const</span> <span className="text-yellow-400">Portfolio</span> = () => {'{'}</p>
+                    <p><span className="text-blue-400">const</span> <span className="text-yellow-400">Portfolio</span> = () ={'>'} {'{'}</p>
                     <p>  <span className="text-blue-400">const</span> [balance] = useState(124532);</p>
                     <p>  <span className="text-blue-400">return</span> <span className="text-orange-400">&lt;div&gt;</span>{'{balance}'}<span className="text-orange-400">&lt;/div&gt;</span>;</p>
                     <p>{'}'}</p>

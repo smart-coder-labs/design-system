@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { IconButton } from './IconButton';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Bell, Settings, Search, X, Plus, Trash2, Heart, Share2, Edit, MoreHorizontal, ArrowLeft, CreditCard } from 'lucide-react';
 
 const meta: Meta<typeof IconButton> = {

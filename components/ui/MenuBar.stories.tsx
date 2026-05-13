@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { MenuBar } from './MenuBar';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { File, Settings, HelpCircle, LogOut, CreditCard, TrendingUp, Users, Shield } from 'lucide-react';
 
 const meta: Meta<typeof MenuBar> = {

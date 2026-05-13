@@ -36,7 +36,7 @@ export const VolatileTrend: Story = {
     },
 };
 
-export const WithDots: Story = {
+export const WithDotsAndArea: Story = {
     args: {
         data: [10, 30, 25, 50, 45, 70, 65, 90, 85, 100],
         width: 250,

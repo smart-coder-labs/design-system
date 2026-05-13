@@ -2,7 +2,7 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 import { cn } from "../../lib/utils";
 
-interface ScrollRevealCard {
+export interface ScrollRevealCard {
   id: string | number;
   title: string;
   description: string;

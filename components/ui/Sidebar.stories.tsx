@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Sidebar } from './Sidebar';
-import { fn } from '@storybook/test';
+import { fn } from 'storybook/test';
 import { LayoutDashboard, PieChart, ArrowLeftRight, TrendingUp, Settings, Wallet, Send, Shield, Bell, BarChart3 } from 'lucide-react';
 
 const meta = {

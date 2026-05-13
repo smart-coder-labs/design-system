@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { FloatingToolbar, FloatingToolbarAction } from './FloatingToolbar';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Bold, Italic, Underline, Palette, Trash2, CreditCard, Send, ArrowUpDown, ScanQrCode, ImageUp, Check, X, Share2, Bookmark } from 'lucide-react';
 
 const editingActions: FloatingToolbarAction[] = [

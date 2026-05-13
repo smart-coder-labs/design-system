@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { cn } from "../../lib/utils";
 
-interface StickySectionItem {
+export interface StickySectionItem {
   id: string | number;
   title: string;
   description: string;

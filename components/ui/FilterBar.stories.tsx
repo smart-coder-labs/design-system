@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { FilterBar, FilterGroup, ActiveFilter } from './FilterBar';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 const groups: FilterGroup[] = [
   {

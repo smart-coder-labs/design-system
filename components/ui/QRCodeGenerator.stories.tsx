@@ -55,7 +55,7 @@ export const PaymentQR: Story = {
     },
 };
 
-export const BitcoinAddress: Story = {
+export const BitcoinReceiveAddress: Story = {
     args: {
         defaultValue: 'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa?amount=0.01',
         size: 200,
