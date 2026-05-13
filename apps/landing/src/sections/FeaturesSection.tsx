@@ -128,7 +128,7 @@ export default function FeaturesSection() {
           viewport={{ once: true, margin: '-100px' }}
         >
           {features.map((feature, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div key={index} variants={itemVariants as any}>
               <Card
                 variant="elevated"
                 padding="lg"
