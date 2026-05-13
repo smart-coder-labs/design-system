@@ -55,7 +55,7 @@ export const DocScanOverlay: React.FC<DocScanOverlayProps> = ({
     : 'w-[85%] aspect-[16/10] rounded-xl';
 
   return (
-    <div className="relative w-full max-w-sm mx-auto overflow-hidden bg-gray-950 rounded-3xl aspect-[2/3] flex flex-col items-center justify-between shadow-2xl ring-1 ring-white/10" style={{ colorScheme: 'dark' }}>
+    <div className="relative w-full max-w-sm mx-auto overflow-hidden bg-gray-950 rounded-3xl aspect-[9/16] flex flex-col items-center justify-between shadow-2xl ring-1 ring-white/10" style={{ colorScheme: 'dark' }}>
       {/* Background Simulating Camera Feed */}
       <div className="absolute inset-0 bg-gray-900 pointer-events-none opacity-50" />
 

@@ -9,3 +9,5 @@ storybook-static
 .npmrc
 
 **/*.log
+
+*.tsbuildinfo
