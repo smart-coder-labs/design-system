@@ -178,7 +178,7 @@ export const AddressSelector: React.FC<AddressSelectorProps> = ({ onSelect, apiK
       {error && <div className="mt-2 text-sm text-red-600">{error}</div>}
 
       {predictions.length > 0 && (
-        <ul id="address-selector-list" role="listbox" className="absolute z-20 left-0 right-0 mt-2 bg-white border border-border-primary rounded-md shadow-lg max-h-64 overflow-auto">
+        <ul id="address-selector-list" role="listbox" className="absolute z-20 left-0 right-0 mt-2 bg-surface-primary border border-border-primary rounded-md shadow-lg max-h-64 overflow-auto">
           {predictions.map((p, i) => (
             <li
               key={p.place_id}

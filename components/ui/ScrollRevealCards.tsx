@@ -2,7 +2,7 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 import { cn } from "../../lib/utils";
 
-interface ScrollRevealCard {
+export interface ScrollRevealCard {
   id: string | number;
   title: string;
   description: string;
@@ -45,12 +45,12 @@ export function ScrollRevealCards({ items, columns = 3, className, ...props }: S
             // Agregamos un delay de stagger manual basado en el index de la iteración
             transition={{ delay: index * 0.1 }}
             variants={cardVariants}
-            className="p-6 rounded-2xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-xl bg-white/50 dark:bg-zinc-900/50
-                       transition-colors hover:bg-white/10"
+            className="p-6 rounded-2xl bg-surface-primary/50 border border-border-primary shadow-lg backdrop-blur-xl
+                       transition-colors hover:bg-background-secondary"
           >
             {item.icon && <div className="mb-4 text-3xl">{item.icon}</div>}
             <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">{item.description}</p>
+            <p className="text-text-tertiary text-sm leading-relaxed">{item.description}</p>
           </motion.div>
         ))}
       </div>

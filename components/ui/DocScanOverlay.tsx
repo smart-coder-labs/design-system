@@ -50,10 +50,12 @@ export const DocScanOverlay: React.FC<DocScanOverlayProps> = ({
   };
 
   const isPortrait = documentType === 'SELFIE';
-  const overlayClass = isPortrait ? 'h-72 w-56 rounded-full' : 'h-56 w-80 rounded-xl';
+  const overlayClass = isPortrait
+    ? 'w-[55%] aspect-[3/4] rounded-full'
+    : 'w-[85%] aspect-[16/10] rounded-xl';
 
   return (
-    <div className="relative w-full max-w-sm mx-auto overflow-hidden bg-black/90 rounded-3xl aspect-[3/4] flex flex-col items-center justify-between shadow-2xl">
+    <div className="relative w-full max-w-sm mx-auto overflow-hidden bg-gray-950 rounded-3xl aspect-[9/16] flex flex-col items-center justify-between shadow-2xl ring-1 ring-white/10" style={{ colorScheme: 'dark' }}>
       {/* Background Simulating Camera Feed */}
       <div className="absolute inset-0 bg-gray-900 pointer-events-none opacity-50" />
 
@@ -75,8 +77,8 @@ export const DocScanOverlay: React.FC<DocScanOverlayProps> = ({
       </div>
 
       {/* Center Reticle / AR Guide */}
-      <div className="relative z-10 w-full flex flex-col items-center justify-center flex-1">
-        <div className="mb-6 px-6 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 flex items-center justify-center min-w-44 text-center">
+      <div className="relative z-10 w-full flex flex-col items-center justify-center flex-1 gap-4">
+        <div className="px-6 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 flex items-center justify-center min-w-44 text-center">
           <AnimatePresence mode="wait">
             {internalState === 'idle' || internalState === 'scanning' ? (
               <motion.p key="scan" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-sm font-medium text-white">
@@ -152,7 +154,7 @@ export const DocScanOverlay: React.FC<DocScanOverlayProps> = ({
       </div>
 
       {/* Footer Controls */}
-      <div className="relative z-10 w-full p-8 flex justify-center items-center bg-gradient-to-t from-black via-black/80 to-transparent">
+      <div className="relative z-10 w-full p-5 flex justify-center items-center bg-gradient-to-t from-black via-black/80 to-transparent">
         {internalState === 'idle' || internalState === 'scanning' ? (
           <button 
             onClick={handleSimulateCapture}

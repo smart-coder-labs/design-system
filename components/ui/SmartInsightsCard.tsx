@@ -82,7 +82,7 @@ export const SmartInsightsCard: React.FC<SmartInsightsCardProps> = ({
             {icon || <TypeIcon size={20} />}
           </div>
           <div className="flex-1 min-w-0">
-            <h4 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
+            <h4 className="text-base font-semibold text-text-primary mb-1">
               {title}
             </h4>
             <p className="text-sm text-gray-600 dark:text-gray-200 leading-relaxed">
@@ -116,7 +116,7 @@ export const SmartInsightsCard: React.FC<SmartInsightsCardProps> = ({
               className={`text-sm font-medium px-4 py-2 rounded-lg transition-colors flex items-center gap-2 ${
                 action.primary
                   ? 'bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100'
-                  : 'bg-white/50 text-gray-700 hover:bg-white dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 shadow-sm border border-gray-200/50 dark:border-gray-700/50'
+                  : 'bg-white/50 dark:bg-gray-800 text-gray-700 hover:bg-surface-primary dark:text-gray-200 dark:hover:bg-gray-700 shadow-sm border border-gray-200/50 dark:border-gray-700/50'
               }`}
             >
               {action.label}

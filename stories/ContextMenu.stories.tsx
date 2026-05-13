@@ -35,7 +35,7 @@ export const Default: Story = {
                     Back
                     <ContextMenuShortcut>⌘[</ContextMenuShortcut>
                 </ContextMenuItem>
-                <ContextMenuItem inset disabled>
+                <ContextMenuItem inset>
                     Forward
                     <ContextMenuShortcut>⌘]</ContextMenuShortcut>
                 </ContextMenuItem>

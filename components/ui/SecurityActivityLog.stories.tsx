@@ -1,245 +1,121 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { SecurityActivityLog } from './SecurityActivityLog';
+import { useState } from 'react';
 
 const meta = {
     title: 'Components/SecurityActivityLog',
     component: SecurityActivityLog,
-    parameters: {
-        layout: 'centered',
-    },
     tags: ['autodocs'],
 } satisfies Meta<typeof SecurityActivityLog>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const sampleEvents = [
-    {
-        id: '1',
-        type: 'login' as const,
-        description: 'Signed in from new device',
-        timestamp: '2 minutes ago',
-        location: 'San Francisco, CA',
-        ipAddress: '192.168.1.100',
-        device: 'MacBook Pro',
-        status: 'success' as const,
-        user: 'John Doe',
-    },
-    {
-        id: '2',
-        type: 'password_change' as const,
-        description: 'Password updated successfully',
-        timestamp: '1 hour ago',
-        location: 'San Francisco, CA',
-        ipAddress: '192.168.1.100',
-        device: 'iPhone 15 Pro',
-        status: 'success' as const,
-        user: 'John Doe',
-    },
-    {
-        id: '3',
-        type: '2fa_enabled' as const,
-        description: 'Two-factor authentication enabled',
-        timestamp: '3 hours ago',
-        location: 'San Francisco, CA',
-        ipAddress: '192.168.1.100',
-        device: 'MacBook Pro',
-        status: 'success' as const,
-        user: 'John Doe',
-    },
-    {
-        id: '4',
-        type: 'suspicious_activity' as const,
-        description: 'Failed login attempt detected',
-        timestamp: '1 day ago',
-        location: 'Unknown Location',
-        ipAddress: '203.0.113.45',
-        device: 'Unknown Device',
-        status: 'error' as const,
-    },
-    {
-        id: '5',
-        type: 'device_added' as const,
-        description: 'New device authorized',
-        timestamp: '2 days ago',
-        location: 'New York, NY',
-        ipAddress: '192.168.1.101',
-        device: 'iPad Air',
-        status: 'success' as const,
-        user: 'John Doe',
-    },
-];
-
 export const Default: Story = {
     args: {
-        events: sampleEvents,
-    },
-};
-
-export const WithClickHandler: Story = {
-    args: {
-        events: sampleEvents,
-        onEventClick: (event) => console.log('Event clicked:', event),
-    },
-};
-
-export const LoginEvents: Story = {
-    args: {
-        events: [
-            {
-                id: '1',
-                type: 'login' as const,
-                description: 'Signed in successfully',
-                timestamp: '5 minutes ago',
-                location: 'San Francisco, CA',
-                ipAddress: '192.168.1.100',
-                device: 'MacBook Pro',
-                status: 'success' as const,
-                user: 'John Doe',
-            },
-            {
-                id: '2',
-                type: 'login' as const,
-                description: 'Signed in from mobile',
-                timestamp: '2 hours ago',
-                location: 'San Francisco, CA',
-                ipAddress: '192.168.1.101',
-                device: 'iPhone 15 Pro',
-                status: 'success' as const,
-                user: 'John Doe',
-            },
-            {
-                id: '3',
-                type: 'logout' as const,
-                description: 'Signed out',
-                timestamp: '5 hours ago',
-                location: 'San Francisco, CA',
-                ipAddress: '192.168.1.100',
-                device: 'MacBook Pro',
-                status: 'success' as const,
-                user: 'John Doe',
-            },
+        activities: [
+            { id: '1', type: 'login', description: 'Login from Chrome on macOS', timestamp: '2 minutes ago', ip: '192.168.1.100', location: 'New York, US', status: 'success' },
+            { id: '2', type: 'login', description: 'Login from Safari on iOS', timestamp: '1 hour ago', ip: '203.0.113.45', location: 'San Francisco, US', status: 'success' },
+            { id: '3', type: 'login_attempt', description: 'Failed login attempt', timestamp: '3 hours ago', ip: '198.51.100.22', location: 'Moscow, RU', status: 'failed' },
+            { id: '4', type: 'password_change', description: 'Password changed', timestamp: '1 day ago', ip: '192.168.1.100', location: 'New York, US', status: 'success' },
+            { id: '5', type: 'two_factor', description: '2FA enabled', timestamp: '3 days ago', ip: '192.168.1.100', location: 'New York, US', status: 'success' },
         ],
     },
 };
 
-export const SecurityAlerts: Story = {
+export const WithDeviceInfo: Story = {
     args: {
-        events: [
-            {
-                id: '1',
-                type: 'suspicious_activity' as const,
-                description: 'Multiple failed login attempts',
-                timestamp: '10 minutes ago',
-                location: 'Unknown Location',
-                ipAddress: '203.0.113.45',
-                device: 'Unknown Device',
-                status: 'error' as const,
-            },
-            {
-                id: '2',
-                type: 'suspicious_activity' as const,
-                description: 'Login from unusual location',
-                timestamp: '1 hour ago',
-                location: 'Moscow, Russia',
-                ipAddress: '198.51.100.23',
-                device: 'Windows PC',
-                status: 'warning' as const,
-            },
-            {
-                id: '3',
-                type: 'password_reset' as const,
-                description: 'Password reset requested',
-                timestamp: '2 hours ago',
-                location: 'San Francisco, CA',
-                ipAddress: '192.168.1.100',
-                device: 'MacBook Pro',
-                status: 'warning' as const,
-                user: 'John Doe',
-            },
+        activities: [
+            { id: '1', type: 'login', description: 'Chrome on Windows 11', timestamp: '5m ago', ip: '192.168.1.100', device: 'Windows Desktop', location: 'Austin, TX', status: 'success' },
+            { id: '2', type: 'login', description: 'Safari on iPhone 15', timestamp: '2h ago', ip: '203.0.113.50', device: 'iPhone 15 Pro', location: 'Austin, TX', status: 'success' },
+            { id: '3', type: 'api_access', description: 'API key: trading-bot-v2', timestamp: '4h ago', ip: '10.0.0.5', device: 'API Server', location: 'AWS us-east-1', status: 'success' },
+            { id: '4', type: 'logout', description: 'Session ended (timeout)', timestamp: '6h ago', ip: '192.168.1.100', device: 'Windows Desktop', location: 'Austin, TX', status: 'warning' },
+            { id: '5', type: 'login_attempt', description: 'Suspicious login attempt - wrong password 3x', timestamp: '12h ago', ip: '45.33.32.156', device: 'Unknown', location: 'Beijing, CN', status: 'failed' },
+            { id: '6', type: 'security_question', description: 'Security questions updated', timestamp: '2d ago', ip: '192.168.1.100', device: 'Windows Desktop', location: 'Austin, TX', status: 'success' },
+            { id: '7', type: 'two_factor', description: '2FA method added: Authenticator App', timestamp: '5d ago', ip: '192.168.1.100', device: 'Chrome', location: 'Austin, TX', status: 'success' },
         ],
     },
 };
 
-export const DeviceManagement: Story = {
+export const SuspicousActivity: Story = {
     args: {
-        events: [
-            {
-                id: '1',
-                type: 'device_added' as const,
-                description: 'New device authorized',
-                timestamp: '1 hour ago',
-                location: 'San Francisco, CA',
-                ipAddress: '192.168.1.102',
-                device: 'iPad Pro',
-                status: 'success' as const,
-                user: 'John Doe',
-            },
-            {
-                id: '2',
-                type: 'device_removed' as const,
-                description: 'Device removed from account',
-                timestamp: '3 hours ago',
-                location: 'San Francisco, CA',
-                ipAddress: '192.168.1.100',
-                device: 'Old iPhone',
-                status: 'success' as const,
-                user: 'John Doe',
-            },
+        activities: [
+            { id: '1', type: 'login_attempt', description: 'Brute force attempt blocked', timestamp: '1m ago', ip: '185.220.101.45', location: 'Tor Exit Node', status: 'failed' },
+            { id: '2', type: 'login_attempt', description: 'Failed login from unknown device', timestamp: '5m ago', ip: '89.45.67.123', location: 'Moscow, RU', status: 'failed' },
+            { id: '3', type: 'login_attempt', description: 'Failed login attempt', timestamp: '10m ago', ip: '89.45.67.123', location: 'Moscow, RU', status: 'failed' },
+            { id: '4', type: 'password_change', description: 'Password reset requested', timestamp: '30m ago', ip: '192.168.1.100', location: 'New York, US', status: 'warning' },
+            { id: '5', type: 'settings_change', description: 'Notification preferences changed', timestamp: '1h ago', ip: '192.168.1.100', location: 'New York, US', status: 'success' },
         ],
     },
 };
 
-export const TwoFactorAuth: Story = {
+export const InteractiveLog: Story = {
+    render: () => {
+        const [activities, setActivities] = useState([
+            { id: '1', type: 'login' as const, description: 'Login from Chrome', timestamp: '2m ago', ip: '192.168.1.100', location: 'New York, US', status: 'success' as const },
+        ]);
+        const logTypes = [
+            { type: 'login' as const, desc: 'Login from Safari', status: 'success' as const },
+            { type: 'login_attempt' as const, desc: 'Failed login attempt', status: 'failed' as const },
+            { type: 'password_change' as const, desc: 'Password changed', status: 'success' as const },
+        ];
+        return (
+            <div className="space-y-4">
+                <SecurityActivityLog activities={activities} />
+                <div className="flex gap-2">
+                    {logTypes.map((log, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setActivities(prev => [{
+                                id: String(Date.now() + i),
+                                type: log.type,
+                                description: log.desc,
+                                timestamp: 'Just now',
+                                ip: '192.168.1.' + (100 + i),
+                                location: 'New York, US',
+                                status: log.status,
+                            }, ...prev])}
+                            className="px-3 py-1.5 text-xs bg-surface-secondary rounded-lg hover:bg-surface-tertiary"
+                        >
+                            + {log.desc.split(' ').slice(0, 2).join(' ')}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        );
+    },
+};
+
+export const Empty: Story = {
     args: {
-        events: [
-            {
-                id: '1',
-                type: '2fa_enabled' as const,
-                description: 'Two-factor authentication enabled',
-                timestamp: '1 hour ago',
-                location: 'San Francisco, CA',
-                ipAddress: '192.168.1.100',
-                device: 'MacBook Pro',
-                status: 'success' as const,
-                user: 'John Doe',
-            },
-            {
-                id: '2',
-                type: '2fa_disabled' as const,
-                description: 'Two-factor authentication disabled',
-                timestamp: '1 day ago',
-                location: 'San Francisco, CA',
-                ipAddress: '192.168.1.100',
-                device: 'MacBook Pro',
-                status: 'warning' as const,
-                user: 'John Doe',
-            },
+        activities: [],
+    },
+};
+
+export const DarkMode: Story = {
+    parameters: {
+        themes: { themeOverride: 'dark' },
+    },
+    args: {
+        activities: [
+            { id: '1', type: 'login', description: 'Login from Firefox on Linux', timestamp: '5m ago', ip: '192.168.1.100', location: 'Berlin, DE', status: 'success' },
+            { id: '2', type: 'login_attempt', description: 'Failed login from unknown IP', timestamp: '1h ago', ip: '78.46.89.12', location: 'Warsaw, PL', status: 'failed' },
+            { id: '3', type: 'two_factor', description: '2FA backup code used', timestamp: '3h ago', ip: '192.168.1.100', location: 'Berlin, DE', status: 'warning' },
         ],
     },
 };
 
-export const PermissionChanges: Story = {
-    args: {
-        events: [
-            {
-                id: '1',
-                type: 'permission_granted' as const,
-                description: 'Admin access granted',
-                timestamp: '30 minutes ago',
-                location: 'San Francisco, CA',
-                status: 'success' as const,
-                user: 'Admin User',
-            },
-            {
-                id: '2',
-                type: 'permission_revoked' as const,
-                description: 'Write access revoked',
-                timestamp: '2 hours ago',
-                location: 'San Francisco, CA',
-                status: 'success' as const,
-                user: 'Admin User',
-            },
-        ],
+export const MobileView: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+};
+export const FintechUseCase: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'SecurityActivityLog used in a realistic fintech/banking context, demonstrating how it integrates into a financial dashboard workflow.',
+      },
     },
+  },
 };

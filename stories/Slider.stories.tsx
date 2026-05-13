@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Slider>;
 export const Default: Story = {
     render: () => (
         <div className="w-[60%]">
-            <Slider defaultValue={[50]} max={100} step={1} />
+            <Slider defaultValue={50} max={100} step={1} />
         </div>
     ),
 };

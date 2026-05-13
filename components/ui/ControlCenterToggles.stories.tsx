@@ -136,3 +136,60 @@ export const MinimalControls: Story = {
         layout: 'grid',
     },
 };
+
+export const AllDisabled: Story = {
+    args: {
+        controls: defaultControls.map(c => ({ ...c, disabled: true, enabled: false })),
+        layout: 'grid',
+    },
+};
+
+export const AllEnabled: Story = {
+    args: {
+        controls: defaultControls.map(c => ({ ...c, enabled: true })),
+        layout: 'grid',
+    },
+};
+
+export const MobileGrid: Story = {
+    args: {
+        controls: defaultControls,
+        layout: 'grid',
+    },
+    decorators: [
+        (Story) => (
+            <div className="max-w-sm mx-auto">
+                <Story />
+            </div>
+        ),
+    ],
+};
+
+export const MobileList: Story = {
+    args: {
+        controls: defaultControls,
+        layout: 'list',
+    },
+    decorators: [
+        (Story) => (
+            <div className="max-w-sm mx-auto">
+                <Story />
+            </div>
+        ),
+    ],
+};
+
+export const ManyControls: Story = {
+    args: {
+        controls: [
+            ...defaultControls,
+            { id: 'hotspot', label: 'Hotspot', icon: <Wifi className="w-5 h-5" />, enabled: false, onToggle: () => {} },
+            { id: 'vpn', label: 'VPN', icon: <Moon className="w-5 h-5" />, enabled: true, onToggle: () => {} },
+            { id: 'nfc', label: 'NFC', icon: <Battery className="w-5 h-5" />, enabled: true, onToggle: () => {} },
+            { id: 'location', label: 'Location', icon: <Airplay className="w-5 h-5" />, enabled: false, onToggle: () => {} },
+            { id: 'rotation', label: 'Rotation', icon: <Volume2 className="w-5 h-5" />, enabled: true, onToggle: () => {} },
+            { id: 'flashlight', label: 'Flashlight', icon: <Battery className="w-5 h-5" />, enabled: false, onToggle: () => {} },
+        ],
+        layout: 'grid',
+    },
+};

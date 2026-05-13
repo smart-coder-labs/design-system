@@ -49,50 +49,43 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
     const percentage = (limit / maxLimit) * 100;
 
     return (
-        <div className={cn("w-full max-w-md bg-white dark:bg-zinc-900 rounded-[2rem] p-6 shadow-xl border border-zinc-200 dark:border-zinc-800", className)}>
+        <div className={cn("w-full max-w-md bg-surface-primary rounded-[2rem] p-6 shadow-xl border border-border-primary", className)}>
             <div className="flex items-center gap-3 mb-6">
                 <div className="p-2.5 bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 rounded-2xl shadow-sm">
                     <Shield className="w-5 h-5" />
                 </div>
                 <div>
-                    <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">Credit Limit</h3>
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400">Control your spending power</p>
+                    <h3 className="text-lg font-bold text-text-primary">Credit Limit</h3>
+                    <p className="text-sm text-text-tertiary">Control your spending power</p>
                 </div>
             </div>
 
-            <div className="bg-zinc-50 dark:bg-zinc-800/40 rounded-3xl p-6 border border-zinc-200 dark:border-zinc-700/50 mb-6">
+            <div className="bg-zinc-50 dark:bg-zinc-800/40 rounded-3xl p-6 border border-border-primary/50 mb-6">
                 <div className="flex items-end justify-between mb-8">
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1">Active Limit</p>
-                        <motion.h2
-                            key={limit}
-                            initial={{ y: 5, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100"
-                        >
+                        <h2 className="text-4xl font-bold tracking-tight text-text-primary transition-all duration-100">
                             {formatCurrency(limit)}
-                        </motion.h2>
+                        </h2>
                     </div>
                 </div>
 
                 <div className="relative pt-4 pb-2">
                     {/* The literal Slider if there's an existing standard component, but since it's highly custom, we implement the custom slider here */}
                     <div className="relative h-2 w-full bg-zinc-200 dark:bg-zinc-700 rounded-full">
-                        <motion.div
+                        <div
                             className={cn(
-                                "absolute top-0 left-0 h-full rounded-full transition-all duration-150 relative",
+                                "absolute top-0 left-0 h-full rounded-full",
                                 limit < maxLimit / 2 ? "bg-emerald-500" :
                                     limit < maxLimit * 0.8 ? "bg-violet-500" :
                                         "bg-amber-500"
                             )}
                             style={{ width: `${percentage}%`, transition: 'width 80ms linear' }}
                         >
-                            <motion.div
-                                className="absolute right-0 top-1/2 -mt-3 -mr-3 w-6 h-6 bg-white border-2 border-inherit rounded-full shadow-lg flex items-center justify-center cursor-grab active:cursor-grabbing"
-                                whileHover={{ scale: 1.2 }}
-                                whileTap={{ scale: 0.9 }}
+                            <div
+                                className="absolute right-0 top-1/2 -mt-3 -mr-3 w-6 h-6 bg-white border-2 border-inherit rounded-full shadow-lg cursor-pointer"
                             />
-                        </motion.div>
+                        </div>
                         {/* Fake invisible input for accessibility and sliding logic via slider, since we're using a native one is safer */}
                         <input
                             type="range"
@@ -105,7 +98,7 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                         />
                     </div>
                     
-                    <div className="flex justify-between items-center mt-3 text-xs font-medium text-zinc-500 dark:text-zinc-400">
+                    <div className="flex justify-between items-center mt-3 text-xs font-medium text-text-tertiary">
                         <span>{formatCurrency(safeMinLimit)} (Balance)</span>
                         <span>{formatCurrency(maxLimit)} Max</span>
                     </div>
@@ -126,9 +119,9 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
                 className={cn(
                     "w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue",
                     limit === initialLimit && !saved
-                        ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed border border-transparent"
+                        ? "bg-background-secondary text-zinc-400 dark:text-zinc-500 cursor-not-allowed border border-transparent"
                         : saved
-                            ? "bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800"
+                            ? "bg-status-success/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800"
                             : "bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:shadow-lg"
                 )}
             >
