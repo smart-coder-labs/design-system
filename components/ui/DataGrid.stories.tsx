@@ -53,7 +53,7 @@ const mockData: User[] = [
 ];
 
 const meta: Meta<typeof DataGrid> = {
-  title: 'Components/DataGrid',
+  title: 'Data Display/DataGrid',
   component: DataGrid,
   tags: ['autodocs'],
 };

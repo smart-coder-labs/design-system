@@ -3,7 +3,7 @@ import { TopActionBar, TopActionBarButton, TopActionBarIconButton } from './TopA
 import { Search, Bell, Settings, User, Home, TrendingUp, Wallet, Plus, ArrowLeft, CreditCard, BarChart3, PiggyBank, Shield, Menu, Download, RefreshCw, Mail } from 'lucide-react';
 
 const meta = {
-    title: 'Components/TopActionBar',
+    title: 'Navigation/TopActionBar',
     component: TopActionBar,
     tags: ['autodocs'],
     parameters: {

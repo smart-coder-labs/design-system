@@ -3,7 +3,7 @@ import { VoiceRecorder } from './VoiceRecorder';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/VoiceRecorder',
+    title: 'Forms/VoiceRecorder',
     component: VoiceRecorder,
     tags: ['autodocs'],
 } satisfies Meta<typeof VoiceRecorder>;

@@ -3,7 +3,7 @@ import React from 'react';
 import { FloatingElement } from './FloatingElement';
 
 const meta: Meta<typeof FloatingElement> = {
-    title: 'Components/FloatingElement',
+    title: 'Cyberpunk/FloatingElement',
     component: FloatingElement,
     tags: ['autodocs'],
     decorators: [

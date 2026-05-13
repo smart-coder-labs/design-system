@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SubscriptionManager } from './SubscriptionManager';
 
 const meta = {
-    title: 'Components/SubscriptionManager',
+    title: 'Fintech/Subscriptions/SubscriptionManager',
     component: SubscriptionManager,
     tags: ['autodocs'],
 } satisfies Meta<typeof SubscriptionManager>;

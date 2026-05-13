@@ -3,7 +3,7 @@ import { VirtualCardPreview } from './VirtualCardPreview';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/VirtualCardPreview',
+    title: 'Fintech/Cards/VirtualCardPreview',
     component: VirtualCardPreview,
     tags: ['autodocs'],
 } satisfies Meta<typeof VirtualCardPreview>;

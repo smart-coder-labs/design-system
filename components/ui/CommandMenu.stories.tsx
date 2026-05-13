@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CommandMenu } from './CommandMenu';
 
 const meta = {
-    title: 'Components/CommandMenu',
+    title: 'Navigation/CommandMenu',
     component: CommandMenu,
     tags: ['autodocs'],
 } satisfies Meta<typeof CommandMenu>;

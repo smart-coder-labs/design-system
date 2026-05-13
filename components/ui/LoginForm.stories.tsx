@@ -4,7 +4,7 @@ import { LoginForm } from './LoginForm';
 import { action } from 'storybook/actions';
 
 const meta: Meta<typeof LoginForm> = {
-  title: 'Components/LoginForm',
+  title: 'Forms/LoginForm',
   component: LoginForm,
   tags: ['autodocs'],
   parameters: {

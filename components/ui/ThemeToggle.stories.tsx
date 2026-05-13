@@ -3,7 +3,7 @@ import { ThemeToggle } from './ThemeToggle';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/ThemeToggle',
+    title: 'Navigation/ThemeToggle',
     component: ThemeToggle,
     tags: ['autodocs'],
 } satisfies Meta<typeof ThemeToggle>;

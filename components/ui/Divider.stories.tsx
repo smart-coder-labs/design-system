@@ -3,7 +3,7 @@ import React from 'react';
 import { Divider } from './Divider';
 
 const meta: Meta<typeof Divider> = {
-  title: 'Components/Divider',
+  title: 'Layout/Divider',
   component: Divider,
   tags: ['autodocs'],
 };

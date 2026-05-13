@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AssetAllocationChart } from './AssetAllocationChart';
 
 const meta = {
-    title: 'Components/AssetAllocationChart',
+    title: 'Fintech/Wealth & Crypto/AssetAllocationChart',
     component: AssetAllocationChart,
     tags: ['autodocs'],
 } satisfies Meta<typeof AssetAllocationChart>;

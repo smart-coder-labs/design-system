@@ -3,7 +3,7 @@ import React from 'react';
 import { InvoicePreview } from './InvoicePreview';
 
 const meta: Meta<typeof InvoicePreview> = {
-  title: 'Fintech/InvoicePreview',
+  title: 'Fintech/Payments/InvoicePreview',
   component: InvoicePreview,
   tags: ['autodocs'],
   parameters: {

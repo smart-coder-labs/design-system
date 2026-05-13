@@ -3,7 +3,7 @@ import { TimePicker } from './TimePicker';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/TimePicker',
+    title: 'Forms/TimePicker',
     component: TimePicker,
     tags: ['autodocs'],
 } satisfies Meta<typeof TimePicker>;

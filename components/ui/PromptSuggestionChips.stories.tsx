@@ -3,7 +3,7 @@ import { PromptSuggestionChips } from './PromptSuggestionChips';
 import { Sparkles, Lightbulb, Code, Image, FileText, Calculator } from 'lucide-react';
 
 const meta = {
-    title: 'Components/PromptSuggestionChips',
+    title: 'Forms/PromptSuggestionChips',
     component: PromptSuggestionChips,
     parameters: {
         layout: 'centered',

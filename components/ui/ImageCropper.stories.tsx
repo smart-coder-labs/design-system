@@ -3,7 +3,7 @@ import React from 'react';
 import { ImageCropper } from './ImageCropper';
 
 const meta: Meta<typeof ImageCropper> = {
-  title: 'Components/ImageCropper',
+  title: 'Data Display/ImageCropper',
   component: ImageCropper,
   tags: ['autodocs'],
   parameters: {

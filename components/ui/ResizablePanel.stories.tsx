@@ -3,7 +3,7 @@ import { ResizablePanel } from './ResizablePanel';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/ResizablePanel',
+    title: 'Layout/ResizablePanel',
     component: ResizablePanel,
     tags: ['autodocs'],
 } satisfies Meta<typeof ResizablePanel>;

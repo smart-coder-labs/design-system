@@ -5,7 +5,7 @@ import { action } from 'storybook/actions';
 import { Bell, Settings, Search, X, Plus, Trash2, Heart, Share2, Edit, MoreHorizontal, ArrowLeft, CreditCard } from 'lucide-react';
 
 const meta: Meta<typeof IconButton> = {
-  title: 'Components/IconButton',
+  title: 'Buttons/IconButton',
   component: IconButton,
   tags: ['autodocs'],
   parameters: {

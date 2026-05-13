@@ -3,7 +3,7 @@ import React from 'react';
 import { InspectorPanel, InspectorSection } from './InspectorPanel';
 
 const meta: Meta<typeof InspectorPanel> = {
-    title: 'Components/InspectorPanel',
+    title: 'Surfaces/InspectorPanel',
     component: InspectorPanel,
     tags: ['autodocs'],
     decorators: [

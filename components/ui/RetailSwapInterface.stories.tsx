@@ -3,7 +3,7 @@ import { RetailSwapInterface } from './RetailSwapInterface';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/RetailSwapInterface',
+    title: 'Fintech/Wealth & Crypto/RetailSwapInterface',
     component: RetailSwapInterface,
     tags: ['autodocs'],
 } satisfies Meta<typeof RetailSwapInterface>;

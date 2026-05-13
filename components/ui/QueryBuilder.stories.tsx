@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { QueryBuilder } from './QueryBuilder';
 
 const meta = {
-  title: 'Components/QueryBuilder',
+  title: 'Forms/QueryBuilder',
   component: QueryBuilder,
   tags: ['autodocs'],
 } satisfies Meta<typeof QueryBuilder>;

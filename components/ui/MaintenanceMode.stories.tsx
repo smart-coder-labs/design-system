@@ -3,7 +3,7 @@ import React from 'react';
 import { MaintenanceMode } from './MaintenanceMode';
 
 const meta: Meta<typeof MaintenanceMode> = {
-  title: 'Components/MaintenanceMode',
+  title: 'Surfaces/MaintenanceMode',
   component: MaintenanceMode,
   tags: ['autodocs'],
   parameters: {

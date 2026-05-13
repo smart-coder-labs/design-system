@@ -4,7 +4,7 @@ import { Home, TrendingUp, Wallet, CreditCard, Settings, HelpCircle, BarChart3, 
 import React from 'react';
 
 const meta: Meta<typeof NavigationDrawer> = {
-  title: 'Components/NavigationDrawer',
+  title: 'Navigation/NavigationDrawer',
   component: NavigationDrawer,
   tags: ['autodocs'],
 };

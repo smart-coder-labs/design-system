@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { ArrowRight, Download, Heart } from 'lucide-react';
 
 const meta = {
-    title: 'Components/Button',
+    title: 'Buttons/Button',
     component: Button,
     tags: ['autodocs'],
 } satisfies Meta<typeof Button>;

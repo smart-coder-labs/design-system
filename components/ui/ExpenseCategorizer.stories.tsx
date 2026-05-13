@@ -3,7 +3,7 @@ import { ExpenseCategorizer } from './ExpenseCategorizer';
 import React from 'react';
 
 const meta: Meta<typeof ExpenseCategorizer> = {
-  title: 'Fintech/ExpenseCategorizer',
+  title: 'Fintech/Dashboard/ExpenseCategorizer',
   component: ExpenseCategorizer,
   parameters: {
     layout: 'padded',

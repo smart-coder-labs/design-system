@@ -3,7 +3,7 @@ import { PermissionsMatrix, type Role, type Permission } from './PermissionsMatr
 import { fn } from 'storybook/test';
 
 const meta = {
-  title: 'Components/PermissionsMatrix',
+  title: 'Data Display/PermissionsMatrix',
   component: PermissionsMatrix,
   tags: ['autodocs'],
 } satisfies Meta<typeof PermissionsMatrix>;

@@ -3,7 +3,7 @@ import React from 'react';
 import { DateRangePicker } from './DateRangePicker';
 
 const meta: Meta<typeof DateRangePicker> = {
-  title: 'Components/DateRangePicker',
+  title: 'Forms/DateRangePicker',
   component: DateRangePicker,
   tags: ['autodocs'],
 };

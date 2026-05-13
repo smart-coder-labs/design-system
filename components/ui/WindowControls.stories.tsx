@@ -3,7 +3,7 @@ import { WindowControls } from './WindowControls';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/WindowControls',
+    title: 'Surfaces/WindowControls',
     component: WindowControls,
     tags: ['autodocs'],
 } satisfies Meta<typeof WindowControls>;

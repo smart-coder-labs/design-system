@@ -3,7 +3,7 @@ import { SplitView } from './SplitView';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/SplitView',
+    title: 'Layout/SplitView',
     component: SplitView,
     tags: ['autodocs'],
 } satisfies Meta<typeof SplitView>;

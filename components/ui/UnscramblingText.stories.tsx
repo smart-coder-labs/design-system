@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { UnscramblingText } from './UnscramblingText';
 
 const meta = {
-    title: 'Components/UnscramblingText',
+    title: 'Cyberpunk/UnscramblingText',
     component: UnscramblingText,
     tags: ['autodocs'],
 } satisfies Meta<typeof UnscramblingText>;

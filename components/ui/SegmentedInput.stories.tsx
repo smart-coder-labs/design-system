@@ -3,7 +3,7 @@ import { SegmentedInput } from './SegmentedInput';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/SegmentedInput',
+    title: 'Forms/SegmentedInput',
     component: SegmentedInput,
     tags: ['autodocs'],
 } satisfies Meta<typeof SegmentedInput>;

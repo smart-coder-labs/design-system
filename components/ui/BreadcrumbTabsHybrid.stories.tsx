@@ -3,7 +3,7 @@ import { BreadcrumbTabsHybrid } from './BreadcrumbTabsHybrid';
 import { Settings, Users, FileText, BarChart } from 'lucide-react';
 
 const meta = {
-    title: 'Components/BreadcrumbTabsHybrid',
+    title: 'Navigation/BreadcrumbTabsHybrid',
     component: BreadcrumbTabsHybrid,
     tags: ['autodocs'],
 } satisfies Meta<typeof BreadcrumbTabsHybrid>;

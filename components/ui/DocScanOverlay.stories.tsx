@@ -3,7 +3,7 @@ import { DocScanOverlay } from './DocScanOverlay';
 import React from 'react';
 
 const meta: Meta<typeof DocScanOverlay> = {
-  title: 'Fintech/DocScanOverlay',
+  title: 'Fintech/KYC/DocScanOverlay',
   component: DocScanOverlay,
   parameters: {
     layout: 'centered',

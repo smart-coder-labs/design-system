@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PasswordInput } from './PasswordInput';
 
 const meta = {
-  title: 'Components/PasswordInput',
+  title: 'Forms/PasswordInput',
   component: PasswordInput,
   tags: ['autodocs'],
 } satisfies Meta<typeof PasswordInput>;

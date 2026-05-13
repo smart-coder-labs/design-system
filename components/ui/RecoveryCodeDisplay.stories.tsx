@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { RecoveryCodeDisplay } from './RecoveryCodeDisplay';
 
 const meta = {
-    title: 'Components/RecoveryCodeDisplay',
+    title: 'Data Display/RecoveryCodeDisplay',
     component: RecoveryCodeDisplay,
     parameters: {
         layout: 'centered',

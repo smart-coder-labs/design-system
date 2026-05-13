@@ -3,7 +3,7 @@ import React from 'react';
 import { ImmersiveHero } from './ImmersiveHero';
 
 const meta: Meta<typeof ImmersiveHero> = {
-    title: 'Components/ImmersiveHero',
+    title: 'Surfaces/ImmersiveHero',
     component: ImmersiveHero,
     tags: ['autodocs'],
     parameters: {

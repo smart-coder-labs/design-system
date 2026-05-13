@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CreditLimitManager } from './CreditLimitManager';
 
 const meta = {
-    title: 'Components/CreditLimitManager',
+    title: 'Fintech/Credit & BNPL/CreditLimitManager',
     component: CreditLimitManager,
     tags: ['autodocs'],
 } satisfies Meta<typeof CreditLimitManager>;

@@ -11,7 +11,7 @@ const metadata: DescriptionMetadataItem[] = [
 ];
 
 const meta: Meta<typeof DescriptionBlock> = {
-  title: 'Components/DescriptionBlock',
+  title: 'Data Display/DescriptionBlock',
   component: DescriptionBlock,
   tags: ['autodocs'],
 };

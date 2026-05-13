@@ -3,7 +3,7 @@ import React from 'react';
 import { HamburgerMenuIcon } from './HamburgerMenuIcon';
 
 const meta: Meta<typeof HamburgerMenuIcon> = {
-  title: 'Components/HamburgerMenuIcon',
+  title: 'Navigation/HamburgerMenuIcon',
   component: HamburgerMenuIcon,
   tags: ['autodocs'],
 };

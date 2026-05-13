@@ -34,7 +34,7 @@ const sampleComments = [
 ];
 
 const meta = {
-    title: 'Components/CommentThread',
+    title: 'Data Display/CommentThread',
     component: CommentThread,
     tags: ['autodocs'],
 } satisfies Meta<typeof CommentThread>;

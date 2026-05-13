@@ -4,7 +4,7 @@ import { FAB } from './FAB';
 import { Plus, Pen, Camera } from 'lucide-react';
 
 const meta: Meta<typeof FAB> = {
-  title: 'Components/FAB',
+  title: 'Buttons/FAB',
   component: FAB,
   tags: ['autodocs'],
 };

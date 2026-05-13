@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Chart } from './Chart';
 
 const meta = {
-    title: 'Components/Chart',
+    title: 'Data Display/Chart',
     component: Chart,
     tags: ['autodocs'],
 } satisfies Meta<typeof Chart>;

@@ -10,7 +10,7 @@ const images = [
 ];
 
 const meta: Meta<typeof ImageCarousel> = {
-  title: 'Components/ImageCarousel',
+  title: 'Data Display/ImageCarousel',
   component: ImageCarousel,
   tags: ['autodocs'],
 };

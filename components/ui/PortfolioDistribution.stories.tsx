@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PortfolioDistribution } from './PortfolioDistribution';
 
 const meta = {
-  title: 'Components/PortfolioDistribution',
+  title: 'Fintech/Investments/PortfolioDistribution',
   component: PortfolioDistribution,
   tags: ['autodocs'],
 } satisfies Meta<typeof PortfolioDistribution>;

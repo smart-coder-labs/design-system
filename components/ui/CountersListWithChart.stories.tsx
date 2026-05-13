@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CountersListWithChart } from './CountersListWithChart';
 
 const meta = {
-    title: 'Components/CountersListWithChart',
+    title: 'Data Display/CountersListWithChart',
     component: CountersListWithChart,
     tags: ['autodocs'],
 } satisfies Meta<typeof CountersListWithChart>;

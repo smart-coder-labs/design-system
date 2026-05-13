@@ -3,7 +3,7 @@ import { RotarySelector } from './RotarySelector';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/RotarySelector',
+    title: 'Forms/RotarySelector',
     component: RotarySelector,
     tags: ['autodocs'],
 } satisfies Meta<typeof RotarySelector>;

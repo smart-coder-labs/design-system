@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CurrencyConverterWidget } from './CurrencyConverterWidget';
 
 const meta = {
-    title: 'Components/CurrencyConverterWidget',
+    title: 'Fintech/FX & International Payments/CurrencyConverterWidget',
     component: CurrencyConverterWidget,
     tags: ['autodocs'],
 } satisfies Meta<typeof CurrencyConverterWidget>;

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Paragraph } from './Paragraph';
 
 const meta = {
-  title: 'Components/Paragraph',
+  title: 'Typography/Paragraph',
   component: Paragraph,
   tags: ['autodocs'],
 } satisfies Meta<typeof Paragraph>;

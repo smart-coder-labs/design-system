@@ -3,7 +3,7 @@ import React from 'react';
 import { KanbanBoard } from './KanbanBoard';
 
 const meta: Meta<typeof KanbanBoard> = {
-  title: 'Components/KanbanBoard',
+  title: 'Data Display/KanbanBoard',
   component: KanbanBoard,
   tags: ['autodocs'],
   parameters: {

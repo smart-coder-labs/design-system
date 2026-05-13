@@ -3,7 +3,7 @@ import React from 'react';
 import { JargonTooltip } from './JargonTooltip';
 
 const meta: Meta<typeof JargonTooltip> = {
-  title: 'Components/JargonTooltip',
+  title: 'Fintech/Education/JargonTooltip',
   component: JargonTooltip,
   tags: ['autodocs'],
   parameters: {

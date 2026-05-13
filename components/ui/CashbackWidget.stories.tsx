@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CashbackWidget } from './CashbackWidget';
 
 const meta = {
-    title: 'Components/CashbackWidget',
+    title: 'Fintech/Cards/CashbackWidget',
     component: CashbackWidget,
     tags: ['autodocs'],
 } satisfies Meta<typeof CashbackWidget>;

@@ -3,7 +3,7 @@ import React from 'react';
 import { LoadingOverlay } from './LoadingOverlay';
 
 const meta: Meta<typeof LoadingOverlay> = {
-  title: 'Components/LoadingOverlay',
+  title: 'Surfaces/LoadingOverlay',
   component: LoadingOverlay,
   tags: ['autodocs'],
   parameters: {

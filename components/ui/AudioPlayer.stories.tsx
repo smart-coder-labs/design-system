@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AudioPlayer } from './AudioPlayer';
 
 const meta = {
-    title: 'Components/AudioPlayer',
+    title: 'Data Display/AudioPlayer',
     component: AudioPlayer,
     tags: ['autodocs'],
 } satisfies Meta<typeof AudioPlayer>;

@@ -4,7 +4,7 @@ import { FileUpload } from './FileUpload';
 import { action } from 'storybook/actions';
 
 const meta: Meta<typeof FileUpload> = {
-  title: 'Components/FileUpload',
+  title: 'Forms/FileUpload',
   component: FileUpload,
   tags: ['autodocs'],
 };

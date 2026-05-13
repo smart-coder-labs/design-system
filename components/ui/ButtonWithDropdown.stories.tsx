@@ -3,7 +3,7 @@ import { ButtonWithDropdown } from './ButtonWithDropdown';
 import { Download, Share2, Edit, Trash2, Copy } from 'lucide-react';
 
 const meta = {
-    title: 'Components/ButtonWithDropdown',
+    title: 'Buttons/ButtonWithDropdown',
     component: ButtonWithDropdown,
     tags: ['autodocs'],
 } satisfies Meta<typeof ButtonWithDropdown>;

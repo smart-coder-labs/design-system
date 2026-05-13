@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { BarcodeGenerator } from './BarcodeGenerator';
 
 const meta = {
-    title: 'Components/BarcodeGenerator',
+    title: 'Data Display/BarcodeGenerator',
     component: BarcodeGenerator,
     tags: ['autodocs'],
 } satisfies Meta<typeof BarcodeGenerator>;

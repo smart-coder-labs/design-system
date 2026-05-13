@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StickyContainer } from './StickyContainer';
 
 const meta = {
-    title: 'Components/StickyContainer',
+    title: 'Layout/StickyContainer',
     component: StickyContainer,
     tags: ['autodocs'],
 } satisfies Meta<typeof StickyContainer>;

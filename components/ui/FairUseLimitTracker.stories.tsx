@@ -6,7 +6,7 @@ import { CreditCard, Landmark, RefreshCw } from 'lucide-react';
 const categories: LimitCategory[] = [
   {
     id: 'transfers',
-    title: 'Transfers',
+    title: 'Fintech/FX & International Payments/FairUseLimitTracker',
     used: 12,
     total: 20,
     icon: <RefreshCw className="w-4 h-4" />,
@@ -14,7 +14,6 @@ const categories: LimitCategory[] = [
   },
   {
     id: 'withdrawals',
-    title: 'ATM Withdrawals',
     used: 5,
     total: 10,
     icon: <Landmark className="w-4 h-4" />,
@@ -22,7 +21,6 @@ const categories: LimitCategory[] = [
   },
   {
     id: 'virtual-cards',
-    title: 'Virtual Cards',
     used: 3,
     total: 5,
     icon: <CreditCard className="w-4 h-4" />,
@@ -31,7 +29,6 @@ const categories: LimitCategory[] = [
 ];
 
 const meta: Meta<typeof FairUseLimitTracker> = {
-  title: 'Components/FairUseLimitTracker',
   component: FairUseLimitTracker,
   tags: ['autodocs'],
 };

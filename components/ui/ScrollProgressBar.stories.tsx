@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ScrollProgressBar } from './ScrollProgressBar';
 
 const meta = {
-  title: 'Components/ScrollProgressBar',
+  title: 'Navigation/ScrollProgressBar',
   component: ScrollProgressBar,
   tags: ['autodocs'],
 } satisfies Meta<typeof ScrollProgressBar>;

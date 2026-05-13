@@ -4,7 +4,7 @@ import { Wifi, Bluetooth, Moon, Volume2, Airplay, Battery } from 'lucide-react';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/ControlCenterToggles',
+    title: 'Surfaces/ControlCenterToggles',
     component: ControlCenterToggles,
     parameters: {
         layout: 'centered',

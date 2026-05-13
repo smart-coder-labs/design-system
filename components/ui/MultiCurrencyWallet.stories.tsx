@@ -4,7 +4,7 @@ import { MultiCurrencyWallet } from './MultiCurrencyWallet';
 import { action } from 'storybook/actions';
 
 const meta: Meta<typeof MultiCurrencyWallet> = {
-  title: 'Fintech/MultiCurrencyWallet',
+  title: 'Fintech/FX & International Payments/MultiCurrencyWallet',
   component: MultiCurrencyWallet,
   tags: ['autodocs'],
   parameters: {

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { DeviceList } from './DeviceList';
 
 const meta = {
-    title: 'Components/DeviceList',
+    title: 'Data Display/DeviceList',
     component: DeviceList,
     parameters: {
         layout: 'centered',

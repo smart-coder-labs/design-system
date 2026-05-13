@@ -4,7 +4,7 @@ import { MultiFileUpload } from './MultiFileUpload';
 import { action } from 'storybook/actions';
 
 const meta: Meta<typeof MultiFileUpload> = {
-  title: 'Components/MultiFileUpload',
+  title: 'Forms/MultiFileUpload',
   component: MultiFileUpload,
   tags: ['autodocs'],
   parameters: {

@@ -4,7 +4,7 @@ import { Modal } from './Modal';
 import { action } from 'storybook/actions';
 
 const meta: Meta<typeof Modal> = {
-  title: 'Components/Modal',
+  title: 'Overlays/Modal',
   component: Modal,
   tags: ['autodocs'],
   parameters: {

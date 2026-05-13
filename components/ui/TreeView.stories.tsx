@@ -3,7 +3,7 @@ import { TreeView } from './TreeView';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/TreeView',
+    title: 'Data Display/TreeView',
     component: TreeView,
     tags: ['autodocs'],
 } satisfies Meta<typeof TreeView>;

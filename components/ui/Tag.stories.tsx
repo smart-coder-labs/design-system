@@ -4,7 +4,7 @@ import { TagIcon, Star } from 'lucide-react';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/Tag',
+    title: 'Data Display/Tag',
     component: Tag,
     tags: ['autodocs'],
 } satisfies Meta<typeof Tag>;

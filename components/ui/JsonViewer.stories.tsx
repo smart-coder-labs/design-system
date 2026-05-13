@@ -3,7 +3,7 @@ import React from 'react';
 import { JsonViewer } from './JsonViewer';
 
 const meta: Meta<typeof JsonViewer> = {
-  title: 'Components/JsonViewer',
+  title: 'Data Display/JsonViewer',
   component: JsonViewer,
   tags: ['autodocs'],
   parameters: {

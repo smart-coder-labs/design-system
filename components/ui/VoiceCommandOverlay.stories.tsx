@@ -3,7 +3,7 @@ import { VoiceCommandOverlay } from './VoiceCommandOverlay';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/VoiceCommandOverlay',
+    title: 'Fintech/Actions/VoiceCommandOverlay',
     component: VoiceCommandOverlay,
     tags: ['autodocs'],
 } satisfies Meta<typeof VoiceCommandOverlay>;

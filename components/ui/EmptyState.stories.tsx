@@ -5,7 +5,7 @@ import { Button } from './Button';
 import { Inbox, SearchX, CloudOff } from 'lucide-react';
 
 const meta: Meta<typeof EmptyState> = {
-  title: 'Components/EmptyState',
+  title: 'Surfaces/EmptyState',
   component: EmptyState,
   tags: ['autodocs'],
 };

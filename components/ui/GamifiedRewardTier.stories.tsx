@@ -3,7 +3,7 @@ import { GamifiedRewardTier } from './GamifiedRewardTier';
 import React from 'react';
 
 const meta: Meta<typeof GamifiedRewardTier> = {
-  title: 'Fintech/GamifiedRewardTier',
+  title: 'Fintech/Engagement/GamifiedRewardTier',
   component: GamifiedRewardTier,
   parameters: {
     layout: 'padded',

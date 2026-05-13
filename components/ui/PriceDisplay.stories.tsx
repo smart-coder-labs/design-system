@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PriceDisplay } from './PriceDisplay';
 
 const meta = {
-  title: 'Components/PriceDisplay',
+  title: 'Data Display/PriceDisplay',
   component: PriceDisplay,
   tags: ['autodocs'],
 } satisfies Meta<typeof PriceDisplay>;

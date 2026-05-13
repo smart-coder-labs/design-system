@@ -3,7 +3,7 @@ import { SlideToDelete } from './SlideToDelete';
 import { fn } from 'storybook/test';
 
 const meta = {
-  title: 'Components/SlideToDelete',
+  title: 'Gestures/SlideToDelete',
   component: SlideToDelete,
   tags: ['autodocs'],
 } satisfies Meta<typeof SlideToDelete>;

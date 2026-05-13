@@ -3,7 +3,7 @@ import { RichTextEditor } from './RichTextEditor';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/RichTextEditor',
+    title: 'Forms/RichTextEditor',
     component: RichTextEditor,
     tags: ['autodocs'],
 } satisfies Meta<typeof RichTextEditor>;

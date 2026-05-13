@@ -3,7 +3,7 @@ import { Chip } from './Chip';
 import { Tag, Star, Lock, Zap } from 'lucide-react';
 
 const meta = {
-    title: 'Components/Chip',
+    title: 'Data Display/Chip',
     component: Chip,
     tags: ['autodocs'],
 } satisfies Meta<typeof Chip>;

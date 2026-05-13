@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StickyImageTextSwap } from './StickyImageTextSwap';
 
 const meta = {
-    title: 'Components/StickyImageTextSwap',
+    title: 'Data Display/StickyImageTextSwap',
     component: StickyImageTextSwap,
     tags: ['autodocs'],
 } satisfies Meta<typeof StickyImageTextSwap>;

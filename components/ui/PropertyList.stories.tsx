@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PropertyList } from './PropertyList';
 
 const meta = {
-  title: 'Components/PropertyList',
+  title: 'Data Display/PropertyList',
   component: PropertyList,
   tags: ['autodocs'],
 } satisfies Meta<typeof PropertyList>;

@@ -3,7 +3,7 @@ import { RoundUpSavingsToggle } from './RoundUpSavingsToggle';
 import { useState } from 'react';
 
 const meta = {
-    title: 'Components/RoundUpSavingsToggle',
+    title: 'Fintech/Savings/RoundUpSavingsToggle',
     component: RoundUpSavingsToggle,
     tags: ['autodocs'],
 } satisfies Meta<typeof RoundUpSavingsToggle>;

@@ -3,7 +3,7 @@ import React from 'react';
 import { MicroCommitmentStepper } from './MicroCommitmentStepper';
 
 const meta: Meta<typeof MicroCommitmentStepper> = {
-  title: 'Fintech/MicroCommitmentStepper',
+  title: 'Fintech/Engagement/MicroCommitmentStepper',
   component: MicroCommitmentStepper,
   tags: ['autodocs'],
   parameters: {
