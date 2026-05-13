@@ -3,7 +3,9 @@
 import React from 'react'
 import HeroSection from './sections/HeroSection'
 import FeaturesSection from './sections/FeaturesSection'
+import ComponentsGallery from './sections/ComponentsGallery'
 import ShowcaseSection from './sections/ShowcaseSection'
+import DocumentationSection from './sections/DocumentationSection'
 import StatsSection from './sections/StatsSection'
 import CTASection from './sections/CTASection'
 import LandingFooter from './sections/LandingFooter'
@@ -42,8 +44,9 @@ export default function App() {
 
           <div className="hidden md:flex items-center gap-6">
             <a href="#features" className="text-sm text-text-secondary hover:text-text-primary transition-colors">Features</a>
-            <a href="#showcase" className="text-sm text-text-secondary hover:text-text-primary transition-colors">Components</a>
-            <a href="#stats" className="text-sm text-text-secondary hover:text-text-primary transition-colors">Stats</a>
+            <a href="#components" className="text-sm text-text-secondary hover:text-text-primary transition-colors">Components</a>
+            <a href="#showcase" className="text-sm text-text-secondary hover:text-text-primary transition-colors">Showcase</a>
+            <a href="#docs" className="text-sm text-text-secondary hover:text-text-primary transition-colors">Docs</a>
             <a href="#cta" className="text-sm text-text-secondary hover:text-text-primary transition-colors">Get Started</a>
             <ThemeToggle />
           </div>
@@ -58,7 +61,9 @@ export default function App() {
       <main>
         <HeroSection />
         <FeaturesSection />
+        <ComponentsGallery />
         <ShowcaseSection />
+        <DocumentationSection />
         <StatsSection />
         <CTASection />
       </main>
@@ -98,7 +103,7 @@ function MobileMenu() {
       {open && (
         <div className="fixed inset-0 top-14 z-40 bg-background-primary/98 backdrop-blur-xl">
           <div className="flex flex-col items-center gap-6 pt-12">
-            {['Features', 'Components', 'Stats', 'Get Started'].map((item) => (
+            {['Features', 'Components', 'Showcase', 'Docs', 'Get Started'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
