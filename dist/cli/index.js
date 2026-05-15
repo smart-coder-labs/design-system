@@ -5,6 +5,7 @@ const commander_1 = require("commander");
 const init_1 = require("./commands/init");
 const add_1 = require("./commands/add");
 const update_1 = require("./commands/update");
+const update_components_1 = require("./commands/update-components");
 const program = new commander_1.Command();
 program
     .name("apple-design-system")
@@ -24,5 +25,9 @@ program
     .description("Update installed components to the latest version")
     .argument("[components...]", "The components to update")
     .action((components) => (0, update_1.update)(components));
+program
+    .command("update-components")
+    .description("Interactively update components from the design system (with UI selection)")
+    .action(() => (0, update_components_1.updateComponents)());
 program.parse();
 //# sourceMappingURL=index.js.map
