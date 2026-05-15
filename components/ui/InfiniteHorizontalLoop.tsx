@@ -1,51 +1,113 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { cn } from "../../lib/utils";
+'use client';
 
-interface InfiniteHorizontalLoopProps extends React.HTMLAttributes<HTMLDivElement> {
-  items: React.ReactNode[];
-  speed?: number; // duration in seconds
-  direction?: "left" | "right";
-  gap?: string; // spacing
+import * as React from 'react';
+import { motion, type MotionValue } from 'framer-motion';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '../../lib/utils';
+
+const loopVariants = cva('relative w-full overflow-hidden flex', {
+  variants: {
+    direction: {
+      left: '',
+      right: '',
+    },
+  },
+  defaultVariants: {
+    direction: 'left',
+  },
+});
+
+const loopTrackVariants = cva('flex whitespace-nowrap items-center shrink-0 w-max', {
+  variants: {
+    gap: {
+      sm: 'gap-4',
+      md: 'gap-8',
+      lg: 'gap-12',
+    },
+  },
+  defaultVariants: {
+    gap: 'md',
+  },
+});
+
+interface InfiniteHorizontalLoopContextValue {
+  direction: 'left' | 'right';
+  speed: number;
+  gap: 'sm' | 'md' | 'lg';
 }
 
-export function InfiniteHorizontalLoop({ 
-  items, 
-  speed = 20, 
-  direction = "left",
-  gap = "gap-8",
-  className, 
-  ...props 
-}: InfiniteHorizontalLoopProps) {
-  // Duplicamos los elementos para crear una ilusión de un loop infinito sin cortes (seamless)
-  const duplicatedItems = [...items, ...items];
-  
-  const moveLeft = direction === "left";
+const InfiniteHorizontalLoopContext = React.createContext<InfiniteHorizontalLoopContextValue | null>(null);
 
-  return (
-    <div className={cn("relative w-full overflow-hidden flex", className)} {...props}>
+function useInfiniteHorizontalLoopContext(name: string) {
+  const context = React.useContext(InfiniteHorizontalLoopContext);
+  if (!context) throw new Error(`<${name}> must be used within <InfiniteHorizontalLoop />`);
+  return context;
+}
+
+export interface InfiniteHorizontalLoopProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof loopVariants> {
+  items?: React.ReactNode[];
+  speed?: number;
+  gap?: 'sm' | 'md' | 'lg';
+}
+
+const InfiniteHorizontalLoopItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => <div ref={ref} className={cn('flex-shrink-0', className)} {...props} />
+);
+InfiniteHorizontalLoopItem.displayName = 'InfiniteHorizontalLoopItem';
+
+const InfiniteHorizontalLoopTrack = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<typeof motion.div>>(
+  ({ className, children, ...props }, ref) => {
+    const { direction, speed, gap } = useInfiniteHorizontalLoopContext('InfiniteHorizontalLoopTrack');
+    const content = React.Children.toArray(children as React.ReactNode);
+    const duplicated = [...content, ...content];
+
+    return (
       <motion.div
-        className={cn("flex whitespace-nowrap items-center shrink-0 w-max", gap)}
-        // Matemáticas: Transladamos en X el 50% de su propio contenedor duplicado,
-        // Al llegar a la mitad, se resetea al inicio invisiblemente.
-        animate={{
-          x: moveLeft ? ["0%", "-50%"] : ["-50%", "0%"],
-        }}
-        // Física: Es un tween lineal repitiendo al infinito sin easing (velocidad constante -> linear)
-        transition={{
-          duration: speed,
-          ease: "linear",
-          repeat: Infinity,
-        }}
-        // Truco para optimizar render de GPU (60fps)
-        style={{ willChange: "transform" }}
+        ref={ref}
+        className={cn(loopTrackVariants({ gap }), className)}
+        animate={{ x: direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%'] }}
+        transition={{ duration: speed, ease: 'linear', repeat: Infinity }}
+        style={{ willChange: 'transform' }}
+        {...props}
       >
-        {duplicatedItems.map((item, index) => (
-          <div key={`${index}-${typeof item === 'string' ? item : `item`}`} className="flex-shrink-0">
-            {item}
-          </div>
+        {duplicated.map((item, index) => (
+          <InfiniteHorizontalLoopItem key={index}>{item}</InfiniteHorizontalLoopItem>
         ))}
       </motion.div>
-    </div>
-  );
-}
+    );
+  }
+);
+InfiniteHorizontalLoopTrack.displayName = 'InfiniteHorizontalLoopTrack';
+
+const InfiniteHorizontalLoopRoot = React.forwardRef<HTMLDivElement, InfiniteHorizontalLoopProps>(
+  ({ items, speed = 20, direction = 'left', gap = 'md', className, children, ...props }, ref) => {
+    const directionValue = direction ?? 'left';
+    const gapValue = gap ?? 'md';
+    const renderedItems = items?.map((item, index) => <React.Fragment key={index}>{item}</React.Fragment>) ?? null;
+
+    return (
+      <InfiniteHorizontalLoopContext.Provider value={{ direction: directionValue, speed, gap: gapValue }}>
+        <div ref={ref} className={cn(loopVariants({ direction: directionValue }), className)} {...props}>
+          {children ?? <InfiniteHorizontalLoopTrack>{renderedItems}</InfiniteHorizontalLoopTrack>}
+        </div>
+      </InfiniteHorizontalLoopContext.Provider>
+    );
+  }
+);
+InfiniteHorizontalLoopRoot.displayName = 'InfiniteHorizontalLoop';
+
+const InfiniteHorizontalLoop = Object.assign(InfiniteHorizontalLoopRoot, {
+  Track: InfiniteHorizontalLoopTrack,
+  Item: InfiniteHorizontalLoopItem,
+});
+
+export {
+  InfiniteHorizontalLoop,
+  InfiniteHorizontalLoopRoot,
+  InfiniteHorizontalLoopTrack,
+  InfiniteHorizontalLoopItem,
+  loopVariants,
+  loopTrackVariants,
+};

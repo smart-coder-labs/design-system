@@ -1,49 +1,62 @@
-import React from "react";
-import { motion, useScroll, useSpring, HTMLMotionProps } from "framer-motion";
-import { cn } from "../../lib/utils";
+'use client';
 
-interface ScrollProgressBarProps extends HTMLMotionProps<"div"> {
-  color?: string; // Hex, rgb o Tailwind class si lo pasamos como style. backgroundColor: color
-  height?: string; // e.g. "h-1" o "h-2"
-  position?: "top" | "bottom";
+import * as React from 'react';
+import { motion, useScroll, useSpring, type HTMLMotionProps } from 'framer-motion';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '../../lib/utils';
+
+const scrollProgressBarVariants = cva('fixed left-0 right-0 z-50 origin-left', {
+  variants: {
+    position: {
+      top: 'top-0',
+      bottom: 'bottom-0',
+    },
+    thickness: {
+      sm: 'h-1',
+      md: 'h-1.5',
+      lg: 'h-2',
+    },
+    tone: {
+      default: 'bg-accent-blue',
+      accent: 'bg-status-success',
+      muted: 'bg-border-primary',
+    },
+  },
+  defaultVariants: {
+    position: 'top',
+    thickness: 'md',
+    tone: 'default',
+  },
+});
+
+export interface ScrollProgressBarProps
+  extends Omit<HTMLMotionProps<'div'>, 'color'>,
+    VariantProps<typeof scrollProgressBarVariants> {
+  color?: string;
 }
 
-/**
- * ScrollProgressBar
- * Una barra delgada en la parte superior que se llena según el progreso global
- * de toda la ventana. Perfecta para un "reading progress".
- */
-export function ScrollProgressBar({
-  color = "#007AFF", // Apple blue por defecto
-  height = "h-1.5",
-  position = "top",
-  className,
-  ...props
-}: ScrollProgressBarProps) {
-  // scrollYProgress nos da de 0 a 1 según la posición global de la ventana entera
-  const { scrollYProgress } = useScroll();
-  
-  // Física: Le añadimos un resorte ('spring') para que el movimiento de la barra
-  // sea orgánico y no rígido, especialmente si el usuario hace scroll brusco
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+const ScrollProgressBar = React.forwardRef<HTMLDivElement, ScrollProgressBarProps>(
+  ({ className, position, thickness, tone, color, style, ...props }, ref) => {
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+      stiffness: 100,
+      damping: 30,
+      restDelta: 0.001,
+    });
 
-  return (
-    <motion.div
-      className={cn(
-        "fixed left-0 right-0 z-50 origin-left border-black/10",
-        height,
-        position === "top" ? "top-0" : "bottom-0",
-        className
-      )}
-      style={{
-        scaleX,
-        backgroundColor: color
-      }}
-      {...props}
-    />
-  );
-}
+    return (
+      <motion.div
+        ref={ref}
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        className={cn(scrollProgressBarVariants({ position, thickness, tone }), className)}
+        style={{ ...style, scaleX, backgroundColor: color }}
+        {...props}
+      />
+    );
+  }
+);
+ScrollProgressBar.displayName = 'ScrollProgressBar';
+
+export { ScrollProgressBar, scrollProgressBarVariants };
