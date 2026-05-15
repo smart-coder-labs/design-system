@@ -1,5 +1,0 @@
-import{j as e}from"./jsx-runtime-u17CrQMm.js";import{P as t}from"./ParallaxStoryStage-BF_ngBTv.js";import"./iframe-CSCYuKHF.js";import"./preload-helper-PPVm8Dsz.js";import"./UnscramblingText-CGMUKFBh.js";import"./utils-DCADjnpI.js";import"./resolve-elements-BeIloL1I.js";import"./FloatingElement-CLmMySaY.js";import"./use-scroll-DzyoW955.js";import"./proxy-DgdbOAE3.js";import"./use-transform-WdoV-fTN.js";import"./ComicPanel-ClW3R8c9.js";const g={title:"UI/ParallaxStoryStage",component:t,parameters:{layout:"fullscreen"},tags:["autodocs"]},r={render:()=>e.jsx(t,{})},a={render:()=>e.jsx(t,{className:"opacity-90"})};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
-  render: () => <ParallaxStoryStage />
-}`,...r.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
-  render: () => <ParallaxStoryStage className="opacity-90" />
-}`,...a.parameters?.docs?.source}}};const y=["Default","WithCustomClass"];export{r as Default,a as WithCustomClass,y as __namedExportsOrder,g as default};
