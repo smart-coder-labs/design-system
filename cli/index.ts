@@ -3,6 +3,7 @@ import { Command } from "commander";
 import { init } from "./commands/init";
 import { add } from "./commands/add";
 import { update } from "./commands/update";
+import { updateComponents } from "./commands/update-components";
 
 const program = new Command();
 
@@ -27,5 +28,10 @@ program
   .description("Update installed components to the latest version")
   .argument("[components...]", "The components to update")
   .action((components) => update(components));
+
+program
+  .command("update-components")
+  .description("Interactively update components from the design system (with UI selection)")
+  .action(() => updateComponents());
 
 program.parse();
