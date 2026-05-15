@@ -197,3 +197,43 @@ export const Col = React.forwardRef<HTMLDivElement, ColProps>(
     }
 );
 Col.displayName = 'Col';
+
+/* ========================================
+   GRID SYSTEM (Wrapper)
+   ======================================== */
+
+export interface GridSystemProps extends React.HTMLAttributes<HTMLDivElement> {
+    /** Number of columns */
+    cols?: 1 | 2 | 3 | 4 | 5 | 6 | 12;
+    /** Gap between grid items */
+    gap?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
+}
+
+export const GridSystem = React.forwardRef<HTMLDivElement, GridSystemProps>(
+    ({ className, cols = 3, gap = 'md', ...props }, ref) => {
+        const gapMap = {
+            none: 'gap-0',
+            sm: 'gap-2',
+            md: 'gap-4',
+            lg: 'gap-8',
+            xl: 'gap-12',
+        };
+        const colMap = {
+            1: 'grid-cols-1',
+            2: 'grid-cols-2',
+            3: 'grid-cols-3',
+            4: 'grid-cols-4',
+            5: 'grid-cols-5',
+            6: 'grid-cols-6',
+            12: 'grid-cols-12',
+        };
+        return (
+            <div
+                ref={ref}
+                className={cn('grid', colMap[cols] || 'grid-cols-1', gapMap[gap] || 'gap-4', className)}
+                {...props}
+            />
+        );
+    }
+);
+GridSystem.displayName = 'GridSystem';

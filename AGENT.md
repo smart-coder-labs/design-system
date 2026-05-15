@@ -1,149 +1,118 @@
-# 🧠 AGENT.md — Lineamientos para creación de componentes UI  
-### _Design System: Apple-Minimal Radix DS_
+# 🧠 AGENT.md — UI Components Creation Guidelines
+### _Design System: Apple-Minimal DS_
 
-Este documento define las reglas que **todos los agentes** deben seguir al crear o modificar componentes para el Design System.
-
----
-
-## 🎯 Objetivo General
-Crear un sistema de componentes **minimalista, profesional, accesible, animado y consistente**, inspirado en el diseño de Apple, extendiendo **Radix UI** cuando sea posible y construyendo componentes propios cuando Radix no los provea.
+This document defines the rules that **all agents** must follow when creating or modifying components for the Design System.
 
 ---
 
-# ✅ 1. Regla de Oro
-Antes de crear cualquier componente:
-
-### ✔️ Paso 1: Verificar si Radix UI ya ofrece ese componente.  
-👉 https://www.radix-ui.com/primitives/docs/components
-
-**Si Radix posee el componente:**  
-- Usar Radix UI como base.  
-- Extenderlo y estilizarlo para ajustarlo al estilo Apple minimal.
-
-**Si Radix NO posee el componente:**  
-- Crear un componente desde cero siguiendo las reglas del Design System.
+## 🎯 General Objective
+Create a **minimalist, professional, accessible, animated, and consistent** component system, inspired by Apple's design.
 
 ---
 
-# 🎨 2. Reglas Generales de Estilo (Apple Minimal)
+# 🎨 1. General Style Rules (Apple Minimal)
 
-Revisar el documento DESIGN_DECISIONS.md para obtener información sobre las decisiones de diseño.
+Review the DESIGN_DECISIONS.md document for information on design decisions.
 
 ---
 
-# ✨ 3. Animaciones
-Todos los componentes deben:
+# ✨ 2. Animations
+All components must:
 
-- Usar **Framer Motion** cuando aporte valor.
-- Mantener animaciones suaves:
+- Use **Framer Motion** when it adds value.
+- Maintain smooth animations:
   - Fade
-  - Scale sutil
-  - Slide minimal
-  - Transiciones 150–250ms
+  - Subtle Scale
+  - Minimal Slide
+  - 150–250ms transitions
 
 ---
 
-# ⚙️ 4. Accesibilidad
-Todos los componentes deben incluir:
+# ⚙️ 3. Accessibility
+All components must include:
 
-- Roles ARIA correctos.
-- Foco visible estilo Apple.
-- Navegación por teclado completa.
-- Labels accesibles.
-- Transiciones amigables.
+- Correct ARIA roles.
+- Apple-style visible focus.
+- Full keyboard navigation.
+- Accessible labels.
+- Friendly transitions.
 
 ---
 
-# 🌗 5. Modo Light / Dark
-### Reglas
-- Todo componente debe funcionar en **modo claro** y **oscuro**.
-- Usar clases (`dark:`) o tokens del sistema.
-- Mantener contraste AA.
+# 🌗 4. Light / Dark Mode
+### Rules
+- Every component must work in **light** and **dark** mode.
+- Use classes (`dark:`) or system tokens.
+- Maintain AA contrast.
 
-### Ejemplos de tokens:
+### Token examples:
 - `text-primary`
 - `bg-surface`
 - `border-primary`
 
 ---
 
-# 🔧 6. Estructura Obligatoria del Componente
+# 🔧 5. Mandatory Component Structure
 
-Cada componente debe:
+Every component must:
 
-- Incluir `"use client"`.
-- Usar Radix si existe la versión del componente.
-- Exportar solo los componentes necesarios.
-- Aceptar `className` personalizable.
-- Usar la función `cn()`.
-- Incluir todos los estados interactivos.
-- Incluir variantes cuando aplique (size, appearance, intent).
+- Include `"use client"`.
+- Export only the necessary components.
+- Accept a customizable `className`.
+- Use the `cn()` utility function.
+- Include all interactive states.
+- Include variants when applicable (size, appearance, intent).
 
 ---
 
-# 📦 7. Dependencias Oficiales
+# 📦 6. Official Dependencies
 
-Todos los componentes deben usar:
+All components must use:
 
-- **Radix UI**
 - **Framer Motion**
 - **Lucide React**
 - **TailwindCSS**
 - **TypeScript**
-- `clsx` o `tailwind-merge` → `cn()`.
+- `clsx` or `tailwind-merge` → `cn()`.
 
 ---
 
-# 🧱 8. Componentes que SIEMPRE deben basarse en Radix
+# 🧩 7. Core principles for new components
 
-Los agentes deben revisar Radix para cada componente:
-
-Si Radix lo tiene → **usar Radix como núcleo**.
-
----
-
-# 🛠️ 9. Componentes que deben crear desde cero
-
-Si Radix no lo tiene, crear
-
-# 🧩 10. Principios base para nuevos componentes
-
-1. Minimalista primero  
-2. Estilo Apple  
-3. Accesibilidad estricta  
-4. Animaciones suaves  
-5. Tokens siempre  
-6. Nada hardcodeado  
-7. Limpieza y consistencia  
-8. Reutilización composable  
-9. API estándar  
-10. Estética pulida pro-level  
+1. Minimalist first
+2. Apple style
+3. Strict accessibility
+4. Smooth animations
+5. Always use tokens
+6. Nothing hardcoded
+7. Cleanliness and consistency
+8. Composable reusability
+9. Standard API
+10. Pro-level polished aesthetics
 
 ---
 
-# 🚀 11. Checklist final por componente
+# 🚀 8. Final Checklist per component
 
-- [ ] ¿Existe en Radix?  
-- [ ] Si existe, ¿lo extendí correctamente?  
-- [ ] ¿Funciona en light/dark mode?  
-- [ ] ¿Sigue el estilo Apple minimal?  
-- [ ] ¿Tiene animaciones suaves con Framer Motion?  
-- [ ] ¿Es accesible (ARIA, keyboard, roles)?  
-- [ ] ¿Tiene variantes configurables?  
-- [ ] ¿Acepta `className`?  
-- [ ] ¿El API es consistente con los demás componentes?  
-- [ ] ¿El código es limpio y tipado?  
-- [ ] ¿Se crearon los diferentes stories?  
-- [ ] ¿Se añadieron casos de uso reales a los stories?  
+- [ ] Does it work in light/dark mode?
+- [ ] Does it follow the Apple minimal style?
+- [ ] Does it have smooth animations with Framer Motion?
+- [ ] Is it accessible (ARIA, keyboard, roles)?
+- [ ] Does it have configurable variants?
+- [ ] Does it accept `className`?
+- [ ] Is the API consistent with the other components?
+- [ ] Is the code clean and typed?
+- [ ] Were the different stories created?
+- [ ] Were real use cases added to the stories?
 
-Ejemplo de casos de uso en stories:
+Example of use cases in stories:
 
 /* ========================================
    STORIES - USE CASES
    ======================================== */
 
 export const FileInspector: Story = {
-    name: '📁 Caso de Uso: Inspector de Archivo (macOS)',
+    name: '📁 Use Case: File Inspector (macOS)',
     args: {
         sections: [
             {
@@ -174,7 +143,7 @@ export const FileInspector: Story = {
                 id: 'permissions',
                 title: 'Sharing & Permissions',
                 items: [
-                    { label: 'Owner', value: 'Ana García', icon: <User className="w-3.5 h-3.5" /> },
+                    { label: 'Owner', value: 'Ana Garcia', icon: <User className="w-3.5 h-3.5" /> },
                     { label: 'Access', value: 'Read & Write' },
                     { label: 'Group', value: 'staff' },
                     { label: 'Others', value: 'Read only' },
@@ -197,7 +166,7 @@ export const FileInspector: Story = {
 };
 
 export const SystemInformation: Story = {
-    name: '💻 Caso de Uso: Información del Sistema',
+    name: '💻 Use Case: System Information',
     args: {
         sections: [
             {
@@ -251,7 +220,7 @@ export const SystemInformation: Story = {
 };
 
 export const AppSettings: Story = {
-    name: '⚙️ Caso de Uso: Configuración de App',
+    name: '⚙️ Use Case: App Settings',
     args: {
         sections: [
             {
@@ -305,7 +274,7 @@ export const AppSettings: Story = {
 };
 
 export const ProjectMetadata: Story = {
-    name: '📦 Caso de Uso: Metadatos de Proyecto',
+    name: '📦 Use Case: Project Metadata',
     args: {
         sections: [
             {
@@ -347,7 +316,7 @@ export const ProjectMetadata: Story = {
 };
 
 export const CompactVersion: Story = {
-    name: '📏 Versión Compacta',
+    name: '📏 Compact Version',
     args: {
         sections: sampleSystemInfo,
         variant: 'bordered',
@@ -389,5 +358,12 @@ export const Playground: Story = {
 
 ---
 
-## 🏁 Fin del Agent.md
+# 🤖 9. Agent Workflow and Context
 
+- **Skills and Agents:** Before starting any task, you must review and use the context and tools defined in the project's `.skills` and `.agents` folders.
+- **Spec-Driven Development (SDD):** Work must follow the SDD methodology. For SDD task management, **you must create issues on GitHub**.
+- **Strict Test-Driven Development (TDD):** It is mandatory to apply strict TDD. The corresponding tests must be defined and failing before writing any implementation code.
+
+---
+
+## 🏁 End of AGENT.md

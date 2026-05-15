@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Footer, FooterTop, FooterBottom, FooterColumn, FooterLink, FooterSection } from './Footer';
+import { Footer, FooterTop, FooterBottom, FooterColumn, FooterLink, FooterContent } from './Footer';
 
 const meta: Meta<typeof Footer> = {
     title: 'Layout/Footer',
@@ -19,7 +19,7 @@ export const Default: Story = {
                     title="FinTechApp"
                     description="Modern financial tools for everyone. Secure, fast, and reliable."
                 />
-                <FooterSection>
+                <FooterContent>
                     <FooterColumn title="Product">
                         <FooterLink href="#">Features</FooterLink>
                         <FooterLink href="#">Pricing</FooterLink>
@@ -43,7 +43,7 @@ export const Default: Story = {
                         <FooterLink href="#">Terms</FooterLink>
                         <FooterLink href="#">Cookies</FooterLink>
                     </FooterColumn>
-                </FooterSection>
+                </FooterContent>
                 <FooterBottom>
                     <span>© 2026 FinTechApp. All rights reserved.</span>
                 </FooterBottom>
@@ -76,7 +76,7 @@ export const LegalHeavyFooter: Story = {
                     title="ComplianceCorp"
                     description="Regulatory-compliant financial infrastructure for enterprises."
                 />
-                <FooterSection>
+                <FooterContent>
                     <FooterColumn title="Legal">
                         <FooterLink href="#">Privacy Policy</FooterLink>
                         <FooterLink href="#">Terms of Service</FooterLink>
@@ -101,7 +101,7 @@ export const LegalHeavyFooter: Story = {
                         <FooterLink href="#">DPO</FooterLink>
                         <FooterLink href="#">Compliance</FooterLink>
                     </FooterColumn>
-                </FooterSection>
+                </FooterContent>
                 <FooterBottom>
                     <span>© 2026 ComplianceCorp Inc. All rights reserved.</span>
                     <span>Built with ❤️ for regulatory excellence</span>
@@ -126,7 +126,7 @@ export const DarkMode: Story = {
                     title="DarkBank"
                     description="Banking that respects your privacy. No tracking, no gimmicks."
                 />
-                <FooterSection>
+                <FooterContent>
                     <FooterColumn title="Services">
                         <FooterLink href="#">Checking</FooterLink>
                         <FooterLink href="#">Savings</FooterLink>
@@ -143,7 +143,7 @@ export const DarkMode: Story = {
                         <FooterLink href="#">Contact</FooterLink>
                         <FooterLink href="#">Status</FooterLink>
                     </FooterColumn>
-                </FooterSection>
+                </FooterContent>
                 <FooterBottom>
                     <span>© 2026 DarkBank Inc.</span>
                     <span>🌙 Dark mode native</span>
@@ -161,7 +161,7 @@ export const SingleColumn: Story = {
                     title="Simple Finance"
                     description="One product. One price. All access."
                 />
-                <FooterSection>
+                <FooterContent>
                     <FooterColumn title="All Links">
                         <FooterLink href="#">Dashboard</FooterLink>
                         <FooterLink href="#">Transactions</FooterLink>
@@ -170,7 +170,7 @@ export const SingleColumn: Story = {
                         <FooterLink href="#">Help</FooterLink>
                         <FooterLink href="#">Log Out</FooterLink>
                     </FooterColumn>
-                </FooterSection>
+                </FooterContent>
                 <FooterBottom>
                     <span>© 2026 Simple Finance</span>
                 </FooterBottom>
@@ -187,7 +187,7 @@ export const WithLongLinkTexts: Story = {
                     title="International Wealth Management Platform"
                     description="Cross-border wealth management solutions for high-net-worth individuals and institutional investors."
                 />
-                <FooterSection>
+                <FooterContent>
                     <FooterColumn title="International Offices & Services">
                         <FooterLink href="#">United States — New York HQ</FooterLink>
                         <FooterLink href="#">European Union — Frankfurt Office</FooterLink>
@@ -206,7 +206,7 @@ export const WithLongLinkTexts: Story = {
                         <FooterLink href="#">Trade Finance & Supply Chain Solutions</FooterLink>
                         <FooterLink href="#">Capital Markets & Advisory Services</FooterLink>
                     </FooterColumn>
-                </FooterSection>
+                </FooterContent>
                 <FooterBottom>
                     <span>© 2026 International Wealth Management Platform Inc. All rights reserved. Member FDIC.</span>
                 </FooterBottom>
