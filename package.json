@@ -1,6 +1,6 @@
 {
   "name": "@smart-coder-labs/apple-design-system",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Design system completo estilo Apple (macOS/iOS/VisionOS) con Framer Motion",
   "keywords": [
     "apple-design-system",
@@ -52,6 +52,7 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "build": "npm run clean && tsc -p tsconfig.build.json",
+    "cli": "npm run build && node dist/cli/index.js",
     "build:registry": "ts-node scripts/build-registry.ts",
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
