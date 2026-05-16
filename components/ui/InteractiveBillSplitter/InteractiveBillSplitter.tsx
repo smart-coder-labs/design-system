@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Users, UserPlus, Check, Percent, Receipt, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { cn } from '../../../lib/utils';
-import { Avatar, AvatarImage, AvatarFallback } from './Avatar';
+import { Avatar, AvatarImage, AvatarFallback } from '../Avatar';
 
 export interface SplitContact {
     id: string;

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Gallery } from './Gallery';
-import { LightboxImage } from './Lightbox';
+import { LightboxImage } from '../Lightbox';
 
 const images: LightboxImage[] = [
   { src: 'https://picsum.photos/seed/fintech1/600/600', alt: 'Dashboard preview', caption: 'Main Dashboard' },

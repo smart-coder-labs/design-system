@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../../../lib/utils';
-import { Lightbox, LightboxImage } from './Lightbox';
+import { Lightbox, LightboxImage } from '../Lightbox';
 import { Maximize2, ImageOff } from 'lucide-react';
 
 export interface GalleryProps {

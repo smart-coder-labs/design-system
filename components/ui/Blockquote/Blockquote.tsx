@@ -1,6 +1,6 @@
 import React from 'react';
 import { Quote } from 'lucide-react';
-import { Text } from './Text';
+import { Text } from '../Text';
 
 export interface BlockquoteProps {
     children: React.ReactNode;

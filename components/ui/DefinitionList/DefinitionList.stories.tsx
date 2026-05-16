@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { DefinitionList, DefinitionItem } from './DefinitionList';
-import { Badge } from './Badge';
+import { Badge } from '../Badge';
 
 const items: DefinitionItem[] = [
   { term: 'Account Holder', description: 'Cesar Ruiz' },

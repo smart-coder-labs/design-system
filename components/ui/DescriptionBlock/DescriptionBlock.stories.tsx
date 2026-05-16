@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { DescriptionBlock, DescriptionMetadataItem } from './DescriptionBlock';
-import { Badge } from './Badge';
+import { Badge } from '../Badge';
 import { TrendingUp, Users, DollarSign } from 'lucide-react';
 
 const metadata: DescriptionMetadataItem[] = [

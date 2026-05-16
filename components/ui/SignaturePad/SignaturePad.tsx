@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { cn } from '../../../lib/utils';
-import { Button } from './Button';
+import { Button } from '../Button';
 import { Eraser, Download, Undo } from 'lucide-react';
 
 export interface SignaturePadProps {

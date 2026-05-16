@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '../../../lib/utils';
-import { Button } from './Button';
-import { Input } from './Input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './Select';
+import { Button } from '../Button';
+import { Input } from '../Input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../Select';
 import { Download, Copy, Check, RefreshCw, Barcode } from 'lucide-react';
 import type { BarcodeGeneratorProps, BarcodeFormat } from './BarcodeGenerator.types';
 

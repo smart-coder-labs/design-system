@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Monitor, Moon, Sun } from 'lucide-react';
-import { Switch } from './Switch';
+import { Switch } from '../Switch';
 import { cn } from '../../../lib/utils';
 
 /* ========================================

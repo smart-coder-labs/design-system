@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, BadgeCheck, X, Shield, ArrowRight } from 'lucide-react';
 import { cn } from '../../../lib/utils';
-import { Avatar, AvatarImage, AvatarFallback } from './Avatar';
+import { Avatar, AvatarImage, AvatarFallback } from '../Avatar';
 
 export interface PeerTagContact {
     id: string;

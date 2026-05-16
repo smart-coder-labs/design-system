@@ -7,15 +7,15 @@ import {
     Bell, Search, Plus
 } from 'lucide-react';
 
-import { BankAccountCard } from '../../BankAccountCard';
-import { TransactionList } from '../../TransactionList';
-import { BalanceChart } from '../../BalanceChart';
-import { QuickTransferBar } from '../../QuickTransferBar';
-import { VirtualCardPreview } from '../../VirtualCardPreview';
-import { CardSecurityControls } from '../../CardSecurityControls';
-import { CashbackWidget } from '../../CashbackWidget';
-import { PortfolioDistribution } from '../../PortfolioDistribution';
-import { AssetPriceTicker } from '../../AssetPriceTicker';
+import { BankAccountCard } from '../BankAccountCard';
+import { TransactionList } from '../TransactionList';
+import { BalanceChart } from '../BalanceChart';
+import { QuickTransferBar } from '../QuickTransferBar';
+import { VirtualCardPreview } from '../VirtualCardPreview';
+import { CardSecurityControls } from '../CardSecurityControls';
+import { CashbackWidget } from '../CashbackWidget';
+import { PortfolioDistribution } from '../PortfolioDistribution';
+import { AssetPriceTicker } from '../AssetPriceTicker';
 import type { FintechDashboardPreviewProps } from './FintechDashboardPreview.types';
 
 type Transaction = {

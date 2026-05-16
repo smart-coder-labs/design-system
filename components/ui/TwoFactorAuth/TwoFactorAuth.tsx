@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { cn } from '../../../lib/utils';
-import { OTPInput } from './OTPInput';
-import { Button } from './Button';
+import { OTPInput } from '../OTPInput';
+import { Button } from '../Button';
 import { AlertCircle, Shield, CheckCircle2 } from 'lucide-react';
 
 /* ========================================

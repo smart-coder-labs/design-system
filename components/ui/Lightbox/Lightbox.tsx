@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Download, ZoomIn, ZoomOut } from 'lucide-react';
 import { cn } from '../../../lib/utils';
-import { Button } from './Button';
+import { Button } from '../Button';
 
 export interface LightboxImage {
     src: string;

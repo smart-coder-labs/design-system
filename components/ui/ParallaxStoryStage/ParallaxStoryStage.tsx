@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { UnscramblingText } from './UnscramblingText';
-import { FloatingElement } from './FloatingElement';
-import { ComicPanel } from './ComicPanel';
+import { UnscramblingText } from '../UnscramblingText';
+import { FloatingElement } from '../FloatingElement';
+import { ComicPanel } from '../ComicPanel';
 import { cn } from '../../../lib/utils';
 
 export function ParallaxStoryStage({ className }: React.HTMLAttributes<HTMLDivElement>) {

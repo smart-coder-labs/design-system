@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { Button } from './Button';
-import { Input } from './Input';
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from './Select';
+import { Button } from '../Button';
+import { Input } from '../Input';
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '../Select';
 
 export type Operator = 'equals' | 'not_equals' | 'contains' | 'gt' | 'lt' | 'gte' | 'lte' | 'starts_with' | 'ends_with';
 

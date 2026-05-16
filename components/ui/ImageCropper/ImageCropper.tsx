@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Slider } from './Slider';
-import { Button } from './Button';
+import { Slider } from '../Slider';
+import { Button } from '../Button';
 import { RotateCcw, ZoomIn, Check, X, Grid3X3, Crop as CropIcon, RotateCw } from 'lucide-react';
 import { cn } from '../../../lib/utils';
 

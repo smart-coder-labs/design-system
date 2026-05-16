@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { Button } from './Button';
+import { Button } from '../Button';
 
 export interface SchedulerResource {
     id: string;

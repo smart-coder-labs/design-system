@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Spinner } from './Spinner';
+import { Spinner } from '../Spinner';
 import { cn } from '../../../lib/utils';
 
 export interface LoadingOverlayProps {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { X, Filter } from 'lucide-react';
-import { Button } from '../../Button';
-import { SearchInput } from '../../SearchInput';
-import { FilterSelect } from '../../Select';
+import { Button } from '../Button';
+import { SearchInput } from '../SearchInput';
+import { FilterSelect } from '../Select';
 import type { FilterBarProps, FilterSelectOption } from './FilterBar.types';
 
 export const FilterBar: React.FC<FilterBarProps> = ({

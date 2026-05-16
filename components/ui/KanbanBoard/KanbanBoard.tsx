@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import { Modal, ModalHeader, ModalTitle, ModalContent, ModalFooter, ModalCloseButton } from './Modal';
-import { Input, Textarea } from './Input';
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from './Select';
-import { Button } from './Button';
+import { Modal, ModalHeader, ModalTitle, ModalContent, ModalFooter, ModalCloseButton } from '../Modal';
+import { Input, Textarea } from '../Input';
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '../Select';
+import { Button } from '../Button';
 
 export interface KanbanCard {
     id: string;

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { DataGrid, DataGridColumn } from './DataGrid';
-import { Badge } from './Badge';
+import { Badge } from '../Badge';
 
 interface User {
   id: number;

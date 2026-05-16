@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import { cn } from '../../../lib/utils';
-import { Input } from './Input';
-import { Button } from './Button';
-import { PasswordInput } from './PasswordInput';
-import { Checkbox } from './Checkbox';
+import { Input } from '../Input';
+import { Button } from '../Button';
+import { PasswordInput } from '../PasswordInput';
+import { Checkbox } from '../Checkbox';
 import { Mail, Lock, User, AlertCircle } from 'lucide-react';
 
 /* ========================================

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeftRight, Info, ShieldCheck, Zap } from 'lucide-react';
 import { cn } from '../../../lib/utils';
-import { Tooltip } from './Tooltip'; // assumed to exist, will use native styled tooltip if not
+import { Tooltip } from '../Tooltip'; // assumed to exist, will use native styled tooltip if not
 
 export interface CryptoAsset {
     id: string;

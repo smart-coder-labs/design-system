@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { cn } from '../../../lib/utils';
 import { motion } from 'framer-motion';
 import { Copy, Check, Download, Eye, EyeOff, AlertTriangle } from 'lucide-react';
-import { Button } from './Button';
+import { Button } from '../Button';
 
 /* ========================================
    TYPES

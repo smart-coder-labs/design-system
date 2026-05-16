@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, MessageCircle, Repeat, Share, Globe, Lock, User, MoreHorizontal } from 'lucide-react';
 import { cn } from '../../../lib/utils';
-import { Avatar, AvatarImage, AvatarFallback } from './Avatar';
+import { Avatar, AvatarImage, AvatarFallback } from '../Avatar';
 
 export interface SocialPaymentInfo {
     id: string;

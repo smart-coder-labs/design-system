@@ -1,19 +1,20 @@
-interface Role {
+export interface Role {
     id: string;
     name: string;
     description?: string;
 }
 
-
-interface Permission {
+export interface Permission {
     id: string;
     name: string;
     description?: string;
     category?: string;
 }
 
-
-interface PermissionsMatrixProps {
+export interface PermissionsMatrixProps {
     roles: Role[];
     permissions: Permission[];
     rolePermissions: { [roleId: string]: string[] };
+    onChange?: (roleId: string, permissionIds: string[]) => void;
+    className?: string;
+}

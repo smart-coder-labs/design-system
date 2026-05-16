@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { Modal, ModalHeader, ModalTitle, ModalDescription, ModalContent, ModalFooter, ModalCloseButton, ModalClose } from './Modal';
-import { Button } from './Button';
+import { Modal, ModalHeader, ModalTitle, ModalDescription, ModalContent, ModalFooter, ModalCloseButton, ModalClose } from '../Modal';
+import { Button } from '../Button';
 
 export type ModalConfig = {
   title: string;

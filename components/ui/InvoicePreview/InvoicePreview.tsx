@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { FileText, Download, Printer, Share2, CheckCircle, Clock, AlertCircle, Loader2 } from 'lucide-react';
-import { Button } from './Button';
+import { Button } from '../Button';
 
 export interface InvoiceItem {
     id: string;

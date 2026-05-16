@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, TitleProps } from './Title';
+import { Title, TitleProps } from '../Title';
 
 export interface HeadingProps extends TitleProps { }
 

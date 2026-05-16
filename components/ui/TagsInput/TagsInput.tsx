@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { X } from 'lucide-react';
 import { cn } from '../../../lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Label } from './Label';
+import { Label } from '../Label';
 
 /* ========================================
    TYPES

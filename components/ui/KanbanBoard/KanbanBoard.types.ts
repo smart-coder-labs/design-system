@@ -1,4 +1,4 @@
-interface KanbanCard {
+export interface KanbanCard {
     id: string;
     title: string;
     description?: string;
@@ -7,8 +7,9 @@ interface KanbanCard {
         name: string;
         avatar?: string;
     };
+}
 
-interface KanbanColumn {
+export interface KanbanColumn {
     id: string;
     title: string;
     cards: KanbanCard[];
@@ -16,8 +17,7 @@ interface KanbanColumn {
     limit?: number;
 }
 
-
-interface KanbanBoardProps {
+export interface KanbanBoardProps {
     columns: KanbanColumn[];
     onCardMove?: (cardId: string, fromColumnId: string, toColumnId: string, newIndex: number) => void;
     onCardClick?: (card: KanbanCard) => void;

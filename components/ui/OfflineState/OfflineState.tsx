@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { WifiOff, RefreshCw } from 'lucide-react';
-import { Button } from './Button';
+import { Button } from '../Button';
 
 export interface OfflineStateProps {
     /**

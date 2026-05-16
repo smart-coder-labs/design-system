@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { cn } from '../../../lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Bell, Settings, CheckCircle2, AlertCircle, Info, XCircle } from 'lucide-react';
-import { Button } from './Button';
-import { Badge } from './Badge';
+import { Button } from '../Button';
+import { Badge } from '../Badge';
 
 /* ========================================
    TYPES

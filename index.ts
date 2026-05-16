@@ -1,5 +1,6 @@
 // Utils
 export { cn } from './lib/utils';
+export * from './components/ui/TableOfContents';
 
 // UI Components
 export * from './components/ui/ImmersiveHero';

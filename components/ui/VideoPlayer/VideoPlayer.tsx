@@ -12,7 +12,7 @@ import {
     SkipForward,
     Loader2
 } from 'lucide-react';
-import { Slider } from './Slider';
+import { Slider } from '../Slider';
 import { cn } from '../../../lib/utils';
 
 export interface VideoPlayerProps {
