@@ -42,23 +42,25 @@ export async function getAvailableComponents(): Promise<string[]> {
   return Object.keys(registry);
 }
 
-export async function getComponentSource(componentName: string): Promise<string | null> {
+export async function getComponentFiles(componentName: string): Promise<Array<{ name: string; content: string }> | null> {
   const registry = await fetchRegistry();
   const component = registry[componentName];
-  
+
   if (!component || !component.files || component.files.length === 0) {
     return null;
   }
-  
-  // We currently only handle single-file components for simplicity
-  const fileUrl = component.files[0].url;
-  
+
   try {
-    const res = await fetch(fileUrl);
-    if (!res.ok) {
-      throw new Error(`Failed to fetch component source from ${fileUrl}: ${res.statusText}`);
-    }
-    return await res.text();
+    const results = await Promise.all(
+      component.files.map(async (file) => {
+        const res = await fetch(file.url);
+        if (!res.ok) {
+          throw new Error(`Failed to fetch ${file.name} from ${file.url}: ${res.statusText}`);
+        }
+        return { name: file.name, content: await res.text() };
+      })
+    );
+    return results;
   } catch (error) {
     console.error(`Error fetching component ${componentName}:`, error);
     return null;

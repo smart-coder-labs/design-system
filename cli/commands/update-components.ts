@@ -3,7 +3,7 @@ import path from "path";
 import chalk from "chalk";
 import ora from "ora";
 import prompts from "prompts";
-import { getAvailableComponents, getComponentSource } from "../utils/registry";
+import { getAvailableComponents, getComponentFiles } from "../utils/registry";
 
 export const updateComponents = async () => {
   // 1. Load config
@@ -28,12 +28,12 @@ export const updateComponents = async () => {
 
   // 3. Get installed components
   const spinner = ora("Scanning for installed components...").start();
-  const files = await fs.readdir(resolvedComponentsDir);
+  const entries = await fs.readdir(resolvedComponentsDir, { withFileTypes: true });
   const availableComponents = await getAvailableComponents();
 
-  const installedComponents = files
-    .filter((file) => file.endsWith(".tsx") || file.endsWith(".ts"))
-    .map((file) => path.basename(file, path.extname(file)))
+  const installedComponents = entries
+    .filter((e) => e.isDirectory())
+    .map((e) => e.name)
     .filter((name) => availableComponents.includes(name))
     .sort();
 
@@ -97,21 +97,20 @@ export const updateComponents = async () => {
     updateSpinner.text = `Updating ${component}...`;
 
     try {
-      const source = await getComponentSource(component);
+      const files = await getComponentFiles(component);
 
-      if (!source) {
-        updateSpinner.warn(
-          `Component '${component}' not found in registry.`
-        );
+      if (!files) {
+        updateSpinner.warn(`Component '${component}' not found in registry.`);
         failCount++;
         continue;
       }
 
-      const destPath = path.resolve(
-        resolvedComponentsDir,
-        `${component}.tsx`
-      );
-      await fs.writeFile(destPath, source);
+      const componentDir = path.resolve(resolvedComponentsDir, component);
+      await fs.ensureDir(componentDir);
+
+      for (const file of files) {
+        await fs.writeFile(path.join(componentDir, file.name), file.content);
+      }
       updateSpinner.succeed(`Updated ${component}`);
       successCount++;
     } catch (error) {

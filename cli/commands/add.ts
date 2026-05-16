@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs-extra";
 import chalk from "chalk";
 import ora from "ora";
-import { getAvailableComponents, getComponentSource } from "../utils/registry";
+import { getAvailableComponents, getComponentFiles } from "../utils/registry";
 
 export const add = async (components: string[]) => {
   if (!components || components.length === 0) {
@@ -49,29 +49,33 @@ export const add = async (components: string[]) => {
     processed.add(component);
     spinner.text = `Installing ${component}...`;
 
-    const source = await getComponentSource(component);
-    
-    if (!source) {
+    const files = await getComponentFiles(component);
+
+    if (!files) {
       spinner.warn(`Component '${component}' not found.`);
       continue;
     }
 
-    // Parse for local dependencies (e.g., import { Button } from "./Button")
-    // Regex looks for imports starting with ./ followed by a capitalized word (Component)
-    const localImportRegex = /from\s+['"]\.\/([A-Z][a-zA-Z0-9]*)['"]/g;
-    let match;
-    while ((match = localImportRegex.exec(source)) !== null) {
+    // Parse main file for local dependencies (e.g., import { Button } from "../Button")
+    const mainFile = files.find((f) => f.name === `${component}.tsx`);
+    if (mainFile) {
+      const localImportRegex = /from\s+['"]\.\.\/([A-Z][a-zA-Z0-9]*)['"]/g;
+      let match;
+      while ((match = localImportRegex.exec(mainFile.content)) !== null) {
         const dependentComponent = match[1];
         if (!processed.has(dependentComponent) && !queue.includes(dependentComponent)) {
-            queue.push(dependentComponent);
-            spinner.info(`Detected dependency: ${dependentComponent}`);
+          queue.push(dependentComponent);
+          spinner.info(`Detected dependency: ${dependentComponent}`);
         }
+      }
     }
 
-    const destPath = path.resolve(process.cwd(), config.componentsDir, `${component}.tsx`);
-    await fs.ensureDir(path.dirname(destPath));
-    
-    await fs.writeFile(destPath, source);
+    const componentDir = path.resolve(process.cwd(), config.componentsDir, component);
+    await fs.ensureDir(componentDir);
+
+    for (const file of files) {
+      await fs.writeFile(path.join(componentDir, file.name), file.content);
+    }
     spinner.succeed(`Installed ${component}`);
   }
 
