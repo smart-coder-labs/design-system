@@ -87,4 +87,3 @@ export const Text: React.FC<TextProps> = ({
 
 Text.displayName = 'Text';
 
-export default Text;

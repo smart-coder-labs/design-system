@@ -117,4 +117,3 @@ export const CompactDefinitionList = forwardRef<HTMLDListElement, CompactDefinit
 
 CompactDefinitionList.displayName = 'CompactDefinitionList';
 
-export default DefinitionList;

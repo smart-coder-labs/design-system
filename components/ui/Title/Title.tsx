@@ -81,4 +81,3 @@ export const Title: React.FC<TitleProps> = ({
 
 Title.displayName = 'Title';
 
-export default Title;

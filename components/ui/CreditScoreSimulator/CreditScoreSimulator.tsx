@@ -138,4 +138,3 @@ export const CreditScoreSimulator: React.FC<CreditScoreSimulatorProps> = ({
   );
 };
 
-export default CreditScoreSimulator;

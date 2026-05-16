@@ -82,4 +82,3 @@ export const Chart: React.FC<ChartProps> = ({ type, data, options, className, si
   );
 };
 
-export default Chart;

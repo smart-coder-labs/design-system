@@ -130,4 +130,3 @@ export const CreditLimitManager: React.FC<CreditLimitManagerProps> = ({
 
 CreditLimitManager.displayName = 'CreditLimitManager';
 
-export default CreditLimitManager;

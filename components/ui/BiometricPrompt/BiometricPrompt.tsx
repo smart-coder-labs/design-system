@@ -177,4 +177,3 @@ export const BiometricPrompt: React.FC<BiometricPromptProps> = ({
 };
 
 BiometricPrompt.displayName = 'BiometricPrompt';
-export default BiometricPrompt;

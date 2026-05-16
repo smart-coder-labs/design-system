@@ -350,4 +350,3 @@ export const AchTransactionsVisualizer = React.forwardRef<HTMLDivElement, AchTra
 
 AchTransactionsVisualizer.displayName = 'AchTransactionsVisualizer';
 
-export default AchTransactionsVisualizer;

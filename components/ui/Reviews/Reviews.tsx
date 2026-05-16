@@ -112,4 +112,3 @@ export const ReviewsList: React.FC<ReviewsProps> = ({ reviews, className = '', c
   );
 };
 
-export default Reviews;

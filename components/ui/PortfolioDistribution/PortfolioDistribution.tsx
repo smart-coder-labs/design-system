@@ -175,4 +175,3 @@ export const PortfolioDistribution: React.FC<PortfolioDistributionProps> = ({
 };
 
 PortfolioDistribution.displayName = 'PortfolioDistribution';
-export default PortfolioDistribution;

@@ -144,4 +144,3 @@ export const DescriptionBlock = forwardRef<HTMLDivElement, DescriptionBlockProps
 
 DescriptionBlock.displayName = 'DescriptionBlock';
 
-export default DescriptionBlock;

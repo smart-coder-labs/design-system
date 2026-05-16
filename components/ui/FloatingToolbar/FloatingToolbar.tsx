@@ -297,4 +297,3 @@ export const FloatingToolbar: React.FC<FloatingToolbarProps> = ({
   );
 };
 
-export default FloatingToolbar;

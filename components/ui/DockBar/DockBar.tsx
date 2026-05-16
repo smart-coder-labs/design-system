@@ -158,4 +158,3 @@ const DockBarIcon: React.FC<DockBarIconProps> = ({
     );
 };
 
-export default DockBar;

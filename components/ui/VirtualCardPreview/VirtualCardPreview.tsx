@@ -320,4 +320,3 @@ export const VirtualCardPreview: React.FC<VirtualCardPreviewProps> = ({
 };
 
 VirtualCardPreview.displayName = 'VirtualCardPreview';
-export default VirtualCardPreview;

@@ -58,4 +58,3 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
 
 EmptyState.displayName = 'EmptyState';
 
-export default EmptyState;

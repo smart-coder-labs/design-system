@@ -97,4 +97,3 @@ export const FAB = forwardRef<HTMLButtonElement, FABProps>(
 
 FAB.displayName = 'FAB';
 
-export default FAB;

@@ -241,4 +241,3 @@ export const DiffViewer: React.FC<DiffViewerProps> = ({
     );
 };
 
-export default DiffViewer;

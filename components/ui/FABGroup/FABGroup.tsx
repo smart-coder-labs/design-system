@@ -114,4 +114,3 @@ export const FABGroup = forwardRef<HTMLDivElement, FABGroupProps>(
 
 FABGroup.displayName = 'FABGroup';
 
-export default FABGroup;

@@ -134,4 +134,3 @@ export const QuantitySelector: React.FC<QuantitySelectorProps> = ({
   );
 };
 
-export default QuantitySelector;

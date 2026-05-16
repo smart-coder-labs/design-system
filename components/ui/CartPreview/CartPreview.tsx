@@ -321,4 +321,3 @@ export const CartPreview: React.FC<CartPreviewProps> = ({
     );
 };
 
-export default CartPreview;

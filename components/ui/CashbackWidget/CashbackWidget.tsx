@@ -100,4 +100,3 @@ export const CashbackWidget: React.FC<CashbackWidgetProps> = ({
 };
 
 CashbackWidget.displayName = 'CashbackWidget';
-export default CashbackWidget;

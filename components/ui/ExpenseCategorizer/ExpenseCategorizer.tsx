@@ -126,4 +126,3 @@ export const ExpenseCategorizer: React.FC = () => {
   );
 };
 
-export default ExpenseCategorizer;

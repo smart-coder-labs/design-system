@@ -215,4 +215,3 @@ export const SecurityOTPInput: React.FC<SecurityOTPInputProps> = ({
 };
 
 SecurityOTPInput.displayName = 'SecurityOTPInput';
-export default SecurityOTPInput;

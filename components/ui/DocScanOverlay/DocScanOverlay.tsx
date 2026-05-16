@@ -165,4 +165,3 @@ export const DocScanOverlay: React.FC<DocScanOverlayProps> = ({
   );
 };
 
-export default DocScanOverlay;

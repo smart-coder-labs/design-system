@@ -260,4 +260,3 @@ export const IdentityVerificationStep: React.FC<IdentityVerificationStepProps> =
 };
 
 IdentityVerificationStep.displayName = 'IdentityVerificationStep';
-export default IdentityVerificationStep;

@@ -113,4 +113,3 @@ export const EarlyPaymentDiscount: React.FC<EarlyPaymentDiscountProps> = ({
 
 EarlyPaymentDiscount.displayName = 'EarlyPaymentDiscount';
 
-export default EarlyPaymentDiscount;

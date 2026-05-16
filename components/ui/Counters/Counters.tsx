@@ -34,4 +34,3 @@ export const Counters: React.FC<CountersProps> = ({ items, className, compact = 
   );
 };
 
-export default Counters;

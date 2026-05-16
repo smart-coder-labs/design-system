@@ -388,4 +388,3 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
 
 DateRangePicker.displayName = 'DateRangePicker';
 
-export default DateRangePicker;

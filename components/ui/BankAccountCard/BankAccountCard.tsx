@@ -161,4 +161,3 @@ export const BankAccountCard: React.FC<BankAccountCardProps> = ({
 };
 
 BankAccountCard.displayName = 'BankAccountCard';
-export default BankAccountCard;

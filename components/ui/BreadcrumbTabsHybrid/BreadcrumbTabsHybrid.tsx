@@ -158,4 +158,3 @@ export const BreadcrumbTabsHybrid: React.FC<BreadcrumbTabsHybridProps> = ({
   );
 };
 
-export default BreadcrumbTabsHybrid;
