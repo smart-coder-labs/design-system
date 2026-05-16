@@ -32,43 +32,68 @@ npm install -D @smart-coder-labs/apple-design-system
 
 ---
 
-## 💻 CLI (Nuevo)
+## 💻 CLI
 
-El Design System ahora incluye una CLI integrada para facilitar la instalación y gestión de componentes.
+El Design System incluye una CLI integrada inspirada en shadcn/ui — descargás el código fuente de los componentes directamente a tu proyecto, no importás un paquete.
 
 ### `init`
 
-Configura tu proyecto automáticamente instalando dependencias y configurando Tailwind CSS.
+Configura tu proyecto. **Detecta automáticamente el framework** leyendo los archivos de config y `package.json`.
 
 ```bash
 npx @smart-coder-labs/apple-design-system init
 ```
 
+```
+🍏 Apple Design System — Initialization
+
+Detected framework: Next.js (App Router — RSC enabled)
+Is this correct? › Yes
+
+Project root directory? › ./src
+Where to install components? › ./src/components/ui
+Global CSS file path? › ./src/index.css
+Install required dependencies now? › Yes
+```
+
+**Frameworks soportados:** Next.js (App Router y Pages Router), Vite, Astro, Remix / React Router.
+
+La configuración se guarda en `design-system.json`:
+
+```json
+{
+  "framework": "next",
+  "rsc": true,
+  "componentsDir": "./src/components/ui",
+  "globalCss": "./src/index.css",
+  "components": {}
+}
+```
+
+> **`rsc: true`** — Next.js App Router. Los componentes conservan `'use client'`.  
+> **`rsc: false`** — Vite, Astro, Remix, Next.js Pages Router. `'use client'` se elimina automáticamente al instalar.
+
+---
+
 ### `add`
 
-Añade componentes individuales a tu proyecto. La CLI descargará el código fuente más reciente directamente desde el repositorio.
+Añade componentes a tu proyecto. Detecta dependencias entre componentes automáticamente.
 
 ```bash
 npx @smart-coder-labs/apple-design-system add Button Card
 ```
 
-Esto:
-1.  Descarga el código del componente a `./components/ui`.
-2.  Instala automáticamente las dependencias necesarias (`framer-motion`, `radix-ui`, etc.) solo para ese componente.
+Sin argumentos abre un selector interactivo (instalar todo o elegir específicos).
 
 ---
 
 ### `update`
 
-Actualiza los componentes instalados en tu proyecto a la última versión disponible.
+Actualiza los componentes ya instalados a la última versión del registry.
 
 ```bash
-npx @smart-coder-labs/apple-design-system update [Componente]
+npx @smart-coder-labs/apple-design-system update
 ```
-
-Esto:
-1. Comprueba si hay versiones nuevas de los componentes en tu carpeta `components/ui`.
-2. Te pregunta antes de sobrescribir cualquier archivo.
 
 ---
 

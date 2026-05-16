@@ -1,110 +1,133 @@
-# 🚀 Quick Start Guide - Apple Design System
+# 🚀 Quick Start — Apple Design System
 
-El Design System ahora funciona bajo un modelo de "Components as Code" (similar a shadcn/ui), donde tú eres dueño del código de los componentes.
+Modelo "Components as Code" inspirado en shadcn/ui: vos sos dueño del código.
 
-## ⚡ Instalación
+---
 
-### 1. Inicializar el proyecto
+## ⚡ Instalación en 2 pasos
 
-Ejecuta el comando `init` para configurar tu proyecto. Esto creará el archivo de configuración `design-system.json` y preparará utilidades base.
+### 1. Inicializar
 
 ```bash
 npx @smart-coder-labs/apple-design-system init
 ```
 
-El asistente te preguntará:
-- Dónde guardar los componentes (ej. `./components/ui`).
-- Dónde está tu CSS global.
-- Si deseas instalar las dependencias base (`tailwindcss`, `framer-motion`, etc.).
+La CLI **detecta automáticamente tu framework** (Next.js, Vite, Astro, Remix) y configura el proyecto:
 
-### 2. Usar en tu proyecto
+```
+🍏 Apple Design System — Initialization
 
-```bash
-npx @smart-coder-labs/apple-design-system add Button Card Input Modal
+Detected framework: Next.js (App Router — RSC enabled)
+Is this correct? › Yes
+
+Project root directory? › ./src
+Where to install components? › ./src/components/ui
+Global CSS file path? › ./src/index.css
+Install required dependencies now? › Yes
+
+✓ Created design-system.json
+✓ Created src/lib/utils.ts
+✓ Created styles/apple-ds.css
+✓ Updated src/index.css with design system styles.
+✓ Dependencies installed.
 ```
 
-```tsx
-import { Button } from "@/components/ui/Button";
+Esto crea `design-system.json` con tu configuración:
 
-function App() {
-  return (
-    <Button variant="primary">Submit</Button>
-  );
+```json
+{
+  "framework": "next",
+  "rsc": true,
+  "componentsDir": "./src/components/ui",
+  "globalCss": "./src/index.css",
+  "components": {}
 }
+```
+
+> Si tu framework no se detecta correctamente, el CLI te muestra un selector para elegirlo manualmente.
+
+### 2. Agregar componentes
+
+```bash
+npx @smart-coder-labs/apple-design-system add Button Card Modal
+```
+
+Los archivos se copian a `componentsDir`. Si un componente depende de otro, se instala automáticamente.
+
+---
+
+## 🌐 Comportamiento por framework
+
+| Framework | `rsc` | `'use client'` en componentes |
+|---|---|---|
+| Next.js App Router | `true` | Se conserva |
+| Next.js Pages Router | `false` | Se elimina |
+| Vite | `false` | Se elimina |
+| Astro | `false` | Se elimina* |
+| Remix / React Router | `false` | Se elimina |
+
+> \* En Astro, los componentes React requieren la integración `@astrojs/react` y directivas `client:*` al usarlos en archivos `.astro`.
+
+---
+
+## 📦 Actualizar componentes
+
+```bash
+npx @smart-coder-labs/apple-design-system update
+```
+
+Escanea los componentes instalados, te deja elegir cuáles actualizar y descarga la versión más reciente del registry.
+
+---
+
+## 🌓 Dark Mode
+
+El sistema usa la clase `dark` en el elemento raíz:
+
+```tsx
+// Activar dark mode
+document.documentElement.classList.add('dark')
+
+// Desactivar
+document.documentElement.classList.remove('dark')
 ```
 
 ---
 
-## 🌓 Activar Dark Mode
+## ⚙️ Tailwind
 
-El sistema utiliza la clase `dark` en el elemento HTML.
+Asegurate de que tu `tailwind.config.js` apunte a los componentes instalados:
 
-### Toggle manual (Ejemplo)
-
-```tsx
-"use client"
-
-import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { Button } from "@/components/ui/button"
-
-export function ModeToggle() {
-  const [theme, setTheme] = React.useState("light")
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light"
-    setTheme(newTheme)
-    document.documentElement.classList.toggle("dark", newTheme === "dark")
-  }
-
-  return (
-    <Button variant="ghost" size="icon" onClick={toggleTheme}>
-      <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
-  )
+```js
+export default {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './components/ui/**/*.{js,ts,jsx,tsx}', // ajustá según tu componentsDir
+  ],
 }
-```
-
----
-
-## 📦 Componentes Disponibles
-
-Puedes ver la lista completa de componentes disponibles en el repositorio o autocompletando con el comando `add`.
-
-```bash
-npx @smart-coder-labs/apple-design-system add --help
 ```
 
 ---
 
 ## ⚠️ Troubleshooting
 
-### Error: "Module not found"
-Si no puedes importar `@/components/ui/...`, asegúrate de tener configurado el alias `@` en tu `tsconfig.json`.
-
+**"Module not found" con `@/...`**  
+Configurá el alias `@` en `tsconfig.json`:
 ```json
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "paths": { "@/*": ["./src/*"] }
   }
 }
 ```
 
-### Estilos no se aplican
-Verifica que las rutas en `tailwind.config.js` (`content`) apunten correctamente a donde se descargaron los componentes (ej. `./components/ui/**/*.{ts,tsx}`).
+**Estilos no se aplican**  
+Verificá que el `content` de Tailwind cubra la carpeta donde se instalaron los componentes.
 
-### Error de autenticación
-Si el repositorio es privado, asegúrate de tener acceso. Nota: La CLI actual asume acceso público o autenticado vía entorno para `git` / `fetch`.
+**Framework mal detectado**  
+El init te pregunta si la detección es correcta. Seleccioná el correcto del menú. Podés también editar `design-system.json` manualmente y cambiar `framework` y `rsc`.
 
 ---
 
-## 🎉 ¡Listo!
-
-Tú tienes el control total del código. Puedes abrir `./components/ui/button.tsx` y modificarlo según tus necesidades.
-
-**Happy coding!** 🚀
+**Happy coding! 🚀**

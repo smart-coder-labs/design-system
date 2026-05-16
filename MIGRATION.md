@@ -133,6 +133,24 @@ Si encuentras problemas durante la migración:
 
 ## Changelog
 
+### v1.3.0
+- ✨ **Nuevo**: Detección automática de framework en `init` (Next.js App/Pages Router, Vite, Astro, Remix)
+- ✨ **Nuevo**: `'use client'` se elimina automáticamente en proyectos no-RSC (Vite, Astro, Remix, Pages Router)
+- ✨ **Nuevo**: Nuevo campo `framework` y `rsc` en `design-system.json`
+- ✨ **Nuevo**: Componente `TableOfContents` con scroll suave y soporte de reduced-motion
+- 🐛 **Fix**: 75 archivos `.types.ts` corruptos restaurados
+- 🐛 **Fix**: 48 componentes con imports relativos incorrectos (`./Button` → `../Button`)
+- 🐛 **Fix**: `'use client';` con punto y coma ahora se stripea correctamente
+
+### v1.2.3
+- ✨ **Nuevo**: CLI `update-components` para actualizar componentes instalados
+- 🐛 **Fix**: Alineación de mensajes entre `add` y `update-components`
+
+### v1.2.0
+- ✨ **Nuevo**: Tracking de componentes instalados en `design-system.json` con versioning
+- ✨ **Nuevo**: CLI descarga estructura completa de carpetas por componente
+- 🐛 **Fix**: URLs del registry actualizadas a la nueva estructura
+
 ### v1.0.3
 - ✨ **Nuevo**: Preset de Tailwind exportable (`tailwind.preset.ts`)
 - 📦 **Mejora**: Exportaciones explícitas en `package.json`
