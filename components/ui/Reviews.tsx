@@ -85,6 +85,10 @@ export interface ReviewsProps {
 }
 
 export const Reviews: React.FC<ReviewsProps> = ({ reviews, className = '', compact = false }) => {
+  return <ReviewsList reviews={reviews} className={className} compact={compact} />;
+};
+
+export const ReviewsList: React.FC<ReviewsProps> = ({ reviews, className = '', compact = false }) => {
   return (
     <div className={cn('space-y-4', className)}>
       {reviews.map((r) => (
