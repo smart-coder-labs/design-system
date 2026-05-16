@@ -1,2 +1,2 @@
-export { ExpenseCategorizer, default } from './ExpenseCategorizer';
+export { ExpenseCategorizer } from './ExpenseCategorizer';
 export type { } from './ExpenseCategorizer.types';

@@ -1,2 +1,2 @@
-export { AchTransactionsVisualizer, default } from './AchTransactionsVisualizer';
+export { AchTransactionsVisualizer } from './AchTransactionsVisualizer';
 export type { AchTransactionsVisualizerProps, VisualizerDetailItem, VisualizerFeeItem, VisualizerHistoryItem, VisualizerTransaction } from './AchTransactionsVisualizer.types';

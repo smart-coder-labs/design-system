@@ -1,2 +1,2 @@
-export { CreditLimitManager, default } from './CreditLimitManager';
+export { CreditLimitManager } from './CreditLimitManager';
 export type { CreditLimitManagerProps } from './CreditLimitManager.types';
