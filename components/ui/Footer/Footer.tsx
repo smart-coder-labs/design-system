@@ -1,8 +1,8 @@
 import React from 'react';
 import { cn } from '../../../lib/utils';
 import { Col, GridContainer, Row } from '../GridSystem';
-import Text from '../Text';
-import Title from '../Title';
+import { Text } from '../Text';
+import { Title } from '../Title';
 
 /* ========================================
    FOOTER ROOT

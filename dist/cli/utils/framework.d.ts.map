@@ -1,0 +1,1 @@
+{"version":3,"file":"framework.d.ts","sourceRoot":"","sources":["../../../cli/utils/framework.ts"],"names":[],"mappings":"AAGA,MAAM,MAAM,SAAS,GAAG,MAAM,GAAG,MAAM,GAAG,OAAO,GAAG,OAAO,GAAG,SAAS,CAAC;AAExE,MAAM,WAAW,aAAa;IAC5B,SAAS,EAAE,SAAS,CAAC;IACrB,+EAA+E;IAC/E,GAAG,EAAE,OAAO,CAAC;IACb,KAAK,EAAE,MAAM,CAAC;CACf;AAwDD,wBAAgB,eAAe,CAAC,GAAG,GAAE,MAAsB,GAAG,aAAa,CAW1E"}

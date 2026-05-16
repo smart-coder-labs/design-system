@@ -10,49 +10,109 @@ const fs_extra_1 = __importDefault(require("fs-extra"));
 const chalk_1 = __importDefault(require("chalk"));
 const ora_1 = __importDefault(require("ora"));
 const registry_1 = require("../utils/registry");
+const framework_1 = require("../utils/framework");
+const FRAMEWORK_CHOICES = [
+    { title: "Next.js (App Router)", value: "next-app" },
+    { title: "Next.js (Pages Router)", value: "next-pages" },
+    { title: "Vite", value: "vite" },
+    { title: "Astro", value: "astro" },
+    { title: "Remix / React Router", value: "remix" },
+    { title: "Other", value: "unknown" },
+];
+function resolveRsc(value) {
+    if (value === "next-app")
+        return { framework: "next", rsc: true };
+    if (value === "next-pages")
+        return { framework: "next", rsc: false };
+    return { framework: value, rsc: false };
+}
 const init = async () => {
-    console.log(chalk_1.default.bold.green("🍏 Apple Design System Initialization"));
-    console.log("This utility will help you configure your project.");
+    console.log(chalk_1.default.bold.green("\n🍏 Apple Design System — Initialization\n"));
+    // ── 1. Auto-detect framework ──────────────────────────────────────────────
+    const detected = (0, framework_1.detectFramework)(process.cwd());
+    if (detected.framework !== "unknown") {
+        const rscNote = detected.rsc ? chalk_1.default.gray(" (App Router — RSC enabled)") : "";
+        console.log(chalk_1.default.cyan(`Detected framework: `) +
+            chalk_1.default.bold(detected.label) +
+            rscNote);
+    }
+    else {
+        console.log(chalk_1.default.yellow("Could not auto-detect framework."));
+    }
+    // ── 2. Confirm or override ────────────────────────────────────────────────
+    let framework = detected.framework;
+    let rsc = detected.rsc;
+    if (detected.framework !== "unknown") {
+        const { confirm } = await (0, prompts_1.default)({
+            type: "confirm",
+            name: "confirm",
+            message: `Is this correct?`,
+            initial: true,
+        });
+        if (!confirm) {
+            const { choice } = await (0, prompts_1.default)({
+                type: "select",
+                name: "choice",
+                message: "Select your framework:",
+                choices: FRAMEWORK_CHOICES,
+            });
+            const resolved = resolveRsc(choice);
+            framework = resolved.framework;
+            rsc = resolved.rsc;
+        }
+    }
+    else {
+        const { choice } = await (0, prompts_1.default)({
+            type: "select",
+            name: "choice",
+            message: "Select your framework:",
+            choices: FRAMEWORK_CHOICES,
+        });
+        const resolved = resolveRsc(choice);
+        framework = resolved.framework;
+        rsc = resolved.rsc;
+    }
+    // ── 3. Rest of project config ─────────────────────────────────────────────
     const response = await (0, prompts_1.default)([
         {
             type: "text",
             name: "projectRoot",
-            message: "What is your project root directory?",
+            message: "Project root directory?",
             initial: "./src",
         },
         {
             type: "text",
             name: "componentsDir",
-            message: "Where would you like to install components?",
+            message: "Where to install components?",
             initial: (prev) => `${prev}/components/ui`,
         },
         {
             type: "text",
             name: "globalCss",
-            message: "Where is your global CSS file?",
-            initial: (prev, values) => `${values.projectRoot}/index.css`,
+            message: "Global CSS file path?",
+            initial: (_prev, values) => `${values.projectRoot}/index.css`,
         },
         {
             type: "confirm",
             name: "installDeps",
-            message: "Would you like to install required dependencies now?",
+            message: "Install required dependencies now?",
             initial: true,
         },
     ]);
     const spin = (0, ora_1.default)("Configuring project...").start();
-    // Create config file
+    // ── 4. Write design-system.json ───────────────────────────────────────────
     const config = {
+        framework,
+        rsc,
         componentsDir: response.componentsDir,
         globalCss: response.globalCss,
+        components: {},
     };
     await fs_extra_1.default.writeJSON("design-system.json", config, { spaces: 2 });
-    spin.succeed("Configuration file design-system.json created.");
-    // Check/Create components directory
+    spin.succeed("Created design-system.json");
+    // ── 5. Ensure directories ─────────────────────────────────────────────────
     const resolvedComponentsDir = path_1.default.resolve(process.cwd(), response.componentsDir);
     await fs_extra_1.default.ensureDir(resolvedComponentsDir);
-    // Also create a lib/utils.ts for cn helper if it doesn't exist
-    // We try to infer lib location from componentsDir or projectRoot
-    // If components are in src/components/ui, lib should be src/lib
     const utilsDir = path_1.default.resolve(process.cwd(), response.projectRoot, "lib");
     const utilsPath = path_1.default.resolve(utilsDir, "utils.ts");
     if (!fs_extra_1.default.existsSync(utilsPath)) {
@@ -64,9 +124,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 `);
-        console.log(chalk_1.default.green(`Created ${path_1.default.relative(process.cwd(), utilsPath)} for 'cn' utility.`));
+        console.log(chalk_1.default.green(`Created ${path_1.default.relative(process.cwd(), utilsPath)}`));
     }
-    // Fetch and create styles directory and write apple-ds.css
+    // ── 6. Fetch and write global CSS ─────────────────────────────────────────
     spin.text = "Fetching global styles...";
     const cssContent = await (0, registry_1.getGlobalCss)();
     if (cssContent) {
@@ -75,45 +135,52 @@ export function cn(...inputs: ClassValue[]) {
         const cssPath = path_1.default.resolve(stylesDir, "apple-ds.css");
         await fs_extra_1.default.writeFile(cssPath, cssContent);
         console.log(chalk_1.default.green(`Created ${path_1.default.relative(process.cwd(), cssPath)}`));
-        // Inject CSS import into global CSS if provided
         if (response.globalCss) {
             const globalCssPath = path_1.default.resolve(process.cwd(), response.globalCss);
             if (fs_extra_1.default.existsSync(globalCssPath)) {
                 let existingCss = await fs_extra_1.default.readFile(globalCssPath, "utf-8");
-                // Calculate relative path from global CSS to apple-ds.css
                 const globalCssDir = path_1.default.dirname(globalCssPath);
                 const relativePath = path_1.default.relative(globalCssDir, cssPath);
-                // Ensure it starts with ./ or ../
                 const importPath = relativePath.startsWith(".") ? relativePath : `./${relativePath}`;
                 const importStatement = `@import '${importPath}';`;
                 if (!existingCss.includes("apple-ds.css")) {
-                    // Prepend to file
                     await fs_extra_1.default.writeFile(globalCssPath, `${importStatement}\n${existingCss}`);
                     console.log(chalk_1.default.green(`Updated ${response.globalCss} with design system styles.`));
                 }
             }
             else {
-                console.log(chalk_1.default.yellow(`Global CSS file not found at ${response.globalCss}. Skipping style import.`));
+                console.log(chalk_1.default.yellow(`CSS file not found at ${response.globalCss}. Skipping import.`));
             }
         }
     }
     else {
-        spin.warn("Failed to fetch global styles. Please install styles manually.");
+        spin.warn("Failed to fetch global styles. Install styles manually.");
     }
+    // ── 7. Install deps ───────────────────────────────────────────────────────
     if (response.installDeps) {
         spin.start("Installing dependencies...");
         try {
-            const { execSync } = require('child_process');
-            execSync('npm install clsx tailwind-merge cva framer-motion lucide-react', { stdio: 'inherit' });
+            const { execSync } = require("child_process");
+            execSync("npm install clsx tailwind-merge cva framer-motion lucide-react", {
+                stdio: "inherit",
+            });
             spin.succeed("Dependencies installed.");
         }
-        catch (e) {
-            spin.fail("Failed to install dependencies. Please run manually:");
+        catch {
+            spin.fail("Failed to install dependencies. Run manually:");
             console.log(chalk_1.default.cyan("npm install clsx tailwind-merge cva framer-motion lucide-react"));
         }
     }
-    console.log(chalk_1.default.bold.green("\nSuccess! Project initialized."));
-    console.log(`You can now run ${chalk_1.default.cyan("npx apple-design-system add [component]")} to add components.`);
+    // ── 8. Framework-specific hints ───────────────────────────────────────────
+    if (framework === "astro") {
+        console.log(chalk_1.default.yellow("\n⚠ Astro: Components use React — make sure to add the React integration\n" +
+            "  and use client:* directives when mounting them in .astro files."));
+    }
+    if (!rsc && framework !== "astro") {
+        console.log(chalk_1.default.gray("\nℹ 'use client' directives are stripped from components (not needed outside Next.js App Router)."));
+    }
+    console.log(chalk_1.default.bold.green("\n✓ Project initialized."));
+    console.log(`Run ${chalk_1.default.cyan("npx apple-design-system add")} to install components.`);
 };
 exports.init = init;
 //# sourceMappingURL=init.js.map

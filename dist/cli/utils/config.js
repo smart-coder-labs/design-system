@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.loadConfig = loadConfig;
 exports.saveConfig = saveConfig;
+exports.stripUseClient = stripUseClient;
 exports.recordInstall = recordInstall;
 exports.detectInstalledComponents = detectInstalledComponents;
 const fs_extra_1 = __importDefault(require("fs-extra"));
@@ -12,6 +13,8 @@ const path_1 = __importDefault(require("path"));
 const CONFIG_FILE = "design-system.json";
 const DEFAULT_CONFIG = {
     componentsDir: "./components/ui",
+    framework: "unknown",
+    rsc: false,
     components: {},
 };
 async function loadConfig() {
@@ -30,6 +33,15 @@ async function loadConfig() {
 }
 async function saveConfig(config) {
     await fs_extra_1.default.writeJSON(CONFIG_FILE, config, { spaces: 2 });
+}
+/**
+ * Strips the `'use client'` directive from a file's content.
+ * Used for non-RSC projects (Vite, Astro, Remix, Next.js Pages Router).
+ */
+function stripUseClient(content) {
+    return content
+        .replace(/^['"]use client['"];?\s*\n?/m, "")
+        .trimStart();
 }
 async function recordInstall(config, componentName, version, type) {
     const now = new Date().toISOString();

@@ -74,7 +74,8 @@ const add = async (components) => {
         const componentDir = path_1.default.resolve(process.cwd(), config.componentsDir, component);
         await fs_extra_1.default.ensureDir(componentDir);
         for (const file of files) {
-            await fs_extra_1.default.writeFile(path_1.default.join(componentDir, file.name), file.content);
+            const content = config.rsc ? file.content : (0, config_1.stripUseClient)(file.content);
+            await fs_extra_1.default.writeFile(path_1.default.join(componentDir, file.name), content);
         }
         await (0, config_1.recordInstall)(config, component, dsVersion, "folder");
         spinner.succeed(`Installed ${component}`);
