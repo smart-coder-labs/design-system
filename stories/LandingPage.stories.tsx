@@ -5,7 +5,7 @@ import { Footer, FooterTop, FooterContent, FooterColumn, FooterLink, FooterBotto
 import { Button } from '../components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/Card';
 import { Title } from '../components/ui/Title';
-import Text from '../components/ui/Text';
+import { Text } from '../components/ui/Text';
 import { Badge } from '../components/ui/Badge';
 import { ReviewsList as Reviews } from '../components/ui/Reviews';
 import { PriceDisplay } from '../components/ui/PriceDisplay';
