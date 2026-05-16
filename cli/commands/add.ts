@@ -13,7 +13,7 @@ export const add = async (components: string[]) => {
     const modeResponse = await prompts({
       type: "select",
       name: "mode",
-      message: "What would you like to add?",
+      message: "What would you like to do?",
       choices: [
         { title: "Add all components", value: "all" },
         { title: "Select specific components", value: "select" },
