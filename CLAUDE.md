@@ -219,3 +219,4 @@ Refer to `AGENT.md` for the complete checklist and detailed guidelines.
 - `EXAMPLES.md` - Code examples for all components
 - `MIGRATION.md` - Version migration guide
 - `PROJECT_STRUCTURE.md` - File organization overview
+- `docs/architecture.md` - Component file splitting architecture & compound patterns
