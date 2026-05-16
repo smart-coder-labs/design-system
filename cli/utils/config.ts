@@ -51,7 +51,7 @@ export async function saveConfig(config: DesignSystemConfig): Promise<void> {
  */
 export function stripUseClient(content: string): string {
   return content
-    .replace(/^['"]use client['"]\s*\n?/m, "")
+    .replace(/^['"]use client['"];?\s*\n?/m, "")
     .trimStart();
 }
 
