@@ -1,3 +1,2 @@
-export * from './LoadingOverlay.types';
-export { default } from './LoadingOverlay.tsx';
-export { LoadingOverlay } from './LoadingOverlay.tsx';
+export { LoadingOverlay } from './LoadingOverlay';
+export type { LoadingOverlayProps } from './LoadingOverlay';

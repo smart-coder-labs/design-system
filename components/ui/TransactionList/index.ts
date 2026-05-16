@@ -1,4 +1,2 @@
-export * from './TransactionList.types';
-export { default } from './TransactionList.tsx';
-export { TransactionRow } from './TransactionList.tsx';
-export { TransactionList } from './TransactionList.tsx';
+export { TransactionRow, TransactionList } from './TransactionList';
+export type { TransactionType, TransactionStatus, TransactionCategory, Transaction, TransactionRowProps, TransactionListProps } from './TransactionList';

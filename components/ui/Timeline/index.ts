@@ -1,4 +1,2 @@
-export * from './Timeline.types';
-export { default } from './Timeline.tsx';
-export { TimelineItem } from './Timeline.tsx';
-export { Timeline } from './Timeline.tsx';
+export { Timeline, TimelineItem } from './Timeline';
+export type { TimelineLayout, TimelineStatus, TimelineProps, TimelineItemProps } from './Timeline';

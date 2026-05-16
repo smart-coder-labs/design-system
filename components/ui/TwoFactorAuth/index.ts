@@ -1,3 +1,2 @@
-export * from './TwoFactorAuth.types';
-export { default } from './TwoFactorAuth.tsx';
-export { TwoFactorAuth } from './TwoFactorAuth.tsx';
+export { TwoFactorAuth } from './TwoFactorAuth';
+export type { TwoFactorAuthProps } from './TwoFactorAuth';

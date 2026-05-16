@@ -1,3 +1,2 @@
-export * from './ModalStackManager.types';
-export { default } from './ModalStackManager.tsx';
-export { ModalStackManager } from './ModalStackManager.tsx';
+export { ModalStackManager } from './ModalStackManager';
+export type { ModalConfig, ModalStackManagerProps } from './ModalStackManager';

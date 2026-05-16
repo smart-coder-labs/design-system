@@ -1,3 +1,2 @@
-export * from './KanbanBoard.types';
-export { default } from './KanbanBoard.tsx';
-export { KanbanBoard } from './KanbanBoard.tsx';
+export { KanbanBoard } from './KanbanBoard';
+export type { KanbanCard, KanbanColumn, KanbanBoardProps } from './KanbanBoard.types';

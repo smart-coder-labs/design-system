@@ -1,3 +1,2 @@
-export * from './SplitButton.types';
-export { default } from './SplitButton.tsx';
-export { SplitButton } from './SplitButton.tsx';
+export { SplitButton } from './SplitButton';
+export type { SplitButtonVariant, SplitButtonSize, SplitButtonAction, SplitButtonProps } from './SplitButton';

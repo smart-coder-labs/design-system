@@ -1,3 +1,2 @@
-export * from './VirtualCardPreview.types';
-export { default } from './VirtualCardPreview.tsx';
-export { VirtualCardPreview } from './VirtualCardPreview.tsx';
+export { VirtualCardPreview } from './VirtualCardPreview';
+export type { CardBrand, VirtualCardPreviewProps } from './VirtualCardPreview';

@@ -1,3 +1,2 @@
-export * from './SplitView.types';
-export { default } from './SplitView.tsx';
-export { SplitView } from './SplitView.tsx';
+export { SplitView } from './SplitView';
+export type { SplitViewProps } from './SplitView';

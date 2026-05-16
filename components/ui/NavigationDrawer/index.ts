@@ -1,3 +1,2 @@
-export * from './NavigationDrawer.types';
-export { default } from './NavigationDrawer.tsx';
-export { NavigationDrawer } from './NavigationDrawer.tsx';
+export { NavigationDrawer } from './NavigationDrawer';
+export type { NavigationDrawerItem, NavigationDrawerSection, NavigationDrawerProps } from './NavigationDrawer';

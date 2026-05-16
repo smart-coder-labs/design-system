@@ -1,3 +1,2 @@
-export * from './ProgressiveDisclosurePanel.types';
-export { default } from './ProgressiveDisclosurePanel.tsx';
-export { ProgressiveDisclosurePanel } from './ProgressiveDisclosurePanel.tsx';
+export { ProgressiveDisclosurePanel } from './ProgressiveDisclosurePanel';
+export type { ProgressiveDisclosurePanelProps } from './ProgressiveDisclosurePanel';

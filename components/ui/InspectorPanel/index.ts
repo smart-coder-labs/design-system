@@ -1,4 +1,2 @@
-export * from './InspectorPanel.types';
-export { default } from './InspectorPanel.tsx';
-export { InspectorPanel } from './InspectorPanel.tsx';
-export { InspectorField } from './InspectorPanel.tsx';
+export { InspectorPanel, InspectorField } from './InspectorPanel';
+export type { InspectorSection, InspectorPanelProps, InspectorFieldProps } from './InspectorPanel';

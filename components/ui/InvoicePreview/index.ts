@@ -1,3 +1,2 @@
-export * from './InvoicePreview.types';
-export { default } from './InvoicePreview.tsx';
-export { InvoicePreview } from './InvoicePreview.tsx';
+export { InvoicePreview } from './InvoicePreview';
+export type { InvoiceItem, InvoiceParty, InvoicePreviewProps } from './InvoicePreview';

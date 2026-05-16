@@ -1,3 +1,2 @@
-export * from './SchedulerTimeline.types';
-export { default } from './SchedulerTimeline.tsx';
-export { SchedulerTimeline } from './SchedulerTimeline.tsx';
+export { SchedulerTimeline } from './SchedulerTimeline';
+export type { SchedulerResource, SchedulerEvent, SchedulerTimelineProps } from './SchedulerTimeline';

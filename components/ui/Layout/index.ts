@@ -1,1 +1,2 @@
-export { default } from './Layout.tsx';
+export { Stack, HStack, VStack, Grid } from './Layout';
+export type { LayoutProps } from './Layout.types';

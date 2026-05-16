@@ -1,3 +1,2 @@
-export * from './WindowControls.types';
-export { default } from './WindowControls.tsx';
-export { WindowControls } from './WindowControls.tsx';
+export { WindowControls } from './WindowControls';
+export type { WindowControlsProps } from './WindowControls';

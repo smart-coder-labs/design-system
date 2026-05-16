@@ -1,3 +1,2 @@
-export * from './ProductCard.types';
-export { default } from './ProductCard.tsx';
-export { ProductCard } from './ProductCard.tsx';
+export { ProductCard } from './ProductCard';
+export type { ProductCardProps } from './ProductCard';

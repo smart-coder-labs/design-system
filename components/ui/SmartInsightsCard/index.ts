@@ -1,3 +1,2 @@
-export * from './SmartInsightsCard.types';
-export { default } from './SmartInsightsCard.tsx';
-export { SmartInsightsCard } from './SmartInsightsCard.tsx';
+export { SmartInsightsCard } from './SmartInsightsCard';
+export type { InsightAction, SmartInsightsCardProps } from './SmartInsightsCard';

@@ -1,1 +1,2 @@
-export { default } from './Progress.tsx';
+export { Progress } from './Progress';
+export type { ProgressProps } from './Progress.types';

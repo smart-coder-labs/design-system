@@ -1,3 +1,2 @@
-export * from './Sidebar.types';
-export { default } from './Sidebar.tsx';
-export { Sidebar } from './Sidebar.tsx';
+export { Sidebar } from './Sidebar';
+export type { SidebarItem, SidebarProps } from './Sidebar';

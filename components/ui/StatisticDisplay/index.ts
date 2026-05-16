@@ -1,4 +1,2 @@
-export * from './StatisticDisplay.types';
-export { default } from './StatisticDisplay.tsx';
-export { StatisticDisplay } from './StatisticDisplay.tsx';
-export { StatisticHighlight } from './StatisticDisplay.tsx';
+export { StatisticDisplay, StatisticHighlight } from './StatisticDisplay';
+export type { StatisticTrend, StatisticVariant, StatisticSize, StatisticAccent, StatisticGoal, StatisticMetric, StatisticDisplayProps, StatisticHighlightProps } from './StatisticDisplay';

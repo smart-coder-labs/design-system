@@ -1,2 +1,2 @@
-export { default } from './InteractiveCursor.tsx';
-export { InteractiveCursor } from './InteractiveCursor.tsx';
+export { InteractiveCursor } from './InteractiveCursor';
+export type { InteractiveCursorProps } from './InteractiveCursor.types';

@@ -1,3 +1,2 @@
-export * from './SecurityActivityLog.types';
-export { default } from './SecurityActivityLog.tsx';
-export { SecurityActivityLog } from './SecurityActivityLog.tsx';
+export { SecurityActivityLog } from './SecurityActivityLog';
+export type { SecurityEventType, SecurityEvent, SecurityActivityLogProps } from './SecurityActivityLog';

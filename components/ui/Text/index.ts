@@ -1,3 +1,2 @@
-export * from './Text.types';
-export { default } from './Text.tsx';
-export { Text } from './Text.tsx';
+export { Text } from './Text';
+export type { TextVariant, TextWeight, TextAlign, TextColor, TextProps } from './Text';

@@ -1,4 +1,2 @@
-export * from './MessageReactions.types';
-export { default } from './MessageReactions.tsx';
-export { MessageReactions } from './MessageReactions.tsx';
-export { ReactionPicker } from './MessageReactions.tsx';
+export { MessageReactions, ReactionPicker } from './MessageReactions';
+export type { ReactionType, Reaction, MessageReactionsProps, ReactionPickerProps } from './MessageReactions';

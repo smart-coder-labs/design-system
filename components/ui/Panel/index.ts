@@ -1,3 +1,2 @@
-export * from './Panel.types';
-export { default } from './Panel.tsx';
-export { Panel } from './Panel.tsx';
+export { Panel } from './Panel';
+export type { PanelVariant, PanelProps } from './Panel';

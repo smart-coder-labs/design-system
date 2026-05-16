@@ -1,3 +1,2 @@
-export * from './Heading.types';
-export { default } from './Heading.tsx';
-export { Heading } from './Heading.tsx';
+export { Heading } from './Heading';
+export type { HeadingProps } from './Heading';

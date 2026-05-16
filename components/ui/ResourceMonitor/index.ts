@@ -1,3 +1,2 @@
-export * from './ResourceMonitor.types';
-export { default } from './ResourceMonitor.tsx';
-export { ResourceMonitor } from './ResourceMonitor.tsx';
+export { ResourceMonitor } from './ResourceMonitor';
+export type { ResourceDataPoint, ResourceMonitorProps } from './ResourceMonitor';

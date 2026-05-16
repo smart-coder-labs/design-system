@@ -1,5 +1,2 @@
-export * from './Reviews.types';
-export { default } from './Reviews.tsx';
-export { RatingStars } from './Reviews.tsx';
-export { Reviews } from './Reviews.tsx';
-export { ReviewsList } from './Reviews.tsx';
+export { RatingStars, Reviews, ReviewsList } from './Reviews';
+export type { Review, RatingStarsProps, ReviewsProps } from './Reviews';

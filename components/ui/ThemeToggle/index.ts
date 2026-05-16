@@ -1,3 +1,2 @@
-export * from './ThemeToggle.types';
-export { default } from './ThemeToggle.tsx';
-export { ThemeToggle } from './ThemeToggle.tsx';
+export { ThemeToggle } from './ThemeToggle';
+export type { ThemeMode, ThemeToggleProps } from './ThemeToggle';

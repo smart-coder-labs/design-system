@@ -1,3 +1,2 @@
-export * from './Snackbar.types';
-export { default } from './Snackbar.tsx';
-export { Snackbar } from './Snackbar.tsx';
+export { Snackbar } from './Snackbar';
+export type { SnackbarVariant, SnackbarAction, SnackbarProps } from './Snackbar';

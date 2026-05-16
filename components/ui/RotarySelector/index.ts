@@ -1,3 +1,2 @@
-export * from './RotarySelector.types';
-export { default } from './RotarySelector.tsx';
-export { RotarySelector } from './RotarySelector.tsx';
+export { RotarySelector } from './RotarySelector';
+export type { RotarySelectorOption, RotarySelectorProps } from './RotarySelector';

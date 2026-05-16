@@ -1,3 +1,2 @@
-export * from './InstallmentSimulator.types';
-export { default } from './InstallmentSimulator.tsx';
-export { InstallmentSimulator } from './InstallmentSimulator.tsx';
+export { InstallmentSimulator } from './InstallmentSimulator';
+export type { InstallmentSimulatorProps } from './InstallmentSimulator';

@@ -1,1 +1,10 @@
-export { default } from './Toast.tsx';
+export {
+  ToastProvider,
+  ToastViewport,
+  Toast,
+  ToastTitle,
+  ToastDescription,
+  ToastClose,
+  ToastAction,
+} from './Toast';
+export type { ToastProps, ToastActionElement } from './Toast.types';

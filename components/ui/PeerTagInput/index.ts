@@ -1,3 +1,2 @@
-export * from './PeerTagInput.types';
-export { default } from './PeerTagInput.tsx';
-export { PeerTagInput } from './PeerTagInput.tsx';
+export { PeerTagInput } from './PeerTagInput';
+export type { PeerTagContact, PeerTagInputProps } from './PeerTagInput';

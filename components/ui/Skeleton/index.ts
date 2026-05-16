@@ -1,1 +1,2 @@
-export { default } from './Skeleton.tsx';
+export { Skeleton } from './Skeleton';
+export type { SkeletonProps } from './Skeleton.types';

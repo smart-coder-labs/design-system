@@ -1,3 +1,2 @@
-export * from './TransferForm.types';
-export { default } from './TransferForm.tsx';
-export { TransferForm } from './TransferForm.tsx';
+export { TransferForm } from './TransferForm';
+export type { TransferRecipient, CurrencyOption, TransferFormProps } from './TransferForm';

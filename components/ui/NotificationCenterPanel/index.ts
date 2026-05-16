@@ -1,3 +1,2 @@
-export * from './NotificationCenterPanel.types';
-export { default } from './NotificationCenterPanel.tsx';
-export { NotificationCenterPanel } from './NotificationCenterPanel.tsx';
+export { NotificationCenterPanel } from './NotificationCenterPanel';
+export type { NotificationType, Notification, NotificationCenterPanelProps } from './NotificationCenterPanel';

@@ -1,3 +1,2 @@
-export * from './Paragraph.types';
-export { default } from './Paragraph.tsx';
-export { Paragraph } from './Paragraph.tsx';
+export { Paragraph } from './Paragraph';
+export type { ParagraphProps } from './Paragraph';

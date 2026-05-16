@@ -1,4 +1,2 @@
-export * from './PropertyList.types';
-export { default } from './PropertyList.tsx';
-export { PropertyList } from './PropertyList.tsx';
-export { CompactPropertyList } from './PropertyList.tsx';
+export { PropertyList, CompactPropertyList } from './PropertyList';
+export type { PropertyItem, PropertySection, PropertyListVariant, PropertyListSize, PropertyListProps, CompactPropertyListProps } from './PropertyList';

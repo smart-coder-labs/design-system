@@ -1,4 +1,2 @@
-export * from './KPIBlock.types';
-export { default } from './KPIBlock.tsx';
-export { KPIBlock } from './KPIBlock.tsx';
-export { KPIGroup } from './KPIBlock.tsx';
+export { KPIBlock, KPIGroup } from './KPIBlock';
+export type { KPITrend, KPIVariant, KPISize, KPIBlockProps, KPIGroupProps } from './KPIBlock';

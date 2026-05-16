@@ -1,3 +1,2 @@
-export * from './Pagination.types';
-export { default } from './Pagination.tsx';
-export { Pagination } from './Pagination.tsx';
+export { Pagination } from './Pagination';
+export type { PaginationProps } from './Pagination';

@@ -1,3 +1,2 @@
-export * from './Title.types';
-export { default } from './Title.tsx';
-export { Title } from './Title.tsx';
+export { Title } from './Title';
+export type { TitleLevel, TitleWeight, TitleAlign, TitleColor, TitleProps } from './Title';
