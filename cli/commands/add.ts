@@ -1,23 +1,38 @@
-import { Command } from "commander";
 import prompts from "prompts";
 import path from "path";
 import fs from "fs-extra";
 import chalk from "chalk";
 import ora from "ora";
-import { getAvailableComponents, getComponentFiles } from "../utils/registry";
+import { getAvailableComponents, getComponentFiles, getRegistryVersion } from "../utils/registry";
+import { loadConfig, saveConfig, recordInstall } from "../utils/config";
 
 export const add = async (components: string[]) => {
+  const available = await getAvailableComponents();
+
   if (!components || components.length === 0) {
-    // If no components specified, list available ones
-    const available = await getAvailableComponents();
-    const response = await prompts({
-      type: "multiselect",
-      name: "items",
-      message: "Which components would you like to add?",
-      choices: available.map(c => ({ title: c, value: c })),
-      min: 1
+    const modeResponse = await prompts({
+      type: "select",
+      name: "mode",
+      message: "What would you like to add?",
+      choices: [
+        { title: "Add all components", value: "all" },
+        { title: "Select specific components", value: "select" },
+      ],
     });
-    components = response.items;
+
+    if (modeResponse.mode === "all") {
+      components = available;
+      console.log(chalk.green(`\n✓ Selected all ${available.length} components`));
+    } else {
+      const response = await prompts({
+        type: "multiselect",
+        name: "items",
+        message: "Which components would you like to add?",
+        choices: available.map((c) => ({ title: c, value: c })),
+        min: 1,
+      });
+      components = response.items;
+    }
   }
 
   if (!components || components.length === 0) {
@@ -25,18 +40,8 @@ export const add = async (components: string[]) => {
     return;
   }
 
-  // Load config
-  let config = { componentsDir: "./components/ui" };
-  if (fs.existsSync("design-system.json")) {
-      try {
-          config = await fs.readJSON("design-system.json");
-      } catch (e) {
-          console.warn("Could not read design-system.json, using defaults.");
-      }
-  } else {
-      console.warn("design-system.json not found. Using default ./components/ui");
-  }
-
+  const config = await loadConfig();
+  const dsVersion = await getRegistryVersion();
   const spinner = ora("Installing components...").start();
 
   const queue = [...components];
@@ -45,7 +50,7 @@ export const add = async (components: string[]) => {
   while (queue.length > 0) {
     const component = queue.shift();
     if (!component || processed.has(component)) continue;
-    
+
     processed.add(component);
     spinner.text = `Installing ${component}...`;
 
@@ -56,16 +61,16 @@ export const add = async (components: string[]) => {
       continue;
     }
 
-    // Parse main file for local dependencies (e.g., import { Button } from "../Button")
+    // Detect local dependencies from main file
     const mainFile = files.find((f) => f.name === `${component}.tsx`);
     if (mainFile) {
       const localImportRegex = /from\s+['"]\.\.\/([A-Z][a-zA-Z0-9]*)['"]/g;
       let match;
       while ((match = localImportRegex.exec(mainFile.content)) !== null) {
-        const dependentComponent = match[1];
-        if (!processed.has(dependentComponent) && !queue.includes(dependentComponent)) {
-          queue.push(dependentComponent);
-          spinner.info(`Detected dependency: ${dependentComponent}`);
+        const dep = match[1];
+        if (!processed.has(dep) && !queue.includes(dep)) {
+          queue.push(dep);
+          spinner.info(`Detected dependency: ${dep}`);
         }
       }
     }
@@ -76,9 +81,12 @@ export const add = async (components: string[]) => {
     for (const file of files) {
       await fs.writeFile(path.join(componentDir, file.name), file.content);
     }
+
+    await recordInstall(config, component, dsVersion, "folder");
     spinner.succeed(`Installed ${component}`);
   }
 
+  await saveConfig(config);
   spinner.stop();
   console.log(chalk.bold.green("\nDone!"));
 };
