@@ -1,4 +1,2 @@
-import { Counters } from './Counters';
-export { Counters };
-export default Counters;
+export { Counters } from './Counters';
 export type { CountersItem, CountersProps } from './Counters.types';
