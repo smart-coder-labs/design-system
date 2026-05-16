@@ -1,0 +1,1 @@
+export interface RadioGroupProps { name: string; value?: string; onChange?: (value: string) => void; disabled?: boolean; className?: string; } export interface RadioGroupItemProps { value: string; disabled?: boolean; className?: string; }
