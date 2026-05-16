@@ -1,1 +1,1 @@
-export inter
+export type { JargonTooltipProps } from './JargonTooltip';

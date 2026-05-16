@@ -1,1 +1,1 @@
-export inter
+export type { TimePickerProps } from './TimePicker';

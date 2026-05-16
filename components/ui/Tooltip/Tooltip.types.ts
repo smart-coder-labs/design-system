@@ -1,1 +1,1 @@
-export inter
+export type { TooltipProps } from './Tooltip';

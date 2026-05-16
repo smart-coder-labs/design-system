@@ -1,3 +1,1 @@
-type 
-
-export inter
+export type { SecurityEventType, SecurityEvent, SecurityActivityLogProps } from './SecurityActivityLog';

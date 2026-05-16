@@ -1,3 +1,1 @@
-type 
-
-export inter
+export type { PaymentType, PaymentMethod, PaymentMethodSelectorProps } from './PaymentMethodSelector';

@@ -1,3 +1,1 @@
-type 
-
-export inter
+export type { NotificationType, Notification, NotificationCenterPanelProps } from './NotificationCenterPanel';

@@ -1,1 +1,1 @@
-export inter
+export type { OTPInputProps } from './OTPInput';

@@ -1,3 +1,1 @@
-type 
-
-export inter
+export type { SnackbarVariant, SnackbarAction, SnackbarProps } from './Snackbar';

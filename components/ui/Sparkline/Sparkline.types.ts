@@ -1,1 +1,1 @@
-export inter
+export type { SparklineProps } from './Sparkline';

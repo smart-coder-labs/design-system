@@ -1,1 +1,1 @@
-export inter
+export type { TextareaProps } from './Textarea';

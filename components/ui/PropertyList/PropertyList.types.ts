@@ -1,7 +1,1 @@
-type 
-
-type 
-
-type 
-
-export inter
+export type { PropertyItem, PropertySection, PropertyListVariant, PropertyListSize, PropertyListProps, CompactPropertyListProps } from './PropertyList';

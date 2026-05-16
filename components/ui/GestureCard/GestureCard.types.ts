@@ -1,1 +1,1 @@
-export inter
+export type { GestureCardProps } from './GestureCard';

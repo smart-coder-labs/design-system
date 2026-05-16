@@ -1,1 +1,1 @@
-export inter
+export type { MaintenanceModeProps } from './MaintenanceMode';

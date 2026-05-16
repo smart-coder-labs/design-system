@@ -1,1 +1,1 @@
-export inter
+export type { MultiFileUploadProps } from './MultiFileUpload';

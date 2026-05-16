@@ -1,1 +1,1 @@
-export inter
+export type { RecoveryCodeDisplayProps } from './RecoveryCodeDisplay';

@@ -10,65 +10,44 @@ const chalk_1 = __importDefault(require("chalk"));
 const ora_1 = __importDefault(require("ora"));
 const prompts_1 = __importDefault(require("prompts"));
 const registry_1 = require("../utils/registry");
+const config_1 = require("../utils/config");
 const updateComponents = async () => {
-    // 1. Load config
-    let config = { componentsDir: "./components/ui" };
-    if (fs_extra_1.default.existsSync("design-system.json")) {
-        try {
-            config = await fs_extra_1.default.readJSON("design-system.json");
-        }
-        catch (e) {
-            console.warn("Could not read design-system.json, using defaults.");
-        }
-    }
-    else {
-        console.warn("design-system.json not found. Using default ./components/ui");
-    }
+    const config = await (0, config_1.loadConfig)();
     const resolvedComponentsDir = path_1.default.resolve(process.cwd(), config.componentsDir);
-    // 2. Check if components directory exists
-    if (!fs_extra_1.default.existsSync(resolvedComponentsDir)) {
-        console.log(chalk_1.default.yellow(`Components directory not found at ${config.componentsDir}`));
-        return;
-    }
-    // 3. Get installed components
+    // 1. Scan installed components (folders + flat files + config tracking)
     const spinner = (0, ora_1.default)("Scanning for installed components...").start();
-    const files = await fs_extra_1.default.readdir(resolvedComponentsDir);
     const availableComponents = await (0, registry_1.getAvailableComponents)();
-    const installedComponents = files
-        .filter((file) => file.endsWith(".tsx") || file.endsWith(".ts"))
-        .map((file) => path_1.default.basename(file, path_1.default.extname(file)))
-        .filter((name) => availableComponents.includes(name))
-        .sort();
+    const installedComponents = await (0, config_1.detectInstalledComponents)(resolvedComponentsDir, availableComponents, config);
     spinner.stop();
     if (installedComponents.length === 0) {
         console.log(chalk_1.default.yellow("No installed components found."));
         return;
     }
     console.log(chalk_1.default.blue(`\nFound ${installedComponents.length} installed components:\n`));
-    // 4. Present selection options
-    const response = await (0, prompts_1.default)([
-        {
-            type: "select",
-            name: "updateMode",
-            message: "What would you like to do?",
-            choices: [
-                { title: "Update all components", value: "all" },
-                { title: "Select specific components", value: "select" },
-            ],
-        },
-    ]);
+    // 2. Selection
+    const response = await (0, prompts_1.default)({
+        type: "select",
+        name: "updateMode",
+        message: "What would you like to do?",
+        choices: [
+            { title: "Update all components", value: "all" },
+            { title: "Select specific components", value: "select" },
+        ],
+    });
     let componentsToUpdate = [];
     if (response.updateMode === "all") {
         componentsToUpdate = installedComponents;
         console.log(chalk_1.default.green(`\n✓ Selected all ${installedComponents.length} components`));
     }
     else {
-        // Let user select specific components
         const selectResponse = await (0, prompts_1.default)({
             type: "multiselect",
             name: "items",
             message: "Which components would you like to update?",
-            choices: installedComponents.map((c) => ({ title: c, value: c })),
+            choices: installedComponents.map((c) => ({
+                title: `${c}${config.components[c] ? chalk_1.default.gray(` (v${config.components[c].version})`) : ""}`,
+                value: c,
+            })),
             min: 1,
         });
         componentsToUpdate = selectResponse.items;
@@ -78,21 +57,26 @@ const updateComponents = async () => {
         }
         console.log(chalk_1.default.green(`\n✓ Selected ${componentsToUpdate.length} components`));
     }
-    // 5. Fetch and update components
+    // 3. Fetch and update
+    const dsVersion = await (0, registry_1.getRegistryVersion)();
     const updateSpinner = (0, ora_1.default)("Updating components...").start();
     let successCount = 0;
     let failCount = 0;
     for (const component of componentsToUpdate) {
         updateSpinner.text = `Updating ${component}...`;
         try {
-            const source = await (0, registry_1.getComponentSource)(component);
-            if (!source) {
+            const files = await (0, registry_1.getComponentFiles)(component);
+            if (!files) {
                 updateSpinner.warn(`Component '${component}' not found in registry.`);
                 failCount++;
                 continue;
             }
-            const destPath = path_1.default.resolve(resolvedComponentsDir, `${component}.tsx`);
-            await fs_extra_1.default.writeFile(destPath, source);
+            const componentDir = path_1.default.resolve(resolvedComponentsDir, component);
+            await fs_extra_1.default.ensureDir(componentDir);
+            for (const file of files) {
+                await fs_extra_1.default.writeFile(path_1.default.join(componentDir, file.name), file.content);
+            }
+            await (0, config_1.recordInstall)(config, component, dsVersion, "folder");
             updateSpinner.succeed(`Updated ${component}`);
             successCount++;
         }
@@ -102,7 +86,8 @@ const updateComponents = async () => {
         }
     }
     updateSpinner.stop();
-    // 6. Summary
+    await (0, config_1.saveConfig)(config);
+    // 4. Summary
     console.log(chalk_1.default.bold("\n=== Update Summary ==="));
     console.log(chalk_1.default.green(`✓ Successfully updated: ${successCount} components`));
     if (failCount > 0) {

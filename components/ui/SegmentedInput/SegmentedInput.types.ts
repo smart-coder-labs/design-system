@@ -1,1 +1,1 @@
-export inter
+export type { SegmentedInputProps } from './SegmentedInput';

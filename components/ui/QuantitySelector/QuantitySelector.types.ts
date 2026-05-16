@@ -1,1 +1,1 @@
-export inter
+export type { QuantitySelectorProps } from './QuantitySelector';

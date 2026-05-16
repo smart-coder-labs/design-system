@@ -1,1 +1,1 @@
-export inter
+export type { TwoFactorAuthProps } from './TwoFactorAuth';

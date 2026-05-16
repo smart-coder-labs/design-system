@@ -1,1 +1,1 @@
-export inter
+export type { VideoPlayerProps } from './VideoPlayer';

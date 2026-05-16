@@ -1,1 +1,1 @@
-export inter
+export type { SearchInputProps } from './SearchInput';

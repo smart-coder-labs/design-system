@@ -1,3 +1,1 @@
-type 
-
-export inter
+export type { TimelineLayout, TimelineStatus, TimelineProps, TimelineItemProps } from './Timeline';

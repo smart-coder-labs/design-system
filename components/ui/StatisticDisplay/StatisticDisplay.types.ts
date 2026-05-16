@@ -1,7 +1,1 @@
-type 
-
-export inter
-
-export inter
-
-export inter
+export type { StatisticTrend, StatisticVariant, StatisticSize, StatisticAccent, StatisticGoal, StatisticMetric, StatisticDisplayProps, StatisticHighlightProps } from './StatisticDisplay';

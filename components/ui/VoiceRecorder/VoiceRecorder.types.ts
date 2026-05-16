@@ -1,1 +1,1 @@
-export inter
+export type { VoiceRecorderProps } from './VoiceRecorder';

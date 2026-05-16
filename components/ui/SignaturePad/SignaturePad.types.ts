@@ -1,1 +1,1 @@
-export inter
+export type { SignaturePadProps } from './SignaturePad';

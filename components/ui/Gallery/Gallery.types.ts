@@ -1,1 +1,1 @@
-export inter
+export type { GalleryProps } from './Gallery';

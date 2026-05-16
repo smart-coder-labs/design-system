@@ -1,1 +1,1 @@
-export inter
+export type { HamburgerMenuIconProps } from './HamburgerMenuIcon';

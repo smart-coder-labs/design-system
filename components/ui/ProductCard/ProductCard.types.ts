@@ -1,1 +1,1 @@
-export inter
+export type { ProductCardProps } from './ProductCard';

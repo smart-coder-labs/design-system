@@ -1,1 +1,1 @@
-export inter
+export type { LoginFormProps } from './LoginForm';

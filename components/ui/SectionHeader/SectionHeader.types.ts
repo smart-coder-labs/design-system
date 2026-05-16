@@ -1,1 +1,1 @@
-export inter
+export type { SectionHeaderProps } from './SectionHeader';

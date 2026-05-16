@@ -1,5 +1,1 @@
-type 
-
-export inter
-
-export inter
+export type { ReactionType, Reaction, MessageReactionsProps, ReactionPickerProps } from './MessageReactions';

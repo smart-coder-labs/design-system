@@ -1,1 +1,1 @@
-export inter
+export type { ImageCropperProps } from './ImageCropper';

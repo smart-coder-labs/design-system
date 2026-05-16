@@ -1,3 +1,1 @@
-type 
-
-export inter
+export type { ModalConfig, ModalStackManagerProps } from './ModalStackManager';

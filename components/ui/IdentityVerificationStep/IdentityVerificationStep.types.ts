@@ -1,3 +1,1 @@
-type 
-
-export inter
+export type { DocumentType, VerificationStatus, DocumentSlot, IdentityVerificationStepProps } from './IdentityVerificationStep';

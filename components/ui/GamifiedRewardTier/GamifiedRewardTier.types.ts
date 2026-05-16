@@ -1,1 +1,1 @@
-export inter
+export type { GamifiedRewardTierProps } from './GamifiedRewardTier';

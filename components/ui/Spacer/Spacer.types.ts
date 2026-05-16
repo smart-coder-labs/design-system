@@ -1,1 +1,1 @@
-export inter
+export type { SpacerProps } from './Spacer';

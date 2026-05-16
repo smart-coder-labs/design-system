@@ -1,1 +1,1 @@
-export inter
+export type { InstallmentSimulatorProps } from './InstallmentSimulator';

@@ -1,1 +1,1 @@
-export inter
+export type { SubscriptionItem } from './SubscriptionManager';

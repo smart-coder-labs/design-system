@@ -1,3 +1,1 @@
-type 
-
-export inter
+export type { SplitButtonVariant, SplitButtonSize, SplitButtonAction, SplitButtonProps } from './SplitButton';

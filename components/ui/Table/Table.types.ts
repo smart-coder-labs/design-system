@@ -1,3 +1,1 @@
-type 
-
-export inter
+export type { Column, TableProps } from './Table';

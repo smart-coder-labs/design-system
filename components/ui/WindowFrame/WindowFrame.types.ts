@@ -1,1 +1,1 @@
-export inter
+export type { WindowFrameProps } from './WindowFrame';

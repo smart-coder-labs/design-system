@@ -1,1 +1,1 @@
-export inter
+export type { RatingInputProps } from './RatingInput';

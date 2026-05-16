@@ -1,1 +1,1 @@
-export inter
+export type { StickySectionItem } from './StickyImageTextSwap';

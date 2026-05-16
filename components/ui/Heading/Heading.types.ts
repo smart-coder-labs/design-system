@@ -1,1 +1,1 @@
-export inter
+export type { HeadingProps } from './Heading';
