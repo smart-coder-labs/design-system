@@ -3,7 +3,7 @@ import path from "path";
 import fs from "fs-extra";
 import chalk from "chalk";
 import ora from "ora";
-import { getAvailableComponents, getComponentSource, getGlobalCss } from "../utils/registry";
+import { getAvailableComponents, getGlobalCss } from "../utils/registry";
 
 
 export const init = async () => {
