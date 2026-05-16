@@ -3,8 +3,8 @@ import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger,
-} from '../components/ui/Collapsible';
-import { Button } from '../components/ui/Button';
+} from './Collapsible';
+import { Button } from '../Button';
 import { ChevronsUpDown } from 'lucide-react';
 import { useState } from 'react';
 

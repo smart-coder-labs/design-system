@@ -8,10 +8,10 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from '../components/ui/Sheet';
-import { Button } from '../components/ui/Button';
-import { Label } from '../components/ui/Label';
-import { Input } from '../components/ui/Input';
+} from './Sheet';
+import { Button } from '../Button';
+import { Label } from '../Label';
+import { Input } from '../Input';
 
 const meta: Meta<typeof Sheet> = {
     title: 'Overlays/Sheet',

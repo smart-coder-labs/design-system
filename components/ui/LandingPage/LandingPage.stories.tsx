@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { NavBar, NavBarBrand, NavBarContent, NavBarItem } from '../components/ui/NavBar';
-import { Footer, FooterTop, FooterContent, FooterColumn, FooterLink, FooterBottom } from '../components/ui/Footer';
-import { Button } from '../components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/Card';
-import { Title } from '../components/ui/Title';
-import { Text } from '../components/ui/Text';
-import { Badge } from '../components/ui/Badge';
-import { ReviewsList as Reviews } from '../components/ui/Reviews';
-import { PriceDisplay } from '../components/ui/PriceDisplay';
-import { SectionHeader } from '../components/ui/SectionHeader';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/Accordion';
-import { ThemeToggle } from '../components/ui/ThemeToggle';
+import { NavBar, NavBarBrand, NavBarContent, NavBarItem } from '../NavBar';
+import { Footer, FooterTop, FooterContent, FooterColumn, FooterLink, FooterBottom } from '../Footer';
+import { Button } from '../Button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../Card';
+import { Title } from '../Title';
+import { Text } from '../Text';
+import { Badge } from '../Badge';
+import { ReviewsList as Reviews } from '../Reviews';
+import { PriceDisplay } from '../PriceDisplay';
+import { SectionHeader } from '../SectionHeader';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../Accordion';
+import { ThemeToggle } from '../ThemeToggle';
 import { Check, Zap, Shield, Globe, BarChart, Twitter, Github, Linkedin, Facebook } from 'lucide-react';
 
 const meta: Meta = {

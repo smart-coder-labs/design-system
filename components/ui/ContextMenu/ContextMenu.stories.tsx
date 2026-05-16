@@ -13,7 +13,7 @@ import {
     ContextMenuSubContent,
     ContextMenuSubTrigger,
     ContextMenuTrigger,
-} from '../components/ui/ContextMenu';
+} from './ContextMenu';
 
 const meta: Meta<typeof ContextMenu> = {
     title: 'Overlays/ContextMenu',

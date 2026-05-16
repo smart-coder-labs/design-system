@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Stack, HStack, VStack, Grid } from '../components/ui/Layout';
+import { Stack, HStack, VStack, Grid } from './Layout';
 
 const meta: Meta<typeof Stack> = {
     title: 'Layout/Layout',
