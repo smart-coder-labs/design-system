@@ -1,5 +1,19 @@
-export inter
+interface Role {
+    id: string;
+    name: string;
+    description?: string;
+}
 
-export inter
 
-export inter
+interface Permission {
+    id: string;
+    name: string;
+    description?: string;
+    category?: string;
+}
+
+
+interface PermissionsMatrixProps {
+    roles: Role[];
+    permissions: Permission[];
+    rolePermissions: { [roleId: string]: string[] };

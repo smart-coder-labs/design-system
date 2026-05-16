@@ -1,3 +1,17 @@
-export inter
+interface LightboxImage {
+    src: string;
+    alt?: string;
+    caption?: string;
+}
 
-export inter
+
+interface LightboxProps {
+    isOpen: boolean;
+    images: LightboxImage[];
+    currentIndex: number;
+    onClose: () => void;
+    onNext?: () => void;
+    onPrev?: () => void;
+    onIndexChange?: (index: number) => void;
+    className?: string;
+}

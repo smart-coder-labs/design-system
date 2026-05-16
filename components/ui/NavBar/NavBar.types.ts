@@ -1,7 +1,29 @@
-export inter
+interface NavBarProps {
+  children: React.ReactNode;
+  variant?: 'default' | 'glass' | 'transparent';
+  sticky?: boolean;
+  className?: string;
+}
 
-export inter
 
-export inter
+interface NavBarBrandProps {
+  children: React.ReactNode;
+  href?: string;
+  className?: string;
+}
 
-export inter
+
+interface NavBarContentProps {
+  children: React.ReactNode;
+  align?: 'left' | 'center' | 'right';
+  className?: string;
+}
+
+
+interface NavBarItemProps {
+  children: React.ReactNode;
+  active?: boolean;
+  href?: string;
+  onClick?: () => void;
+  className?: string;
+}

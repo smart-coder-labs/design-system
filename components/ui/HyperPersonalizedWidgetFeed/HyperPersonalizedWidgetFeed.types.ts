@@ -1,3 +1,12 @@
-export inter
+interface WidgetData {
+  id: string;
+  title: string;
+  type: 'balance' | 'crypto' | 'spending' | 'savings';
+  visible: boolean;
+  order: number;
+}
 
-export inter
+
+interface HyperPersonalizedWidgetFeedProps {
+  initialWidgets?: WidgetData[];
+}

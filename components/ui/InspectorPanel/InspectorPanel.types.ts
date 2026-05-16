@@ -1,5 +1,18 @@
-export inter
+interface InspectorSection {
+    id: string;
+    title: string;
+    content: React.ReactNode;
+    defaultExpanded?: boolean;
+}
 
-export inter
 
-export inter
+interface InspectorPanelProps extends React.HTMLAttributes<HTMLDivElement> {
+    sections: InspectorSection[];
+    width?: string;
+}
+
+
+interface InspectorFieldProps {
+    label: string;
+    children: React.ReactNode;
+}

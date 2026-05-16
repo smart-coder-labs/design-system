@@ -1,3 +1,11 @@
-export inter
+interface AutomationRule {
+    amount: number;
+    asset: string;
+    frequency: 'daily' | 'weekly' | 'biweekly' | 'monthly';
+}
 
-export inter
+
+interface RecurringInvestConfiguratorProps {
+    className?: string;
+    onSave?: (rule: AutomationRule) => void;
+}
