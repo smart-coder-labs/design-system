@@ -1,0 +1,1 @@
+export interface InteractiveCursorProps extends React.HTMLAttributes<HTMLDivElement> {}

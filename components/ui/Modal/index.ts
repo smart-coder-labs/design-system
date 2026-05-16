@@ -1,0 +1,10 @@
+export * from './Modal.types';
+export { default } from './Modal.tsx';
+export { Modal } from './Modal.tsx';
+export { ModalHeader } from './Modal.tsx';
+export { ModalTitle } from './Modal.tsx';
+export { ModalDescription } from './Modal.tsx';
+export { ModalContent } from './Modal.tsx';
+export { ModalFooter } from './Modal.tsx';
+export { ModalClose } from './Modal.tsx';
+export { ModalCloseButton } from './Modal.tsx';
