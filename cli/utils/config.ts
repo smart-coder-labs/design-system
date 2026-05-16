@@ -8,15 +8,22 @@ export interface ComponentRecord {
   updatedAt: string;
 }
 
+import type { Framework } from "./framework";
+
 export interface DesignSystemConfig {
   componentsDir: string;
   globalCss?: string;
+  framework: Framework;
+  /** True when using React Server Components (Next.js App Router). */
+  rsc: boolean;
   components: Record<string, ComponentRecord>;
 }
 
 const CONFIG_FILE = "design-system.json";
 const DEFAULT_CONFIG: DesignSystemConfig = {
   componentsDir: "./components/ui",
+  framework: "unknown",
+  rsc: false,
   components: {},
 };
 
@@ -36,6 +43,16 @@ export async function loadConfig(): Promise<DesignSystemConfig> {
 
 export async function saveConfig(config: DesignSystemConfig): Promise<void> {
   await fs.writeJSON(CONFIG_FILE, config, { spaces: 2 });
+}
+
+/**
+ * Strips the `'use client'` directive from a file's content.
+ * Used for non-RSC projects (Vite, Astro, Remix, Next.js Pages Router).
+ */
+export function stripUseClient(content: string): string {
+  return content
+    .replace(/^['"]use client['"]\s*\n?/m, "")
+    .trimStart();
 }
 
 export async function recordInstall(

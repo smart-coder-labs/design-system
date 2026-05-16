@@ -4,7 +4,7 @@ import chalk from "chalk";
 import ora from "ora";
 import prompts from "prompts";
 import { getAvailableComponents, getComponentFiles, getRegistryVersion } from "../utils/registry";
-import { loadConfig, saveConfig, recordInstall, detectInstalledComponents } from "../utils/config";
+import { loadConfig, saveConfig, recordInstall, detectInstalledComponents, stripUseClient } from "../utils/config";
 
 export const updateComponents = async () => {
   const config = await loadConfig();
@@ -87,7 +87,8 @@ export const updateComponents = async () => {
       await fs.ensureDir(componentDir);
 
       for (const file of files) {
-        await fs.writeFile(path.join(componentDir, file.name), file.content);
+        const content = config.rsc ? file.content : stripUseClient(file.content);
+        await fs.writeFile(path.join(componentDir, file.name), content);
       }
 
       await recordInstall(config, component, dsVersion, "folder");
