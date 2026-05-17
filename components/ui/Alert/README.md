@@ -1,6 +1,6 @@
 # Alert
 
-> **v1.0.11** · stable
+> **v1.0.12** · stable
 
 A contextual feedback component for displaying important messages to users. Supports multiple variants for different message types.
 

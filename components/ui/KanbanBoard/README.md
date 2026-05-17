@@ -1,6 +1,6 @@
 # KanbanBoard
 
-> **v1.0.11** · stable
+> **v1.0.12** · stable
 
 A drag-and-drop Kanban board component for task management. Supports multiple columns, card details, priority indicators, assignees, and inline card creation.
 

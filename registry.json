@@ -25,7 +25,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/AIThinkingIndicator/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -133,6 +133,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "AIThinkingIndicator.tsx",
+          "AIThinkingIndicator.types.ts",
+          "AIThinkingIndicator.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "AIThinkingIndicator.tsx",
           "AIThinkingIndicator.types.ts",
@@ -164,7 +174,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/AccessibleHighContrastMode/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -272,6 +282,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "AccessibleHighContrastMode.tsx",
+          "AccessibleHighContrastMode.types.ts",
+          "AccessibleHighContrastMode.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "AccessibleHighContrastMode.tsx",
           "AccessibleHighContrastMode.types.ts",
@@ -305,7 +325,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Accordion/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -413,6 +433,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Accordion.tsx",
+          "Accordion.types.ts",
+          "Accordion.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Accordion.tsx",
           "Accordion.types.ts",
@@ -443,7 +473,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/AchTransactionsVisualizer/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -541,6 +571,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "AchTransactionsVisualizer.tsx",
+          "AchTransactionsVisualizer.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "AchTransactionsVisualizer.tsx",
           "AchTransactionsVisualizer.types.ts",
@@ -574,7 +613,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ActivityFeed/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -682,6 +721,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ActivityFeed.tsx",
+          "ActivityFeed.types.ts",
+          "ActivityFeed.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ActivityFeed.tsx",
           "ActivityFeed.types.ts",
@@ -712,7 +761,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ActivityMonitor/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -810,6 +859,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ActivityMonitor.tsx",
+          "ActivityMonitor.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ActivityMonitor.tsx",
           "ActivityMonitor.types.ts",
@@ -840,7 +898,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/AddressSelector/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -948,6 +1006,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "AddressSelector.tsx",
+          "AddressSelector.types.ts",
+          "AddressSelector.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "AddressSelector.tsx",
           "AddressSelector.types.ts",
@@ -975,7 +1043,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/AgendaView/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -1073,6 +1141,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "AgendaView.tsx",
+          "AgendaView.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "AgendaView.tsx",
           "AgendaView.types.ts",
@@ -1106,7 +1183,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Alert/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -1214,6 +1291,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Alert.tsx",
+          "Alert.types.ts",
+          "Alert.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Alert.tsx",
           "Alert.types.ts",
@@ -1248,7 +1335,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/AssetAllocationChart/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -1356,6 +1443,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "AssetAllocationChart.tsx",
+          "AssetAllocationChart.types.ts",
+          "AssetAllocationChart.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "AssetAllocationChart.tsx",
           "AssetAllocationChart.types.ts",
@@ -1390,7 +1487,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/AssetPriceTicker/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -1498,6 +1595,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "AssetPriceTicker.tsx",
+          "AssetPriceTicker.types.ts",
+          "AssetPriceTicker.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "AssetPriceTicker.tsx",
           "AssetPriceTicker.types.ts",
@@ -1531,7 +1638,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/AudioPlayer/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -1639,6 +1746,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "AudioPlayer.tsx",
+          "AudioPlayer.types.ts",
+          "AudioPlayer.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "AudioPlayer.tsx",
           "AudioPlayer.types.ts",
@@ -1672,7 +1789,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Avatar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -1780,6 +1897,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Avatar.tsx",
+          "Avatar.types.ts",
+          "Avatar.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Avatar.tsx",
           "Avatar.types.ts",
@@ -1813,7 +1940,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/AvatarGroup/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -1921,6 +2048,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "AvatarGroup.tsx",
+          "AvatarGroup.types.ts",
+          "AvatarGroup.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "AvatarGroup.tsx",
           "AvatarGroup.types.ts",
@@ -1954,7 +2091,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Badge/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -2062,6 +2199,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Badge.tsx",
+          "Badge.types.ts",
+          "Badge.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Badge.tsx",
           "Badge.types.ts",
@@ -2096,7 +2243,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/BalanceChart/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -2204,6 +2351,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "BalanceChart.tsx",
+          "BalanceChart.types.ts",
+          "BalanceChart.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "BalanceChart.tsx",
           "BalanceChart.types.ts",
@@ -2238,7 +2395,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/BankAccountCard/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -2346,6 +2503,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "BankAccountCard.tsx",
+          "BankAccountCard.types.ts",
+          "BankAccountCard.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "BankAccountCard.tsx",
           "BankAccountCard.types.ts",
@@ -2379,7 +2546,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/BarcodeGenerator/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -2487,6 +2654,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "BarcodeGenerator.tsx",
+          "BarcodeGenerator.types.ts",
+          "BarcodeGenerator.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "BarcodeGenerator.tsx",
           "BarcodeGenerator.types.ts",
@@ -2521,7 +2698,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/BehavioralAuthSimulator/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -2629,6 +2806,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "BehavioralAuthSimulator.tsx",
+          "BehavioralAuthSimulator.types.ts",
+          "BehavioralAuthSimulator.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "BehavioralAuthSimulator.tsx",
           "BehavioralAuthSimulator.types.ts",
@@ -2663,7 +2850,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/BiometricPrompt/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -2771,6 +2958,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "BiometricPrompt.tsx",
+          "BiometricPrompt.types.ts",
+          "BiometricPrompt.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "BiometricPrompt.tsx",
           "BiometricPrompt.types.ts",
@@ -2800,7 +2997,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Blockquote/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -2898,6 +3095,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Blockquote.tsx",
+          "Blockquote.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Blockquote.tsx",
           "Blockquote.types.ts",
@@ -2930,7 +3136,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/BottomNavigation/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -3038,6 +3244,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "BottomNavigation.tsx",
+          "BottomNavigation.types.ts",
+          "BottomNavigation.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "BottomNavigation.tsx",
           "BottomNavigation.types.ts",
@@ -3067,7 +3283,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Breadcrumb/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -3165,6 +3381,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Breadcrumb.tsx",
+          "Breadcrumb.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Breadcrumb.tsx",
           "Breadcrumb.types.ts",
@@ -3197,7 +3422,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/BreadcrumbTabsHybrid/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -3305,6 +3530,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "BreadcrumbTabsHybrid.tsx",
+          "BreadcrumbTabsHybrid.types.ts",
+          "BreadcrumbTabsHybrid.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "BreadcrumbTabsHybrid.tsx",
           "BreadcrumbTabsHybrid.types.ts",
@@ -3338,7 +3573,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Button/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -3446,6 +3681,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Button.tsx",
+          "Button.types.ts",
+          "Button.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Button.tsx",
           "Button.types.ts",
@@ -3476,7 +3721,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ButtonWithDropdown/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -3574,6 +3819,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ButtonWithDropdown.tsx",
+          "ButtonWithDropdown.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ButtonWithDropdown.tsx",
           "ButtonWithDropdown.types.ts",
@@ -3604,7 +3858,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Calendar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -3712,6 +3966,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Calendar.tsx",
+          "Calendar.types.ts",
+          "Calendar.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Calendar.tsx",
           "Calendar.types.ts",
@@ -3741,7 +4005,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Callout/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -3839,6 +4103,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Callout.tsx",
+          "Callout.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Callout.tsx",
           "Callout.types.ts",
@@ -3865,7 +4138,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Caption/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -3963,6 +4236,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Caption.tsx",
+          "Caption.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Caption.tsx",
           "Caption.types.ts",
@@ -3995,7 +4277,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Card/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -4103,6 +4385,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Card.tsx",
+          "Card.types.ts",
+          "Card.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Card.tsx",
           "Card.types.ts",
@@ -4133,7 +4425,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CardSecurityControls/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -4231,6 +4523,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "CardSecurityControls.tsx",
+          "CardSecurityControls.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "CardSecurityControls.tsx",
           "CardSecurityControls.types.ts",
@@ -4259,7 +4560,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CartPreview/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -4357,6 +4658,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "CartPreview.tsx",
+          "CartPreview.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "CartPreview.tsx",
           "CartPreview.types.ts",
@@ -4386,7 +4696,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CashbackWidget/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -4484,6 +4794,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "CashbackWidget.tsx",
+          "CashbackWidget.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "CashbackWidget.tsx",
           "CashbackWidget.types.ts",
@@ -4510,7 +4829,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Chart/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -4608,6 +4927,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Chart.tsx",
+          "Chart.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Chart.tsx",
           "Chart.types.ts",
@@ -4636,7 +4964,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ChatBubble/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -4734,6 +5062,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ChatBubble.tsx",
+          "ChatBubble.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ChatBubble.tsx",
           "ChatBubble.types.ts",
@@ -4762,7 +5099,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ChatInput/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -4860,6 +5197,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ChatInput.tsx",
+          "ChatInput.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ChatInput.tsx",
           "ChatInput.types.ts",
@@ -4888,7 +5234,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Checkbox/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -4986,6 +5332,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Checkbox.tsx",
+          "Checkbox.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Checkbox.tsx",
           "Checkbox.types.ts",
@@ -5015,7 +5370,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Chip/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -5113,6 +5468,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Chip.tsx",
+          "Chip.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Chip.tsx",
           "Chip.types.ts",
@@ -5141,7 +5505,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CodeBlock/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -5239,6 +5603,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "CodeBlock.tsx",
+          "CodeBlock.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "CodeBlock.tsx",
           "CodeBlock.types.ts",
@@ -5267,7 +5640,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Collapsible/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -5365,6 +5738,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Collapsible.tsx",
+          "Collapsible.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Collapsible.tsx",
           "Collapsible.types.ts",
@@ -5394,7 +5776,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Combobox/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -5492,6 +5874,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Combobox.tsx",
+          "Combobox.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Combobox.tsx",
           "Combobox.types.ts",
@@ -5520,7 +5911,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ComicPanel/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -5618,6 +6009,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ComicPanel.tsx",
+          "ComicPanel.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ComicPanel.tsx",
           "ComicPanel.types.ts",
@@ -5646,7 +6046,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CommandMenu/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -5744,6 +6144,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "CommandMenu.tsx",
+          "CommandMenu.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "CommandMenu.tsx",
           "CommandMenu.types.ts",
@@ -5772,7 +6181,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CommentThread/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -5870,6 +6279,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "CommentThread.tsx",
+          "CommentThread.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "CommentThread.tsx",
           "CommentThread.types.ts",
@@ -5896,7 +6314,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ConfirmDialog/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -5994,6 +6412,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ConfirmDialog.tsx",
+          "ConfirmDialog.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ConfirmDialog.tsx",
           "ConfirmDialog.types.ts",
@@ -6022,7 +6449,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ContextMenu/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -6120,6 +6547,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ContextMenu.tsx",
+          "ContextMenu.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ContextMenu.tsx",
           "ContextMenu.types.ts",
@@ -6149,7 +6585,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ContextualTrustBadge/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -6247,6 +6683,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ContextualTrustBadge.tsx",
+          "ContextualTrustBadge.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ContextualTrustBadge.tsx",
           "ContextualTrustBadge.types.ts",
@@ -6275,7 +6720,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ControlCenterToggles/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -6373,6 +6818,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ControlCenterToggles.tsx",
+          "ControlCenterToggles.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ControlCenterToggles.tsx",
           "ControlCenterToggles.types.ts",
@@ -6399,7 +6853,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Counters/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -6497,6 +6951,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Counters.tsx",
+          "Counters.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Counters.tsx",
           "Counters.types.ts",
@@ -6523,7 +6986,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CountersListWithChart/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -6621,6 +7084,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "CountersListWithChart.tsx",
+          "CountersListWithChart.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "CountersListWithChart.tsx",
           "CountersListWithChart.types.ts",
@@ -6650,7 +7122,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CreditLimitManager/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -6748,6 +7220,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "CreditLimitManager.tsx",
+          "CreditLimitManager.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "CreditLimitManager.tsx",
           "CreditLimitManager.types.ts",
@@ -6777,7 +7258,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CreditScoreSimulator/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -6875,6 +7356,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "CreditScoreSimulator.tsx",
+          "CreditScoreSimulator.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "CreditScoreSimulator.tsx",
           "CreditScoreSimulator.types.ts",
@@ -6904,7 +7394,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CurrencyConverterWidget/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -7002,6 +7492,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "CurrencyConverterWidget.tsx",
+          "CurrencyConverterWidget.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "CurrencyConverterWidget.tsx",
           "CurrencyConverterWidget.types.ts",
@@ -7031,7 +7530,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/DataGrid/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -7129,6 +7628,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "DataGrid.tsx",
+          "DataGrid.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "DataGrid.tsx",
           "DataGrid.types.ts",
@@ -7161,7 +7669,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/DatePicker/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -7269,6 +7777,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "DatePicker.tsx",
+          "DatePicker.types.ts",
+          "DatePicker.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "DatePicker.tsx",
           "DatePicker.types.ts",
@@ -7298,7 +7816,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/DateRangePicker/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -7396,6 +7914,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "DateRangePicker.tsx",
+          "DateRangePicker.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "DateRangePicker.tsx",
           "DateRangePicker.types.ts",
@@ -7424,7 +7951,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/DefinitionList/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -7522,6 +8049,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "DefinitionList.tsx",
+          "DefinitionList.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "DefinitionList.tsx",
           "DefinitionList.types.ts",
@@ -7550,7 +8086,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/DescriptionBlock/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -7648,6 +8184,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "DescriptionBlock.tsx",
+          "DescriptionBlock.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "DescriptionBlock.tsx",
           "DescriptionBlock.types.ts",
@@ -7677,7 +8222,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/DeviceList/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -7775,6 +8320,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "DeviceList.tsx",
+          "DeviceList.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "DeviceList.tsx",
           "DeviceList.types.ts",
@@ -7803,7 +8357,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/DiffViewer/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -7901,6 +8455,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "DiffViewer.tsx",
+          "DiffViewer.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "DiffViewer.tsx",
           "DiffViewer.types.ts",
@@ -7927,7 +8490,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Divider/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -8025,6 +8588,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Divider.tsx",
+          "Divider.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Divider.tsx",
           "Divider.types.ts",
@@ -8054,7 +8626,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/DocScanOverlay/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -8152,6 +8724,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "DocScanOverlay.tsx",
+          "DocScanOverlay.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "DocScanOverlay.tsx",
           "DocScanOverlay.types.ts",
@@ -8180,7 +8761,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/DockBar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -8278,6 +8859,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "DockBar.tsx",
+          "DockBar.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "DockBar.tsx",
           "DockBar.types.ts",
@@ -8307,7 +8897,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/EarlyPaymentDiscount/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -8405,6 +8995,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "EarlyPaymentDiscount.tsx",
+          "EarlyPaymentDiscount.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "EarlyPaymentDiscount.tsx",
           "EarlyPaymentDiscount.types.ts",
@@ -8433,7 +9032,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/EmptyState/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -8531,6 +9130,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "EmptyState.tsx",
+          "EmptyState.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "EmptyState.tsx",
           "EmptyState.types.ts",
@@ -8559,7 +9167,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ErrorBoundary/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -8657,6 +9265,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ErrorBoundary.tsx",
+          "ErrorBoundary.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ErrorBoundary.tsx",
           "ErrorBoundary.types.ts",
@@ -8686,7 +9303,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ExpenseCategorizer/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -8784,6 +9401,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ExpenseCategorizer.tsx",
+          "ExpenseCategorizer.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ExpenseCategorizer.tsx",
           "ExpenseCategorizer.types.ts",
@@ -8813,7 +9439,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/FAB/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -8911,6 +9537,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "FAB.tsx",
+          "FAB.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "FAB.tsx",
           "FAB.types.ts",
@@ -8940,7 +9575,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/FABGroup/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -9038,6 +9673,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "FABGroup.tsx",
+          "FABGroup.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "FABGroup.tsx",
           "FABGroup.types.ts",
@@ -9067,7 +9711,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/FairUseLimitTracker/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -9165,6 +9809,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "FairUseLimitTracker.tsx",
+          "FairUseLimitTracker.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "FairUseLimitTracker.tsx",
           "FairUseLimitTracker.types.ts",
@@ -9194,7 +9847,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/FileIntelligencePreview/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -9292,6 +9945,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "FileIntelligencePreview.tsx",
+          "FileIntelligencePreview.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "FileIntelligencePreview.tsx",
           "FileIntelligencePreview.types.ts",
@@ -9325,7 +9987,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/FileUpload/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -9433,6 +10095,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "FileUpload.tsx",
+          "FileUpload.types.ts",
+          "FileUpload.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "FileUpload.tsx",
           "FileUpload.types.ts",
@@ -9462,7 +10134,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/FilterBar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -9560,6 +10232,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "FilterBar.tsx",
+          "FilterBar.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "FilterBar.tsx",
           "FilterBar.types.ts",
@@ -9589,7 +10270,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/FinancialGoalTracker/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -9687,6 +10368,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "FinancialGoalTracker.tsx",
+          "FinancialGoalTracker.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "FinancialGoalTracker.tsx",
           "FinancialGoalTracker.types.ts",
@@ -9716,7 +10406,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/FintechDashboardPreview/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -9814,6 +10504,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "FintechDashboardPreview.tsx",
+          "FintechDashboardPreview.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "FintechDashboardPreview.tsx",
           "FintechDashboardPreview.types.ts",
@@ -9842,7 +10541,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/FloatingElement/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -9940,6 +10639,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "FloatingElement.tsx",
+          "FloatingElement.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "FloatingElement.tsx",
           "FloatingElement.types.ts",
@@ -9968,7 +10676,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/FloatingToolbar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -10066,6 +10774,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "FloatingToolbar.tsx",
+          "FloatingToolbar.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "FloatingToolbar.tsx",
           "FloatingToolbar.types.ts",
@@ -10092,7 +10809,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Footer/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -10190,6 +10907,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Footer.tsx",
+          "Footer.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Footer.tsx",
           "Footer.types.ts",
@@ -10219,7 +10945,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Gallery/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -10317,6 +11043,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Gallery.tsx",
+          "Gallery.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Gallery.tsx",
           "Gallery.types.ts",
@@ -10346,7 +11081,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/GamifiedRewardTier/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -10444,6 +11179,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "GamifiedRewardTier.tsx",
+          "GamifiedRewardTier.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "GamifiedRewardTier.tsx",
           "GamifiedRewardTier.types.ts",
@@ -10472,7 +11216,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/GestureCard/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -10570,6 +11314,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "GestureCard.tsx",
+          "GestureCard.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "GestureCard.tsx",
           "GestureCard.types.ts",
@@ -10596,7 +11349,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/GridSystem/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -10694,6 +11447,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "GridSystem.tsx",
+          "GridSystem.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "GridSystem.tsx",
           "GridSystem.types.ts",
@@ -10722,7 +11484,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/HamburgerMenuIcon/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -10820,6 +11582,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "HamburgerMenuIcon.tsx",
+          "HamburgerMenuIcon.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "HamburgerMenuIcon.tsx",
           "HamburgerMenuIcon.types.ts",
@@ -10848,7 +11619,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/HapticButton/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -10946,6 +11717,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "HapticButton.tsx",
+          "HapticButton.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "HapticButton.tsx",
           "HapticButton.types.ts",
@@ -10972,7 +11752,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Heading/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -11070,6 +11850,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Heading.tsx",
+          "Heading.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Heading.tsx",
           "Heading.types.ts",
@@ -11099,7 +11888,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/HyperPersonalizedWidgetFeed/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -11197,6 +11986,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "HyperPersonalizedWidgetFeed.tsx",
+          "HyperPersonalizedWidgetFeed.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "HyperPersonalizedWidgetFeed.tsx",
           "HyperPersonalizedWidgetFeed.types.ts",
@@ -11229,7 +12027,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/IconButton/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -11337,6 +12135,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "IconButton.tsx",
+          "IconButton.types.ts",
+          "IconButton.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "IconButton.tsx",
           "IconButton.types.ts",
@@ -11367,7 +12175,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/IdentityVerificationStep/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -11465,6 +12273,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "IdentityVerificationStep.tsx",
+          "IdentityVerificationStep.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "IdentityVerificationStep.tsx",
           "IdentityVerificationStep.types.ts",
@@ -11494,7 +12311,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ImageCarousel/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -11592,6 +12409,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ImageCarousel.tsx",
+          "ImageCarousel.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ImageCarousel.tsx",
           "ImageCarousel.types.ts",
@@ -11620,7 +12446,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ImageCropper/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -11718,6 +12544,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ImageCropper.tsx",
+          "ImageCropper.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ImageCropper.tsx",
           "ImageCropper.types.ts",
@@ -11746,7 +12581,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ImmersiveHero/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -11844,6 +12679,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ImmersiveHero.tsx",
+          "ImmersiveHero.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ImmersiveHero.tsx",
           "ImmersiveHero.types.ts",
@@ -11872,7 +12716,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/InfiniteHorizontalLoop/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -11970,6 +12814,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "InfiniteHorizontalLoop.tsx",
+          "InfiniteHorizontalLoop.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "InfiniteHorizontalLoop.tsx",
           "InfiniteHorizontalLoop.types.ts",
@@ -12002,7 +12855,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Input/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -12110,6 +12963,16 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Input.tsx",
+          "Input.types.ts",
+          "Input.styles.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Input.tsx",
           "Input.types.ts",
@@ -12140,7 +13003,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/InspectorPanel/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -12238,6 +13101,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "InspectorPanel.tsx",
+          "InspectorPanel.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "InspectorPanel.tsx",
           "InspectorPanel.types.ts",
@@ -12267,7 +13139,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/InstallmentSimulator/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -12365,6 +13237,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "InstallmentSimulator.tsx",
+          "InstallmentSimulator.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "InstallmentSimulator.tsx",
           "InstallmentSimulator.types.ts",
@@ -12394,7 +13275,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/InteractiveBillSplitter/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -12492,6 +13373,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "InteractiveBillSplitter.tsx",
+          "InteractiveBillSplitter.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "InteractiveBillSplitter.tsx",
           "InteractiveBillSplitter.types.ts",
@@ -12520,7 +13410,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/InteractiveCursor/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -12618,6 +13508,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "InteractiveCursor.tsx",
+          "InteractiveCursor.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "InteractiveCursor.tsx",
           "InteractiveCursor.types.ts",
@@ -12646,7 +13545,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/InvoicePreview/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -12744,6 +13643,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "InvoicePreview.tsx",
+          "InvoicePreview.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "InvoicePreview.tsx",
           "InvoicePreview.types.ts",
@@ -12773,7 +13681,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/JargonTooltip/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -12871,6 +13779,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "JargonTooltip.tsx",
+          "JargonTooltip.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "JargonTooltip.tsx",
           "JargonTooltip.types.ts",
@@ -12899,7 +13816,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/JsonViewer/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -12997,6 +13914,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "JsonViewer.tsx",
+          "JsonViewer.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "JsonViewer.tsx",
           "JsonViewer.types.ts",
@@ -13026,7 +13952,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/KPIBlock/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -13124,6 +14050,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "KPIBlock.tsx",
+          "KPIBlock.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "KPIBlock.tsx",
           "KPIBlock.types.ts",
@@ -13150,7 +14085,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/KanbanBoard/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -13248,6 +14183,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "KanbanBoard.tsx",
+          "KanbanBoard.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "KanbanBoard.tsx",
           "KanbanBoard.types.ts",
@@ -13276,7 +14220,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/KeyValueInfo/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -13374,6 +14318,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "KeyValueInfo.tsx",
+          "KeyValueInfo.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "KeyValueInfo.tsx",
           "KeyValueInfo.types.ts",
@@ -13400,7 +14353,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Label/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -13498,6 +14451,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Label.tsx",
+          "Label.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Label.tsx",
           "Label.types.ts",
@@ -13524,7 +14486,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Layout/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -13622,6 +14584,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Layout.tsx",
+          "Layout.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Layout.tsx",
           "Layout.types.ts",
@@ -13651,7 +14622,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Lightbox/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -13749,6 +14720,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Lightbox.tsx",
+          "Lightbox.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Lightbox.tsx",
           "Lightbox.types.ts",
@@ -13777,7 +14757,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/LoadingOverlay/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -13875,6 +14855,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "LoadingOverlay.tsx",
+          "LoadingOverlay.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "LoadingOverlay.tsx",
           "LoadingOverlay.types.ts",
@@ -13903,7 +14892,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/LoginForm/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -14001,6 +14990,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "LoginForm.tsx",
+          "LoginForm.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "LoginForm.tsx",
           "LoginForm.types.ts",
@@ -14030,7 +15028,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/MaintenanceMode/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -14128,6 +15126,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "MaintenanceMode.tsx",
+          "MaintenanceMode.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "MaintenanceMode.tsx",
           "MaintenanceMode.types.ts",
@@ -14157,7 +15164,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/MarkdownEditor/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -14255,6 +15262,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "MarkdownEditor.tsx",
+          "MarkdownEditor.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "MarkdownEditor.tsx",
           "MarkdownEditor.types.ts",
@@ -14281,7 +15297,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/MasonryLayout/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -14379,6 +15395,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "MasonryLayout.tsx",
+          "MasonryLayout.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "MasonryLayout.tsx",
           "MasonryLayout.types.ts",
@@ -14407,7 +15432,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/MenuBar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -14505,6 +15530,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "MenuBar.tsx",
+          "MenuBar.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "MenuBar.tsx",
           "MenuBar.types.ts",
@@ -14534,7 +15568,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/MessageReactions/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -14632,6 +15666,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "MessageReactions.tsx",
+          "MessageReactions.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "MessageReactions.tsx",
           "MessageReactions.types.ts",
@@ -14661,7 +15704,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/MicroCommitmentStepper/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -14759,6 +15802,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "MicroCommitmentStepper.tsx",
+          "MicroCommitmentStepper.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "MicroCommitmentStepper.tsx",
           "MicroCommitmentStepper.types.ts",
@@ -14787,7 +15839,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Modal/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -14885,6 +15937,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Modal.tsx",
+          "Modal.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Modal.tsx",
           "Modal.types.ts",
@@ -14911,7 +15972,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ModalStackManager/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -15009,6 +16070,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ModalStackManager.tsx",
+          "ModalStackManager.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ModalStackManager.tsx",
           "ModalStackManager.types.ts",
@@ -15038,7 +16108,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/MultiCurrencyWallet/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -15136,6 +16206,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "MultiCurrencyWallet.tsx",
+          "MultiCurrencyWallet.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "MultiCurrencyWallet.tsx",
           "MultiCurrencyWallet.types.ts",
@@ -15165,7 +16244,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/MultiFileUpload/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -15263,6 +16342,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "MultiFileUpload.tsx",
+          "MultiFileUpload.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "MultiFileUpload.tsx",
           "MultiFileUpload.types.ts",
@@ -15291,7 +16379,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/NavBar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -15389,6 +16477,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "NavBar.tsx",
+          "NavBar.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "NavBar.tsx",
           "NavBar.types.ts",
@@ -15417,7 +16514,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/NavigationDrawer/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -15515,6 +16612,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "NavigationDrawer.tsx",
+          "NavigationDrawer.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "NavigationDrawer.tsx",
           "NavigationDrawer.types.ts",
@@ -15544,7 +16650,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/NotificationCenterPanel/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -15642,6 +16748,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "NotificationCenterPanel.tsx",
+          "NotificationCenterPanel.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "NotificationCenterPanel.tsx",
           "NotificationCenterPanel.types.ts",
@@ -15670,7 +16785,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/OTPInput/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -15768,6 +16883,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "OTPInput.tsx",
+          "OTPInput.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "OTPInput.tsx",
           "OTPInput.types.ts",
@@ -15797,7 +16921,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/OfflineState/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -15895,6 +17019,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "OfflineState.tsx",
+          "OfflineState.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "OfflineState.tsx",
           "OfflineState.types.ts",
@@ -15923,7 +17056,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/OrderSummary/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -16021,6 +17154,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "OrderSummary.tsx",
+          "OrderSummary.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "OrderSummary.tsx",
           "OrderSummary.types.ts",
@@ -16049,7 +17191,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Pagination/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -16147,6 +17289,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Pagination.tsx",
+          "Pagination.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Pagination.tsx",
           "Pagination.types.ts",
@@ -16176,7 +17327,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Panel/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -16274,6 +17425,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Panel.tsx",
+          "Panel.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Panel.tsx",
           "Panel.types.ts",
@@ -16300,7 +17460,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Paragraph/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -16398,6 +17558,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Paragraph.tsx",
+          "Paragraph.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Paragraph.tsx",
           "Paragraph.types.ts",
@@ -16422,7 +17591,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ParallaxBanner/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -16510,6 +17679,14 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ParallaxBanner.tsx",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ParallaxBanner.tsx",
           "index.ts"
@@ -16533,7 +17710,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ParallaxStoryStage/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -16621,6 +17798,14 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ParallaxStoryStage.tsx",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ParallaxStoryStage.tsx",
           "index.ts"
@@ -16649,7 +17834,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/PasswordInput/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -16747,6 +17932,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "PasswordInput.tsx",
+          "PasswordInput.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "PasswordInput.tsx",
           "PasswordInput.types.ts",
@@ -16776,7 +17970,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/PaymentConfirmationModal/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -16874,6 +18068,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "PaymentConfirmationModal.tsx",
+          "PaymentConfirmationModal.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "PaymentConfirmationModal.tsx",
           "PaymentConfirmationModal.types.ts",
@@ -16900,7 +18103,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/PaymentMethodSelector/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -16998,6 +18201,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "PaymentMethodSelector.tsx",
+          "PaymentMethodSelector.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "PaymentMethodSelector.tsx",
           "PaymentMethodSelector.types.ts",
@@ -17027,7 +18239,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/PeerTagInput/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -17125,6 +18337,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "PeerTagInput.tsx",
+          "PeerTagInput.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "PeerTagInput.tsx",
           "PeerTagInput.types.ts",
@@ -17151,7 +18372,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/PermissionsMatrix/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -17249,6 +18470,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "PermissionsMatrix.tsx",
+          "PermissionsMatrix.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "PermissionsMatrix.tsx",
           "PermissionsMatrix.types.ts",
@@ -17275,7 +18505,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Popover/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -17373,6 +18603,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Popover.tsx",
+          "Popover.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Popover.tsx",
           "Popover.types.ts",
@@ -17402,7 +18641,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/PortfolioDistribution/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -17500,6 +18739,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "PortfolioDistribution.tsx",
+          "PortfolioDistribution.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "PortfolioDistribution.tsx",
           "PortfolioDistribution.types.ts",
@@ -17526,7 +18774,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/PriceDisplay/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -17624,6 +18872,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "PriceDisplay.tsx",
+          "PriceDisplay.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "PriceDisplay.tsx",
           "PriceDisplay.types.ts",
@@ -17652,7 +18909,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ProductCard/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -17750,6 +19007,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ProductCard.tsx",
+          "ProductCard.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ProductCard.tsx",
           "ProductCard.types.ts",
@@ -17774,7 +19040,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Progress/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -17862,6 +19128,14 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Progress.tsx",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Progress.tsx",
           "index.ts"
@@ -17890,7 +19164,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ProgressiveDisclosurePanel/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -17988,6 +19262,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ProgressiveDisclosurePanel.tsx",
+          "ProgressiveDisclosurePanel.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ProgressiveDisclosurePanel.tsx",
           "ProgressiveDisclosurePanel.types.ts",
@@ -18017,7 +19300,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/PromptSuggestionChips/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -18115,6 +19398,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "PromptSuggestionChips.tsx",
+          "PromptSuggestionChips.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "PromptSuggestionChips.tsx",
           "PromptSuggestionChips.types.ts",
@@ -18144,7 +19436,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/PropertyList/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -18242,6 +19534,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "PropertyList.tsx",
+          "PropertyList.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "PropertyList.tsx",
           "PropertyList.types.ts",
@@ -18270,7 +19571,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/QRCodeGenerator/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -18368,6 +19669,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "QRCodeGenerator.tsx",
+          "QRCodeGenerator.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "QRCodeGenerator.tsx",
           "QRCodeGenerator.types.ts",
@@ -18394,7 +19704,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/QuantitySelector/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -18492,6 +19802,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "QuantitySelector.tsx",
+          "QuantitySelector.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "QuantitySelector.tsx",
           "QuantitySelector.types.ts",
@@ -18518,7 +19837,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/QueryBuilder/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -18616,6 +19935,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "QueryBuilder.tsx",
+          "QueryBuilder.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "QueryBuilder.tsx",
           "QueryBuilder.types.ts",
@@ -18645,7 +19973,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/QuickTransferBar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -18743,6 +20071,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "QuickTransferBar.tsx",
+          "QuickTransferBar.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "QuickTransferBar.tsx",
           "QuickTransferBar.types.ts",
@@ -18771,7 +20108,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/RadioGroup/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -18869,6 +20206,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "RadioGroup.tsx",
+          "RadioGroup.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "RadioGroup.tsx",
           "RadioGroup.types.ts",
@@ -18895,7 +20241,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/RangeSlider/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -18993,6 +20339,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "RangeSlider.tsx",
+          "RangeSlider.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "RangeSlider.tsx",
           "RangeSlider.types.ts",
@@ -19022,7 +20377,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/RatingInput/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -19120,6 +20475,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "RatingInput.tsx",
+          "RatingInput.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "RatingInput.tsx",
           "RatingInput.types.ts",
@@ -19149,7 +20513,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/RecoveryCodeDisplay/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -19247,6 +20611,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "RecoveryCodeDisplay.tsx",
+          "RecoveryCodeDisplay.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "RecoveryCodeDisplay.tsx",
           "RecoveryCodeDisplay.types.ts",
@@ -19276,7 +20649,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/RecurringInvestConfigurator/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -19374,6 +20747,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "RecurringInvestConfigurator.tsx",
+          "RecurringInvestConfigurator.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "RecurringInvestConfigurator.tsx",
           "RecurringInvestConfigurator.types.ts",
@@ -19400,7 +20782,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ResizablePanel/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -19498,6 +20880,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ResizablePanel.tsx",
+          "ResizablePanel.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ResizablePanel.tsx",
           "ResizablePanel.types.ts",
@@ -19526,7 +20917,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ResourceMonitor/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -19624,6 +21015,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ResourceMonitor.tsx",
+          "ResourceMonitor.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ResourceMonitor.tsx",
           "ResourceMonitor.types.ts",
@@ -19653,7 +21053,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/RetailSwapInterface/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -19751,6 +21151,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "RetailSwapInterface.tsx",
+          "RetailSwapInterface.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "RetailSwapInterface.tsx",
           "RetailSwapInterface.types.ts",
@@ -19777,7 +21186,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Reviews/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -19875,6 +21284,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Reviews.tsx",
+          "Reviews.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Reviews.tsx",
           "Reviews.types.ts",
@@ -19904,7 +21322,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/RichTextEditor/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -20002,6 +21420,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "RichTextEditor.tsx",
+          "RichTextEditor.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "RichTextEditor.tsx",
           "RichTextEditor.types.ts",
@@ -20030,7 +21457,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/RotarySelector/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -20128,6 +21555,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "RotarySelector.tsx",
+          "RotarySelector.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "RotarySelector.tsx",
           "RotarySelector.types.ts",
@@ -20157,7 +21593,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/RoundUpSavingsToggle/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -20255,6 +21691,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "RoundUpSavingsToggle.tsx",
+          "RoundUpSavingsToggle.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "RoundUpSavingsToggle.tsx",
           "RoundUpSavingsToggle.types.ts",
@@ -20281,7 +21726,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SchedulerTimeline/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -20379,6 +21824,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SchedulerTimeline.tsx",
+          "SchedulerTimeline.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SchedulerTimeline.tsx",
           "SchedulerTimeline.types.ts",
@@ -20405,7 +21859,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ScrollArea/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -20503,6 +21957,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ScrollArea.tsx",
+          "ScrollArea.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ScrollArea.tsx",
           "ScrollArea.types.ts",
@@ -20527,7 +21990,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ScrollProgressBar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -20615,6 +22078,14 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ScrollProgressBar.tsx",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ScrollProgressBar.tsx",
           "index.ts"
@@ -20642,7 +22113,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ScrollRevealCards/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -20740,6 +22211,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ScrollRevealCards.tsx",
+          "ScrollRevealCards.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ScrollRevealCards.tsx",
           "ScrollRevealCards.types.ts",
@@ -20769,7 +22249,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -20867,6 +22347,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SearchInput.tsx",
+          "SearchInput.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SearchInput.tsx",
           "SearchInput.types.ts",
@@ -20893,7 +22382,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SectionHeader/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -20991,6 +22480,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SectionHeader.tsx",
+          "SectionHeader.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SectionHeader.tsx",
           "SectionHeader.types.ts",
@@ -21020,7 +22518,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SecurityActivityLog/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -21118,6 +22616,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SecurityActivityLog.tsx",
+          "SecurityActivityLog.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SecurityActivityLog.tsx",
           "SecurityActivityLog.types.ts",
@@ -21147,7 +22654,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SecurityOTPInput/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -21245,6 +22752,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SecurityOTPInput.tsx",
+          "SecurityOTPInput.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SecurityOTPInput.tsx",
           "SecurityOTPInput.types.ts",
@@ -21273,7 +22789,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SegmentedInput/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -21371,6 +22887,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SegmentedInput.tsx",
+          "SegmentedInput.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SegmentedInput.tsx",
           "SegmentedInput.types.ts",
@@ -21399,7 +22924,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Select/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -21497,6 +23022,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Select.tsx",
+          "Select.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Select.tsx",
           "Select.types.ts",
@@ -21526,7 +23060,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Sheet/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -21624,6 +23158,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Sheet.tsx",
+          "Sheet.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Sheet.tsx",
           "Sheet.types.ts",
@@ -21652,7 +23195,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Sidebar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -21750,6 +23293,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Sidebar.tsx",
+          "Sidebar.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Sidebar.tsx",
           "Sidebar.types.ts",
@@ -21778,7 +23330,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SignaturePad/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -21876,6 +23428,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SignaturePad.tsx",
+          "SignaturePad.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SignaturePad.tsx",
           "SignaturePad.types.ts",
@@ -21904,7 +23465,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SignupForm/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -22002,6 +23563,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SignupForm.tsx",
+          "SignupForm.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SignupForm.tsx",
           "SignupForm.types.ts",
@@ -22026,7 +23596,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Skeleton/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -22114,6 +23684,14 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Skeleton.tsx",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Skeleton.tsx",
           "index.ts"
@@ -22142,7 +23720,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SlideToDelete/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -22240,6 +23818,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SlideToDelete.tsx",
+          "SlideToDelete.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SlideToDelete.tsx",
           "SlideToDelete.types.ts",
@@ -22266,7 +23853,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Slider/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -22364,6 +23951,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Slider.tsx",
+          "Slider.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Slider.tsx",
           "Slider.types.ts",
@@ -22393,7 +23989,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SmartInsightsCard/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -22491,6 +24087,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SmartInsightsCard.tsx",
+          "SmartInsightsCard.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SmartInsightsCard.tsx",
           "SmartInsightsCard.types.ts",
@@ -22520,7 +24125,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Snackbar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -22618,6 +24223,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Snackbar.tsx",
+          "Snackbar.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Snackbar.tsx",
           "Snackbar.types.ts",
@@ -22647,7 +24261,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SocialPaymentFeed/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -22745,6 +24359,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SocialPaymentFeed.tsx",
+          "SocialPaymentFeed.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SocialPaymentFeed.tsx",
           "SocialPaymentFeed.types.ts",
@@ -22771,7 +24394,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Spacer/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -22869,6 +24492,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Spacer.tsx",
+          "Spacer.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Spacer.tsx",
           "Spacer.types.ts",
@@ -22895,7 +24527,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Sparkline/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -22993,6 +24625,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Sparkline.tsx",
+          "Sparkline.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Sparkline.tsx",
           "Sparkline.types.ts",
@@ -23021,7 +24662,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Spinner/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -23119,6 +24760,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Spinner.tsx",
+          "Spinner.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Spinner.tsx",
           "Spinner.types.ts",
@@ -23148,7 +24798,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SplitButton/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -23246,6 +24896,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SplitButton.tsx",
+          "SplitButton.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SplitButton.tsx",
           "SplitButton.types.ts",
@@ -23272,7 +24931,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SplitView/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -23370,6 +25029,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SplitView.tsx",
+          "SplitView.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SplitView.tsx",
           "SplitView.types.ts",
@@ -23399,7 +25067,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/StatisticDisplay/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -23497,6 +25165,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "StatisticDisplay.tsx",
+          "StatisticDisplay.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "StatisticDisplay.tsx",
           "StatisticDisplay.types.ts",
@@ -23525,7 +25202,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Stepper/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -23623,6 +25300,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Stepper.tsx",
+          "Stepper.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Stepper.tsx",
           "Stepper.types.ts",
@@ -23649,7 +25335,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/StickyContainer/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -23747,6 +25433,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "StickyContainer.tsx",
+          "StickyContainer.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "StickyContainer.tsx",
           "StickyContainer.types.ts",
@@ -23775,7 +25470,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/StickyImageTextSwap/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -23873,6 +25568,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "StickyImageTextSwap.tsx",
+          "StickyImageTextSwap.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "StickyImageTextSwap.tsx",
           "StickyImageTextSwap.types.ts",
@@ -23902,7 +25606,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SubscriptionManager/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -24000,6 +25704,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "SubscriptionManager.tsx",
+          "SubscriptionManager.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "SubscriptionManager.tsx",
           "SubscriptionManager.types.ts",
@@ -24028,7 +25741,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Switch/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -24126,6 +25839,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Switch.tsx",
+          "Switch.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Switch.tsx",
           "Switch.types.ts",
@@ -24155,7 +25877,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Table/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -24253,6 +25975,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Table.tsx",
+          "Table.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Table.tsx",
           "Table.types.ts",
@@ -24279,7 +26010,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/TableOfContents/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -24377,6 +26108,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "TableOfContents.tsx",
+          "TableOfContents.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "TableOfContents.tsx",
           "TableOfContents.types.ts",
@@ -24405,7 +26145,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Tabs/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -24503,6 +26243,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Tabs.tsx",
+          "Tabs.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Tabs.tsx",
           "Tabs.types.ts",
@@ -24532,7 +26281,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Tag/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -24630,6 +26379,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Tag.tsx",
+          "Tag.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Tag.tsx",
           "Tag.types.ts",
@@ -24659,7 +26417,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/TagsInput/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -24757,6 +26515,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "TagsInput.tsx",
+          "TagsInput.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "TagsInput.tsx",
           "TagsInput.types.ts",
@@ -24783,7 +26550,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Text/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -24881,6 +26648,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Text.tsx",
+          "Text.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Text.tsx",
           "Text.types.ts",
@@ -24907,7 +26683,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Textarea/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -25005,6 +26781,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Textarea.tsx",
+          "Textarea.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Textarea.tsx",
           "Textarea.types.ts",
@@ -25034,7 +26819,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/ThemeToggle/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -25132,6 +26917,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "ThemeToggle.tsx",
+          "ThemeToggle.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "ThemeToggle.tsx",
           "ThemeToggle.types.ts",
@@ -25161,7 +26955,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/TimePicker/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -25259,6 +27053,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "TimePicker.tsx",
+          "TimePicker.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "TimePicker.tsx",
           "TimePicker.types.ts",
@@ -25288,7 +27091,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Timeline/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -25386,6 +27189,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Timeline.tsx",
+          "Timeline.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Timeline.tsx",
           "Timeline.types.ts",
@@ -25412,7 +27224,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Title/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -25510,6 +27322,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Title.tsx",
+          "Title.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Title.tsx",
           "Title.types.ts",
@@ -25535,7 +27356,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Toast/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -25623,6 +27444,14 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Toast.tsx",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Toast.tsx",
           "index.ts"
@@ -25650,7 +27479,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/Tooltip/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -25748,6 +27577,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "Tooltip.tsx",
+          "Tooltip.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "Tooltip.tsx",
           "Tooltip.types.ts",
@@ -25776,7 +27614,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/TopActionBar/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -25874,6 +27712,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "TopActionBar.tsx",
+          "TopActionBar.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "TopActionBar.tsx",
           "TopActionBar.types.ts",
@@ -25903,7 +27750,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/TransactionList/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -26001,6 +27848,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "TransactionList.tsx",
+          "TransactionList.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "TransactionList.tsx",
           "TransactionList.types.ts",
@@ -26030,7 +27886,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/TransferForm/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -26128,6 +27984,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "TransferForm.tsx",
+          "TransferForm.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "TransferForm.tsx",
           "TransferForm.types.ts",
@@ -26156,7 +28021,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/TreeView/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -26254,6 +28119,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "TreeView.tsx",
+          "TreeView.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "TreeView.tsx",
           "TreeView.types.ts",
@@ -26282,7 +28156,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/TwoFactorAuth/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -26380,6 +28254,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "TwoFactorAuth.tsx",
+          "TwoFactorAuth.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "TwoFactorAuth.tsx",
           "TwoFactorAuth.types.ts",
@@ -26404,7 +28287,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/UnscramblingText/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -26492,6 +28375,14 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "UnscramblingText.tsx",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "UnscramblingText.tsx",
           "index.ts"
@@ -26520,7 +28411,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/VideoPlayer/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -26618,6 +28509,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "VideoPlayer.tsx",
+          "VideoPlayer.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "VideoPlayer.tsx",
           "VideoPlayer.types.ts",
@@ -26647,7 +28547,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/VirtualCardPreview/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -26745,6 +28645,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "VirtualCardPreview.tsx",
+          "VirtualCardPreview.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "VirtualCardPreview.tsx",
           "VirtualCardPreview.types.ts",
@@ -26774,7 +28683,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/VoiceCommandOverlay/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -26872,6 +28781,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "VoiceCommandOverlay.tsx",
+          "VoiceCommandOverlay.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "VoiceCommandOverlay.tsx",
           "VoiceCommandOverlay.types.ts",
@@ -26901,7 +28819,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/VoiceRecorder/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -26999,6 +28917,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "VoiceRecorder.tsx",
+          "VoiceRecorder.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "VoiceRecorder.tsx",
           "VoiceRecorder.types.ts",
@@ -27028,7 +28955,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/WindowControls/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -27126,6 +29053,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "WindowControls.tsx",
+          "WindowControls.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "WindowControls.tsx",
           "WindowControls.types.ts",
@@ -27155,7 +29091,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/WindowFrame/index.ts"
       }
     ],
-    "version": "1.0.11",
+    "version": "1.0.12",
     "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -27253,6 +29189,15 @@
       {
         "version": "1.0.11",
         "sha": "83bbf9c0720887fd2e45c184e3154649902b3ba0",
+        "files": [
+          "WindowFrame.tsx",
+          "WindowFrame.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "sha": "753036cd967c9aa634c7a5cf59e8541f69916a17",
         "files": [
           "WindowFrame.tsx",
           "WindowFrame.types.ts",

@@ -1,6 +1,6 @@
 # DeviceList
 
-> **v1.0.11** · stable
+> **v1.0.12** · stable
 
 A component for displaying a list of user devices with status indicators, icons, and management actions. Commonly used in security settings, session management, and account administration.
 
