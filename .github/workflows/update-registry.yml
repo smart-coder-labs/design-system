@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 2  # need HEAD and HEAD~1 to diff
+          token: ${{ secrets.REGISTRY_BOT_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
@@ -30,10 +31,11 @@ jobs:
           # Get files changed in this push (HEAD vs HEAD~1)
           CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD -- 'components/ui/')
 
-          # Extract unique component folder names
+          # Extract unique component folder names, excluding non-component dirs
           # components/ui/Button/Button.tsx → Button
           COMPONENTS=$(echo "$CHANGED_FILES" \
             | grep -oP 'components/ui/\K[^/]+' \
+            | grep -vE '^(__tests__|__mocks__|_|\.)'  \
             | sort -u \
             | tr '\n' ',' \
             | sed 's/,$//')

@@ -62,7 +62,10 @@ async function buildRegistry() {
   }
 
   const entries = await fs.readdir(COMPONENTS_UI_DIR, { withFileTypes: true });
-  const componentFolders = entries.filter((e) => e.isDirectory()).map((e) => e.name);
+  const EXCLUDED_DIRS = new Set(["__tests__", "__mocks__", "__fixtures__"]);
+  const componentFolders = entries
+    .filter((e) => e.isDirectory() && !EXCLUDED_DIRS.has(e.name) && !e.name.startsWith("_") && !e.name.startsWith("."))
+    .map((e) => e.name);
 
   const registry: Record<string, any> = {
     _version: packageVersion,
