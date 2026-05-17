@@ -1,6 +1,6 @@
 # DescriptionBlock
 
-> **v1.0.33** · stable
+> **v1.0.34** · stable
 
 A versatile content block component for displaying rich information with titles, descriptions, metadata, and media. Perfect for dashboard cards, feature highlights, and information panels.
 

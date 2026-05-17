@@ -1,6 +1,6 @@
 # Panel
 
-> **v1.0.33** · stable
+> **v1.0.34** · stable
 
 A versatile panel component with support for multiple variants, collapsible content, and optional header/footer sections.
 

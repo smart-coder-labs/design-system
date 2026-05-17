@@ -1,6 +1,6 @@
 # SecurityOTPInput
 
-> **v1.0.33** · stable
+> **v1.0.34** · stable
 
 A secure one-time password (OTP) input component for verification codes. Features automatic focus management, paste support, and visual feedback for different states.
 

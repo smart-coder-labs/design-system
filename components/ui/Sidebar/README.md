@@ -1,6 +1,6 @@
 # Sidebar
 
-> **v1.0.33** · stable
+> **v1.0.34** · stable
 
 Vertical navigation component for side navigation panels and menus.
 

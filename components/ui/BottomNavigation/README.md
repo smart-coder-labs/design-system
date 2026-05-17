@@ -1,6 +1,6 @@
 # BottomNavigation
 
-> **v1.0.33** · stable
+> **v1.0.34** · stable
 
 A mobile-style fixed bottom navigation bar with animated active states and badges.
 

@@ -1,6 +1,6 @@
 # RatingInput
 
-> **v1.0.33** · stable
+> **v1.0.34** · stable
 
 A star-based rating input component for collecting user ratings. Supports interactive and read-only modes, multiple sizes, custom max ratings, and displays helper text or error messages.
 

@@ -1,6 +1,6 @@
 # VoiceRecorder
 
-> **v1.0.33** · stable
+> **v1.0.34** · stable
 
 A voice recording component with start/stop controls, playback, and audio blob output. Uses the browser's MediaRecorder API for actual audio capture.
 

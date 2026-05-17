@@ -1,6 +1,6 @@
 # GamifiedRewardTier
 
-> **v1.0.33** · stable
+> **v1.0.34** · stable
 
 A gamified reward tier component displaying user points, current tier, progress to next tier, and active perks. Designed for loyalty programs and fintech applications.
 

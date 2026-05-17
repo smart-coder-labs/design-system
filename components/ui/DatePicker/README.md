@@ -1,6 +1,6 @@
 # DatePicker
 
-> **v1.0.33** · stable
+> **v1.0.34** · stable
 
 A single-date selection component with an interactive calendar dropdown. Features keyboard navigation, manual input support, and date range constraints.
 
