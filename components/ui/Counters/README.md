@@ -1,6 +1,6 @@
 # Counters
 
-> **v1.0.19** · stable
+> **v1.0.20** · stable
 
 A horizontal statistics display component for showing key metrics in a dashboard-style format. Displays multiple counter values in an equal-width flex layout with dividers.
 

@@ -1,6 +1,6 @@
 # RadioGroup
 
-> **v1.0.19** · stable
+> **v1.0.20** · stable
 
 A set of radio button components for selecting one option from a group. Built on native radio inputs with custom styling, supporting controlled/uncontrolled modes, disabled states, and proper accessibility.
 

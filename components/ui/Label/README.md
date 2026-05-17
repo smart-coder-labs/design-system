@@ -1,6 +1,6 @@
 # Label
 
-> **v1.0.19** · stable
+> **v1.0.20** · stable
 
 A form label component for accessible form inputs with support for required indicators.
 

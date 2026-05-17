@@ -1,6 +1,6 @@
 # ButtonWithDropdown
 
-> **v1.0.19** · stable
+> **v1.0.20** · stable
 
 A button component with an attached dropdown menu for actions.
 

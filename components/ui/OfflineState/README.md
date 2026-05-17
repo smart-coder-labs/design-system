@@ -1,6 +1,6 @@
 # OfflineState
 
-> **v1.0.19** · stable
+> **v1.0.20** · stable
 
 A component for displaying offline or connection error states with retry functionality. Can be displayed as a card or full-page overlay.
 

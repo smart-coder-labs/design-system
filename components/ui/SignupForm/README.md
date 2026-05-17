@@ -1,6 +1,6 @@
 # SignupForm
 
-> **v1.0.19** · stable
+> **v1.0.20** · stable
 
 A complete signup form component with built-in validation for user registration.
 
