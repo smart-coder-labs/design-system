@@ -1,6 +1,6 @@
 # Toast
 
-> **v1.0.21** · stable
+> **v1.0.22** · stable
 
 A notification toast component with auto-dismiss functionality. Supports multiple variants (default, destructive, success) and customizable duration.
 

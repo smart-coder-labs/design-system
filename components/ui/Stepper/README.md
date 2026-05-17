@@ -1,6 +1,6 @@
 # Stepper
 
-> **v1.0.21** · stable
+> **v1.0.22** · stable
 
 Multi-step progress component with 12 visual variants for different use cases.
 

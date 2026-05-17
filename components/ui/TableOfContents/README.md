@@ -1,6 +1,6 @@
 # TableOfContents
 
-> **v1.0.21** · stable
+> **v1.0.22** · stable
 
 A sticky sidebar navigation component that displays document headings with active section highlighting. Automatically scrolls to sections and supports nested heading hierarchies.
 
