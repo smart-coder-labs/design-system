@@ -1,6 +1,6 @@
 # Title
 
-> **v1.0.2** · stable
+> **v1.0.3** · stable
 
 A flexible heading component with comprehensive styling options including levels, weights, colors, alignment, and gradient effects.
 
