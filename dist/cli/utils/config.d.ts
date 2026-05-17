@@ -1,8 +1,14 @@
 export interface ComponentRecord {
     version: string;
+    status: "stable" | "beta" | "experimental";
     type: "folder" | "flat";
     installedAt: string;
     updatedAt: string;
+    history: Array<{
+        version: string;
+        action: "install" | "update" | "rollback";
+        date: string;
+    }>;
 }
 import type { Framework } from "./framework";
 export interface DesignSystemConfig {
@@ -20,7 +26,7 @@ export declare function saveConfig(config: DesignSystemConfig): Promise<void>;
  * Used for non-RSC projects (Vite, Astro, Remix, Next.js Pages Router).
  */
 export declare function stripUseClient(content: string): string;
-export declare function recordInstall(config: DesignSystemConfig, componentName: string, version: string, type: "folder" | "flat"): Promise<DesignSystemConfig>;
+export declare function recordInstall(config: DesignSystemConfig, componentName: string, version: string, type: "folder" | "flat", action?: "install" | "update" | "rollback", status?: "stable" | "beta" | "experimental"): Promise<DesignSystemConfig>;
 /**
  * Detect installed components from disk.
  * Supports both folder structure (ComponentName/) and flat files (ComponentName.tsx).
