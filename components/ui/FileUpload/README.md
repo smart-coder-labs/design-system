@@ -1,6 +1,6 @@
 # FileUpload
 
-> **v1.0.10** · stable
+> **v1.0.11** · stable
 
 A drag-and-drop file upload component with validation, progress display, and error handling. Supports click-to-upload and drag-and-drop interactions.
 

@@ -1,6 +1,6 @@
 # MarkdownEditor
 
-> **v1.0.10** · stable
+> **v1.0.11** · stable
 
 A rich markdown editor with toolbar, write/preview tabs, and live preview. Supports common formatting options including bold, italic, links, lists, code, and images.
 

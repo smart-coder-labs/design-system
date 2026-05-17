@@ -1,6 +1,6 @@
 # DateRangePicker
 
-> **v1.0.10** · stable
+> **v1.0.11** · stable
 
 A date range selection component with visual highlighting of the selected range. Users can select start and end dates to define a range.
 

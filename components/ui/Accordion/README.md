@@ -1,6 +1,6 @@
 # Accordion
 
-> **v1.0.10** · stable
+> **v1.0.11** · stable
 
 A collapsible content component with support for single or multiple open items.
 

@@ -1,6 +1,6 @@
 # HapticButton
 
-> **v1.0.10** · stable
+> **v1.0.11** · stable
 
 A button component that provides haptic feedback on user interaction. Uses the Vibration API and fallback methods to trigger tactile feedback on mobile devices.
 

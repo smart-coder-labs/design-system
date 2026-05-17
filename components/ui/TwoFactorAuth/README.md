@@ -1,6 +1,6 @@
 # TwoFactorAuth
 
-> **v1.0.10** · stable
+> **v1.0.11** · stable
 
 A secure two-factor authentication component with OTP input, verification flow, and error handling. Supports SMS, email, and authenticator app methods.
 

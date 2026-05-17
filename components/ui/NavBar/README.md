@@ -1,6 +1,6 @@
 # NavBar
 
-> **v1.0.10** · stable
+> **v1.0.11** · stable
 
 Top navigation bar component with brand, content sections, and items. Supports multiple variants including default, glass, and transparent.
 

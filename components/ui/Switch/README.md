@@ -1,6 +1,6 @@
 # Switch
 
-> **v1.0.10** · stable
+> **v1.0.11** · stable
 
 A toggle switch component with animated thumb and optional label/description support.
 

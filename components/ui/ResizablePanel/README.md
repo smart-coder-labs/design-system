@@ -1,6 +1,6 @@
 # ResizablePanel
 
-> **v1.0.10** · stable
+> **v1.0.11** · stable
 
 A resizable panel component with drag-to-resize functionality. Supports both horizontal and vertical orientations with customizable size constraints.
 

@@ -1,6 +1,6 @@
 # FABGroup
 
-> **v1.0.10** · stable
+> **v1.0.11** · stable
 
 A floating action button group with expandable actions. Opens a radial menu when clicked, with each action appearing with staggered animations.
 
