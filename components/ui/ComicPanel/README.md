@@ -1,6 +1,6 @@
 # ComicPanel
 
-> **v1.0.13** · stable
+> **v1.0.14** · stable
 
 A styled container component with comic-style borders and entry animations. Ideal for notifications, alerts, and call-to-action messages.
 

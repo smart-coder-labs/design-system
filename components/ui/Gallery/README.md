@@ -1,6 +1,6 @@
 # Gallery
 
-> **v1.0.13** · stable
+> **v1.0.14** · stable
 
 An image gallery component with automatic lightbox integration, supporting various aspect ratios and column configurations. Clicking any image opens a full-screen lightbox.
 

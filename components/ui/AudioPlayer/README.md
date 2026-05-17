@@ -1,6 +1,6 @@
 # AudioPlayer
 
-> **v1.0.13** · stable
+> **v1.0.14** · stable
 
 A full-featured audio player component with playback controls, progress bar, volume control, and speed adjustment.
 

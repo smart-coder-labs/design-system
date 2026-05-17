@@ -1,6 +1,6 @@
 # NotificationCenterPanel
 
-> **v1.0.13** · stable
+> **v1.0.14** · stable
 
 A notification center panel for displaying lists of notifications with different types (info, success, warning, error), read/unread states, and action buttons.
 

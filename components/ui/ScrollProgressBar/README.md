@@ -1,6 +1,6 @@
 # ScrollProgressBar
 
-> **v1.0.13** · stable
+> **v1.0.14** · stable
 
 A slim progress indicator fixed to the top or bottom of the viewport that fills based on the page scroll position. Perfect for reading progress indicators, article completion tracking, or multi-step form progress.
 

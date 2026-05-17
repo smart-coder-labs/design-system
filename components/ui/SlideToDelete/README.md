@@ -1,6 +1,6 @@
 # SlideToDelete
 
-> **v1.0.13** · stable
+> **v1.0.14** · stable
 
 A swipeable card component for delete actions with gesture support and optional confirmation dialog.
 
