@@ -2600,6 +2600,69 @@
       }
     ]
   },
+  "SearchInput": {
+    "name": "SearchInput",
+    "dependencies": [
+      "framer-motion",
+      "lucide-react",
+      "class-variance-authority"
+    ],
+    "type": "components:ui",
+    "files": [
+      {
+        "name": "SearchInput.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.tsx"
+      },
+      {
+        "name": "SearchInput.types.ts",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.types.ts"
+      },
+      {
+        "name": "SearchInput.context.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.context.tsx"
+      },
+      {
+        "name": "SearchInput.input.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.input.tsx"
+      },
+      {
+        "name": "SearchInput.dropdown.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.dropdown.tsx"
+      },
+      {
+        "name": "SearchInput.section.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.section.tsx"
+      },
+      {
+        "name": "SearchInput.item.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.item.tsx"
+      },
+      {
+        "name": "SearchInput.itemContent.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.itemContent.tsx"
+      },
+      {
+        "name": "SearchInput.itemIcon.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.itemIcon.tsx"
+      },
+      {
+        "name": "SearchInput.trailingBadge.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.trailingBadge.tsx"
+      },
+      {
+        "name": "index.ts",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/index.ts"
+      },
+      {
+        "name": "README.md",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/README.md"
+      },
+      {
+        "name": "SearchInput.stories.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/SearchInput/SearchInput.stories.tsx"
+      }
+    ]
+  },
   "Select": {
     "name": "Select",
     "dependencies": [
