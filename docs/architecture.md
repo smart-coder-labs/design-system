@@ -307,7 +307,47 @@ Cada componente refactorizado debe tener:
 
 ---
 
-## 6. Próximos Batches
+## 6. CLI y Registro de Skills
+
+### Instalación de componentes
+
+Después de crear o modificar un componente, ejecuta el CLI para detectar e instalar dependencias:
+
+```bash
+npx @smart-coder-labs/apple-design-system add [ComponentName]
+```
+
+Ejemplo:
+```bash
+npx @smart-coder-labs/apple-design-system add SearchInput
+# Output:
+# ℹ Detected dependency: Spinner
+# ℹ Detected dependency: Label
+# ✔ Installed SearchInput
+# ✔ Installed Spinner
+# ✔ Installed Label
+```
+
+### Actualización del Skill Registry
+
+Después de cada cambio significativo (nuevo componente, refactorización, nuevos patterns), actualiza el registry:
+
+1. Ejecuta `/skill-registry` o usa la skill `skill-registry`
+2. Esto actualiza los compact rules del proyecto con los nuevos patterns
+
+### Flujo completo
+
+```
+1. Crear/modificar componente
+2. npm run build (verificar TypeScript)
+3. npx @smart-coder-labs/apple-design-system add [Component] (instalar deps)
+4. /skill-registry (actualizar registry)
+5. Commit
+```
+
+---
+
+## 7. Próximos Batches
 
 ### Batch 2 (próximo)
 BankAccountCard, BarcodeGenerator, BehavioralAuthSimulator, BiometricPrompt, Blockquote, BottomNavigation, Breadcrumb, BreadcrumbTabsHybrid, Button, ButtonWithDropdown, Calendar, Callout, Caption, Card, CardSecurityControls

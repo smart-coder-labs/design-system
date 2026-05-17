@@ -374,6 +374,20 @@ Before starting any work on a component, you MUST:
    - File context (extension, component path)
    - Task context (creating, refactoring, testing, etc.)
 
+### 📋 Post-Work Checklist
+
+After completing work on a component, you MUST:
+
+1. **Run the CLI to install dependencies**:
+   ```bash
+   npx @smart-coder-labs/apple-design-system add [ComponentName]
+   ```
+   This detects and installs any missing dependencies (Spinner, Label, etc.)
+
+2. **Update the skill registry**: Run `/skill-registry` to update project standards with the new component patterns
+
+3. **Verify build**: Run `npm run build` to ensure no TypeScript errors
+
 ### 📚 Key Sections in architecture.md
 
 | Topic | Section |
