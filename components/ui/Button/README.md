@@ -1,6 +1,6 @@
 # Button
 
-> **v1.0.30** · stable
+> **v1.0.31** · stable
 
 An interactive button component with multiple variants, sizes, and states. Supports icons, loading state, and full-width mode.
 

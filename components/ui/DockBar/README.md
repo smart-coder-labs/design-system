@@ -1,6 +1,6 @@
 # DockBar
 
-> **v1.0.30** · stable
+> **v1.0.31** · stable
 
 A macOS-style dock navigation component with magnification effects on hover. Perfect for creating app-like navigation experiences in web applications.
 
