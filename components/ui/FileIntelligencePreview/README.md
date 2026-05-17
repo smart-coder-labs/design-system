@@ -1,6 +1,6 @@
 # FileIntelligencePreview
 
-> **v1.0.8** · stable
+> **v1.0.9** · stable
 
 A component displaying file information with AI-generated intelligence. Shows file metadata, preview images, extracted text, and summary information with collapsible metadata panel.
 

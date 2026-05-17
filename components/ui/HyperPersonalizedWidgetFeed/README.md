@@ -1,6 +1,6 @@
 # HyperPersonalizedWidgetFeed
 
-> **v1.0.8** · stable
+> **v1.0.9** · stable
 
 A hyper-personalized widget feed component for financial dashboards. Allows users to customize their dashboard by showing/hiding and reordering widgets. Perfect for banking apps and fintech products.
 

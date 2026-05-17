@@ -1,6 +1,6 @@
 # JargonTooltip
 
-> **v1.0.8** · stable
+> **v1.0.9** · stable
 
 An educational tooltip component for explaining complex financial and technical terms. Displays definitions with optional examples in a styled popover.
 

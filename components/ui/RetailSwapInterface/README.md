@@ -1,6 +1,6 @@
 # RetailSwapInterface
 
-> **v1.0.8** · stable
+> **v1.0.9** · stable
 
 A consumer-friendly cryptocurrency swap interface with real-time pricing, exchange rate display, and transaction preview.
 

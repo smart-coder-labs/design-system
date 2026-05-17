@@ -1,6 +1,6 @@
 # Modal
 
-> **v1.0.8** · stable
+> **v1.0.9** · stable
 
 A flexible modal dialog component with multiple positioning options (center, bottom, left, right, fullscreen) and focus trap for accessibility.
 

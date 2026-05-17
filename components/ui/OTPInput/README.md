@@ -1,6 +1,6 @@
 # OTPInput
 
-> **v1.0.8** · stable
+> **v1.0.9** · stable
 
 Form input component for entering one-time passwords with multiple digit fields. Supports paste, auto-focus, keyboard navigation, and group separators.
 
