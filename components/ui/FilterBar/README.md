@@ -1,6 +1,6 @@
 # FilterBar
 
-> **v1.0.6** · stable
+> **v1.0.7** · stable
 
 A comprehensive filtering component with search, multiple filter groups, active filter display, and clear functionality. Integrates with SearchInput and Select components.
 

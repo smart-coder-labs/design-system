@@ -1,6 +1,6 @@
 # KeyValueInfo
 
-> **v1.0.6** · stable
+> **v1.0.7** · stable
 
 A key-value information display component with multiple layout variants. Supports labels, values, icons, badges, and click-to-copy functionality.
 

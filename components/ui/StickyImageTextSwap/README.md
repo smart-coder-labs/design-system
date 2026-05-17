@@ -1,6 +1,6 @@
 # StickyImageTextSwap
 
-> **v1.0.6** · stable
+> **v1.0.7** · stable
 
 An interactive scroll-driven component that swaps images while the user scrolls through text sections. The image stays sticky on one side while text scrolls on the other.
 

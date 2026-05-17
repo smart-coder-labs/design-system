@@ -1,6 +1,6 @@
 # SubscriptionManager
 
-> **v1.0.6** · stable
+> **v1.0.7** · stable
 
 A fintech-style subscription management component that displays active subscriptions with total monthly cost, expand/collapse details, and cancellation options.
 
