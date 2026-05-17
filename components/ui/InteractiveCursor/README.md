@@ -1,6 +1,6 @@
 # InteractiveCursor
 
-> **v1.0.27** · stable
+> **v1.0.28** · stable
 
 A custom cursor component that follows mouse movement with smooth spring animations. The cursor expands when hovering over interactive elements.
 

@@ -1,6 +1,6 @@
 # Divider
 
-> **v1.0.27** · stable
+> **v1.0.28** · stable
 
 A visual separator component for dividing content with optional labels. Supports horizontal and vertical orientations with multiple line styles.
 

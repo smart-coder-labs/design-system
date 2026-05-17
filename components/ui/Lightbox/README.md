@@ -1,6 +1,6 @@
 # Lightbox
 
-> **v1.0.27** · stable
+> **v1.0.28** · stable
 
 A full-screen image viewer with navigation, keyboard controls, captions, and download functionality. Perfect for viewing transaction receipts, dashboards, and image galleries.
 

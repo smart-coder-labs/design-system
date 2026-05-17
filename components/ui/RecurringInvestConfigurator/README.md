@@ -1,6 +1,6 @@
 # RecurringInvestConfigurator
 
-> **v1.0.27** · stable
+> **v1.0.28** · stable
 
 A two-step wizard for configuring dollar-cost averaging (DCA) investment automation. Allows users to select an asset, set an amount, and choose a frequency.
 

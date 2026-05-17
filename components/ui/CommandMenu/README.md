@@ -1,6 +1,6 @@
 # CommandMenu
 
-> **v1.0.27** · stable
+> **v1.0.28** · stable
 
 A command palette/modal component similar to Spotlight or cmd+k menus. Provides quick access to commands or searchable items with keyboard navigation.
 

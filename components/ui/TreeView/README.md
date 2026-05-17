@@ -1,6 +1,6 @@
 # TreeView
 
-> **v1.0.27** · stable
+> **v1.0.28** · stable
 
 A hierarchical tree component for displaying nested file/folder structures. Supports expandable/collapsible nodes, selection, and custom icons.
 

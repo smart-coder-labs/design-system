@@ -1,6 +1,6 @@
 # ImmersiveHero
 
-> **v1.0.27** · stable
+> **v1.0.28** · stable
 
 A full-screen hero section with parallax scrolling effects, slow-scale background animation, and staggered text entrance animations.
 
