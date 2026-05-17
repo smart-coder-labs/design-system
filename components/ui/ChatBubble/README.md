@@ -1,6 +1,6 @@
 # ChatBubble
 
-> **v1.0.16** · stable
+> **v1.0.17** · stable
 
 A chat message component supporting sent and received messages, system notifications, and error states. Features customizable avatars, timestamps, delivery status indicators, and smooth entry animations.
 

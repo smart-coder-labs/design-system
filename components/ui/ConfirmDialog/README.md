@@ -1,6 +1,6 @@
 # ConfirmDialog
 
-> **v1.0.16** · stable
+> **v1.0.17** · stable
 
 A confirmation dialog component for user actions with customizable variants and icons.
 

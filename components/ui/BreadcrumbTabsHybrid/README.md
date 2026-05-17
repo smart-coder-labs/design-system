@@ -1,6 +1,6 @@
 # BreadcrumbTabsHybrid
 
-> **v1.0.16** · stable
+> **v1.0.17** · stable
 
 A hybrid navigation component combining breadcrumbs for hierarchical navigation with tabbed sections for in-page navigation. Ideal for settings pages, dashboards, and data-rich interfaces where users need both context and segmented content.
 

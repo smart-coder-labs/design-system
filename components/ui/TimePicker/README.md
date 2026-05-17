@@ -1,6 +1,6 @@
 # TimePicker
 
-> **v1.0.16** · stable
+> **v1.0.17** · stable
 
 A time selection component with a dropdown picker supporting 12h/24h formats and configurable minute steps.
 
