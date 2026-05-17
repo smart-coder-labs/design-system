@@ -208,3 +208,36 @@ Badge displayed on the right side of an item.
 - Supports dark mode via CSS tokens
 - Animations use Framer Motion (150ms transitions)
 - Uses `class-variance-authority` for variants
+
+---
+
+## Architecture Decisions
+
+### Why compound components in one file?
+
+This component follows the **Compound Components Pattern** with all subcomponents in the same file. This decision is based on:
+
+1. **Shared Context**: All subcomponents (`Input`, `Dropdown`, `Item`, etc.) depend on `SearchInputContext`. Keeping them together makes the relationship clear.
+
+2. **Proximity**: The subcomponents are tightly coupled - `SearchInput.Item` needs access to context to know if the parent is disabled. Splitting them would require more complex setup.
+
+3. **File size**: At ~300 lines, the file is readable and maintainable. According to project architecture rules, only split when exceeding ~400 lines or when a subcomponent has independent complex state.
+
+### When to split?
+
+If this component grows significantly, consider extracting:
+
+- **SearchInput.Item**: If it needs independent state (virtualization, complex keyboard navigation)
+- **SearchInput.Dropdown**: If it needs external libraries (portal, positioning lib)
+- **SearchInput.Input**: If it gets reused outside SearchInput context
+
+### File Structure
+
+```
+SearchInput/
+├── SearchInput.tsx       # Main + all compound components
+├── SearchInput.types.ts  # Types + cva variants
+└── index.ts             # Barrel exports
+```
+
+This follows the "keep together until necessary" principle from the project architecture guidelines.

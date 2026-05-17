@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useRef, useState, useEffect, useCallback, createContext, useContext } from 'react';
 import { Search, X } from 'lucide-react';
 import { cn } from '../../../lib/utils';
@@ -162,7 +160,8 @@ export const SearchInputDropdown: React.FC<SearchInputDropdownProps> = ({
     hasResults = false,
     query,
     children,
-    className
+    className,
+    maxHeight = '50vh'
 }) => {
     return (
         <AnimatePresence>
@@ -173,12 +172,13 @@ export const SearchInputDropdown: React.FC<SearchInputDropdownProps> = ({
                     exit={{ opacity: 0, y: -4 }}
                     transition={{ duration: 0.15 }}
                     className={cn(
-                        "absolute top-full left-0 right-0 mt-1 rounded-lg border shadow-2xl z-50 overflow-hidden",
+                        "absolute top-full left-0 right-0 mt-1 rounded-lg border shadow-2xl z-50 overflow-y-auto",
                         className
                     )}
                     style={{
                         backgroundColor: 'var(--color-bg-secondary)',
                         borderColor: 'var(--color-border-primary)',
+                        maxHeight,
                     }}
                 >
                     {!hasResults && query && (

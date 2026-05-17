@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
@@ -65,6 +63,7 @@ export interface SearchInputDropdownProps {
     query?: string;
     children: React.ReactNode;
     className?: string;
+    maxHeight?: string;
 }
 
 export interface SearchInputSectionProps {
