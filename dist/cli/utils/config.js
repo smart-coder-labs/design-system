@@ -43,14 +43,24 @@ function stripUseClient(content) {
         .replace(/^['"]use client['"];?\s*\n?/m, "")
         .trimStart();
 }
-async function recordInstall(config, componentName, version, type) {
+async function recordInstall(config, componentName, version, type, action, status) {
     const now = new Date().toISOString();
     const existing = config.components[componentName];
+    // Auto-detect action if not provided
+    const resolvedAction = action ?? (existing ? "update" : "install");
+    const resolvedStatus = status ?? existing?.status ?? "stable";
+    // Preserve existing history array or initialize it
+    const existingHistory = existing?.history ?? [];
     config.components[componentName] = {
         version,
+        status: resolvedStatus,
         type,
         installedAt: existing?.installedAt ?? now,
         updatedAt: now,
+        history: [
+            ...existingHistory,
+            { version, action: resolvedAction, date: now },
+        ],
     };
     return config;
 }

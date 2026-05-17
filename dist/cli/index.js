@@ -6,6 +6,8 @@ const init_1 = require("./commands/init");
 const add_1 = require("./commands/add");
 const update_1 = require("./commands/update");
 const update_components_1 = require("./commands/update-components");
+const rollback_1 = require("./commands/rollback");
+const status_1 = require("./commands/status");
 const program = new commander_1.Command();
 program
     .name("apple-design-system")
@@ -29,5 +31,16 @@ program
     .command("update-components")
     .description("Interactively update components from the design system (with UI selection)")
     .action(() => (0, update_components_1.updateComponents)());
+program
+    .command("rollback")
+    .description("Roll back a component to a previous version")
+    .argument("<component>", "Component name")
+    .argument("<version>", "Target version (must exist as git tag v{version})")
+    .action((component, version) => (0, rollback_1.rollback)(component, version));
+program
+    .command("status")
+    .description("Show installed component versions and their status")
+    .argument("[component]", "Component name (optional)")
+    .action((component) => (0, status_1.status)(component));
 program.parse();
 //# sourceMappingURL=index.js.map
