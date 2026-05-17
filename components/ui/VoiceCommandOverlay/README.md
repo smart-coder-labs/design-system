@@ -1,6 +1,6 @@
 # VoiceCommandOverlay
 
-> **v1.0.18** · stable
+> **v1.0.19** · stable
 
 A voice command interface overlay for hands-free fintech operations. Features listening animation, speech-to-text simulation, and command confirmation.
 

@@ -1,6 +1,6 @@
 # FloatingToolbar
 
-> **v1.0.18** · stable
+> **v1.0.19** · stable
 
 A floating action toolbar that can be positioned anywhere on the screen with smooth animations. Supports multiple positions, visual variants, and action types.
 

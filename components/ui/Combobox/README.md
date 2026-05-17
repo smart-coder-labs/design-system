@@ -1,6 +1,6 @@
 # Combobox
 
-> **v1.0.18** · stable
+> **v1.0.19** · stable
 
 A searchable dropdown/select component with keyboard navigation. Provides a better user experience than native selects with search, filtering, and accessibility features.
 

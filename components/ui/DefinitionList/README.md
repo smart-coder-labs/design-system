@@ -1,6 +1,6 @@
 # DefinitionList
 
-> **v1.0.18** · stable
+> **v1.0.19** · stable
 
 A component for displaying term/description pairs in a structured list format, commonly used for displaying metadata, specifications, or key-value data.
 

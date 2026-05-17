@@ -1,6 +1,6 @@
 # Card
 
-> **v1.0.18** · stable
+> **v1.0.19** · stable
 
 A flexible container component for grouping related content with multiple visual variants and optional hover effects.
 
