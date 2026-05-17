@@ -1,6 +1,6 @@
 # Reviews
 
-> **v1.0.29** · stable
+> **v1.0.30** · stable
 
 A review list component with star ratings display. Supports both compact and full modes with customizable review items.
 

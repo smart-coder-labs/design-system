@@ -1,6 +1,6 @@
 # Breadcrumb
 
-> **v1.0.29** · stable
+> **v1.0.30** · stable
 
 Navigation component for showing hierarchical path structure with accessible markup.
 

@@ -1,6 +1,6 @@
 # CashbackWidget
 
-> **v1.0.29** · stable
+> **v1.0.30** · stable
 
 A visual widget displaying cashback earnings with an animated circular progress indicator. Designed for fintech and loyalty applications to showcase user rewards in an engaging, animated format.
 
