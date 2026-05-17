@@ -4,6 +4,8 @@ import { init } from "./commands/init";
 import { add } from "./commands/add";
 import { update } from "./commands/update";
 import { updateComponents } from "./commands/update-components";
+import { rollback } from "./commands/rollback";
+import { status } from "./commands/status";
 
 const program = new Command();
 
@@ -33,5 +35,18 @@ program
   .command("update-components")
   .description("Interactively update components from the design system (with UI selection)")
   .action(() => updateComponents());
+
+program
+  .command("rollback")
+  .description("Roll back a component to a previous version")
+  .argument("<component>", "Component name")
+  .argument("<version>", "Target version (must exist as git tag v{version})")
+  .action((component, version) => rollback(component, version));
+
+program
+  .command("status")
+  .description("Show installed component versions and their status")
+  .argument("[component]", "Component name (optional)")
+  .action((component) => status(component));
 
 program.parse();

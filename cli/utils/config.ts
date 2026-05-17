@@ -3,9 +3,15 @@ import path from "path";
 
 export interface ComponentRecord {
   version: string;
+  status: "stable" | "beta" | "experimental";
   type: "folder" | "flat";
   installedAt: string;
   updatedAt: string;
+  history: Array<{
+    version: string;
+    action: "install" | "update" | "rollback";
+    date: string;
+  }>;
 }
 
 import type { Framework } from "./framework";
@@ -59,16 +65,32 @@ export async function recordInstall(
   config: DesignSystemConfig,
   componentName: string,
   version: string,
-  type: "folder" | "flat"
+  type: "folder" | "flat",
+  action?: "install" | "update" | "rollback",
+  status?: "stable" | "beta" | "experimental"
 ): Promise<DesignSystemConfig> {
   const now = new Date().toISOString();
   const existing = config.components[componentName];
+
+  // Auto-detect action if not provided
+  const resolvedAction = action ?? (existing ? "update" : "install");
+  const resolvedStatus = status ?? existing?.status ?? "stable";
+
+  // Preserve existing history array or initialize it
+  const existingHistory = existing?.history ?? [];
+
   config.components[componentName] = {
     version,
+    status: resolvedStatus,
     type,
     installedAt: existing?.installedAt ?? now,
     updatedAt: now,
+    history: [
+      ...existingHistory,
+      { version, action: resolvedAction, date: now },
+    ],
   };
+
   return config;
 }
 
