@@ -1,6 +1,6 @@
 # VideoPlayer
 
-> **v1.0.14** · stable
+> **v1.0.15** · stable
 
 A custom video player with playback controls, progress bar, volume control, and fullscreen support. Features smooth animations and a modern interface.
 

@@ -1,6 +1,6 @@
 # Paragraph
 
-> **v1.0.14** · stable
+> **v1.0.15** · stable
 
 A simple typography component for rendering body text with consistent styling. Extends the Text component with paragraph-specific defaults.
 

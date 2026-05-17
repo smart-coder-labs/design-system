@@ -1,6 +1,6 @@
 # Calendar
 
-> **v1.0.14** · stable
+> **v1.0.15** · stable
 
 A full-featured calendar component with month, week, day, and agenda views. Supports event management with add, edit, and delete functionality.
 

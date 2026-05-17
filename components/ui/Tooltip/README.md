@@ -1,6 +1,6 @@
 # Tooltip
 
-> **v1.0.14** · stable
+> **v1.0.15** · stable
 
 A floating tooltip that displays content when users hover or focus on an element. Supports multiple positioning directions and custom delay durations.
 

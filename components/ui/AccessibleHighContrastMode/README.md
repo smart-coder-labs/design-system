@@ -1,6 +1,6 @@
 # AccessibleHighContrastMode
 
-> **v1.0.14** · stable
+> **v1.0.15** · stable
 
 A context-based accessibility component that provides toggle controls for high contrast mode, large text, and dyslexic-friendly fonts. Designed to improve readability for users with visual impairments.
 

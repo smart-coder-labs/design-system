@@ -1,6 +1,6 @@
 # TagsInput
 
-> **v1.0.14** · stable
+> **v1.0.15** · stable
 
 A tag input component for adding and managing multiple tags with keyboard support (Enter, comma, Backspace).
 

@@ -1,6 +1,6 @@
 # MicroCommitmentStepper
 
-> **v1.0.14** · stable
+> **v1.0.15** · stable
 
 A progressive onboarding stepper component that unlocks features based on user completion. Inspired by progressive disclosure patterns where users only provide information needed for their current use case.
 

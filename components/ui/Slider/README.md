@@ -1,6 +1,6 @@
 # Slider
 
-> **v1.0.14** · stable
+> **v1.0.15** · stable
 
 A slider component for selecting a value from a range. Supports keyboard navigation, step values, and controlled/uncontrolled modes.
 

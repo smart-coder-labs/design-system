@@ -1,6 +1,6 @@
 # ImageCropper
 
-> **v1.0.14** · stable
+> **v1.0.15** · stable
 
 An interactive image cropping component with zoom, rotation, and aspect ratio controls. Features a rule-of-thirds grid overlay for precise cropping.
 
