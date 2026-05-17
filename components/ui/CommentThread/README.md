@@ -1,6 +1,6 @@
 # CommentThread
 
-> **v1.0.12** · stable
+> **v1.0.13** · stable
 
 A threaded comment component with nested replies, likes, edit, and delete functionality. Perfect for discussion sections, feedback threads, and social comments.
 

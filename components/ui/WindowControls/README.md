@@ -1,6 +1,6 @@
 # WindowControls
 
-> **v1.0.12** · stable
+> **v1.0.13** · stable
 
 A macOS-style or Windows-style window control button set for custom title bars. Provides close, minimize, and maximize buttons with hover effects.
 

@@ -1,6 +1,6 @@
 # ErrorBoundary
 
-> **v1.0.12** · stable
+> **v1.0.13** · stable
 
 A React class component that catches JavaScript errors in its child component tree, displays a fallback UI, and logs error information. Essential for preventing entire application crashes due to component failures.
 

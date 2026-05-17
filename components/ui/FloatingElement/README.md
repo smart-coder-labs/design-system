@@ -1,6 +1,6 @@
 # FloatingElement
 
-> **v1.0.12** · stable
+> **v1.0.13** · stable
 
 A scroll-driven floating animation component that creates a subtle parallax effect. The element rotates and moves vertically based on scroll position, creating a floating/levitating appearance.
 

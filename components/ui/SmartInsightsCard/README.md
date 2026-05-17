@@ -1,6 +1,6 @@
 # SmartInsightsCard
 
-> **v1.0.12** · stable
+> **v1.0.13** · stable
 
 An AI-powered insight card component that displays contextual financial information with expandable details and actionable buttons.
 
