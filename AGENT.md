@@ -360,6 +360,39 @@ export const Playground: Story = {
 
 # 🤖 9. Agent Workflow and Context
 
+### 📋 Pre-Work Checklist
+
+Before starting any work on a component, you MUST:
+
+1. **Read `docs/architecture.md`**: Check for:
+   - Component file structure patterns (types, styles, utils, subcomponentes)
+   - Whether the component already has separated files
+   - Compound component patterns to follow
+   - Testing requirements
+
+2. **Review relevant skills**: Check `<available_skills>` and load any skill that matches:
+   - File context (extension, component path)
+   - Task context (creating, refactoring, testing, etc.)
+
+### 📚 Key Sections in architecture.md
+
+| Topic | Section |
+|-------|---------|
+| File separation rules | "1. Estructura de Archivos" |
+| Compound components pattern | "2. Patrón de Componentes" |
+| CSS tokens usage | "3. Tokens CSS" |
+| Naming conventions | "4. Convenciones de Nomenclatura" |
+| Testing requirements | "5. Testing" |
+
+### 🛠️ Skills to Consider
+
+- **react-component-patterns**: For compound components, hooks, composition
+- **react-testing-qa**: For component tests and accessibility
+- **cognitive-doc-design**: For documentation and README updates
+- **sdd-***: For structured development when applicable
+
+### General Rules
+
 - **Skills and Agents:** Before starting any task, you must review and use the context and tools defined in the project's `.skills` and `.agents` folders.
 - **Spec-Driven Development (SDD):** Work must follow the SDD methodology. For SDD task management, **you must create issues on GitHub**.
 - **Strict Test-Driven Development (TDD):** It is mandatory to apply strict TDD. The corresponding tests must be defined and failing before writing any implementation code.

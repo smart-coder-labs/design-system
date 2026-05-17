@@ -1,24 +1,25 @@
+// Main component
 export { SearchInput } from './SearchInput';
+export { searchInputVariants } from './SearchInput.types';
 export type { SearchInputProps, SearchInputComponent } from './SearchInput';
 
-// Export compound components
-export {
-    SearchInputInput,
-    SearchInputDropdown,
-    SearchInputSection,
-    SearchInputItem,
-    SearchInputItemContent,
-    SearchInputPriorityBadge,
-    SearchInputResourceIcon,
-} from './SearchInput';
+// Compound components - import from separate files
+export { SearchInputInput } from './SearchInput.input';
+export { SearchInputDropdown } from './SearchInput.dropdown';
+export { SearchInputSection } from './SearchInput.section';
+export { SearchInputItem } from './SearchInput.item';
+export { SearchInputItemContent } from './SearchInput.itemContent';
+export { SearchInputTrailingBadge } from './SearchInput.trailingBadge';
+export { SearchInputItemIcon } from './SearchInput.itemIcon';
 
-// Export compound component types
+// Compound component types
 export type {
     SearchInputInputProps,
     SearchInputDropdownProps,
     SearchInputSectionProps,
     SearchInputItemProps,
     SearchInputItemContentProps,
-    SearchInputPriorityBadgeProps,
-    SearchInputResourceIconProps,
-} from './SearchInput';
+    SearchInputTrailingBadgeProps,
+    SearchInputItemIconProps,
+    SearchInputContextValue,
+} from './SearchInput.types';
