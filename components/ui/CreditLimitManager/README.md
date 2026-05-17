@@ -1,6 +1,6 @@
 # CreditLimitManager
 
-> **v1.0.5** · stable
+> **v1.0.6** · stable
 
 An interactive credit limit adjustment component with a visual slider, real-time formatting, and protective messaging. Allows users to temporarily lower their credit limit for security.
 

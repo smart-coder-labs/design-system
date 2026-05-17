@@ -1,6 +1,6 @@
 # Blockquote
 
-> **v1.0.5** · stable
+> **v1.0.6** · stable
 
 A styled quote component for displaying quotations with optional author and source attribution.
 

@@ -1,6 +1,6 @@
 # InvoicePreview
 
-> **v1.0.5** · stable
+> **v1.0.6** · stable
 
 A comprehensive invoice preview component with built-in PDF generation, print, and share functionality. Displays full invoice details including parties, line items, totals, and status.
 

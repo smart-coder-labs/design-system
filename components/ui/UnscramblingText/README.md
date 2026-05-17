@@ -1,6 +1,6 @@
 # UnscramblingText
 
-> **v1.0.5** · stable
+> **v1.0.6** · stable
 
 A text animation component that reveals text with a matrix-style character scrambling effect. Characters randomly cycle through a set before settling on the final text. Triggers when the text enters the viewport.
 

@@ -1,6 +1,6 @@
 # MenuBar
 
-> **v1.0.5** · stable
+> **v1.0.6** · stable
 
 macOS-style menu bar component with dropdown menus, keyboard navigation, and nested submenus.
 

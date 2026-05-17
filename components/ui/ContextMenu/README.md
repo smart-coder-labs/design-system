@@ -1,6 +1,6 @@
 # ContextMenu
 
-> **v1.0.5** · stable
+> **v1.0.6** · stable
 
 A right-click context menu component with support for nested submenus, checkboxes, and radio groups.
 

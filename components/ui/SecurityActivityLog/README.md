@@ -1,6 +1,6 @@
 # SecurityActivityLog
 
-> **v1.0.5** · stable
+> **v1.0.6** · stable
 
 A security-focused activity feed component for displaying authentication events, login attempts, and security-related activities. Visualizes events with appropriate icons and status colors.
 
