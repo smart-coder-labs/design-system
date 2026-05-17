@@ -1,6 +1,6 @@
 # AIThinkingIndicator
 
-> **v1.0.20** · stable
+> **v1.0.21** · stable
 
 An animated loading indicator that shows AI processing states with three distinct animation variants. Perfect for AI-powered features, chatbots, and async operations.
 

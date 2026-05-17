@@ -1,6 +1,6 @@
 # HamburgerMenuIcon
 
-> **v1.0.20** · stable
+> **v1.0.21** · stable
 
 An animated hamburger menu icon that smoothly transitions between hamburger (three lines) and close (X) states. Perfect for mobile navigation toggles.
 

@@ -1,6 +1,6 @@
 # SignaturePad
 
-> **v1.0.20** · stable
+> **v1.0.21** · stable
 
 A canvas-based signature capture component with touch and mouse support. Includes built-in clear and save functionality with PNG export.
 

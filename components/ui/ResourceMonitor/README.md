@@ -1,6 +1,6 @@
 # ResourceMonitor
 
-> **v1.0.20** · stable
+> **v1.0.21** · stable
 
 A real-time resource monitoring dashboard displaying CPU usage, memory, and token throughput metrics with interactive time range selection.
 

@@ -1,6 +1,6 @@
 # Chart
 
-> **v1.0.20** · stable
+> **v1.0.21** · stable
 
 A simple yet elegant chart component supporting pie, donut, line, bar, and radial chart types. Uses native SVG for lightweight rendering with interactive hover states and accessibility features.
 

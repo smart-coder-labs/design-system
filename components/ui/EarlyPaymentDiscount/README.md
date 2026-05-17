@@ -1,6 +1,6 @@
 # EarlyPaymentDiscount
 
-> **v1.0.20** · stable
+> **v1.0.21** · stable
 
 A specialized fintech component for encouraging early loan repayment. Displays potential interest savings and allows users to simulate early payoff scenarios with an interactive slider.
 

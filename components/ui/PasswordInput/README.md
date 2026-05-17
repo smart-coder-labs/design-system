@@ -1,6 +1,6 @@
 # PasswordInput
 
-> **v1.0.20** · stable
+> **v1.0.21** · stable
 
 Form input component for password entry with built-in strength meter and validation requirements.
 
