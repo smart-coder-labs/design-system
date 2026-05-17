@@ -1,6 +1,6 @@
 # BiometricPrompt
 
-> **v1.0.17** · stable
+> **v1.0.18** · stable
 
 A modal dialog for Face ID / Touch ID authentication with animated states.
 

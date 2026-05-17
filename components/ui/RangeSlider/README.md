@@ -1,6 +1,6 @@
 # RangeSlider
 
-> **v1.0.17** · stable
+> **v1.0.18** · stable
 
 A dual-thumb slider component for selecting a range of numeric values. Supports mouse and touch interactions, keyboard navigation, controlled/uncontrolled modes, and custom styling.
 

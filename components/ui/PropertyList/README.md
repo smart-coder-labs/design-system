@@ -1,6 +1,6 @@
 # PropertyList
 
-> **v1.0.17** · stable
+> **v1.0.18** · stable
 
 A collapsible list component that displays key-value property pairs organized into sections. Perfect for displaying structured data like account details, transaction metadata, or configuration settings.
 

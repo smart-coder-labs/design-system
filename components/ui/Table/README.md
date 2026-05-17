@@ -1,6 +1,6 @@
 # Table
 
-> **v1.0.17** · stable
+> **v1.0.18** · stable
 
 A data table component with sorting, pagination, row selection, and customizable column rendering.
 

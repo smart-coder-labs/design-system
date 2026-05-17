@@ -1,6 +1,6 @@
 # GridSystem
 
-> **v1.0.17** · stable
+> **v1.0.18** · stable
 
 A responsive grid layout system with three components: GridContainer, Row, Col, and GridSystem. Provides flexible 12-column layouts with responsive breakpoints and customizable gutters.
 
