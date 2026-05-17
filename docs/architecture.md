@@ -171,7 +171,71 @@ Todos los componentes deben seguir:
 6. **Zero hardcoded data** - todo contenido via props
 7. **CSS tokens** - usar tokens de globals.css en lugar de valores hardcodeados
 
-### Estructura de Compound Component
+### Cuándo Separar Archivos
+
+#### Regla General
+
+| Qué | Cuándo Separar |
+|-----|-----------------|
+| **Tipos** (.types.ts) | Siempre - para reuse y claridad |
+| **Estilos cva** (.styles.ts) | Solo si son complejos (>50 líneas) |
+| **Utils** (.utils.ts) | Solo si hay funciones reutilizables |
+| **Context** (.context.tsx) | Solo si hay estado compartido complejo |
+
+### Compound Components: Reglas de Diseño
+
+Para **Compound Components** (`<Select>`, `<SearchInput>`, etc.), la regla de tamaño cambia. Aquí la proximidad y el acoplamiento conceptual son más importantes que el tamaño del archivo.
+
+#### 🛑 MANTENER en el mismo archivo (Cohesión Local)
+
+Un Compound Component debería nacer y vivir en un solo archivo. Solo muévelo si violate alguna regla de excepción.
+
+**Regla 1: Comparten contexto estricto (`useContext`)**
+- Si los subcomponentes dependen 100% del Contexto del padre, déjalos juntos.
+- Ver de un vistazo qué provee el Context facilita el mantenimiento.
+
+**Regla 2: JSX puramente semántico**
+- Si subcomponentes como `<Card.Header>` solo añaden clases de Tailwind o etiquetas HTML estructurales, **nunca los separes**.
+- Mover un componente de 5 líneas genera *file drilling* innecesario.
+
+#### 🚀 MOVER a nuevos archivos
+
+**Regla 3: Estado complejo independiente**
+- Si un subcomponente tiene múltiples `useState`, `useRef`, o `useEffect` independientes del estado global, muévelo.
+
+**Regla 4: Librerías externas pesadas**
+- Si un subcomponente requiere librerías que el resto no necesita (ej. `react-markdown`), sepáralo.
+- Permite *Lazy Loading* para optimizar bundle.
+
+**Regla 5: Reutilización fuera del Padre**
+- Si un subcomponente podría ser útil fuera del contexto del Compound Component, debe ser independiente.
+- Ejemplo: `<Table.Avatar>` usado también en `<Navbar.Avatar>` → extraer a `/Avatar.tsx`.
+
+**Regla 6: Archivo supera ~300 líneas de código denso**
+- Si el archivo supera las 300-400 líneas, la legibilidad sufre.
+- Estrategia: Crear carpeta dedicada y dividir ahí.
+
+#### Estructura Recomendada
+
+**Componente Simple (<300 líneas):**
+```
+Component/
+├── Component.tsx        # Todo junto (tipos en .types.ts)
+├── Component.types.ts   # Tipos siempre separados
+└── index.ts
+```
+
+**Componente Complejo (>300 líneas):**
+```
+Component/
+├── index.ts              # Exporta todo unificado
+├── Component.tsx         # Padre + Contexto
+├── ComponentTrigger.tsx # Subcomponente separado
+├── ComponentContent.tsx # Subcomponente separado
+└── Component.types.ts    # Tipos
+```
+
+### Estructura de Compound Component (en archivo principal)
 
 ```tsx
 'use client';
@@ -219,7 +283,7 @@ const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
 );
 Component.displayName = 'Component';
 
-// ─── Subcomponents ─────────────────────────────────────────────────────────────
+// ─── Subcomponents (en mismo archivo si no es complejo) ────────────────────────
 const ComponentHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -228,8 +292,17 @@ const ComponentHeader = React.forwardRef<
 ));
 ComponentHeader.displayName = 'ComponentHeader';
 
-// ─── Exports ───────────────────────────────────────────────────────────────────
-export { Component, ComponentHeader, ComponentBody, ComponentFooter };
+// ─── Attach to root (Compound Component Pattern) ─────────────────────────────
+type ComponentCompound = typeof Component & {
+  Header: typeof ComponentHeader;
+  Body: typeof ComponentBody;
+  Footer: typeof ComponentFooter;
+};
+const Compound = Component as ComponentCompound;
+Compound.Header = ComponentHeader;
+// ...
+
+export { Compound as Component };
 ```
 
 ---
