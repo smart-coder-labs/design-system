@@ -33,7 +33,7 @@ function useSearchInputContext() {
    TYPE DEFINITIONS
    ======================================== */
 
-export interface SearchInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'> {
+export interface SearchInputProps {
     value: string;
     onChange: (value: string) => void;
     onSearch?: (value: string) => void;
@@ -41,7 +41,14 @@ export interface SearchInputProps extends Omit<React.InputHTMLAttributes<HTMLInp
     isLoading?: boolean;
     debounceTime?: number;
     containerClassName?: string;
+    className?: string;
     label?: string;
+    placeholder?: string;
+    disabled?: boolean;
+    id?: string;
+    onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+    onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
     children?: React.ReactNode;
 }
 
@@ -263,6 +270,7 @@ export const SearchInputItem: React.FC<SearchInputItemProps> = ({
     if (onClick) {
         return (
             <button
+                type="button"
                 onClick={onClick}
                 disabled={disabled}
                 className={cn(
@@ -513,7 +521,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                                 >
                                     <Spinner size="sm" color="blue" />
                                 </motion.div>
-                            ) : value.length > 0 ? (
+                            ) : value && value.length > 0 ? (
                                 <motion.button
                                     key="clear"
                                     initial={{ opacity: 0, scale: 0.8 }}

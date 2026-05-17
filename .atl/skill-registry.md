@@ -121,6 +121,48 @@ Subagents still read their assigned executor/phase skill. During normal runtime,
   - Judges contradict: Escalate for manual decision.
   - Round 2+ has only theoretical warnings/suggestions: Report as INFO; do not re-judge.
 
+### nextjs-auth-security
+- Path: /Users/cesar/.config/opencode/skills/nextjs-auth-security/SKILL.md
+- Trigger: >
+- Rules:
+  - No compact rules declared; delegators should load the full skill file before direct work, or pass an explicit fallback path only when Project Standards cannot be injected.
+
+### nextjs-data-flow
+- Path: /Users/cesar/.config/opencode/skills/nextjs-data-flow/SKILL.md
+- Trigger: >
+- Rules:
+  - No compact rules declared; delegators should load the full skill file before direct work, or pass an explicit fallback path only when Project Standards cannot be injected.
+
+### nextjs-optimization
+- Path: /Users/cesar/.config/opencode/skills/nextjs-optimization/SKILL.md
+- Trigger: >
+- Rules:
+  - No compact rules declared; delegators should load the full skill file before direct work, or pass an explicit fallback path only when Project Standards cannot be injected.
+
+### nextjs-scope-rule
+- Path: /Users/cesar/.config/opencode/skills/nextjs-scope-rule/SKILL.md
+- Trigger: >
+- Rules:
+  - No compact rules declared; delegators should load the full skill file before direct work, or pass an explicit fallback path only when Project Standards cannot be injected.
+
+### nextjs-structure
+- Path: /Users/cesar/.config/opencode/skills/nextjs-structure/SKILL.md
+- Trigger: >
+- Rules:
+  - No compact rules declared; delegators should load the full skill file before direct work, or pass an explicit fallback path only when Project Standards cannot be injected.
+
+### react-component-patterns
+- Path: /Users/cesar/.config/opencode/skills/react-component-patterns/SKILL.md
+- Trigger: >
+- Rules:
+  - No compact rules declared; delegators should load the full skill file before direct work, or pass an explicit fallback path only when Project Standards cannot be injected.
+
+### react-testing-qa
+- Path: /Users/cesar/.config/opencode/skills/react-testing-qa/SKILL.md
+- Trigger: >
+- Rules:
+  - No compact rules declared; delegators should load the full skill file before direct work, or pass an explicit fallback path only when Project Standards cannot be injected.
+
 ### skill-creator
 - Path: /Users/cesar/.config/opencode/skills/skill-creator/SKILL.md
 - Trigger: Trigger: new skills, agent instructions, documenting AI usage patterns. Create LLM-first skills with valid frontmatter.
@@ -136,6 +178,12 @@ Subagents still read their assigned executor/phase skill. During normal runtime,
   - Conceptual detail, edge cases, existing docs: Put local links in `references/`
   - Long explanation in `SKILL.md`: Move it to a supporting file
   - Multiple meaningful paths: Add a compact decision table
+
+### skill_creator
+- Path: /Users/cesar/.config/opencode/skills/skill_creator/SKILL.md
+- Trigger: >
+- Rules:
+  - No compact rules declared; delegators should load the full skill file before direct work, or pass an explicit fallback path only when Project Standards cannot be injected.
 
 ### work-unit-commits
 - Path: /Users/cesar/.config/opencode/skills/work-unit-commits/SKILL.md
