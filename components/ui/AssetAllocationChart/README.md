@@ -1,5 +1,7 @@
 # AssetAllocationChart
 
+> **v1.0.0** · stable
+
 A financial portfolio visualization component that displays asset allocation as a treemap with hover interactions, risk indicators, and a detailed legend.
 
 ## Installation

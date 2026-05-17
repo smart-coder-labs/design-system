@@ -1,5 +1,7 @@
 # NotificationBadge
 
+> **v1.0.0** · stable
+
 > Note: This component is exported from the `Badge` component, not as a standalone component.
 
 ## Overview

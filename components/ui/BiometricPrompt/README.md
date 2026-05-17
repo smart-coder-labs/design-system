@@ -1,5 +1,7 @@
 # BiometricPrompt
 
+> **v1.0.0** · stable
+
 A modal dialog for Face ID / Touch ID authentication with animated states.
 
 ## Installation

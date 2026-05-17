@@ -1,5 +1,7 @@
 # LandingPage
 
+> **v1.0.0** · stable
+
 > Note: This component does not have a standalone implementation. It is a composition pattern demonstrated in the Storybook stories.
 
 ## Overview

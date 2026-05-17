@@ -1,5 +1,7 @@
 # FAB (Floating Action Button)
 
+> **v1.0.0** · stable
+
 A floating action button component with support for extended labels, multiple variants, sizes, and positioning. Uses portal rendering for fixed positioning.
 
 ## Installation

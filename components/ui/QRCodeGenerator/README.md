@@ -1,5 +1,7 @@
 # QRCodeGenerator
 
+> **v1.0.0** · stable
+
 A self-contained QR code generator with input field, download functionality, and copy-to-clipboard support. Designed for payment processing, wallet addresses, and sharing URLs.
 
 ## Installation

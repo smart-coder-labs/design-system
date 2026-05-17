@@ -1,5 +1,7 @@
 # ModalStackManager
 
+> **v1.0.0** · stable
+
 A modal stack manager that allows multiple modals to be stacked on top of each other, similar to iOS/macOS navigation patterns. Each modal can open another modal, creating a cascading experience.
 
 ## Installation

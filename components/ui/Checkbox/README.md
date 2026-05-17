@@ -1,5 +1,7 @@
 # Checkbox
 
+> **v1.0.0** · stable
+
 A form input component for boolean or tri-state selections with support for indeterminate state.
 
 ## Installation

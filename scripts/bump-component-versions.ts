@@ -15,6 +15,29 @@
 import fs from "fs-extra";
 import path from "path";
 
+const COMPONENTS_UI_DIR = path.join(process.cwd(), "components", "ui");
+const VERSION_LINE_RE = /^> \*\*v[\d.]+\*\* · \w+\n/m;
+
+async function updateReadmeVersion(name: string, version: string, status: string): Promise<void> {
+  const readmePath = path.join(COMPONENTS_UI_DIR, name, "README.md");
+  if (!fs.existsSync(readmePath)) return;
+
+  let content = await fs.readFile(readmePath, "utf-8");
+  const line = `> **v${version}** · ${status}\n`;
+
+  if (VERSION_LINE_RE.test(content)) {
+    content = content.replace(VERSION_LINE_RE, line);
+  } else {
+    const headingMatch = content.match(/^# .+\n/m);
+    if (headingMatch) {
+      const insertAt = (headingMatch.index ?? 0) + headingMatch[0].length;
+      content = content.slice(0, insertAt) + "\n" + line + content.slice(insertAt);
+    }
+  }
+
+  await fs.writeFile(readmePath, content);
+}
+
 const REGISTRY_FILE = path.join(process.cwd(), "registry.json");
 
 // ---------------------------------------------------------------------------
@@ -131,6 +154,7 @@ async function main() {
       ],
     };
 
+    await updateReadmeVersion(name, newVersion, entry.status ?? "stable");
     console.log(`  ${name}: ${oldVersion} → ${newVersion}`);
     changed++;
   }

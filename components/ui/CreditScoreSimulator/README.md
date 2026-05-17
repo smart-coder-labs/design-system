@@ -1,5 +1,7 @@
 # CreditScoreSimulator
 
+> **v1.0.0** · stable
+
 An interactive credit score simulator that allows users to explore how different financial actions impact their credit score. Displays score on a semi-circular gauge with category labels.
 
 ## Installation

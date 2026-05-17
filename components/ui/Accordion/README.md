@@ -1,5 +1,7 @@
 # Accordion
 
+> **v1.0.0** · stable
+
 A collapsible content component with support for single or multiple open items.
 
 ## Installation

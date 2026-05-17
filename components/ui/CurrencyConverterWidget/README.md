@@ -1,5 +1,7 @@
 # CurrencyConverterWidget
 
+> **v1.0.0** · stable
+
 A comprehensive currency conversion widget for international money transfers. Displays amount input, fee breakdown, exchange rate, and estimated delivery with interactive swap functionality.
 
 ## Installation

@@ -1,5 +1,7 @@
 # Popover
 
+> **v1.0.0** · stable
+
 A floating panel that appears relative to a trigger element. Useful for dropdowns, select menus, and contextual content.
 
 ## Installation

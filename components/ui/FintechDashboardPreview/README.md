@@ -1,5 +1,7 @@
 # FintechDashboardPreview
 
+> **v1.0.0** · stable
+
 A comprehensive fintech dashboard preview component combining multiple UI components into a cohesive mobile-first banking experience. Features tabs for different sections, real-time asset prices, and integrated financial widgets.
 
 ## Installation

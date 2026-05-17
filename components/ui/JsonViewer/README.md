@@ -1,5 +1,7 @@
 # JsonViewer
 
+> **v1.0.0** · stable
+
 A syntax-highlighted JSON viewer with collapsible nodes, copy functionality, and VS Code-inspired dark theme. Ideal for displaying API responses, transaction data, and debugging information.
 
 ## Installation

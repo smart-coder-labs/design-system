@@ -1,5 +1,7 @@
 # KPIBlock
 
+> **v1.0.0** · stable
+
 A key performance indicator (KPI) display component with value, trend indicators, icons, and optional loading states. Designed for dashboards with support for multiple sizes and visual variants.
 
 ## Installation

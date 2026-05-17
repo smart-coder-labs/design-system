@@ -1,5 +1,7 @@
 # VirtualCardPreview
 
+> **v1.0.0** · stable
+
 A realistic virtual debit/credit card component with 3D flip animation, tilt effect, and interactive CVV reveal. Supports multiple card brands and gradient themes.
 
 ## Installation

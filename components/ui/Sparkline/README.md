@@ -1,5 +1,7 @@
 # Sparkline
 
+> **v1.0.0** · stable
+
 A lightweight SVG line chart component for displaying small-scale data trends without axis labels or gridlines.
 
 ## Installation

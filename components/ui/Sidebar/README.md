@@ -1,5 +1,7 @@
 # Sidebar
 
+> **v1.0.0** · stable
+
 Vertical navigation component for side navigation panels and menus.
 
 ## Installation

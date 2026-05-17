@@ -1,5 +1,7 @@
 # OrderSummary
 
+> **v1.0.0** · stable
+
 A comprehensive order summary component displaying items, pricing breakdown, discounts, shipping, taxes, and total calculation.
 
 ## Basic Usage

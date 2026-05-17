@@ -1,5 +1,7 @@
 # Footer
 
+> **v1.0.0** · stable
+
 A comprehensive footer component with support for brand info, navigation columns, links, and copyright text. Built with compound components for flexible composition.
 
 ## Installation

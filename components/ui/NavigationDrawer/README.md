@@ -1,5 +1,7 @@
 # NavigationDrawer
 
+> **v1.0.0** · stable
+
 A slide-in navigation drawer component with smooth animations, backdrop support, and keyboard accessibility. Can slide from left or right with configurable width and position.
 
 ## Basic Usage

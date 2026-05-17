@@ -1,5 +1,7 @@
 # SectionHeader
 
+> **v1.0.0** · stable
+
 A header component for sectioned content with optional title, description, and action buttons. Supports multiple sizes and optional divider line.
 
 ## Installation

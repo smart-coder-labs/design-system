@@ -1,5 +1,7 @@
 # Title
 
+> **v1.0.0** · stable
+
 A flexible heading component with comprehensive styling options including levels, weights, colors, alignment, and gradient effects.
 
 ## Installation

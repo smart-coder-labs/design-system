@@ -63,6 +63,6 @@ jobs:
             exit 0
           fi
 
-          git add registry.json
+          git add registry.json components/ui/
           git commit -m "chore(registry): bump versions for ${{ steps.changed.outputs.components }}"
           git push
