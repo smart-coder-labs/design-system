@@ -1,6 +1,6 @@
 # Input
 
-> **v1.0.28** · stable
+> **v1.0.29** · stable
 
 A text input component with support for labels, icons, error states, and helper text. Also includes a Textarea component for multi-line input.
 

@@ -1,6 +1,6 @@
 # Caption
 
-> **v1.0.28** · stable
+> **v1.0.29** · stable
 
 A small text component for supplementary information, labels, and metadata. Renders as tertiary-colored tiny text.
 

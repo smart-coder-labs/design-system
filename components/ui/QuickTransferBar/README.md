@@ -1,6 +1,6 @@
 # QuickTransferBar
 
-> **v1.0.28** · stable
+> **v1.0.29** · stable
 
 A horizontal scrolling bar for quick contact selection, commonly used in fintech and payment applications. Displays contacts as avatar circles with names, supporting optional "Add New" button and custom titles.
 

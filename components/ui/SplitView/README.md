@@ -1,6 +1,6 @@
 # SplitView
 
-> **v1.0.28** · stable
+> **v1.0.29** · stable
 
 A macOS Finder-style resizable split panel layout with a glass-effect sidebar and main content area.
 
