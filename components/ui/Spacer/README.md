@@ -1,6 +1,6 @@
 # Spacer
 
-> **v1.0.7** · stable
+> **v1.0.8** · stable
 
 A flexible spacing component for adding consistent whitespace between elements. Supports preset sizes, custom values, and flex-grow behavior.
 

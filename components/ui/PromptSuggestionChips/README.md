@@ -1,6 +1,6 @@
 # PromptSuggestionChips
 
-> **v1.0.7** · stable
+> **v1.0.8** · stable
 
 A horizontal list of tappable suggestion chips designed for AI prompting interfaces. Each chip displays a suggestion with an optional icon and triggers an action when clicked.
 

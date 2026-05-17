@@ -1,6 +1,6 @@
 # CountersListWithChart
 
-> **v1.0.7** · stable
+> **v1.0.8** · stable
 
 A combined statistics and chart component that displays a list of values alongside a donut or pie chart. Ideal for portfolio allocation, expense breakdowns, and data distribution visualization.
 

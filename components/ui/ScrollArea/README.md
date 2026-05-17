@@ -1,6 +1,6 @@
 # ScrollArea
 
-> **v1.0.7** · stable
+> **v1.0.8** · stable
 
 A scrollable container with custom styled scrollbars that match the Apple Minimal design system. Automatically hides scrollbars when content fits, and provides drag-to-scroll functionality.
 

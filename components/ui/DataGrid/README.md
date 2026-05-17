@@ -1,6 +1,6 @@
 # DataGrid
 
-> **v1.0.7** · stable
+> **v1.0.8** · stable
 
 A powerful data table component with sorting, filtering, grouping, pagination, column management, and export functionality. Supports row selection and customizable cell rendering.
 

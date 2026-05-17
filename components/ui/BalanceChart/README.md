@@ -1,6 +1,6 @@
 # BalanceChart
 
-> **v1.0.7** · stable
+> **v1.0.8** · stable
 
 A financial balance chart component that displays account balance history with interactive hover states, trend indicators, and optional balance masking. Uses native SVG for lightweight rendering.
 

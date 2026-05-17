@@ -1,6 +1,6 @@
 # Progress
 
-> **v1.0.7** · stable
+> **v1.0.8** · stable
 
 A progress bar component with animated fill, customizable value range, and accessibility support.
 

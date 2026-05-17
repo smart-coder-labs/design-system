@@ -1,6 +1,6 @@
 # IconButton
 
-> **v1.0.7** · stable
+> **v1.0.8** · stable
 
 A compact circular button component for icon-only actions, with support for variants, sizes, loading states, and tooltips.
 
