@@ -1,6 +1,6 @@
 # EmptyState
 
-> **v1.0.26** · stable
+> **v1.0.27** · stable
 
 A centered content component for displaying empty states, placeholders, or fallback content when no data is available.
 
