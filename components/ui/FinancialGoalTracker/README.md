@@ -1,6 +1,6 @@
 # FinancialGoalTracker
 
-> **v1.0.22** · stable
+> **v1.0.23** · stable
 
 A financial goal progress tracker with animated progress bar, deposit functionality, and confetti celebration on goal completion. Features a polished card design with floating label showing current balance.
 

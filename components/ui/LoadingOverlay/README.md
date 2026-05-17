@@ -1,6 +1,6 @@
 # LoadingOverlay
 
-> **v1.0.22** · stable
+> **v1.0.23** · stable
 
 A semi-transparent overlay component that displays a loading spinner with an optional message. Ideal for indicating background operations or blocking user interaction during async operations.
 

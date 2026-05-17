@@ -1,6 +1,6 @@
 # Avatar
 
-> **v1.0.22** · stable
+> **v1.0.23** · stable
 
 A visual representation of a user with automatic image loading states and fallback content.
 

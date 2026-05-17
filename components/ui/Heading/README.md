@@ -1,6 +1,6 @@
 # Heading
 
-> **v1.0.22** · stable
+> **v1.0.23** · stable
 
 A simple heading component that wraps the Title component. Provides semantic HTML heading elements (h1-h6) with consistent typography styling.
 

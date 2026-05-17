@@ -1,6 +1,6 @@
 # Sheet
 
-> **v1.0.22** · stable
+> **v1.0.23** · stable
 
 A slide-in panel component that slides in from any edge (top, bottom, left, right). Perfect for sidebars, dialogs, and configuration panels.
 

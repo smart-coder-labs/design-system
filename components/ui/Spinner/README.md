@@ -1,6 +1,6 @@
 # Spinner
 
-> **v1.0.22** · stable
+> **v1.0.23** · stable
 
 A rotating loading spinner with configurable size and color. Uses a 12-segment wheel animation.
 

@@ -1,6 +1,6 @@
 # TransferForm
 
-> **v1.0.22** · stable
+> **v1.0.23** · stable
 
 A fintech-style money transfer form with amount input, currency selector, recipient dropdown, and optional concept field. Includes real-time balance validation and insufficient fund warnings.
 
