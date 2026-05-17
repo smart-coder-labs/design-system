@@ -1,6 +1,6 @@
 # ParallaxStoryStage
 
-> **v1.0.9** · stable
+> **v1.0.10** · stable
 
 A horizontal scroll-driven storytelling component that reveals content panels progressively as the user scrolls vertically. Combines UnscramblingText, ComicPanel, and FloatingElement components for an immersive narrative experience.
 

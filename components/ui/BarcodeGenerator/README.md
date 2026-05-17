@@ -1,6 +1,6 @@
 # BarcodeGenerator
 
-> **v1.0.9** · stable
+> **v1.0.10** · stable
 
 A component for generating various barcode formats with download and copy functionality.
 

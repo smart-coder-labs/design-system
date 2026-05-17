@@ -1,6 +1,6 @@
 # SegmentedInput
 
-> **v1.0.9** · stable
+> **v1.0.10** · stable
 
 A multi-segment input component for entering codes like verification codes, PINs, or license keys. Each segment is a separate input field with auto-advance and paste support.
 

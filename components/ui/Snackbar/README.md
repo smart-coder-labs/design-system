@@ -1,6 +1,6 @@
 # Snackbar
 
-> **v1.0.9** · stable
+> **v1.0.10** · stable
 
 A toast notification component for displaying brief messages at the bottom of the screen with auto-dismiss support.
 
