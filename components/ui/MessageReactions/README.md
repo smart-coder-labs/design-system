@@ -1,6 +1,6 @@
 # MessageReactions
 
-> **v1.0.1** · stable
+> **v1.0.2** · stable
 
 A reaction picker and display component for messages, similar to messaging platforms like iMessage or Slack. Supports multiple reaction types, user avatars, and animated interactions.
 

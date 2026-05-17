@@ -1,6 +1,6 @@
 # Collapsible
 
-> **v1.0.1** · stable
+> **v1.0.2** · stable
 
 A reveal/hide component for expandable content sections. Useful for accordions, FAQs, and nested information.
 

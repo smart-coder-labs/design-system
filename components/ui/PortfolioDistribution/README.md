@@ -1,6 +1,6 @@
 # PortfolioDistribution
 
-> **v1.0.1** · stable
+> **v1.0.2** · stable
 
 A donut chart component for displaying portfolio asset allocation. Shows percentage breakdown with hover interactions that highlight individual assets and display their values in the center.
 
