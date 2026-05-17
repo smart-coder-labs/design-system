@@ -1,6 +1,6 @@
 # InfiniteHorizontalLoop
 
-> **v1.0.4** · stable
+> **v1.0.5** · stable
 
 A seamless infinite horizontal scrolling component for displaying logos, brands, or any repeated content. Uses GPU-optimized animations for smooth 60fps performance.
 

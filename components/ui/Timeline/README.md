@@ -1,6 +1,6 @@
 # Timeline
 
-> **v1.0.4** · stable
+> **v1.0.5** · stable
 
 A vertical timeline component for displaying chronological events with support for alternate layouts and status indicators.
 

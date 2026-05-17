@@ -1,6 +1,6 @@
 # Tabs
 
-> **v1.0.4** · stable
+> **v1.0.5** · stable
 
 Organize content into separate views where only one view is visible at a time. Supports default (underline) and segmented variants with smooth animated transitions.
 

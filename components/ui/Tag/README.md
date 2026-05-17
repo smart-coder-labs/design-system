@@ -1,6 +1,6 @@
 # Tag
 
-> **v1.0.4** · stable
+> **v1.0.5** · stable
 
 A label/tag component for displaying categories, status, or metadata. Supports multiple variants, sizes, icons, and interactive states.
 

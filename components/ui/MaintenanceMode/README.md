@@ -1,6 +1,6 @@
 # MaintenanceMode
 
-> **v1.0.4** · stable
+> **v1.0.5** · stable
 
 A full-page or inline maintenance screen component that displays during scheduled system maintenance. Features an animated construction icon, estimated return time, and contact support option.
 
