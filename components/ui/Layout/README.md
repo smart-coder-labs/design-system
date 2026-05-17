@@ -1,6 +1,6 @@
 # Layout
 
-> **v1.0.0** · stable
+> **v1.0.1** · stable
 
 A collection of layout utility components: Stack, HStack, VStack, and Grid. These provide consistent spacing and alignment patterns for building UIs.
 

@@ -1,6 +1,6 @@
 # RoundUpSavingsToggle
 
-> **v1.0.0** · stable
+> **v1.0.1** · stable
 
 A toggle component for enabling automatic round-up savings. Displays monthly savings projection and detailed information when activated.
 
