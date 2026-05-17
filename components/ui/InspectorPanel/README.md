@@ -1,6 +1,6 @@
 # InspectorPanel
 
-> **v1.0.34** · stable
+> **v1.0.35** · stable
 
 A collapsible side panel component with accordion-style sections, commonly used for property inspectors, debugging panels, or configuration menus.
 

@@ -1,6 +1,6 @@
 # ParallaxBanner
 
-> **v1.0.34** · stable
+> **v1.0.35** · stable
 
 A scroll-triggered parallax hero banner component using Framer Motion. Creates a depth effect where the background image moves at a different speed than the foreground content during scroll.
 
