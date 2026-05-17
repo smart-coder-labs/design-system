@@ -1,6 +1,6 @@
 # ControlCenterToggles
 
-> **v1.0.3** · stable
+> **v1.0.4** · stable
 
 A macOS-style control center toggle grid for managing system settings. Supports grid and list layouts with visual feedback for enabled/disabled states.
 
