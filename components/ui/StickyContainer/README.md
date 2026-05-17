@@ -1,6 +1,6 @@
 # StickyContainer
 
-> **v1.0.23** · stable
+> **v1.0.24** · stable
 
 A sticky surface component with Apple-style glass effect that remains visible while scrolling.
 
