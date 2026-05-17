@@ -1,6 +1,6 @@
 # SearchInput
 
-> **v1.0.24** · stable
+> **v1.0.25** · stable
 
 A searchable input component with dropdown results, built with compound components pattern.
 

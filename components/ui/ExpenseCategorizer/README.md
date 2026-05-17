@@ -1,6 +1,6 @@
 # ExpenseCategorizer
 
-> **v1.0.24** · stable
+> **v1.0.25** · stable
 
 An interactive drag-and-drop component for categorizing uncategorized expenses into predefined categories. Built with Framer Motion for smooth drag interactions.
 

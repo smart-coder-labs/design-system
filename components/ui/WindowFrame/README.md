@@ -1,6 +1,6 @@
 # WindowFrame
 
-> **v1.0.24** · stable
+> **v1.0.25** · stable
 
 A window container component with a macOS-style title bar, traffic light controls, and custom content area. Creates a native-looking window frame for desktop-style UI.
 

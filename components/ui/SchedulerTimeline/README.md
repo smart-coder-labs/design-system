@@ -1,6 +1,6 @@
 # SchedulerTimeline
 
-> **v1.0.24** · stable
+> **v1.0.25** · stable
 
 A day-view timeline scheduler for managing events across multiple resources (e.g., team members, rooms). Displays time slots, events, and current time indicator.
 
