@@ -1,6 +1,6 @@
 # BehavioralAuthSimulator
 
-> **v1.0.31** · stable
+> **v1.0.32** · stable
 
 A component that simulates behavioral authentication analysis for KYC (Know Your Customer) flows. Displays a multi-step verification animation showing factors like location, device, biometrics, and behavioral patterns.
 
