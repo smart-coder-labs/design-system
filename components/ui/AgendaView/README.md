@@ -1,6 +1,6 @@
 # AgendaView
 
-> **v1.0.32** · stable
+> **v1.0.33** · stable
 
 A calendar agenda component that displays events in a chronological list grouped by date. Shows event title, description, time, and location.
 

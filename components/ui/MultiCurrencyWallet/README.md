@@ -1,6 +1,6 @@
 # MultiCurrencyWallet
 
-> **v1.0.32** · stable
+> **v1.0.33** · stable
 
 A multi-currency wallet component with carousel-style navigation between different currency accounts. Displays wallet balance with gradient backgrounds and provides action buttons for adding funds and sending money.
 

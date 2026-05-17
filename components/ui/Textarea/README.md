@@ -1,6 +1,6 @@
 # Textarea
 
-> **v1.0.32** · stable
+> **v1.0.33** · stable
 
 Form input component for multi-line text entry.
 

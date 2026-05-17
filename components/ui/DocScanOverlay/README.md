@@ -1,6 +1,6 @@
 # DocScanOverlay
 
-> **v1.0.32** · stable
+> **v1.0.33** · stable
 
 A document scanning overlay component for KYC (Know Your Customer) flows. Provides a camera-like interface for capturing ID cards, passports, and selfies with visual guides and status feedback.
 

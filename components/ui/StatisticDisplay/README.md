@@ -1,6 +1,6 @@
 # StatisticDisplay
 
-> **v1.0.32** · stable
+> **v1.0.33** · stable
 
 A flexible component for displaying key metrics with optional sparklines, trend indicators, and goal progress tracking.
 
