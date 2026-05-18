@@ -1,8 +1,10 @@
 name: Publish Package to npm
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'v*'        # CLI releases only — e.g. v1.4.0, v2.0.0
+                    # registry-v* tags (component releases) do NOT trigger this
   workflow_dispatch:
 
 jobs:
