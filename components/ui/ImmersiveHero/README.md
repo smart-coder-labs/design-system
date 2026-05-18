@@ -1,6 +1,6 @@
 # ImmersiveHero
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A full-screen hero section with parallax scrolling effects, slow-scale background animation, and staggered text entrance animations.
 

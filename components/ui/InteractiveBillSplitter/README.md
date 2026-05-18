@@ -1,6 +1,6 @@
 # InteractiveBillSplitter
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A social bill splitting component for group dining and shared expenses. Allows users to add friends, select tip percentage, and see equal split calculations in real-time.
 

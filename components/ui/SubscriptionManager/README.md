@@ -1,6 +1,6 @@
 # SubscriptionManager
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A fintech-style subscription management component that displays active subscriptions with total monthly cost, expand/collapse details, and cancellation options.
 

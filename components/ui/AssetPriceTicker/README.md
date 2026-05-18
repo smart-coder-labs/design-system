@@ -1,6 +1,6 @@
 # AssetPriceTicker
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A financial asset price display component showing symbol, price, and percentage change with trend indicators. Supports horizontal and vertical layouts, compact mode, and multiple asset types.
 

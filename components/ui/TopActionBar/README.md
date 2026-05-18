@@ -1,6 +1,6 @@
 # TopActionBar
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A macOS/iOS-style top navigation bar with left, center, and right sections. Supports glassmorphism, sticky positioning, multiple sizes, and built-in button components.
 

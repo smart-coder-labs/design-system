@@ -1,6 +1,6 @@
 # RotarySelector
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 An interactive circular selector with drag-to-rotate functionality. Options are arranged around a central control knob.
 

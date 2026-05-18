@@ -1,6 +1,6 @@
 # Skeleton
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A loading placeholder component with a shimmer animation effect. Used to indicate content is being loaded.
 

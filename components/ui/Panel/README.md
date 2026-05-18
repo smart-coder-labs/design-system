@@ -1,6 +1,6 @@
 # Panel
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A versatile panel component with support for multiple variants, collapsible content, and optional header/footer sections.
 

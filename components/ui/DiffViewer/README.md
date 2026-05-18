@@ -1,6 +1,6 @@
 # DiffViewer
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A component for displaying text differences between two versions with support for unified and split views. Uses an LCS (Longest Common Subsequence) algorithm for accurate diff computation.
 

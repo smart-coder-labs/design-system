@@ -1,6 +1,6 @@
 # EmptyState
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A centered content component for displaying empty states, placeholders, or fallback content when no data is available.
 

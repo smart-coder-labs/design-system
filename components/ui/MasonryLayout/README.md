@@ -1,6 +1,6 @@
 # MasonryLayout
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A responsive masonry grid layout that distributes items into columns. Items are distributed in a column-round-robin fashion to create an even layout regardless of item heights.
 

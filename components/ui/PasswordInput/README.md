@@ -1,6 +1,6 @@
 # PasswordInput
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 Form input component for password entry with built-in strength meter and validation requirements.
 

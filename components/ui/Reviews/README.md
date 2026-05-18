@@ -1,6 +1,6 @@
 # Reviews
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A review list component with star ratings display. Supports both compact and full modes with customizable review items.
 

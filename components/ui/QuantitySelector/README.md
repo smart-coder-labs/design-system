@@ -1,6 +1,6 @@
 # QuantitySelector
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A numeric input with increment/decrement buttons for selecting quantities. Supports controlled/uncontrolled modes, min/max limits, step increments, and keyboard navigation.
 

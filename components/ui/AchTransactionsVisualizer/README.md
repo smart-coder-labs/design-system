@@ -1,6 +1,6 @@
 # AchTransactionsVisualizer
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A premium, accessible component to view complex ACH transactions. Supports both list and table layouts with expandable details, fee breakdowns, and history timelines.
 

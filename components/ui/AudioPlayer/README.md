@@ -1,6 +1,6 @@
 # AudioPlayer
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A full-featured audio player component with playback controls, progress bar, volume control, and speed adjustment.
 

@@ -1,6 +1,6 @@
 # CartPreview
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A comprehensive shopping cart component with quantity controls, discount support, free shipping progress, and multiple display variants. Perfect for e-commerce applications requiring a full-featured cart experience.
 

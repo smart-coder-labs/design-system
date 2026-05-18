@@ -1,6 +1,6 @@
 # Checkbox
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A form input component for boolean or tri-state selections with support for indeterminate state.
 

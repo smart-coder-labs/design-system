@@ -1,6 +1,6 @@
 # ImageCarousel
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 An image carousel with navigation arrows, indicators, auto-play support, and smooth animations. Supports both slide and fade transition effects.
 

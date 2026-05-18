@@ -1,6 +1,6 @@
 # VideoPlayer
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A custom video player with playback controls, progress bar, volume control, and fullscreen support. Features smooth animations and a modern interface.
 

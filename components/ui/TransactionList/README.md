@@ -1,6 +1,6 @@
 # TransactionList
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A transaction list component for displaying financial transactions with support for categories, amounts, statuses, and masking.
 

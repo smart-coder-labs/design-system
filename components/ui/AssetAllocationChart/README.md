@@ -1,6 +1,6 @@
 # AssetAllocationChart
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A financial portfolio visualization component that displays asset allocation as a treemap with hover interactions, risk indicators, and a detailed legend.
 

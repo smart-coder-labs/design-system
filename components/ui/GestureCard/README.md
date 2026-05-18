@@ -1,6 +1,6 @@
 # GestureCard
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A 3D tilt effect card that responds to mouse movement. The card rotates based on cursor position, creating an immersive interactive experience with optional glow effects.
 

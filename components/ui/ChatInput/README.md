@@ -1,6 +1,6 @@
 # ChatInput
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A feature-rich chat input component with file attachment support, auto-resizing textarea, and keyboard shortcuts. Supports multiple file types, image previews, and configurable limits.
 

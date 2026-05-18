@@ -1,6 +1,6 @@
 # Lightbox
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A full-screen image viewer with navigation, keyboard controls, captions, and download functionality. Perfect for viewing transaction receipts, dashboards, and image galleries.
 

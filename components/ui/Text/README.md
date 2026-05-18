@@ -1,6 +1,6 @@
 # Text
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A versatile text component for all body content with control over variant, weight, alignment, color, and text decorations.
 

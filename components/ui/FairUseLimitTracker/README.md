@@ -1,6 +1,6 @@
 # FairUseLimitTracker
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A component displaying fair usage limits with animated progress bars. Shows usage categories with visual indicators for normal, warning (80%+), and exceeded (100%+) states.
 

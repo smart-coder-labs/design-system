@@ -1,6 +1,6 @@
 # PaymentConfirmationModal
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A modal component for confirming payment details before processing a transaction. Designed for fintech applications with support for various payment types including crypto and bank transfers.
 

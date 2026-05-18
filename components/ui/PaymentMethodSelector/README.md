@@ -1,6 +1,6 @@
 # PaymentMethodSelector
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A component for selecting payment methods in checkout flows. Supports credit cards, digital wallets (Apple Pay, PayPal), and bank accounts with a radio-button style selection interface.
 

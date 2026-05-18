@@ -1,6 +1,6 @@
 # ActivityFeed
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A social activity feed component for displaying user actions, commits, PRs, and more with connector lines and type-specific icons.
 

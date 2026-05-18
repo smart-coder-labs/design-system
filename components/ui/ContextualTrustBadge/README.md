@@ -1,6 +1,6 @@
 # ContextualTrustBadge
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A contextual security badge component that displays trust indicators in financial transactions. Shows encryption, insurance, or fraud protection information based on context.
 

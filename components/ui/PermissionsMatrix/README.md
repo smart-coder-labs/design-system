@@ -1,6 +1,6 @@
 # PermissionsMatrix
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A matrix component for managing role-based permissions. Displays permissions grouped by category with checkboxes for each role/permission combination. Supports batch toggling by category.
 

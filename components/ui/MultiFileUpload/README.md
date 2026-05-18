@@ -1,6 +1,6 @@
 # MultiFileUpload
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A drag-and-drop file upload component with support for multiple files, size validation, type filtering, and file preview with removal capabilities.
 

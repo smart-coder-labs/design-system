@@ -1,6 +1,6 @@
 # InstallmentSimulator
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A Buy Now Pay Later (BNPL) installment calculator component. Displays monthly payment options, calculates interest, and visualizes principal vs. interest breakdown.
 

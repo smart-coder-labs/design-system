@@ -1,6 +1,6 @@
 # Sidebar
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 Vertical navigation component for side navigation panels and menus.
 

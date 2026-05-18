@@ -1,6 +1,6 @@
 # Table
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A data table component with sorting, pagination, row selection, and customizable column rendering.
 

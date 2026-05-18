@@ -1,6 +1,6 @@
 # SocialPaymentFeed
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A social feed component for displaying P2P payment transactions with social features like likes and comments.
 

@@ -1,6 +1,6 @@
 # ThemeToggle
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A macOS/iOS-style theme switcher component with light/dark mode and system preference support. Features smooth animations and persistent user preference.
 

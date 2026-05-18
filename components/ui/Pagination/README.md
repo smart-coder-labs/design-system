@@ -1,6 +1,6 @@
 # Pagination
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A page navigation component with first/last, previous/next buttons, and intelligent page number display with ellipsis. Uses a smart algorithm to show relevant pages around the current page.
 

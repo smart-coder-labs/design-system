@@ -1,6 +1,6 @@
 # CodeBlock
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A syntax-highlighted code display component with copy functionality and optional line numbers.
 

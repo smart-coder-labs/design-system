@@ -1,6 +1,6 @@
 # AvatarGroup
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A stacked avatar component for displaying multiple user profiles with overflow handling.
 

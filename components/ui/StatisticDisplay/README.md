@@ -1,6 +1,6 @@
 # StatisticDisplay
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A flexible component for displaying key metrics with optional sparklines, trend indicators, and goal progress tracking.
 

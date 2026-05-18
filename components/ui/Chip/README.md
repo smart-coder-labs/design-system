@@ -1,6 +1,6 @@
 # Chip
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A compact, interactive component for displaying labels, tags, or selections with optional delete and click handlers.
 

@@ -1,6 +1,6 @@
 # LoginForm
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A complete login form component with email and password fields, remember me functionality, and forgot password link. Designed with Apple Minimal aesthetic and built-in validation.
 

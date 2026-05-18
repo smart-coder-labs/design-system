@@ -1,6 +1,6 @@
 # SignupForm
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A complete signup form component with built-in validation for user registration.
 

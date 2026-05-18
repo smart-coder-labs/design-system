@@ -1,6 +1,6 @@
 # ProgressiveDisclosurePanel
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A multi-level collapsible panel that progressively reveals information from summary to deep technical details. Designed for fintech applications to display transaction and account information at varying levels of detail.
 

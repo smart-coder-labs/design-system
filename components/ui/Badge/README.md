@@ -1,6 +1,6 @@
 # Badge
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A compact status indicator component for showing labels, counts, or status markers with variant styling.
 

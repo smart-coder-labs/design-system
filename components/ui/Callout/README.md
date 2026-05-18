@@ -1,6 +1,6 @@
 # Callout
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 An informational alert component for displaying messages with contextual variants, optional dismissibility, and custom icons.
 

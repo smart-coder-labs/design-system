@@ -1,6 +1,6 @@
 # Label
 
-> **v1.0.2** · experimental
+> **v1.0.3** · experimental
 
 A form label component for accessible form inputs with support for required indicators.
 
