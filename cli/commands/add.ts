@@ -3,8 +3,9 @@ import path from "path";
 import fs from "fs-extra";
 import chalk from "chalk";
 import ora from "ora";
-import { getAvailableComponents, getComponentFiles, getComponentMeta } from "../utils/registry";
+import { getAvailableComponents, getComponentFiles, getComponentMeta, getComponentDependencies } from "../utils/registry";
 import { loadConfig, saveConfig, recordInstall, stripUseClient } from "../utils/config";
+import { detectPackageManager, getMissingPackages, installPackages } from "../utils/deps";
 
 export const add = async (components: string[]) => {
   const available = await getAvailableComponents();
@@ -41,6 +42,43 @@ export const add = async (components: string[]) => {
   }
 
   const config = await loadConfig();
+  const pm = detectPackageManager();
+
+  // Collect all npm deps required by the selected components before installing
+  const allNpmDeps = new Set<string>();
+  for (const component of components) {
+    const deps = await getComponentDependencies(component);
+    for (const dep of deps) allNpmDeps.add(dep);
+  }
+
+  const missingDeps = getMissingPackages(Array.from(allNpmDeps));
+  if (missingDeps.length > 0) {
+    console.log(
+      chalk.yellow(`\nThe following packages are required but not installed:\n`) +
+      missingDeps.map((d) => chalk.cyan(`  • ${d}`)).join("\n")
+    );
+    const { install } = await prompts({
+      type: "confirm",
+      name: "install",
+      message: `Install them now with ${chalk.bold(pm)}?`,
+      initial: true,
+    });
+
+    if (install) {
+      const depSpinner = ora(`Installing dependencies with ${pm}...`).start();
+      try {
+        installPackages(missingDeps, pm);
+        depSpinner.succeed("Dependencies installed.");
+      } catch {
+        depSpinner.fail("Failed to install dependencies. Please install them manually and retry.");
+        console.log(chalk.dim(`  ${pm} install ${missingDeps.join(" ")}`));
+        return;
+      }
+    } else {
+      console.log(chalk.yellow("\nSkipping dependency installation. Components may not work correctly."));
+    }
+  }
+
   const spinner = ora("Installing components...").start();
 
   const queue = [...components];
