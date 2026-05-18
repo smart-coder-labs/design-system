@@ -3,7 +3,7 @@ import path from "path";
 import fs from "fs-extra";
 import chalk from "chalk";
 import ora from "ora";
-import { getAvailableComponents, getComponentFiles, getRegistryVersion } from "../utils/registry";
+import { getAvailableComponents, getComponentFiles, getComponentMeta } from "../utils/registry";
 import { loadConfig, saveConfig, recordInstall, stripUseClient } from "../utils/config";
 
 export const add = async (components: string[]) => {
@@ -41,7 +41,6 @@ export const add = async (components: string[]) => {
   }
 
   const config = await loadConfig();
-  const dsVersion = await getRegistryVersion();
   const spinner = ora("Installing components...").start();
 
   const queue = [...components];
@@ -83,7 +82,8 @@ export const add = async (components: string[]) => {
       await fs.writeFile(path.join(componentDir, file.name), content);
     }
 
-    await recordInstall(config, component, dsVersion, "folder");
+    const meta = await getComponentMeta(component);
+    await recordInstall(config, component, meta?.version ?? "unknown", "folder", "install", meta?.status as any);
     spinner.succeed(`Installed ${component}`);
   }
 

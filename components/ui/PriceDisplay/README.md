@@ -1,6 +1,6 @@
 # PriceDisplay
 
-> **v1.0.35** · stable
+> **v1.0.1** · stable
 
 A component for displaying prices with proper currency formatting. Supports multiple currencies, locales, and visual variants. Parts (currency symbol, integer, decimal) are individually styled for better visual hierarchy.
 

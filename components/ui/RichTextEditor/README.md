@@ -1,6 +1,6 @@
 # RichTextEditor
 
-> **v1.0.35** · stable
+> **v1.0.1** · stable
 
 A WYSIWYG text editor with basic formatting toolbar supporting bold, italic, underline, and text alignment.
 

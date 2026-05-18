@@ -1,6 +1,6 @@
 # IdentityVerificationStep
 
-> **v1.0.35** · stable
+> **v1.0.1** · stable
 
 A document upload component for KYC (Know Your Customer) identity verification flows. Supports drag-and-drop, upload progress, and status tracking for multiple document types.
 

@@ -3,7 +3,7 @@ import path from "path";
 import chalk from "chalk";
 import ora from "ora";
 import prompts from "prompts";
-import { getAvailableComponents, getComponentFiles, getRegistryVersion } from "../utils/registry";
+import { getAvailableComponents, getComponentFiles, getComponentMeta } from "../utils/registry";
 import { loadConfig, saveConfig, recordInstall, detectInstalledComponents, stripUseClient } from "../utils/config";
 
 export const updateComponents = async () => {
@@ -66,7 +66,6 @@ export const updateComponents = async () => {
   }
 
   // 3. Fetch and update
-  const dsVersion = await getRegistryVersion();
   const updateSpinner = ora("Updating components...").start();
   let successCount = 0;
   let failCount = 0;
@@ -91,7 +90,8 @@ export const updateComponents = async () => {
         await fs.writeFile(path.join(componentDir, file.name), content);
       }
 
-      await recordInstall(config, component, dsVersion, "folder");
+      const meta = await getComponentMeta(component);
+      await recordInstall(config, component, meta?.version ?? "unknown", "folder", "update", meta?.status as any);
       updateSpinner.succeed(`Updated ${component}`);
       successCount++;
     } catch (error) {

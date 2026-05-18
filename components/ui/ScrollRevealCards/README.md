@@ -1,6 +1,6 @@
 # ScrollRevealCards
 
-> **v1.0.35** · stable
+> **v1.0.1** · stable
 
 A grid layout component that animates cards into view as the user scrolls. Cards stagger in with a spring animation, creating a smooth reveal effect perfect for feature showcases, pricing tables, or dashboard widgets.
 

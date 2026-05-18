@@ -80,15 +80,18 @@ function parseArgs(): { sha: string; message: string; components: string[] } {
 type BumpType = "major" | "minor" | "patch";
 
 function detectBumpType(message: string): BumpType {
+  // Explicit override from workflow (e.g. "forced-bump-type:minor")
+  const override = message.match(/^forced-bump-type:(patch|minor|major)/);
+  if (override) return override[1] as BumpType;
+
+  // [release:minor] inline override
+  const inline = message.match(/\[release:(patch|minor|major)\]/);
+  if (inline) return inline[1] as BumpType;
+
   const firstLine = message.split("\n")[0] ?? "";
 
-  // BREAKING CHANGE in body
   if (message.includes("BREAKING CHANGE")) return "major";
-
-  // feat! or fix! etc (breaking bang)
   if (/^[a-z]+!(\(.+\))?:/.test(firstLine)) return "major";
-
-  // feat: → minor
   if (/^feat(\(.+\))?:/.test(firstLine)) return "minor";
 
   return "patch";

@@ -1,10 +1,27 @@
 name: Update Component Registry
 
+# Triggers:
+#   1. Manual — workflow_dispatch with explicit bump type
+#   2. Commit opt-in — push to main containing [release] in the commit message
+#
+# Usage (commit opt-in):
+#   git commit -m "feat: add loading state to Button [release]"
+#   git commit -m "fix: correct padding [release:minor]"   ← override bump type
+#
+# The SHA recorded in the registry is always HEAD at the moment versioning runs,
+# not the SHA of each individual commit that touched the component.
+
 on:
   push:
     branches: [main]
-    paths:
-      - 'components/ui/**'
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options: [patch, minor, major]
 
 jobs:
   update-registry:
@@ -12,30 +29,69 @@ jobs:
     permissions:
       contents: write
 
+    # Skip if this is the bot's own registry-update commit (prevents feedback loop)
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # need HEAD and HEAD~1 to diff
+          fetch-depth: 0  # full history — needed to diff against last release commit
           token: ${{ secrets.REGISTRY_BOT_TOKEN }}
 
+      - name: Check if versioning is requested
+        id: should_run
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> $GITHUB_OUTPUT
+            echo "bump=${{ inputs.bump }}" >> $GITHUB_OUTPUT
+            echo "Trigger: manual dispatch (bump=${{ inputs.bump }})"
+            exit 0
+          fi
+
+          MSG="${{ github.event.head_commit.message }}"
+
+          # Only proceed if commit message contains [release] or [release:type]
+          if echo "$MSG" | grep -qE '\[release(:(patch|minor|major))?\]'; then
+            # Extract explicit bump type if provided, e.g. [release:minor]
+            OVERRIDE=$(echo "$MSG" | grep -oP '(?<=\[release:)\w+(?=\])' || true)
+            BUMP=${OVERRIDE:-patch}
+            echo "run=true" >> $GITHUB_OUTPUT
+            echo "bump=$BUMP" >> $GITHUB_OUTPUT
+            echo "Trigger: commit opt-in (bump=$BUMP)"
+          else
+            echo "run=false" >> $GITHUB_OUTPUT
+            echo "No [release] marker found — skipping versioning"
+          fi
+
       - uses: actions/setup-node@v4
+        if: steps.should_run.outputs.run == 'true'
         with:
           node-version: '20'
 
       - name: Install dependencies
+        if: steps.should_run.outputs.run == 'true'
         run: npm ci
 
-      - name: Detect changed components
+      - name: Detect changed components since last release
         id: changed
+        if: steps.should_run.outputs.run == 'true'
         run: |
-          # Get files changed in this push (HEAD vs HEAD~1)
-          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD -- 'components/ui/')
+          # Find the last commit made by the registry bot
+          LAST_RELEASE_SHA=$(git log --author="github-actions\[bot\]" \
+            --grep="chore(registry)" --format="%H" -1 || true)
 
-          # Extract unique component folder names, excluding non-component dirs
-          # components/ui/Button/Button.tsx → Button
+          if [ -z "$LAST_RELEASE_SHA" ]; then
+            echo "No previous release commit found — diffing against first commit"
+            LAST_RELEASE_SHA=$(git rev-list --max-parents=0 HEAD)
+          fi
+
+          echo "Diffing from $LAST_RELEASE_SHA to HEAD"
+
+          CHANGED_FILES=$(git diff --name-only "$LAST_RELEASE_SHA" HEAD -- 'components/ui/')
+
           COMPONENTS=$(echo "$CHANGED_FILES" \
             | grep -oP 'components/ui/\K[^/]+' \
-            | grep -vE '^(__tests__|__mocks__|_|\.)'  \
+            | grep -vE '^(__tests__|__mocks__|_|\.)' \
             | sort -u \
             | tr '\n' ',' \
             | sed 's/,$//')
@@ -44,25 +100,25 @@ jobs:
           echo "Changed components: $COMPONENTS"
 
       - name: Bump component versions in registry
-        if: steps.changed.outputs.components != ''
+        if: steps.should_run.outputs.run == 'true' && steps.changed.outputs.components != ''
         run: |
           npx tsx scripts/bump-component-versions.ts \
             --sha "${{ github.sha }}" \
-            --message "${{ github.event.head_commit.message }}" \
+            --message "forced-bump-type:${{ steps.should_run.outputs.bump }}" \
             --components "${{ steps.changed.outputs.components }}"
 
       - name: Commit updated registry
-        if: steps.changed.outputs.components != ''
+        if: steps.should_run.outputs.run == 'true' && steps.changed.outputs.components != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Only commit if registry.json actually changed
           if git diff --quiet registry.json; then
             echo "registry.json unchanged — nothing to commit"
             exit 0
           fi
 
           git add registry.json components/ui/
-          git commit -m "chore(registry): bump versions for ${{ steps.changed.outputs.components }}"
+          # [skip ci] prevents this commit from triggering the workflow again
+          git commit -m "chore(registry): bump versions for ${{ steps.changed.outputs.components }} [skip ci]"
           git push

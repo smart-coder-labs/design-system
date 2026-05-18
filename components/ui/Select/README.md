@@ -1,6 +1,6 @@
 # Select
 
-> **v1.0.35** · stable
+> **v1.0.1** · stable
 
 A dropdown selection component with keyboard navigation, accessibility support, and an optional FilterSelect variant for filtering.
 
