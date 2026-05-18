@@ -2229,7 +2229,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/CodeBlock/index.ts"
       }
     ],
-    "version": "1.0.3",
+    "version": "1.1.0",
     "status": "experimental",
     "added": "1.0.0",
     "breakingChanges": [],
@@ -2255,6 +2255,15 @@
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
+        "files": [
+          "CodeBlock.tsx",
+          "CodeBlock.types.ts",
+          "index.ts"
+        ]
+      },
+      {
+        "version": "1.1.0",
+        "sha": "235e78a383b740aa2f230fcf1e472484c504a898",
         "files": [
           "CodeBlock.tsx",
           "CodeBlock.types.ts",
