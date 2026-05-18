@@ -149,24 +149,70 @@ The rollback is recorded in the consumer's `design-system.json`:
 
 ---
 
+## Publishing a CLI release
+
+The CLI is published to npm independently from the component registry. Components are never published to npm — they live on GitHub and are fetched directly by the CLI at install time.
+
+### Steps
+
+```bash
+# 1. Bump the CLI version
+npm version patch   # 1.4.0 → 1.4.1
+npm version minor   # 1.4.0 → 1.5.0
+npm version major   # 1.4.0 → 2.0.0
+
+# 2. Push with the tag
+git push origin main --follow-tags
+
+# 3. Create a GitHub Release for the CLI tag (e.g. v1.5.0)
+#    This triggers the publish workflow automatically
+gh release create v1.5.0 --title "CLI v1.5.0" --notes "..."
+```
+
+The `publish.yml` workflow triggers **only on `v*` tags** (e.g. `v1.5.0`). Tags like `registry-v1.0.2` do not trigger it.
+
+### Creating a component registry release
+
+Component releases are GitHub Releases only — no npm involved.
+
+```bash
+gh release create registry-v1.0.2 --title "Components v1.0.2" --notes "..."
+```
+
+---
+
 ## Scripts
 
 | Script | Description |
 |--------|-------------|
 | `npm run build:registry` | Rebuilds `registry.json` from the component folders. Merges with existing registry to preserve version history. |
-| `npm run add-versions-to-readmes` | One-time backfill: inserts the version line into all component READMEs that don't have one yet. |
+| `npm run add-versions-to-readmes` | Inserts or updates the version line in all component READMEs. Safe to re-run. |
 | `npm run bump-versions` | Low-level bump engine called by the workflow. Accepts `--sha`, `--message`, and `--components` flags. |
+| `npm run reset-registry-versions` | One-time utility: resets all components to a given version with a single history entry. Accepts `--sha`. |
 
 ---
 
 ## Workflow internals
 
-**File:** `.github/workflows/update-registry.yml`
+### `update-registry.yml` — component versioning
 
 **Triggers:**
-- Push to `main` — only proceeds if the commit message contains `[release]`
-- Manual dispatch — always proceeds with the selected bump type
+- Push to `main` containing `[release]` in the commit message
+- Manual dispatch with explicit bump type selector
 
-**Feedback loop prevention:** the bot commit appends `[skip ci]` to its message, which GitHub Actions respects natively. Commits from the bot never retrigger the workflow.
+**What it does:**
+1. Finds components changed since the last registry-update bot commit
+2. Bumps their versions using the resolved bump type
+3. Records the current `HEAD` SHA in each component's `history[]`
+4. Updates each affected `README.md` with the new version line
+5. Commits `registry.json` + changed READMEs back to `main`
 
-**Authentication:** the workflow uses `REGISTRY_BOT_TOKEN` (a fine-grained PAT with `Contents: Read and write`) to bypass the branch protection rule on `main`. Set this secret under **repo → Settings → Secrets and variables → Actions**.
+**Feedback loop prevention:** the bot commit appends `[skip ci]` — GitHub Actions respects this natively, so the commit never retriggers the workflow.
+
+**Authentication:** uses `REGISTRY_BOT_TOKEN` (fine-grained PAT, `Contents: Read and write`) to bypass the branch protection rule on `main`. Set it under **repo → Settings → Secrets and variables → Actions**.
+
+### `publish.yml` — CLI npm publish
+
+**Triggers:** push of a tag matching `v*` (e.g. `v1.5.0`). Registry tags (`registry-v*`) are explicitly excluded.
+
+**What it does:** runs `npm run build` then `npm publish` to the npm registry using `NPM_TOKEN`.
