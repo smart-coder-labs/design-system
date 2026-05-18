@@ -1,6 +1,6 @@
 # CardSecurityControls
 
-> **v1.0.2** · stable
+> **v1.0.2** · experimental
 
 A card component displaying security toggle controls for payment cards (freeze, limits, international).
 

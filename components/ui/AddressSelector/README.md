@@ -1,6 +1,6 @@
 # AddressSelector
 
-> **v1.0.2** · stable
+> **v1.0.2** · experimental
 
 An address autocomplete component powered by Google Places API. Provides real-time address suggestions with keyboard navigation and detailed place information retrieval.
 

@@ -1,6 +1,6 @@
 # QueryBuilder
 
-> **v1.0.2** · stable
+> **v1.0.2** · experimental
 
 A visual query builder component for creating complex filter rules with AND/OR logic. Supports nested rule groups, multiple field types (text, number, date, select), and various operators.
 

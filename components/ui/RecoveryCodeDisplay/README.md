@@ -1,6 +1,6 @@
 # RecoveryCodeDisplay
 
-> **v1.0.2** · stable
+> **v1.0.2** · experimental
 
 A secure recovery code display component for two-factor authentication. Displays a list of one-time recovery codes with reveal, copy, and download functionality.
 

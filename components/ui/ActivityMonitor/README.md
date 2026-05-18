@@ -1,6 +1,6 @@
 # ActivityMonitor
 
-> **v1.0.2** · stable
+> **v1.0.2** · experimental
 
 A system activity monitoring dashboard component that displays real-time metrics for CPU, memory, energy, disk, and network usage. Includes process lists, sparkline charts, and auto-refresh capabilities.
 

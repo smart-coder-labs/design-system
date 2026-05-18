@@ -1,6 +1,6 @@
 # ProductCard
 
-> **v1.0.2** · stable
+> **v1.0.2** · experimental
 
 A comprehensive e-commerce product card component with image gallery, pricing, ratings, badges, favorite button, and quick actions. Supports multiple variants and fully interactive states.
 

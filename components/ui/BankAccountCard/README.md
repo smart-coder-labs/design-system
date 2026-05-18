@@ -1,6 +1,6 @@
 # BankAccountCard
 
-> **v1.0.2** · stable
+> **v1.0.2** · experimental
 
 A visually rich bank account/credit card component with gradient backgrounds, balance display, visibility toggle, and CLABE/IBAN copy functionality. Perfect for financial dashboards and account overviews.
 

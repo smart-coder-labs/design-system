@@ -1,6 +1,6 @@
 # SplitButton
 
-> **v1.0.2** · stable
+> **v1.0.2** · experimental
 
 A dual-action button component with a primary action and a dropdown menu for additional options.
 

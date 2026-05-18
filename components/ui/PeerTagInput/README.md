@@ -1,6 +1,6 @@
 # PeerTagInput
 
-> **v1.0.2** · stable
+> **v1.0.2** · experimental
 
 A search input component for finding and selecting peer contacts (e.g., for P2P payments). Supports searching by username ($tag) or display name with keyboard navigation and verified user indicators.
 
