@@ -60,3 +60,43 @@ export const Default: Story = {
         );
     },
 };
+
+export const Glasphormism: Story = {
+    render: () => {
+        const [isOpen, setIsOpen] = useState(true);
+
+        return (
+            <div className="p-8 bg-slate-100 dark:bg-slate-900 rounded-2xl w-full">
+                <Collapsible
+                    open={isOpen}
+                    onOpenChange={setIsOpen}
+                    variant="glasphormism"
+                >
+                    <CollapsibleTrigger>
+                        <div className="flex items-center justify-between cursor-pointer select-none group">
+                            <h4 className="text-sm font-semibold text-text-primary">
+                                @peduarte starred 3 repositories
+                            </h4>
+                            <Button variant="ghost" size="sm" className="w-9 p-0 hover:bg-surface-secondary">
+                                <ChevronsUpDown className="h-4 w-4 text-text-secondary" />
+                                <span className="sr-only">Toggle</span>
+                            </Button>
+                        </div>
+                    </CollapsibleTrigger>
+
+                    <CollapsibleContent className="space-y-2 mt-2">
+                        <div className="rounded-md border border-border-secondary bg-surface-secondary/50 px-3 py-2 text-sm text-text-secondary">
+                            @radix-ui/primitives
+                        </div>
+                        <div className="rounded-md border border-border-secondary bg-surface-secondary/50 px-3 py-2 text-sm text-text-secondary">
+                            @radix-ui/colors
+                        </div>
+                        <div className="rounded-md border border-border-secondary bg-surface-secondary/50 px-3 py-2 text-sm text-text-secondary">
+                            @stitches/react
+                        </div>
+                    </CollapsibleContent>
+                </Collapsible>
+            </div>
+        );
+    },
+};

@@ -85,3 +85,26 @@ export const LongMessage: Story = {
         isOwn: false,
     },
 };
+
+export const Glasphormism: Story = {
+    render: () => (
+        <div className="p-8 bg-slate-100 dark:bg-slate-900 rounded-2xl w-full flex flex-col gap-4">
+            <ChatBubble
+                message="Hey, did you see the new glassmorphic UI updates?"
+                sender="Alice"
+                avatar="https://i.pravatar.cc/150?u=alice"
+                timestamp="10:42 AM"
+                isOwn={false}
+                variant="glasphormism"
+            />
+            <ChatBubble
+                message="Wow, yes! The blue blur on my sent messages looks incredibly premium."
+                sender="You"
+                timestamp="10:43 AM"
+                isOwn={true}
+                variant="glasphormism"
+                status="read"
+            />
+        </div>
+    ),
+};

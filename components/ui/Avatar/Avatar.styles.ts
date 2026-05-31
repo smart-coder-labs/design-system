@@ -21,10 +21,15 @@ export const avatarVariants = cva(
                 circle: 'rounded-full',
                 square: 'rounded-lg',
             },
+            variant: {
+                default: '',
+                glasphormism: 'bg-surface-glass/40 backdrop-blur-md border border-border-primary/50 shadow-sm',
+            },
         },
         defaultVariants: {
             size: 'md',
             shape: 'circle',
+            variant: 'default',
         },
     }
 );

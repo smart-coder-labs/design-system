@@ -86,3 +86,20 @@ export const Fallback: Story = {
         </Avatar>
     ),
 };
+
+export const Glasphormism: Story = {
+    render: () => (
+        <div className="p-8 bg-slate-100 dark:bg-slate-900 rounded-2xl w-full flex items-center gap-6">
+            {/* Avatar with Image and glassmorphic border */}
+            <Avatar variant="glasphormism" size="lg">
+                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            
+            {/* Avatar with transparent Glassmorphic Fallback */}
+            <Avatar variant="glasphormism" size="lg">
+                <AvatarFallback>JD</AvatarFallback>
+            </Avatar>
+        </div>
+    ),
+};

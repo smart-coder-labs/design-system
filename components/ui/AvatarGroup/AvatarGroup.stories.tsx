@@ -84,3 +84,19 @@ export const WithoutTooltips: Story = {
         showTooltip: false,
     },
 };
+
+export const Glasphormism: Story = {
+    args: {
+        items: sampleItems,
+        max: 4,
+        size: 'lg',
+        variant: 'glasphormism',
+    },
+    decorators: [
+        (Story) => (
+            <div className="p-8 bg-slate-100 dark:bg-slate-900 rounded-2xl w-full">
+                <Story />
+            </div>
+        ),
+    ],
+};

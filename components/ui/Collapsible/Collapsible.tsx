@@ -16,7 +16,7 @@ type CollapsibleContextValue = {
 const CollapsibleContext = React.createContext<CollapsibleContextValue | null>(null);
 
 const Collapsible = React.forwardRef<HTMLDivElement, CollapsibleProps>(
-    ({ open, defaultOpen = false, onOpenChange, disabled, className, children, ...props }, ref) => {
+    ({ open, defaultOpen = false, onOpenChange, disabled, variant = 'default', className, children, ...props }, ref) => {
         const [internalOpen, setInternalOpen] = React.useState(defaultOpen);
         const isControlled = open !== undefined;
         const currentOpen = isControlled ? open : internalOpen;
@@ -41,7 +41,12 @@ const Collapsible = React.forwardRef<HTMLDivElement, CollapsibleProps>(
                     ref={ref}
                     data-state={currentOpen ? "open" : "closed"}
                     data-disabled={disabled ? "" : undefined}
-                    className={cn("border border-border-primary rounded-lg p-3 bg-surface-primary shadow-sm", className)}
+                    className={cn(
+                        variant === 'glasphormism'
+                            ? "bg-surface-glass/40 backdrop-blur-md border border-border-primary/50 rounded-xl p-3 shadow-sm"
+                            : "border border-border-primary rounded-lg p-3 bg-surface-primary shadow-sm",
+                        className
+                    )}
                     {...props}
                 >
                     {children}

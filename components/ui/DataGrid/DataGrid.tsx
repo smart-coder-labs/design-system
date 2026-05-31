@@ -33,10 +33,12 @@ const DataGridComponent = <T,>(
         onCellEdit,
         onExport,
         className,
+        variant = "default",
         ...props
     }: DataGridProps<T>,
     ref: React.Ref<HTMLDivElement>
 ) => {
+    const isGlass = variant === "glasphormism";
     const [sortKey, setSortKey] = React.useState<keyof T | null>(null);
     const [sortDirection, setSortDirection] = React.useState<"asc" | "desc">("asc");
     const [selectedRows, setSelectedRows] = React.useState<Set<number>>(new Set());
@@ -224,12 +226,22 @@ const DataGridComponent = <T,>(
 
     return (
         <div ref={ref} className={cn("flex flex-col gap-3", className)} {...props}>
-            <div className="flex items-center justify-between px-4 py-3 bg-surface-elevated border border-border-primary rounded-xl">
+            <div className={cn(
+                "flex items-center justify-between px-4 py-3 border rounded-xl",
+                isGlass
+                    ? "bg-surface-glass/40 backdrop-blur-md border-border-primary/30 shadow-sm"
+                    : "bg-surface-elevated border-border-primary"
+            )}>
                 <div className="flex items-center gap-2">
                     <select
                         value={groupBy ? String(groupBy) : ""}
                         onChange={(e) => setGroupBy(e.target.value as keyof T || null)}
-                        className="px-3 py-1.5 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue"
+                        className={cn(
+                            "px-3 py-1.5 text-sm border rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all",
+                            isGlass
+                                ? "bg-surface-glass/20 border-border-primary/30 hover:bg-surface-glass/30"
+                                : "bg-surface-secondary border-border-primary"
+                        )}
                     >
                         <option value="">No grouping</option>
                         {columns
@@ -245,7 +257,12 @@ const DataGridComponent = <T,>(
                 <div className="flex items-center gap-2">
                     <button
                         onClick={exportToCSV}
-                        className="flex items-center gap-1.5 px-3 py-1.5 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-secondary/70 transition-all"
+                        className={cn(
+                            "flex items-center gap-1.5 px-3 py-1.5 text-sm border rounded-lg text-text-secondary transition-all",
+                            isGlass
+                                ? "bg-surface-glass/20 border-border-primary/30 hover:text-text-primary hover:bg-surface-glass/45"
+                                : "bg-surface-secondary border-border-primary hover:text-text-primary hover:bg-surface-secondary/70"
+                        )}
                     >
                         <Download className="w-4 h-4" />
                         Export CSV
@@ -256,12 +273,18 @@ const DataGridComponent = <T,>(
                         columnStates={columnStates}
                         onToggleVisibility={toggleColumnVisibility}
                         onTogglePin={toggleColumnPin}
+                        variant={variant}
                     />
                 </div>
             </div>
 
             <div
-                className="overflow-auto border border-border-primary rounded-xl bg-surface-elevated shadow-lg"
+                className={cn(
+                    "overflow-auto border rounded-xl shadow-lg",
+                    isGlass
+                        ? "border-border-primary/30 bg-surface-glass/40 backdrop-blur-md"
+                        : "border-border-primary bg-surface-elevated"
+                )}
                 style={{ maxHeight: virtualScrolling ? maxHeight : undefined }}
             >
                 <Table
@@ -276,6 +299,8 @@ const DataGridComponent = <T,>(
                     onPageChange={onPageChange}
                     page={page}
                     pageSize={pageSize}
+                    variant={variant}
+                    nested={true}
                 />
             </div>
         </div>
@@ -301,6 +326,7 @@ interface DataGridRowProps<T> {
     onToggle: (index: number) => void;
     onCellClick: (key: keyof T) => void;
     onCellEdit: (key: keyof T, value: any) => void;
+    variant?: 'default' | 'glasphormism';
 }
 
 const DataGridRowInner = <T,>(
@@ -318,9 +344,11 @@ const DataGridRowInner = <T,>(
         onToggle,
         onCellClick,
         onCellEdit,
+        variant = 'default',
     }: DataGridRowProps<T>,
     ref: React.Ref<HTMLTableRowElement>
 ) => {
+    const isGlass = variant === 'glasphormism';
     return (
         <motion.tr
             ref={ref}
@@ -329,15 +357,23 @@ const DataGridRowInner = <T,>(
             exit={{ opacity: 0 }}
             transition={{ duration: 0.18 }}
             className={cn(
-                "border-b border-border-primary/50 transition-colors",
-                striped && index % 2 === 1 ? "bg-surface-secondary/40" : "",
-                hoverable && "hover:bg-surface-secondary/70",
-                selected && "bg-accent-blue/10"
+                isGlass ? "border-b border-border-primary/20 transition-colors" : "border-b border-border-primary/50 transition-colors",
+                striped && index % 2 === 1
+                    ? isGlass ? "bg-surface-glass/10" : "bg-surface-secondary/40"
+                    : "",
+                hoverable &&
+                (isGlass ? "hover:bg-surface-glass/25" : "hover:bg-surface-secondary/70"),
+                selected &&
+                (isGlass ? "bg-accent-blue/15" : "bg-accent-blue/10")
             )}
         >
             {selectable && (
                 <td className="px-4">
-                    <Checkbox checked={selected} onCheckedChange={() => onToggle(index)} />
+                    <Checkbox
+                        checked={selected}
+                        onCheckedChange={() => onToggle(index)}
+                        className={isGlass ? "border-border-primary/45 bg-surface-glass/25" : undefined}
+                    />
                 </td>
             )}
 
@@ -353,7 +389,9 @@ const DataGridRowInner = <T,>(
                             "px-4 text-sm text-text-primary",
                             rowPadding,
                             state?.pinned === "left" &&
-                            "sticky left-0 bg-surface-primary z-10"
+                            (isGlass
+                                ? "sticky left-0 bg-surface-glass/80 backdrop-blur-md z-10"
+                                : "sticky left-0 bg-surface-primary z-10")
                         )}
                         onClick={() => col.editable && onCellClick(col.key)}
                     >
@@ -368,7 +406,12 @@ const DataGridRowInner = <T,>(
                                         onCellEdit(col.key, e.currentTarget.value);
                                     }
                                 }}
-                                className="w-full px-2 py-1 bg-surface-secondary border border-accent-blue rounded-md focus:outline-none"
+                                className={cn(
+                                    "w-full px-2 py-1 border rounded-md focus:outline-none transition-all",
+                                    isGlass
+                                        ? "bg-surface-glass/25 border-accent-blue/70 focus:bg-surface-glass/35"
+                                        : "bg-surface-secondary border-accent-blue"
+                                )}
                             />
                         ) : col.render ? (
                             col.render(row[col.key], row)
@@ -389,14 +432,17 @@ const DataGridRow = React.forwardRef(DataGridRowInner) as unknown as <T>(
 
 const PaginationButton = React.forwardRef<
     HTMLButtonElement,
-    React.ButtonHTMLAttributes<HTMLButtonElement>
->(({ className, ...props }, ref) => {
+    React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'default' | 'glasphormism' }
+>(({ className, variant = 'default', ...props }, ref) => {
+    const isGlass = variant === 'glasphormism';
     return (
         <button
             ref={ref}
             className={cn(
-                "p-2 rounded-lg border border-border-primary text-text-secondary transition-all",
-                "hover:bg-surface-secondary hover:text-text-primary",
+                "p-2 rounded-lg border text-text-secondary transition-all",
+                isGlass
+                    ? "border-border-primary/30 bg-surface-glass/20 hover:bg-surface-glass/45 hover:text-text-primary"
+                    : "border-border-primary hover:bg-surface-secondary hover:text-text-primary",
                 "disabled:opacity-40 disabled:cursor-not-allowed",
                 className
             )}
@@ -410,16 +456,18 @@ interface FilterButtonProps<T> extends Omit<React.HTMLAttributes<HTMLDivElement>
     column: DataGridColumn<T>;
     value: string;
     onChange: (value: string) => void;
+    variant?: 'default' | 'glasphormism';
 }
 
 const FilterButtonInner = <T,>(
-    { column, value, onChange, className, ...props }: FilterButtonProps<T>,
+    { column, value, onChange, className, variant = 'default', ...props }: FilterButtonProps<T>,
     ref: React.Ref<HTMLDivElement>
 ) => {
     const [open, setOpen] = React.useState(false);
     const [localValue, setLocalValue] = React.useState(value);
     const containerRef = React.useRef<HTMLDivElement>(null);
     const isSelect = column.filterType === "select" && column.filterOptions?.length;
+    const isGlass = variant === 'glasphormism';
 
     React.useEffect(() => {
         if (!open) return;
@@ -448,7 +496,12 @@ const FilterButtonInner = <T,>(
             </button>
 
             {open && (
-                <div className="absolute right-0 mt-2 z-50 min-w-[220px] p-3 bg-surface-elevated border border-border-primary rounded-xl shadow-lg space-y-2">
+                <div className={cn(
+                    "absolute right-0 mt-2 z-50 min-w-[220px] p-3 border rounded-xl shadow-lg space-y-2",
+                    isGlass
+                        ? "bg-surface-glass/80 backdrop-blur-md border-border-primary/35 shadow-xl"
+                        : "bg-surface-elevated border-border-primary shadow-lg"
+                )}>
                     {isSelect ? (
                         <Combobox
                             items={column.filterOptions!.map((opt) => ({ value: String(opt.value), label: opt.label }))}
@@ -457,6 +510,7 @@ const FilterButtonInner = <T,>(
                             placeholder={`Filter ${column.header}...`}
                             searchPlaceholder="Search..."
                             emptyMessage="No options"
+                            className={isGlass ? "bg-surface-glass/20 border-border-primary/30" : undefined}
                         />
                     ) : (
                         <input
@@ -464,7 +518,12 @@ const FilterButtonInner = <T,>(
                             placeholder={`Filter ${column.header}...`}
                             value={localValue}
                             onChange={(e) => setLocalValue(e.target.value)}
-                            className="w-full px-3 py-2 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-blue"
+                            className={cn(
+                                "w-full px-3 py-2 text-sm border rounded-lg text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all",
+                                isGlass
+                                    ? "bg-surface-glass/25 border-border-primary/30 focus:bg-surface-glass/35"
+                                    : "bg-surface-secondary border-border-primary"
+                            )}
                         />
                     )}
                     <div className="flex items-center gap-2">
@@ -483,7 +542,12 @@ const FilterButtonInner = <T,>(
                                 onChange("");
                                 setOpen(false);
                             }}
-                            className="px-3 py-1.5 text-sm bg-surface-secondary text-text-secondary rounded-lg hover:text-text-primary transition-colors"
+                            className={cn(
+                                "px-3 py-1.5 text-sm rounded-lg transition-colors",
+                                isGlass
+                                    ? "bg-surface-glass/25 hover:bg-surface-glass/40 text-text-secondary hover:text-text-primary"
+                                    : "bg-surface-secondary text-text-secondary hover:text-text-primary"
+                            )}
                         >
                             Clear
                         </button>
@@ -504,6 +568,7 @@ interface ColumnVisibilityMenuProps<T> extends React.HTMLAttributes<HTMLDivEleme
     columnStates: Map<keyof T, ColumnState>;
     onToggleVisibility: (key: keyof T) => void;
     onTogglePin: (key: keyof T) => void;
+    variant?: 'default' | 'glasphormism';
 }
 
 const ColumnVisibilityMenuInner = <T,>(
@@ -513,6 +578,7 @@ const ColumnVisibilityMenuInner = <T,>(
         onToggleVisibility,
         onTogglePin,
         className,
+        variant = 'default',
         ...props
     }: ColumnVisibilityMenuProps<T>,
     ref: React.Ref<HTMLDivElement>
@@ -522,6 +588,7 @@ const ColumnVisibilityMenuInner = <T,>(
     const containerRef = React.useRef<HTMLDivElement>(null);
     const selectedColumn = columns.find((col) => String(col.key) === selectedKey) ?? columns[0];
     const selectedState = selectedColumn ? columnStates.get(selectedColumn.key)! : undefined;
+    const isGlass = variant === 'glasphormism';
 
     React.useEffect(() => {
         if (!open) return;
@@ -539,7 +606,12 @@ const ColumnVisibilityMenuInner = <T,>(
     return (
         <div className={cn("relative", className)} ref={containerRef} {...props}>
             <button
-                className="flex items-center gap-1.5 px-3 py-1.5 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-secondary/70 transition-all"
+                className={cn(
+                    "flex items-center gap-1.5 px-3 py-1.5 text-sm border rounded-lg text-text-secondary transition-all",
+                    isGlass
+                        ? "bg-surface-glass/20 border-border-primary/30 hover:text-text-primary hover:bg-surface-glass/45"
+                        : "bg-surface-secondary border-border-primary hover:text-text-primary hover:bg-surface-secondary/70"
+                )}
                 onClick={() => setOpen((prev) => !prev)}
                 type="button"
             >
@@ -548,13 +620,19 @@ const ColumnVisibilityMenuInner = <T,>(
             </button>
 
             {open && (
-                <div className="absolute right-0 mt-2 z-50 w-[260px] p-3 bg-surface-elevated border border-border-primary rounded-xl shadow-lg space-y-3">
+                <div className={cn(
+                    "absolute right-0 mt-2 z-50 w-[260px] p-3 border rounded-xl shadow-lg space-y-3",
+                    isGlass
+                        ? "bg-surface-glass/80 backdrop-blur-md border-border-primary/35 shadow-xl"
+                        : "bg-surface-elevated border-border-primary shadow-lg"
+                )}>
                     <Combobox
                         items={columns.map((col) => ({ value: String(col.key), label: col.header }))}
                         value={selectedKey || undefined}
                         onChange={(val) => setSelectedKey(val)}
                         placeholder="Select column"
                         searchPlaceholder="Search columns..."
+                        className={isGlass ? "bg-surface-glass/20 border-border-primary/30" : undefined}
                     />
 
                     {selectedColumn && selectedState && (
@@ -563,6 +641,7 @@ const ColumnVisibilityMenuInner = <T,>(
                                 <Checkbox
                                     checked={selectedState.visible}
                                     onCheckedChange={() => onToggleVisibility(selectedColumn.key)}
+                                    className={isGlass ? "border-border-primary/45 bg-surface-glass/25" : undefined}
                                 />
                                 <span>{selectedColumn.header}</span>
                             </label>
@@ -574,7 +653,9 @@ const ColumnVisibilityMenuInner = <T,>(
                                         "p-1 rounded-md transition-colors",
                                         selectedState.pinned
                                             ? "text-accent-blue bg-accent-blue/10"
-                                            : "text-text-tertiary hover:text-text-secondary"
+                                            : isGlass
+                                                ? "text-text-tertiary hover:text-text-secondary hover:bg-surface-glass/20"
+                                                : "text-text-tertiary hover:text-text-secondary hover:bg-surface-secondary"
                                     )}
                                 >
                                     {selectedState.pinned ? <Pin className="w-3.5 h-3.5" /> : <PinOff className="w-3.5 h-3.5" />}

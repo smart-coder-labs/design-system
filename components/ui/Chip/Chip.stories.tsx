@@ -157,3 +157,16 @@ export const InteractiveChips: Story = {
         size: 'md',
     }
 };
+
+export const Glasphormism: Story = {
+    render: () => (
+        <div className="p-8 bg-slate-100 dark:bg-slate-900 rounded-2xl w-full flex flex-wrap gap-4 items-center">
+            <Chip variant="glasphormism" label="Default Glass" />
+            <Chip variant="glasphormism" label="With Icon" icon={Zap} />
+            <Chip variant="glasphormism" label="Deletable" onDelete={() => {}} />
+            <Chip variant="glasphormism" label="Clickable" onClick={() => {}} />
+            <Chip variant="glasphormism" label="Small" size="sm" />
+            <Chip variant="glasphormism" label="Large" size="lg" />
+        </div>
+    ),
+};

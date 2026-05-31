@@ -11,6 +11,7 @@ export type AvatarStatus = 'idle' | 'loading' | 'loaded' | 'error';
 export interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
     size?: AvatarSize;
     shape?: AvatarShape;
+    variant?: 'default' | 'glasphormism';
 }
 
 export interface AvatarImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}

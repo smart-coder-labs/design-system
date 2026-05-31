@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../../lib/utils";
 
 const avatarVariants = cva(
-    "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full transition-opacity hover:opacity-90",
+    "relative flex shrink-0 overflow-hidden rounded-full transition-opacity hover:opacity-90",
     {
         variants: {
             size: {
@@ -20,10 +20,15 @@ const avatarVariants = cva(
                 circle: "rounded-full",
                 square: "rounded-lg", // Apple style square avatars often have rounded corners
             },
+            variant: {
+                default: "",
+                glasphormism: "bg-surface-glass/40 backdrop-blur-md border border-border-primary/50 shadow-sm",
+            },
         },
         defaultVariants: {
             size: "md",
             shape: "circle",
+            variant: "default",
         },
     }
 );
@@ -33,6 +38,7 @@ type AvatarStatus = "idle" | "loading" | "loaded" | "error";
 type AvatarContextValue = {
     status: AvatarStatus;
     setStatus: (status: AvatarStatus) => void;
+    variant?: "default" | "glasphormism";
 };
 
 const AvatarContext = React.createContext<AvatarContextValue | null>(null);
@@ -40,14 +46,14 @@ const AvatarContext = React.createContext<AvatarContextValue | null>(null);
 export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof avatarVariants> {}
 
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
-    ({ className, size, shape, children, ...props }, ref) => {
+    ({ className, size, shape, variant = "default", children, ...props }, ref) => {
         const [status, setStatus] = React.useState<AvatarStatus>("idle");
 
-        const contextValue = React.useMemo(() => ({ status, setStatus }), [status]);
+        const contextValue = React.useMemo(() => ({ status, setStatus, variant }), [status, variant]);
 
         return (
             <AvatarContext.Provider value={contextValue}>
-                <div ref={ref} className={cn(avatarVariants({ size, shape }), className)} {...props}>
+                <div ref={ref} className={cn(avatarVariants({ size, shape, variant }), className)} {...props}>
                     {children}
                 </div>
             </AvatarContext.Provider>
@@ -125,7 +131,10 @@ const AvatarFallback = React.forwardRef<HTMLDivElement, AvatarFallbackProps>(({ 
             aria-hidden={!showFallback}
             style={!showFallback ? { display: "none" } : undefined}
             className={cn(
-                "flex h-full w-full items-center justify-center bg-surface-secondary text-text-secondary font-medium",
+                "flex h-full w-full items-center justify-center font-medium",
+                avatar.variant === "glasphormism"
+                    ? "bg-transparent text-text-primary"
+                    : "bg-surface-secondary text-text-secondary",
                 className
             )}
             {...props}

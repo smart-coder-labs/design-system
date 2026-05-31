@@ -6,7 +6,7 @@ export interface ChatBubbleBaseProps {
     avatar?: string;
     timestamp?: string;
     isOwn?: boolean;
-    variant?: 'default' | 'system' | 'error';
+    variant?: 'default' | 'system' | 'error' | 'glasphormism';
     status?: 'sending' | 'sent' | 'delivered' | 'read';
     showAvatar?: boolean;
     showTimestamp?: boolean;

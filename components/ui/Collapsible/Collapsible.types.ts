@@ -9,4 +9,5 @@ export interface CollapsibleProps extends HTMLAttributes<HTMLDivElement> {
     defaultOpen?: boolean;
     onOpenChange?: (open: boolean) => void;
     disabled?: boolean;
+    variant?: 'default' | 'glasphormism';
 }

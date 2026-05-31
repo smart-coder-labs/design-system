@@ -10,6 +10,7 @@ export const accordionVariants = cva('w-full', {
       default: '',
       bordered: 'border border-border-primary rounded-lg',
       separated: 'space-y-2',
+      glasphormism: 'bg-surface-glass/40 backdrop-blur-md border border-border-primary/30 rounded-xl py-1 shadow-sm',
     },
   },
   defaultVariants: {
@@ -23,6 +24,7 @@ export const accordionItemVariants = cva('', {
       default: 'border-b border-border-primary',
       bordered: 'border border-border-primary rounded-lg mb-2',
       separated: 'border border-border-primary rounded-lg',
+      glasphormism: 'border-b border-border-primary/20 last:border-b-0 px-4',
     },
   },
   defaultVariants: {

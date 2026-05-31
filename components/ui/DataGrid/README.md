@@ -170,6 +170,7 @@ const [page, setPage] = useState(1);
 | onSortChange | `(key: keyof T, direction: 'asc' \| 'desc') => void` | - | Sort handler |
 | onCellEdit | `(row: T, key: keyof T, value: any) => void` | - | Cell edit handler |
 | onExport | `() => void` | - | Export button handler |
+| variant | `'default' \| 'glasphormism'` | `'default'` | Visual variant. The `glasphormism` variant applies a translucent glassmorphic background, blur, and fine borders matching Apple's design system |
 
 ### Compound Components
 

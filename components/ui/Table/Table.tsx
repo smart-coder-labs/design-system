@@ -35,6 +35,8 @@ export interface TableProps<T> {
     onPageChange?: (page: number) => void;
     onSortChange?: (key: keyof T, direction: "asc" | "desc") => void;
     onRowClick?: (row: T) => void;
+    variant?: 'default' | 'glasphormism';
+    nested?: boolean;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -54,6 +56,8 @@ export function Table<T>({
     onPageChange,
     onSortChange,
     onRowClick,
+    variant = 'default',
+    nested = false,
 }: TableProps<T>) {
     const [sortKey, setSortKey] = React.useState<keyof T | null>(null);
     const [sortDirection, setSortDirection] = React.useState<"asc" | "desc">(
@@ -95,8 +99,16 @@ export function Table<T>({
     const rowPadding =
         density === "compact" ? "py-2" : "py-3";
 
+    const isGlass = variant === 'glasphormism';
+
     return (
-        <div className="overflow-hidden border border-border-primary rounded-xl bg-surface-elevated shadow-lg">
+        <div className={cn(
+            nested
+                ? "overflow-hidden w-full"
+                : isGlass
+                    ? "overflow-hidden border border-border-primary/30 rounded-xl bg-surface-glass/40 backdrop-blur-md shadow-lg"
+                    : "overflow-hidden border border-border-primary rounded-xl bg-surface-elevated shadow-lg"
+        )}>
             {/* Mobile / Card Grid View */}
             <div className={cn(
                 "p-4 bg-surface-secondary/20 rounded-xl",
@@ -105,11 +117,17 @@ export function Table<T>({
                 responsiveLayout === "responsive" && "block md:hidden"
             )}>
                 {selectable && (
-                    <div className="flex items-center justify-between px-4 py-3 bg-surface-elevated border border-border-primary rounded-xl shadow-sm mb-4">
+                    <div className={cn(
+                        "flex items-center justify-between px-4 py-3 border rounded-xl shadow-sm mb-4",
+                        isGlass
+                            ? "bg-surface-glass/25 border-border-primary/30"
+                            : "bg-surface-elevated border-border-primary"
+                    )}>
                         <label className="flex items-center gap-3 text-xs font-semibold text-text-secondary uppercase tracking-wider cursor-pointer">
                             <Checkbox
                                 checked={selectedRows.size === data.length && data.length > 0}
                                 onCheckedChange={toggleAll}
+                                variant={variant}
                             />
                             <span>Select All</span>
                         </label>
@@ -121,7 +139,12 @@ export function Table<T>({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                     {paginatedData.length === 0 ? (
-                        <div className="col-span-full py-12 text-center text-text-tertiary bg-surface-elevated border border-border-primary rounded-xl">
+                        <div className={cn(
+                            "col-span-full py-12 text-center text-text-tertiary border rounded-xl",
+                            isGlass
+                                ? "bg-surface-glass/20 border-border-primary/30"
+                                : "bg-surface-elevated border-border-primary"
+                        )}>
                             No results found.
                         </div>
                     ) : (
@@ -145,20 +168,30 @@ export function Table<T>({
                                     transition={{ duration: 0.2, delay: index * 0.03 }}
                                     onClick={() => onRowClick?.(row)}
                                     className={cn(
-                                        "group flex flex-col justify-between border rounded-2xl bg-surface-elevated overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer",
-                                        isSelected 
-                                            ? "border-accent-blue bg-accent-blue/[0.02]" 
-                                            : "border-border-primary/80 hover:border-accent-blue/30"
+                                        "group flex flex-col justify-between border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer",
+                                        isGlass
+                                            ? isSelected
+                                                ? "border-accent-blue bg-accent-blue/[0.02] backdrop-blur-sm"
+                                                : "border-border-primary/35 bg-surface-glass/20 backdrop-blur-sm hover:border-accent-blue/30"
+                                            : isSelected 
+                                                ? "border-accent-blue bg-accent-blue/[0.02] bg-surface-elevated" 
+                                                : "border-border-primary/80 bg-surface-elevated hover:border-accent-blue/30"
                                     )}
                                 >
                                     {/* Card Header */}
-                                    <div className="flex items-center justify-between px-4 py-3 bg-surface-secondary/30 border-b border-border-primary/50">
+                                    <div className={cn(
+                                        "flex items-center justify-between px-4 py-3 border-b",
+                                        isGlass
+                                            ? "bg-surface-glass/30 border-border-primary/20"
+                                            : "bg-surface-secondary/30 border-border-primary/50"
+                                    )}>
                                         <div className="flex items-center gap-3 min-w-0">
                                             {selectable && (
                                                 <div onClick={(e) => e.stopPropagation()} className="flex-shrink-0">
                                                     <Checkbox
                                                         checked={isSelected}
                                                         onCheckedChange={() => toggleRow(globalIndex)}
+                                                        variant={variant}
                                                     />
                                                 </div>
                                             )}
@@ -170,7 +203,7 @@ export function Table<T>({
                                             </span>
                                         </div>
                                     </div>
-
+ 
                                     {/* Card Body */}
                                     <div className="p-4 space-y-2.5 flex-grow">
                                         <div className="grid grid-cols-2 gap-3 text-sm">
@@ -204,13 +237,19 @@ export function Table<T>({
                 responsiveLayout === "table" && "table",
                 responsiveLayout === "responsive" && "hidden md:table"
             )}>
-                <thead className="bg-surface-secondary/50 border-b border-border-primary">
+                <thead className={cn(
+                    "border-b",
+                    isGlass
+                        ? "bg-surface-glass/40 border-border-primary/30"
+                        : "bg-surface-secondary/50 border-border-primary"
+                )}>
                     <tr>
                         {selectable && (
                             <th className="w-10 px-4">
                                 <Checkbox
                                     checked={selectedRows.size === data.length}
                                     onCheckedChange={toggleAll}
+                                    variant={variant}
                                 />
                             </th>
                         )}
@@ -271,12 +310,12 @@ export function Table<T>({
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.18 }}
                                 className={cn(
-                                    "border-b border-border-primary/50 transition-colors",
+                                    isGlass ? "border-b border-border-primary/20 transition-colors" : "border-b border-border-primary/50 transition-colors",
                                     striped && index % 2 === 1
-                                        ? "bg-surface-secondary/40"
+                                        ? isGlass ? "bg-surface-glass/10" : "bg-surface-secondary/40"
                                         : "",
                                     hoverable &&
-                                    "hover:bg-surface-secondary/70 cursor-pointer"
+                                    (isGlass ? "hover:bg-surface-glass/25 cursor-pointer" : "hover:bg-surface-secondary/70 cursor-pointer")
                                 )}
                                 onClick={() => onRowClick?.(row)}
                             >
@@ -285,6 +324,7 @@ export function Table<T>({
                                         <Checkbox
                                             checked={selectedRows.has(globalIndex)}
                                             onCheckedChange={() => toggleRow(globalIndex)}
+                                            variant={variant}
                                         />
                                     </td>
                                 )}
@@ -309,7 +349,12 @@ export function Table<T>({
             </table>
 
             {/* PAGINATION */}
-            <div className="flex items-center justify-between px-4 py-3 bg-surface-secondary/40 border-t border-border-primary">
+            <div className={cn(
+                "flex items-center justify-between px-4 py-3 border-t",
+                isGlass
+                    ? "bg-surface-glass/30 border-border-primary/30"
+                    : "bg-surface-secondary/40 border-t border-border-primary"
+            )}>
                 <p className="text-xs text-text-tertiary">
                     Page {page} of {totalPages}
                 </p>
@@ -318,12 +363,14 @@ export function Table<T>({
                     <PaginationButton
                         disabled={page === 1}
                         onClick={() => onPageChange?.(page - 1)}
+                        variant={variant}
                     >
                         <ChevronLeft className="w-4 h-4" />
                     </PaginationButton>
                     <PaginationButton
                         disabled={page === totalPages}
                         onClick={() => onPageChange?.(page + 1)}
+                        variant={variant}
                     >
                         <ChevronRight className="w-4 h-4" />
                     </PaginationButton>
@@ -341,18 +388,23 @@ function PaginationButton({
     disabled,
     children,
     onClick,
+    variant = 'default',
 }: {
     disabled?: boolean;
     children: React.ReactNode;
     onClick?: () => void;
+    variant?: 'default' | 'glasphormism';
 }) {
+    const isGlass = variant === 'glasphormism';
     return (
         <button
             disabled={disabled}
             onClick={onClick}
             className={cn(
-                "p-2 rounded-lg border border-border-primary text-text-secondary transition-all",
-                "hover:bg-surface-secondary hover:text-text-primary",
+                "p-2 rounded-lg border text-text-secondary transition-all",
+                isGlass
+                    ? "border-border-primary/30 bg-surface-glass/20 hover:bg-surface-glass/45 hover:text-text-primary"
+                    : "border-border-primary hover:bg-surface-secondary hover:text-text-primary",
                 "disabled:opacity-40 disabled:cursor-not-allowed"
             )}
         >
@@ -365,11 +417,14 @@ function Checkbox({
     checked,
     onCheckedChange,
     disabled,
+    variant = 'default',
 }: {
     checked: boolean;
     onCheckedChange?: () => void;
     disabled?: boolean;
+    variant?: 'default' | 'glasphormism';
 }) {
+    const isGlass = variant === 'glasphormism';
     return (
         <button
             type="button"
@@ -389,9 +444,11 @@ function Checkbox({
                 }
             }}
             className={cn(
-                "h-4 w-4 rounded-md border border-border-primary bg-surface-primary flex items-center justify-center",
+                "h-4 w-4 rounded-md border flex items-center justify-center transition-colors",
+                isGlass
+                    ? "border-border-primary/45 bg-surface-glass/25"
+                    : "border-border-primary bg-surface-primary",
                 "data-[state=checked]:bg-accent-blue data-[state=checked]:border-accent-blue",
-                "transition-colors",
                 disabled && "opacity-50 cursor-not-allowed"
             )}
         >

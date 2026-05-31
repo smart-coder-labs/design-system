@@ -5,7 +5,7 @@
 import type { HTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
 type AccordionType = 'single' | 'multiple';
-type AccordionVariant = 'default' | 'bordered' | 'separated';
+type AccordionVariant = 'default' | 'bordered' | 'separated' | 'glasphormism';
 
 type AccordionSingleProps = {
     type?: "single";

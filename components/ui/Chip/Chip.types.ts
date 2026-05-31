@@ -4,7 +4,7 @@
 
 import type { HTMLAttributes } from 'react';
 
-export type ChipVariant = 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info';
+export type ChipVariant = 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'glasphormism';
 export type ChipSize = 'sm' | 'md' | 'lg';
 
 export interface ChipProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onClick'> {

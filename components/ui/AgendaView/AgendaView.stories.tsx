@@ -182,3 +182,19 @@ export const MobileResponsive: Story = {
         ),
     ],
 };
+
+export const Glasphormism: Story = {
+    args: {
+        events: sampleEvents,
+        currentDate: today,
+        days: 7,
+        variant: 'glasphormism',
+    },
+    decorators: [
+        (Story) => (
+            <div className="p-8 bg-slate-100 dark:bg-slate-900 rounded-2xl w-full">
+                <Story />
+            </div>
+        ),
+    ],
+};

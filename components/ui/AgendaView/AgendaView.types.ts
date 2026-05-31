@@ -5,4 +5,5 @@ export interface AgendaViewProps {
     currentDate: Date;
     days?: number;
     onEventClick?: (event: CalendarEvent) => void;
+    variant?: 'default' | 'glasphormism';
 }

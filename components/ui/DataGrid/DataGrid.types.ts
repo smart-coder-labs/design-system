@@ -33,4 +33,5 @@ export interface DataGridProps<T> extends React.HTMLAttributes<HTMLDivElement> {
     onSortChange?: (key: keyof T, direction: "asc" | "desc") => void;
     onCellEdit?: (row: T, key: keyof T, value: any) => void;
     onExport?: () => void;
+    variant?: 'default' | 'glasphormism';
 }

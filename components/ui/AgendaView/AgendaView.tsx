@@ -16,6 +16,7 @@ export const AgendaView: React.FC<AgendaViewProps> = ({
     currentDate,
     days = 30,
     onEventClick,
+    variant = 'default',
 }) => {
     const startDate = new Date(currentDate);
     startDate.setHours(0, 0, 0, 0);
@@ -60,19 +61,28 @@ export const AgendaView: React.FC<AgendaViewProps> = ({
                                     <div
                                         key={event.id}
                                         onClick={() => onEventClick?.(event)}
+                                        className={variant === 'glasphormism' ? "bg-surface-glass/30 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-sm" : undefined}
                                         style={{
                                             padding: '16px',
-                                            backgroundColor: 'var(--color-background-secondary)',
+                                            backgroundColor: variant === 'glasphormism' ? undefined : 'var(--color-background-secondary)',
                                             borderLeft: `4px solid ${event.color || 'var(--color-accent-blue)'}`,
                                             borderRadius: '8px',
                                             cursor: 'pointer',
                                             transition: 'all 0.2s var(--ease-apple)',
                                         }}
                                         onMouseEnter={(e) => {
-                                            e.currentTarget.style.backgroundColor = 'var(--color-background-tertiary)';
+                                            if (variant === 'glasphormism') {
+                                                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                                            } else {
+                                                e.currentTarget.style.backgroundColor = 'var(--color-background-tertiary)';
+                                            }
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.currentTarget.style.backgroundColor = 'var(--color-background-secondary)';
+                                            if (variant === 'glasphormism') {
+                                                e.currentTarget.style.backgroundColor = '';
+                                            } else {
+                                                e.currentTarget.style.backgroundColor = 'var(--color-background-secondary)';
+                                            }
                                         }}
                                     >
                                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>

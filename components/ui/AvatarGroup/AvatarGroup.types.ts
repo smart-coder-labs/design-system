@@ -17,4 +17,5 @@ export interface AvatarGroupProps extends HTMLAttributes<HTMLDivElement> {
     max?: number;
     size?: AvatarGroupSize;
     showTooltip?: boolean;
+    variant?: 'default' | 'glasphormism';
 }

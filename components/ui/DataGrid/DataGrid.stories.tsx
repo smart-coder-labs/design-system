@@ -72,6 +72,22 @@ export const Default: Story = {
   },
 };
 
+export const Glasphormism: Story = {
+  args: {
+    columns,
+    data: mockData,
+    variant: 'glasphormism',
+    selectable: true,
+  },
+  decorators: [
+    (Story) => (
+      <div className="p-8 bg-slate-100 dark:bg-slate-900 rounded-2xl w-full">
+        <Story />
+      </div>
+    ),
+  ],
+};
+
 export const Selectable: Story = {
   args: {
     columns,
@@ -210,7 +226,7 @@ export const CompoundComposition: Story = {
     ]);
 
     return (
-      <div className="space-y-4 p-4 border border-border-primary rounded-2xl bg-surface-elevated max-w-xl shadow-sm">
+      <div className="space-y-4 p-4 border border-border-primary rounded-2xl bg-surface-elevated w-full shadow-sm">
         <div className="flex justify-between items-center pb-3 border-b border-border-primary">
           <span className="font-semibold text-text-primary text-sm">Compound Component Sub-parts</span>
           <DataGrid.ColumnMenu

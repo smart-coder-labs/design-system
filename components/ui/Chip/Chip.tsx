@@ -30,6 +30,7 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(
             warning: "bg-status-warning/10 text-status-warning border-status-warning/20 hover:bg-status-warning/20",
             error: "bg-status-error/10 text-status-error border-status-error/20 hover:bg-status-error/20",
             info: "bg-status-info/10 text-status-info border-status-info/20 hover:bg-status-info/20",
+            glasphormism: "bg-surface-glass/40 backdrop-blur-md border-border-primary/50 text-text-primary hover:bg-surface-glass/60",
         };
 
         const sizes = {

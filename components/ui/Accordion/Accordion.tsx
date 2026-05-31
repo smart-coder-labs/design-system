@@ -230,10 +230,10 @@ export const AccordionContent = React.forwardRef<HTMLDivElement, AccordionConten
                 aria-hidden={!isOpen}
                 data-state={isOpen ? 'open' : 'closed'}
                 data-disabled={disabled ? '' : undefined}
-                className={cn(accordionContentVariants({ variant: 'default' }), className)}
+                className={accordionContentVariants({ variant: 'default' })}
                 {...props}
             >
-                <div ref={contentRef} className="pb-4 pt-0 text-text-secondary">
+                <div ref={contentRef} className={cn("pb-4 pt-0 text-text-secondary", className)}>
                     {children}
                 </div>
             </div>

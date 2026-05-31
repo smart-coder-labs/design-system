@@ -37,6 +37,9 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
                 : 'bg-surface-secondary text-text-primary',
             system: 'bg-surface-tertiary text-text-secondary text-center',
             error: 'bg-status-error/10 text-status-error border border-status-error/20',
+            glasphormism: isOwn
+                ? 'bg-accent-blue/35 backdrop-blur-md border border-white/25 text-white dark:text-text-primary shadow-sm'
+                : 'bg-surface-glass/40 backdrop-blur-md border border-border-primary/50 text-text-primary shadow-sm',
         };
 
         return (
@@ -52,9 +55,9 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
                 transition={{ duration: 0.2 }}
                 {...props}
             >
-                {showAvatar && !isOwn && variant === 'default' && (
+                {showAvatar && !isOwn && (variant === 'default' || variant === 'glasphormism') && (
                     <div className="flex-shrink-0">
-                        <Avatar className="w-8 h-8">
+                        <Avatar className="w-8 h-8" variant={variant === 'glasphormism' ? 'glasphormism' : undefined}>
                             {avatar && <AvatarImage src={avatar} alt={sender} />}
                             <AvatarFallback>
                                 {sender?.charAt(0).toUpperCase() || 'U'}
@@ -68,7 +71,7 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
                     isOwn ? "items-end" : "items-start",
                     variant === 'system' && "items-center w-full"
                 )}>
-                    {sender && !isOwn && variant === 'default' && (
+                    {sender && !isOwn && (variant === 'default' || variant === 'glasphormism') && (
                         <span className="text-xs text-text-tertiary mb-1 px-1">
                             {sender}
                         </span>
@@ -78,8 +81,8 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
                         className={cn(
                             "relative px-4 py-2.5 rounded-2xl max-w-[80%]",
                             variantStyles[variant],
-                            isOwn && variant === 'default' && "rounded-br-sm",
-                            !isOwn && variant === 'default' && "rounded-bl-sm",
+                            isOwn && (variant === 'default' || variant === 'glasphormism') && "rounded-br-sm",
+                            !isOwn && (variant === 'default' || variant === 'glasphormism') && "rounded-bl-sm",
                             variant === 'system' && "max-w-full"
                         )}
                     >

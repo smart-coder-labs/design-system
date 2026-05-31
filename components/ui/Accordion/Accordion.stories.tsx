@@ -41,3 +41,35 @@ export const Default: Story = {
         </Accordion>
     ),
 };
+
+export const Glasphormism: Story = {
+    render: () => (
+        <Accordion type="single" collapsible variant="glasphormism" className="w-full">
+            <AccordionItem value="item-1" variant="glasphormism">
+                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionContent>
+                    Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2" variant="glasphormism">
+                <AccordionTrigger>Is it styled?</AccordionTrigger>
+                <AccordionContent>
+                    Yes. It features a premium Apple-style glassmorphic design.
+                </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3" variant="glasphormism">
+                <AccordionTrigger>Is it animated?</AccordionTrigger>
+                <AccordionContent>
+                    Yes, with smooth transitions that emphasize depth and layers.
+                </AccordionContent>
+            </AccordionItem>
+        </Accordion>
+    ),
+    decorators: [
+        (Story) => (
+            <div className="p-8 bg-slate-100 dark:bg-slate-900 rounded-2xl w-full">
+                <Story />
+            </div>
+        ),
+    ],
+};
