@@ -165,10 +165,78 @@ const [page, setPage] = useState(1);
 | pageSize | `number` | `10` | Rows per page |
 | virtualScrolling | `boolean` | `false` | Enable virtual scrolling |
 | maxHeight | `string` | `'600px'` | Maximum table height |
+| responsiveLayout | `'table' \| 'cards' \| 'responsive'` | `'responsive'` | Rendering layout mode (`responsive` adapts automatically, `cards` forces mobile cards view, `table` forces desktop view) |
 | onPageChange | `(page: number) => void` | - | Page change handler |
 | onSortChange | `(key: keyof T, direction: 'asc' \| 'desc') => void` | - | Sort handler |
 | onCellEdit | `(row: T, key: keyof T, value: any) => void` | - | Cell edit handler |
 | onExport | `() => void` | - | Export button handler |
+
+### Compound Components
+
+The `DataGrid` component is built using the compound components pattern. It exports the root `DataGrid` and attaches the following subcomponents for custom rendering or advanced configurations:
+
+- **`DataGrid.Row`**: A generic table row element rendering a motion-enabled row with support for selection and custom cell callbacks.
+- **`DataGrid.Pagination`**: An Apple-style pagination control button.
+- **`DataGrid.Filter`**: A column filter trigger button rendering combobox or input dropdowns.
+- **`DataGrid.ColumnMenu`**: A settings menu to toggle column visibility and pinning.
+- **`DataGrid.ResizeHandle`**: An interactive drag handle to resize column widths.
+
+### Custom Layout Composition Example
+
+You can use the individual compound subcomponents directly to build completely custom datagrid or card grid layouts:
+
+```tsx
+import { DataGrid } from '@/components/ui/DataGrid';
+
+function CustomDashboardGrid() {
+  const colStates = new Map([
+    ['name', { visible: true, pinned: null, width: 150 }],
+    ['role', { visible: true, pinned: null, width: 150 }],
+  ]);
+
+  return (
+    <div className="space-y-4 p-4 bg-surface border border-border rounded-2xl">
+      <div className="flex justify-between items-center">
+        <h4>Compound Parts</h4>
+        <DataGrid.ColumnMenu
+          columns={columns}
+          columnStates={colStates}
+          onToggleVisibility={handleToggle}
+          onTogglePin={handlePin}
+        />
+      </div>
+
+      <table className="w-full">
+        <tbody>
+          {mockData.map((row, index) => (
+            <DataGrid.Row
+              key={row.id}
+              row={row}
+              index={index}
+              columns={columns}
+              columnStates={colStates}
+              selectable
+              selected={selectedRows.has(index)}
+              onToggle={toggleRow}
+              onCellClick={handleCellClick}
+              onCellEdit={handleCellEdit}
+              striped={false}
+              hoverable
+              rowPadding="py-3"
+              editingCell={null}
+            />
+          ))}
+        </tbody>
+      </table>
+
+      <div className="flex justify-end gap-2">
+        <DataGrid.Pagination onClick={prevPage}>Previous</DataGrid.Pagination>
+        <DataGrid.Pagination onClick={nextPage}>Next</DataGrid.Pagination>
+      </div>
+    </div>
+  );
+}
+```
 
 ### DataGridColumn
 

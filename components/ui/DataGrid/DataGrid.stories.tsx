@@ -198,3 +198,85 @@ export const FintechUseCase: StoryObj<typeof DataGrid<any>> = {
     },
   },
 };
+
+export const CompoundComposition: Story = {
+  render: () => {
+    const colStates = new Map<keyof User, any>([
+      ['name', { visible: true, pinned: null, width: 150 }],
+      ['email', { visible: true, pinned: null, width: 150 }],
+      ['role', { visible: true, pinned: null, width: 150 }],
+      ['status', { visible: true, pinned: null, width: 150 }],
+      ['balance', { visible: true, pinned: null, width: 150 }],
+    ]);
+
+    return (
+      <div className="space-y-4 p-4 border border-border-primary rounded-2xl bg-surface-elevated max-w-xl shadow-sm">
+        <div className="flex justify-between items-center pb-3 border-b border-border-primary">
+          <span className="font-semibold text-text-primary text-sm">Compound Component Sub-parts</span>
+          <DataGrid.ColumnMenu
+            columns={columns}
+            columnStates={colStates}
+            onToggleVisibility={() => {}}
+            onTogglePin={() => {}}
+          />
+        </div>
+        
+        <div className="overflow-hidden border border-border-primary rounded-xl">
+          <table className="w-full text-left border-collapse">
+            <tbody>
+              <DataGrid.Row
+                row={mockData[0]}
+                index={0}
+                columns={columns}
+                columnStates={colStates}
+                selectable={true}
+                selected={false}
+                striped={false}
+                hoverable={true}
+                rowPadding="py-3"
+                editingCell={null}
+                onToggle={() => {}}
+                onCellClick={() => {}}
+                onCellEdit={() => {}}
+              />
+              <DataGrid.Row
+                row={mockData[1]}
+                index={1}
+                columns={columns}
+                columnStates={colStates}
+                selectable={true}
+                selected={true}
+                striped={false}
+                hoverable={true}
+                rowPadding="py-3"
+                editingCell={null}
+                onToggle={() => {}}
+                onCellClick={() => {}}
+                onCellEdit={() => {}}
+              />
+            </tbody>
+          </table>
+        </div>
+
+        <div className="flex justify-between items-center pt-3 border-t border-border-primary">
+          <span className="text-xs text-text-secondary font-medium">Custom Pagination:</span>
+          <div className="flex gap-2">
+            <DataGrid.Pagination onClick={() => alert('Prev page clicked')}>
+              Previous
+            </DataGrid.Pagination>
+            <DataGrid.Pagination onClick={() => alert('Next page clicked')}>
+              Next
+            </DataGrid.Pagination>
+          </div>
+        </div>
+      </div>
+    );
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Demonstration of building a completely custom data list/table layout using the individual compound subcomponents directly.',
+      },
+    },
+  },
+};

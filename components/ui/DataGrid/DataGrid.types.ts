@@ -17,7 +17,7 @@ export interface DataGridColumn<T> {
     filterOptions?: { label: string; value: any }[];
 }
 
-export interface DataGridProps<T> {
+export interface DataGridProps<T> extends React.HTMLAttributes<HTMLDivElement> {
     columns: DataGridColumn<T>[];
     data: T[];
     selectable?: boolean;

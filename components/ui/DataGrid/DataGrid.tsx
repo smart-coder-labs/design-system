@@ -15,23 +15,28 @@ interface ColumnState {
     width: number;
 }
 
-export function DataGrid<T>({
-    columns = [],
-    data = [],
-    selectable = false,
-    striped = true,
-    hoverable = true,
-    density = "comfortable",
-    page = 1,
-    pageSize = 10,
-    virtualScrolling = false,
-    maxHeight = "600px",
-    responsiveLayout = "responsive",
-    onPageChange,
-    onSortChange,
-    onCellEdit,
-    onExport,
-}: DataGridProps<T>) {
+const DataGridComponent = <T,>(
+    {
+        columns = [],
+        data = [],
+        selectable = false,
+        striped = true,
+        hoverable = true,
+        density = "comfortable",
+        page = 1,
+        pageSize = 10,
+        virtualScrolling = false,
+        maxHeight = "600px",
+        responsiveLayout = "responsive",
+        onPageChange,
+        onSortChange,
+        onCellEdit,
+        onExport,
+        className,
+        ...props
+    }: DataGridProps<T>,
+    ref: React.Ref<HTMLDivElement>
+) => {
     const [sortKey, setSortKey] = React.useState<keyof T | null>(null);
     const [sortDirection, setSortDirection] = React.useState<"asc" | "desc">("asc");
     const [selectedRows, setSelectedRows] = React.useState<Set<number>>(new Set());
@@ -218,7 +223,7 @@ export function DataGrid<T>({
     const rowPadding = density === "compact" ? "py-2" : "py-3";
 
     return (
-        <div className="flex flex-col gap-3">
+        <div ref={ref} className={cn("flex flex-col gap-3", className)} {...props}>
             <div className="flex items-center justify-between px-4 py-3 bg-surface-elevated border border-border-primary rounded-xl">
                 <div className="flex items-center gap-2">
                     <select
@@ -275,7 +280,12 @@ export function DataGrid<T>({
             </div>
         </div>
     );
-}
+};
+
+const DataGridRoot = React.forwardRef(DataGridComponent) as unknown as <T>(
+    props: DataGridProps<T> & { ref?: React.Ref<HTMLDivElement> }
+) => React.ReactNode;
+(DataGridRoot as any).displayName = "DataGrid";
 
 interface DataGridRowProps<T> {
     row: T;
@@ -293,23 +303,27 @@ interface DataGridRowProps<T> {
     onCellEdit: (key: keyof T, value: any) => void;
 }
 
-export function DataGridRow<T>({
-    row,
-    index,
-    columns,
-    columnStates,
-    selectable,
-    selected,
-    striped,
-    hoverable,
-    rowPadding,
-    editingCell,
-    onToggle,
-    onCellClick,
-    onCellEdit,
-}: DataGridRowProps<T>) {
+const DataGridRowInner = <T,>(
+    {
+        row,
+        index,
+        columns,
+        columnStates,
+        selectable,
+        selected,
+        striped,
+        hoverable,
+        rowPadding,
+        editingCell,
+        onToggle,
+        onCellClick,
+        onCellEdit,
+    }: DataGridRowProps<T>,
+    ref: React.Ref<HTMLTableRowElement>
+) => {
     return (
         <motion.tr
+            ref={ref}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -328,7 +342,7 @@ export function DataGridRow<T>({
             )}
 
             {columns.map((col) => {
-                const state = columnStates.get(col.key)!;
+                const state = columnStates.get(col.key);
                 const isEditing =
                     editingCell?.row === index && editingCell?.col === col.key;
 
@@ -338,7 +352,7 @@ export function DataGridRow<T>({
                         className={cn(
                             "px-4 text-sm text-text-primary",
                             rowPadding,
-                            state.pinned === "left" &&
+                            state?.pinned === "left" &&
                             "sticky left-0 bg-surface-primary z-10"
                         )}
                         onClick={() => col.editable && onCellClick(col.key)}
@@ -366,41 +380,42 @@ export function DataGridRow<T>({
             })}
         </motion.tr>
     );
-}
+};
 
-export function PaginationButton({
-    disabled,
-    children,
-    onClick,
-}: {
-    disabled?: boolean;
-    children: React.ReactNode;
-    onClick?: () => void;
-}) {
+const DataGridRow = React.forwardRef(DataGridRowInner) as unknown as <T>(
+    props: DataGridRowProps<T> & { ref?: React.Ref<HTMLTableRowElement> }
+) => React.ReactNode;
+(DataGridRow as any).displayName = "DataGridRow";
+
+const PaginationButton = React.forwardRef<
+    HTMLButtonElement,
+    React.ButtonHTMLAttributes<HTMLButtonElement>
+>(({ className, ...props }, ref) => {
     return (
         <button
-            disabled={disabled}
-            onClick={onClick}
+            ref={ref}
             className={cn(
                 "p-2 rounded-lg border border-border-primary text-text-secondary transition-all",
                 "hover:bg-surface-secondary hover:text-text-primary",
-                "disabled:opacity-40 disabled:cursor-not-allowed"
+                "disabled:opacity-40 disabled:cursor-not-allowed",
+                className
             )}
-        >
-            {children}
-        </button>
+            {...props}
+        />
     );
-}
+});
+PaginationButton.displayName = "DataGridPagination";
 
-export function FilterButton<T>({
-    column,
-    value,
-    onChange,
-}: {
+interface FilterButtonProps<T> extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
     column: DataGridColumn<T>;
     value: string;
     onChange: (value: string) => void;
-}) {
+}
+
+const FilterButtonInner = <T,>(
+    { column, value, onChange, className, ...props }: FilterButtonProps<T>,
+    ref: React.Ref<HTMLDivElement>
+) => {
     const [open, setOpen] = React.useState(false);
     const [localValue, setLocalValue] = React.useState(value);
     const containerRef = React.useRef<HTMLDivElement>(null);
@@ -417,8 +432,10 @@ export function FilterButton<T>({
         return () => document.removeEventListener("mousedown", handleClick);
     }, [open]);
 
+    React.useImperativeHandle(ref, () => containerRef.current!);
+
     return (
-        <div className="relative" ref={containerRef}>
+        <div className={cn("relative", className)} ref={containerRef} {...props}>
             <button
                 className={cn(
                     "p-1 rounded-md transition-colors",
@@ -475,19 +492,31 @@ export function FilterButton<T>({
             )}
         </div>
     );
-}
+};
 
-export function ColumnVisibilityMenu<T>({
-    columns,
-    columnStates,
-    onToggleVisibility,
-    onTogglePin,
-}: {
+const FilterButton = React.forwardRef(FilterButtonInner) as unknown as <T>(
+    props: FilterButtonProps<T> & { ref?: React.Ref<HTMLDivElement> }
+) => React.ReactNode;
+(FilterButton as any).displayName = "DataGridFilter";
+
+interface ColumnVisibilityMenuProps<T> extends React.HTMLAttributes<HTMLDivElement> {
     columns: DataGridColumn<T>[];
     columnStates: Map<keyof T, ColumnState>;
     onToggleVisibility: (key: keyof T) => void;
     onTogglePin: (key: keyof T) => void;
-}) {
+}
+
+const ColumnVisibilityMenuInner = <T,>(
+    {
+        columns,
+        columnStates,
+        onToggleVisibility,
+        onTogglePin,
+        className,
+        ...props
+    }: ColumnVisibilityMenuProps<T>,
+    ref: React.Ref<HTMLDivElement>
+) => {
     const [open, setOpen] = React.useState(false);
     const [selectedKey, setSelectedKey] = React.useState<string>(columns[0] ? String(columns[0].key) : "");
     const containerRef = React.useRef<HTMLDivElement>(null);
@@ -505,8 +534,10 @@ export function ColumnVisibilityMenu<T>({
         return () => document.removeEventListener("mousedown", handleClick);
     }, [open]);
 
+    React.useImperativeHandle(ref, () => containerRef.current!);
+
     return (
-        <div className="relative" ref={containerRef}>
+        <div className={cn("relative", className)} ref={containerRef} {...props}>
             <button
                 className="flex items-center gap-1.5 px-3 py-1.5 text-sm bg-surface-secondary border border-border-primary rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-secondary/70 transition-all"
                 onClick={() => setOpen((prev) => !prev)}
@@ -555,15 +586,22 @@ export function ColumnVisibilityMenu<T>({
             )}
         </div>
     );
-}
+};
 
-export function ColumnResizeHandle<T>({
-    columnKey,
-    onResize,
-}: {
+const ColumnVisibilityMenu = React.forwardRef(ColumnVisibilityMenuInner) as unknown as <T>(
+    props: ColumnVisibilityMenuProps<T> & { ref?: React.Ref<HTMLDivElement> }
+) => React.ReactNode;
+(ColumnVisibilityMenu as any).displayName = "DataGridColumnMenu";
+
+interface ColumnResizeHandleProps<T> extends React.HTMLAttributes<HTMLDivElement> {
     columnKey: keyof T;
     onResize: (width: number) => void;
-}) {
+}
+
+const ColumnResizeHandleInner = <T,>(
+    { columnKey, onResize, className, ...props }: ColumnResizeHandleProps<T>,
+    ref: React.Ref<HTMLDivElement>
+) => {
     const [isDragging, setIsDragging] = React.useState(false);
     const startXRef = React.useRef(0);
     const startWidthRef = React.useRef(0);
@@ -593,12 +631,37 @@ export function ColumnResizeHandle<T>({
 
     return (
         <div
+            ref={ref}
             onMouseDown={handleMouseDown}
             className={cn(
                 "absolute right-0 top-0 bottom-0 w-1 cursor-col-resize hover:bg-accent-blue transition-colors",
-                isDragging && "bg-accent-blue"
+                isDragging && "bg-accent-blue",
+                className
             )}
+            {...props}
         />
     );
-}
+};
+
+const ColumnResizeHandle = React.forwardRef(ColumnResizeHandleInner) as unknown as <T>(
+    props: ColumnResizeHandleProps<T> & { ref?: React.Ref<HTMLDivElement> }
+) => React.ReactNode;
+(ColumnResizeHandle as any).displayName = "DataGridColumnResizeHandle";
+
+type DataGridCompound = typeof DataGridRoot & {
+    Row: typeof DataGridRow;
+    Pagination: typeof PaginationButton;
+    Filter: typeof FilterButton;
+    ColumnMenu: typeof ColumnVisibilityMenu;
+    ResizeHandle: typeof ColumnResizeHandle;
+};
+
+const CompoundDataGrid = DataGridRoot as unknown as DataGridCompound;
+CompoundDataGrid.Row = DataGridRow;
+CompoundDataGrid.Pagination = PaginationButton;
+CompoundDataGrid.Filter = FilterButton;
+CompoundDataGrid.ColumnMenu = ColumnVisibilityMenu;
+CompoundDataGrid.ResizeHandle = ColumnResizeHandle;
+
+export { CompoundDataGrid as DataGrid };
 
