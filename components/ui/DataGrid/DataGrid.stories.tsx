@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { DataGrid, DataGridColumn } from './DataGrid';
+import { DataGrid } from './DataGrid';
+import { DataGridColumn } from './DataGrid.types';
 import { Badge } from '../Badge';
 
 interface User {
@@ -26,7 +26,7 @@ const columns: DataGridColumn<User>[] = [
       { label: 'User', value: 'user' },
       { label: 'Manager', value: 'manager' },
     ],
-    render: (value) => (
+    render: (value: string) => (
       <Badge variant={value === 'admin' ? 'primary' : value === 'manager' ? 'warning' : 'default'} size="sm">
         {value}
       </Badge>
@@ -52,10 +52,14 @@ const mockData: User[] = [
   { id: 8, name: 'Henry Chen', email: 'henry@example.com', role: 'user', status: 'inactive', balance: 780 },
 ];
 
-const meta: Meta<typeof DataGrid> = {
+const meta: Meta<typeof DataGrid<User>> = {
   title: 'Data Display/DataGrid',
   component: DataGrid,
   tags: ['autodocs'],
+  args: {
+    columns,
+    data: mockData,
+  },
 };
 
 export default meta;
@@ -100,25 +104,92 @@ export const NoStripes: Story = {
   },
 };
 
-export const DarkMode: Story = {
-  parameters: {
-    backgrounds: { default: 'dark' },
-    themes: { themeOverride: 'dark' },
-  },
-  decorators: [
-    (Story) => (
-      <div className="dark bg-gray-950 min-h-screen p-8">
-        <Story />
-      </div>
-    ),
-  ],
-};
+
 export const MobileView: Story = {
   parameters: {
     viewport: { defaultViewport: 'mobile1' },
   },
+  args: {
+    responsiveLayout: 'cards',
+  },
 };
-export const FintechUseCase: Story = {
+
+interface Transaction {
+  id: string;
+  date: string;
+  description: string;
+  category: string;
+  amount: number;
+  type: 'credit' | 'debit';
+  status: 'completed' | 'pending' | 'failed';
+}
+
+const fintechColumns: DataGridColumn<Transaction>[] = [
+  { key: 'date', header: 'Date', sortable: true },
+  { key: 'description', header: 'Description', sortable: true, filterable: true },
+  {
+    key: 'category',
+    header: 'Category',
+    sortable: true,
+    filterable: true,
+    filterType: 'select',
+    filterOptions: [
+      { label: 'Food & Dining', value: 'Food & Dining' },
+      { label: 'Shopping', value: 'Shopping' },
+      { label: 'Utilities', value: 'Utilities' },
+      { label: 'Salary', value: 'Salary' },
+      { label: 'Investment', value: 'Investment' },
+    ],
+  },
+  {
+    key: 'amount',
+    header: 'Amount',
+    sortable: true,
+    render: (value: number, row: Transaction) => {
+      const isCredit = row.type === 'credit';
+      return (
+        <span className={isCredit ? 'text-emerald-500 font-medium' : 'text-text-primary font-medium'}>
+          {isCredit ? '+' : '-'}${Math.abs(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+        </span>
+      );
+    },
+  },
+  {
+    key: 'status',
+    header: 'Status',
+    sortable: true,
+    filterable: true,
+    filterType: 'select',
+    filterOptions: [
+      { label: 'Completed', value: 'completed' },
+      { label: 'Pending', value: 'pending' },
+      { label: 'Failed', value: 'failed' },
+    ],
+    render: (value: 'completed' | 'pending' | 'failed') => {
+      const variant = value === 'completed' ? 'success' : value === 'pending' ? 'warning' : 'error';
+      return (
+        <Badge variant={variant} size="sm">
+          {value.charAt(0).toUpperCase() + value.slice(1)}
+        </Badge>
+      );
+    },
+  },
+];
+
+const fintechData: Transaction[] = [
+  { id: 'TX1001', date: '2026-05-30', description: 'Acme Corp Salary', category: 'Salary', amount: 4500.00, type: 'credit', status: 'completed' },
+  { id: 'TX1002', date: '2026-05-29', description: 'Starbucks Coffee', category: 'Food & Dining', amount: 5.75, type: 'debit', status: 'completed' },
+  { id: 'TX1003', date: '2026-05-28', description: 'Amazon.com Purchase', category: 'Shopping', amount: 120.50, type: 'debit', status: 'completed' },
+  { id: 'TX1004', date: '2026-05-27', description: 'Electric Utility Bill', category: 'Utilities', amount: 85.20, type: 'debit', status: 'pending' },
+  { id: 'TX1005', date: '2026-05-26', description: 'Dividend Payment', category: 'Investment', amount: 150.00, type: 'credit', status: 'completed' },
+  { id: 'TX1006', date: '2026-05-25', description: 'Uber Ride', category: 'Food & Dining', amount: 24.30, type: 'debit', status: 'failed' },
+];
+
+export const FintechUseCase: StoryObj<typeof DataGrid<any>> = {
+  args: {
+    columns: fintechColumns,
+    data: fintechData,
+  },
   parameters: {
     docs: {
       description: {

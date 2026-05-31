@@ -2,10 +2,7 @@
   "_version": "1.3.1",
   "AIThinkingIndicator": {
     "name": "AIThinkingIndicator",
-    "dependencies": [
-      "framer-motion",
-      "class-variance-authority"
-    ],
+    "dependencies": ["framer-motion", "class-variance-authority"],
     "type": "components:ui",
     "files": [
       {
@@ -123,9 +120,7 @@
   },
   "Accordion": {
     "name": "Accordion",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -146,7 +141,7 @@
       }
     ],
     "version": "1.0.3",
-    "status": "experimental",
+    "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
     "history": [
@@ -184,10 +179,7 @@
   },
   "AchTransactionsVisualizer": {
     "name": "AchTransactionsVisualizer",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -239,10 +231,7 @@
   },
   "ActivityFeed": {
     "name": "ActivityFeed",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -301,10 +290,7 @@
   },
   "ActivityMonitor": {
     "name": "ActivityMonitor",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -328,29 +314,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ActivityMonitor.tsx",
-          "ActivityMonitor.types.ts",
-          "index.ts"
-        ]
+        "files": ["ActivityMonitor.tsx", "ActivityMonitor.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ActivityMonitor.tsx",
-          "ActivityMonitor.types.ts",
-          "index.ts"
-        ]
+        "files": ["ActivityMonitor.tsx", "ActivityMonitor.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ActivityMonitor.tsx",
-          "ActivityMonitor.types.ts",
-          "index.ts"
-        ]
+        "files": ["ActivityMonitor.tsx", "ActivityMonitor.types.ts", "index.ts"]
       }
     ]
   },
@@ -432,45 +406,30 @@
       }
     ],
     "version": "1.0.3",
-    "status": "experimental",
+    "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
     "history": [
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "AgendaView.tsx",
-          "AgendaView.types.ts",
-          "index.ts"
-        ]
+        "files": ["AgendaView.tsx", "AgendaView.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "AgendaView.tsx",
-          "AgendaView.types.ts",
-          "index.ts"
-        ]
+        "files": ["AgendaView.tsx", "AgendaView.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "AgendaView.tsx",
-          "AgendaView.types.ts",
-          "index.ts"
-        ]
+        "files": ["AgendaView.tsx", "AgendaView.types.ts", "index.ts"]
       }
     ]
   },
   "Alert": {
     "name": "Alert",
-    "dependencies": [
-      "lucide-react",
-      "class-variance-authority"
-    ],
+    "dependencies": ["lucide-react", "class-variance-authority"],
     "type": "components:ui",
     "files": [
       {
@@ -498,41 +457,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Alert.tsx",
-          "Alert.types.ts",
-          "Alert.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Alert.tsx", "Alert.types.ts", "Alert.styles.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Alert.tsx",
-          "Alert.types.ts",
-          "Alert.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Alert.tsx", "Alert.types.ts", "Alert.styles.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Alert.tsx",
-          "Alert.types.ts",
-          "Alert.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Alert.tsx", "Alert.types.ts", "Alert.styles.ts", "index.ts"]
       }
     ]
   },
   "AssetAllocationChart": {
     "name": "AssetAllocationChart",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -591,10 +532,7 @@
   },
   "AssetPriceTicker": {
     "name": "AssetPriceTicker",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -653,9 +591,7 @@
   },
   "AudioPlayer": {
     "name": "AudioPlayer",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -714,9 +650,7 @@
   },
   "Avatar": {
     "name": "Avatar",
-    "dependencies": [
-      "class-variance-authority"
-    ],
+    "dependencies": ["class-variance-authority"],
     "type": "components:ui",
     "files": [
       {
@@ -737,7 +671,7 @@
       }
     ],
     "version": "1.0.3",
-    "status": "experimental",
+    "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
     "history": [
@@ -775,9 +709,7 @@
   },
   "AvatarGroup": {
     "name": "AvatarGroup",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -798,7 +730,7 @@
       }
     ],
     "version": "1.0.3",
-    "status": "experimental",
+    "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
     "history": [
@@ -836,9 +768,7 @@
   },
   "Badge": {
     "name": "Badge",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -866,41 +796,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Badge.tsx",
-          "Badge.types.ts",
-          "Badge.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Badge.tsx", "Badge.types.ts", "Badge.styles.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Badge.tsx",
-          "Badge.types.ts",
-          "Badge.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Badge.tsx", "Badge.types.ts", "Badge.styles.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Badge.tsx",
-          "Badge.types.ts",
-          "Badge.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Badge.tsx", "Badge.types.ts", "Badge.styles.ts", "index.ts"]
       }
     ]
   },
   "BalanceChart": {
     "name": "BalanceChart",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -959,10 +871,7 @@
   },
   "BankAccountCard": {
     "name": "BankAccountCard",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1021,9 +930,7 @@
   },
   "BarcodeGenerator": {
     "name": "BarcodeGenerator",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1082,10 +989,7 @@
   },
   "BehavioralAuthSimulator": {
     "name": "BehavioralAuthSimulator",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1144,10 +1048,7 @@
   },
   "BiometricPrompt": {
     "name": "BiometricPrompt",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1206,9 +1107,7 @@
   },
   "Blockquote": {
     "name": "Blockquote",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1232,37 +1131,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Blockquote.tsx",
-          "Blockquote.types.ts",
-          "index.ts"
-        ]
+        "files": ["Blockquote.tsx", "Blockquote.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Blockquote.tsx",
-          "Blockquote.types.ts",
-          "index.ts"
-        ]
+        "files": ["Blockquote.tsx", "Blockquote.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Blockquote.tsx",
-          "Blockquote.types.ts",
-          "index.ts"
-        ]
+        "files": ["Blockquote.tsx", "Blockquote.types.ts", "index.ts"]
       }
     ]
   },
   "BottomNavigation": {
     "name": "BottomNavigation",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -1321,9 +1206,7 @@
   },
   "Breadcrumb": {
     "name": "Breadcrumb",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1347,37 +1230,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Breadcrumb.tsx",
-          "Breadcrumb.types.ts",
-          "index.ts"
-        ]
+        "files": ["Breadcrumb.tsx", "Breadcrumb.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Breadcrumb.tsx",
-          "Breadcrumb.types.ts",
-          "index.ts"
-        ]
+        "files": ["Breadcrumb.tsx", "Breadcrumb.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Breadcrumb.tsx",
-          "Breadcrumb.types.ts",
-          "index.ts"
-        ]
+        "files": ["Breadcrumb.tsx", "Breadcrumb.types.ts", "index.ts"]
       }
     ]
   },
   "BreadcrumbTabsHybrid": {
     "name": "BreadcrumbTabsHybrid",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1436,9 +1305,7 @@
   },
   "Button": {
     "name": "Button",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -1497,10 +1364,7 @@
   },
   "ButtonWithDropdown": {
     "name": "ButtonWithDropdown",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1611,9 +1475,7 @@
   },
   "Callout": {
     "name": "Callout",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1637,29 +1499,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Callout.tsx",
-          "Callout.types.ts",
-          "index.ts"
-        ]
+        "files": ["Callout.tsx", "Callout.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Callout.tsx",
-          "Callout.types.ts",
-          "index.ts"
-        ]
+        "files": ["Callout.tsx", "Callout.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Callout.tsx",
-          "Callout.types.ts",
-          "index.ts"
-        ]
+        "files": ["Callout.tsx", "Callout.types.ts", "index.ts"]
       }
     ]
   },
@@ -1689,37 +1539,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Caption.tsx",
-          "Caption.types.ts",
-          "index.ts"
-        ]
+        "files": ["Caption.tsx", "Caption.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Caption.tsx",
-          "Caption.types.ts",
-          "index.ts"
-        ]
+        "files": ["Caption.tsx", "Caption.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Caption.tsx",
-          "Caption.types.ts",
-          "index.ts"
-        ]
+        "files": ["Caption.tsx", "Caption.types.ts", "index.ts"]
       }
     ]
   },
   "Card": {
     "name": "Card",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -1747,41 +1583,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Card.tsx",
-          "Card.types.ts",
-          "Card.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Card.tsx", "Card.types.ts", "Card.styles.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Card.tsx",
-          "Card.types.ts",
-          "Card.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Card.tsx", "Card.types.ts", "Card.styles.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Card.tsx",
-          "Card.types.ts",
-          "Card.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Card.tsx", "Card.types.ts", "Card.styles.ts", "index.ts"]
       }
     ]
   },
   "CardSecurityControls": {
     "name": "CardSecurityControls",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1833,9 +1651,7 @@
   },
   "CartPreview": {
     "name": "CartPreview",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1859,38 +1675,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "CartPreview.tsx",
-          "CartPreview.types.ts",
-          "index.ts"
-        ]
+        "files": ["CartPreview.tsx", "CartPreview.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "CartPreview.tsx",
-          "CartPreview.types.ts",
-          "index.ts"
-        ]
+        "files": ["CartPreview.tsx", "CartPreview.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "CartPreview.tsx",
-          "CartPreview.types.ts",
-          "index.ts"
-        ]
+        "files": ["CartPreview.tsx", "CartPreview.types.ts", "index.ts"]
       }
     ]
   },
   "CashbackWidget": {
     "name": "CashbackWidget",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -1914,29 +1715,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "CashbackWidget.tsx",
-          "CashbackWidget.types.ts",
-          "index.ts"
-        ]
+        "files": ["CashbackWidget.tsx", "CashbackWidget.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "CashbackWidget.tsx",
-          "CashbackWidget.types.ts",
-          "index.ts"
-        ]
+        "files": ["CashbackWidget.tsx", "CashbackWidget.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "CashbackWidget.tsx",
-          "CashbackWidget.types.ts",
-          "index.ts"
-        ]
+        "files": ["CashbackWidget.tsx", "CashbackWidget.types.ts", "index.ts"]
       }
     ]
   },
@@ -1966,37 +1755,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Chart.tsx",
-          "Chart.types.ts",
-          "index.ts"
-        ]
+        "files": ["Chart.tsx", "Chart.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Chart.tsx",
-          "Chart.types.ts",
-          "index.ts"
-        ]
+        "files": ["Chart.tsx", "Chart.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Chart.tsx",
-          "Chart.types.ts",
-          "index.ts"
-        ]
+        "files": ["Chart.tsx", "Chart.types.ts", "index.ts"]
       }
     ]
   },
   "ChatBubble": {
     "name": "ChatBubble",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -2013,44 +1788,30 @@
       }
     ],
     "version": "1.0.3",
-    "status": "experimental",
+    "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
     "history": [
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ChatBubble.tsx",
-          "ChatBubble.types.ts",
-          "index.ts"
-        ]
+        "files": ["ChatBubble.tsx", "ChatBubble.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ChatBubble.tsx",
-          "ChatBubble.types.ts",
-          "index.ts"
-        ]
+        "files": ["ChatBubble.tsx", "ChatBubble.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ChatBubble.tsx",
-          "ChatBubble.types.ts",
-          "index.ts"
-        ]
+        "files": ["ChatBubble.tsx", "ChatBubble.types.ts", "index.ts"]
       }
     ]
   },
   "ChatInput": {
     "name": "ChatInput",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -2074,37 +1835,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ChatInput.tsx",
-          "ChatInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["ChatInput.tsx", "ChatInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ChatInput.tsx",
-          "ChatInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["ChatInput.tsx", "ChatInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ChatInput.tsx",
-          "ChatInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["ChatInput.tsx", "ChatInput.types.ts", "index.ts"]
       }
     ]
   },
   "Checkbox": {
     "name": "Checkbox",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -2128,38 +1875,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Checkbox.tsx",
-          "Checkbox.types.ts",
-          "index.ts"
-        ]
+        "files": ["Checkbox.tsx", "Checkbox.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Checkbox.tsx",
-          "Checkbox.types.ts",
-          "index.ts"
-        ]
+        "files": ["Checkbox.tsx", "Checkbox.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Checkbox.tsx",
-          "Checkbox.types.ts",
-          "index.ts"
-        ]
+        "files": ["Checkbox.tsx", "Checkbox.types.ts", "index.ts"]
       }
     ]
   },
   "Chip": {
     "name": "Chip",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -2176,44 +1908,30 @@
       }
     ],
     "version": "1.0.3",
-    "status": "experimental",
+    "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
     "history": [
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Chip.tsx",
-          "Chip.types.ts",
-          "index.ts"
-        ]
+        "files": ["Chip.tsx", "Chip.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Chip.tsx",
-          "Chip.types.ts",
-          "index.ts"
-        ]
+        "files": ["Chip.tsx", "Chip.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Chip.tsx",
-          "Chip.types.ts",
-          "index.ts"
-        ]
+        "files": ["Chip.tsx", "Chip.types.ts", "index.ts"]
       }
     ]
   },
   "CodeBlock": {
     "name": "CodeBlock",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -2237,46 +1955,28 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "CodeBlock.tsx",
-          "CodeBlock.types.ts",
-          "index.ts"
-        ]
+        "files": ["CodeBlock.tsx", "CodeBlock.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "CodeBlock.tsx",
-          "CodeBlock.types.ts",
-          "index.ts"
-        ]
+        "files": ["CodeBlock.tsx", "CodeBlock.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "CodeBlock.tsx",
-          "CodeBlock.types.ts",
-          "index.ts"
-        ]
+        "files": ["CodeBlock.tsx", "CodeBlock.types.ts", "index.ts"]
       },
       {
         "version": "1.1.0",
         "sha": "235e78a383b740aa2f230fcf1e472484c504a898",
-        "files": [
-          "CodeBlock.tsx",
-          "CodeBlock.types.ts",
-          "index.ts"
-        ]
+        "files": ["CodeBlock.tsx", "CodeBlock.types.ts", "index.ts"]
       }
     ]
   },
   "Collapsible": {
     "name": "Collapsible",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -2293,45 +1993,30 @@
       }
     ],
     "version": "1.0.3",
-    "status": "experimental",
+    "status": "stable",
     "added": "1.0.0",
     "breakingChanges": [],
     "history": [
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Collapsible.tsx",
-          "Collapsible.types.ts",
-          "index.ts"
-        ]
+        "files": ["Collapsible.tsx", "Collapsible.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Collapsible.tsx",
-          "Collapsible.types.ts",
-          "index.ts"
-        ]
+        "files": ["Collapsible.tsx", "Collapsible.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Collapsible.tsx",
-          "Collapsible.types.ts",
-          "index.ts"
-        ]
+        "files": ["Collapsible.tsx", "Collapsible.types.ts", "index.ts"]
       }
     ]
   },
   "Combobox": {
     "name": "Combobox",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -2355,37 +2040,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Combobox.tsx",
-          "Combobox.types.ts",
-          "index.ts"
-        ]
+        "files": ["Combobox.tsx", "Combobox.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Combobox.tsx",
-          "Combobox.types.ts",
-          "index.ts"
-        ]
+        "files": ["Combobox.tsx", "Combobox.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Combobox.tsx",
-          "Combobox.types.ts",
-          "index.ts"
-        ]
+        "files": ["Combobox.tsx", "Combobox.types.ts", "index.ts"]
       }
     ]
   },
   "ComicPanel": {
     "name": "ComicPanel",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -2409,37 +2080,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ComicPanel.tsx",
-          "ComicPanel.types.ts",
-          "index.ts"
-        ]
+        "files": ["ComicPanel.tsx", "ComicPanel.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ComicPanel.tsx",
-          "ComicPanel.types.ts",
-          "index.ts"
-        ]
+        "files": ["ComicPanel.tsx", "ComicPanel.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ComicPanel.tsx",
-          "ComicPanel.types.ts",
-          "index.ts"
-        ]
+        "files": ["ComicPanel.tsx", "ComicPanel.types.ts", "index.ts"]
       }
     ]
   },
   "CommandMenu": {
     "name": "CommandMenu",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -2463,37 +2120,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "CommandMenu.tsx",
-          "CommandMenu.types.ts",
-          "index.ts"
-        ]
+        "files": ["CommandMenu.tsx", "CommandMenu.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "CommandMenu.tsx",
-          "CommandMenu.types.ts",
-          "index.ts"
-        ]
+        "files": ["CommandMenu.tsx", "CommandMenu.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "CommandMenu.tsx",
-          "CommandMenu.types.ts",
-          "index.ts"
-        ]
+        "files": ["CommandMenu.tsx", "CommandMenu.types.ts", "index.ts"]
       }
     ]
   },
   "CommentThread": {
     "name": "CommentThread",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -2517,29 +2160,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "CommentThread.tsx",
-          "CommentThread.types.ts",
-          "index.ts"
-        ]
+        "files": ["CommentThread.tsx", "CommentThread.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "CommentThread.tsx",
-          "CommentThread.types.ts",
-          "index.ts"
-        ]
+        "files": ["CommentThread.tsx", "CommentThread.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "CommentThread.tsx",
-          "CommentThread.types.ts",
-          "index.ts"
-        ]
+        "files": ["CommentThread.tsx", "CommentThread.types.ts", "index.ts"]
       }
     ]
   },
@@ -2569,37 +2200,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ConfirmDialog.tsx",
-          "ConfirmDialog.types.ts",
-          "index.ts"
-        ]
+        "files": ["ConfirmDialog.tsx", "ConfirmDialog.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ConfirmDialog.tsx",
-          "ConfirmDialog.types.ts",
-          "index.ts"
-        ]
+        "files": ["ConfirmDialog.tsx", "ConfirmDialog.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ConfirmDialog.tsx",
-          "ConfirmDialog.types.ts",
-          "index.ts"
-        ]
+        "files": ["ConfirmDialog.tsx", "ConfirmDialog.types.ts", "index.ts"]
       }
     ]
   },
   "ContextMenu": {
     "name": "ContextMenu",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -2623,38 +2240,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ContextMenu.tsx",
-          "ContextMenu.types.ts",
-          "index.ts"
-        ]
+        "files": ["ContextMenu.tsx", "ContextMenu.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ContextMenu.tsx",
-          "ContextMenu.types.ts",
-          "index.ts"
-        ]
+        "files": ["ContextMenu.tsx", "ContextMenu.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ContextMenu.tsx",
-          "ContextMenu.types.ts",
-          "index.ts"
-        ]
+        "files": ["ContextMenu.tsx", "ContextMenu.types.ts", "index.ts"]
       }
     ]
   },
   "ContextualTrustBadge": {
     "name": "ContextualTrustBadge",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -2706,9 +2308,7 @@
   },
   "ControlCenterToggles": {
     "name": "ControlCenterToggles",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -2784,29 +2384,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Counters.tsx",
-          "Counters.types.ts",
-          "index.ts"
-        ]
+        "files": ["Counters.tsx", "Counters.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Counters.tsx",
-          "Counters.types.ts",
-          "index.ts"
-        ]
+        "files": ["Counters.tsx", "Counters.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Counters.tsx",
-          "Counters.types.ts",
-          "index.ts"
-        ]
+        "files": ["Counters.tsx", "Counters.types.ts", "index.ts"]
       }
     ]
   },
@@ -2864,10 +2452,7 @@
   },
   "CreditLimitManager": {
     "name": "CreditLimitManager",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -2919,10 +2504,7 @@
   },
   "CreditScoreSimulator": {
     "name": "CreditScoreSimulator",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -2974,10 +2556,7 @@
   },
   "CurrencyConverterWidget": {
     "name": "CurrencyConverterWidget",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -3029,10 +2608,7 @@
   },
   "DataGrid": {
     "name": "DataGrid",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -3056,37 +2632,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "DataGrid.tsx",
-          "DataGrid.types.ts",
-          "index.ts"
-        ]
+        "files": ["DataGrid.tsx", "DataGrid.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "DataGrid.tsx",
-          "DataGrid.types.ts",
-          "index.ts"
-        ]
+        "files": ["DataGrid.tsx", "DataGrid.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "DataGrid.tsx",
-          "DataGrid.types.ts",
-          "index.ts"
-        ]
+        "files": ["DataGrid.tsx", "DataGrid.types.ts", "index.ts"]
       }
     ]
   },
   "DatePicker": {
     "name": "DatePicker",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -3145,9 +2707,7 @@
   },
   "DateRangePicker": {
     "name": "DateRangePicker",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -3171,37 +2731,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "DateRangePicker.tsx",
-          "DateRangePicker.types.ts",
-          "index.ts"
-        ]
+        "files": ["DateRangePicker.tsx", "DateRangePicker.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "DateRangePicker.tsx",
-          "DateRangePicker.types.ts",
-          "index.ts"
-        ]
+        "files": ["DateRangePicker.tsx", "DateRangePicker.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "DateRangePicker.tsx",
-          "DateRangePicker.types.ts",
-          "index.ts"
-        ]
+        "files": ["DateRangePicker.tsx", "DateRangePicker.types.ts", "index.ts"]
       }
     ]
   },
   "DefinitionList": {
     "name": "DefinitionList",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -3225,37 +2771,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "DefinitionList.tsx",
-          "DefinitionList.types.ts",
-          "index.ts"
-        ]
+        "files": ["DefinitionList.tsx", "DefinitionList.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "DefinitionList.tsx",
-          "DefinitionList.types.ts",
-          "index.ts"
-        ]
+        "files": ["DefinitionList.tsx", "DefinitionList.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "DefinitionList.tsx",
-          "DefinitionList.types.ts",
-          "index.ts"
-        ]
+        "files": ["DefinitionList.tsx", "DefinitionList.types.ts", "index.ts"]
       }
     ]
   },
   "DescriptionBlock": {
     "name": "DescriptionBlock",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -3307,10 +2839,7 @@
   },
   "DeviceList": {
     "name": "DeviceList",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -3334,37 +2863,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "DeviceList.tsx",
-          "DeviceList.types.ts",
-          "index.ts"
-        ]
+        "files": ["DeviceList.tsx", "DeviceList.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "DeviceList.tsx",
-          "DeviceList.types.ts",
-          "index.ts"
-        ]
+        "files": ["DeviceList.tsx", "DeviceList.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "DeviceList.tsx",
-          "DeviceList.types.ts",
-          "index.ts"
-        ]
+        "files": ["DeviceList.tsx", "DeviceList.types.ts", "index.ts"]
       }
     ]
   },
   "DiffViewer": {
     "name": "DiffViewer",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -3388,29 +2903,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "DiffViewer.tsx",
-          "DiffViewer.types.ts",
-          "index.ts"
-        ]
+        "files": ["DiffViewer.tsx", "DiffViewer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "DiffViewer.tsx",
-          "DiffViewer.types.ts",
-          "index.ts"
-        ]
+        "files": ["DiffViewer.tsx", "DiffViewer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "DiffViewer.tsx",
-          "DiffViewer.types.ts",
-          "index.ts"
-        ]
+        "files": ["DiffViewer.tsx", "DiffViewer.types.ts", "index.ts"]
       }
     ]
   },
@@ -3440,38 +2943,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Divider.tsx",
-          "Divider.types.ts",
-          "index.ts"
-        ]
+        "files": ["Divider.tsx", "Divider.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Divider.tsx",
-          "Divider.types.ts",
-          "index.ts"
-        ]
+        "files": ["Divider.tsx", "Divider.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Divider.tsx",
-          "Divider.types.ts",
-          "index.ts"
-        ]
+        "files": ["Divider.tsx", "Divider.types.ts", "index.ts"]
       }
     ]
   },
   "DocScanOverlay": {
     "name": "DocScanOverlay",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -3495,37 +2983,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "DocScanOverlay.tsx",
-          "DocScanOverlay.types.ts",
-          "index.ts"
-        ]
+        "files": ["DocScanOverlay.tsx", "DocScanOverlay.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "DocScanOverlay.tsx",
-          "DocScanOverlay.types.ts",
-          "index.ts"
-        ]
+        "files": ["DocScanOverlay.tsx", "DocScanOverlay.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "DocScanOverlay.tsx",
-          "DocScanOverlay.types.ts",
-          "index.ts"
-        ]
+        "files": ["DocScanOverlay.tsx", "DocScanOverlay.types.ts", "index.ts"]
       }
     ]
   },
   "DockBar": {
     "name": "DockBar",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -3549,38 +3023,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "DockBar.tsx",
-          "DockBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["DockBar.tsx", "DockBar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "DockBar.tsx",
-          "DockBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["DockBar.tsx", "DockBar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "DockBar.tsx",
-          "DockBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["DockBar.tsx", "DockBar.types.ts", "index.ts"]
       }
     ]
   },
   "EarlyPaymentDiscount": {
     "name": "EarlyPaymentDiscount",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -3632,9 +3091,7 @@
   },
   "EmptyState": {
     "name": "EmptyState",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -3658,37 +3115,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "EmptyState.tsx",
-          "EmptyState.types.ts",
-          "index.ts"
-        ]
+        "files": ["EmptyState.tsx", "EmptyState.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "EmptyState.tsx",
-          "EmptyState.types.ts",
-          "index.ts"
-        ]
+        "files": ["EmptyState.tsx", "EmptyState.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "EmptyState.tsx",
-          "EmptyState.types.ts",
-          "index.ts"
-        ]
+        "files": ["EmptyState.tsx", "EmptyState.types.ts", "index.ts"]
       }
     ]
   },
   "ErrorBoundary": {
     "name": "ErrorBoundary",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -3712,38 +3155,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ErrorBoundary.tsx",
-          "ErrorBoundary.types.ts",
-          "index.ts"
-        ]
+        "files": ["ErrorBoundary.tsx", "ErrorBoundary.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ErrorBoundary.tsx",
-          "ErrorBoundary.types.ts",
-          "index.ts"
-        ]
+        "files": ["ErrorBoundary.tsx", "ErrorBoundary.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ErrorBoundary.tsx",
-          "ErrorBoundary.types.ts",
-          "index.ts"
-        ]
+        "files": ["ErrorBoundary.tsx", "ErrorBoundary.types.ts", "index.ts"]
       }
     ]
   },
   "ExpenseCategorizer": {
     "name": "ExpenseCategorizer",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -3795,10 +3223,7 @@
   },
   "FAB": {
     "name": "FAB",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -3822,38 +3247,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "FAB.tsx",
-          "FAB.types.ts",
-          "index.ts"
-        ]
+        "files": ["FAB.tsx", "FAB.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "FAB.tsx",
-          "FAB.types.ts",
-          "index.ts"
-        ]
+        "files": ["FAB.tsx", "FAB.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "FAB.tsx",
-          "FAB.types.ts",
-          "index.ts"
-        ]
+        "files": ["FAB.tsx", "FAB.types.ts", "index.ts"]
       }
     ]
   },
   "FABGroup": {
     "name": "FABGroup",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -3877,38 +3287,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "FABGroup.tsx",
-          "FABGroup.types.ts",
-          "index.ts"
-        ]
+        "files": ["FABGroup.tsx", "FABGroup.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "FABGroup.tsx",
-          "FABGroup.types.ts",
-          "index.ts"
-        ]
+        "files": ["FABGroup.tsx", "FABGroup.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "FABGroup.tsx",
-          "FABGroup.types.ts",
-          "index.ts"
-        ]
+        "files": ["FABGroup.tsx", "FABGroup.types.ts", "index.ts"]
       }
     ]
   },
   "FairUseLimitTracker": {
     "name": "FairUseLimitTracker",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -3960,10 +3355,7 @@
   },
   "FileIntelligencePreview": {
     "name": "FileIntelligencePreview",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4015,10 +3407,7 @@
   },
   "FileUpload": {
     "name": "FileUpload",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4077,9 +3466,7 @@
   },
   "FilterBar": {
     "name": "FilterBar",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4103,38 +3490,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "FilterBar.tsx",
-          "FilterBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["FilterBar.tsx", "FilterBar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "FilterBar.tsx",
-          "FilterBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["FilterBar.tsx", "FilterBar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "FilterBar.tsx",
-          "FilterBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["FilterBar.tsx", "FilterBar.types.ts", "index.ts"]
       }
     ]
   },
   "FinancialGoalTracker": {
     "name": "FinancialGoalTracker",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4186,10 +3558,7 @@
   },
   "FintechDashboardPreview": {
     "name": "FintechDashboardPreview",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4241,9 +3610,7 @@
   },
   "FloatingElement": {
     "name": "FloatingElement",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -4267,37 +3634,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "FloatingElement.tsx",
-          "FloatingElement.types.ts",
-          "index.ts"
-        ]
+        "files": ["FloatingElement.tsx", "FloatingElement.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "FloatingElement.tsx",
-          "FloatingElement.types.ts",
-          "index.ts"
-        ]
+        "files": ["FloatingElement.tsx", "FloatingElement.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "FloatingElement.tsx",
-          "FloatingElement.types.ts",
-          "index.ts"
-        ]
+        "files": ["FloatingElement.tsx", "FloatingElement.types.ts", "index.ts"]
       }
     ]
   },
   "FloatingToolbar": {
     "name": "FloatingToolbar",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4321,29 +3674,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "FloatingToolbar.tsx",
-          "FloatingToolbar.types.ts",
-          "index.ts"
-        ]
+        "files": ["FloatingToolbar.tsx", "FloatingToolbar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "FloatingToolbar.tsx",
-          "FloatingToolbar.types.ts",
-          "index.ts"
-        ]
+        "files": ["FloatingToolbar.tsx", "FloatingToolbar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "FloatingToolbar.tsx",
-          "FloatingToolbar.types.ts",
-          "index.ts"
-        ]
+        "files": ["FloatingToolbar.tsx", "FloatingToolbar.types.ts", "index.ts"]
       }
     ]
   },
@@ -4373,38 +3714,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Footer.tsx",
-          "Footer.types.ts",
-          "index.ts"
-        ]
+        "files": ["Footer.tsx", "Footer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Footer.tsx",
-          "Footer.types.ts",
-          "index.ts"
-        ]
+        "files": ["Footer.tsx", "Footer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Footer.tsx",
-          "Footer.types.ts",
-          "index.ts"
-        ]
+        "files": ["Footer.tsx", "Footer.types.ts", "index.ts"]
       }
     ]
   },
   "Gallery": {
     "name": "Gallery",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4428,38 +3754,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Gallery.tsx",
-          "Gallery.types.ts",
-          "index.ts"
-        ]
+        "files": ["Gallery.tsx", "Gallery.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Gallery.tsx",
-          "Gallery.types.ts",
-          "index.ts"
-        ]
+        "files": ["Gallery.tsx", "Gallery.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Gallery.tsx",
-          "Gallery.types.ts",
-          "index.ts"
-        ]
+        "files": ["Gallery.tsx", "Gallery.types.ts", "index.ts"]
       }
     ]
   },
   "GamifiedRewardTier": {
     "name": "GamifiedRewardTier",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4511,9 +3822,7 @@
   },
   "GestureCard": {
     "name": "GestureCard",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -4537,29 +3846,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "GestureCard.tsx",
-          "GestureCard.types.ts",
-          "index.ts"
-        ]
+        "files": ["GestureCard.tsx", "GestureCard.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "GestureCard.tsx",
-          "GestureCard.types.ts",
-          "index.ts"
-        ]
+        "files": ["GestureCard.tsx", "GestureCard.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "GestureCard.tsx",
-          "GestureCard.types.ts",
-          "index.ts"
-        ]
+        "files": ["GestureCard.tsx", "GestureCard.types.ts", "index.ts"]
       }
     ]
   },
@@ -4589,37 +3886,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "GridSystem.tsx",
-          "GridSystem.types.ts",
-          "index.ts"
-        ]
+        "files": ["GridSystem.tsx", "GridSystem.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "GridSystem.tsx",
-          "GridSystem.types.ts",
-          "index.ts"
-        ]
+        "files": ["GridSystem.tsx", "GridSystem.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "GridSystem.tsx",
-          "GridSystem.types.ts",
-          "index.ts"
-        ]
+        "files": ["GridSystem.tsx", "GridSystem.types.ts", "index.ts"]
       }
     ]
   },
   "HamburgerMenuIcon": {
     "name": "HamburgerMenuIcon",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -4671,9 +3954,7 @@
   },
   "HapticButton": {
     "name": "HapticButton",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -4697,29 +3978,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "HapticButton.tsx",
-          "HapticButton.types.ts",
-          "index.ts"
-        ]
+        "files": ["HapticButton.tsx", "HapticButton.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "HapticButton.tsx",
-          "HapticButton.types.ts",
-          "index.ts"
-        ]
+        "files": ["HapticButton.tsx", "HapticButton.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "HapticButton.tsx",
-          "HapticButton.types.ts",
-          "index.ts"
-        ]
+        "files": ["HapticButton.tsx", "HapticButton.types.ts", "index.ts"]
       }
     ]
   },
@@ -4749,38 +4018,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Heading.tsx",
-          "Heading.types.ts",
-          "index.ts"
-        ]
+        "files": ["Heading.tsx", "Heading.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Heading.tsx",
-          "Heading.types.ts",
-          "index.ts"
-        ]
+        "files": ["Heading.tsx", "Heading.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Heading.tsx",
-          "Heading.types.ts",
-          "index.ts"
-        ]
+        "files": ["Heading.tsx", "Heading.types.ts", "index.ts"]
       }
     ]
   },
   "HyperPersonalizedWidgetFeed": {
     "name": "HyperPersonalizedWidgetFeed",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4832,9 +4086,7 @@
   },
   "IconButton": {
     "name": "IconButton",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -4893,10 +4145,7 @@
   },
   "IdentityVerificationStep": {
     "name": "IdentityVerificationStep",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4948,10 +4197,7 @@
   },
   "ImageCarousel": {
     "name": "ImageCarousel",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -4975,37 +4221,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ImageCarousel.tsx",
-          "ImageCarousel.types.ts",
-          "index.ts"
-        ]
+        "files": ["ImageCarousel.tsx", "ImageCarousel.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ImageCarousel.tsx",
-          "ImageCarousel.types.ts",
-          "index.ts"
-        ]
+        "files": ["ImageCarousel.tsx", "ImageCarousel.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ImageCarousel.tsx",
-          "ImageCarousel.types.ts",
-          "index.ts"
-        ]
+        "files": ["ImageCarousel.tsx", "ImageCarousel.types.ts", "index.ts"]
       }
     ]
   },
   "ImageCropper": {
     "name": "ImageCropper",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -5029,37 +4261,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ImageCropper.tsx",
-          "ImageCropper.types.ts",
-          "index.ts"
-        ]
+        "files": ["ImageCropper.tsx", "ImageCropper.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ImageCropper.tsx",
-          "ImageCropper.types.ts",
-          "index.ts"
-        ]
+        "files": ["ImageCropper.tsx", "ImageCropper.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ImageCropper.tsx",
-          "ImageCropper.types.ts",
-          "index.ts"
-        ]
+        "files": ["ImageCropper.tsx", "ImageCropper.types.ts", "index.ts"]
       }
     ]
   },
   "ImmersiveHero": {
     "name": "ImmersiveHero",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -5083,37 +4301,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ImmersiveHero.tsx",
-          "ImmersiveHero.types.ts",
-          "index.ts"
-        ]
+        "files": ["ImmersiveHero.tsx", "ImmersiveHero.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ImmersiveHero.tsx",
-          "ImmersiveHero.types.ts",
-          "index.ts"
-        ]
+        "files": ["ImmersiveHero.tsx", "ImmersiveHero.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ImmersiveHero.tsx",
-          "ImmersiveHero.types.ts",
-          "index.ts"
-        ]
+        "files": ["ImmersiveHero.tsx", "ImmersiveHero.types.ts", "index.ts"]
       }
     ]
   },
   "InfiniteHorizontalLoop": {
     "name": "InfiniteHorizontalLoop",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -5165,9 +4369,7 @@
   },
   "Input": {
     "name": "Input",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -5195,41 +4397,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Input.tsx",
-          "Input.types.ts",
-          "Input.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Input.tsx", "Input.types.ts", "Input.styles.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Input.tsx",
-          "Input.types.ts",
-          "Input.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Input.tsx", "Input.types.ts", "Input.styles.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Input.tsx",
-          "Input.types.ts",
-          "Input.styles.ts",
-          "index.ts"
-        ]
+        "files": ["Input.tsx", "Input.types.ts", "Input.styles.ts", "index.ts"]
       }
     ]
   },
   "InspectorPanel": {
     "name": "InspectorPanel",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -5253,38 +4437,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "InspectorPanel.tsx",
-          "InspectorPanel.types.ts",
-          "index.ts"
-        ]
+        "files": ["InspectorPanel.tsx", "InspectorPanel.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "InspectorPanel.tsx",
-          "InspectorPanel.types.ts",
-          "index.ts"
-        ]
+        "files": ["InspectorPanel.tsx", "InspectorPanel.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "InspectorPanel.tsx",
-          "InspectorPanel.types.ts",
-          "index.ts"
-        ]
+        "files": ["InspectorPanel.tsx", "InspectorPanel.types.ts", "index.ts"]
       }
     ]
   },
   "InstallmentSimulator": {
     "name": "InstallmentSimulator",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -5336,10 +4505,7 @@
   },
   "InteractiveBillSplitter": {
     "name": "InteractiveBillSplitter",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -5391,9 +4557,7 @@
   },
   "InteractiveCursor": {
     "name": "InteractiveCursor",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -5445,9 +4609,7 @@
   },
   "InvoicePreview": {
     "name": "InvoicePreview",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -5471,38 +4633,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "InvoicePreview.tsx",
-          "InvoicePreview.types.ts",
-          "index.ts"
-        ]
+        "files": ["InvoicePreview.tsx", "InvoicePreview.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "InvoicePreview.tsx",
-          "InvoicePreview.types.ts",
-          "index.ts"
-        ]
+        "files": ["InvoicePreview.tsx", "InvoicePreview.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "InvoicePreview.tsx",
-          "InvoicePreview.types.ts",
-          "index.ts"
-        ]
+        "files": ["InvoicePreview.tsx", "InvoicePreview.types.ts", "index.ts"]
       }
     ]
   },
   "JargonTooltip": {
     "name": "JargonTooltip",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -5526,37 +4673,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "JargonTooltip.tsx",
-          "JargonTooltip.types.ts",
-          "index.ts"
-        ]
+        "files": ["JargonTooltip.tsx", "JargonTooltip.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "JargonTooltip.tsx",
-          "JargonTooltip.types.ts",
-          "index.ts"
-        ]
+        "files": ["JargonTooltip.tsx", "JargonTooltip.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "JargonTooltip.tsx",
-          "JargonTooltip.types.ts",
-          "index.ts"
-        ]
+        "files": ["JargonTooltip.tsx", "JargonTooltip.types.ts", "index.ts"]
       }
     ]
   },
   "JsonViewer": {
     "name": "JsonViewer",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -5580,38 +4713,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "JsonViewer.tsx",
-          "JsonViewer.types.ts",
-          "index.ts"
-        ]
+        "files": ["JsonViewer.tsx", "JsonViewer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "JsonViewer.tsx",
-          "JsonViewer.types.ts",
-          "index.ts"
-        ]
+        "files": ["JsonViewer.tsx", "JsonViewer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "JsonViewer.tsx",
-          "JsonViewer.types.ts",
-          "index.ts"
-        ]
+        "files": ["JsonViewer.tsx", "JsonViewer.types.ts", "index.ts"]
       }
     ]
   },
   "KPIBlock": {
     "name": "KPIBlock",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -5635,29 +4753,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "KPIBlock.tsx",
-          "KPIBlock.types.ts",
-          "index.ts"
-        ]
+        "files": ["KPIBlock.tsx", "KPIBlock.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "KPIBlock.tsx",
-          "KPIBlock.types.ts",
-          "index.ts"
-        ]
+        "files": ["KPIBlock.tsx", "KPIBlock.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "KPIBlock.tsx",
-          "KPIBlock.types.ts",
-          "index.ts"
-        ]
+        "files": ["KPIBlock.tsx", "KPIBlock.types.ts", "index.ts"]
       }
     ]
   },
@@ -5687,37 +4793,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "KanbanBoard.tsx",
-          "KanbanBoard.types.ts",
-          "index.ts"
-        ]
+        "files": ["KanbanBoard.tsx", "KanbanBoard.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "KanbanBoard.tsx",
-          "KanbanBoard.types.ts",
-          "index.ts"
-        ]
+        "files": ["KanbanBoard.tsx", "KanbanBoard.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "KanbanBoard.tsx",
-          "KanbanBoard.types.ts",
-          "index.ts"
-        ]
+        "files": ["KanbanBoard.tsx", "KanbanBoard.types.ts", "index.ts"]
       }
     ]
   },
   "KeyValueInfo": {
     "name": "KeyValueInfo",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -5741,29 +4833,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "KeyValueInfo.tsx",
-          "KeyValueInfo.types.ts",
-          "index.ts"
-        ]
+        "files": ["KeyValueInfo.tsx", "KeyValueInfo.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "KeyValueInfo.tsx",
-          "KeyValueInfo.types.ts",
-          "index.ts"
-        ]
+        "files": ["KeyValueInfo.tsx", "KeyValueInfo.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "KeyValueInfo.tsx",
-          "KeyValueInfo.types.ts",
-          "index.ts"
-        ]
+        "files": ["KeyValueInfo.tsx", "KeyValueInfo.types.ts", "index.ts"]
       }
     ]
   },
@@ -5793,29 +4873,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Label.tsx",
-          "Label.types.ts",
-          "index.ts"
-        ]
+        "files": ["Label.tsx", "Label.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Label.tsx",
-          "Label.types.ts",
-          "index.ts"
-        ]
+        "files": ["Label.tsx", "Label.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Label.tsx",
-          "Label.types.ts",
-          "index.ts"
-        ]
+        "files": ["Label.tsx", "Label.types.ts", "index.ts"]
       }
     ]
   },
@@ -5845,38 +4913,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Layout.tsx",
-          "Layout.types.ts",
-          "index.ts"
-        ]
+        "files": ["Layout.tsx", "Layout.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Layout.tsx",
-          "Layout.types.ts",
-          "index.ts"
-        ]
+        "files": ["Layout.tsx", "Layout.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Layout.tsx",
-          "Layout.types.ts",
-          "index.ts"
-        ]
+        "files": ["Layout.tsx", "Layout.types.ts", "index.ts"]
       }
     ]
   },
   "Lightbox": {
     "name": "Lightbox",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -5900,37 +4953,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Lightbox.tsx",
-          "Lightbox.types.ts",
-          "index.ts"
-        ]
+        "files": ["Lightbox.tsx", "Lightbox.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Lightbox.tsx",
-          "Lightbox.types.ts",
-          "index.ts"
-        ]
+        "files": ["Lightbox.tsx", "Lightbox.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Lightbox.tsx",
-          "Lightbox.types.ts",
-          "index.ts"
-        ]
+        "files": ["Lightbox.tsx", "Lightbox.types.ts", "index.ts"]
       }
     ]
   },
   "LoadingOverlay": {
     "name": "LoadingOverlay",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -5954,37 +4993,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "LoadingOverlay.tsx",
-          "LoadingOverlay.types.ts",
-          "index.ts"
-        ]
+        "files": ["LoadingOverlay.tsx", "LoadingOverlay.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "LoadingOverlay.tsx",
-          "LoadingOverlay.types.ts",
-          "index.ts"
-        ]
+        "files": ["LoadingOverlay.tsx", "LoadingOverlay.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "LoadingOverlay.tsx",
-          "LoadingOverlay.types.ts",
-          "index.ts"
-        ]
+        "files": ["LoadingOverlay.tsx", "LoadingOverlay.types.ts", "index.ts"]
       }
     ]
   },
   "LoginForm": {
     "name": "LoginForm",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6008,38 +5033,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "LoginForm.tsx",
-          "LoginForm.types.ts",
-          "index.ts"
-        ]
+        "files": ["LoginForm.tsx", "LoginForm.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "LoginForm.tsx",
-          "LoginForm.types.ts",
-          "index.ts"
-        ]
+        "files": ["LoginForm.tsx", "LoginForm.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "LoginForm.tsx",
-          "LoginForm.types.ts",
-          "index.ts"
-        ]
+        "files": ["LoginForm.tsx", "LoginForm.types.ts", "index.ts"]
       }
     ]
   },
   "MaintenanceMode": {
     "name": "MaintenanceMode",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6063,38 +5073,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "MaintenanceMode.tsx",
-          "MaintenanceMode.types.ts",
-          "index.ts"
-        ]
+        "files": ["MaintenanceMode.tsx", "MaintenanceMode.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "MaintenanceMode.tsx",
-          "MaintenanceMode.types.ts",
-          "index.ts"
-        ]
+        "files": ["MaintenanceMode.tsx", "MaintenanceMode.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "MaintenanceMode.tsx",
-          "MaintenanceMode.types.ts",
-          "index.ts"
-        ]
+        "files": ["MaintenanceMode.tsx", "MaintenanceMode.types.ts", "index.ts"]
       }
     ]
   },
   "MarkdownEditor": {
     "name": "MarkdownEditor",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6118,29 +5113,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "MarkdownEditor.tsx",
-          "MarkdownEditor.types.ts",
-          "index.ts"
-        ]
+        "files": ["MarkdownEditor.tsx", "MarkdownEditor.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "MarkdownEditor.tsx",
-          "MarkdownEditor.types.ts",
-          "index.ts"
-        ]
+        "files": ["MarkdownEditor.tsx", "MarkdownEditor.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "MarkdownEditor.tsx",
-          "MarkdownEditor.types.ts",
-          "index.ts"
-        ]
+        "files": ["MarkdownEditor.tsx", "MarkdownEditor.types.ts", "index.ts"]
       }
     ]
   },
@@ -6170,37 +5153,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "MasonryLayout.tsx",
-          "MasonryLayout.types.ts",
-          "index.ts"
-        ]
+        "files": ["MasonryLayout.tsx", "MasonryLayout.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "MasonryLayout.tsx",
-          "MasonryLayout.types.ts",
-          "index.ts"
-        ]
+        "files": ["MasonryLayout.tsx", "MasonryLayout.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "MasonryLayout.tsx",
-          "MasonryLayout.types.ts",
-          "index.ts"
-        ]
+        "files": ["MasonryLayout.tsx", "MasonryLayout.types.ts", "index.ts"]
       }
     ]
   },
   "MenuBar": {
     "name": "MenuBar",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -6224,38 +5193,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "MenuBar.tsx",
-          "MenuBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["MenuBar.tsx", "MenuBar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "MenuBar.tsx",
-          "MenuBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["MenuBar.tsx", "MenuBar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "MenuBar.tsx",
-          "MenuBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["MenuBar.tsx", "MenuBar.types.ts", "index.ts"]
       }
     ]
   },
   "MessageReactions": {
     "name": "MessageReactions",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6307,10 +5261,7 @@
   },
   "MicroCommitmentStepper": {
     "name": "MicroCommitmentStepper",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6362,9 +5313,7 @@
   },
   "Modal": {
     "name": "Modal",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -6388,29 +5337,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Modal.tsx",
-          "Modal.types.ts",
-          "index.ts"
-        ]
+        "files": ["Modal.tsx", "Modal.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Modal.tsx",
-          "Modal.types.ts",
-          "index.ts"
-        ]
+        "files": ["Modal.tsx", "Modal.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Modal.tsx",
-          "Modal.types.ts",
-          "index.ts"
-        ]
+        "files": ["Modal.tsx", "Modal.types.ts", "index.ts"]
       }
     ]
   },
@@ -6468,10 +5405,7 @@
   },
   "MultiCurrencyWallet": {
     "name": "MultiCurrencyWallet",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6523,10 +5457,7 @@
   },
   "MultiFileUpload": {
     "name": "MultiFileUpload",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6550,37 +5481,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "MultiFileUpload.tsx",
-          "MultiFileUpload.types.ts",
-          "index.ts"
-        ]
+        "files": ["MultiFileUpload.tsx", "MultiFileUpload.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "MultiFileUpload.tsx",
-          "MultiFileUpload.types.ts",
-          "index.ts"
-        ]
+        "files": ["MultiFileUpload.tsx", "MultiFileUpload.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "MultiFileUpload.tsx",
-          "MultiFileUpload.types.ts",
-          "index.ts"
-        ]
+        "files": ["MultiFileUpload.tsx", "MultiFileUpload.types.ts", "index.ts"]
       }
     ]
   },
   "NavBar": {
     "name": "NavBar",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -6604,37 +5521,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "NavBar.tsx",
-          "NavBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["NavBar.tsx", "NavBar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "NavBar.tsx",
-          "NavBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["NavBar.tsx", "NavBar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "NavBar.tsx",
-          "NavBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["NavBar.tsx", "NavBar.types.ts", "index.ts"]
       }
     ]
   },
   "NavigationDrawer": {
     "name": "NavigationDrawer",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -6686,10 +5589,7 @@
   },
   "NotificationCenterPanel": {
     "name": "NotificationCenterPanel",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6741,9 +5641,7 @@
   },
   "OTPInput": {
     "name": "OTPInput",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -6767,38 +5665,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "OTPInput.tsx",
-          "OTPInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["OTPInput.tsx", "OTPInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "OTPInput.tsx",
-          "OTPInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["OTPInput.tsx", "OTPInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "OTPInput.tsx",
-          "OTPInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["OTPInput.tsx", "OTPInput.types.ts", "index.ts"]
       }
     ]
   },
   "OfflineState": {
     "name": "OfflineState",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6822,37 +5705,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "OfflineState.tsx",
-          "OfflineState.types.ts",
-          "index.ts"
-        ]
+        "files": ["OfflineState.tsx", "OfflineState.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "OfflineState.tsx",
-          "OfflineState.types.ts",
-          "index.ts"
-        ]
+        "files": ["OfflineState.tsx", "OfflineState.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "OfflineState.tsx",
-          "OfflineState.types.ts",
-          "index.ts"
-        ]
+        "files": ["OfflineState.tsx", "OfflineState.types.ts", "index.ts"]
       }
     ]
   },
   "OrderSummary": {
     "name": "OrderSummary",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6876,37 +5745,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "OrderSummary.tsx",
-          "OrderSummary.types.ts",
-          "index.ts"
-        ]
+        "files": ["OrderSummary.tsx", "OrderSummary.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "OrderSummary.tsx",
-          "OrderSummary.types.ts",
-          "index.ts"
-        ]
+        "files": ["OrderSummary.tsx", "OrderSummary.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "OrderSummary.tsx",
-          "OrderSummary.types.ts",
-          "index.ts"
-        ]
+        "files": ["OrderSummary.tsx", "OrderSummary.types.ts", "index.ts"]
       }
     ]
   },
   "Pagination": {
     "name": "Pagination",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -6930,38 +5785,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Pagination.tsx",
-          "Pagination.types.ts",
-          "index.ts"
-        ]
+        "files": ["Pagination.tsx", "Pagination.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Pagination.tsx",
-          "Pagination.types.ts",
-          "index.ts"
-        ]
+        "files": ["Pagination.tsx", "Pagination.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Pagination.tsx",
-          "Pagination.types.ts",
-          "index.ts"
-        ]
+        "files": ["Pagination.tsx", "Pagination.types.ts", "index.ts"]
       }
     ]
   },
   "Panel": {
     "name": "Panel",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -6985,29 +5825,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Panel.tsx",
-          "Panel.types.ts",
-          "index.ts"
-        ]
+        "files": ["Panel.tsx", "Panel.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Panel.tsx",
-          "Panel.types.ts",
-          "index.ts"
-        ]
+        "files": ["Panel.tsx", "Panel.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Panel.tsx",
-          "Panel.types.ts",
-          "index.ts"
-        ]
+        "files": ["Panel.tsx", "Panel.types.ts", "index.ts"]
       }
     ]
   },
@@ -7037,37 +5865,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Paragraph.tsx",
-          "Paragraph.types.ts",
-          "index.ts"
-        ]
+        "files": ["Paragraph.tsx", "Paragraph.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Paragraph.tsx",
-          "Paragraph.types.ts",
-          "index.ts"
-        ]
+        "files": ["Paragraph.tsx", "Paragraph.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Paragraph.tsx",
-          "Paragraph.types.ts",
-          "index.ts"
-        ]
+        "files": ["Paragraph.tsx", "Paragraph.types.ts", "index.ts"]
       }
     ]
   },
   "ParallaxBanner": {
     "name": "ParallaxBanner",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -7087,34 +5901,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ParallaxBanner.tsx",
-          "index.ts"
-        ]
+        "files": ["ParallaxBanner.tsx", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ParallaxBanner.tsx",
-          "index.ts"
-        ]
+        "files": ["ParallaxBanner.tsx", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ParallaxBanner.tsx",
-          "index.ts"
-        ]
+        "files": ["ParallaxBanner.tsx", "index.ts"]
       }
     ]
   },
   "ParallaxStoryStage": {
     "name": "ParallaxStoryStage",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -7134,35 +5937,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ParallaxStoryStage.tsx",
-          "index.ts"
-        ]
+        "files": ["ParallaxStoryStage.tsx", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ParallaxStoryStage.tsx",
-          "index.ts"
-        ]
+        "files": ["ParallaxStoryStage.tsx", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ParallaxStoryStage.tsx",
-          "index.ts"
-        ]
+        "files": ["ParallaxStoryStage.tsx", "index.ts"]
       }
     ]
   },
   "PasswordInput": {
     "name": "PasswordInput",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -7186,38 +5977,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "PasswordInput.tsx",
-          "PasswordInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["PasswordInput.tsx", "PasswordInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "PasswordInput.tsx",
-          "PasswordInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["PasswordInput.tsx", "PasswordInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "PasswordInput.tsx",
-          "PasswordInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["PasswordInput.tsx", "PasswordInput.types.ts", "index.ts"]
       }
     ]
   },
   "PaymentConfirmationModal": {
     "name": "PaymentConfirmationModal",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -7321,10 +6097,7 @@
   },
   "PeerTagInput": {
     "name": "PeerTagInput",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -7348,29 +6121,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "PeerTagInput.tsx",
-          "PeerTagInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["PeerTagInput.tsx", "PeerTagInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "PeerTagInput.tsx",
-          "PeerTagInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["PeerTagInput.tsx", "PeerTagInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "PeerTagInput.tsx",
-          "PeerTagInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["PeerTagInput.tsx", "PeerTagInput.types.ts", "index.ts"]
       }
     ]
   },
@@ -7452,38 +6213,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Popover.tsx",
-          "Popover.types.ts",
-          "index.ts"
-        ]
+        "files": ["Popover.tsx", "Popover.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Popover.tsx",
-          "Popover.types.ts",
-          "index.ts"
-        ]
+        "files": ["Popover.tsx", "Popover.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Popover.tsx",
-          "Popover.types.ts",
-          "index.ts"
-        ]
+        "files": ["Popover.tsx", "Popover.types.ts", "index.ts"]
       }
     ]
   },
   "PortfolioDistribution": {
     "name": "PortfolioDistribution",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -7559,37 +6305,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "PriceDisplay.tsx",
-          "PriceDisplay.types.ts",
-          "index.ts"
-        ]
+        "files": ["PriceDisplay.tsx", "PriceDisplay.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "PriceDisplay.tsx",
-          "PriceDisplay.types.ts",
-          "index.ts"
-        ]
+        "files": ["PriceDisplay.tsx", "PriceDisplay.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "PriceDisplay.tsx",
-          "PriceDisplay.types.ts",
-          "index.ts"
-        ]
+        "files": ["PriceDisplay.tsx", "PriceDisplay.types.ts", "index.ts"]
       }
     ]
   },
   "ProductCard": {
     "name": "ProductCard",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -7613,37 +6345,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ProductCard.tsx",
-          "ProductCard.types.ts",
-          "index.ts"
-        ]
+        "files": ["ProductCard.tsx", "ProductCard.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ProductCard.tsx",
-          "ProductCard.types.ts",
-          "index.ts"
-        ]
+        "files": ["ProductCard.tsx", "ProductCard.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ProductCard.tsx",
-          "ProductCard.types.ts",
-          "index.ts"
-        ]
+        "files": ["ProductCard.tsx", "ProductCard.types.ts", "index.ts"]
       }
     ]
   },
   "Progress": {
     "name": "Progress",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -7663,35 +6381,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Progress.tsx",
-          "index.ts"
-        ]
+        "files": ["Progress.tsx", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Progress.tsx",
-          "index.ts"
-        ]
+        "files": ["Progress.tsx", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Progress.tsx",
-          "index.ts"
-        ]
+        "files": ["Progress.tsx", "index.ts"]
       }
     ]
   },
   "ProgressiveDisclosurePanel": {
     "name": "ProgressiveDisclosurePanel",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -7743,10 +6449,7 @@
   },
   "PromptSuggestionChips": {
     "name": "PromptSuggestionChips",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -7798,10 +6501,7 @@
   },
   "PropertyList": {
     "name": "PropertyList",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -7825,37 +6525,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "PropertyList.tsx",
-          "PropertyList.types.ts",
-          "index.ts"
-        ]
+        "files": ["PropertyList.tsx", "PropertyList.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "PropertyList.tsx",
-          "PropertyList.types.ts",
-          "index.ts"
-        ]
+        "files": ["PropertyList.tsx", "PropertyList.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "PropertyList.tsx",
-          "PropertyList.types.ts",
-          "index.ts"
-        ]
+        "files": ["PropertyList.tsx", "PropertyList.types.ts", "index.ts"]
       }
     ]
   },
   "QRCodeGenerator": {
     "name": "QRCodeGenerator",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -7879,29 +6565,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "QRCodeGenerator.tsx",
-          "QRCodeGenerator.types.ts",
-          "index.ts"
-        ]
+        "files": ["QRCodeGenerator.tsx", "QRCodeGenerator.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "QRCodeGenerator.tsx",
-          "QRCodeGenerator.types.ts",
-          "index.ts"
-        ]
+        "files": ["QRCodeGenerator.tsx", "QRCodeGenerator.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "QRCodeGenerator.tsx",
-          "QRCodeGenerator.types.ts",
-          "index.ts"
-        ]
+        "files": ["QRCodeGenerator.tsx", "QRCodeGenerator.types.ts", "index.ts"]
       }
     ]
   },
@@ -7983,38 +6657,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "QueryBuilder.tsx",
-          "QueryBuilder.types.ts",
-          "index.ts"
-        ]
+        "files": ["QueryBuilder.tsx", "QueryBuilder.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "QueryBuilder.tsx",
-          "QueryBuilder.types.ts",
-          "index.ts"
-        ]
+        "files": ["QueryBuilder.tsx", "QueryBuilder.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "QueryBuilder.tsx",
-          "QueryBuilder.types.ts",
-          "index.ts"
-        ]
+        "files": ["QueryBuilder.tsx", "QueryBuilder.types.ts", "index.ts"]
       }
     ]
   },
   "QuickTransferBar": {
     "name": "QuickTransferBar",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -8066,9 +6725,7 @@
   },
   "RadioGroup": {
     "name": "RadioGroup",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -8092,29 +6749,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "RadioGroup.tsx",
-          "RadioGroup.types.ts",
-          "index.ts"
-        ]
+        "files": ["RadioGroup.tsx", "RadioGroup.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "RadioGroup.tsx",
-          "RadioGroup.types.ts",
-          "index.ts"
-        ]
+        "files": ["RadioGroup.tsx", "RadioGroup.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "RadioGroup.tsx",
-          "RadioGroup.types.ts",
-          "index.ts"
-        ]
+        "files": ["RadioGroup.tsx", "RadioGroup.types.ts", "index.ts"]
       }
     ]
   },
@@ -8144,38 +6789,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "RangeSlider.tsx",
-          "RangeSlider.types.ts",
-          "index.ts"
-        ]
+        "files": ["RangeSlider.tsx", "RangeSlider.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "RangeSlider.tsx",
-          "RangeSlider.types.ts",
-          "index.ts"
-        ]
+        "files": ["RangeSlider.tsx", "RangeSlider.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "RangeSlider.tsx",
-          "RangeSlider.types.ts",
-          "index.ts"
-        ]
+        "files": ["RangeSlider.tsx", "RangeSlider.types.ts", "index.ts"]
       }
     ]
   },
   "RatingInput": {
     "name": "RatingInput",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -8199,38 +6829,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "RatingInput.tsx",
-          "RatingInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["RatingInput.tsx", "RatingInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "RatingInput.tsx",
-          "RatingInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["RatingInput.tsx", "RatingInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "RatingInput.tsx",
-          "RatingInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["RatingInput.tsx", "RatingInput.types.ts", "index.ts"]
       }
     ]
   },
   "RecoveryCodeDisplay": {
     "name": "RecoveryCodeDisplay",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -8282,10 +6897,7 @@
   },
   "RecurringInvestConfigurator": {
     "name": "RecurringInvestConfigurator",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -8361,37 +6973,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ResizablePanel.tsx",
-          "ResizablePanel.types.ts",
-          "index.ts"
-        ]
+        "files": ["ResizablePanel.tsx", "ResizablePanel.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ResizablePanel.tsx",
-          "ResizablePanel.types.ts",
-          "index.ts"
-        ]
+        "files": ["ResizablePanel.tsx", "ResizablePanel.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ResizablePanel.tsx",
-          "ResizablePanel.types.ts",
-          "index.ts"
-        ]
+        "files": ["ResizablePanel.tsx", "ResizablePanel.types.ts", "index.ts"]
       }
     ]
   },
   "ResourceMonitor": {
     "name": "ResourceMonitor",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -8415,38 +7013,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ResourceMonitor.tsx",
-          "ResourceMonitor.types.ts",
-          "index.ts"
-        ]
+        "files": ["ResourceMonitor.tsx", "ResourceMonitor.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ResourceMonitor.tsx",
-          "ResourceMonitor.types.ts",
-          "index.ts"
-        ]
+        "files": ["ResourceMonitor.tsx", "ResourceMonitor.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ResourceMonitor.tsx",
-          "ResourceMonitor.types.ts",
-          "index.ts"
-        ]
+        "files": ["ResourceMonitor.tsx", "ResourceMonitor.types.ts", "index.ts"]
       }
     ]
   },
   "RetailSwapInterface": {
     "name": "RetailSwapInterface",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -8522,38 +7105,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Reviews.tsx",
-          "Reviews.types.ts",
-          "index.ts"
-        ]
+        "files": ["Reviews.tsx", "Reviews.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Reviews.tsx",
-          "Reviews.types.ts",
-          "index.ts"
-        ]
+        "files": ["Reviews.tsx", "Reviews.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Reviews.tsx",
-          "Reviews.types.ts",
-          "index.ts"
-        ]
+        "files": ["Reviews.tsx", "Reviews.types.ts", "index.ts"]
       }
     ]
   },
   "RichTextEditor": {
     "name": "RichTextEditor",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -8577,37 +7145,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "RichTextEditor.tsx",
-          "RichTextEditor.types.ts",
-          "index.ts"
-        ]
+        "files": ["RichTextEditor.tsx", "RichTextEditor.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "RichTextEditor.tsx",
-          "RichTextEditor.types.ts",
-          "index.ts"
-        ]
+        "files": ["RichTextEditor.tsx", "RichTextEditor.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "RichTextEditor.tsx",
-          "RichTextEditor.types.ts",
-          "index.ts"
-        ]
+        "files": ["RichTextEditor.tsx", "RichTextEditor.types.ts", "index.ts"]
       }
     ]
   },
   "RotarySelector": {
     "name": "RotarySelector",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -8631,38 +7185,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "RotarySelector.tsx",
-          "RotarySelector.types.ts",
-          "index.ts"
-        ]
+        "files": ["RotarySelector.tsx", "RotarySelector.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "RotarySelector.tsx",
-          "RotarySelector.types.ts",
-          "index.ts"
-        ]
+        "files": ["RotarySelector.tsx", "RotarySelector.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "RotarySelector.tsx",
-          "RotarySelector.types.ts",
-          "index.ts"
-        ]
+        "files": ["RotarySelector.tsx", "RotarySelector.types.ts", "index.ts"]
       }
     ]
   },
   "RoundUpSavingsToggle": {
     "name": "RoundUpSavingsToggle",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -8790,37 +7329,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ScrollArea.tsx",
-          "ScrollArea.types.ts",
-          "index.ts"
-        ]
+        "files": ["ScrollArea.tsx", "ScrollArea.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ScrollArea.tsx",
-          "ScrollArea.types.ts",
-          "index.ts"
-        ]
+        "files": ["ScrollArea.tsx", "ScrollArea.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ScrollArea.tsx",
-          "ScrollArea.types.ts",
-          "index.ts"
-        ]
+        "files": ["ScrollArea.tsx", "ScrollArea.types.ts", "index.ts"]
       }
     ]
   },
   "ScrollProgressBar": {
     "name": "ScrollProgressBar",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -8840,34 +7365,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ScrollProgressBar.tsx",
-          "index.ts"
-        ]
+        "files": ["ScrollProgressBar.tsx", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ScrollProgressBar.tsx",
-          "index.ts"
-        ]
+        "files": ["ScrollProgressBar.tsx", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ScrollProgressBar.tsx",
-          "index.ts"
-        ]
+        "files": ["ScrollProgressBar.tsx", "index.ts"]
       }
     ]
   },
   "ScrollRevealCards": {
     "name": "ScrollRevealCards",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -8919,10 +7433,7 @@
   },
   "SearchInput": {
     "name": "SearchInput",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -8946,29 +7457,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "SearchInput.tsx",
-          "SearchInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["SearchInput.tsx", "SearchInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "SearchInput.tsx",
-          "SearchInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["SearchInput.tsx", "SearchInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "SearchInput.tsx",
-          "SearchInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["SearchInput.tsx", "SearchInput.types.ts", "index.ts"]
       }
     ]
   },
@@ -8998,38 +7497,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "SectionHeader.tsx",
-          "SectionHeader.types.ts",
-          "index.ts"
-        ]
+        "files": ["SectionHeader.tsx", "SectionHeader.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "SectionHeader.tsx",
-          "SectionHeader.types.ts",
-          "index.ts"
-        ]
+        "files": ["SectionHeader.tsx", "SectionHeader.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "SectionHeader.tsx",
-          "SectionHeader.types.ts",
-          "index.ts"
-        ]
+        "files": ["SectionHeader.tsx", "SectionHeader.types.ts", "index.ts"]
       }
     ]
   },
   "SecurityActivityLog": {
     "name": "SecurityActivityLog",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -9081,10 +7565,7 @@
   },
   "SecurityOTPInput": {
     "name": "SecurityOTPInput",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -9136,9 +7617,7 @@
   },
   "SegmentedInput": {
     "name": "SegmentedInput",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -9162,37 +7641,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "SegmentedInput.tsx",
-          "SegmentedInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["SegmentedInput.tsx", "SegmentedInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "SegmentedInput.tsx",
-          "SegmentedInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["SegmentedInput.tsx", "SegmentedInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "SegmentedInput.tsx",
-          "SegmentedInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["SegmentedInput.tsx", "SegmentedInput.types.ts", "index.ts"]
       }
     ]
   },
   "Select": {
     "name": "Select",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -9216,38 +7681,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Select.tsx",
-          "Select.types.ts",
-          "index.ts"
-        ]
+        "files": ["Select.tsx", "Select.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Select.tsx",
-          "Select.types.ts",
-          "index.ts"
-        ]
+        "files": ["Select.tsx", "Select.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Select.tsx",
-          "Select.types.ts",
-          "index.ts"
-        ]
+        "files": ["Select.tsx", "Select.types.ts", "index.ts"]
       }
     ]
   },
   "Sheet": {
     "name": "Sheet",
-    "dependencies": [
-      "lucide-react",
-      "class-variance-authority"
-    ],
+    "dependencies": ["lucide-react", "class-variance-authority"],
     "type": "components:ui",
     "files": [
       {
@@ -9271,37 +7721,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Sheet.tsx",
-          "Sheet.types.ts",
-          "index.ts"
-        ]
+        "files": ["Sheet.tsx", "Sheet.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Sheet.tsx",
-          "Sheet.types.ts",
-          "index.ts"
-        ]
+        "files": ["Sheet.tsx", "Sheet.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Sheet.tsx",
-          "Sheet.types.ts",
-          "index.ts"
-        ]
+        "files": ["Sheet.tsx", "Sheet.types.ts", "index.ts"]
       }
     ]
   },
   "Sidebar": {
     "name": "Sidebar",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -9325,37 +7761,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Sidebar.tsx",
-          "Sidebar.types.ts",
-          "index.ts"
-        ]
+        "files": ["Sidebar.tsx", "Sidebar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Sidebar.tsx",
-          "Sidebar.types.ts",
-          "index.ts"
-        ]
+        "files": ["Sidebar.tsx", "Sidebar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Sidebar.tsx",
-          "Sidebar.types.ts",
-          "index.ts"
-        ]
+        "files": ["Sidebar.tsx", "Sidebar.types.ts", "index.ts"]
       }
     ]
   },
   "SignaturePad": {
     "name": "SignaturePad",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -9379,37 +7801,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "SignaturePad.tsx",
-          "SignaturePad.types.ts",
-          "index.ts"
-        ]
+        "files": ["SignaturePad.tsx", "SignaturePad.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "SignaturePad.tsx",
-          "SignaturePad.types.ts",
-          "index.ts"
-        ]
+        "files": ["SignaturePad.tsx", "SignaturePad.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "SignaturePad.tsx",
-          "SignaturePad.types.ts",
-          "index.ts"
-        ]
+        "files": ["SignaturePad.tsx", "SignaturePad.types.ts", "index.ts"]
       }
     ]
   },
   "SignupForm": {
     "name": "SignupForm",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -9433,37 +7841,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "SignupForm.tsx",
-          "SignupForm.types.ts",
-          "index.ts"
-        ]
+        "files": ["SignupForm.tsx", "SignupForm.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "SignupForm.tsx",
-          "SignupForm.types.ts",
-          "index.ts"
-        ]
+        "files": ["SignupForm.tsx", "SignupForm.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "SignupForm.tsx",
-          "SignupForm.types.ts",
-          "index.ts"
-        ]
+        "files": ["SignupForm.tsx", "SignupForm.types.ts", "index.ts"]
       }
     ]
   },
   "Skeleton": {
     "name": "Skeleton",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -9483,35 +7877,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Skeleton.tsx",
-          "index.ts"
-        ]
+        "files": ["Skeleton.tsx", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Skeleton.tsx",
-          "index.ts"
-        ]
+        "files": ["Skeleton.tsx", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Skeleton.tsx",
-          "index.ts"
-        ]
+        "files": ["Skeleton.tsx", "index.ts"]
       }
     ]
   },
   "SlideToDelete": {
     "name": "SlideToDelete",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -9535,29 +7917,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "SlideToDelete.tsx",
-          "SlideToDelete.types.ts",
-          "index.ts"
-        ]
+        "files": ["SlideToDelete.tsx", "SlideToDelete.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "SlideToDelete.tsx",
-          "SlideToDelete.types.ts",
-          "index.ts"
-        ]
+        "files": ["SlideToDelete.tsx", "SlideToDelete.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "SlideToDelete.tsx",
-          "SlideToDelete.types.ts",
-          "index.ts"
-        ]
+        "files": ["SlideToDelete.tsx", "SlideToDelete.types.ts", "index.ts"]
       }
     ]
   },
@@ -9587,38 +7957,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Slider.tsx",
-          "Slider.types.ts",
-          "index.ts"
-        ]
+        "files": ["Slider.tsx", "Slider.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Slider.tsx",
-          "Slider.types.ts",
-          "index.ts"
-        ]
+        "files": ["Slider.tsx", "Slider.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Slider.tsx",
-          "Slider.types.ts",
-          "index.ts"
-        ]
+        "files": ["Slider.tsx", "Slider.types.ts", "index.ts"]
       }
     ]
   },
   "SmartInsightsCard": {
     "name": "SmartInsightsCard",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -9670,10 +8025,7 @@
   },
   "Snackbar": {
     "name": "Snackbar",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -9697,38 +8049,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Snackbar.tsx",
-          "Snackbar.types.ts",
-          "index.ts"
-        ]
+        "files": ["Snackbar.tsx", "Snackbar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Snackbar.tsx",
-          "Snackbar.types.ts",
-          "index.ts"
-        ]
+        "files": ["Snackbar.tsx", "Snackbar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Snackbar.tsx",
-          "Snackbar.types.ts",
-          "index.ts"
-        ]
+        "files": ["Snackbar.tsx", "Snackbar.types.ts", "index.ts"]
       }
     ]
   },
   "SocialPaymentFeed": {
     "name": "SocialPaymentFeed",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -9804,29 +8141,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Spacer.tsx",
-          "Spacer.types.ts",
-          "index.ts"
-        ]
+        "files": ["Spacer.tsx", "Spacer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Spacer.tsx",
-          "Spacer.types.ts",
-          "index.ts"
-        ]
+        "files": ["Spacer.tsx", "Spacer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Spacer.tsx",
-          "Spacer.types.ts",
-          "index.ts"
-        ]
+        "files": ["Spacer.tsx", "Spacer.types.ts", "index.ts"]
       }
     ]
   },
@@ -9856,37 +8181,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Sparkline.tsx",
-          "Sparkline.types.ts",
-          "index.ts"
-        ]
+        "files": ["Sparkline.tsx", "Sparkline.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Sparkline.tsx",
-          "Sparkline.types.ts",
-          "index.ts"
-        ]
+        "files": ["Sparkline.tsx", "Sparkline.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Sparkline.tsx",
-          "Sparkline.types.ts",
-          "index.ts"
-        ]
+        "files": ["Sparkline.tsx", "Sparkline.types.ts", "index.ts"]
       }
     ]
   },
   "Spinner": {
     "name": "Spinner",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -9910,38 +8221,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Spinner.tsx",
-          "Spinner.types.ts",
-          "index.ts"
-        ]
+        "files": ["Spinner.tsx", "Spinner.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Spinner.tsx",
-          "Spinner.types.ts",
-          "index.ts"
-        ]
+        "files": ["Spinner.tsx", "Spinner.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Spinner.tsx",
-          "Spinner.types.ts",
-          "index.ts"
-        ]
+        "files": ["Spinner.tsx", "Spinner.types.ts", "index.ts"]
       }
     ]
   },
   "SplitButton": {
     "name": "SplitButton",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -9965,29 +8261,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "SplitButton.tsx",
-          "SplitButton.types.ts",
-          "index.ts"
-        ]
+        "files": ["SplitButton.tsx", "SplitButton.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "SplitButton.tsx",
-          "SplitButton.types.ts",
-          "index.ts"
-        ]
+        "files": ["SplitButton.tsx", "SplitButton.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "SplitButton.tsx",
-          "SplitButton.types.ts",
-          "index.ts"
-        ]
+        "files": ["SplitButton.tsx", "SplitButton.types.ts", "index.ts"]
       }
     ]
   },
@@ -10017,38 +8301,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "SplitView.tsx",
-          "SplitView.types.ts",
-          "index.ts"
-        ]
+        "files": ["SplitView.tsx", "SplitView.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "SplitView.tsx",
-          "SplitView.types.ts",
-          "index.ts"
-        ]
+        "files": ["SplitView.tsx", "SplitView.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "SplitView.tsx",
-          "SplitView.types.ts",
-          "index.ts"
-        ]
+        "files": ["SplitView.tsx", "SplitView.types.ts", "index.ts"]
       }
     ]
   },
   "StatisticDisplay": {
     "name": "StatisticDisplay",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -10100,9 +8369,7 @@
   },
   "Stepper": {
     "name": "Stepper",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -10126,29 +8393,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Stepper.tsx",
-          "Stepper.types.ts",
-          "index.ts"
-        ]
+        "files": ["Stepper.tsx", "Stepper.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Stepper.tsx",
-          "Stepper.types.ts",
-          "index.ts"
-        ]
+        "files": ["Stepper.tsx", "Stepper.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Stepper.tsx",
-          "Stepper.types.ts",
-          "index.ts"
-        ]
+        "files": ["Stepper.tsx", "Stepper.types.ts", "index.ts"]
       }
     ]
   },
@@ -10178,37 +8433,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "StickyContainer.tsx",
-          "StickyContainer.types.ts",
-          "index.ts"
-        ]
+        "files": ["StickyContainer.tsx", "StickyContainer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "StickyContainer.tsx",
-          "StickyContainer.types.ts",
-          "index.ts"
-        ]
+        "files": ["StickyContainer.tsx", "StickyContainer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "StickyContainer.tsx",
-          "StickyContainer.types.ts",
-          "index.ts"
-        ]
+        "files": ["StickyContainer.tsx", "StickyContainer.types.ts", "index.ts"]
       }
     ]
   },
   "StickyImageTextSwap": {
     "name": "StickyImageTextSwap",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -10260,10 +8501,7 @@
   },
   "SubscriptionManager": {
     "name": "SubscriptionManager",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -10315,9 +8553,7 @@
   },
   "Switch": {
     "name": "Switch",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -10341,38 +8577,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Switch.tsx",
-          "Switch.types.ts",
-          "index.ts"
-        ]
+        "files": ["Switch.tsx", "Switch.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Switch.tsx",
-          "Switch.types.ts",
-          "index.ts"
-        ]
+        "files": ["Switch.tsx", "Switch.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Switch.tsx",
-          "Switch.types.ts",
-          "index.ts"
-        ]
+        "files": ["Switch.tsx", "Switch.types.ts", "index.ts"]
       }
     ]
   },
   "Table": {
     "name": "Table",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -10396,29 +8617,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Table.tsx",
-          "Table.types.ts",
-          "index.ts"
-        ]
+        "files": ["Table.tsx", "Table.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Table.tsx",
-          "Table.types.ts",
-          "index.ts"
-        ]
+        "files": ["Table.tsx", "Table.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Table.tsx",
-          "Table.types.ts",
-          "index.ts"
-        ]
+        "files": ["Table.tsx", "Table.types.ts", "index.ts"]
       }
     ]
   },
@@ -10448,37 +8657,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "TableOfContents.tsx",
-          "TableOfContents.types.ts",
-          "index.ts"
-        ]
+        "files": ["TableOfContents.tsx", "TableOfContents.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "TableOfContents.tsx",
-          "TableOfContents.types.ts",
-          "index.ts"
-        ]
+        "files": ["TableOfContents.tsx", "TableOfContents.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "TableOfContents.tsx",
-          "TableOfContents.types.ts",
-          "index.ts"
-        ]
+        "files": ["TableOfContents.tsx", "TableOfContents.types.ts", "index.ts"]
       }
     ]
   },
   "Tabs": {
     "name": "Tabs",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -10502,38 +8697,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Tabs.tsx",
-          "Tabs.types.ts",
-          "index.ts"
-        ]
+        "files": ["Tabs.tsx", "Tabs.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Tabs.tsx",
-          "Tabs.types.ts",
-          "index.ts"
-        ]
+        "files": ["Tabs.tsx", "Tabs.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Tabs.tsx",
-          "Tabs.types.ts",
-          "index.ts"
-        ]
+        "files": ["Tabs.tsx", "Tabs.types.ts", "index.ts"]
       }
     ]
   },
   "Tag": {
     "name": "Tag",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -10557,38 +8737,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Tag.tsx",
-          "Tag.types.ts",
-          "index.ts"
-        ]
+        "files": ["Tag.tsx", "Tag.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Tag.tsx",
-          "Tag.types.ts",
-          "index.ts"
-        ]
+        "files": ["Tag.tsx", "Tag.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Tag.tsx",
-          "Tag.types.ts",
-          "index.ts"
-        ]
+        "files": ["Tag.tsx", "Tag.types.ts", "index.ts"]
       }
     ]
   },
   "TagsInput": {
     "name": "TagsInput",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -10612,29 +8777,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "TagsInput.tsx",
-          "TagsInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["TagsInput.tsx", "TagsInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "TagsInput.tsx",
-          "TagsInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["TagsInput.tsx", "TagsInput.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "TagsInput.tsx",
-          "TagsInput.types.ts",
-          "index.ts"
-        ]
+        "files": ["TagsInput.tsx", "TagsInput.types.ts", "index.ts"]
       }
     ]
   },
@@ -10664,29 +8817,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Text.tsx",
-          "Text.types.ts",
-          "index.ts"
-        ]
+        "files": ["Text.tsx", "Text.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Text.tsx",
-          "Text.types.ts",
-          "index.ts"
-        ]
+        "files": ["Text.tsx", "Text.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Text.tsx",
-          "Text.types.ts",
-          "index.ts"
-        ]
+        "files": ["Text.tsx", "Text.types.ts", "index.ts"]
       }
     ]
   },
@@ -10716,38 +8857,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Textarea.tsx",
-          "Textarea.types.ts",
-          "index.ts"
-        ]
+        "files": ["Textarea.tsx", "Textarea.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Textarea.tsx",
-          "Textarea.types.ts",
-          "index.ts"
-        ]
+        "files": ["Textarea.tsx", "Textarea.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Textarea.tsx",
-          "Textarea.types.ts",
-          "index.ts"
-        ]
+        "files": ["Textarea.tsx", "Textarea.types.ts", "index.ts"]
       }
     ]
   },
   "ThemeToggle": {
     "name": "ThemeToggle",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -10771,38 +8897,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "ThemeToggle.tsx",
-          "ThemeToggle.types.ts",
-          "index.ts"
-        ]
+        "files": ["ThemeToggle.tsx", "ThemeToggle.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "ThemeToggle.tsx",
-          "ThemeToggle.types.ts",
-          "index.ts"
-        ]
+        "files": ["ThemeToggle.tsx", "ThemeToggle.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "ThemeToggle.tsx",
-          "ThemeToggle.types.ts",
-          "index.ts"
-        ]
+        "files": ["ThemeToggle.tsx", "ThemeToggle.types.ts", "index.ts"]
       }
     ]
   },
   "TimePicker": {
     "name": "TimePicker",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -10826,38 +8937,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "TimePicker.tsx",
-          "TimePicker.types.ts",
-          "index.ts"
-        ]
+        "files": ["TimePicker.tsx", "TimePicker.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "TimePicker.tsx",
-          "TimePicker.types.ts",
-          "index.ts"
-        ]
+        "files": ["TimePicker.tsx", "TimePicker.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "TimePicker.tsx",
-          "TimePicker.types.ts",
-          "index.ts"
-        ]
+        "files": ["TimePicker.tsx", "TimePicker.types.ts", "index.ts"]
       }
     ]
   },
   "Timeline": {
     "name": "Timeline",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -10881,29 +8977,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Timeline.tsx",
-          "Timeline.types.ts",
-          "index.ts"
-        ]
+        "files": ["Timeline.tsx", "Timeline.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Timeline.tsx",
-          "Timeline.types.ts",
-          "index.ts"
-        ]
+        "files": ["Timeline.tsx", "Timeline.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Timeline.tsx",
-          "Timeline.types.ts",
-          "index.ts"
-        ]
+        "files": ["Timeline.tsx", "Timeline.types.ts", "index.ts"]
       }
     ]
   },
@@ -10933,38 +9017,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Title.tsx",
-          "Title.types.ts",
-          "index.ts"
-        ]
+        "files": ["Title.tsx", "Title.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Title.tsx",
-          "Title.types.ts",
-          "index.ts"
-        ]
+        "files": ["Title.tsx", "Title.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Title.tsx",
-          "Title.types.ts",
-          "index.ts"
-        ]
+        "files": ["Title.tsx", "Title.types.ts", "index.ts"]
       }
     ]
   },
   "Toast": {
     "name": "Toast",
-    "dependencies": [
-      "lucide-react",
-      "class-variance-authority"
-    ],
+    "dependencies": ["lucide-react", "class-variance-authority"],
     "type": "components:ui",
     "files": [
       {
@@ -10984,34 +9053,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Toast.tsx",
-          "index.ts"
-        ]
+        "files": ["Toast.tsx", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Toast.tsx",
-          "index.ts"
-        ]
+        "files": ["Toast.tsx", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Toast.tsx",
-          "index.ts"
-        ]
+        "files": ["Toast.tsx", "index.ts"]
       }
     ]
   },
   "Tooltip": {
     "name": "Tooltip",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -11035,37 +9093,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "Tooltip.tsx",
-          "Tooltip.types.ts",
-          "index.ts"
-        ]
+        "files": ["Tooltip.tsx", "Tooltip.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "Tooltip.tsx",
-          "Tooltip.types.ts",
-          "index.ts"
-        ]
+        "files": ["Tooltip.tsx", "Tooltip.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "Tooltip.tsx",
-          "Tooltip.types.ts",
-          "index.ts"
-        ]
+        "files": ["Tooltip.tsx", "Tooltip.types.ts", "index.ts"]
       }
     ]
   },
   "TopActionBar": {
     "name": "TopActionBar",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -11089,38 +9133,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "TopActionBar.tsx",
-          "TopActionBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["TopActionBar.tsx", "TopActionBar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "TopActionBar.tsx",
-          "TopActionBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["TopActionBar.tsx", "TopActionBar.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "TopActionBar.tsx",
-          "TopActionBar.types.ts",
-          "index.ts"
-        ]
+        "files": ["TopActionBar.tsx", "TopActionBar.types.ts", "index.ts"]
       }
     ]
   },
   "TransactionList": {
     "name": "TransactionList",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -11144,38 +9173,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "TransactionList.tsx",
-          "TransactionList.types.ts",
-          "index.ts"
-        ]
+        "files": ["TransactionList.tsx", "TransactionList.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "TransactionList.tsx",
-          "TransactionList.types.ts",
-          "index.ts"
-        ]
+        "files": ["TransactionList.tsx", "TransactionList.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "TransactionList.tsx",
-          "TransactionList.types.ts",
-          "index.ts"
-        ]
+        "files": ["TransactionList.tsx", "TransactionList.types.ts", "index.ts"]
       }
     ]
   },
   "TransferForm": {
     "name": "TransferForm",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -11199,37 +9213,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "TransferForm.tsx",
-          "TransferForm.types.ts",
-          "index.ts"
-        ]
+        "files": ["TransferForm.tsx", "TransferForm.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "TransferForm.tsx",
-          "TransferForm.types.ts",
-          "index.ts"
-        ]
+        "files": ["TransferForm.tsx", "TransferForm.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "TransferForm.tsx",
-          "TransferForm.types.ts",
-          "index.ts"
-        ]
+        "files": ["TransferForm.tsx", "TransferForm.types.ts", "index.ts"]
       }
     ]
   },
   "TreeView": {
     "name": "TreeView",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -11253,37 +9253,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "TreeView.tsx",
-          "TreeView.types.ts",
-          "index.ts"
-        ]
+        "files": ["TreeView.tsx", "TreeView.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "TreeView.tsx",
-          "TreeView.types.ts",
-          "index.ts"
-        ]
+        "files": ["TreeView.tsx", "TreeView.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "TreeView.tsx",
-          "TreeView.types.ts",
-          "index.ts"
-        ]
+        "files": ["TreeView.tsx", "TreeView.types.ts", "index.ts"]
       }
     ]
   },
   "TwoFactorAuth": {
     "name": "TwoFactorAuth",
-    "dependencies": [
-      "lucide-react"
-    ],
+    "dependencies": ["lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -11307,37 +9293,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "TwoFactorAuth.tsx",
-          "TwoFactorAuth.types.ts",
-          "index.ts"
-        ]
+        "files": ["TwoFactorAuth.tsx", "TwoFactorAuth.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "TwoFactorAuth.tsx",
-          "TwoFactorAuth.types.ts",
-          "index.ts"
-        ]
+        "files": ["TwoFactorAuth.tsx", "TwoFactorAuth.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "TwoFactorAuth.tsx",
-          "TwoFactorAuth.types.ts",
-          "index.ts"
-        ]
+        "files": ["TwoFactorAuth.tsx", "TwoFactorAuth.types.ts", "index.ts"]
       }
     ]
   },
   "UnscramblingText": {
     "name": "UnscramblingText",
-    "dependencies": [
-      "framer-motion"
-    ],
+    "dependencies": ["framer-motion"],
     "type": "components:ui",
     "files": [
       {
@@ -11357,35 +9329,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "UnscramblingText.tsx",
-          "index.ts"
-        ]
+        "files": ["UnscramblingText.tsx", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "UnscramblingText.tsx",
-          "index.ts"
-        ]
+        "files": ["UnscramblingText.tsx", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "UnscramblingText.tsx",
-          "index.ts"
-        ]
+        "files": ["UnscramblingText.tsx", "index.ts"]
       }
     ]
   },
   "VideoPlayer": {
     "name": "VideoPlayer",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -11409,38 +9369,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "VideoPlayer.tsx",
-          "VideoPlayer.types.ts",
-          "index.ts"
-        ]
+        "files": ["VideoPlayer.tsx", "VideoPlayer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "VideoPlayer.tsx",
-          "VideoPlayer.types.ts",
-          "index.ts"
-        ]
+        "files": ["VideoPlayer.tsx", "VideoPlayer.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "VideoPlayer.tsx",
-          "VideoPlayer.types.ts",
-          "index.ts"
-        ]
+        "files": ["VideoPlayer.tsx", "VideoPlayer.types.ts", "index.ts"]
       }
     ]
   },
   "VirtualCardPreview": {
     "name": "VirtualCardPreview",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -11492,10 +9437,7 @@
   },
   "VoiceCommandOverlay": {
     "name": "VoiceCommandOverlay",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -11547,10 +9489,7 @@
   },
   "VoiceRecorder": {
     "name": "VoiceRecorder",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -11574,38 +9513,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "VoiceRecorder.tsx",
-          "VoiceRecorder.types.ts",
-          "index.ts"
-        ]
+        "files": ["VoiceRecorder.tsx", "VoiceRecorder.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "VoiceRecorder.tsx",
-          "VoiceRecorder.types.ts",
-          "index.ts"
-        ]
+        "files": ["VoiceRecorder.tsx", "VoiceRecorder.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "VoiceRecorder.tsx",
-          "VoiceRecorder.types.ts",
-          "index.ts"
-        ]
+        "files": ["VoiceRecorder.tsx", "VoiceRecorder.types.ts", "index.ts"]
       }
     ]
   },
   "WindowControls": {
     "name": "WindowControls",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -11629,38 +9553,23 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "WindowControls.tsx",
-          "WindowControls.types.ts",
-          "index.ts"
-        ]
+        "files": ["WindowControls.tsx", "WindowControls.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "WindowControls.tsx",
-          "WindowControls.types.ts",
-          "index.ts"
-        ]
+        "files": ["WindowControls.tsx", "WindowControls.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "WindowControls.tsx",
-          "WindowControls.types.ts",
-          "index.ts"
-        ]
+        "files": ["WindowControls.tsx", "WindowControls.types.ts", "index.ts"]
       }
     ]
   },
   "WindowFrame": {
     "name": "WindowFrame",
-    "dependencies": [
-      "framer-motion",
-      "lucide-react"
-    ],
+    "dependencies": ["framer-motion", "lucide-react"],
     "type": "components:ui",
     "files": [
       {
@@ -11684,29 +9593,17 @@
       {
         "version": "1.0.1",
         "sha": "87c63cf97c7e4589f3f902145a0411f6ffd27bd3",
-        "files": [
-          "WindowFrame.tsx",
-          "WindowFrame.types.ts",
-          "index.ts"
-        ]
+        "files": ["WindowFrame.tsx", "WindowFrame.types.ts", "index.ts"]
       },
       {
         "version": "1.0.2",
         "sha": "008a2cb368d5533decdd5b2ee595afb65b64815f",
-        "files": [
-          "WindowFrame.tsx",
-          "WindowFrame.types.ts",
-          "index.ts"
-        ]
+        "files": ["WindowFrame.tsx", "WindowFrame.types.ts", "index.ts"]
       },
       {
         "version": "1.0.3",
         "sha": "53c2e9d6553b5c2e1e639a1923b72f918b819cb1",
-        "files": [
-          "WindowFrame.tsx",
-          "WindowFrame.types.ts",
-          "index.ts"
-        ]
+        "files": ["WindowFrame.tsx", "WindowFrame.types.ts", "index.ts"]
       }
     ]
   }

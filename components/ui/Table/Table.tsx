@@ -31,6 +31,7 @@ export interface TableProps<T> {
     density?: "comfortable" | "compact";
     page?: number;
     pageSize?: number;
+    responsiveLayout?: 'table' | 'cards' | 'responsive';
     onPageChange?: (page: number) => void;
     onSortChange?: (key: keyof T, direction: "asc" | "desc") => void;
     onRowClick?: (row: T) => void;
@@ -49,6 +50,7 @@ export function Table<T>({
     density = "comfortable",
     page = 1,
     pageSize = 10,
+    responsiveLayout = "responsive",
     onPageChange,
     onSortChange,
     onRowClick,
@@ -95,8 +97,113 @@ export function Table<T>({
 
     return (
         <div className="overflow-hidden border border-border-primary rounded-xl bg-surface-elevated shadow-lg">
-            {/* TABLE */}
-            <table className="w-full border-collapse text-left">
+            {/* Mobile / Card Grid View */}
+            <div className={cn(
+                "p-4 bg-surface-secondary/20 rounded-xl",
+                responsiveLayout === "cards" && "block",
+                responsiveLayout === "table" && "hidden",
+                responsiveLayout === "responsive" && "block md:hidden"
+            )}>
+                {selectable && (
+                    <div className="flex items-center justify-between px-4 py-3 bg-surface-elevated border border-border-primary rounded-xl shadow-sm mb-4">
+                        <label className="flex items-center gap-3 text-xs font-semibold text-text-secondary uppercase tracking-wider cursor-pointer">
+                            <Checkbox
+                                checked={selectedRows.size === data.length && data.length > 0}
+                                onCheckedChange={toggleAll}
+                            />
+                            <span>Select All</span>
+                        </label>
+                        <span className="text-xs font-medium px-2.5 py-1 bg-accent-blue/10 text-accent-blue rounded-full">
+                            {selectedRows.size} selected
+                        </span>
+                    </div>
+                )}
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                    {paginatedData.length === 0 ? (
+                        <div className="col-span-full py-12 text-center text-text-tertiary bg-surface-elevated border border-border-primary rounded-xl">
+                            No results found.
+                        </div>
+                    ) : (
+                        paginatedData.map((row, index) => {
+                            const globalIndex = (page - 1) * pageSize + index;
+                            const isSelected = selectedRows.has(globalIndex);
+                            const titleValue = columns[0]?.render
+                                ? columns[0].render(row[columns[0].key], row)
+                                : String(row[columns[0]?.key] || "");
+                            
+                            // Get initials or first char for visual avatar representation
+                            const firstChar = typeof titleValue === 'string' 
+                                ? titleValue.charAt(0) 
+                                : String(row[columns[0]?.key] || "?").charAt(0);
+
+                            return (
+                                <motion.div
+                                    key={globalIndex}
+                                    initial={{ opacity: 0, y: 12 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.2, delay: index * 0.03 }}
+                                    onClick={() => onRowClick?.(row)}
+                                    className={cn(
+                                        "group flex flex-col justify-between border rounded-2xl bg-surface-elevated overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer",
+                                        isSelected 
+                                            ? "border-accent-blue bg-accent-blue/[0.02]" 
+                                            : "border-border-primary/80 hover:border-accent-blue/30"
+                                    )}
+                                >
+                                    {/* Card Header */}
+                                    <div className="flex items-center justify-between px-4 py-3 bg-surface-secondary/30 border-b border-border-primary/50">
+                                        <div className="flex items-center gap-3 min-w-0">
+                                            {selectable && (
+                                                <div onClick={(e) => e.stopPropagation()} className="flex-shrink-0">
+                                                    <Checkbox
+                                                        checked={isSelected}
+                                                        onCheckedChange={() => toggleRow(globalIndex)}
+                                                    />
+                                                </div>
+                                            )}
+                                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent-blue/15 to-accent-blue/5 text-accent-blue flex items-center justify-center font-bold text-xs flex-shrink-0 select-none">
+                                                {firstChar.toUpperCase()}
+                                            </div>
+                                            <span className="font-semibold text-text-primary text-sm truncate group-hover:text-accent-blue transition-colors">
+                                                {titleValue}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {/* Card Body */}
+                                    <div className="p-4 space-y-2.5 flex-grow">
+                                        <div className="grid grid-cols-2 gap-3 text-sm">
+                                            {columns.slice(1).map((col) => {
+                                                const renderedVal = col.render
+                                                    ? col.render(row[col.key], row)
+                                                    : String(row[col.key] || "-");
+
+                                                return (
+                                                    <div key={String(col.key)} className="flex flex-col gap-0.5 py-0.5">
+                                                        <span className="text-text-tertiary text-[10px] font-semibold uppercase tracking-wider">{col.header}</span>
+                                                        <span className="text-text-primary text-xs font-medium truncate">
+                                                            {renderedVal}
+                                                        </span>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            );
+                        })
+                    )}
+                </div>
+            </div>
+
+            {/* Desktop Table View */}
+            <table className={cn(
+                "w-full border-collapse text-left",
+                responsiveLayout === "cards" && "hidden",
+                responsiveLayout === "table" && "table",
+                responsiveLayout === "responsive" && "hidden md:table"
+            )}>
                 <thead className="bg-surface-secondary/50 border-b border-border-primary">
                     <tr>
                         {selectable && (

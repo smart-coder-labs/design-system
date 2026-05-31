@@ -28,6 +28,7 @@ export interface DataGridProps<T> {
     pageSize?: number;
     virtualScrolling?: boolean;
     maxHeight?: string;
+    responsiveLayout?: 'table' | 'cards' | 'responsive';
     onPageChange?: (page: number) => void;
     onSortChange?: (key: keyof T, direction: "asc" | "desc") => void;
     onCellEdit?: (row: T, key: keyof T, value: any) => void;

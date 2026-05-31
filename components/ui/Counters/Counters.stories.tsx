@@ -82,19 +82,3 @@ export const SingleCounter: Story = {
         ],
     },
 };
-
-export const DarkMode: Story = {
-    args: {
-        items: [
-            { value: '$12,450', label: 'Balance', subtitle: 'Available' },
-            { value: '47', label: 'Transactions', subtitle: 'This month' },
-        ],
-    },
-    decorators: [
-        (Story) => (
-            <div className="dark p-4 bg-gray-900 rounded-lg">
-                <Story />
-            </div>
-        ),
-    ],
-};

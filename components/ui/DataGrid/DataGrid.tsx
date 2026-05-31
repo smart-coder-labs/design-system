@@ -16,8 +16,8 @@ interface ColumnState {
 }
 
 export function DataGrid<T>({
-    columns,
-    data,
+    columns = [],
+    data = [],
     selectable = false,
     striped = true,
     hoverable = true,
@@ -26,6 +26,7 @@ export function DataGrid<T>({
     pageSize = 10,
     virtualScrolling = false,
     maxHeight = "600px",
+    responsiveLayout = "responsive",
     onPageChange,
     onSortChange,
     onCellEdit,
@@ -264,6 +265,8 @@ export function DataGrid<T>({
                     striped={striped}
                     hoverable={hoverable}
                     density={density}
+                    selectable={selectable}
+                    responsiveLayout={responsiveLayout}
                     onSortChange={onSortChange}
                     onPageChange={onPageChange}
                     page={page}
@@ -290,7 +293,7 @@ interface DataGridRowProps<T> {
     onCellEdit: (key: keyof T, value: any) => void;
 }
 
-function DataGridRow<T>({
+export function DataGridRow<T>({
     row,
     index,
     columns,
@@ -365,7 +368,7 @@ function DataGridRow<T>({
     );
 }
 
-function PaginationButton({
+export function PaginationButton({
     disabled,
     children,
     onClick,
@@ -389,7 +392,7 @@ function PaginationButton({
     );
 }
 
-function FilterButton<T>({
+export function FilterButton<T>({
     column,
     value,
     onChange,
@@ -474,7 +477,7 @@ function FilterButton<T>({
     );
 }
 
-function ColumnVisibilityMenu<T>({
+export function ColumnVisibilityMenu<T>({
     columns,
     columnStates,
     onToggleVisibility,
@@ -554,7 +557,7 @@ function ColumnVisibilityMenu<T>({
     );
 }
 
-function ColumnResizeHandle<T>({
+export function ColumnResizeHandle<T>({
     columnKey,
     onResize,
 }: {

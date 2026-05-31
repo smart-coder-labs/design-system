@@ -27,7 +27,6 @@ export const Default: Story = {
 export const PieChart: Story = {
     args: {
         title: 'Expense Breakdown',
-        template: 'pie' as any,
         chartType: 'pie',
         items: [
             { label: 'Housing', value: 2200, percent: 35, color: '#007AFF' },
@@ -94,25 +93,4 @@ export const ZeroValues: Story = {
             { label: 'Cash', value: 500, percent: 100, color: '#5AC8FA' },
         ],
     },
-};
-
-export const DarkMode: Story = {
-    args: {
-        title: 'Asset Allocation',
-        chartType: 'donut',
-        items: [
-            { label: 'US Equities', value: 45000, percent: 45, color: '#007AFF' },
-            { label: 'Bonds', value: 20000, percent: 20, color: '#34C759' },
-            { label: 'Crypto', value: 15000, percent: 15, color: '#AF52DE' },
-            { label: 'Real Estate', value: 12000, percent: 12, color: '#FF9500' },
-            { label: 'Cash', value: 8000, percent: 8, color: '#5AC8FA' },
-        ],
-    },
-    decorators: [
-        (Story) => (
-            <div className="dark p-4 bg-gray-900 min-h-screen">
-                <Story />
-            </div>
-        ),
-    ],
 };
