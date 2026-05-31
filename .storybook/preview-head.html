@@ -1,0 +1,17 @@
+<style>
+  /*
+   * Storybook dynamically injects an unlayered `body { background-color: #F6F9FC }`
+   * that beats our @layer base rules. These rules use !important to win that specificity
+   * war in the preview iframe when html.dark is present.
+   */
+  html.dark body,
+  html.dark .sb-main-padded,
+  html.dark .sb-show-main,
+  html.dark #storybook-root,
+  html.dark .docs-story,
+  html.dark .sbdocs-preview,
+  html.dark .sb-story {
+    background-color: var(--color-bg-primary) !important;
+    color: var(--color-text-primary) !important;
+  }
+</style>

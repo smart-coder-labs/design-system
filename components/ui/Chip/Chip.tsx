@@ -36,17 +36,17 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(
             sm: {
                 container: "h-6 px-2 gap-1 text-xs",
                 icon: "w-3 h-3",
-                deleteButton: "w-3.5 h-3.5",
+                deleteButton: "w-2 h-2",
             },
             md: {
                 container: "h-8 px-3 gap-1.5 text-sm",
                 icon: "w-4 h-4",
-                deleteButton: "w-4 h-4",
+                deleteButton: "w-3 h-3",
             },
             lg: {
                 container: "h-10 px-4 gap-2 text-base",
                 icon: "w-5 h-5",
-                deleteButton: "w-5 h-5",
+                deleteButton: "w-4 h-4",
             },
         };
 
@@ -77,7 +77,7 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(
                             e.stopPropagation();
                             onDelete();
                         }}
-                        className="rounded-full hover:bg-black/10 transition-colors focus:outline-none p-0.5"
+                        className="rounded-full hover:bg-black/10 transition-colors focus:outline-none"
                         aria-label="Delete"
                     >
                         <X className={sizes[size].deleteButton} />

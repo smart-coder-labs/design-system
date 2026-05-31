@@ -25,7 +25,7 @@ export const Default: Story = {
             <Collapsible
                 open={isOpen}
                 onOpenChange={setIsOpen}
-                className="w-[280px] space-y-2 border border-border-primary rounded-lg p-3 bg-surface-primary shadow-sm"
+                // className="border border-border-primary rounded-lg p-3 bg-surface-primary shadow-sm"
             >
                 <CollapsibleTrigger>
                     <div className="flex items-center justify-between cursor-pointer select-none group">

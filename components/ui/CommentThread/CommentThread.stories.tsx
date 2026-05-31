@@ -37,6 +37,13 @@ const meta = {
     title: 'Data Display/CommentThread',
     component: CommentThread,
     tags: ['autodocs'],
+    decorators: [
+        (Story) => (
+            <div className="bg-bg-primary p-4 rounded-xl">
+                <Story />
+            </div>
+        ),
+    ],
 } satisfies Meta<typeof CommentThread>;
 
 export default meta;

@@ -40,7 +40,7 @@ export const AgendaView: React.FC<AgendaViewProps> = ({
     });
 
     return (
-        <div style={{ maxHeight: '600px', overflowY: 'auto' }}>
+        <div style={{ maxHeight: '600px', overflowY: 'auto', padding: '8px 16px' }}>
             {Object.keys(groupedEvents).length === 0 ? (
                 <div style={{ textAlign: 'center', padding: '32px', color: 'var(--color-text-tertiary)' }}>
                     No events scheduled

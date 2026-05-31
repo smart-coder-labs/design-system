@@ -58,7 +58,6 @@ const updateComponents = async () => {
         console.log(chalk_1.default.green(`\n✓ Selected ${componentsToUpdate.length} components`));
     }
     // 3. Fetch and update
-    const dsVersion = await (0, registry_1.getRegistryVersion)();
     const updateSpinner = (0, ora_1.default)("Updating components...").start();
     let successCount = 0;
     let failCount = 0;
@@ -77,7 +76,8 @@ const updateComponents = async () => {
                 const content = config.rsc ? file.content : (0, config_1.stripUseClient)(file.content);
                 await fs_extra_1.default.writeFile(path_1.default.join(componentDir, file.name), content);
             }
-            await (0, config_1.recordInstall)(config, component, dsVersion, "folder");
+            const meta = await (0, registry_1.getComponentMeta)(component);
+            await (0, config_1.recordInstall)(config, component, meta?.version ?? "unknown", "folder", "update", meta?.status);
             updateSpinner.succeed(`Updated ${component}`);
             successCount++;
         }

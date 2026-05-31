@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
+import { cn } from "../../../lib/utils";
 import type { CollapsibleProps } from "./Collapsible.types";
 
 type CollapsibleContextValue = {
@@ -40,7 +41,7 @@ const Collapsible = React.forwardRef<HTMLDivElement, CollapsibleProps>(
                     ref={ref}
                     data-state={currentOpen ? "open" : "closed"}
                     data-disabled={disabled ? "" : undefined}
-                    className={className}
+                    className={cn("border border-border-primary rounded-lg p-3 bg-surface-primary shadow-sm", className)}
                     {...props}
                 >
                     {children}
@@ -73,7 +74,7 @@ const CollapsibleTrigger = React.forwardRef<HTMLButtonElement, CollapsibleTrigge
                 disabled={disabled || props.disabled}
                 data-state={open ? "open" : "closed"}
                 data-disabled={disabled || props.disabled ? "" : undefined}
-                className={className}
+                className={cn("w-full text-left", className)}
                 {...props}
             >
                 {children}

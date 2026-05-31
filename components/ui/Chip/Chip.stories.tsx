@@ -120,6 +120,11 @@ export const VariantShowcase: Story = {
             <Chip variant="info" label="Info" />
         </div>
     ),
+    args: {
+        label: 'Default',
+        variant: 'default',
+        size: 'md',
+    }
 };
 
 export const SizeShowcase: Story = {
@@ -130,6 +135,11 @@ export const SizeShowcase: Story = {
             <Chip size="lg" label="Large" />
         </div>
     ),
+    args: {
+        label: 'Default',
+        variant: 'default',
+        size: 'md',
+    }
 };
 
 export const InteractiveChips: Story = {
@@ -141,4 +151,9 @@ export const InteractiveChips: Story = {
             <Chip variant="warning" label="Storybook" onDelete={() => {}} />
         </div>
     ),
+    args: {
+        label: 'Default',
+        variant: 'default',
+        size: 'md',
+    }
 };

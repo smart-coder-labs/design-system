@@ -6,9 +6,10 @@ import { Textarea } from '../Textarea';
 import {
     MessageSquare,
     Heart,
-    Reply
+    Reply,
+    MoreHorizontal
 } from 'lucide-react';
-import { Combobox } from '../Combobox';
+import { Popover, PopoverTrigger, PopoverContent } from '../Popover';
 import { CommentThreadProps, CommentData, CommentItemProps } from './CommentThread.types';
 
 const CommentItem: React.FC<CommentItemProps> = ({
@@ -24,6 +25,7 @@ const CommentItem: React.FC<CommentItemProps> = ({
     const [isEditing, setIsEditing] = useState(false);
     const [replyContent, setReplyContent] = useState('');
     const [editContent, setEditContent] = useState(typeof comment.content === 'string' ? comment.content : '');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleReplySubmit = () => {
         if (replyContent.trim() && onReply) {
@@ -51,7 +53,7 @@ const CommentItem: React.FC<CommentItemProps> = ({
                     <AvatarImage src={comment.author.avatarSrc} alt={comment.author.name} />
                     <AvatarFallback>{comment.author.initials || comment.author.name.charAt(0)}</AvatarFallback>
                 </Avatar>
-
+ 
                 <div className="flex-1 min-w-0 space-y-1.5">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
@@ -67,29 +69,52 @@ const CommentItem: React.FC<CommentItemProps> = ({
                         </div>
 
                         {(isAuthor || onReply) && (
-                            <div className="w-32">
-                                <Combobox
-                                    items={[
-                                        ...(onReply
-                                            ? [{ value: "reply", label: "Reply" }]
-                                            : []),
-                                        ...(isAuthor && onEdit
-                                            ? [{ value: "edit", label: "Edit" }]
-                                            : []),
-                                        ...(isAuthor && onDelete
-                                            ? [{ value: "delete", label: "Delete" }]
-                                            : []),
-                                    ]}
-                                    value={undefined}
-                                    onChange={(val) => {
-                                        if (val === "reply" && onReply) setIsReplying(!isReplying);
-                                        if (val === "edit" && onEdit) setIsEditing(true);
-                                        if (val === "delete" && onDelete) onDelete(comment.id);
-                                    }}
-                                    placeholder="Actions"
-                                    className="h-6 text-xs"
-                                />
-                            </div>
+                            <Popover open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+                                <PopoverTrigger asChild>
+                                    <button className="opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded hover:bg-bg-secondary text-text-tertiary hover:text-text-secondary">
+                                        <MoreHorizontal className="w-4 h-4" />
+                                    </button>
+                                </PopoverTrigger>
+                                <PopoverContent
+                                    align="end"
+                                    sideOffset={4}
+                                    className="min-w-[120px] rounded-lg border border-border-primary bg-bg-elevated shadow-md p-1 z-50 text-sm flex flex-col gap-0.5"
+                                >
+                                    {onReply && (
+                                        <button
+                                            onClick={() => {
+                                                setIsReplying(!isReplying);
+                                                setIsMenuOpen(false);
+                                            }}
+                                            className="flex items-center gap-2 px-2 py-1.5 rounded cursor-pointer text-text-secondary hover:bg-bg-secondary hover:text-text-primary outline-none text-left w-full"
+                                        >
+                                            Reply
+                                        </button>
+                                    )}
+                                    {isAuthor && onEdit && (
+                                        <button
+                                            onClick={() => {
+                                                setIsEditing(true);
+                                                setIsMenuOpen(false);
+                                            }}
+                                            className="flex items-center gap-2 px-2 py-1.5 rounded cursor-pointer text-text-secondary hover:bg-bg-secondary hover:text-text-primary outline-none text-left w-full"
+                                        >
+                                            Edit
+                                        </button>
+                                    )}
+                                    {isAuthor && onDelete && (
+                                        <button
+                                            onClick={() => {
+                                                onDelete(comment.id);
+                                                setIsMenuOpen(false);
+                                            }}
+                                            className="flex items-center gap-2 px-2 py-1.5 rounded cursor-pointer text-status-error hover:bg-status-error/10 outline-none text-left w-full"
+                                        >
+                                            Delete
+                                        </button>
+                                    )}
+                                </PopoverContent>
+                            </Popover>
                         )}
                     </div>
 

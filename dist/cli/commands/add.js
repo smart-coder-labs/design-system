@@ -11,6 +11,7 @@ const chalk_1 = __importDefault(require("chalk"));
 const ora_1 = __importDefault(require("ora"));
 const registry_1 = require("../utils/registry");
 const config_1 = require("../utils/config");
+const deps_1 = require("../utils/deps");
 const add = async (components) => {
     const available = await (0, registry_1.getAvailableComponents)();
     if (!components || components.length === 0) {
@@ -43,7 +44,40 @@ const add = async (components) => {
         return;
     }
     const config = await (0, config_1.loadConfig)();
-    const dsVersion = await (0, registry_1.getRegistryVersion)();
+    const pm = (0, deps_1.detectPackageManager)();
+    // Collect all npm deps required by the selected components before installing
+    const allNpmDeps = new Set();
+    for (const component of components) {
+        const deps = await (0, registry_1.getComponentDependencies)(component);
+        for (const dep of deps)
+            allNpmDeps.add(dep);
+    }
+    const missingDeps = (0, deps_1.getMissingPackages)(Array.from(allNpmDeps));
+    if (missingDeps.length > 0) {
+        console.log(chalk_1.default.yellow(`\nThe following packages are required but not installed:\n`) +
+            missingDeps.map((d) => chalk_1.default.cyan(`  • ${d}`)).join("\n"));
+        const { install } = await (0, prompts_1.default)({
+            type: "confirm",
+            name: "install",
+            message: `Install them now with ${chalk_1.default.bold(pm)}?`,
+            initial: true,
+        });
+        if (install) {
+            const depSpinner = (0, ora_1.default)(`Installing dependencies with ${pm}...`).start();
+            try {
+                (0, deps_1.installPackages)(missingDeps, pm);
+                depSpinner.succeed("Dependencies installed.");
+            }
+            catch {
+                depSpinner.fail("Failed to install dependencies. Please install them manually and retry.");
+                console.log(chalk_1.default.dim(`  ${pm} install ${missingDeps.join(" ")}`));
+                return;
+            }
+        }
+        else {
+            console.log(chalk_1.default.yellow("\nSkipping dependency installation. Components may not work correctly."));
+        }
+    }
     const spinner = (0, ora_1.default)("Installing components...").start();
     const queue = [...components];
     const processed = new Set();
@@ -77,7 +111,8 @@ const add = async (components) => {
             const content = config.rsc ? file.content : (0, config_1.stripUseClient)(file.content);
             await fs_extra_1.default.writeFile(path_1.default.join(componentDir, file.name), content);
         }
-        await (0, config_1.recordInstall)(config, component, dsVersion, "folder");
+        const meta = await (0, registry_1.getComponentMeta)(component);
+        await (0, config_1.recordInstall)(config, component, meta?.version ?? "unknown", "folder", "install", meta?.status);
         spinner.succeed(`Installed ${component}`);
     }
     await (0, config_1.saveConfig)(config);
