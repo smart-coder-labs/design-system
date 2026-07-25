@@ -16,8 +16,8 @@
 [CLI](#cli) •
 [Components](#components) •
 [Versioning](#component-versioning) •
-[Storybook](https://smart-coder-labs.github.io/design-system/)
-[Landing Page](https://smart-coder-labs.github.io/)
+[Storybook](https://smart-coder-labs.github.io/design-system/) •
+[Landing Page]([https://smart-coder-labs.github.io/](https://smart-coder-labs.github.io/landing-ds))
 </div>
 
 ---
