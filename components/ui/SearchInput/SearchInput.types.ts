@@ -42,6 +42,8 @@ export interface SearchInputProps
     containerClassName?: string;
     label?: string;
     children?: React.ReactNode;
+    /** Called when Escape is pressed so the consumer can close the results popup */
+    onClose?: () => void;
 }
 
 /* ========================================
@@ -110,4 +112,24 @@ export type SearchInputContextValue = {
     isLoading: boolean;
     disabled?: boolean;
     inputRef: React.RefObject<HTMLInputElement | null>;
+    /** Index of the keyboard-highlighted option, -1 when nothing is highlighted */
+    activeIndex: number;
+    setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+    /** Stable id of the results popup (`role="listbox"` / `aria-controls`) */
+    listboxId: string;
+    /** Builds the DOM id of the option at `index` (used by `aria-activedescendant`) */
+    getOptionId: (index: number) => string;
+    /** Registers an option element in DOM order and returns its flat index */
+    registerOption: (element: HTMLElement) => number;
+    /** Removes an option element from the registry */
+    unregisterOption: (element: HTMLElement) => void;
+    /** Current flat index of an already registered option element (-1 if unknown) */
+    getOptionIndex: (element: HTMLElement) => number;
+    /** Bumped whenever the registry changes so items can refresh their index */
+    optionsVersion: number;
+    /** Whether the results popup is open (reported by SearchInput.Dropdown) */
+    isOpen: boolean;
+    setIsOpen: (open: boolean) => void;
+    /** Combobox keyboard navigation; returns true when the event was consumed */
+    handleKeyNavigation: (event: React.KeyboardEvent<HTMLInputElement>) => boolean;
 };
