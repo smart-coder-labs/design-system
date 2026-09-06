@@ -1,4 +1,6 @@
-import React, { useRef, useState, useEffect, useCallback, createContext, useContext } from 'react';
+'use client';
+
+import React, { useRef, useState, useEffect, useCallback, useId, createContext, useContext } from 'react';
 import { Search, X } from 'lucide-react';
 import { cn } from '../../../lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -70,7 +72,15 @@ function useDebounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
 
 export const SearchInputInput = React.forwardRef<HTMLInputElement, SearchInputInputProps>(
     ({ value, onChange, onSearch, onClear, isLoading = false, placeholder, disabled, id, onFocus, onBlur, onKeyDown, className, ...props }, ref) => {
-        const { isFocused, setIsFocused } = useSearchInputContext();
+        const {
+            isFocused,
+            setIsFocused,
+            activeIndex,
+            listboxId,
+            getOptionId,
+            isOpen,
+            handleKeyNavigation,
+        } = useSearchInputContext();
 
         const handleClear = () => {
             onChange('');
@@ -79,7 +89,9 @@ export const SearchInputInput = React.forwardRef<HTMLInputElement, SearchInputIn
         };
 
         const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-            if (e.key === 'Enter') {
+            // Listbox navigation first; it reports whether it consumed the key
+            const handled = handleKeyNavigation(e);
+            if (!handled && e.key === 'Enter') {
                 onSearch?.(String(value));
             }
             onKeyDown?.(e);
@@ -108,6 +120,12 @@ export const SearchInputInput = React.forwardRef<HTMLInputElement, SearchInputIn
                     disabled={disabled}
                     placeholder={placeholder}
                     id={id}
+                    role="combobox"
+                    aria-expanded={isOpen}
+                    aria-controls={listboxId}
+                    aria-activedescendant={activeIndex >= 0 ? getOptionId(activeIndex) : undefined}
+                    aria-autocomplete="list"
+                    aria-haspopup="listbox"
                     className={cn(
                         "w-full h-10 pl-9 pr-10 rounded-xl border bg-surface-primary text-text-primary transition-all",
                         "placeholder:text-text-tertiary",
@@ -163,10 +181,20 @@ export const SearchInputDropdown: React.FC<SearchInputDropdownProps> = ({
     className,
     maxHeight = '50vh'
 }) => {
+    const { listboxId, setIsOpen } = useSearchInputContext();
+
+    // Report visibility up so the input's aria-expanded stays in sync
+    useEffect(() => {
+        setIsOpen(show);
+        return () => setIsOpen(false);
+    }, [show, setIsOpen]);
+
     return (
         <AnimatePresence>
             {show && (
                 <motion.div
+                    id={listboxId}
+                    role="listbox"
                     initial={{ opacity: 0, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -4 }}
@@ -202,7 +230,7 @@ export const SearchInputSection: React.FC<SearchInputSectionProps> = ({
     className
 }) => {
     return (
-        <div className={cn(className)}>
+        <div role="group" aria-label={title} className={cn(className)}>
             <div
                 className="px-3 py-1.5 text-xs font-medium uppercase tracking-wider"
                 style={{
@@ -225,16 +253,60 @@ export const SearchInputItem: React.FC<SearchInputItemProps> = ({
     onClick,
     className
 }) => {
-    const { disabled } = useSearchInputContext();
+    const {
+        disabled,
+        activeIndex,
+        setActiveIndex,
+        getOptionId,
+        registerOption,
+        unregisterOption,
+        getOptionIndex,
+        optionsVersion,
+    } = useSearchInputContext();
+
+    const itemRef = useRef<HTMLElement | null>(null);
+    const [index, setIndex] = useState(-1);
+
+    // Self-register in DOM order so indices stay flat across Sections
+    useEffect(() => {
+        const element = itemRef.current;
+        if (!element) return;
+
+        setIndex(registerOption(element));
+        return () => unregisterOption(element);
+    }, [registerOption, unregisterOption]);
+
+    // Refresh the index whenever sibling items mount/unmount
+    useEffect(() => {
+        if (itemRef.current) {
+            setIndex(getOptionIndex(itemRef.current));
+        }
+    }, [optionsVersion, getOptionIndex]);
+
+    const isActive = index >= 0 && index === activeIndex;
+
+    const optionProps = {
+        role: 'option',
+        id: index >= 0 ? getOptionId(index) : undefined,
+        'aria-selected': isActive,
+        onMouseEnter: () => {
+            if (index >= 0) setActiveIndex(index);
+        },
+        // Keep focus (and the caret) on the input so the click still lands
+        onMouseDown: (e: React.MouseEvent) => e.preventDefault(),
+    } as const;
 
     if (onClick) {
         return (
             <button
+                ref={(node) => { itemRef.current = node; }}
                 type="button"
                 onClick={onClick}
                 disabled={disabled}
+                {...optionProps}
                 className={cn(
                     "w-full flex items-center gap-3 px-3 py-2.5 hover:bg-white/5 text-left transition-colors",
+                    isActive && "bg-surface-secondary text-text-primary",
                     disabled && "opacity-50 cursor-not-allowed",
                     className
                 )}
@@ -245,7 +317,15 @@ export const SearchInputItem: React.FC<SearchInputItemProps> = ({
     }
 
     return (
-        <div className={cn("flex items-center gap-3 px-3 py-2.5", className)}>
+        <div
+            ref={(node) => { itemRef.current = node; }}
+            {...optionProps}
+            className={cn(
+                "flex items-center gap-3 px-3 py-2.5",
+                isActive && "bg-surface-secondary text-text-primary",
+                className
+            )}
+        >
             {children}
         </div>
     );
@@ -345,6 +425,7 @@ const SearchInputRoot = React.forwardRef<HTMLDivElement, SearchInputProps>(
             onFocus,
             onBlur,
             onKeyDown,
+            onClose,
             children,
             size,
             variant,
@@ -354,11 +435,128 @@ const SearchInputRoot = React.forwardRef<HTMLDivElement, SearchInputProps>(
         const inputRef = useRef<HTMLInputElement>(null);
         const [isFocused, setIsFocused] = useState(false);
         const [localValue, setLocalValue] = useState(value);
+        const [activeIndex, setActiveIndex] = useState(-1);
+        const [isOpen, setIsOpen] = useState(false);
+
+        // Ordered registry of the rendered options (flat across Sections)
+        const optionsRef = useRef<HTMLElement[]>([]);
+        const [optionsVersion, setOptionsVersion] = useState(0);
+
+        const reactId = useId();
+        const listboxId = `${reactId}-listbox`;
+        const getOptionId = useCallback((index: number) => `${reactId}-option-${index}`, [reactId]);
+
+        const registerOption = useCallback((element: HTMLElement) => {
+            const options = optionsRef.current;
+            if (!options.includes(element)) {
+                // Insert in document order so indices match what the user sees
+                const insertAt = options.findIndex(
+                    (existing) =>
+                        (existing.compareDocumentPosition(element) & Node.DOCUMENT_POSITION_PRECEDING) !== 0
+                );
+                if (insertAt === -1) {
+                    options.push(element);
+                } else {
+                    options.splice(insertAt, 0, element);
+                }
+                setOptionsVersion((prev) => prev + 1);
+            }
+            return options.indexOf(element);
+        }, []);
+
+        const unregisterOption = useCallback((element: HTMLElement) => {
+            const options = optionsRef.current;
+            const index = options.indexOf(element);
+            if (index !== -1) {
+                options.splice(index, 1);
+                setOptionsVersion((prev) => prev + 1);
+            }
+        }, []);
+
+        const getOptionIndex = useCallback(
+            (element: HTMLElement) => optionsRef.current.indexOf(element),
+            []
+        );
 
         // Sync external value
         useEffect(() => {
             setLocalValue(value);
         }, [value]);
+
+        // Drop the highlight when the query changes or the popup closes
+        useEffect(() => {
+            setActiveIndex(-1);
+        }, [value]);
+
+        useEffect(() => {
+            if (!isOpen) {
+                setActiveIndex(-1);
+            }
+        }, [isOpen]);
+
+        // Clamp the highlight when the results list shrinks between renders
+        useEffect(() => {
+            setActiveIndex((prev) =>
+                prev >= optionsRef.current.length ? optionsRef.current.length - 1 : prev
+            );
+        }, [optionsVersion]);
+
+        // Keep the highlighted option visible inside the scrollable dropdown
+        useEffect(() => {
+            if (activeIndex < 0) return;
+            optionsRef.current[activeIndex]?.scrollIntoView({ block: 'nearest' });
+        }, [activeIndex, optionsVersion]);
+
+        /**
+         * WAI-ARIA combobox navigation over the registered options.
+         * Returns true when the key was consumed so callers can keep their
+         * own fallback behaviour (e.g. Enter -> onSearch) intact.
+         */
+        const handleKeyNavigation = useCallback(
+            (e: React.KeyboardEvent<HTMLInputElement>): boolean => {
+                const optionCount = optionsRef.current.length;
+
+                switch (e.key) {
+                    case 'ArrowDown':
+                        if (optionCount === 0) return false;
+                        e.preventDefault();
+                        setActiveIndex((prev) => (prev < optionCount - 1 ? prev + 1 : 0));
+                        return true;
+                    case 'ArrowUp':
+                        if (optionCount === 0) return false;
+                        e.preventDefault();
+                        setActiveIndex((prev) => (prev > 0 ? prev - 1 : optionCount - 1));
+                        return true;
+                    case 'Home':
+                        if (optionCount === 0) return false;
+                        e.preventDefault();
+                        setActiveIndex(0);
+                        return true;
+                    case 'End':
+                        if (optionCount === 0) return false;
+                        e.preventDefault();
+                        setActiveIndex(optionCount - 1);
+                        return true;
+                    case 'Enter': {
+                        const activeOption = activeIndex >= 0 ? optionsRef.current[activeIndex] : undefined;
+                        if (!activeOption) return false;
+                        e.preventDefault();
+                        activeOption.click();
+                        return true;
+                    }
+                    case 'Escape':
+                        setActiveIndex(-1);
+                        onClose?.();
+                        return false;
+                    case 'Tab':
+                        setActiveIndex(-1);
+                        return false;
+                    default:
+                        return false;
+                }
+            },
+            [activeIndex, onClose]
+        );
 
         // Debounced onSearch
         const debouncedSearch = useDebounce(
@@ -396,7 +594,9 @@ const SearchInputRoot = React.forwardRef<HTMLDivElement, SearchInputProps>(
         };
 
         const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-            if (e.key === 'Enter' && debounceTime === 0) {
+            // Listbox navigation first; it reports whether it consumed the key
+            const handled = handleKeyNavigation(e);
+            if (!handled && e.key === 'Enter' && debounceTime === 0) {
                 onSearch?.(localValue);
             }
             onKeyDown?.(e);
@@ -408,6 +608,17 @@ const SearchInputRoot = React.forwardRef<HTMLDivElement, SearchInputProps>(
             isLoading,
             disabled,
             inputRef,
+            activeIndex,
+            setActiveIndex,
+            listboxId,
+            getOptionId,
+            registerOption,
+            unregisterOption,
+            getOptionIndex,
+            optionsVersion,
+            isOpen,
+            setIsOpen,
+            handleKeyNavigation,
         };
 
         // Render with compound components
