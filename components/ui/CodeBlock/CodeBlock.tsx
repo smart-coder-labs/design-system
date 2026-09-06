@@ -1,8 +1,10 @@
 'use client';
 
 import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Check, Copy } from 'lucide-react';
 import { Highlight, themes } from 'prism-react-renderer';
+import { cn } from '../../../lib/utils';
 import type { CodeBlockProps } from './CodeBlock.types';
 
 const LANGUAGE_MAP: Record<string, string> = {
