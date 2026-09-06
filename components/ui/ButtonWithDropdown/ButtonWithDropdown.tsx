@@ -122,6 +122,23 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
             return () => document.removeEventListener('keydown', handleKeyDown);
         }, [isOpen]);
 
+        // Reset the roving focus index whenever the menu closes
+        useEffect(() => {
+            if (!isOpen) setActiveIndex(-1);
+        }, [isOpen]);
+
+        // Drop cached refs / roving index that point past the end of a shrunken action list
+        useEffect(() => {
+            itemRefs.current.length = actions.length;
+            setActiveIndex((current) => (current < actions.length ? current : -1));
+        }, [actions.length]);
+
+        // Move DOM focus to the active menu item
+        useEffect(() => {
+            if (!isOpen || activeIndex < 0) return;
+            itemRefs.current[activeIndex]?.focus();
+        }, [isOpen, activeIndex]);
+
         const variants = {
             primary: "bg-accent-blue text-white hover:bg-accent-blueHover active:bg-accent-blueActive shadow-sm",
             secondary: "bg-surface-secondary text-text-primary hover:bg-surface-tertiary active:bg-surface-tertiary/80 border border-border-primary",
@@ -143,10 +160,87 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
             },
         };
 
+        const focusTrigger = () => {
+            triggerRef.current?.focus();
+        };
+
+        // Walks the action list in `direction`, wrapping around and skipping disabled items
+        const findEnabledIndex = (start: number, direction: 1 | -1): number => {
+            const total = actions.length;
+            if (total === 0) return -1;
+            const origin = start < 0 ? (direction === 1 ? -1 : 0) : start;
+            for (let step = 1; step <= total; step += 1) {
+                const next = (((origin + direction * step) % total) + total) % total;
+                if (!actions[next]?.disabled) return next;
+            }
+            return -1;
+        };
+
+        const closeMenu = (returnFocus: boolean) => {
+            setIsOpen(false);
+            if (returnFocus) focusTrigger();
+        };
+
         const handleActionClick = (action: ButtonWithDropdownAction) => {
             if (action.disabled) return;
             action.onClick();
-            setIsOpen(false);
+            closeMenu(true);
+        };
+
+        const handleTriggerClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+            if (disabled) return;
+            const opening = !isOpen;
+            setIsOpen(opening);
+            // detail === 0 means the click came from Enter/Space, which must focus the first item
+            if (opening && event.detail === 0) setActiveIndex(findEnabledIndex(-1, 1));
+        };
+
+        const handleTriggerKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+            if (disabled) return;
+            // Enter/Space are left to the native click handler
+            if (event.key === 'ArrowDown') {
+                event.preventDefault();
+                setIsOpen(true);
+                setActiveIndex(findEnabledIndex(-1, 1));
+            } else if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                setIsOpen(true);
+                setActiveIndex(findEnabledIndex(-1, -1));
+            } else if (event.key === 'Escape' && isOpen) {
+                event.preventDefault();
+                setIsOpen(false);
+            }
+        };
+
+        const handleMenuKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+            switch (event.key) {
+                case 'ArrowDown':
+                    event.preventDefault();
+                    setActiveIndex(findEnabledIndex(activeIndex, 1));
+                    break;
+                case 'ArrowUp':
+                    event.preventDefault();
+                    setActiveIndex(findEnabledIndex(activeIndex, -1));
+                    break;
+                case 'Home':
+                    event.preventDefault();
+                    setActiveIndex(findEnabledIndex(-1, 1));
+                    break;
+                case 'End':
+                    event.preventDefault();
+                    setActiveIndex(findEnabledIndex(-1, -1));
+                    break;
+                case 'Escape':
+                    event.preventDefault();
+                    closeMenu(true);
+                    break;
+                case 'Tab':
+                    // Let the browser move focus onward, but dismiss the menu
+                    closeMenu(false);
+                    break;
+                default:
+                    break;
+            }
         };
 
         const menu = (
@@ -190,7 +284,12 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
         return (
             <div className="relative inline-block text-left" ref={containerRef}>
                 <motion.button
-                    ref={ref}
+                    ref={setTriggerRef}
+                    type="button"
+                    id={triggerId}
+                    aria-haspopup="menu"
+                    aria-expanded={isOpen}
+                    aria-controls={isOpen ? menuId : undefined}
                     whileTap={{ scale: 0.98 }}
                     disabled={disabled}
                     aria-haspopup="menu"
@@ -205,7 +304,7 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
                     )}
                 >
                     {label}
-                    <ChevronDown className={cn(sizes[size].icon, "transition-transform duration-200", isOpen && "rotate-180")} />
+                    <ChevronDown aria-hidden="true" className={cn(sizes[size].icon, "transition-transform duration-200", isOpen && "rotate-180")} />
                 </motion.button>
 
                 {mounted ? createPortal(menu, document.body) : null}
