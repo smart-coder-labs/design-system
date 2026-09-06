@@ -1,6 +1,7 @@
 'use client';
 
-import React, { forwardRef, useState, useEffect, useRef, useCallback } from 'react';
+import React, { forwardRef, useState, useEffect, useLayoutEffect, useCallback, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { cn } from '../../../lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
@@ -23,39 +24,103 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
         ref
     ) => {
         const [isOpen, setIsOpen] = useState(false);
-        // Index of the menu item that currently owns focus (-1 = none)
-        const [activeIndex, setActiveIndex] = useState(-1);
+        const [mounted, setMounted] = useState(false);
+        const [position, setPosition] = useState({ top: 0, left: 0 });
         const containerRef = useRef<HTMLDivElement>(null);
-        const triggerRef = useRef<HTMLButtonElement | null>(null);
-        const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+        const menuRef = useRef<HTMLDivElement>(null);
 
-        const baseId = React.useId();
-        const triggerId = `${baseId}-trigger`;
-        const menuId = `${baseId}-menu`;
-
-        // Keep the internal trigger ref in sync with the forwarded ref (object or callback)
-        const setTriggerRef = useCallback(
-            (node: HTMLButtonElement | null) => {
-                triggerRef.current = node;
-                if (typeof ref === 'function') {
-                    ref(node);
-                } else if (ref) {
-                    ref.current = node;
-                }
-            },
-            [ref]
-        );
-
-        // Click outside handler
+        // SSR guard: only portal once mounted on the client
         useEffect(() => {
+            setMounted(true);
+        }, []);
+
+        // Position the fixed-position menu relative to the trigger
+        const updatePosition = useCallback(() => {
+            const trigger = containerRef.current;
+            if (!trigger) return;
+
+            const rect = trigger.getBoundingClientRect();
+            const menu = menuRef.current;
+            const menuWidth = menu?.offsetWidth ?? 0;
+            const menuHeight = menu?.offsetHeight ?? 0;
+
+            let left = rect.left;
+            let top = rect.bottom + 8; // matches the previous `mt-2` offset
+
+            if (menuWidth && left + menuWidth > window.innerWidth - 8) {
+                left = window.innerWidth - menuWidth - 8;
+            }
+            if (left < 8) left = 8;
+            if (menuHeight && top + menuHeight > window.innerHeight - 8) {
+                top = rect.top - menuHeight - 8;
+            }
+            if (menuHeight) {
+                top = Math.max(8, Math.min(top, window.innerHeight - menuHeight - 8));
+            } else if (top < 8) {
+                top = 8;
+            }
+
+            setPosition((prev) => (prev.top === top && prev.left === left ? prev : { top, left }));
+        }, []);
+
+        useLayoutEffect(() => {
+            if (!isOpen) return;
+            updatePosition();
+            // The portaled menu lives at the end of <body>, so Tab no longer reaches
+            // it from the trigger: move focus into the first enabled item on open.
+            menuRef.current?.querySelector<HTMLButtonElement>('button:not([disabled])')?.focus();
+        }, [isOpen, updatePosition]);
+
+        useEffect(() => {
+            if (!isOpen) return;
+            const handleReposition = () => updatePosition();
+            window.addEventListener('scroll', handleReposition, true);
+            window.addEventListener('resize', handleReposition);
+            return () => {
+                window.removeEventListener('scroll', handleReposition, true);
+                window.removeEventListener('resize', handleReposition);
+            };
+        }, [isOpen, updatePosition]);
+
+        // Click outside handler (ignores clicks inside the portaled menu)
+        useEffect(() => {
+            if (!isOpen) return;
             const handleClickOutside = (event: MouseEvent) => {
-                if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-                    setIsOpen(false);
-                }
+                const target = event.target as Node;
+                if (containerRef.current?.contains(target) || menuRef.current?.contains(target)) return;
+                setIsOpen(false);
             };
             document.addEventListener('mousedown', handleClickOutside);
             return () => document.removeEventListener('mousedown', handleClickOutside);
-        }, []);
+        }, [isOpen]);
+
+        // Escape to close + arrow key navigation across the portaled items
+        useEffect(() => {
+            if (!isOpen) return;
+            const handleKeyDown = (event: KeyboardEvent) => {
+                if (event.key === 'Escape') {
+                    setIsOpen(false);
+                    (containerRef.current?.querySelector('button') as HTMLButtonElement | null)?.focus();
+                    return;
+                }
+                if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+
+                const items = Array.from(
+                    menuRef.current?.querySelectorAll<HTMLButtonElement>('button:not([disabled])') ?? []
+                );
+                if (items.length === 0) return;
+                event.preventDefault();
+
+                const currentIndex = items.indexOf(document.activeElement as HTMLButtonElement);
+                const nextIndex =
+                    event.key === 'ArrowDown'
+                        ? (currentIndex + 1) % items.length
+                        : (currentIndex <= 0 ? items.length : currentIndex) - 1;
+                items[nextIndex]?.focus();
+            };
+            document.addEventListener('keydown', handleKeyDown);
+            return () => document.removeEventListener('keydown', handleKeyDown);
+        }, [isOpen]);
 
         // Reset the roving focus index whenever the menu closes
         useEffect(() => {
@@ -178,6 +243,44 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
             }
         };
 
+        const menu = (
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        ref={menuRef}
+                        role="menu"
+                        initial={{ opacity: 0, scale: 0.95, y: -5 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.95, y: -5 }}
+                        transition={{ duration: 0.1 }}
+                        style={{ position: 'fixed', top: position.top, left: position.left }}
+                        className={cn(
+                            "z-50 text-left",
+                            "min-w-[160px] bg-surface-elevated border border-border-primary rounded-xl shadow-lg p-1"
+                        )}
+                    >
+                        {actions.map((action, index) => (
+                            <button
+                                key={index}
+                                role="menuitem"
+                                onClick={() => handleActionClick(action)}
+                                disabled={action.disabled}
+                                className={cn(
+                                    "flex w-full items-center gap-2 px-3 py-2 text-sm rounded-lg cursor-pointer outline-none transition-colors",
+                                    "text-text-primary hover:bg-surface-secondary text-left",
+                                    "focus:bg-surface-secondary",
+                                    action.disabled && "opacity-50 cursor-not-allowed"
+                                )}
+                            >
+                                {action.icon && <action.icon className="w-4 h-4" />}
+                                {action.label}
+                            </button>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        );
+
         return (
             <div className="relative inline-block text-left" ref={containerRef}>
                 <motion.button
@@ -189,8 +292,9 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
                     aria-controls={isOpen ? menuId : undefined}
                     whileTap={{ scale: 0.98 }}
                     disabled={disabled}
-                    onClick={handleTriggerClick}
-                    onKeyDown={handleTriggerKeyDown}
+                    aria-haspopup="menu"
+                    aria-expanded={isOpen}
+                    onClick={() => !disabled && setIsOpen(!isOpen)}
                     className={cn(
                         "inline-flex items-center justify-center font-medium rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                         variants[variant],
@@ -203,48 +307,7 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
                     <ChevronDown aria-hidden="true" className={cn(sizes[size].icon, "transition-transform duration-200", isOpen && "rotate-180")} />
                 </motion.button>
 
-                <AnimatePresence>
-                    {isOpen && (
-                        <motion.div
-                            id={menuId}
-                            role="menu"
-                            aria-labelledby={triggerId}
-                            tabIndex={-1}
-                            onKeyDown={handleMenuKeyDown}
-                            initial={{ opacity: 0, scale: 0.95, y: -5 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: -5 }}
-                            transition={{ duration: 0.1 }}
-                            className={cn(
-                                "absolute left-0 mt-2 z-dropdown",
-                                "min-w-[160px] bg-surface-elevated border border-border-primary rounded-xl shadow-lg p-1"
-                            )}
-                        >
-                            {actions.map((action, index) => (
-                                <button
-                                    key={index}
-                                    ref={(node) => {
-                                        itemRefs.current[index] = node;
-                                    }}
-                                    type="button"
-                                    role="menuitem"
-                                    tabIndex={index === activeIndex ? 0 : -1}
-                                    onClick={() => handleActionClick(action)}
-                                    disabled={action.disabled}
-                                    className={cn(
-                                        "flex w-full items-center gap-2 px-3 py-2 text-sm rounded-lg cursor-pointer outline-none transition-colors",
-                                        "text-text-primary hover:bg-surface-secondary text-left",
-                                        "focus:bg-surface-secondary",
-                                        action.disabled && "opacity-50 cursor-not-allowed"
-                                    )}
-                                >
-                                    {action.icon && <action.icon aria-hidden="true" className="w-4 h-4" />}
-                                    {action.label}
-                                </button>
-                            ))}
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                {mounted ? createPortal(menu, document.body) : null}
             </div>
         );
     }
