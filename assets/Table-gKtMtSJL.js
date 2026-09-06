@@ -1,0 +1,1 @@
+import{n as e}from"./chunk-jRWAZmH_.js";import{n as t}from"./Table-BDF3t_IM.js";var n=e((()=>{t()}));export{n as t};
