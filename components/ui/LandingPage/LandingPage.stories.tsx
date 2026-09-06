@@ -12,7 +12,16 @@ import { PriceDisplay } from '../PriceDisplay';
 import { SectionHeader } from '../SectionHeader';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../Accordion';
 import { ThemeToggle } from '../ThemeToggle';
-import { Check, Zap, Shield, Globe, BarChart, Twitter, Github, Linkedin, Facebook } from 'lucide-react';
+import { Check, Zap, Shield, Globe, BarChart, Github } from 'lucide-react';
+
+/**
+ * Full-page composition example.
+ *
+ * Every link in this story points at a real destination: in-page anchors for
+ * sections of this same page (`#features`, `#testimonials`, `#pricing`, `#faq`),
+ * the published Storybook for component docs, and the GitHub repository for
+ * source, documentation and support. Off-site links open in a new tab.
+ */
 
 const meta: Meta = {
     title: 'Pages/Landing Page',
@@ -353,39 +362,72 @@ export const BusinessLanding: Story = {
                         title="Acme Corp" 
                         description="Making the world a better place through constructing elegant hierarchies."
                         socials={
-                            <>
-                                <FooterLink href="#"><Twitter className="w-5 h-5" /></FooterLink>
-                                <FooterLink href="#"><Github className="w-5 h-5" /></FooterLink>
-                                <FooterLink href="#"><Linkedin className="w-5 h-5" /></FooterLink>
-                                <FooterLink href="#"><Facebook className="w-5 h-5" /></FooterLink>
-                            </>
+                            <FooterLink
+                                href="https://github.com/smart-coder-labs"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub"
+                            >
+                                <Github className="w-5 h-5" />
+                            </FooterLink>
                         }
                     />
                     <FooterContent>
                         <FooterColumn title="Product">
-                            <FooterLink href="#">Features</FooterLink>
-                            <FooterLink href="#">Integrations</FooterLink>
-                            <FooterLink href="#">Pricing</FooterLink>
-                            <FooterLink href="#">Changelog</FooterLink>
+                            <FooterLink href="#features">Features</FooterLink>
+                            <FooterLink href="#pricing">Pricing</FooterLink>
+                            <FooterLink href="#testimonials">Testimonials</FooterLink>
+                            <FooterLink href="#faq">FAQ</FooterLink>
                         </FooterColumn>
-                        <FooterColumn title="Company">
-                            <FooterLink href="#">About</FooterLink>
-                            <FooterLink href="#">Blog</FooterLink>
-                            <FooterLink href="#">Careers</FooterLink>
-                            <FooterLink href="#">Contact</FooterLink>
+                        <FooterColumn title="Components">
+                            <FooterLink
+                                href="https://smart-coder-labs.github.io/design-system/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Component Library
+                            </FooterLink>
+                            <FooterLink
+                                href="https://smart-coder-labs.github.io/design-system/?path=/docs/navigation-navbar--docs"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                NavBar
+                            </FooterLink>
+                            <FooterLink
+                                href="https://smart-coder-labs.github.io/design-system/?path=/docs/layout-footer--docs"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Footer
+                            </FooterLink>
                         </FooterColumn>
-                        <FooterColumn title="Legal">
-                            <FooterLink href="#">Privacy</FooterLink>
-                            <FooterLink href="#">Terms</FooterLink>
-                            <FooterLink href="#">Cookie Policy</FooterLink>
+                        <FooterColumn title="Support">
+                            <FooterLink
+                                href="https://github.com/smart-coder-labs/design-system#readme"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Documentation
+                            </FooterLink>
+                            <FooterLink
+                                href="https://github.com/smart-coder-labs/design-system/issues"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Contact
+                            </FooterLink>
+                            <FooterLink
+                                href="https://github.com/smart-coder-labs/design-system"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source Code
+                            </FooterLink>
                         </FooterColumn>
                     </FooterContent>
                     <FooterBottom>
                         <p>© 2025 Acme Corp Inc. All rights reserved.</p>
-                        <div className="flex gap-4">
-                            <FooterLink href="#">Privacy Policy</FooterLink>
-                            <FooterLink href="#">Terms of Service</FooterLink>
-                        </div>
                     </FooterBottom>
                 </Footer>
             </div>
