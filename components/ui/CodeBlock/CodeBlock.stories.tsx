@@ -82,6 +82,18 @@ export const ShortCode: Story = {
     },
 };
 
+/**
+ * The "copy command" pattern. Clicking the copy button animates the icon swap,
+ * reveals a visible "Copied" label, and announces "Copied to clipboard" through a
+ * visually hidden `aria-live="polite"` region for assistive technology.
+ */
+export const CopyCommand: Story = {
+    args: {
+        code: `npm install @smart-coder-labs/apple-design-system`,
+        language: 'bash',
+    },
+};
+
 export const SQL: Story = {
     args: {
         code: `SELECT 

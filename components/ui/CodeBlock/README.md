@@ -115,7 +115,9 @@ pm2 restart app`}
 ## Notes
 
 - Copy button automatically copies code to clipboard
-- Shows checkmark feedback for 2 seconds after copying
+- Shows checkmark feedback for 2 seconds after copying, with an animated icon swap and a visible "Copied" label
+- Screen readers are notified via a visually hidden `aria-live="polite"` region ("Copied to clipboard"); the button's `aria-label`/`title` also update while copied
+- If the Clipboard API is unavailable or the write is rejected, the copied state is not shown
 - Language label is displayed in the header
 - Supports dark mode with appropriate color tokens
 - Uses monospace font for code content
