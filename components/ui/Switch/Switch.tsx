@@ -13,6 +13,12 @@ export interface SwitchProps {
     description?: string;
     size?: 'sm' | 'md' | 'lg';
     className?: string;
+    /** Id aplicado al control `role="switch"`. */
+    id?: string;
+    /** Nombre accesible del control cuando no se usa `label`. */
+    'aria-label'?: string;
+    /** Id del elemento que da nombre accesible al control. */
+    'aria-labelledby'?: string;
 }
 
 /* ========================================
@@ -55,6 +61,9 @@ export const Switch: React.FC<SwitchProps> = ({
     description,
     size = 'md',
     className = '',
+    id,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
 }) => {
     const sizes = sizeStyles[size];
 
@@ -75,7 +84,10 @@ export const Switch: React.FC<SwitchProps> = ({
         <button
             type="button"
             role="switch"
+            id={id}
             aria-checked={checked}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
             disabled={disabled}
             onClick={handleClick}
             onKeyDown={handleKeyDown}
