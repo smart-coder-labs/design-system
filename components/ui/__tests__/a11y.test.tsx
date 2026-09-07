@@ -1,11 +1,12 @@
-import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/react';
+import { describe, it, expect, afterEach } from 'vitest';
+import { render, fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import { axe } from 'vitest-axe';
 import { Button } from '../Button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../Card';
 import { Checkbox } from '../Checkbox';
 import { Avatar, AvatarImage, AvatarFallback } from '../Avatar';
+import { ThemeToggle } from '../ThemeToggle';
 
 // Custom matcher using axe directly
 async function assertNoViolations(container: HTMLElement) {
@@ -111,5 +112,31 @@ describe('Accessibility - Avatar', () => {
       </Avatar>
     );
     await assertNoViolations(container);
+  });
+});
+
+describe('Accessibility - ThemeToggle', () => {
+  afterEach(() => {
+    localStorage.clear();
+    document.documentElement.classList.remove('dark');
+  });
+
+  it('exposes an accessible name derived from the active theme', () => {
+    render(<ThemeToggle defaultMode="light" storageKey="a11y-theme" />);
+
+    // Light mode active -> the control announces the action it performs.
+    const control = screen.getByRole('switch', { name: 'Switch to dark mode' });
+
+    fireEvent.click(control);
+
+    // Dark mode active -> the name must flip, never go stale.
+    expect(screen.getByRole('switch')).toHaveAccessibleName('Switch to light mode');
+    expect(screen.queryByRole('switch', { name: 'Switch to dark mode' })).toBeNull();
+  });
+
+  it('lets a caller-supplied aria-label win over the derived default', () => {
+    render(<ThemeToggle defaultMode="light" storageKey="a11y-theme" aria-label="Cambiar tema" />);
+
+    expect(screen.getByRole('switch')).toHaveAccessibleName('Cambiar tema');
   });
 });
