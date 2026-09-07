@@ -13,22 +13,26 @@ import { ButtonWithDropdown } from '@/components/ui/ButtonWithDropdown';
 ## Basic Usage
 
 ```tsx
+import { Pencil, Trash2 } from 'lucide-react';
+
 <ButtonWithDropdown
   label="Actions"
   variant="primary"
   actions={[
-    { label: 'Edit', onClick: () => {} },
-    { label: 'Delete', onClick: () => {}, variant: 'danger' },
+    { label: 'Edit', onClick: () => {}, icon: Pencil },
+    { label: 'Delete', onClick: () => {}, icon: Trash2, disabled: true },
   ]}
 />
 ```
 
 ## API
 
+### ButtonWithDropdown
+
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| label | string | - | Button text |
-| actions | ButtonWithDropdownAction[] | - | Dropdown items |
+| label | string | - | Button text (required) |
+| actions | ButtonWithDropdownAction[] | - | Dropdown items (required) |
 | variant | 'primary' \| 'secondary' \| 'tertiary' | 'primary' | Visual style |
 | size | 'sm' \| 'md' \| 'lg' | 'md' | Button size |
 | disabled | boolean | false | Disabled state |
@@ -38,10 +42,10 @@ import { ButtonWithDropdown } from '@/components/ui/ButtonWithDropdown';
 
 | Prop | Type | Description |
 |------|------|-------------|
-| label | string | Action label |
-| onClick | () => void | Click handler |
-| icon | LucideIcon (optional) | Action icon |
-| disabled | boolean | Disabled state |
+| label | string | Action label (required) |
+| onClick | () => void | Click handler (required) |
+| icon | React.ElementType | Icon rendered before the label |
+| disabled | boolean | Disables the action item |
 
 ## Notes
 
