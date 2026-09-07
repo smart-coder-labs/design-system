@@ -1,5 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { NavBar, NavBarBrand, NavBarContent, NavBarItem, NavBarSeparator } from './NavBar';
+import {
+    NavBar,
+    NavBarBrand,
+    NavBarContent,
+    NavBarItem,
+    NavBarSeparator,
+    NavBarMobileToggle,
+    NavBarMobileMenu,
+    NavBarMobileMenuItem,
+} from './NavBar';
 import React from 'react';
 
 const meta = {
@@ -150,6 +159,122 @@ export const Mobile: Story = {
                     <NavBarItem active>Home</NavBarItem>
                 </NavBarContent>
             </NavBar>
+        </div>
+    ),
+};
+
+const HeroPage = () => (
+    <div className="px-6 py-16 text-center">
+        <h1 className="text-4xl font-bold text-text-primary">
+            Move your money the Apple way
+        </h1>
+        <p className="mt-4 text-lg text-text-secondary">
+            A hero headline sitting directly under the navbar. If the mobile panel
+            were transparent, these words would bleed through the navigation links.
+        </p>
+    </div>
+);
+
+/**
+ * Responsive navbar: desktop links collapse into an opaque dropdown panel on mobile.
+ * Resize below `md` (768px) to reveal the hamburger toggle.
+ */
+export const WithMobileMenu: Story = {
+    parameters: {
+        viewport: { defaultViewport: 'mobile1' },
+    },
+    render: () => (
+        <div className="min-h-[560px] bg-background-primary">
+            <NavBar>
+                <NavBarBrand href="/">FinFlow</NavBarBrand>
+                <NavBarContent align="center" className="hidden md:flex">
+                    <NavBarItem active href="/">Dashboard</NavBarItem>
+                    <NavBarItem href="/transactions">Transactions</NavBarItem>
+                    <NavBarItem href="/investments">Investments</NavBarItem>
+                </NavBarContent>
+                <NavBarMobileToggle />
+                <NavBarMobileMenu>
+                    <NavBarMobileMenuItem active href="/">Dashboard</NavBarMobileMenuItem>
+                    <NavBarMobileMenuItem href="/transactions">Transactions</NavBarMobileMenuItem>
+                    <NavBarMobileMenuItem href="/investments">Investments</NavBarMobileMenuItem>
+                    <NavBarMobileMenuItem href="/settings">Settings</NavBarMobileMenuItem>
+                </NavBarMobileMenu>
+            </NavBar>
+            <HeroPage />
+        </div>
+    ),
+};
+
+/**
+ * Regression guard for the transparent-panel bug: the menu starts open over hero
+ * copy, proving the panel background (`bg-surface-primary`) is fully opaque.
+ */
+export const MobileMenuOverContent: Story = {
+    parameters: {
+        viewport: { defaultViewport: 'mobile1' },
+    },
+    render: () => (
+        <div className="min-h-[560px] bg-background-primary">
+            <NavBar defaultOpen>
+                <NavBarBrand href="/">FinFlow</NavBarBrand>
+                <NavBarMobileToggle />
+                <NavBarMobileMenu>
+                    <NavBarMobileMenuItem active href="/">Dashboard</NavBarMobileMenuItem>
+                    <NavBarMobileMenuItem href="/transactions">Transactions</NavBarMobileMenuItem>
+                    <NavBarMobileMenuItem href="/investments">Investments</NavBarMobileMenuItem>
+                </NavBarMobileMenu>
+            </NavBar>
+            <HeroPage />
+        </div>
+    ),
+};
+
+/** Controlled mobile menu — open state owned by the consumer. */
+export const MobileMenuControlled: Story = {
+    parameters: {
+        viewport: { defaultViewport: 'mobile1' },
+    },
+    render: () => {
+        const ControlledExample = () => {
+            const [open, setOpen] = React.useState(false);
+
+            return (
+                <div className="min-h-[560px] bg-background-primary">
+                    <NavBar open={open} onOpenChange={setOpen}>
+                        <NavBarBrand href="/">FinFlow</NavBarBrand>
+                        <NavBarMobileToggle />
+                        <NavBarMobileMenu>
+                            <NavBarMobileMenuItem href="/">Dashboard</NavBarMobileMenuItem>
+                            <NavBarMobileMenuItem href="/transactions">Transactions</NavBarMobileMenuItem>
+                        </NavBarMobileMenu>
+                    </NavBar>
+                    <div className="px-6 py-8 text-sm text-text-secondary">
+                        Menu is {open ? 'open' : 'closed'}.
+                    </div>
+                </div>
+            );
+        };
+
+        return <ControlledExample />;
+    },
+};
+
+/** Mobile menu in dark mode — colors come from tokens, no hardcoded values. */
+export const MobileMenuDarkMode: Story = {
+    parameters: {
+        viewport: { defaultViewport: 'mobile1' },
+    },
+    render: () => (
+        <div className="dark min-h-[560px] bg-background-primary">
+            <NavBar defaultOpen>
+                <NavBarBrand href="/">FinFlow</NavBarBrand>
+                <NavBarMobileToggle />
+                <NavBarMobileMenu>
+                    <NavBarMobileMenuItem active href="/">Dashboard</NavBarMobileMenuItem>
+                    <NavBarMobileMenuItem href="/transactions">Transactions</NavBarMobileMenuItem>
+                </NavBarMobileMenu>
+            </NavBar>
+            <HeroPage />
         </div>
     ),
 };
