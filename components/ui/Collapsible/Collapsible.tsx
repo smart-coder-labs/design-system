@@ -100,6 +100,17 @@ const CollapsibleContent = React.forwardRef<HTMLDivElement, CollapsibleContentPr
 
         const { open, triggerId, contentId, disabled } = context;
 
+        // The collapsed subtree must not be visible, focusable or hit-testable.
+        // `visibility: hidden` gives that guarantee in CSS, but it has to be applied
+        // only *after* the collapse animation has run — and removed synchronously
+        // when opening, so the expand animation stays visible.
+        const [isCollapsed, setIsCollapsed] = React.useState(!open);
+
+        if (open && isCollapsed) {
+            // Render-phase state adjustment: reveal before paint, no flash.
+            setIsCollapsed(false);
+        }
+
         return (
             <div
                 ref={ref}
@@ -107,6 +118,9 @@ const CollapsibleContent = React.forwardRef<HTMLDivElement, CollapsibleContentPr
                 role="region"
                 aria-labelledby={triggerId}
                 aria-hidden={!open}
+                // `inert` guarantees the collapsed content cannot be focused or clicked,
+                // so no focusable element ever lives inside an `aria-hidden` subtree.
+                inert={!open}
                 data-state={open ? "open" : "closed"}
                 data-disabled={disabled ? "" : undefined}
                 className={className}
@@ -116,7 +130,13 @@ const CollapsibleContent = React.forwardRef<HTMLDivElement, CollapsibleContentPr
                     initial={false}
                     animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
                     transition={{ duration: 0.2, ease: "easeInOut" }}
-                    style={{ overflow: "hidden" }}
+                    onAnimationComplete={() => {
+                        if (!open) setIsCollapsed(true);
+                    }}
+                    style={{
+                        overflow: "hidden",
+                        visibility: isCollapsed ? "hidden" : "visible",
+                    }}
                 >
                     {children}
                 </motion.div>

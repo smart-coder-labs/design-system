@@ -218,6 +218,12 @@ export const AccordionContent = React.forwardRef<HTMLDivElement, AccordionConten
         const contentStyle = {
             '--radix-accordion-content-height': `${measuredHeight}px`,
             height: isOpen ? `${measuredHeight}px` : 0,
+            // `visibility` removes the collapsed subtree from the accessibility tree,
+            // from hit-testing and from the tab order in every browser. It is a
+            // transitionable (discrete) property, so with the `transition-all` on the
+            // wrapper it flips to `visible` immediately when opening and only becomes
+            // `hidden` once the collapse transition has finished.
+            visibility: isOpen ? 'visible' : 'hidden',
         } as React.CSSProperties;
 
         return (
@@ -228,6 +234,9 @@ export const AccordionContent = React.forwardRef<HTMLDivElement, AccordionConten
                 id={contentId}
                 aria-labelledby={triggerId}
                 aria-hidden={!isOpen}
+                // `inert` guarantees the collapsed content cannot be focused or clicked,
+                // so no focusable element ever lives inside an `aria-hidden` subtree.
+                inert={!isOpen}
                 data-state={isOpen ? 'open' : 'closed'}
                 data-disabled={disabled ? '' : undefined}
                 className={accordionContentVariants({ variant: 'default' })}
