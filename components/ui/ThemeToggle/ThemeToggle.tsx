@@ -26,6 +26,8 @@ export interface ThemeToggleProps {
     className?: string;
     /** Callback al cambiar el modo. */
     onModeChange?: (mode: ThemeMode, theme: ThemeName) => void;
+    /** Sobrescribe el nombre accesible del switch. Por defecto se deriva del tema activo. */
+    'aria-label'?: string;
 }
 
 /* ========================================
@@ -57,6 +59,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
     allowSystem = true,
     className,
     onModeChange,
+    'aria-label': ariaLabel,
 }) => {
     const [mode, setMode] = React.useState<ThemeMode>(defaultMode);
     const [theme, setTheme] = React.useState<ThemeName>(() => resolveTheme(defaultMode));
@@ -111,6 +114,11 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
     const handleToggle = (checked: boolean) => setAndPersist(checked ? 'dark' : 'light');
     const handleAuto = () => setAndPersist('system');
 
+    // El nombre accesible describe la acción que ejecutará el control, por lo que
+    // debe derivarse del tema activo en cada render (nunca quedarse obsoleto).
+    const switchAriaLabel =
+        ariaLabel ?? (theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+
     const statusText = description
         ? description
         : mode === 'system'
@@ -161,7 +169,11 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
                         Auto
                     </button>
                 )}
-                <Switch checked={theme === 'dark'} onCheckedChange={handleToggle} />
+                <Switch
+                    checked={theme === 'dark'}
+                    onCheckedChange={handleToggle}
+                    aria-label={switchAriaLabel}
+                />
             </div>
         </div>
     );
