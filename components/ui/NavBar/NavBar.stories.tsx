@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { NavBar, NavBarBrand, NavBarContent, NavBarItem, NavBarSeparator } from './NavBar';
+import { NavBarMobileTrigger, NavBarMobileMenu } from './NavBar.mobile';
 import React from 'react';
 
 const meta = {
@@ -150,6 +151,64 @@ export const Mobile: Story = {
                     <NavBarItem active>Home</NavBarItem>
                 </NavBarContent>
             </NavBar>
+        </div>
+    ),
+};
+
+/**
+ * Mobile menu — resize the viewport below `md` (768px) to see the hamburger.
+ * The panel uses an opaque `bg-surface-primary` surface so links stay readable
+ * over any content behind the navbar.
+ */
+export const MobileMenu: Story = {
+    render: () => (
+        <div>
+            <NavBar sticky={false}>
+                <NavBarBrand>FinFlow</NavBarBrand>
+                <NavBarContent align="center" className="hidden md:flex">
+                    <NavBarItem active href="#dashboard">Dashboard</NavBarItem>
+                    <NavBarItem href="#transactions">Transactions</NavBarItem>
+                    <NavBarItem href="#investments">Investments</NavBarItem>
+                </NavBarContent>
+                <NavBarContent align="right">
+                    <NavBarMobileTrigger aria-label="Open navigation menu" />
+                </NavBarContent>
+                {/* No `active` here: the desktop list above stays mounted and
+                    `NavBarItem` shares a single `layoutId` for the indicator. */}
+                <NavBarMobileMenu>
+                    <NavBarItem href="#dashboard">Dashboard</NavBarItem>
+                    <NavBarItem href="#transactions">Transactions</NavBarItem>
+                    <NavBarItem href="#investments">Investments</NavBarItem>
+                    <NavBarItem href="#settings">Settings</NavBarItem>
+                </NavBarMobileMenu>
+            </NavBar>
+            <div className="p-8 space-y-2">
+                <p className="text-2xl font-semibold text-text-primary">Page content behind the menu</p>
+                <p className="text-text-secondary">The open panel must fully cover this copy.</p>
+            </div>
+        </div>
+    ),
+};
+
+/** Mobile menu rendered open by default (controlled via `defaultOpen`) */
+export const MobileMenuOpen: Story = {
+    render: () => (
+        <div>
+            <NavBar sticky={false} defaultOpen>
+                <NavBarBrand>FinFlow</NavBarBrand>
+                <NavBarContent align="right">
+                    <NavBarMobileTrigger aria-label="Open navigation menu" />
+                </NavBarContent>
+                <NavBarMobileMenu>
+                    <NavBarItem href="#dashboard">Dashboard</NavBarItem>
+                    <NavBarItem href="#transactions">Transactions</NavBarItem>
+                    <NavBarItem href="#investments">Investments</NavBarItem>
+                </NavBarMobileMenu>
+            </NavBar>
+            <div className="p-8 space-y-2">
+                <p className="text-2xl font-semibold text-text-primary">Page content behind the menu</p>
+                <p className="text-text-secondary">The open panel must fully cover this copy.</p>
+            </div>
         </div>
     ),
 };

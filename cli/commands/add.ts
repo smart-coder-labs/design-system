@@ -98,12 +98,11 @@ export const add = async (components: string[]) => {
       continue;
     }
 
-    // Detect local dependencies from main file
-    const mainFile = files.find((f) => f.name === `${component}.tsx`);
-    if (mainFile) {
+    // Detect local dependencies from all of the component's files
+    for (const file of files) {
       const localImportRegex = /from\s+['"]\.\.\/([A-Z][a-zA-Z0-9]*)['"]/g;
       let match;
-      while ((match = localImportRegex.exec(mainFile.content)) !== null) {
+      while ((match = localImportRegex.exec(file.content)) !== null) {
         const dep = match[1];
         if (!processed.has(dep) && !queue.includes(dep)) {
           queue.push(dep);

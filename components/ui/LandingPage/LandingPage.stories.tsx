@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { NavBar, NavBarBrand, NavBarContent, NavBarItem } from '../NavBar';
+import { NavBar, NavBarBrand, NavBarContent, NavBarItem, NavBarMobileTrigger, NavBarMobileMenu } from '../NavBar';
 import { Footer, FooterTop, FooterContent, FooterColumn, FooterLink, FooterBottom } from '../Footer';
 import { Button } from '../Button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../Card';
@@ -43,15 +43,28 @@ export const BusinessLanding: Story = {
                     
                     <NavBarContent align="right">
                         <div className="flex gap-2 items-center">
-                             <ThemeToggle 
-                                className="w-auto border-0 p-2 bg-transparent shadow-none" 
-                                label="" 
+                             <ThemeToggle
+                                className="w-auto border-0 p-2 bg-transparent shadow-none"
+                                label=""
                                 allowSystem={false}
                              />
+                            <Button variant="ghost" size="sm" className="hidden md:inline-flex">Log in</Button>
+                            <Button variant="primary" size="sm" className="hidden md:inline-flex">Get Started</Button>
+                            <NavBarMobileTrigger aria-label="Open navigation menu" />
+                        </div>
+                    </NavBarContent>
+
+                    {/* Mobile menu — opaque surface so links never overlap the hero */}
+                    <NavBarMobileMenu>
+                        <NavBarItem href="#features">Features</NavBarItem>
+                        <NavBarItem href="#testimonials">Testimonials</NavBarItem>
+                        <NavBarItem href="#pricing">Pricing</NavBarItem>
+                        <NavBarItem href="#faq">FAQ</NavBarItem>
+                        <div className="flex flex-col gap-2 pt-3 mt-2 border-t border-border-primary">
                             <Button variant="ghost" size="sm">Log in</Button>
                             <Button variant="primary" size="sm">Get Started</Button>
                         </div>
-                    </NavBarContent>
+                    </NavBarMobileMenu>
                 </NavBar>
 
                 {/* Hero Section */}

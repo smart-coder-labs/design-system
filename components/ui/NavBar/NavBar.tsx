@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
+import { NavBarMobileContext } from './NavBar.context';
 
 /* ========================================
    TYPES
@@ -9,6 +12,12 @@ export interface NavBarProps {
   children: React.ReactNode;
   variant?: 'default' | 'glass' | 'transparent';
   sticky?: boolean;
+  /** Controlled open state of the mobile menu */
+  open?: boolean;
+  /** Initial open state of the mobile menu (uncontrolled) */
+  defaultOpen?: boolean;
+  /** Called whenever the mobile menu opens or closes */
+  onOpenChange?: (open: boolean) => void;
   className?: string;
 }
 
@@ -60,32 +69,76 @@ export const NavBar: React.FC<NavBarProps> = ({
   children,
   variant = 'default',
   sticky = true,
+  open,
+  defaultOpen = false,
+  onOpenChange,
   className = '',
 }) => {
+  const [uncontrolledOpen, setUncontrolledOpen] = React.useState(defaultOpen);
+  const isControlled = open !== undefined;
+  const mobileOpen = isControlled ? open : uncontrolledOpen;
+  const generatedId = React.useId();
+
+  const setOpen = React.useCallback(
+    (next: boolean) => {
+      if (!isControlled) {
+        setUncontrolledOpen(next);
+      }
+      onOpenChange?.(next);
+    },
+    [isControlled, onOpenChange]
+  );
+
+  // Close the mobile menu on Escape
+  React.useEffect(() => {
+    if (!mobileOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [mobileOpen, setOpen]);
+
+  const mobileContext = React.useMemo(
+    () => ({
+      open: mobileOpen,
+      setOpen,
+      toggle: () => setOpen(!mobileOpen),
+      menuId: `navbar-mobile-menu-${generatedId}`,
+    }),
+    [mobileOpen, setOpen, generatedId]
+  );
+
   return (
-    <motion.nav
-      className={`
-        ${sticky ? 'sticky top-0' : ''}
-        ${variantStyles[variant]}
-        z-50
-        transition-apple
-        ${className}
-      `}
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{
-        type: 'spring',
-        stiffness: 300,
-        damping: 30,
-        mass: 0.8,
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {children}
+    <NavBarMobileContext.Provider value={mobileContext}>
+      <motion.nav
+        className={`
+          ${sticky ? 'sticky top-0' : 'relative'}
+          ${variantStyles[variant]}
+          z-50
+          transition-apple
+          ${className}
+        `}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          type: 'spring',
+          stiffness: 300,
+          damping: 30,
+          mass: 0.8,
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {children}
+          </div>
         </div>
-      </div>
-    </motion.nav>
+      </motion.nav>
+    </NavBarMobileContext.Provider>
   );
 };
 
@@ -224,6 +277,22 @@ export const NavBarSeparator: React.FC = () => (
     <NavBarItem active>Home</NavBarItem>
     <NavBarItem>About</NavBarItem>
   </NavBarContent>
+</NavBar>
+
+// With mobile menu (hamburger below md, opaque panel below the bar)
+<NavBar variant="glass">
+  <NavBarBrand>Brand</NavBarBrand>
+  <NavBarContent align="center" className="hidden md:flex">
+    <NavBarItem href="#features">Features</NavBarItem>
+    <NavBarItem href="#pricing">Pricing</NavBarItem>
+  </NavBarContent>
+  <NavBarContent align="right">
+    <NavBarMobileTrigger />
+  </NavBarContent>
+  <NavBarMobileMenu>
+    <NavBarItem href="#features">Features</NavBarItem>
+    <NavBarItem href="#pricing">Pricing</NavBarItem>
+  </NavBarMobileMenu>
 </NavBar>
 
 // Non-sticky navbar
