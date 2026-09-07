@@ -23,13 +23,13 @@ import { Footer, FooterTop, FooterContent, FooterColumn, FooterLink, FooterBotto
     />
     <FooterContent>
         <FooterColumn title="Product">
-            <FooterLink href="#">Features</FooterLink>
-            <FooterLink href="#">Pricing</FooterLink>
-            <FooterLink href="#">Docs</FooterLink>
+            <FooterLink href="/features">Features</FooterLink>
+            <FooterLink href="/pricing">Pricing</FooterLink>
+            <FooterLink href="/docs">Docs</FooterLink>
         </FooterColumn>
         <FooterColumn title="Company">
-            <FooterLink href="#">About</FooterLink>
-            <FooterLink href="#">Careers</FooterLink>
+            <FooterLink href="/about">About</FooterLink>
+            <FooterLink href="/careers">Careers</FooterLink>
         </FooterColumn>
     </FooterContent>
     <FooterBottom>
@@ -88,11 +88,21 @@ A single link in a column.
 
 | Prop | Type | Description |
 |------|------|-------------|
-| `href` | `string` | Link URL |
+| `href` | `string` | Link URL. If missing, empty or `"#"` (and no `as`/`onClick`), renders a non-navigating `<span aria-disabled="true">` |
 | `as` | `ElementType` | Custom element type (default: "a") |
+| `external` | `boolean` | Adds `target="_blank"` + `rel="noopener noreferrer"` (anchors only) |
 | `children` | `ReactNode` | Link text |
 | `className` | `string` | Additional classes |
 | `...props` | `AnchorHTMLAttributes` | Standard anchor props |
+
+```tsx
+{/* Real destinations */}
+<FooterLink href="#pricing">Pricing</FooterLink>
+<FooterLink href="https://github.com/smart-coder-labs/design-system" external>GitHub</FooterLink>
+
+{/* No destination yet → renders as non-navigating text, not a link */}
+<FooterLink href="#">Coming soon</FooterLink>
+```
 
 ### FooterBottom
 
@@ -115,17 +125,17 @@ Bottom section with copyright and additional info.
     />
     <FooterContent>
         <FooterColumn title="Product">
-            <FooterLink href="#">Features</FooterLink>
-            <FooterLink href="#">Pricing</FooterLink>
-            <FooterLink href="#">Integrations</FooterLink>
+            <FooterLink href="/features">Features</FooterLink>
+            <FooterLink href="/pricing">Pricing</FooterLink>
+            <FooterLink href="/integrations">Integrations</FooterLink>
         </FooterColumn>
         <FooterColumn title="Company">
-            <FooterLink href="#">About</FooterLink>
-            <FooterLink href="#">Careers</FooterLink>
+            <FooterLink href="/about">About</FooterLink>
+            <FooterLink href="/careers">Careers</FooterLink>
         </FooterColumn>
         <FooterColumn title="Legal">
-            <FooterLink href="#">Privacy</FooterLink>
-            <FooterLink href="#">Terms</FooterLink>
+            <FooterLink href="/privacy">Privacy</FooterLink>
+            <FooterLink href="/terms">Terms</FooterLink>
         </FooterColumn>
     </FooterContent>
     <FooterBottom>
@@ -153,14 +163,14 @@ Bottom section with copyright and additional info.
 ```tsx
 <FooterContent>
     <FooterColumn title="Main" span={6}>
-        <FooterLink href="#">Link 1</FooterLink>
-        <FooterLink href="#">Link 2</FooterLink>
+        <FooterLink href="/link-1">Link 1</FooterLink>
+        <FooterLink href="/link-2">Link 2</FooterLink>
     </FooterColumn>
     <FooterColumn title="Secondary" span={3}>
-        <FooterLink href="#">Link 3</FooterLink>
+        <FooterLink href="/link-3">Link 3</FooterLink>
     </FooterColumn>
     <FooterColumn title="Tertiary" span={3}>
-        <FooterLink href="#">Link 4</FooterLink>
+        <FooterLink href="/link-4">Link 4</FooterLink>
     </FooterColumn>
 </FooterContent>
 ```
@@ -171,4 +181,6 @@ Bottom section with copyright and additional info.
 - Fully responsive with mobile-first approach
 - Supports dark mode via CSS tokens
 - FooterLink uses semantic `<a>` by default but supports custom components via `as` prop
+- FooterLink never renders a dead `href="#"` anchor: placeholder links degrade to a non-navigating `<span aria-disabled="true">` with identical typography, so they cannot scroll the page to the top
+- Use `external` for off-site destinations; caller-provided `target`/`rel` always win
 - All hover states use smooth color transitions

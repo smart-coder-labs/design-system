@@ -162,23 +162,55 @@ FooterColumn.displayName = 'FooterColumn';
 export interface FooterLinkProps
     extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     as?: React.ElementType;
+    /** Opens the link in a new tab with `rel="noopener noreferrer"`. Only applies when an anchor is rendered. */
+    external?: boolean;
 }
+
+/** A link is a placeholder when it has no real destination ("", undefined or "#"). */
+const isPlaceholderHref = (href?: string) =>
+    href === undefined || href.trim() === '' || href.trim() === '#';
 
 export const FooterLink = React.forwardRef<
     HTMLAnchorElement,
     FooterLinkProps
->(({ className, as: Component = 'a', children, ...props }, ref) => {
+>(({ className, as: Component, external, children, href, target, rel, onClick, ...props }, ref) => {
+    // Shared typography so placeholders keep the exact same layout as real links.
+    const baseClassName = 'text-sm w-fit';
+
+    // No destination and no custom element/handler → render a non-navigating element,
+    // so a placeholder can never hijack the URL or scroll the page to the top.
+    if (!Component && isPlaceholderHref(href) && !onClick) {
+        return (
+            <span
+                ref={ref as unknown as React.Ref<HTMLSpanElement>}
+                aria-disabled="true"
+                className={cn(baseClassName, 'text-text-secondary', className)}
+                {...(props as React.HTMLAttributes<HTMLSpanElement>)}
+            >
+                {children}
+            </span>
+        );
+    }
+
+    const Comp: React.ElementType = Component ?? 'a';
+    const isAnchor = Comp === 'a';
+
     return (
-        <Component
+        <Comp
             ref={ref}
+            href={href}
+            onClick={onClick}
+            target={isAnchor && external ? (target ?? '_blank') : target}
+            rel={isAnchor && external ? (rel ?? 'noopener noreferrer') : rel}
             className={cn(
-                'text-sm text-text-secondary hover:text-text-primary transition-colors w-fit',
+                baseClassName,
+                'text-text-secondary hover:text-text-primary transition-colors',
                 className
             )}
             {...props}
         >
             {children}
-        </Component>
+        </Comp>
     );
 });
 FooterLink.displayName = 'FooterLink';
