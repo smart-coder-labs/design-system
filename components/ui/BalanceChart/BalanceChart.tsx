@@ -17,8 +17,8 @@ import type { BalanceChartProps } from './BalanceChart.types';
 export const BalanceChart = React.forwardRef<HTMLDivElement, BalanceChartProps>(
     ({
         data,
-        currency,
-        locale,
+        currency = 'USD',
+        locale = 'en-US',
         title,
         maskable = true,
     height = 160,
@@ -46,7 +46,7 @@ export const BalanceChart = React.forwardRef<HTMLDivElement, BalanceChartProps>(
 
     const points = useMemo(() =>
         data.map((d, i) => ({
-            x: (i / (data.length - 1)) * chartWidth,
+            x: (i / Math.max(1, data.length - 1)) * chartWidth,
             y: padding + effectiveHeight - ((d.value - min) / range) * effectiveHeight,
             value: d.value,
             label: d.label,
