@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Monitor, Moon, Sun } from 'lucide-react';
@@ -45,6 +47,21 @@ const resolveTheme = (mode: ThemeMode): ThemeName => {
 const isValidMode = (value: string | null): value is ThemeMode =>
     value === 'light' || value === 'dark' || value === 'system';
 
+/**
+ * Lee el tema realmente aplicado al `<html>` (por la app anfitriona o por un
+ * script anti-flash). Devuelve `null` cuando no hay ninguna marca explícita.
+ */
+const getAppliedTheme = (): ThemeName | null => {
+    if (!isBrowser) return null;
+    const root = document.documentElement;
+    const dataTheme = root.dataset.theme;
+    if (dataTheme === 'dark' || dataTheme === 'light') return dataTheme;
+    return root.classList.contains('dark') ? 'dark' : null;
+};
+
+const getToggleLabel = (theme: ThemeName): string =>
+    theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+
 /* ========================================
    COMPONENT
    ======================================== */
@@ -69,17 +86,36 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
         root.dataset.theme = nextTheme;
     }, []);
 
-    // Lee la preferencia almacenada o la del sistema al montar
+    // Lee la preferencia almacenada, el tema ya aplicado en el DOM o la del sistema al montar
     React.useEffect(() => {
         if (!isBrowser) return;
 
         const storedMode = storageKey ? localStorage.getItem(storageKey) : null;
-        const initialMode = isValidMode(storedMode) ? storedMode : defaultMode;
-        const initialTheme = resolveTheme(initialMode);
+        const appliedTheme = getAppliedTheme();
 
-        setMode(initialMode);
-        setTheme(initialTheme);
-        applyTheme(initialTheme);
+        // 1. Preferencia persistida explícitamente: máxima prioridad.
+        if (isValidMode(storedMode)) {
+            const storedTheme = resolveTheme(storedMode);
+            setMode(storedMode);
+            setTheme(storedTheme);
+            if (appliedTheme !== storedTheme) applyTheme(storedTheme);
+            return;
+        }
+
+        // 2. Sin preferencia guardada: respetamos el tema ya aplicado al `<html>`
+        //    en lugar de sobrescribirlo (evita que el control contradiga al DOM).
+        const fallbackTheme = resolveTheme(defaultMode);
+
+        if (appliedTheme && appliedTheme !== fallbackTheme) {
+            setMode(appliedTheme);
+            setTheme(appliedTheme);
+            return;
+        }
+
+        // 3. Nada aplicado todavía: usamos el modo por defecto.
+        setMode(defaultMode);
+        setTheme(fallbackTheme);
+        if (appliedTheme !== fallbackTheme) applyTheme(fallbackTheme);
     }, [applyTheme, defaultMode, storageKey]);
 
     // Actualiza la UI si cambia la preferencia del sistema y seguimos en modo "system"
@@ -152,6 +188,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
                     <button
                         type="button"
                         onClick={handleAuto}
+                        aria-pressed={mode === 'system'}
                         className={cn(
                             'group inline-flex items-center gap-1.5 rounded-full border border-border-secondary px-3 py-1 text-xs font-medium text-text-secondary transition-apple hover:border-border-primary hover:text-text-primary',
                             mode === 'system' && 'bg-surface-primary text-text-primary shadow-xs'
@@ -161,7 +198,13 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
                         Auto
                     </button>
                 )}
-                <Switch checked={theme === 'dark'} onCheckedChange={handleToggle} />
+                {/* El nombre accesible se deriva del tema actual en cada render,
+                    así nunca contradice el estado mostrado por el control. */}
+                <Switch
+                    checked={theme === 'dark'}
+                    onCheckedChange={handleToggle}
+                    aria-label={getToggleLabel(theme)}
+                />
             </div>
         </div>
     );

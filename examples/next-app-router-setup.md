@@ -95,7 +95,25 @@ export default function HomePage() {
 
 ## 6. Soporte para Dark Mode
 
-Agrega un toggle de tema en tu layout o componente:
+La opción recomendada es usar el componente `ThemeToggle` del paquete, que ya resuelve el tema
+persistido, el tema aplicado al `<html>` y la preferencia del sistema:
+
+```tsx
+'use client';
+
+import { ThemeToggle } from '@smart-coder-labs/apple-design-system';
+
+export function AppearanceSettings() {
+  return <ThemeToggle />;
+}
+```
+
+Si prefieres tu propio control, respeta estas dos reglas:
+
+1. Al montar, si no hay preferencia guardada, **lee el tema ya aplicado al `<html>`** (tu script
+   anti-flash ya lo puso) en lugar de sobrescribirlo.
+2. Deriva el nombre accesible del switch del estado actual, nunca de una etiqueta estática: si no,
+   anunciará "Cambiar a modo oscuro" cuando el modo oscuro ya está activo.
 
 ```tsx
 'use client';
@@ -107,9 +125,13 @@ export function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Verifica la preferencia del usuario
-    const isDarkMode = localStorage.getItem('theme') === 'dark' ||
-      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const stored = localStorage.getItem('theme');
+    const isDarkMode =
+      stored === 'dark' ||
+      (stored !== 'light' &&
+        // Respeta el tema que la app ya aplicó al <html> antes de mirar el sistema
+        (document.documentElement.classList.contains('dark') ||
+          window.matchMedia('(prefers-color-scheme: dark)').matches));
 
     setIsDark(isDarkMode);
     document.documentElement.classList.toggle('dark', isDarkMode);
@@ -123,8 +145,12 @@ export function ThemeToggle() {
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-sm">Dark Mode</span>
-      <Switch checked={isDark} onCheckedChange={toggleTheme} />
+      <span className="text-sm">{isDark ? 'Modo oscuro activo' : 'Modo claro activo'}</span>
+      <Switch
+        checked={isDark}
+        onCheckedChange={toggleTheme}
+        aria-label={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+      />
     </div>
   );
 }

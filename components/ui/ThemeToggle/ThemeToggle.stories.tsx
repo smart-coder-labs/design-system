@@ -80,6 +80,25 @@ export const DarkModeDefault: Story = {
     },
 };
 
+/**
+ * Reproduce el escenario del issue #52: la app anfitriona ya aplicó `dark` al
+ * `<html>` (script anti-flash) y no hay preferencia en `localStorage`.
+ * El control debe montar en oscuro y anunciar "Cambiar a modo claro".
+ */
+export const PreAppliedDarkClass: Story = {
+    args: {
+        defaultMode: 'system',
+    },
+    render: (args) => {
+        // Se aplica antes de montar el toggle, igual que un script anti-flash.
+        if (typeof document !== 'undefined') {
+            localStorage.removeItem('theme');
+            document.documentElement.classList.add('dark');
+        }
+        return <ThemeToggle {...args} />;
+    },
+};
+
 export const MobileView: Story = {
   parameters: {
     viewport: { defaultViewport: 'mobile1' },
