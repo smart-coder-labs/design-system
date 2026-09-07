@@ -832,7 +832,7 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/BalanceChart/index.ts"
       }
     ],
-    "version": "1.0.3",
+    "version": "1.0.4",
     "status": "experimental",
     "added": "1.0.0",
     "breakingChanges": [],

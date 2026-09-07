@@ -17,8 +17,8 @@ import type { BalanceChartProps } from './BalanceChart.types';
 export const BalanceChart = React.forwardRef<HTMLDivElement, BalanceChartProps>(
     ({
         data,
-        currency,
-        locale,
+        currency = 'USD',
+        locale = 'en-US',
         title,
         maskable = true,
     height = 160,
@@ -46,13 +46,32 @@ export const BalanceChart = React.forwardRef<HTMLDivElement, BalanceChartProps>(
 
     const points = useMemo(() =>
         data.map((d, i) => ({
-            x: (i / (data.length - 1)) * chartWidth,
+            x: (i / Math.max(1, data.length - 1)) * chartWidth,
             y: padding + effectiveHeight - ((d.value - min) / range) * effectiveHeight,
             value: d.value,
             label: d.label,
         })),
         [data, min, range, chartWidth, effectiveHeight]
     );
+
+    if (data.length === 0) {
+        return (
+            <motion.div
+                className={cn(
+                    'bg-surface-primary rounded-2xl border border-border-primary shadow-sm p-5',
+                    className,
+                )}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            >
+                <p className="text-xs text-text-tertiary font-medium uppercase tracking-wider">{title}</p>
+                <div className="flex items-center justify-center" style={{ height }}>
+                    <p className="text-xs text-text-quaternary">No data available</p>
+                </div>
+            </motion.div>
+        );
+    }
 
     const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x},${p.y}`).join(' ');
     const areaPath = `${linePath} L ${chartWidth},${height} L 0,${height} Z`;
