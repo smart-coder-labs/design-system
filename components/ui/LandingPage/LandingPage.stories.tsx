@@ -12,7 +12,10 @@ import { PriceDisplay } from '../PriceDisplay';
 import { SectionHeader } from '../SectionHeader';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../Accordion';
 import { ThemeToggle } from '../ThemeToggle';
-import { Check, Zap, Shield, Globe, BarChart, Twitter, Github, Linkedin, Facebook } from 'lucide-react';
+import { Check, Zap, Shield, Globe, BarChart, Github } from 'lucide-react';
+
+/** Repository backing this design system — used for the footer's real (external) links. */
+const REPO_URL = 'https://github.com/smart-coder-labs/design-system';
 
 const meta: Meta = {
     title: 'Pages/Landing Page',
@@ -353,38 +356,30 @@ export const BusinessLanding: Story = {
                         title="Acme Corp" 
                         description="Making the world a better place through constructing elegant hierarchies."
                         socials={
-                            <>
-                                <FooterLink href="#"><Twitter className="w-5 h-5" /></FooterLink>
-                                <FooterLink href="#"><Github className="w-5 h-5" /></FooterLink>
-                                <FooterLink href="#"><Linkedin className="w-5 h-5" /></FooterLink>
-                                <FooterLink href="#"><Facebook className="w-5 h-5" /></FooterLink>
-                            </>
+                            <FooterLink href={REPO_URL} external aria-label="GitHub">
+                                <Github className="w-5 h-5" />
+                            </FooterLink>
                         }
                     />
                     <FooterContent>
                         <FooterColumn title="Product">
-                            <FooterLink href="#">Features</FooterLink>
-                            <FooterLink href="#">Integrations</FooterLink>
-                            <FooterLink href="#">Pricing</FooterLink>
-                            <FooterLink href="#">Changelog</FooterLink>
+                            <FooterLink href="#features">Features</FooterLink>
+                            <FooterLink href="#pricing">Pricing</FooterLink>
                         </FooterColumn>
-                        <FooterColumn title="Company">
-                            <FooterLink href="#">About</FooterLink>
-                            <FooterLink href="#">Blog</FooterLink>
-                            <FooterLink href="#">Careers</FooterLink>
-                            <FooterLink href="#">Contact</FooterLink>
+                        <FooterColumn title="Resources">
+                            <FooterLink href="#testimonials">Testimonials</FooterLink>
+                            <FooterLink href="#faq">FAQ</FooterLink>
                         </FooterColumn>
-                        <FooterColumn title="Legal">
-                            <FooterLink href="#">Privacy</FooterLink>
-                            <FooterLink href="#">Terms</FooterLink>
-                            <FooterLink href="#">Cookie Policy</FooterLink>
+                        <FooterColumn title="Open Source">
+                            <FooterLink href={REPO_URL} external>GitHub</FooterLink>
+                            <FooterLink href={`${REPO_URL}#readme`} external>Documentation</FooterLink>
+                            <FooterLink href={`${REPO_URL}/issues`} external>Support</FooterLink>
                         </FooterColumn>
                     </FooterContent>
                     <FooterBottom>
                         <p>© 2025 Acme Corp Inc. All rights reserved.</p>
                         <div className="flex gap-4">
-                            <FooterLink href="#">Privacy Policy</FooterLink>
-                            <FooterLink href="#">Terms of Service</FooterLink>
+                            <FooterLink href={`${REPO_URL}/issues`} external>Report an issue</FooterLink>
                         </div>
                     </FooterBottom>
                 </Footer>

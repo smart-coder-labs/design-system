@@ -21,27 +21,27 @@ export const Default: Story = {
                 />
                 <FooterContent>
                     <FooterColumn title="Product">
-                        <FooterLink href="#">Features</FooterLink>
-                        <FooterLink href="#">Pricing</FooterLink>
-                        <FooterLink href="#">Integrations</FooterLink>
-                        <FooterLink href="#">Changelog</FooterLink>
+                        <FooterLink href="/features">Features</FooterLink>
+                        <FooterLink href="/pricing">Pricing</FooterLink>
+                        <FooterLink href="/integrations">Integrations</FooterLink>
+                        <FooterLink href="/changelog">Changelog</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Company">
-                        <FooterLink href="#">About</FooterLink>
-                        <FooterLink href="#">Careers</FooterLink>
-                        <FooterLink href="#">Press</FooterLink>
-                        <FooterLink href="#">Blog</FooterLink>
+                        <FooterLink href="/about">About</FooterLink>
+                        <FooterLink href="/careers">Careers</FooterLink>
+                        <FooterLink href="/press">Press</FooterLink>
+                        <FooterLink href="/blog">Blog</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Support">
-                        <FooterLink href="#">Help Center</FooterLink>
-                        <FooterLink href="#">API Docs</FooterLink>
-                        <FooterLink href="#">Status</FooterLink>
-                        <FooterLink href="#">Contact</FooterLink>
+                        <FooterLink href="/help">Help Center</FooterLink>
+                        <FooterLink href="/docs/api">API Docs</FooterLink>
+                        <FooterLink href="/status">Status</FooterLink>
+                        <FooterLink href="/contact">Contact</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Legal">
-                        <FooterLink href="#">Privacy</FooterLink>
-                        <FooterLink href="#">Terms</FooterLink>
-                        <FooterLink href="#">Cookies</FooterLink>
+                        <FooterLink href="/legal/privacy">Privacy</FooterLink>
+                        <FooterLink href="/legal/terms">Terms</FooterLink>
+                        <FooterLink href="/legal/cookies">Cookies</FooterLink>
                     </FooterColumn>
                 </FooterContent>
                 <FooterBottom>
@@ -78,28 +78,28 @@ export const LegalHeavyFooter: Story = {
                 />
                 <FooterContent>
                     <FooterColumn title="Legal">
-                        <FooterLink href="#">Privacy Policy</FooterLink>
-                        <FooterLink href="#">Terms of Service</FooterLink>
-                        <FooterLink href="#">Cookie Policy</FooterLink>
-                        <FooterLink href="#">GDPR Compliance</FooterLink>
-                        <FooterLink href="#">CCPA Notice</FooterLink>
-                        <FooterLink href="#">SLA</FooterLink>
+                        <FooterLink href="/legal/privacy-policy">Privacy Policy</FooterLink>
+                        <FooterLink href="/legal/terms-of-service">Terms of Service</FooterLink>
+                        <FooterLink href="/legal/cookie-policy">Cookie Policy</FooterLink>
+                        <FooterLink href="/legal/gdpr">GDPR Compliance</FooterLink>
+                        <FooterLink href="/legal/ccpa">CCPA Notice</FooterLink>
+                        <FooterLink href="/legal/sla">SLA</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Regulatory">
-                        <FooterLink href="#">FINRA</FooterLink>
-                        <FooterLink href="#">SEC Filings</FooterLink>
-                        <FooterLink href="#">Anti-Money Laundering</FooterLink>
-                        <FooterLink href="#">KYC Policy</FooterLink>
+                        <FooterLink href="/regulatory/finra">FINRA</FooterLink>
+                        <FooterLink href="/regulatory/sec-filings">SEC Filings</FooterLink>
+                        <FooterLink href="/regulatory/aml">Anti-Money Laundering</FooterLink>
+                        <FooterLink href="/regulatory/kyc">KYC Policy</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Security">
-                        <FooterLink href="#">Bug Bounty</FooterLink>
-                        <FooterLink href="#">Responsible Disclosure</FooterLink>
-                        <FooterLink href="#">Certifications</FooterLink>
+                        <FooterLink href="/security/bug-bounty">Bug Bounty</FooterLink>
+                        <FooterLink href="/security/responsible-disclosure">Responsible Disclosure</FooterLink>
+                        <FooterLink href="/security/certifications">Certifications</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Contact">
-                        <FooterLink href="#">Legal Team</FooterLink>
-                        <FooterLink href="#">DPO</FooterLink>
-                        <FooterLink href="#">Compliance</FooterLink>
+                        <FooterLink href="/contact/legal">Legal Team</FooterLink>
+                        <FooterLink href="/contact/dpo">DPO</FooterLink>
+                        <FooterLink href="/contact/compliance">Compliance</FooterLink>
                     </FooterColumn>
                 </FooterContent>
                 <FooterBottom>
@@ -128,20 +128,20 @@ export const DarkMode: Story = {
                 />
                 <FooterContent>
                     <FooterColumn title="Services">
-                        <FooterLink href="#">Checking</FooterLink>
-                        <FooterLink href="#">Savings</FooterLink>
-                        <FooterLink href="#">Credit</FooterLink>
-                        <FooterLink href="#">Investments</FooterLink>
+                        <FooterLink href="/services/checking">Checking</FooterLink>
+                        <FooterLink href="/services/savings">Savings</FooterLink>
+                        <FooterLink href="/services/credit">Credit</FooterLink>
+                        <FooterLink href="/services/investments">Investments</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Company">
-                        <FooterLink href="#">About</FooterLink>
-                        <FooterLink href="#">Careers</FooterLink>
-                        <FooterLink href="#">Press</FooterLink>
+                        <FooterLink href="/about">About</FooterLink>
+                        <FooterLink href="/careers">Careers</FooterLink>
+                        <FooterLink href="/press">Press</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Support">
-                        <FooterLink href="#">Help</FooterLink>
-                        <FooterLink href="#">Contact</FooterLink>
-                        <FooterLink href="#">Status</FooterLink>
+                        <FooterLink href="/help">Help</FooterLink>
+                        <FooterLink href="/contact">Contact</FooterLink>
+                        <FooterLink href="/status">Status</FooterLink>
                     </FooterColumn>
                 </FooterContent>
                 <FooterBottom>
@@ -163,12 +163,12 @@ export const SingleColumn: Story = {
                 />
                 <FooterContent>
                     <FooterColumn title="All Links">
-                        <FooterLink href="#">Dashboard</FooterLink>
-                        <FooterLink href="#">Transactions</FooterLink>
-                        <FooterLink href="#">Cards</FooterLink>
-                        <FooterLink href="#">Settings</FooterLink>
-                        <FooterLink href="#">Help</FooterLink>
-                        <FooterLink href="#">Log Out</FooterLink>
+                        <FooterLink href="/dashboard">Dashboard</FooterLink>
+                        <FooterLink href="/transactions">Transactions</FooterLink>
+                        <FooterLink href="/cards">Cards</FooterLink>
+                        <FooterLink href="/settings">Settings</FooterLink>
+                        <FooterLink href="/help">Help</FooterLink>
+                        <FooterLink href="/logout">Log Out</FooterLink>
                     </FooterColumn>
                 </FooterContent>
                 <FooterBottom>
@@ -209,6 +209,42 @@ export const WithLongLinkTexts: Story = {
                 </FooterContent>
                 <FooterBottom>
                     <span>© 2026 International Wealth Management Platform Inc. All rights reserved. Member FDIC.</span>
+                </FooterBottom>
+            </>
+        ),
+    },
+};
+
+export const PlaceholderAndExternalLinks: Story = {
+    parameters: {
+        docs: {
+            description: {
+                story:
+                    'Links without a real destination (`href` missing, empty or `"#"`) render as non-navigating `<span aria-disabled="true">` elements, so they can never jump to the top of the page. Links marked `external` render as anchors with `target="_blank"` and `rel="noopener noreferrer"`.',
+            },
+        },
+    },
+    args: {
+        children: (
+            <>
+                <FooterTop
+                    title="LinkDemo"
+                    description="Placeholder links degrade to plain text; real links stay navigable."
+                />
+                <FooterContent>
+                    <FooterColumn title="Real links">
+                        <FooterLink href="#pricing">Pricing (on-page anchor)</FooterLink>
+                        <FooterLink href="https://github.com/smart-coder-labs/design-system" external>
+                            GitHub (external)
+                        </FooterLink>
+                    </FooterColumn>
+                    <FooterColumn title="Placeholders">
+                        <FooterLink href="#">Coming soon (href="#")</FooterLink>
+                        <FooterLink>Coming soon (no href)</FooterLink>
+                    </FooterColumn>
+                </FooterContent>
+                <FooterBottom>
+                    <span>© 2026 LinkDemo. All rights reserved.</span>
                 </FooterBottom>
             </>
         ),
