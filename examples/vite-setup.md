@@ -112,6 +112,23 @@ function App() {
 export default App;
 ```
 
+## 8. Configurar `vite.config.ts`
+
+Define `base` según dónde se publique la app:
+
+```ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  // '/' es correcto para un deploy en la raíz del dominio o con dominio propio.
+  // Si la app se publica en un sub-path de GitHub Pages
+  // (https://<org>.github.io/<repo>/), es OBLIGATORIO usar base: '/<repo>/'.
+  base: '/',
+});
+```
+
 ## 10. Actualizar HTML base
 
 En `index.html`, actualiza la clase del body:
