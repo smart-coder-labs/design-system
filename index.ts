@@ -9,6 +9,7 @@ export * from './components/ui/StickyImageTextSwap';
 export * from './components/ui/ParallaxBanner';
 export * from './components/ui/InfiniteHorizontalLoop';
 export * from './components/ui/ScrollProgressBar';
+export * from './components/ui/NavBar';
 
 // Cyberpunk Components
 export * from './components/ui/InteractiveCursor';
