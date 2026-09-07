@@ -17,7 +17,41 @@ export interface SignupFormProps extends Omit<React.HTMLAttributes<HTMLFormEleme
     isLoading?: boolean;
     error?: string;
     className?: string;
+    /** Destination for the "Privacy Policy" consent link. When omitted the label renders as plain text. */
+    privacyHref?: string;
+    /** Destination for the "Terms and Conditions" consent link. When omitted the label renders as plain text. */
+    termsHref?: string;
 }
+
+/* ========================================
+   CONSENT LINK
+   ======================================== */
+
+const isAbsoluteUrl = (href: string): boolean => /^https?:\/\//i.test(href.trim());
+
+/**
+ * Renders a consent label as a real anchor when a destination is provided,
+ * or as plain text when there is none (never a dead `href="#"` link).
+ */
+const ConsentLink = ({ href, children }: { href?: string; children: React.ReactNode }) => {
+    const destination = href?.trim();
+
+    if (!destination) {
+        return <span className="text-text-primary">{children}</span>;
+    }
+
+    const external = isAbsoluteUrl(destination);
+
+    return (
+        <a
+            href={destination}
+            className="text-accent-blue hover:underline"
+            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        >
+            {children}
+        </a>
+    );
+};
 
 /* ========================================
    COMPONENT
@@ -30,6 +64,8 @@ export const SignupForm = React.forwardRef<HTMLFormElement, SignupFormProps>(
             isLoading = false,
             error,
             className,
+            privacyHref,
+            termsHref,
             ...props
         },
         ref
@@ -149,13 +185,9 @@ export const SignupForm = React.forwardRef<HTMLFormElement, SignupFormProps>(
                     />
                     <span className="text-sm text-text-secondary select-none">
                         I agree to the{' '}
-                        <a href="#" className="text-accent-blue hover:underline" onClick={(e) => e.preventDefault()}>
-                            Terms and Conditions
-                        </a>{' '}
+                        <ConsentLink href={termsHref}>Terms and Conditions</ConsentLink>{' '}
                         and{' '}
-                        <a href="#" className="text-accent-blue hover:underline" onClick={(e) => e.preventDefault()}>
-                            Privacy Policy
-                        </a>
+                        <ConsentLink href={privacyHref}>Privacy Policy</ConsentLink>
                     </span>
                 </label>
 
