@@ -112,6 +112,23 @@ function App() {
 export default App;
 ```
 
+## 8. Configurar `vite.config.ts`
+
+Define `base` según dónde se publique la app:
+
+```ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  // '/' es correcto para un deploy en la raíz del dominio o con dominio propio.
+  // Si la app se publica en un sub-path de GitHub Pages
+  // (https://<org>.github.io/<repo>/), es OBLIGATORIO usar base: '/<repo>/'.
+  base: '/',
+});
+```
+
 ## 10. Actualizar HTML base
 
 En `index.html`, actualiza la clase del body:
@@ -121,9 +138,9 @@ En `index.html`, actualiza la clase del body:
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + Design System</title>
+    <title>Mi App + Design System</title>
   </head>
   <body class="antialiased">
     <div id="root"></div>
@@ -131,6 +148,10 @@ En `index.html`, actualiza la clase del body:
   </body>
 </html>
 ```
+
+Usa tu propio `public/favicon.svg` (el `vite.svg` del scaffold no es un asset del proyecto) y mantén las rutas root-absolutas: Vite reescribe con `base` los `href`/`src` root-absolutos de `index.html` y las URLs de los assets de `/public`. Sin `base`, en un GitHub Pages de proyecto esas peticiones van a la raíz del dominio y devuelven 404.
+
+El contenido de `site.webmanifest` / `manifest.json` **no** se reescribe: `start_url`, `scope` e `icons[].src` deben incluir el sub-path explícitamente. Si usas React Router, su `basename` debe coincidir con `base`.
 
 ## 11. Ejecutar el proyecto
 
