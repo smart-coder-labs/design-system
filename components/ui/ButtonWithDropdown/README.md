@@ -49,3 +49,12 @@ import { ButtonWithDropdown } from '@/components/ui/ButtonWithDropdown';
 - Click outside to close dropdown
 - Animated dropdown with AnimatePresence
 - Custom chevron rotation indicator
+
+## Accessibility
+
+Implements the WAI-ARIA menu button pattern (hand-rolled, no Radix):
+
+- Trigger exposes `aria-haspopup="menu"`, `aria-expanded`, `aria-controls` (while open) and a stable `id`.
+- The dropdown is `role="menu"` labelled by the trigger via `aria-labelledby`; items are `role="menuitem"` with `aria-disabled` when disabled.
+- Keyboard: `ArrowDown` / `ArrowUp` / `Enter` / `Space` open the menu and move focus to the first / last enabled item.
+- Inside the menu: `ArrowDown` / `ArrowUp` roving focus (wraps, skips disabled items), `Home` / `End` jump to first / last, `Escape` closes and returns focus to the trigger, `Tab` closes and moves on.
