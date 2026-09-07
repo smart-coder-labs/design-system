@@ -161,24 +161,86 @@ FooterColumn.displayName = 'FooterColumn';
 
 export interface FooterLinkProps
     extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+    /**
+     * Element/component to render as. Defaults to `"a"` (or `"span"` when `as` is omitted and there
+     * is no destination). Passing `as` opts out of the automatic no-destination degradation, so
+     * custom elements such as `as="button"` or a router `Link` (using `to`) stay interactive.
+     */
     as?: React.ElementType;
+    /**
+     * Force the link into its non-interactive state, whatever `as`/`href` are.
+     * The same state is applied automatically when `as` is omitted and `href` is missing, empty or `"#"`.
+     */
+    disabled?: boolean;
 }
 
+/** Shared typography/spacing so interactive and non-interactive links keep the same layout. */
+const footerLinkBaseClasses = 'text-sm w-fit';
+
+/** `true` when `href` points somewhere real (not missing, empty or a bare `"#"`). */
+const hasFooterLinkDestination = (href?: string): boolean => {
+    if (typeof href !== 'string') return false;
+    const trimmed = href.trim();
+    return trimmed !== '' && trimmed !== '#';
+};
+
+/**
+ * A single link in a footer column.
+ *
+ * Rendering rules:
+ * - `disabled` — always renders the inactive, non-focusable element (a `<span>`, or the element
+ *   given via `as`) with `aria-disabled="true"` and muted styling.
+ * - No `as` and no destination (`href` undefined, empty or `"#"`) — degrades to a non-interactive,
+ *   non-focusable `<span aria-disabled="true">`, so placeholder destinations are never presented to
+ *   users as real links.
+ * - `as` provided (and not `disabled`) — renders that element as an active link with every prop
+ *   spread through, so `as="button"` with `onClick` or a router `Link` using `to` keeps working
+ *   even though there is no `href`.
+ *
+ * Anchors opened with `target="_blank"` get `rel="noopener noreferrer"` by default.
+ */
 export const FooterLink = React.forwardRef<
     HTMLAnchorElement,
     FooterLinkProps
->(({ className, as: Component = 'a', children, ...props }, ref) => {
+>(({ className, as: Component, disabled = false, href, target, rel, children, ...props }, ref) => {
+    // The no-destination degradation only applies when the caller did not choose an element itself.
+    const isInactive = disabled || (Component === undefined && !hasFooterLinkDestination(href));
+
+    if (isInactive) {
+        const InactiveComponent: React.ElementType = Component ?? 'span';
+        return (
+            <InactiveComponent
+                ref={ref}
+                aria-disabled="true"
+                className={cn(
+                    footerLinkBaseClasses,
+                    'text-text-tertiary cursor-default select-none',
+                    className
+                )}
+                {...props}
+            >
+                {children}
+            </InactiveComponent>
+        );
+    }
+
+    const LinkComponent: React.ElementType = Component ?? 'a';
+
     return (
-        <Component
+        <LinkComponent
             ref={ref}
+            href={href}
+            target={target}
+            rel={target === '_blank' && rel === undefined ? 'noopener noreferrer' : rel}
             className={cn(
-                'text-sm text-text-secondary hover:text-text-primary transition-colors w-fit',
+                footerLinkBaseClasses,
+                'text-text-secondary hover:text-text-primary transition-colors',
                 className
             )}
             {...props}
         >
             {children}
-        </Component>
+        </LinkComponent>
     );
 });
 FooterLink.displayName = 'FooterLink';

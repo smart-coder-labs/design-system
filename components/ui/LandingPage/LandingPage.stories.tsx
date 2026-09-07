@@ -354,37 +354,54 @@ export const BusinessLanding: Story = {
                         description="Making the world a better place through constructing elegant hierarchies."
                         socials={
                             <>
-                                <FooterLink href="#"><Twitter className="w-5 h-5" /></FooterLink>
-                                <FooterLink href="#"><Github className="w-5 h-5" /></FooterLink>
-                                <FooterLink href="#"><Linkedin className="w-5 h-5" /></FooterLink>
-                                <FooterLink href="#"><Facebook className="w-5 h-5" /></FooterLink>
+                                <FooterLink disabled aria-label="Twitter"><Twitter className="w-5 h-5" /></FooterLink>
+                                <FooterLink
+                                    href="https://github.com/smart-coder-labs/design-system"
+                                    target="_blank"
+                                    aria-label="GitHub"
+                                >
+                                    <Github className="w-5 h-5" />
+                                </FooterLink>
+                                <FooterLink disabled aria-label="LinkedIn"><Linkedin className="w-5 h-5" /></FooterLink>
+                                <FooterLink disabled aria-label="Facebook"><Facebook className="w-5 h-5" /></FooterLink>
                             </>
                         }
                     />
                     <FooterContent>
                         <FooterColumn title="Product">
-                            <FooterLink href="#">Features</FooterLink>
-                            <FooterLink href="#">Integrations</FooterLink>
-                            <FooterLink href="#">Pricing</FooterLink>
-                            <FooterLink href="#">Changelog</FooterLink>
+                            <FooterLink href="#features">Features</FooterLink>
+                            <FooterLink href="#pricing">Pricing</FooterLink>
+                            <FooterLink href="#testimonials">Testimonials</FooterLink>
+                            <FooterLink href="#faq">FAQ</FooterLink>
                         </FooterColumn>
                         <FooterColumn title="Company">
-                            <FooterLink href="#">About</FooterLink>
-                            <FooterLink href="#">Blog</FooterLink>
-                            <FooterLink href="#">Careers</FooterLink>
-                            <FooterLink href="#">Contact</FooterLink>
+                            <FooterLink
+                                href="https://smart-coder-labs.github.io/design-system/"
+                                target="_blank"
+                            >
+                                Documentation
+                            </FooterLink>
+                            <FooterLink
+                                href="https://github.com/smart-coder-labs/design-system"
+                                target="_blank"
+                            >
+                                Source code
+                            </FooterLink>
+                            {/* No destination yet — rendered as plain text instead of a dead link */}
+                            <FooterLink disabled>Careers</FooterLink>
+                            <FooterLink disabled>Contact</FooterLink>
                         </FooterColumn>
                         <FooterColumn title="Legal">
-                            <FooterLink href="#">Privacy</FooterLink>
-                            <FooterLink href="#">Terms</FooterLink>
-                            <FooterLink href="#">Cookie Policy</FooterLink>
+                            <FooterLink disabled>Privacy</FooterLink>
+                            <FooterLink disabled>Terms</FooterLink>
+                            <FooterLink disabled>Cookie Policy</FooterLink>
                         </FooterColumn>
                     </FooterContent>
                     <FooterBottom>
                         <p>© 2025 Acme Corp Inc. All rights reserved.</p>
                         <div className="flex gap-4">
-                            <FooterLink href="#">Privacy Policy</FooterLink>
-                            <FooterLink href="#">Terms of Service</FooterLink>
+                            <FooterLink disabled>Privacy Policy</FooterLink>
+                            <FooterLink disabled>Terms of Service</FooterLink>
                         </div>
                     </FooterBottom>
                 </Footer>
