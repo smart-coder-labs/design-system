@@ -49,10 +49,24 @@ import { Paragraph } from '@/components/ui/Paragraph';
 
 ```tsx
 <Paragraph>
-  By continuing, you agree to our{' '}
-  <a href="#" className="text-accent-blue hover:underline">Terms of Service</a>
-  {' '}and{' '}
-  <a href="#" className="text-accent-blue hover:underline">Privacy Policy</a>.
+  Every component lives in the{' '}
+  <a
+    href="https://github.com/smart-coder-labs/design-system"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-accent-blue hover:underline"
+  >
+    design system repository
+  </a>
+  {' '}— found a bug?{' '}
+  <a
+    href="https://github.com/smart-coder-labs/design-system/issues"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-accent-blue hover:underline"
+  >
+    Open an issue
+  </a>.
 </Paragraph>
 ```
 

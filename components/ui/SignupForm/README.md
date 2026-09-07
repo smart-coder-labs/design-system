@@ -53,7 +53,23 @@ function Example() {
 | `onSubmit` | `(data: SignupFormData) => void \| Promise<void>` | - | Called with form data on valid submission |
 | `isLoading` | `boolean` | `false` | Shows loading state, disables form |
 | `error` | `string` | - | External error message to display |
+| `termsHref` | `string` | - | Destination for the "Terms and Conditions" consent link. Omit to render it as plain text |
+| `privacyHref` | `string` | - | Destination for the "Privacy Policy" consent link. Omit to render it as plain text |
 | `className` | `string` | - | Additional classes |
+
+### Consent links
+
+The consent text never renders a dead link. Provide `termsHref` / `privacyHref` to get real
+anchors (absolute `http(s)` URLs open in a new tab with `rel="noopener noreferrer"`); omit them
+and the labels render as plain text instead.
+
+```tsx
+<SignupForm
+  onSubmit={handleSubmit}
+  termsHref="/terms"
+  privacyHref="https://example.com/privacy"
+/>
+```
 
 ### SignupFormData
 

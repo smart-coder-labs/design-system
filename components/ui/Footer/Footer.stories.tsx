@@ -2,6 +2,15 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Footer, FooterTop, FooterBottom, FooterColumn, FooterLink, FooterContent } from './Footer';
 
+/**
+ * Real destinations used by the demos below. Entries with no real page are marked
+ * `disabled` so they render as plain text instead of dead `href="#"` links.
+ */
+const DOCS_URL = 'https://smart-coder-labs.github.io/design-system/';
+const REPO_URL = 'https://github.com/smart-coder-labs/design-system';
+const ISSUES_URL = 'https://github.com/smart-coder-labs/design-system/issues';
+const RELEASES_URL = 'https://github.com/smart-coder-labs/design-system/releases';
+
 const meta: Meta<typeof Footer> = {
     title: 'Layout/Footer',
     component: Footer,
@@ -21,31 +30,73 @@ export const Default: Story = {
                 />
                 <FooterContent>
                     <FooterColumn title="Product">
-                        <FooterLink href="#">Features</FooterLink>
-                        <FooterLink href="#">Pricing</FooterLink>
-                        <FooterLink href="#">Integrations</FooterLink>
-                        <FooterLink href="#">Changelog</FooterLink>
+                        <FooterLink href={DOCS_URL} target="_blank">Features</FooterLink>
+                        <FooterLink href={RELEASES_URL} target="_blank">Changelog</FooterLink>
+                        <FooterLink disabled>Pricing</FooterLink>
+                        <FooterLink disabled>Integrations</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Company">
-                        <FooterLink href="#">About</FooterLink>
-                        <FooterLink href="#">Careers</FooterLink>
-                        <FooterLink href="#">Press</FooterLink>
-                        <FooterLink href="#">Blog</FooterLink>
+                        <FooterLink href={REPO_URL} target="_blank">About</FooterLink>
+                        <FooterLink disabled>Careers</FooterLink>
+                        <FooterLink disabled>Press</FooterLink>
+                        <FooterLink disabled>Blog</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Support">
-                        <FooterLink href="#">Help Center</FooterLink>
-                        <FooterLink href="#">API Docs</FooterLink>
-                        <FooterLink href="#">Status</FooterLink>
-                        <FooterLink href="#">Contact</FooterLink>
+                        <FooterLink href={DOCS_URL} target="_blank">Help Center</FooterLink>
+                        <FooterLink href={DOCS_URL} target="_blank">API Docs</FooterLink>
+                        <FooterLink href={ISSUES_URL} target="_blank">Contact</FooterLink>
+                        <FooterLink disabled>Status</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Legal">
-                        <FooterLink href="#">Privacy</FooterLink>
-                        <FooterLink href="#">Terms</FooterLink>
-                        <FooterLink href="#">Cookies</FooterLink>
+                        <FooterLink disabled>Privacy</FooterLink>
+                        <FooterLink disabled>Terms</FooterLink>
+                        <FooterLink disabled>Cookies</FooterLink>
                     </FooterColumn>
                 </FooterContent>
                 <FooterBottom>
                     <span>© 2026 FinTechApp. All rights reserved.</span>
+                </FooterBottom>
+            </>
+        ),
+    },
+};
+
+/**
+ * Links without a real destination degrade to non-interactive, muted plain text
+ * (`<span aria-disabled="true">`) — either explicitly via `disabled`, or automatically
+ * when `href` is missing, empty or `"#"`.
+ */
+export const NoDestinationLinks: Story = {
+    parameters: {
+        docs: {
+            description: {
+                story:
+                    'Demonstrates the no-destination state. `disabled`, a missing `href`, an empty `href` and `href="#"` all render a non-focusable `<span aria-disabled="true">` instead of a dead link, keeping the same typography and spacing as a real link.',
+            },
+        },
+    },
+    args: {
+        children: (
+            <>
+                <FooterTop
+                    title="Acme Inc."
+                    description="Pages that do not exist yet are not presented as links."
+                />
+                <FooterContent>
+                    <FooterColumn title="Real destinations">
+                        <FooterLink href={DOCS_URL} target="_blank">Documentation</FooterLink>
+                        <FooterLink href={REPO_URL} target="_blank">Source code</FooterLink>
+                        <FooterLink href={ISSUES_URL} target="_blank">Report an issue</FooterLink>
+                    </FooterColumn>
+                    <FooterColumn title="No destination">
+                        <FooterLink disabled>Explicitly disabled</FooterLink>
+                        <FooterLink>No href at all</FooterLink>
+                        <FooterLink href="">Empty href</FooterLink>
+                        <FooterLink href="#">Placeholder href=&quot;#&quot;</FooterLink>
+                    </FooterColumn>
+                </FooterContent>
+                <FooterBottom>
+                    <span>© 2026 Acme Inc.</span>
                 </FooterBottom>
             </>
         ),
@@ -78,28 +129,28 @@ export const LegalHeavyFooter: Story = {
                 />
                 <FooterContent>
                     <FooterColumn title="Legal">
-                        <FooterLink href="#">Privacy Policy</FooterLink>
-                        <FooterLink href="#">Terms of Service</FooterLink>
-                        <FooterLink href="#">Cookie Policy</FooterLink>
-                        <FooterLink href="#">GDPR Compliance</FooterLink>
-                        <FooterLink href="#">CCPA Notice</FooterLink>
-                        <FooterLink href="#">SLA</FooterLink>
+                        <FooterLink disabled>Privacy Policy</FooterLink>
+                        <FooterLink disabled>Terms of Service</FooterLink>
+                        <FooterLink disabled>Cookie Policy</FooterLink>
+                        <FooterLink disabled>GDPR Compliance</FooterLink>
+                        <FooterLink disabled>CCPA Notice</FooterLink>
+                        <FooterLink disabled>SLA</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Regulatory">
-                        <FooterLink href="#">FINRA</FooterLink>
-                        <FooterLink href="#">SEC Filings</FooterLink>
-                        <FooterLink href="#">Anti-Money Laundering</FooterLink>
-                        <FooterLink href="#">KYC Policy</FooterLink>
+                        <FooterLink disabled>FINRA</FooterLink>
+                        <FooterLink disabled>SEC Filings</FooterLink>
+                        <FooterLink disabled>Anti-Money Laundering</FooterLink>
+                        <FooterLink disabled>KYC Policy</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Security">
-                        <FooterLink href="#">Bug Bounty</FooterLink>
-                        <FooterLink href="#">Responsible Disclosure</FooterLink>
-                        <FooterLink href="#">Certifications</FooterLink>
+                        <FooterLink href={ISSUES_URL} target="_blank">Bug Bounty</FooterLink>
+                        <FooterLink disabled>Responsible Disclosure</FooterLink>
+                        <FooterLink disabled>Certifications</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Contact">
-                        <FooterLink href="#">Legal Team</FooterLink>
-                        <FooterLink href="#">DPO</FooterLink>
-                        <FooterLink href="#">Compliance</FooterLink>
+                        <FooterLink href={ISSUES_URL} target="_blank">Legal Team</FooterLink>
+                        <FooterLink disabled>DPO</FooterLink>
+                        <FooterLink disabled>Compliance</FooterLink>
                     </FooterColumn>
                 </FooterContent>
                 <FooterBottom>
@@ -128,20 +179,20 @@ export const DarkMode: Story = {
                 />
                 <FooterContent>
                     <FooterColumn title="Services">
-                        <FooterLink href="#">Checking</FooterLink>
-                        <FooterLink href="#">Savings</FooterLink>
-                        <FooterLink href="#">Credit</FooterLink>
-                        <FooterLink href="#">Investments</FooterLink>
+                        <FooterLink disabled>Checking</FooterLink>
+                        <FooterLink disabled>Savings</FooterLink>
+                        <FooterLink disabled>Credit</FooterLink>
+                        <FooterLink disabled>Investments</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Company">
-                        <FooterLink href="#">About</FooterLink>
-                        <FooterLink href="#">Careers</FooterLink>
-                        <FooterLink href="#">Press</FooterLink>
+                        <FooterLink href={REPO_URL} target="_blank">About</FooterLink>
+                        <FooterLink disabled>Careers</FooterLink>
+                        <FooterLink disabled>Press</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Support">
-                        <FooterLink href="#">Help</FooterLink>
-                        <FooterLink href="#">Contact</FooterLink>
-                        <FooterLink href="#">Status</FooterLink>
+                        <FooterLink href={DOCS_URL} target="_blank">Help</FooterLink>
+                        <FooterLink href={ISSUES_URL} target="_blank">Contact</FooterLink>
+                        <FooterLink disabled>Status</FooterLink>
                     </FooterColumn>
                 </FooterContent>
                 <FooterBottom>
@@ -163,12 +214,13 @@ export const SingleColumn: Story = {
                 />
                 <FooterContent>
                     <FooterColumn title="All Links">
-                        <FooterLink href="#">Dashboard</FooterLink>
-                        <FooterLink href="#">Transactions</FooterLink>
-                        <FooterLink href="#">Cards</FooterLink>
-                        <FooterLink href="#">Settings</FooterLink>
-                        <FooterLink href="#">Help</FooterLink>
-                        <FooterLink href="#">Log Out</FooterLink>
+                        <FooterLink href={DOCS_URL} target="_blank">Documentation</FooterLink>
+                        <FooterLink href={REPO_URL} target="_blank">Source code</FooterLink>
+                        <FooterLink href={ISSUES_URL} target="_blank">Help</FooterLink>
+                        <FooterLink disabled>Dashboard</FooterLink>
+                        <FooterLink disabled>Transactions</FooterLink>
+                        <FooterLink disabled>Cards</FooterLink>
+                        <FooterLink disabled>Settings</FooterLink>
                     </FooterColumn>
                 </FooterContent>
                 <FooterBottom>
@@ -189,22 +241,22 @@ export const WithLongLinkTexts: Story = {
                 />
                 <FooterContent>
                     <FooterColumn title="International Offices & Services">
-                        <FooterLink href="#">United States — New York HQ</FooterLink>
-                        <FooterLink href="#">European Union — Frankfurt Office</FooterLink>
-                        <FooterLink href="#">Asia Pacific — Singapore Branch</FooterLink>
-                        <FooterLink href="#">Latin America — São Paulo Desk</FooterLink>
-                        <FooterLink href="#">Middle East — Dubai International Center</FooterLink>
+                        <FooterLink disabled>United States — New York HQ</FooterLink>
+                        <FooterLink disabled>European Union — Frankfurt Office</FooterLink>
+                        <FooterLink disabled>Asia Pacific — Singapore Branch</FooterLink>
+                        <FooterLink disabled>Latin America — São Paulo Desk</FooterLink>
+                        <FooterLink disabled>Middle East — Dubai International Center</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Wealth Management Solutions">
-                        <FooterLink href="#">Private Banking & Advisory Services</FooterLink>
-                        <FooterLink href="#">Hedge Fund & Alternative Investments</FooterLink>
-                        <FooterLink href="#">Real Estate & Infrastructure Fund</FooterLink>
-                        <FooterLink href="#">Estate & Tax Planning Optimization</FooterLink>
+                        <FooterLink disabled>Private Banking &amp; Advisory Services</FooterLink>
+                        <FooterLink disabled>Hedge Fund &amp; Alternative Investments</FooterLink>
+                        <FooterLink disabled>Real Estate &amp; Infrastructure Fund</FooterLink>
+                        <FooterLink disabled>Estate &amp; Tax Planning Optimization</FooterLink>
                     </FooterColumn>
                     <FooterColumn title="Corporate & Institutional Banking">
-                        <FooterLink href="#">Corporate Treasury & Cash Management</FooterLink>
-                        <FooterLink href="#">Trade Finance & Supply Chain Solutions</FooterLink>
-                        <FooterLink href="#">Capital Markets & Advisory Services</FooterLink>
+                        <FooterLink disabled>Corporate Treasury &amp; Cash Management</FooterLink>
+                        <FooterLink disabled>Trade Finance &amp; Supply Chain Solutions</FooterLink>
+                        <FooterLink disabled>Capital Markets &amp; Advisory Services</FooterLink>
                     </FooterColumn>
                 </FooterContent>
                 <FooterBottom>
