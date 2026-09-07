@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 import { cn } from '../../../lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import type { ButtonWithDropdownProps, ButtonWithDropdownVariant, ButtonWithDropdownSize, ButtonWithDropdownAction } from './ButtonWithDropdown.types';
+import type { ButtonWithDropdownProps, ButtonWithDropdownAction } from './ButtonWithDropdown.types';
 
 /* ========================================
    BUTTON WITH DROPDOWN COMPONENT
@@ -26,8 +26,30 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
         const [isOpen, setIsOpen] = useState(false);
         const [mounted, setMounted] = useState(false);
         const [position, setPosition] = useState({ top: 0, left: 0 });
+        // Index of the menu item that currently owns roving focus (-1 = none)
+        const [activeIndex, setActiveIndex] = useState(-1);
         const containerRef = useRef<HTMLDivElement>(null);
         const menuRef = useRef<HTMLDivElement>(null);
+        const triggerRef = useRef<HTMLButtonElement | null>(null);
+        const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+        // Stable ids so the trigger and the portaled menu can reference each other
+        const reactId = React.useId();
+        const triggerId = `button-with-dropdown-trigger-${reactId}`;
+        const menuId = `button-with-dropdown-menu-${reactId}`;
+
+        // Merge the forwarded ref with the internal trigger ref used for focus management
+        const setTriggerRef = useCallback(
+            (node: HTMLButtonElement | null) => {
+                triggerRef.current = node;
+                if (typeof ref === 'function') {
+                    ref(node);
+                } else if (ref) {
+                    (ref as { current: HTMLButtonElement | null }).current = node;
+                }
+            },
+            [ref]
+        );
 
         // SSR guard: only portal once mounted on the client
         useEffect(() => {
@@ -66,9 +88,6 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
         useLayoutEffect(() => {
             if (!isOpen) return;
             updatePosition();
-            // The portaled menu lives at the end of <body>, so Tab no longer reaches
-            // it from the trigger: move focus into the first enabled item on open.
-            menuRef.current?.querySelector<HTMLButtonElement>('button:not([disabled])')?.focus();
         }, [isOpen, updatePosition]);
 
         useEffect(() => {
@@ -94,34 +113,6 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
             return () => document.removeEventListener('mousedown', handleClickOutside);
         }, [isOpen]);
 
-        // Escape to close + arrow key navigation across the portaled items
-        useEffect(() => {
-            if (!isOpen) return;
-            const handleKeyDown = (event: KeyboardEvent) => {
-                if (event.key === 'Escape') {
-                    setIsOpen(false);
-                    (containerRef.current?.querySelector('button') as HTMLButtonElement | null)?.focus();
-                    return;
-                }
-                if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
-
-                const items = Array.from(
-                    menuRef.current?.querySelectorAll<HTMLButtonElement>('button:not([disabled])') ?? []
-                );
-                if (items.length === 0) return;
-                event.preventDefault();
-
-                const currentIndex = items.indexOf(document.activeElement as HTMLButtonElement);
-                const nextIndex =
-                    event.key === 'ArrowDown'
-                        ? (currentIndex + 1) % items.length
-                        : (currentIndex <= 0 ? items.length : currentIndex) - 1;
-                items[nextIndex]?.focus();
-            };
-            document.addEventListener('keydown', handleKeyDown);
-            return () => document.removeEventListener('keydown', handleKeyDown);
-        }, [isOpen]);
-
         // Reset the roving focus index whenever the menu closes
         useEffect(() => {
             if (!isOpen) setActiveIndex(-1);
@@ -133,10 +124,17 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
             setActiveIndex((current) => (current < actions.length ? current : -1));
         }, [actions.length]);
 
-        // Move DOM focus to the active menu item
+        // Move DOM focus to the active menu item. The menu is portaled to the end of
+        // <body>, so when it opens without an active item we focus the menu container
+        // itself to keep its keydown handler on the focus path.
         useEffect(() => {
-            if (!isOpen || activeIndex < 0) return;
-            itemRefs.current[activeIndex]?.focus();
+            if (!isOpen) return;
+            if (activeIndex >= 0) {
+                itemRefs.current[activeIndex]?.focus();
+                return;
+            }
+            const menuEl = menuRef.current;
+            if (menuEl && !menuEl.contains(document.activeElement)) menuEl.focus();
         }, [isOpen, activeIndex]);
 
         const variants = {
@@ -235,8 +233,10 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
                     closeMenu(true);
                     break;
                 case 'Tab':
-                    // Let the browser move focus onward, but dismiss the menu
-                    closeMenu(false);
+                    // The menu is portaled to the end of <body>, so tabbing from inside it
+                    // would skip the rest of the page. Return focus to the trigger first and
+                    // let the browser's default Tab continue from there.
+                    closeMenu(true);
                     break;
                 default:
                     break;
@@ -248,7 +248,11 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
                 {isOpen && (
                     <motion.div
                         ref={menuRef}
+                        id={menuId}
                         role="menu"
+                        aria-labelledby={triggerId}
+                        tabIndex={-1}
+                        onKeyDown={handleMenuKeyDown}
                         initial={{ opacity: 0, scale: 0.95, y: -5 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -5 }}
@@ -262,9 +266,15 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
                         {actions.map((action, index) => (
                             <button
                                 key={index}
+                                type="button"
                                 role="menuitem"
+                                tabIndex={-1}
+                                ref={(node) => {
+                                    itemRefs.current[index] = node;
+                                }}
                                 onClick={() => handleActionClick(action)}
                                 disabled={action.disabled}
+                                aria-disabled={action.disabled || undefined}
                                 className={cn(
                                     "flex w-full items-center gap-2 px-3 py-2 text-sm rounded-lg cursor-pointer outline-none transition-colors",
                                     "text-text-primary hover:bg-surface-secondary text-left",
@@ -292,9 +302,8 @@ export const ButtonWithDropdown = forwardRef<HTMLButtonElement, ButtonWithDropdo
                     aria-controls={isOpen ? menuId : undefined}
                     whileTap={{ scale: 0.98 }}
                     disabled={disabled}
-                    aria-haspopup="menu"
-                    aria-expanded={isOpen}
-                    onClick={() => !disabled && setIsOpen(!isOpen)}
+                    onClick={handleTriggerClick}
+                    onKeyDown={handleTriggerKeyDown}
                     className={cn(
                         "inline-flex items-center justify-center font-medium rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue/20 cursor-pointer",
                         variants[variant],
