@@ -1,1 +1,1 @@
-export interface SwitchProps { checked?: boolean; onCheckedChange?: (checked: boolean) => void; disabled?: boolean; className?: string; }
+export interface SwitchProps { checked?: boolean; onCheckedChange?: (checked: boolean) => void; disabled?: boolean; className?: string; 'aria-label'?: string; 'aria-labelledby'?: string; }
