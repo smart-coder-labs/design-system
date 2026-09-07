@@ -56,7 +56,7 @@ export const MobileBankingHeader: Story = {
           <HamburgerMenuIcon isOpen={open} onClick={() => setOpen(!open)} />
         </div>
         {open && (
-          <div className="mt-4 space-y-2 pt-4 border-t border-border-primary">
+          <div className="mt-4 space-y-2 p-2 pt-4 border-t border-border-primary bg-surface-primary rounded-lg shadow-lg">
             <p className="text-sm text-text-primary font-medium px-2 py-2 hover:bg-surface-secondary rounded-lg cursor-pointer">Dashboard</p>
             <p className="text-sm text-text-primary font-medium px-2 py-2 hover:bg-surface-secondary rounded-lg cursor-pointer">Transactions</p>
             <p className="text-sm text-text-primary font-medium px-2 py-2 hover:bg-surface-secondary rounded-lg cursor-pointer">Accounts</p>

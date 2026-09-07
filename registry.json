@@ -5509,6 +5509,14 @@
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/NavBar/NavBar.types.ts"
       },
       {
+        "name": "NavBar.context.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/NavBar/NavBar.context.tsx"
+      },
+      {
+        "name": "NavBar.mobile.tsx",
+        "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/NavBar/NavBar.mobile.tsx"
+      },
+      {
         "name": "index.ts",
         "url": "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui/NavBar/index.ts"
       }
