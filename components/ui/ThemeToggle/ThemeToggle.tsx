@@ -24,7 +24,11 @@ export interface ThemeToggleProps {
     allowSystem?: boolean;
     /** Clase adicional para el contenedor. */
     className?: string;
-    /** Callback al cambiar el modo. */
+    /**
+     * Callback al cambiar el modo. También se dispara una vez al montar con el
+     * modo/tema resueltos (almacenado, `defaultMode` o preferencia del sistema),
+     * para que el consumidor pueda sincronizar su estado inicial.
+     */
     onModeChange?: (mode: ThemeMode, theme: ThemeName) => void;
 }
 
@@ -61,6 +65,12 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
     const [mode, setMode] = React.useState<ThemeMode>(defaultMode);
     const [theme, setTheme] = React.useState<ThemeName>(() => resolveTheme(defaultMode));
 
+    // Mantiene la última referencia del callback sin re-disparar el efecto de montaje
+    const onModeChangeRef = React.useRef(onModeChange);
+    React.useEffect(() => {
+        onModeChangeRef.current = onModeChange;
+    }, [onModeChange]);
+
     const applyTheme = React.useCallback((nextTheme: ThemeName) => {
         if (!isBrowser) return;
         const root = document.documentElement;
@@ -80,6 +90,8 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
         setMode(initialMode);
         setTheme(initialTheme);
         applyTheme(initialTheme);
+        // Notifica el modo/tema resuelto para que el consumidor no quede con su estado inicial vacío
+        onModeChangeRef.current?.(initialMode, initialTheme);
     }, [applyTheme, defaultMode, storageKey]);
 
     // Actualiza la UI si cambia la preferencia del sistema y seguimos en modo "system"
