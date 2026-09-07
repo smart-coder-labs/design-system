@@ -31,6 +31,9 @@ const [checked, setChecked] = useState(false);
 | description | string | - | Description text below label |
 | size | 'sm' \| 'md' \| 'lg' | 'md' | Switch size |
 | className | string | - | Additional classes |
+| id | string | - | Id applied to the `role="switch"` button |
+| aria-label | string | - | Accessible name when no `label` is used |
+| aria-labelledby | string | - | Id of the element naming the switch |
 
 ## Examples
 
