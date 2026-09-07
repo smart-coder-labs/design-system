@@ -97,4 +97,31 @@ describe('Accordion', () => {
     await user.click(screen.getByText('Section 2'));
     expect(onChange).toHaveBeenLastCalledWith(['item-1', 'item-2']);
   });
+
+  it('makes collapsed content inert and hidden so it is not focusable', async () => {
+    const user = userEvent.setup();
+    render(
+      <Accordion type="single">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Section 1</AccordionTrigger>
+          <AccordionContent data-testid="content-1">
+            <a href="https://example.com">Hidden link</a>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+
+    const content = screen.getByTestId('content-1');
+
+    // Closed: aria-hidden subtree must also be inert + visually hidden
+    expect(content).toHaveAttribute('aria-hidden', 'true');
+    expect(content).toHaveAttribute('inert');
+    expect(content).toHaveStyle({ visibility: 'hidden' });
+
+    // Open: interactive again
+    await user.click(screen.getByText('Section 1'));
+    expect(content).toHaveAttribute('aria-hidden', 'false');
+    expect(content).not.toHaveAttribute('inert');
+    expect(content).toHaveStyle({ visibility: 'visible' });
+  });
 });
