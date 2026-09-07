@@ -8,20 +8,46 @@ const PACKAGE_JSON = path.join(process.cwd(), "package.json");
 const GITHUB_RAW_BASE =
   "https://raw.githubusercontent.com/smart-coder-labs/design-system/refs/heads/main/components/ui";
 
-// Files that are source (not documentation) — README.md is excluded
-const SOURCE_FILE_CANDIDATES = ["${Name}.tsx", "${Name}.types.ts", "${Name}.styles.ts", "index.ts"];
+// Files that are source (not documentation): every `${Name}.ts(x)` /
+// `${Name}.*.ts(x)` file in the component folder plus `index.ts`.
+// README.md / CHANGELOG.md, stories, tests and spec files are excluded.
+const EXCLUDED_FILE_PATTERNS = [
+  /\.stories\.[jt]sx?$/,
+  /\.test\./,
+  /\.spec\./,
+  /\.d\.ts$/,
+];
 
-function getSourceFileCandidates(name: string): string[] {
-  return [
-    `${name}.tsx`,
-    `${name}.types.ts`,
-    `${name}.styles.ts`,
-    "index.ts",
-  ];
+// Emitted first, in this order, when present — keeps the historical ordering.
+function sourceFileRank(name: string, fileName: string): number {
+  const preferred = [`${name}.tsx`, `${name}.ts`, `${name}.types.ts`, `${name}.styles.ts`];
+  const index = preferred.indexOf(fileName);
+  if (index !== -1) return index;
+  if (fileName === "index.ts") return preferred.length + 1; // always last
+  return preferred.length; // other `${Name}.*.ts(x)` files, alphabetical
 }
 
-function detectDependencies(content: string): string[] {
+function getSourceFiles(folderPath: string, name: string): string[] {
+  const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const componentFilePattern = new RegExp(`^${escapedName}(\\..+)?\\.tsx?$`);
+
+  return fs
+    .readdirSync(folderPath, { withFileTypes: true })
+    .filter((entry) => entry.isFile())
+    .map((entry) => entry.name)
+    .filter((fileName) => {
+      if (EXCLUDED_FILE_PATTERNS.some((pattern) => pattern.test(fileName))) return false;
+      return fileName === "index.ts" || componentFilePattern.test(fileName);
+    })
+    .sort((a, b) => {
+      const rankDiff = sourceFileRank(name, a) - sourceFileRank(name, b);
+      return rankDiff !== 0 ? rankDiff : a.localeCompare(b);
+    });
+}
+
+function detectDependencies(contents: string[]): string[] {
   const dependencies: string[] = [];
+  const content = contents.join("\n");
 
   if (content.includes("framer-motion")) dependencies.push("framer-motion");
   if (content.includes("lucide-react")) dependencies.push("lucide-react");
@@ -73,28 +99,20 @@ async function buildRegistry() {
 
   for (const name of componentFolders) {
     const folderPath = path.join(COMPONENTS_UI_DIR, name);
-    const candidates = getSourceFileCandidates(name);
 
-    // Discover which source files actually exist
-    const presentFiles: string[] = [];
-    for (const candidate of candidates) {
-      if (fs.existsSync(path.join(folderPath, candidate))) {
-        presentFiles.push(candidate);
-      }
-    }
+    // Discover every source file that actually exists in the component folder
+    const presentFiles = getSourceFiles(folderPath, name);
 
     if (presentFiles.length === 0) {
       console.warn(`  Skipping ${name}: no source files found`);
       continue;
     }
 
-    // Detect dependencies from the main .tsx file
-    const mainFile = path.join(folderPath, `${name}.tsx`);
-    let dependencies: string[] = [];
-    if (fs.existsSync(mainFile)) {
-      const content = await fs.readFile(mainFile, "utf-8");
-      dependencies = detectDependencies(content);
-    }
+    // Detect dependencies across every source file of the component
+    const contents = await Promise.all(
+      presentFiles.map((fileName) => fs.readFile(path.join(folderPath, fileName), "utf-8"))
+    );
+    const dependencies: string[] = detectDependencies(contents);
 
     // Merge with existing entry — preserve versioning fields if they exist
     const existing = existingRegistry[name] as Record<string, any> | undefined;
