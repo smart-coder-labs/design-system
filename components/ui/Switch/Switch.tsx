@@ -1,19 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import type { SwitchProps } from './Switch.types';
 
 /* ========================================
    TYPES
    ======================================== */
 
-export interface SwitchProps {
-    checked?: boolean;
-    onCheckedChange?: (checked: boolean) => void;
-    disabled?: boolean;
-    label?: string;
-    description?: string;
-    size?: 'sm' | 'md' | 'lg';
-    className?: string;
-}
+export type { SwitchProps };
 
 /* ========================================
    STYLES
@@ -55,8 +48,12 @@ export const Switch: React.FC<SwitchProps> = ({
     description,
     size = 'md',
     className = '',
+    'aria-label': ariaLabel,
 }) => {
     const sizes = sizeStyles[size];
+    const reactId = React.useId();
+    const labelId = `${reactId}-label`;
+    const descriptionId = `${reactId}-description`;
 
     const handleClick = () => {
         if (!disabled && onCheckedChange) {
@@ -76,6 +73,9 @@ export const Switch: React.FC<SwitchProps> = ({
             type="button"
             role="switch"
             aria-checked={checked}
+            aria-label={label ? undefined : ariaLabel}
+            aria-labelledby={label ? labelId : undefined}
+            aria-describedby={description ? descriptionId : undefined}
             disabled={disabled}
             onClick={handleClick}
             onKeyDown={handleKeyDown}
@@ -114,10 +114,10 @@ export const Switch: React.FC<SwitchProps> = ({
                     }}
                 >
                     {label && (
-                        <p className="text-sm font-medium text-text-primary">{label}</p>
+                        <p id={labelId} className="text-sm font-medium text-text-primary">{label}</p>
                     )}
                     {description && (
-                        <p className="text-xs text-text-secondary mt-0.5">{description}</p>
+                        <p id={descriptionId} className="text-xs text-text-secondary mt-0.5">{description}</p>
                     )}
                 </div>
             </label>

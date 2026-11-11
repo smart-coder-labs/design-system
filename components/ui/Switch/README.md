@@ -31,6 +31,7 @@ const [checked, setChecked] = useState(false);
 | description | string | - | Description text below label |
 | size | 'sm' \| 'md' \| 'lg' | 'md' | Switch size |
 | className | string | - | Additional classes |
+| aria-label | string | - | Accessible name to use when no visible label is provided |
 
 ## Examples
 
@@ -80,18 +81,21 @@ const [checked, setChecked] = useState(false);
 />
 ```
 
-### Uncontrolled Switch
+### Switch without a Visible Label
 
 ```tsx
-// Uses defaultChecked internally (not exported as prop)
-<Switch defaultChecked={false} onCheckedChange={handleChange} />
-// Note: This component uses controlled pattern primarily
+<Switch
+  checked={checked}
+  onCheckedChange={setChecked}
+  aria-label="Enable notifications"
+/>
 ```
 
 ## Notes
 
 - Uses Framer Motion for smooth thumb animation
-- Accessible with role="switch" and aria-checked
+- Accessible with role="switch" and aria-checked; the visible label is linked via aria-labelledby and the description via aria-describedby
+- Use aria-label to provide an accessible name when there is no visible label
 - Keyboard accessible (Enter/Space to toggle)
 - Label wraps entire switch for click activation
 - When label/description provided, renders as accessible label element
